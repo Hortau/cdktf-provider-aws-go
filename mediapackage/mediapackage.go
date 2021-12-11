@@ -303,7 +303,7 @@ func NewMediaPackageChannel(scope constructs.Construct, id *string, config *Medi
 	j := jsiiProxy_MediaPackageChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannel",
+		"hashicorp_aws.mediapackage.MediaPackageChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -316,7 +316,7 @@ func NewMediaPackageChannel_Override(m MediaPackageChannel, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannel",
+		"hashicorp_aws.mediapackage.MediaPackageChannel",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -396,7 +396,7 @@ func MediaPackageChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MediaPackage.MediaPackageChannel",
+		"hashicorp_aws.mediapackage.MediaPackageChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -409,7 +409,7 @@ func MediaPackageChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MediaPackage.MediaPackageChannel",
+		"hashicorp_aws.mediapackage.MediaPackageChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -608,6 +608,7 @@ func (m *jsiiProxy_MediaPackageChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// Media Package.
 type MediaPackageChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -695,7 +696,7 @@ func NewMediaPackageChannelHlsIngest(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_MediaPackageChannelHlsIngest{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngest",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -708,7 +709,7 @@ func NewMediaPackageChannelHlsIngest_Override(m MediaPackageChannelHlsIngest, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngest",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)
@@ -898,7 +899,7 @@ func NewMediaPackageChannelHlsIngestIngestEndpoints(terraformResource cdktf.ITer
 	j := jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngestIngestEndpoints",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngestIngestEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -911,7 +912,7 @@ func NewMediaPackageChannelHlsIngestIngestEndpoints_Override(m MediaPackageChann
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngestIngestEndpoints",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngestIngestEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)

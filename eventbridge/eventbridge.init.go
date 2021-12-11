@@ -1,4 +1,4 @@
-package cloudwatcheventbridge
+package eventbridge
 
 import (
 	"reflect"
@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestination",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestination",
 		reflect.TypeOf((*CloudwatchEventApiDestination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -60,11 +60,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestinationConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestinationConfig",
 		reflect.TypeOf((*CloudwatchEventApiDestinationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchive",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchive",
 		reflect.TypeOf((*CloudwatchEventArchive)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -115,11 +115,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchiveConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchiveConfig",
 		reflect.TypeOf((*CloudwatchEventArchiveConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBus",
+		"hashicorp_aws.eventbridge.CloudwatchEventBus",
 		reflect.TypeOf((*CloudwatchEventBus)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -168,11 +168,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusConfig",
 		reflect.TypeOf((*CloudwatchEventBusConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicy",
 		reflect.TypeOf((*CloudwatchEventBusPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -214,11 +214,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicyConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicyConfig",
 		reflect.TypeOf((*CloudwatchEventBusPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnection",
 		reflect.TypeOf((*CloudwatchEventConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -267,21 +267,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParameters",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParameters",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersApiKey",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersApiKey",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersApiKey)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersApiKeyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -299,17 +300,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersBasic",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersBasic",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersBasic)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersBasicOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -327,19 +329,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParameters",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParameters",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersInvocationHttpParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "body", GoGetter: "Body"},
@@ -350,6 +352,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "header", GoGetter: "Header"},
 			_jsii_.MemberProperty{JsiiProperty: "headerInput", GoGetter: "HeaderInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -368,19 +371,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauth",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauth",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauth)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthClientParameters",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthClientParameters",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthClientParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientId", GoGetter: "ClientId"},
@@ -391,6 +394,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -404,19 +408,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "body", GoGetter: "Body"},
@@ -427,6 +431,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "header", GoGetter: "Header"},
 			_jsii_.MemberProperty{JsiiProperty: "headerInput", GoGetter: "HeaderInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -445,11 +450,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOauthOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authorizationEndpoint", GoGetter: "AuthorizationEndpoint"},
@@ -462,6 +467,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpMethod", GoGetter: "HttpMethod"},
 			_jsii_.MemberProperty{JsiiProperty: "httpMethodInput", GoGetter: "HttpMethodInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -480,7 +486,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOutputReference",
 		reflect.TypeOf((*CloudwatchEventConnectionAuthParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "apiKey", GoGetter: "ApiKey"},
@@ -491,6 +497,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "invocationHttpParameters", GoGetter: "InvocationHttpParameters"},
@@ -516,11 +523,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionConfig",
 		reflect.TypeOf((*CloudwatchEventConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermission",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermission",
 		reflect.TypeOf((*CloudwatchEventPermission)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -571,17 +578,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermissionCondition",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermissionCondition",
 		reflect.TypeOf((*CloudwatchEventPermissionCondition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermissionConditionOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermissionConditionOutputReference",
 		reflect.TypeOf((*CloudwatchEventPermissionConditionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -601,11 +609,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermissionConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermissionConfig",
 		reflect.TypeOf((*CloudwatchEventPermissionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRule",
+		"hashicorp_aws.eventbridge.CloudwatchEventRule",
 		reflect.TypeOf((*CloudwatchEventRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -673,11 +681,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRuleConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventRuleConfig",
 		reflect.TypeOf((*CloudwatchEventRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTarget",
 		reflect.TypeOf((*CloudwatchEventTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -772,11 +780,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetBatchTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetBatchTarget",
 		reflect.TypeOf((*CloudwatchEventTargetBatchTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetBatchTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetBatchTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetBatchTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arraySize", GoGetter: "ArraySize"},
@@ -785,6 +793,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -806,15 +815,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetConfig",
 		reflect.TypeOf((*CloudwatchEventTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetDeadLetterConfig",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetDeadLetterConfig",
 		reflect.TypeOf((*CloudwatchEventTargetDeadLetterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetDeadLetterConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -823,6 +832,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -837,15 +847,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTarget",
 		reflect.TypeOf((*CloudwatchEventTargetEcsTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetNetworkConfiguration",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetNetworkConfiguration",
 		reflect.TypeOf((*CloudwatchEventTargetEcsTargetNetworkConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "assignPublicIp", GoGetter: "AssignPublicIp"},
@@ -854,6 +864,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -873,7 +884,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetEcsTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enableEcsManagedTags", GoGetter: "EnableEcsManagedTags"},
@@ -886,6 +897,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "group", GoGetter: "Group"},
 			_jsii_.MemberProperty{JsiiProperty: "groupInput", GoGetter: "GroupInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -926,15 +938,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetPlacementConstraint",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetPlacementConstraint",
 		reflect.TypeOf((*CloudwatchEventTargetEcsTargetPlacementConstraint)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetHttpTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetHttpTarget",
 		reflect.TypeOf((*CloudwatchEventTargetHttpTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetHttpTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetHttpTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetHttpTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -943,6 +955,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "headerParameters", GoGetter: "HeaderParameters"},
 			_jsii_.MemberProperty{JsiiProperty: "headerParametersInput", GoGetter: "HeaderParametersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -963,11 +976,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetInputTransformer",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetInputTransformer",
 		reflect.TypeOf((*CloudwatchEventTargetInputTransformer)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetInputTransformerOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetInputTransformerOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetInputTransformerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -978,6 +991,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "inputPathsInput", GoGetter: "InputPathsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "inputTemplate", GoGetter: "InputTemplate"},
 			_jsii_.MemberProperty{JsiiProperty: "inputTemplateInput", GoGetter: "InputTemplateInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -992,17 +1006,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetKinesisTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetKinesisTarget",
 		reflect.TypeOf((*CloudwatchEventTargetKinesisTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetKinesisTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetKinesisTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetKinesisTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1019,11 +1034,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRedshiftTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRedshiftTarget",
 		reflect.TypeOf((*CloudwatchEventTargetRedshiftTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRedshiftTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRedshiftTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetRedshiftTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -1034,6 +1049,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1060,17 +1076,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRetryPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRetryPolicy",
 		reflect.TypeOf((*CloudwatchEventTargetRetryPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRetryPolicyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRetryPolicyOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetRetryPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1090,21 +1107,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRunCommandTargets",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRunCommandTargets",
 		reflect.TypeOf((*CloudwatchEventTargetRunCommandTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetSqsTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetSqsTarget",
 		reflect.TypeOf((*CloudwatchEventTargetSqsTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetSqsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetSqsTargetOutputReference",
 		reflect.TypeOf((*CloudwatchEventTargetSqsTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1121,7 +1139,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnection",
 		reflect.TypeOf((*DataAwsCloudwatchEventConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1163,11 +1181,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnectionConfig",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnectionConfig",
 		reflect.TypeOf((*DataAwsCloudwatchEventConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSource",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSource",
 		reflect.TypeOf((*DataAwsCloudwatchEventSource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1211,7 +1229,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSourceConfig",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSourceConfig",
 		reflect.TypeOf((*DataAwsCloudwatchEventSourceConfig)(nil)).Elem(),
 	)
 }

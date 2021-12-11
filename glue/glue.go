@@ -300,7 +300,7 @@ func NewDataAwsGlueConnection(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsGlueConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueConnection",
+		"hashicorp_aws.glue.DataAwsGlueConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -313,7 +313,7 @@ func NewDataAwsGlueConnection_Override(d DataAwsGlueConnection, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueConnection",
+		"hashicorp_aws.glue.DataAwsGlueConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -377,7 +377,7 @@ func DataAwsGlueConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.DataAwsGlueConnection",
+		"hashicorp_aws.glue.DataAwsGlueConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -390,7 +390,7 @@ func DataAwsGlueConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.DataAwsGlueConnection",
+		"hashicorp_aws.glue.DataAwsGlueConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -586,6 +586,7 @@ func (d *jsiiProxy_DataAwsGlueConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type DataAwsGlueConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -691,7 +692,7 @@ func NewDataAwsGlueConnectionPhysicalConnectionRequirements(terraformResource cd
 	j := jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
+		"hashicorp_aws.glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -704,7 +705,7 @@ func NewDataAwsGlueConnectionPhysicalConnectionRequirements_Override(d DataAwsGl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
+		"hashicorp_aws.glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1015,7 +1016,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettings(scope constructs.Construct, id 
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1028,7 +1029,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettings_Override(d DataAwsGlueDataCatal
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettings",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1084,7 +1085,7 @@ func DataAwsGlueDataCatalogEncryptionSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1097,7 +1098,7 @@ func DataAwsGlueDataCatalogEncryptionSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -1272,6 +1273,7 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) ToTerraform() inter
 	return returns
 }
 
+// AWS Glue.
 type DataAwsGlueDataCatalogEncryptionSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1364,7 +1366,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings(te
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1377,7 +1379,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1556,7 +1558,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsCon
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1569,7 +1571,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1748,7 +1750,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEnc
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1761,7 +1763,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEnc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2140,7 +2142,7 @@ func NewDataAwsGlueScript(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsGlueScript{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueScript",
+		"hashicorp_aws.glue.DataAwsGlueScript",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2153,7 +2155,7 @@ func NewDataAwsGlueScript_Override(d DataAwsGlueScript, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.DataAwsGlueScript",
+		"hashicorp_aws.glue.DataAwsGlueScript",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2225,7 +2227,7 @@ func DataAwsGlueScript_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.DataAwsGlueScript",
+		"hashicorp_aws.glue.DataAwsGlueScript",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2238,7 +2240,7 @@ func DataAwsGlueScript_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.DataAwsGlueScript",
+		"hashicorp_aws.glue.DataAwsGlueScript",
 		"tfResourceType",
 		&returns,
 	)
@@ -2408,6 +2410,7 @@ func (d *jsiiProxy_DataAwsGlueScript) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type DataAwsGlueScriptConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2801,7 +2804,7 @@ func NewGlueCatalogDatabase(scope constructs.Construct, id *string, config *Glue
 	j := jsiiProxy_GlueCatalogDatabase{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabase",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2814,7 +2817,7 @@ func NewGlueCatalogDatabase_Override(g GlueCatalogDatabase, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabase",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -2902,7 +2905,7 @@ func GlueCatalogDatabase_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueCatalogDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabase",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2915,7 +2918,7 @@ func GlueCatalogDatabase_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueCatalogDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabase",
 		"tfResourceType",
 		&returns,
 	)
@@ -3125,6 +3128,7 @@ func (g *jsiiProxy_GlueCatalogDatabase) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueCatalogDatabaseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3165,6 +3169,8 @@ type GlueCatalogDatabaseTargetDatabaseOutputReference interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	InternalValue() *GlueCatalogDatabaseTargetDatabase
+	SetInternalValue(val *GlueCatalogDatabaseTargetDatabase)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3224,6 +3230,16 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) DatabaseNam
 	return returns
 }
 
+func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) InternalValue() *GlueCatalogDatabaseTargetDatabase {
+	var returns *GlueCatalogDatabaseTargetDatabase
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3260,7 +3276,7 @@ func NewGlueCatalogDatabaseTargetDatabaseOutputReference(terraformResource cdktf
 	j := jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
+		"hashicorp_aws.glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3272,7 +3288,7 @@ func NewGlueCatalogDatabaseTargetDatabaseOutputReference_Override(g GlueCatalogD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
+		"hashicorp_aws.glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -3290,6 +3306,14 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetDatabase
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetInternalValue(val *GlueCatalogDatabaseTargetDatabase) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3934,7 +3958,7 @@ func NewGlueCatalogTable(scope constructs.Construct, id *string, config *GlueCat
 	j := jsiiProxy_GlueCatalogTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTable",
+		"hashicorp_aws.glue.GlueCatalogTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3947,7 +3971,7 @@ func NewGlueCatalogTable_Override(g GlueCatalogTable, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTable",
+		"hashicorp_aws.glue.GlueCatalogTable",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -4091,7 +4115,7 @@ func GlueCatalogTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueCatalogTable",
+		"hashicorp_aws.glue.GlueCatalogTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4104,7 +4128,7 @@ func GlueCatalogTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueCatalogTable",
+		"hashicorp_aws.glue.GlueCatalogTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -4378,6 +4402,7 @@ func (g *jsiiProxy_GlueCatalogTable) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueCatalogTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4505,6 +4530,8 @@ type GlueCatalogTableStorageDescriptorOutputReference interface {
 	InputFormat() *string
 	SetInputFormat(val *string)
 	InputFormatInput() *string
+	InternalValue() *GlueCatalogTableStorageDescriptor
+	SetInternalValue(val *GlueCatalogTableStorageDescriptor)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -4639,6 +4666,16 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) InputFormat
 	_jsii_.Get(
 		j,
 		"inputFormatInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) InternalValue() *GlueCatalogTableStorageDescriptor {
+	var returns *GlueCatalogTableStorageDescriptor
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4860,7 +4897,7 @@ func NewGlueCatalogTableStorageDescriptorOutputReference(terraformResource cdktf
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4872,7 +4909,7 @@ func NewGlueCatalogTableStorageDescriptorOutputReference_Override(g GlueCatalogT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -4906,6 +4943,14 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetInputFor
 	_jsii_.Set(
 		j,
 		"inputFormat",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetInternalValue(val *GlueCatalogTableStorageDescriptor) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5207,6 +5252,8 @@ type GlueCatalogTableStorageDescriptorSchemaReference struct {
 
 type GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueCatalogTableStorageDescriptorSchemaReference
+	SetInternalValue(val *GlueCatalogTableStorageDescriptorSchemaReference)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SchemaId() GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference
@@ -5235,6 +5282,16 @@ type GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference interface {
 // The jsii proxy struct for GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference
 type jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) InternalValue() *GlueCatalogTableStorageDescriptorSchemaReference {
+	var returns *GlueCatalogTableStorageDescriptorSchemaReference
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) IsSingleItem() *bool {
@@ -5333,7 +5390,7 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference(terrafor
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5345,9 +5402,17 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) SetInternalValue(val *GlueCatalogTableStorageDescriptorSchemaReference) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5510,6 +5575,8 @@ type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId struct {
 
 type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId
+	SetInternalValue(val *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RegistryName() *string
@@ -5539,6 +5606,16 @@ type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference int
 // The jsii proxy struct for GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference
 type jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) InternalValue() *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId {
+	var returns *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) IsSingleItem() *bool {
@@ -5637,7 +5714,7 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference(
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5649,9 +5726,17 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) SetInternalValue(val *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5822,6 +5907,8 @@ type GlueCatalogTableStorageDescriptorSerDeInfo struct {
 
 type GlueCatalogTableStorageDescriptorSerDeInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueCatalogTableStorageDescriptorSerDeInfo
+	SetInternalValue(val *GlueCatalogTableStorageDescriptorSerDeInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -5851,6 +5938,16 @@ type GlueCatalogTableStorageDescriptorSerDeInfoOutputReference interface {
 // The jsii proxy struct for GlueCatalogTableStorageDescriptorSerDeInfoOutputReference
 type jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) InternalValue() *GlueCatalogTableStorageDescriptorSerDeInfo {
+	var returns *GlueCatalogTableStorageDescriptorSerDeInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) IsSingleItem() *bool {
@@ -5949,7 +6046,7 @@ func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference(terraformResou
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5961,9 +6058,17 @@ func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference_Override(g Glu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) SetInternalValue(val *GlueCatalogTableStorageDescriptorSerDeInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6134,6 +6239,8 @@ type GlueCatalogTableStorageDescriptorSkewedInfo struct {
 
 type GlueCatalogTableStorageDescriptorSkewedInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueCatalogTableStorageDescriptorSkewedInfo
+	SetInternalValue(val *GlueCatalogTableStorageDescriptorSkewedInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SkewedColumnNames() *[]*string
@@ -6163,6 +6270,16 @@ type GlueCatalogTableStorageDescriptorSkewedInfoOutputReference interface {
 // The jsii proxy struct for GlueCatalogTableStorageDescriptorSkewedInfoOutputReference
 type jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) InternalValue() *GlueCatalogTableStorageDescriptorSkewedInfo {
+	var returns *GlueCatalogTableStorageDescriptorSkewedInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) IsSingleItem() *bool {
@@ -6261,7 +6378,7 @@ func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference(terraformReso
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6273,9 +6390,17 @@ func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference_Override(g Gl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SetInternalValue(val *GlueCatalogTableStorageDescriptorSkewedInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6459,6 +6584,8 @@ type GlueCatalogTableTargetTableOutputReference interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	InternalValue() *GlueCatalogTableTargetTable
+	SetInternalValue(val *GlueCatalogTableTargetTable)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -6521,6 +6648,16 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) DatabaseNameInput
 	return returns
 }
 
+func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) InternalValue() *GlueCatalogTableTargetTable {
+	var returns *GlueCatalogTableTargetTable
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6577,7 +6714,7 @@ func NewGlueCatalogTableTargetTableOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_GlueCatalogTableTargetTableOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableTargetTableOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableTargetTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6589,7 +6726,7 @@ func NewGlueCatalogTableTargetTableOutputReference_Override(g GlueCatalogTableTa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCatalogTableTargetTableOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableTargetTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -6607,6 +6744,14 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetDatabaseName(v
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetInternalValue(val *GlueCatalogTableTargetTable) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7033,7 +7178,7 @@ func NewGlueClassifier(scope constructs.Construct, id *string, config *GlueClass
 	j := jsiiProxy_GlueClassifier{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifier",
+		"hashicorp_aws.glue.GlueClassifier",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7046,7 +7191,7 @@ func NewGlueClassifier_Override(g GlueClassifier, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifier",
+		"hashicorp_aws.glue.GlueClassifier",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -7102,7 +7247,7 @@ func GlueClassifier_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueClassifier",
+		"hashicorp_aws.glue.GlueClassifier",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7115,7 +7260,7 @@ func GlueClassifier_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueClassifier",
+		"hashicorp_aws.glue.GlueClassifier",
 		"tfResourceType",
 		&returns,
 	)
@@ -7341,6 +7486,7 @@ func (g *jsiiProxy_GlueClassifier) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueClassifierConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7402,6 +7548,8 @@ type GlueClassifierCsvClassifierOutputReference interface {
 	Header() *[]*string
 	SetHeader(val *[]*string)
 	HeaderInput() *[]*string
+	InternalValue() *GlueClassifierCsvClassifier
+	SetInternalValue(val *GlueClassifierCsvClassifier)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QuoteSymbol() *string
@@ -7530,6 +7678,16 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) HeaderInput() *[]
 	return returns
 }
 
+func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) InternalValue() *GlueClassifierCsvClassifier {
+	var returns *GlueClassifierCsvClassifier
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7586,7 +7744,7 @@ func NewGlueClassifierCsvClassifierOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_GlueClassifierCsvClassifierOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierCsvClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierCsvClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7598,7 +7756,7 @@ func NewGlueClassifierCsvClassifierOutputReference_Override(g GlueClassifierCsvC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierCsvClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierCsvClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -7640,6 +7798,14 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetHeader(val *[]
 	_jsii_.Set(
 		j,
 		"header",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetInternalValue(val *GlueClassifierCsvClassifier) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7828,6 +7994,8 @@ type GlueClassifierGrokClassifierOutputReference interface {
 	GrokPattern() *string
 	SetGrokPattern(val *string)
 	GrokPatternInput() *string
+	InternalValue() *GlueClassifierGrokClassifier
+	SetInternalValue(val *GlueClassifierGrokClassifier)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7908,6 +8076,16 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GrokPatternInput
 	return returns
 }
 
+func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) InternalValue() *GlueClassifierGrokClassifier {
+	var returns *GlueClassifierGrokClassifier
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7944,7 +8122,7 @@ func NewGlueClassifierGrokClassifierOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_GlueClassifierGrokClassifierOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierGrokClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierGrokClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7956,7 +8134,7 @@ func NewGlueClassifierGrokClassifierOutputReference_Override(g GlueClassifierGro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierGrokClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierGrokClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -7982,6 +8160,14 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetGrokPattern(v
 	_jsii_.Set(
 		j,
 		"grokPattern",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetInternalValue(val *GlueClassifierGrokClassifier) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8109,6 +8295,8 @@ type GlueClassifierJsonClassifier struct {
 
 type GlueClassifierJsonClassifierOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueClassifierJsonClassifier
+	SetInternalValue(val *GlueClassifierJsonClassifier)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JsonPath() *string
@@ -8129,6 +8317,16 @@ type GlueClassifierJsonClassifierOutputReference interface {
 // The jsii proxy struct for GlueClassifierJsonClassifierOutputReference
 type jsiiProxy_GlueClassifierJsonClassifierOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) InternalValue() *GlueClassifierJsonClassifier {
+	var returns *GlueClassifierJsonClassifier
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) IsSingleItem() *bool {
@@ -8187,7 +8385,7 @@ func NewGlueClassifierJsonClassifierOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_GlueClassifierJsonClassifierOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierJsonClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierJsonClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8199,9 +8397,17 @@ func NewGlueClassifierJsonClassifierOutputReference_Override(g GlueClassifierJso
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierJsonClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierJsonClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) SetInternalValue(val *GlueClassifierJsonClassifier) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8333,6 +8539,8 @@ type GlueClassifierXmlClassifierOutputReference interface {
 	Classification() *string
 	SetClassification(val *string)
 	ClassificationInput() *string
+	InternalValue() *GlueClassifierXmlClassifier
+	SetInternalValue(val *GlueClassifierXmlClassifier)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RowTag() *string
@@ -8370,6 +8578,16 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) ClassificationInp
 	_jsii_.Get(
 		j,
 		"classificationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) InternalValue() *GlueClassifierXmlClassifier {
+	var returns *GlueClassifierXmlClassifier
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8431,7 +8649,7 @@ func NewGlueClassifierXmlClassifierOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_GlueClassifierXmlClassifierOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierXmlClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierXmlClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8443,7 +8661,7 @@ func NewGlueClassifierXmlClassifierOutputReference_Override(g GlueClassifierXmlC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueClassifierXmlClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierXmlClassifierOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -8453,6 +8671,14 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetClassification
 	_jsii_.Set(
 		j,
 		"classification",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetInternalValue(val *GlueClassifierXmlClassifier) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8986,7 +9212,7 @@ func NewGlueConnection(scope constructs.Construct, id *string, config *GlueConne
 	j := jsiiProxy_GlueConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueConnection",
+		"hashicorp_aws.glue.GlueConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8999,7 +9225,7 @@ func NewGlueConnection_Override(g GlueConnection, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueConnection",
+		"hashicorp_aws.glue.GlueConnection",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -9111,7 +9337,7 @@ func GlueConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueConnection",
+		"hashicorp_aws.glue.GlueConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9124,7 +9350,7 @@ func GlueConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueConnection",
+		"hashicorp_aws.glue.GlueConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -9358,6 +9584,7 @@ func (g *jsiiProxy_GlueConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9403,6 +9630,8 @@ type GlueConnectionPhysicalConnectionRequirementsOutputReference interface {
 	AvailabilityZone() *string
 	SetAvailabilityZone(val *string)
 	AvailabilityZoneInput() *string
+	InternalValue() *GlueConnectionPhysicalConnectionRequirements
+	SetInternalValue(val *GlueConnectionPhysicalConnectionRequirements)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIdList() *[]*string
@@ -9446,6 +9675,16 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	_jsii_.Get(
 		j,
 		"availabilityZoneInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) InternalValue() *GlueConnectionPhysicalConnectionRequirements {
+	var returns *GlueConnectionPhysicalConnectionRequirements
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9527,7 +9766,7 @@ func NewGlueConnectionPhysicalConnectionRequirementsOutputReference(terraformRes
 	j := jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
+		"hashicorp_aws.glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9539,7 +9778,7 @@ func NewGlueConnectionPhysicalConnectionRequirementsOutputReference_Override(g G
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
+		"hashicorp_aws.glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -9549,6 +9788,14 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	_jsii_.Set(
 		j,
 		"availabilityZone",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) SetInternalValue(val *GlueConnectionPhysicalConnectionRequirements) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10352,7 +10599,7 @@ func NewGlueCrawler(scope constructs.Construct, id *string, config *GlueCrawlerC
 	j := jsiiProxy_GlueCrawler{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawler",
+		"hashicorp_aws.glue.GlueCrawler",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10365,7 +10612,7 @@ func NewGlueCrawler_Override(g GlueCrawler, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawler",
+		"hashicorp_aws.glue.GlueCrawler",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -10541,7 +10788,7 @@ func GlueCrawler_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueCrawler",
+		"hashicorp_aws.glue.GlueCrawler",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10554,7 +10801,7 @@ func GlueCrawler_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueCrawler",
+		"hashicorp_aws.glue.GlueCrawler",
 		"tfResourceType",
 		&returns,
 	)
@@ -10875,6 +11122,7 @@ type GlueCrawlerCatalogTarget struct {
 	Tables *[]*string `json:"tables"`
 }
 
+// AWS Glue.
 type GlueCrawlerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10968,6 +11216,8 @@ type GlueCrawlerLineageConfigurationOutputReference interface {
 	CrawlerLineageSettings() *string
 	SetCrawlerLineageSettings(val *string)
 	CrawlerLineageSettingsInput() *string
+	InternalValue() *GlueCrawlerLineageConfiguration
+	SetInternalValue(val *GlueCrawlerLineageConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11003,6 +11253,16 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) CrawlerLineag
 	_jsii_.Get(
 		j,
 		"crawlerLineageSettingsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) InternalValue() *GlueCrawlerLineageConfiguration {
+	var returns *GlueCrawlerLineageConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11044,7 +11304,7 @@ func NewGlueCrawlerLineageConfigurationOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_GlueCrawlerLineageConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerLineageConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerLineageConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11056,7 +11316,7 @@ func NewGlueCrawlerLineageConfigurationOutputReference_Override(g GlueCrawlerLin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerLineageConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerLineageConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -11066,6 +11326,14 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetCrawlerLin
 	_jsii_.Set(
 		j,
 		"crawlerLineageSettings",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetInternalValue(val *GlueCrawlerLineageConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11202,6 +11470,8 @@ type GlueCrawlerRecrawlPolicy struct {
 
 type GlueCrawlerRecrawlPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueCrawlerRecrawlPolicy
+	SetInternalValue(val *GlueCrawlerRecrawlPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecrawlBehavior() *string
@@ -11223,6 +11493,16 @@ type GlueCrawlerRecrawlPolicyOutputReference interface {
 // The jsii proxy struct for GlueCrawlerRecrawlPolicyOutputReference
 type jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) InternalValue() *GlueCrawlerRecrawlPolicy {
+	var returns *GlueCrawlerRecrawlPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) IsSingleItem() *bool {
@@ -11281,7 +11561,7 @@ func NewGlueCrawlerRecrawlPolicyOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerRecrawlPolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerRecrawlPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11293,9 +11573,17 @@ func NewGlueCrawlerRecrawlPolicyOutputReference_Override(g GlueCrawlerRecrawlPol
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerRecrawlPolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerRecrawlPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) SetInternalValue(val *GlueCrawlerRecrawlPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11450,6 +11738,8 @@ type GlueCrawlerSchemaChangePolicyOutputReference interface {
 	DeleteBehavior() *string
 	SetDeleteBehavior(val *string)
 	DeleteBehaviorInput() *string
+	InternalValue() *GlueCrawlerSchemaChangePolicy
+	SetInternalValue(val *GlueCrawlerSchemaChangePolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11489,6 +11779,16 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) DeleteBehaviorI
 	_jsii_.Get(
 		j,
 		"deleteBehaviorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) InternalValue() *GlueCrawlerSchemaChangePolicy {
+	var returns *GlueCrawlerSchemaChangePolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11550,7 +11850,7 @@ func NewGlueCrawlerSchemaChangePolicyOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerSchemaChangePolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerSchemaChangePolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11562,7 +11862,7 @@ func NewGlueCrawlerSchemaChangePolicyOutputReference_Override(g GlueCrawlerSchem
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueCrawlerSchemaChangePolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerSchemaChangePolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -11572,6 +11872,14 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetDeleteBehavi
 	_jsii_.Set(
 		j,
 		"deleteBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetInternalValue(val *GlueCrawlerSchemaChangePolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11942,7 +12250,7 @@ func NewGlueDataCatalogEncryptionSettings(scope constructs.Construct, id *string
 	j := jsiiProxy_GlueDataCatalogEncryptionSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11955,7 +12263,7 @@ func NewGlueDataCatalogEncryptionSettings_Override(g GlueDataCatalogEncryptionSe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettings",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -12011,7 +12319,7 @@ func GlueDataCatalogEncryptionSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12024,7 +12332,7 @@ func GlueDataCatalogEncryptionSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -12202,6 +12510,7 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Glue.
 type GlueDataCatalogEncryptionSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12242,6 +12551,8 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPas
 	AwsKmsKeyId() *string
 	SetAwsKmsKeyId(val *string)
 	AwsKmsKeyIdInput() *string
+	InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption
+	SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReturnConnectionPasswordEncrypted() interface{}
@@ -12280,6 +12591,16 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	_jsii_.Get(
 		j,
 		"awsKmsKeyIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption {
+	var returns *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12341,7 +12662,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnection
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12353,7 +12674,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnection
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -12363,6 +12684,14 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	_jsii_.Set(
 		j,
 		"awsKmsKeyId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12503,6 +12832,8 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtR
 	CatalogEncryptionMode() *string
 	SetCatalogEncryptionMode(val *string)
 	CatalogEncryptionModeInput() *string
+	InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest
+	SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SseAwsKmsKeyId() *string
@@ -12541,6 +12872,16 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	_jsii_.Get(
 		j,
 		"catalogEncryptionModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest {
+	var returns *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12602,7 +12943,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryption
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12614,7 +12955,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryption
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -12624,6 +12965,14 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	_jsii_.Set(
 		j,
 		"catalogEncryptionMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12758,6 +13107,8 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReferen
 	ConnectionPasswordEncryptionInput() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption
 	EncryptionAtRest() GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference
 	EncryptionAtRestInput() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest
+	InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings
+	SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12819,6 +13170,16 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) InternalValue() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
+	var returns *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12855,7 +13216,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputRefe
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12867,9 +13228,17 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) SetInternalValue(val *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13665,7 +14034,7 @@ func NewGlueDevEndpoint(scope constructs.Construct, id *string, config *GlueDevE
 	j := jsiiProxy_GlueDevEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDevEndpoint",
+		"hashicorp_aws.glue.GlueDevEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13678,7 +14047,7 @@ func NewGlueDevEndpoint_Override(g GlueDevEndpoint, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueDevEndpoint",
+		"hashicorp_aws.glue.GlueDevEndpoint",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -13854,7 +14223,7 @@ func GlueDevEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueDevEndpoint",
+		"hashicorp_aws.glue.GlueDevEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13867,7 +14236,7 @@ func GlueDevEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueDevEndpoint",
+		"hashicorp_aws.glue.GlueDevEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -14141,6 +14510,7 @@ func (g *jsiiProxy_GlueDevEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueDevEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14811,7 +15181,7 @@ func NewGlueJob(scope constructs.Construct, id *string, config *GlueJobConfig) G
 	j := jsiiProxy_GlueJob{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJob",
+		"hashicorp_aws.glue.GlueJob",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14824,7 +15194,7 @@ func NewGlueJob_Override(g GlueJob, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJob",
+		"hashicorp_aws.glue.GlueJob",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -14992,7 +15362,7 @@ func GlueJob_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueJob",
+		"hashicorp_aws.glue.GlueJob",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15005,7 +15375,7 @@ func GlueJob_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueJob",
+		"hashicorp_aws.glue.GlueJob",
 		"tfResourceType",
 		&returns,
 	)
@@ -15322,6 +15692,8 @@ type GlueJobCommand struct {
 
 type GlueJobCommandOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueJobCommand
+	SetInternalValue(val *GlueJobCommand)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -15350,6 +15722,16 @@ type GlueJobCommandOutputReference interface {
 // The jsii proxy struct for GlueJobCommandOutputReference
 type jsiiProxy_GlueJobCommandOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueJobCommandOutputReference) InternalValue() *GlueJobCommand {
+	var returns *GlueJobCommand
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueJobCommandOutputReference) IsSingleItem() *bool {
@@ -15448,7 +15830,7 @@ func NewGlueJobCommandOutputReference(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_GlueJobCommandOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobCommandOutputReference",
+		"hashicorp_aws.glue.GlueJobCommandOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15460,9 +15842,17 @@ func NewGlueJobCommandOutputReference_Override(g GlueJobCommandOutputReference, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobCommandOutputReference",
+		"hashicorp_aws.glue.GlueJobCommandOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueJobCommandOutputReference) SetInternalValue(val *GlueJobCommand) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15614,6 +16004,7 @@ func (g *jsiiProxy_GlueJobCommandOutputReference) ResetPythonVersion() {
 	)
 }
 
+// AWS Glue.
 type GlueJobConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15674,6 +16065,8 @@ type GlueJobExecutionProperty struct {
 
 type GlueJobExecutionPropertyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueJobExecutionProperty
+	SetInternalValue(val *GlueJobExecutionProperty)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConcurrentRuns() *float64
@@ -15695,6 +16088,16 @@ type GlueJobExecutionPropertyOutputReference interface {
 // The jsii proxy struct for GlueJobExecutionPropertyOutputReference
 type jsiiProxy_GlueJobExecutionPropertyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) InternalValue() *GlueJobExecutionProperty {
+	var returns *GlueJobExecutionProperty
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) IsSingleItem() *bool {
@@ -15753,7 +16156,7 @@ func NewGlueJobExecutionPropertyOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_GlueJobExecutionPropertyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobExecutionPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobExecutionPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15765,9 +16168,17 @@ func NewGlueJobExecutionPropertyOutputReference_Override(g GlueJobExecutionPrope
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobExecutionPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobExecutionPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) SetInternalValue(val *GlueJobExecutionProperty) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15902,6 +16313,8 @@ type GlueJobNotificationProperty struct {
 
 type GlueJobNotificationPropertyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueJobNotificationProperty
+	SetInternalValue(val *GlueJobNotificationProperty)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotifyDelayAfter() *float64
@@ -15923,6 +16336,16 @@ type GlueJobNotificationPropertyOutputReference interface {
 // The jsii proxy struct for GlueJobNotificationPropertyOutputReference
 type jsiiProxy_GlueJobNotificationPropertyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) InternalValue() *GlueJobNotificationProperty {
+	var returns *GlueJobNotificationProperty
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) IsSingleItem() *bool {
@@ -15981,7 +16404,7 @@ func NewGlueJobNotificationPropertyOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_GlueJobNotificationPropertyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobNotificationPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15993,9 +16416,17 @@ func NewGlueJobNotificationPropertyOutputReference_Override(g GlueJobNotificatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueJobNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobNotificationPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) SetInternalValue(val *GlueJobNotificationProperty) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16641,7 +17072,7 @@ func NewGlueMlTransform(scope constructs.Construct, id *string, config *GlueMlTr
 	j := jsiiProxy_GlueMlTransform{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransform",
+		"hashicorp_aws.glue.GlueMlTransform",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16654,7 +17085,7 @@ func NewGlueMlTransform_Override(g GlueMlTransform, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransform",
+		"hashicorp_aws.glue.GlueMlTransform",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -16798,7 +17229,7 @@ func GlueMlTransform_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueMlTransform",
+		"hashicorp_aws.glue.GlueMlTransform",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16811,7 +17242,7 @@ func GlueMlTransform_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueMlTransform",
+		"hashicorp_aws.glue.GlueMlTransform",
 		"tfResourceType",
 		&returns,
 	)
@@ -17066,6 +17497,7 @@ func (g *jsiiProxy_GlueMlTransform) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueMlTransformConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17146,6 +17578,8 @@ type GlueMlTransformParametersFindMatchesParametersOutputReference interface {
 	EnforceProvidedLabels() interface{}
 	SetEnforceProvidedLabels(val interface{})
 	EnforceProvidedLabelsInput() interface{}
+	InternalValue() *GlueMlTransformParametersFindMatchesParameters
+	SetInternalValue(val *GlueMlTransformParametersFindMatchesParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrecisionRecallTradeOff() *float64
@@ -17210,6 +17644,16 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 	_jsii_.Get(
 		j,
 		"enforceProvidedLabelsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) InternalValue() *GlueMlTransformParametersFindMatchesParameters {
+	var returns *GlueMlTransformParametersFindMatchesParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17291,7 +17735,7 @@ func NewGlueMlTransformParametersFindMatchesParametersOutputReference(terraformR
 	j := jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17303,7 +17747,7 @@ func NewGlueMlTransformParametersFindMatchesParametersOutputReference_Override(g
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -17321,6 +17765,14 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 	_jsii_.Set(
 		j,
 		"enforceProvidedLabels",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) SetInternalValue(val *GlueMlTransformParametersFindMatchesParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17485,6 +17937,8 @@ type GlueMlTransformParametersOutputReference interface {
 	cdktf.ComplexObject
 	FindMatchesParameters() GlueMlTransformParametersFindMatchesParametersOutputReference
 	FindMatchesParametersInput() *GlueMlTransformParametersFindMatchesParameters
+	InternalValue() *GlueMlTransformParameters
+	SetInternalValue(val *GlueMlTransformParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -17523,6 +17977,16 @@ func (j *jsiiProxy_GlueMlTransformParametersOutputReference) FindMatchesParamete
 	_jsii_.Get(
 		j,
 		"findMatchesParametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueMlTransformParametersOutputReference) InternalValue() *GlueMlTransformParameters {
+	var returns *GlueMlTransformParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17584,7 +18048,7 @@ func NewGlueMlTransformParametersOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_GlueMlTransformParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17596,9 +18060,17 @@ func NewGlueMlTransformParametersOutputReference_Override(g GlueMlTransformParam
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueMlTransformParametersOutputReference) SetInternalValue(val *GlueMlTransformParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17805,7 +18277,7 @@ func NewGlueMlTransformSchema(terraformResource cdktf.ITerraformResource, terraf
 	j := jsiiProxy_GlueMlTransformSchema{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformSchema",
+		"hashicorp_aws.glue.GlueMlTransformSchema",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -17818,7 +18290,7 @@ func NewGlueMlTransformSchema_Override(g GlueMlTransformSchema, terraformResourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueMlTransformSchema",
+		"hashicorp_aws.glue.GlueMlTransformSchema",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		g,
 	)
@@ -18279,7 +18751,7 @@ func NewGluePartition(scope constructs.Construct, id *string, config *GluePartit
 	j := jsiiProxy_GluePartition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartition",
+		"hashicorp_aws.glue.GluePartition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18292,7 +18764,7 @@ func NewGluePartition_Override(g GluePartition, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartition",
+		"hashicorp_aws.glue.GluePartition",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -18380,7 +18852,7 @@ func GluePartition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GluePartition",
+		"hashicorp_aws.glue.GluePartition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18393,7 +18865,7 @@ func GluePartition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GluePartition",
+		"hashicorp_aws.glue.GluePartition",
 		"tfResourceType",
 		&returns,
 	)
@@ -18587,6 +19059,7 @@ func (g *jsiiProxy_GluePartition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GluePartitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18892,7 +19365,7 @@ func NewGluePartitionIndex(scope constructs.Construct, id *string, config *GlueP
 	j := jsiiProxy_GluePartitionIndex{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndex",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18905,7 +19378,7 @@ func NewGluePartitionIndex_Override(g GluePartitionIndex, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndex",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -18977,7 +19450,7 @@ func GluePartitionIndex_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GluePartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndex",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18990,7 +19463,7 @@ func GluePartitionIndex_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GluePartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndex",
 		"tfResourceType",
 		&returns,
 	)
@@ -19168,6 +19641,7 @@ func (g *jsiiProxy_GluePartitionIndex) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GluePartitionIndexConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19201,6 +19675,8 @@ type GluePartitionIndexPartitionIndexOutputReference interface {
 	IndexName() *string
 	SetIndexName(val *string)
 	IndexNameInput() *string
+	InternalValue() *GluePartitionIndexPartitionIndex
+	SetInternalValue(val *GluePartitionIndexPartitionIndex)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Keys() *[]*string
@@ -19240,6 +19716,16 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) IndexNameInp
 	_jsii_.Get(
 		j,
 		"indexNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) InternalValue() *GluePartitionIndexPartitionIndex {
+	var returns *GluePartitionIndexPartitionIndex
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19301,7 +19787,7 @@ func NewGluePartitionIndexPartitionIndexOutputReference(terraformResource cdktf.
 	j := jsiiProxy_GluePartitionIndexPartitionIndexOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionIndexPartitionIndexOutputReference",
+		"hashicorp_aws.glue.GluePartitionIndexPartitionIndexOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19313,7 +19799,7 @@ func NewGluePartitionIndexPartitionIndexOutputReference_Override(g GluePartition
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionIndexPartitionIndexOutputReference",
+		"hashicorp_aws.glue.GluePartitionIndexPartitionIndexOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -19323,6 +19809,14 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetIndexName
 	_jsii_.Set(
 		j,
 		"indexName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetInternalValue(val *GluePartitionIndexPartitionIndex) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19517,6 +20011,8 @@ type GluePartitionStorageDescriptorOutputReference interface {
 	InputFormat() *string
 	SetInputFormat(val *string)
 	InputFormatInput() *string
+	InternalValue() *GluePartitionStorageDescriptor
+	SetInternalValue(val *GluePartitionStorageDescriptor)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -19647,6 +20143,16 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) InputFormatInp
 	_jsii_.Get(
 		j,
 		"inputFormatInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) InternalValue() *GluePartitionStorageDescriptor {
+	var returns *GluePartitionStorageDescriptor
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19848,7 +20354,7 @@ func NewGluePartitionStorageDescriptorOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_GluePartitionStorageDescriptorOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19860,7 +20366,7 @@ func NewGluePartitionStorageDescriptorOutputReference_Override(g GluePartitionSt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -19894,6 +20400,14 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetInputFormat
 	_jsii_.Set(
 		j,
 		"inputFormat",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetInternalValue(val *GluePartitionStorageDescriptor) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20177,6 +20691,8 @@ type GluePartitionStorageDescriptorSerDeInfo struct {
 
 type GluePartitionStorageDescriptorSerDeInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GluePartitionStorageDescriptorSerDeInfo
+	SetInternalValue(val *GluePartitionStorageDescriptorSerDeInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -20206,6 +20722,16 @@ type GluePartitionStorageDescriptorSerDeInfoOutputReference interface {
 // The jsii proxy struct for GluePartitionStorageDescriptorSerDeInfoOutputReference
 type jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) InternalValue() *GluePartitionStorageDescriptorSerDeInfo {
+	var returns *GluePartitionStorageDescriptorSerDeInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) IsSingleItem() *bool {
@@ -20304,7 +20830,7 @@ func NewGluePartitionStorageDescriptorSerDeInfoOutputReference(terraformResource
 	j := jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20316,9 +20842,17 @@ func NewGluePartitionStorageDescriptorSerDeInfoOutputReference_Override(g GluePa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetInternalValue(val *GluePartitionStorageDescriptorSerDeInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20489,6 +21023,8 @@ type GluePartitionStorageDescriptorSkewedInfo struct {
 
 type GluePartitionStorageDescriptorSkewedInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GluePartitionStorageDescriptorSkewedInfo
+	SetInternalValue(val *GluePartitionStorageDescriptorSkewedInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SkewedColumnNames() *[]*string
@@ -20518,6 +21054,16 @@ type GluePartitionStorageDescriptorSkewedInfoOutputReference interface {
 // The jsii proxy struct for GluePartitionStorageDescriptorSkewedInfoOutputReference
 type jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) InternalValue() *GluePartitionStorageDescriptorSkewedInfo {
+	var returns *GluePartitionStorageDescriptorSkewedInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) IsSingleItem() *bool {
@@ -20616,7 +21162,7 @@ func NewGluePartitionStorageDescriptorSkewedInfoOutputReference(terraformResourc
 	j := jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20628,9 +21174,17 @@ func NewGluePartitionStorageDescriptorSkewedInfoOutputReference_Override(g GlueP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetInternalValue(val *GluePartitionStorageDescriptorSkewedInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21090,7 +21644,7 @@ func NewGlueRegistry(scope constructs.Construct, id *string, config *GlueRegistr
 	j := jsiiProxy_GlueRegistry{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueRegistry",
+		"hashicorp_aws.glue.GlueRegistry",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21103,7 +21657,7 @@ func NewGlueRegistry_Override(g GlueRegistry, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueRegistry",
+		"hashicorp_aws.glue.GlueRegistry",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -21183,7 +21737,7 @@ func GlueRegistry_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueRegistry",
+		"hashicorp_aws.glue.GlueRegistry",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21196,7 +21750,7 @@ func GlueRegistry_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueRegistry",
+		"hashicorp_aws.glue.GlueRegistry",
 		"tfResourceType",
 		&returns,
 	)
@@ -21382,6 +21936,7 @@ func (g *jsiiProxy_GlueRegistry) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueRegistryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21635,7 +22190,7 @@ func NewGlueResourcePolicy(scope constructs.Construct, id *string, config *GlueR
 	j := jsiiProxy_GlueResourcePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueResourcePolicy",
+		"hashicorp_aws.glue.GlueResourcePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21648,7 +22203,7 @@ func NewGlueResourcePolicy_Override(g GlueResourcePolicy, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueResourcePolicy",
+		"hashicorp_aws.glue.GlueResourcePolicy",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -21712,7 +22267,7 @@ func GlueResourcePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueResourcePolicy",
+		"hashicorp_aws.glue.GlueResourcePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21725,7 +22280,7 @@ func GlueResourcePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueResourcePolicy",
+		"hashicorp_aws.glue.GlueResourcePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -21895,6 +22450,7 @@ func (g *jsiiProxy_GlueResourcePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueResourcePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22340,7 +22896,7 @@ func NewGlueSchema(scope constructs.Construct, id *string, config *GlueSchemaCon
 	j := jsiiProxy_GlueSchema{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSchema",
+		"hashicorp_aws.glue.GlueSchema",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22353,7 +22909,7 @@ func NewGlueSchema_Override(g GlueSchema, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSchema",
+		"hashicorp_aws.glue.GlueSchema",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -22465,7 +23021,7 @@ func GlueSchema_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueSchema",
+		"hashicorp_aws.glue.GlueSchema",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22478,7 +23034,7 @@ func GlueSchema_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueSchema",
+		"hashicorp_aws.glue.GlueSchema",
 		"tfResourceType",
 		&returns,
 	)
@@ -22672,6 +23228,7 @@ func (g *jsiiProxy_GlueSchema) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueSchemaConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22932,7 +23489,7 @@ func NewGlueSecurityConfiguration(scope constructs.Construct, id *string, config
 	j := jsiiProxy_GlueSecurityConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22945,7 +23502,7 @@ func NewGlueSecurityConfiguration_Override(g GlueSecurityConfiguration, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfiguration",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -23001,7 +23558,7 @@ func GlueSecurityConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueSecurityConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23014,7 +23571,7 @@ func GlueSecurityConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueSecurityConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -23184,6 +23741,7 @@ func (g *jsiiProxy_GlueSecurityConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueSecurityConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23228,6 +23786,8 @@ type GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputR
 	CloudwatchEncryptionMode() *string
 	SetCloudwatchEncryptionMode(val *string)
 	CloudwatchEncryptionModeInput() *string
+	InternalValue() *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption
+	SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -23267,6 +23827,16 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 	_jsii_.Get(
 		j,
 		"cloudwatchEncryptionModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) InternalValue() *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption {
+	var returns *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -23328,7 +23898,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutp
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23340,7 +23910,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -23350,6 +23920,14 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 	_jsii_.Set(
 		j,
 		"cloudwatchEncryptionMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -23495,6 +24073,8 @@ type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption stru
 
 type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption
+	SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JobBookmarksEncryptionMode() *string
@@ -23520,6 +24100,16 @@ type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutpu
 // The jsii proxy struct for GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference
 type jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) InternalValue() *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption {
+	var returns *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) IsSingleItem() *bool {
@@ -23598,7 +24188,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOu
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23610,9 +24200,17 @@ func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -23760,6 +24358,8 @@ type GlueSecurityConfigurationEncryptionConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	CloudwatchEncryption() GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference
 	CloudwatchEncryptionInput() *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption
+	InternalValue() *GlueSecurityConfigurationEncryptionConfiguration
+	SetInternalValue(val *GlueSecurityConfigurationEncryptionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JobBookmarksEncryption() GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference
@@ -23801,6 +24401,16 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 	_jsii_.Get(
 		j,
 		"cloudwatchEncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) InternalValue() *GlueSecurityConfigurationEncryptionConfiguration {
+	var returns *GlueSecurityConfigurationEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -23882,7 +24492,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference(terrafor
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23894,9 +24504,17 @@ func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) SetInternalValue(val *GlueSecurityConfigurationEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -24041,6 +24659,8 @@ type GlueSecurityConfigurationEncryptionConfigurationS3Encryption struct {
 
 type GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueSecurityConfigurationEncryptionConfigurationS3Encryption
+	SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationS3Encryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -24066,6 +24686,16 @@ type GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference
 // The jsii proxy struct for GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference
 type jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) InternalValue() *GlueSecurityConfigurationEncryptionConfigurationS3Encryption {
+	var returns *GlueSecurityConfigurationEncryptionConfigurationS3Encryption
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) IsSingleItem() *bool {
@@ -24144,7 +24774,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputRefere
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24156,9 +24786,17 @@ func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputRefere
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) SetInternalValue(val *GlueSecurityConfigurationEncryptionConfigurationS3Encryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -24772,7 +25410,7 @@ func NewGlueTrigger(scope constructs.Construct, id *string, config *GlueTriggerC
 	j := jsiiProxy_GlueTrigger{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTrigger",
+		"hashicorp_aws.glue.GlueTrigger",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24785,7 +25423,7 @@ func NewGlueTrigger_Override(g GlueTrigger, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTrigger",
+		"hashicorp_aws.glue.GlueTrigger",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -24905,7 +25543,7 @@ func GlueTrigger_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueTrigger",
+		"hashicorp_aws.glue.GlueTrigger",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24918,7 +25556,7 @@ func GlueTrigger_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueTrigger",
+		"hashicorp_aws.glue.GlueTrigger",
 		"tfResourceType",
 		&returns,
 	)
@@ -25184,6 +25822,8 @@ type GlueTriggerActionsNotificationProperty struct {
 
 type GlueTriggerActionsNotificationPropertyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GlueTriggerActionsNotificationProperty
+	SetInternalValue(val *GlueTriggerActionsNotificationProperty)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotifyDelayAfter() *float64
@@ -25205,6 +25845,16 @@ type GlueTriggerActionsNotificationPropertyOutputReference interface {
 // The jsii proxy struct for GlueTriggerActionsNotificationPropertyOutputReference
 type jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) InternalValue() *GlueTriggerActionsNotificationProperty {
+	var returns *GlueTriggerActionsNotificationProperty
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) IsSingleItem() *bool {
@@ -25263,7 +25913,7 @@ func NewGlueTriggerActionsNotificationPropertyOutputReference(terraformResource 
 	j := jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerActionsNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueTriggerActionsNotificationPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25275,9 +25925,17 @@ func NewGlueTriggerActionsNotificationPropertyOutputReference_Override(g GlueTri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerActionsNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueTriggerActionsNotificationPropertyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) SetInternalValue(val *GlueTriggerActionsNotificationProperty) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25405,6 +26063,7 @@ func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) ResetN
 	)
 }
 
+// AWS Glue.
 type GlueTriggerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25471,6 +26130,8 @@ type GlueTriggerPredicateOutputReference interface {
 	Conditions() *[]*GlueTriggerPredicateConditions
 	SetConditions(val *[]*GlueTriggerPredicateConditions)
 	ConditionsInput() *[]*GlueTriggerPredicateConditions
+	InternalValue() *GlueTriggerPredicate
+	SetInternalValue(val *GlueTriggerPredicate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Logical() *string
@@ -25509,6 +26170,16 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) ConditionsInput() *[]*Gl
 	_jsii_.Get(
 		j,
 		"conditionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) InternalValue() *GlueTriggerPredicate {
+	var returns *GlueTriggerPredicate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -25570,7 +26241,7 @@ func NewGlueTriggerPredicateOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_GlueTriggerPredicateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerPredicateOutputReference",
+		"hashicorp_aws.glue.GlueTriggerPredicateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25582,7 +26253,7 @@ func NewGlueTriggerPredicateOutputReference_Override(g GlueTriggerPredicateOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerPredicateOutputReference",
+		"hashicorp_aws.glue.GlueTriggerPredicateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -25592,6 +26263,14 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetConditions(val *[]*Gl
 	_jsii_.Set(
 		j,
 		"conditions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetInternalValue(val *GlueTriggerPredicate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -25735,6 +26414,8 @@ type GlueTriggerTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *GlueTriggerTimeouts
+	SetInternalValue(val *GlueTriggerTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -25796,6 +26477,16 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) InternalValue() *GlueTriggerTimeouts {
+	var returns *GlueTriggerTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -25832,7 +26523,7 @@ func NewGlueTriggerTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_GlueTriggerTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerTimeoutsOutputReference",
+		"hashicorp_aws.glue.GlueTriggerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25844,7 +26535,7 @@ func NewGlueTriggerTimeoutsOutputReference_Override(g GlueTriggerTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueTriggerTimeoutsOutputReference",
+		"hashicorp_aws.glue.GlueTriggerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -25862,6 +26553,14 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetInternalValue(val *GlueTriggerTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -26362,7 +27061,7 @@ func NewGlueUserDefinedFunction(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_GlueUserDefinedFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueUserDefinedFunction",
+		"hashicorp_aws.glue.GlueUserDefinedFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26375,7 +27074,7 @@ func NewGlueUserDefinedFunction_Override(g GlueUserDefinedFunction, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueUserDefinedFunction",
+		"hashicorp_aws.glue.GlueUserDefinedFunction",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -26479,7 +27178,7 @@ func GlueUserDefinedFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueUserDefinedFunction",
+		"hashicorp_aws.glue.GlueUserDefinedFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26492,7 +27191,7 @@ func GlueUserDefinedFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueUserDefinedFunction",
+		"hashicorp_aws.glue.GlueUserDefinedFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -26670,6 +27369,7 @@ func (g *jsiiProxy_GlueUserDefinedFunction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueUserDefinedFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -27046,7 +27746,7 @@ func NewGlueWorkflow(scope constructs.Construct, id *string, config *GlueWorkflo
 	j := jsiiProxy_GlueWorkflow{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueWorkflow",
+		"hashicorp_aws.glue.GlueWorkflow",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -27059,7 +27759,7 @@ func NewGlueWorkflow_Override(g GlueWorkflow, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glue.GlueWorkflow",
+		"hashicorp_aws.glue.GlueWorkflow",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -27155,7 +27855,7 @@ func GlueWorkflow_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glue.GlueWorkflow",
+		"hashicorp_aws.glue.GlueWorkflow",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -27168,7 +27868,7 @@ func GlueWorkflow_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glue.GlueWorkflow",
+		"hashicorp_aws.glue.GlueWorkflow",
 		"tfResourceType",
 		&returns,
 	)
@@ -27378,6 +28078,7 @@ func (g *jsiiProxy_GlueWorkflow) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glue.
 type GlueWorkflowConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDisk",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDisk",
 		reflect.TypeOf((*DataAwsStoragegatewayLocalDisk)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDiskConfig",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDiskConfig",
 		reflect.TypeOf((*DataAwsStoragegatewayLocalDiskConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayCache",
+		"hashicorp_aws.storagegateway.StoragegatewayCache",
 		reflect.TypeOf((*StoragegatewayCache)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -99,11 +99,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayCacheConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayCacheConfig",
 		reflect.TypeOf((*StoragegatewayCacheConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolume",
 		reflect.TypeOf((*StoragegatewayCachedIscsiVolume)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -173,11 +173,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolumeConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolumeConfig",
 		reflect.TypeOf((*StoragegatewayCachedIscsiVolumeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociation",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociation",
 		reflect.TypeOf((*StoragegatewayFileSystemAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -236,11 +236,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociationCacheAttributes",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociationCacheAttributes",
 		reflect.TypeOf((*StoragegatewayFileSystemAssociationCacheAttributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
 		reflect.TypeOf((*StoragegatewayFileSystemAssociationCacheAttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cacheStaleTimeoutInSeconds", GoGetter: "CacheStaleTimeoutInSeconds"},
@@ -249,6 +249,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -263,11 +264,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociationConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociationConfig",
 		reflect.TypeOf((*StoragegatewayFileSystemAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayGateway",
+		"hashicorp_aws.storagegateway.StoragegatewayGateway",
 		reflect.TypeOf((*StoragegatewayGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activationKey", GoGetter: "ActivationKey"},
@@ -364,11 +365,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayConfig",
 		reflect.TypeOf((*StoragegatewayGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayGatewayNetworkInterface",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayGatewayNetworkInterface",
 		reflect.TypeOf((*StoragegatewayGatewayGatewayNetworkInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -388,11 +389,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewaySmbActiveDirectorySettings",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewaySmbActiveDirectorySettings",
 		reflect.TypeOf((*StoragegatewayGatewaySmbActiveDirectorySettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
 		reflect.TypeOf((*StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "domainControllers", GoGetter: "DomainControllers"},
@@ -403,6 +404,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -427,11 +429,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayTimeouts",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayTimeouts",
 		reflect.TypeOf((*StoragegatewayGatewayTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayTimeoutsOutputReference",
 		reflect.TypeOf((*StoragegatewayGatewayTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -440,6 +442,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -454,7 +457,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShare",
 		reflect.TypeOf((*StoragegatewayNfsFileShare)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -553,11 +556,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareCacheAttributes",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareCacheAttributes",
 		reflect.TypeOf((*StoragegatewayNfsFileShareCacheAttributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
 		reflect.TypeOf((*StoragegatewayNfsFileShareCacheAttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cacheStaleTimeoutInSeconds", GoGetter: "CacheStaleTimeoutInSeconds"},
@@ -566,6 +569,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -580,15 +584,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareConfig",
 		reflect.TypeOf((*StoragegatewayNfsFileShareConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareNfsFileShareDefaults",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareNfsFileShareDefaults",
 		reflect.TypeOf((*StoragegatewayNfsFileShareNfsFileShareDefaults)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
 		reflect.TypeOf((*StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "directoryMode", GoGetter: "DirectoryMode"},
@@ -601,6 +605,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "groupId", GoGetter: "GroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "groupIdInput", GoGetter: "GroupIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -620,11 +625,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareTimeouts",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareTimeouts",
 		reflect.TypeOf((*StoragegatewayNfsFileShareTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
 		reflect.TypeOf((*StoragegatewayNfsFileShareTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -635,6 +640,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -653,7 +659,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShare",
 		reflect.TypeOf((*StoragegatewaySmbFileShare)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessBasedEnumeration", GoGetter: "AccessBasedEnumeration"},
@@ -773,11 +779,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareCacheAttributes",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareCacheAttributes",
 		reflect.TypeOf((*StoragegatewaySmbFileShareCacheAttributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
 		reflect.TypeOf((*StoragegatewaySmbFileShareCacheAttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cacheStaleTimeoutInSeconds", GoGetter: "CacheStaleTimeoutInSeconds"},
@@ -786,6 +792,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -800,15 +807,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareConfig",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareConfig",
 		reflect.TypeOf((*StoragegatewaySmbFileShareConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareTimeouts",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareTimeouts",
 		reflect.TypeOf((*StoragegatewaySmbFileShareTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
 		reflect.TypeOf((*StoragegatewaySmbFileShareTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -819,6 +826,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -837,7 +845,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolume",
 		reflect.TypeOf((*StoragegatewayStoredIscsiVolume)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -909,11 +917,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolumeConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolumeConfig",
 		reflect.TypeOf((*StoragegatewayStoredIscsiVolumeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePool",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePool",
 		reflect.TypeOf((*StoragegatewayTapePool)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -967,11 +975,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePoolConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePoolConfig",
 		reflect.TypeOf((*StoragegatewayTapePoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBuffer",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBuffer",
 		reflect.TypeOf((*StoragegatewayUploadBuffer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1016,11 +1024,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBufferConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBufferConfig",
 		reflect.TypeOf((*StoragegatewayUploadBufferConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorage",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorage",
 		reflect.TypeOf((*StoragegatewayWorkingStorage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1061,7 +1069,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorageConfig",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorageConfig",
 		reflect.TypeOf((*StoragegatewayWorkingStorageConfig)(nil)).Elem(),
 	)
 }

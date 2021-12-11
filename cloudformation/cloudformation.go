@@ -556,7 +556,7 @@ func NewCloudformationStack(scope constructs.Construct, id *string, config *Clou
 	j := jsiiProxy_CloudformationStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStack",
+		"hashicorp_aws.cloudformation.CloudformationStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -569,7 +569,7 @@ func NewCloudformationStack_Override(c CloudformationStack, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStack",
+		"hashicorp_aws.cloudformation.CloudformationStack",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -729,7 +729,7 @@ func CloudformationStack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.CloudformationStack",
+		"hashicorp_aws.cloudformation.CloudformationStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -742,7 +742,7 @@ func CloudformationStack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.CloudformationStack",
+		"hashicorp_aws.cloudformation.CloudformationStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -1037,6 +1037,7 @@ func (c *jsiiProxy_CloudformationStack) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type CloudformationStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1600,7 +1601,7 @@ func NewCloudformationStackSet(scope constructs.Construct, id *string, config *C
 	j := jsiiProxy_CloudformationStackSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSet",
+		"hashicorp_aws.cloudformation.CloudformationStackSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1613,7 +1614,7 @@ func NewCloudformationStackSet_Override(c CloudformationStackSet, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSet",
+		"hashicorp_aws.cloudformation.CloudformationStackSet",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1749,7 +1750,7 @@ func CloudformationStackSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.CloudformationStackSet",
+		"hashicorp_aws.cloudformation.CloudformationStackSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1762,7 +1763,7 @@ func CloudformationStackSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.CloudformationStackSet",
+		"hashicorp_aws.cloudformation.CloudformationStackSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -2048,6 +2049,8 @@ type CloudformationStackSetAutoDeploymentOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *CloudformationStackSetAutoDeployment
+	SetInternalValue(val *CloudformationStackSetAutoDeployment)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RetainStacksOnAccountRemoval() interface{}
@@ -2087,6 +2090,16 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) EnabledI
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) InternalValue() *CloudformationStackSetAutoDeployment {
+	var returns *CloudformationStackSetAutoDeployment
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2148,7 +2161,7 @@ func NewCloudformationStackSetAutoDeploymentOutputReference(terraformResource cd
 	j := jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetAutoDeploymentOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetAutoDeploymentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2160,7 +2173,7 @@ func NewCloudformationStackSetAutoDeploymentOutputReference_Override(c Cloudform
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetAutoDeploymentOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetAutoDeploymentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2170,6 +2183,14 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetEnabl
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetInternalValue(val *CloudformationStackSetAutoDeployment) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2306,6 +2327,7 @@ func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) ResetRet
 	)
 }
 
+// AWS CloudFormation.
 type CloudformationStackSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2723,7 +2745,7 @@ func NewCloudformationStackSetInstance(scope constructs.Construct, id *string, c
 	j := jsiiProxy_CloudformationStackSetInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstance",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2736,7 +2758,7 @@ func NewCloudformationStackSetInstance_Override(c CloudformationStackSetInstance
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstance",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstance",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2824,7 +2846,7 @@ func CloudformationStackSetInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstance",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2837,7 +2859,7 @@ func CloudformationStackSetInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstance",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -3063,6 +3085,7 @@ func (c *jsiiProxy_CloudformationStackSetInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type CloudformationStackSetInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3099,6 +3122,8 @@ type CloudformationStackSetInstanceDeploymentTargets struct {
 
 type CloudformationStackSetInstanceDeploymentTargetsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudformationStackSetInstanceDeploymentTargets
+	SetInternalValue(val *CloudformationStackSetInstanceDeploymentTargets)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrganizationalUnitIds() *[]*string
@@ -3120,6 +3145,16 @@ type CloudformationStackSetInstanceDeploymentTargetsOutputReference interface {
 // The jsii proxy struct for CloudformationStackSetInstanceDeploymentTargetsOutputReference
 type jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) InternalValue() *CloudformationStackSetInstanceDeploymentTargets {
+	var returns *CloudformationStackSetInstanceDeploymentTargets
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) IsSingleItem() *bool {
@@ -3178,7 +3213,7 @@ func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference(terraform
 	j := jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3190,9 +3225,17 @@ func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) SetInternalValue(val *CloudformationStackSetInstanceDeploymentTargets) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3337,6 +3380,8 @@ type CloudformationStackSetInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudformationStackSetInstanceTimeouts
+	SetInternalValue(val *CloudformationStackSetInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3402,6 +3447,16 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) Delete
 	return returns
 }
 
+func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) InternalValue() *CloudformationStackSetInstanceTimeouts {
+	var returns *CloudformationStackSetInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3458,7 +3513,7 @@ func NewCloudformationStackSetInstanceTimeoutsOutputReference(terraformResource 
 	j := jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3470,7 +3525,7 @@ func NewCloudformationStackSetInstanceTimeoutsOutputReference_Override(c Cloudfo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3488,6 +3543,14 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetDel
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetInternalValue(val *CloudformationStackSetInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3639,6 +3702,8 @@ type CloudformationStackSetTimeouts struct {
 
 type CloudformationStackSetTimeoutsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudformationStackSetTimeouts
+	SetInternalValue(val *CloudformationStackSetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3660,6 +3725,16 @@ type CloudformationStackSetTimeoutsOutputReference interface {
 // The jsii proxy struct for CloudformationStackSetTimeoutsOutputReference
 type jsiiProxy_CloudformationStackSetTimeoutsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) InternalValue() *CloudformationStackSetTimeouts {
+	var returns *CloudformationStackSetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) IsSingleItem() *bool {
@@ -3718,7 +3793,7 @@ func NewCloudformationStackSetTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_CloudformationStackSetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3730,9 +3805,17 @@ func NewCloudformationStackSetTimeoutsOutputReference_Override(c CloudformationS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) SetInternalValue(val *CloudformationStackSetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3877,6 +3960,8 @@ type CloudformationStackTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudformationStackTimeouts
+	SetInternalValue(val *CloudformationStackTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3942,6 +4027,16 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) InternalValue() *CloudformationStackTimeouts {
+	var returns *CloudformationStackTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3998,7 +4093,7 @@ func NewCloudformationStackTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_CloudformationStackTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4010,7 +4105,7 @@ func NewCloudformationStackTimeoutsOutputReference_Override(c CloudformationStac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4028,6 +4123,14 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetInternalValue(val *CloudformationStackTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4609,7 +4712,7 @@ func NewCloudformationType(scope constructs.Construct, id *string, config *Cloud
 	j := jsiiProxy_CloudformationType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationType",
+		"hashicorp_aws.cloudformation.CloudformationType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4622,7 +4725,7 @@ func NewCloudformationType_Override(c CloudformationType, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationType",
+		"hashicorp_aws.cloudformation.CloudformationType",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -4702,7 +4805,7 @@ func CloudformationType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.CloudformationType",
+		"hashicorp_aws.cloudformation.CloudformationType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4715,7 +4818,7 @@ func CloudformationType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.CloudformationType",
+		"hashicorp_aws.cloudformation.CloudformationType",
 		"tfResourceType",
 		&returns,
 	)
@@ -4909,6 +5012,7 @@ func (c *jsiiProxy_CloudformationType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type CloudformationTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4941,6 +5045,8 @@ type CloudformationTypeLoggingConfig struct {
 
 type CloudformationTypeLoggingConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudformationTypeLoggingConfig
+	SetInternalValue(val *CloudformationTypeLoggingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -4964,6 +5070,16 @@ type CloudformationTypeLoggingConfigOutputReference interface {
 // The jsii proxy struct for CloudformationTypeLoggingConfigOutputReference
 type jsiiProxy_CloudformationTypeLoggingConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) InternalValue() *CloudformationTypeLoggingConfig {
+	var returns *CloudformationTypeLoggingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) IsSingleItem() *bool {
@@ -5042,7 +5158,7 @@ func NewCloudformationTypeLoggingConfigOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_CloudformationTypeLoggingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationTypeLoggingConfigOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationTypeLoggingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5054,9 +5170,17 @@ func NewCloudformationTypeLoggingConfigOutputReference_Override(c Cloudformation
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.CloudformationTypeLoggingConfigOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationTypeLoggingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) SetInternalValue(val *CloudformationTypeLoggingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5416,7 +5540,7 @@ func NewDataAwsCloudformationExport(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsCloudformationExport{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExport",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExport",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5429,7 +5553,7 @@ func NewDataAwsCloudformationExport_Override(d DataAwsCloudformationExport, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExport",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExport",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5485,7 +5609,7 @@ func DataAwsCloudformationExport_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExport",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExport",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5498,7 +5622,7 @@ func DataAwsCloudformationExport_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExport",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExport",
 		"tfResourceType",
 		&returns,
 	)
@@ -5660,6 +5784,7 @@ func (d *jsiiProxy_DataAwsCloudformationExport) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type DataAwsCloudformationExportConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5986,7 +6111,7 @@ func NewDataAwsCloudformationStack(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsCloudformationStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStack",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5999,7 +6124,7 @@ func NewDataAwsCloudformationStack_Override(d DataAwsCloudformationStack, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStack",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStack",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6063,7 +6188,7 @@ func DataAwsCloudformationStack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStack",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6076,7 +6201,7 @@ func DataAwsCloudformationStack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStack",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -6272,6 +6397,7 @@ func (d *jsiiProxy_DataAwsCloudformationStack) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type DataAwsCloudformationStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6679,7 +6805,7 @@ func NewDataAwsCloudformationType(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsCloudformationType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationType",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6692,7 +6818,7 @@ func NewDataAwsCloudformationType_Override(d DataAwsCloudformationType, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationType",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationType",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6764,7 +6890,7 @@ func DataAwsCloudformationType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationType",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6777,7 +6903,7 @@ func DataAwsCloudformationType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationType",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationType",
 		"tfResourceType",
 		&returns,
 	)
@@ -6976,6 +7102,7 @@ func (d *jsiiProxy_DataAwsCloudformationType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFormation.
 type DataAwsCloudformationTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7072,7 +7199,7 @@ func NewDataAwsCloudformationTypeLoggingConfig(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsCloudformationTypeLoggingConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationTypeLoggingConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeLoggingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7085,7 +7212,7 @@ func NewDataAwsCloudformationTypeLoggingConfig_Override(d DataAwsCloudformationT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationTypeLoggingConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeLoggingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)

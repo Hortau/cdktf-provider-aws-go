@@ -230,7 +230,7 @@ func NewDataAwsKinesisFirehoseDeliveryStream(scope constructs.Construct, id *str
 	j := jsiiProxy_DataAwsKinesisFirehoseDeliveryStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisFirehoseDeliveryStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -243,7 +243,7 @@ func NewDataAwsKinesisFirehoseDeliveryStream_Override(d DataAwsKinesisFirehoseDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisFirehoseDeliveryStream",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -299,7 +299,7 @@ func DataAwsKinesisFirehoseDeliveryStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.DataAwsKinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisFirehoseDeliveryStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -312,7 +312,7 @@ func DataAwsKinesisFirehoseDeliveryStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.DataAwsKinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisFirehoseDeliveryStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -474,6 +474,7 @@ func (d *jsiiProxy_DataAwsKinesisFirehoseDeliveryStream) ToTerraform() interface
 	return returns
 }
 
+// AWS Kinesis.
 type DataAwsKinesisFirehoseDeliveryStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -530,6 +531,7 @@ type DataAwsKinesisStream interface {
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
 	ResetTags()
+	StreamModeDetails(index *string) DataAwsKinesisStreamStreamModeDetails
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -798,7 +800,7 @@ func NewDataAwsKinesisStream(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsKinesisStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -811,7 +813,7 @@ func NewDataAwsKinesisStream_Override(d DataAwsKinesisStream, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisStream",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -875,7 +877,7 @@ func DataAwsKinesisStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -888,7 +890,7 @@ func DataAwsKinesisStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStream",
+		"hashicorp_aws.kinesis.DataAwsKinesisStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -1002,6 +1004,19 @@ func (d *jsiiProxy_DataAwsKinesisStream) ResetTags() {
 	)
 }
 
+func (d *jsiiProxy_DataAwsKinesisStream) StreamModeDetails(index *string) DataAwsKinesisStreamStreamModeDetails {
+	var returns DataAwsKinesisStreamStreamModeDetails
+
+	_jsii_.Invoke(
+		d,
+		"streamModeDetails",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
 func (d *jsiiProxy_DataAwsKinesisStream) SynthesizeAttributes() *map[string]interface{} {
 	var returns *map[string]interface{}
 
@@ -1058,6 +1073,7 @@ func (d *jsiiProxy_DataAwsKinesisStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type DataAwsKinesisStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1340,7 +1356,7 @@ func NewDataAwsKinesisStreamConsumer(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsKinesisStreamConsumer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStreamConsumer",
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamConsumer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1353,7 +1369,7 @@ func NewDataAwsKinesisStreamConsumer_Override(d DataAwsKinesisStreamConsumer, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStreamConsumer",
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamConsumer",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1417,7 +1433,7 @@ func DataAwsKinesisStreamConsumer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStreamConsumer",
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamConsumer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1430,7 +1446,7 @@ func DataAwsKinesisStreamConsumer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.DataAwsKinesisStreamConsumer",
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamConsumer",
 		"tfResourceType",
 		&returns,
 	)
@@ -1600,6 +1616,7 @@ func (d *jsiiProxy_DataAwsKinesisStreamConsumer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type DataAwsKinesisStreamConsumerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1613,6 +1630,187 @@ type DataAwsKinesisStreamConsumerConfig struct {
 	StreamArn *string `json:"streamArn"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kinesis_stream_consumer.html#name DataAwsKinesisStreamConsumer#name}.
 	Name *string `json:"name"`
+}
+
+type DataAwsKinesisStreamStreamModeDetails interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	StreamMode() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsKinesisStreamStreamModeDetails
+type jsiiProxy_DataAwsKinesisStreamStreamModeDetails struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) StreamMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"streamMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsKinesisStreamStreamModeDetails(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsKinesisStreamStreamModeDetails {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsKinesisStreamStreamModeDetails{}
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamStreamModeDetails",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsKinesisStreamStreamModeDetails_Override(d DataAwsKinesisStreamStreamModeDetails, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.DataAwsKinesisStreamStreamModeDetails",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKinesisStreamStreamModeDetails) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/kinesis_analytics_application.html aws_kinesis_analytics_application}.
@@ -2096,7 +2294,7 @@ func NewKinesisAnalyticsApplication(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_KinesisAnalyticsApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplication",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2109,7 +2307,7 @@ func NewKinesisAnalyticsApplication_Override(k KinesisAnalyticsApplication, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplication",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplication",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -2213,7 +2411,7 @@ func KinesisAnalyticsApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplication",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2226,7 +2424,7 @@ func KinesisAnalyticsApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplication",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -2493,6 +2691,8 @@ type KinesisAnalyticsApplicationCloudwatchLoggingOptions struct {
 
 type KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisAnalyticsApplicationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogStreamArn() *string
@@ -2516,6 +2716,16 @@ type KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference interfac
 // The jsii proxy struct for KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisAnalyticsApplicationCloudwatchLoggingOptions {
+	var returns *KinesisAnalyticsApplicationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference) IsSingleItem() *bool {
@@ -2594,7 +2804,7 @@ func NewKinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference(terra
 	j := jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2606,9 +2816,17 @@ func NewKinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2736,6 +2954,7 @@ func (k *jsiiProxy_KinesisAnalyticsApplicationCloudwatchLoggingOptionsOutputRefe
 	return returns
 }
 
+// AWS Kinesis.
 type KinesisAnalyticsApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2813,6 +3032,8 @@ type KinesisAnalyticsApplicationInputsKinesisFirehose struct {
 
 type KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsKinesisFirehose
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsKinesisFirehose)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -2836,6 +3057,16 @@ type KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsKinesisFirehose {
+	var returns *KinesisAnalyticsApplicationInputsKinesisFirehose
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference) IsSingleItem() *bool {
@@ -2914,7 +3145,7 @@ func NewKinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference(terrafor
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2926,9 +3157,17 @@ func NewKinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsKinesisFirehose) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3065,6 +3304,8 @@ type KinesisAnalyticsApplicationInputsKinesisStream struct {
 
 type KinesisAnalyticsApplicationInputsKinesisStreamOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsKinesisStream
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsKinesisStream)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -3088,6 +3329,16 @@ type KinesisAnalyticsApplicationInputsKinesisStreamOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsKinesisStreamOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsKinesisStream {
+	var returns *KinesisAnalyticsApplicationInputsKinesisStream
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference) IsSingleItem() *bool {
@@ -3166,7 +3417,7 @@ func NewKinesisAnalyticsApplicationInputsKinesisStreamOutputReference(terraformR
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsKinesisStreamOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsKinesisStreamOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3178,9 +3429,17 @@ func NewKinesisAnalyticsApplicationInputsKinesisStreamOutputReference_Override(k
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsKinesisStreamOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsKinesisStreamOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsKinesisStream) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3310,6 +3569,8 @@ func (k *jsiiProxy_KinesisAnalyticsApplicationInputsKinesisStreamOutputReference
 
 type KinesisAnalyticsApplicationInputsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputs
+	SetInternalValue(val *KinesisAnalyticsApplicationInputs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KinesisFirehose() KinesisAnalyticsApplicationInputsKinesisFirehoseOutputReference
@@ -3353,6 +3614,16 @@ type KinesisAnalyticsApplicationInputsOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsOutputReference) InternalValue() *KinesisAnalyticsApplicationInputs {
+	var returns *KinesisAnalyticsApplicationInputs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsOutputReference) IsSingleItem() *bool {
@@ -3531,7 +3802,7 @@ func NewKinesisAnalyticsApplicationInputsOutputReference(terraformResource cdktf
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3543,9 +3814,17 @@ func NewKinesisAnalyticsApplicationInputsOutputReference_Override(k KinesisAnaly
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3763,6 +4042,8 @@ type KinesisAnalyticsApplicationInputsParallelismOutputReference interface {
 	Count() *float64
 	SetCount(val *float64)
 	CountInput() *float64
+	InternalValue() *KinesisAnalyticsApplicationInputsParallelism
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsParallelism)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3798,6 +4079,16 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationInputsParallelismOutputReference) 
 	_jsii_.Get(
 		j,
 		"countInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsParallelismOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsParallelism {
+	var returns *KinesisAnalyticsApplicationInputsParallelism
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3839,7 +4130,7 @@ func NewKinesisAnalyticsApplicationInputsParallelismOutputReference(terraformRes
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsParallelismOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsParallelismOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsParallelismOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3851,7 +4142,7 @@ func NewKinesisAnalyticsApplicationInputsParallelismOutputReference_Override(k K
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsParallelismOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsParallelismOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -3861,6 +4152,14 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationInputsParallelismOutputReference) 
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsParallelismOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsParallelism) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3997,6 +4296,8 @@ type KinesisAnalyticsApplicationInputsProcessingConfigurationLambda struct {
 
 type KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsProcessingConfigurationLambda
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsProcessingConfigurationLambda)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -4020,6 +4321,16 @@ type KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReferen
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsProcessingConfigurationLambda {
+	var returns *KinesisAnalyticsApplicationInputsProcessingConfigurationLambda
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference) IsSingleItem() *bool {
@@ -4098,7 +4409,7 @@ func NewKinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputRefe
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4110,9 +4421,17 @@ func NewKinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsProcessingConfigurationLambda) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4242,6 +4561,8 @@ func (k *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationLambd
 
 type KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsProcessingConfiguration
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Lambda() KinesisAnalyticsApplicationInputsProcessingConfigurationLambdaOutputReference
@@ -4262,6 +4583,16 @@ type KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference int
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsProcessingConfiguration {
+	var returns *KinesisAnalyticsApplicationInputsProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference) IsSingleItem() *bool {
@@ -4320,7 +4651,7 @@ func NewKinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference(
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4332,9 +4663,17 @@ func NewKinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsProcessingConfigurationOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4469,6 +4808,8 @@ type KinesisAnalyticsApplicationInputsSchema struct {
 
 type KinesisAnalyticsApplicationInputsSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsSchema
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumns() *[]*KinesisAnalyticsApplicationInputsSchemaRecordColumns
@@ -4496,6 +4837,16 @@ type KinesisAnalyticsApplicationInputsSchemaOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsSchemaOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsSchema {
+	var returns *KinesisAnalyticsApplicationInputsSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaOutputReference) IsSingleItem() *bool {
@@ -4594,7 +4945,7 @@ func NewKinesisAnalyticsApplicationInputsSchemaOutputReference(terraformResource
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4606,9 +4957,17 @@ func NewKinesisAnalyticsApplicationInputsSchemaOutputReference_Override(k Kinesi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4788,6 +5147,8 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv str
 
 type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumnDelimiter() *string
@@ -4811,6 +5172,16 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutp
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv {
+	var returns *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference) IsSingleItem() *bool {
@@ -4889,7 +5260,7 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvO
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4901,9 +5272,17 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5038,6 +5417,8 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson st
 
 type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordRowPath() *string
@@ -5058,6 +5439,16 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOut
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson {
+	var returns *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference) IsSingleItem() *bool {
@@ -5116,7 +5507,7 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5128,9 +5519,17 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5254,6 +5653,8 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputR
 	cdktf.ComplexObject
 	Csv() KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsvOutputReference
 	CsvInput() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv
+	InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParameters
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Json() KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersJsonOutputReference
@@ -5294,6 +5695,16 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingPar
 	_jsii_.Get(
 		j,
 		"csvInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParameters {
+	var returns *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5355,7 +5766,7 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutp
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5367,9 +5778,17 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5515,6 +5934,8 @@ func (k *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingPar
 
 type KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormat
+	SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormat)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MappingParameters() KinesisAnalyticsApplicationInputsSchemaRecordFormatMappingParametersOutputReference
@@ -5536,6 +5957,16 @@ type KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference interfac
 // The jsii proxy struct for KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference) InternalValue() *KinesisAnalyticsApplicationInputsSchemaRecordFormat {
+	var returns *KinesisAnalyticsApplicationInputsSchemaRecordFormat
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference) IsSingleItem() *bool {
@@ -5594,7 +6025,7 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference(terra
 	j := jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5606,9 +6037,17 @@ func NewKinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationInputsSchemaRecordFormatOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationInputsSchemaRecordFormat) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5771,6 +6210,8 @@ type KinesisAnalyticsApplicationOutputsKinesisFirehose struct {
 
 type KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationOutputsKinesisFirehose
+	SetInternalValue(val *KinesisAnalyticsApplicationOutputsKinesisFirehose)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -5794,6 +6235,16 @@ type KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference interface 
 // The jsii proxy struct for KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference) InternalValue() *KinesisAnalyticsApplicationOutputsKinesisFirehose {
+	var returns *KinesisAnalyticsApplicationOutputsKinesisFirehose
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference) IsSingleItem() *bool {
@@ -5872,7 +6323,7 @@ func NewKinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference(terrafo
 	j := jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5884,9 +6335,17 @@ func NewKinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisFirehoseOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationOutputsKinesisFirehose) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6023,6 +6482,8 @@ type KinesisAnalyticsApplicationOutputsKinesisStream struct {
 
 type KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationOutputsKinesisStream
+	SetInternalValue(val *KinesisAnalyticsApplicationOutputsKinesisStream)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -6046,6 +6507,16 @@ type KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference) InternalValue() *KinesisAnalyticsApplicationOutputsKinesisStream {
+	var returns *KinesisAnalyticsApplicationOutputsKinesisStream
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference) IsSingleItem() *bool {
@@ -6124,7 +6595,7 @@ func NewKinesisAnalyticsApplicationOutputsKinesisStreamOutputReference(terraform
 	j := jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6136,9 +6607,17 @@ func NewKinesisAnalyticsApplicationOutputsKinesisStreamOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsKinesisStreamOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationOutputsKinesisStream) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6275,6 +6754,8 @@ type KinesisAnalyticsApplicationOutputsLambda struct {
 
 type KinesisAnalyticsApplicationOutputsLambdaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationOutputsLambda
+	SetInternalValue(val *KinesisAnalyticsApplicationOutputsLambda)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -6298,6 +6779,16 @@ type KinesisAnalyticsApplicationOutputsLambdaOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationOutputsLambdaOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationOutputsLambdaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsLambdaOutputReference) InternalValue() *KinesisAnalyticsApplicationOutputsLambda {
+	var returns *KinesisAnalyticsApplicationOutputsLambda
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsLambdaOutputReference) IsSingleItem() *bool {
@@ -6376,7 +6867,7 @@ func NewKinesisAnalyticsApplicationOutputsLambdaOutputReference(terraformResourc
 	j := jsiiProxy_KinesisAnalyticsApplicationOutputsLambdaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsLambdaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6388,9 +6879,17 @@ func NewKinesisAnalyticsApplicationOutputsLambdaOutputReference_Override(k Kines
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsLambdaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsLambdaOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationOutputsLambda) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6525,6 +7024,8 @@ type KinesisAnalyticsApplicationOutputsSchema struct {
 
 type KinesisAnalyticsApplicationOutputsSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationOutputsSchema
+	SetInternalValue(val *KinesisAnalyticsApplicationOutputsSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordFormatType() *string
@@ -6545,6 +7046,16 @@ type KinesisAnalyticsApplicationOutputsSchemaOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationOutputsSchemaOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationOutputsSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsSchemaOutputReference) InternalValue() *KinesisAnalyticsApplicationOutputsSchema {
+	var returns *KinesisAnalyticsApplicationOutputsSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsSchemaOutputReference) IsSingleItem() *bool {
@@ -6603,7 +7114,7 @@ func NewKinesisAnalyticsApplicationOutputsSchemaOutputReference(terraformResourc
 	j := jsiiProxy_KinesisAnalyticsApplicationOutputsSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6615,9 +7126,17 @@ func NewKinesisAnalyticsApplicationOutputsSchemaOutputReference_Override(k Kines
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationOutputsSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationOutputsSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationOutputsSchemaOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationOutputsSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6752,6 +7271,8 @@ type KinesisAnalyticsApplicationReferenceDataSources struct {
 
 type KinesisAnalyticsApplicationReferenceDataSourcesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSources
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSources)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3() KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference
@@ -6778,6 +7299,16 @@ type KinesisAnalyticsApplicationReferenceDataSourcesOutputReference interface {
 // The jsii proxy struct for KinesisAnalyticsApplicationReferenceDataSourcesOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSources {
+	var returns *KinesisAnalyticsApplicationReferenceDataSources
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesOutputReference) IsSingleItem() *bool {
@@ -6876,7 +7407,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesOutputReference(terraform
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6888,9 +7419,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSources) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7043,6 +7582,8 @@ type KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference interface 
 	FileKey() *string
 	SetFileKey(val *string)
 	FileKeyInput() *string
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesS3
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -7105,6 +7646,16 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputRefere
 	return returns
 }
 
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesS3 {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesS3
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7161,7 +7712,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference(terrafo
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7173,7 +7724,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -7191,6 +7742,14 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputRefere
 	_jsii_.Set(
 		j,
 		"fileKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesS3OutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7326,6 +7885,8 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchema struct {
 
 type KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchema
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumns() *[]*KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordColumns
@@ -7353,6 +7914,16 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference interf
 // The jsii proxy struct for KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchema {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference) IsSingleItem() *bool {
@@ -7451,7 +8022,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference(ter
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7463,9 +8034,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7645,6 +8224,8 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingPar
 
 type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumnDelimiter() *string
@@ -7668,6 +8249,16 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingPar
 // The jsii proxy struct for KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference) IsSingleItem() *bool {
@@ -7746,7 +8337,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7758,9 +8349,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7895,6 +8494,8 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingPar
 
 type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordRowPath() *string
@@ -7915,6 +8516,16 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingPar
 // The jsii proxy struct for KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference) IsSingleItem() *bool {
@@ -7973,7 +8584,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7985,9 +8596,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8111,6 +8730,8 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingPar
 	cdktf.ComplexObject
 	Csv() KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsvOutputReference
 	CsvInput() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Json() KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJsonOutputReference
@@ -8151,6 +8772,16 @@ func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFo
 	_jsii_.Get(
 		j,
 		"csvInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8212,7 +8843,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8224,9 +8855,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMapping
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8372,6 +9011,8 @@ func (k *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFo
 
 type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormat
+	SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormat)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MappingParameters() KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersOutputReference
@@ -8393,6 +9034,16 @@ type KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputRefe
 // The jsii proxy struct for KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference
 type jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference) InternalValue() *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormat {
+	var returns *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormat
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference) IsSingleItem() *bool {
@@ -8451,7 +9102,7 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputR
 	j := jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8463,9 +9114,17 @@ func NewKinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormatOutputReference) SetInternalValue(val *KinesisAnalyticsApplicationReferenceDataSourcesSchemaRecordFormat) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9125,7 +9784,7 @@ func NewKinesisFirehoseDeliveryStream(scope constructs.Construct, id *string, co
 	j := jsiiProxy_KinesisFirehoseDeliveryStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9138,7 +9797,7 @@ func NewKinesisFirehoseDeliveryStream_Override(k KinesisFirehoseDeliveryStream, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStream",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -9234,7 +9893,7 @@ func KinesisFirehoseDeliveryStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9247,7 +9906,7 @@ func KinesisFirehoseDeliveryStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStream",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -9569,6 +10228,7 @@ func (k *jsiiProxy_KinesisFirehoseDeliveryStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type KinesisFirehoseDeliveryStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9673,6 +10333,8 @@ type KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOpt
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -9716,6 +10378,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudw
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9797,7 +10469,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLogging
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9809,7 +10481,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLogging
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -9819,6 +10491,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudw
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9993,6 +10673,8 @@ type KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference inte
 	IndexRotationPeriod() *string
 	SetIndexRotationPeriod(val *string)
 	IndexRotationPeriodInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ProcessingConfiguration() KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference
@@ -10182,6 +10864,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutput
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamElasticsearchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10338,7 +11030,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference(t
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10350,7 +11042,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -10400,6 +11092,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutput
 	_jsii_.Set(
 		j,
 		"indexRotationPeriod",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10670,6 +11370,8 @@ type KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurat
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Processors() *[]*KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessors
@@ -10709,6 +11411,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationProces
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10770,7 +11482,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigu
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10782,7 +11494,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -10792,6 +11504,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationProces
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10955,6 +11675,8 @@ type KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig struct {
 
 type KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -10981,6 +11703,16 @@ type KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputRefer
 // The jsii proxy struct for KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference
 type jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig {
+	var returns *KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference) IsSingleItem() *bool {
@@ -11079,7 +11811,7 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputRe
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11091,9 +11823,17 @@ func NewKinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfigOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamElasticsearchConfigurationVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11248,6 +11988,10 @@ type KinesisFirehoseDeliveryStreamExtendedS3Configuration struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#data_format_conversion_configuration KinesisFirehoseDeliveryStream#data_format_conversion_configuration}
 	DataFormatConversionConfiguration *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration `json:"dataFormatConversionConfiguration"`
+	// dynamic_partitioning_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#dynamic_partitioning_configuration KinesisFirehoseDeliveryStream#dynamic_partitioning_configuration}
+	DynamicPartitioningConfiguration *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration `json:"dynamicPartitioningConfiguration"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#error_output_prefix KinesisFirehoseDeliveryStream#error_output_prefix}.
 	ErrorOutputPrefix *string `json:"errorOutputPrefix"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#kms_key_arn KinesisFirehoseDeliveryStream#kms_key_arn}.
@@ -11280,6 +12024,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOption
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -11323,6 +12069,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatc
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11404,7 +12160,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOpt
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11416,7 +12172,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOpt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -11426,6 +12182,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatc
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11620,6 +12384,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 
 type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11641,6 +12407,16 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 // The jsii proxy struct for KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference
 type jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference) IsSingleItem() *bool {
@@ -11699,7 +12475,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11711,9 +12487,17 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11861,6 +12645,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	ConvertDotsInJsonKeysToUnderscores() interface{}
 	SetConvertDotsInJsonKeysToUnderscores(val interface{})
 	ConvertDotsInJsonKeysToUnderscoresInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11943,6 +12729,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -11979,7 +12775,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11991,7 +12787,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -12017,6 +12813,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Set(
 		j,
 		"convertDotsInJsonKeysToUnderscores",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12157,6 +12961,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	cdktf.ComplexObject
 	HiveJsonSerDe() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDeOutputReference
 	HiveJsonSerDeInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OpenXJsonSerDe() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDeOutputReference
@@ -12197,6 +13003,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Get(
 		j,
 		"hiveJsonSerDeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12258,7 +13074,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12270,9 +13086,17 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12420,6 +13244,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	cdktf.ComplexObject
 	Deserializer() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOutputReference
 	DeserializerInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12455,6 +13281,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Get(
 		j,
 		"deserializerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12496,7 +13332,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12508,9 +13344,17 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12639,6 +13483,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 
 type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Serializer() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference
@@ -12659,6 +13505,16 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 // The jsii proxy struct for KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference
 type jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference) IsSingleItem() *bool {
@@ -12717,7 +13573,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12729,9 +13585,17 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12908,6 +13772,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	FormatVersion() *string
 	SetFormatVersion(val *string)
 	FormatVersionInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PaddingTolerance() *float64
@@ -13086,6 +13952,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13182,7 +14058,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13194,7 +14070,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -13252,6 +14128,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Set(
 		j,
 		"formatVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13470,6 +14354,8 @@ func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 
 type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializer
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrcSerDe() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDeOutputReference
@@ -13495,6 +14381,16 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 // The jsii proxy struct for KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference
 type jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializer {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializer
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference) IsSingleItem() *bool {
@@ -13573,7 +14469,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13585,9 +14481,17 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13757,6 +14661,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	EnableDictionaryCompression() interface{}
 	SetEnableDictionaryCompression(val interface{})
 	EnableDictionaryCompressionInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxPaddingBytes() *float64
@@ -13846,6 +14752,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Get(
 		j,
 		"enableDictionaryCompressionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13947,7 +14863,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13959,7 +14875,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -13985,6 +14901,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Set(
 		j,
 		"enableDictionaryCompression",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDeOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14176,6 +15100,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	EnabledInput() interface{}
 	InputFormatConfiguration() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationOutputReference
 	InputFormatConfigurationInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfiguration
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OutputFormatConfiguration() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationOutputReference
@@ -14238,6 +15164,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Get(
 		j,
 		"inputFormatConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14319,7 +15255,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14331,7 +15267,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -14341,6 +15277,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14508,6 +15452,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionCon
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Region() *string
@@ -14577,6 +15523,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14698,7 +15654,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14710,7 +15666,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -14728,6 +15684,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationSchemaConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14896,6 +15860,296 @@ func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataForma
 	)
 }
 
+type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#enabled KinesisFirehoseDeliveryStream#enabled}.
+	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_firehose_delivery_stream.html#retry_duration KinesisFirehoseDeliveryStream#retry_duration}.
+	RetryDuration *float64 `json:"retryDuration"`
+}
+
+type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	RetryDuration() *float64
+	SetRetryDuration(val *float64)
+	RetryDurationInput() *float64
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetRetryDuration()
+}
+
+// The jsii proxy struct for KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference
+type jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) RetryDuration() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"retryDuration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) RetryDurationInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"retryDurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference_Override(k KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetRetryDuration(val *float64) {
+	_jsii_.Set(
+		j,
+		"retryDuration",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		k,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		k,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference) ResetRetryDuration() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetRetryDuration",
+		nil, // no parameters
+	)
+}
+
 type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	BucketArn() *string
@@ -14914,9 +16168,13 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference interfa
 	CompressionFormatInput() *string
 	DataFormatConversionConfiguration() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputReference
 	DataFormatConversionConfigurationInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration
+	DynamicPartitioningConfiguration() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference
+	DynamicPartitioningConfigurationInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration
 	ErrorOutputPrefix() *string
 	SetErrorOutputPrefix(val *string)
 	ErrorOutputPrefixInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3Configuration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3Configuration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -14947,6 +16205,7 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference interfa
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCloudwatchLoggingOptions(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions)
 	PutDataFormatConversionConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration)
+	PutDynamicPartitioningConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration)
 	PutProcessingConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration)
 	PutS3BackupConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration)
 	ResetBufferInterval()
@@ -14954,6 +16213,7 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference interfa
 	ResetCloudwatchLoggingOptions()
 	ResetCompressionFormat()
 	ResetDataFormatConversionConfiguration()
+	ResetDynamicPartitioningConfiguration()
 	ResetErrorOutputPrefix()
 	ResetKmsKeyArn()
 	ResetPrefix()
@@ -15087,6 +16347,26 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputRef
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) DynamicPartitioningConfiguration() KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference {
+	var returns KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"dynamicPartitioningConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) DynamicPartitioningConfigurationInput() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration
+	_jsii_.Get(
+		j,
+		"dynamicPartitioningConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) ErrorOutputPrefix() *string {
 	var returns *string
 	_jsii_.Get(
@@ -15102,6 +16382,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputRef
 	_jsii_.Get(
 		j,
 		"errorOutputPrefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3Configuration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3Configuration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15263,7 +16553,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference(terr
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15275,7 +16565,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -15317,6 +16607,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputRef
 	_jsii_.Set(
 		j,
 		"errorOutputPrefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3Configuration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15477,6 +16775,14 @@ func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputRef
 	)
 }
 
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) PutDynamicPartitioningConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration) {
+	_jsii_.InvokeVoid(
+		k,
+		"putDynamicPartitioningConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) PutProcessingConfiguration(value *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration) {
 	_jsii_.InvokeVoid(
 		k,
@@ -15529,6 +16835,14 @@ func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputRef
 	_jsii_.InvokeVoid(
 		k,
 		"resetDataFormatConversionConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationOutputReference) ResetDynamicPartitioningConfiguration() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetDynamicPartitioningConfiguration",
 		nil, // no parameters
 	)
 }
@@ -15595,6 +16909,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Processors() *[]*KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationProcessors
@@ -15634,6 +16950,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessin
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15695,7 +17021,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurat
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15707,7 +17033,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -15717,6 +17043,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessin
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15904,6 +17238,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCl
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -15947,6 +17283,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupC
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -16028,7 +17374,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguratio
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16040,7 +17386,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguratio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -16050,6 +17396,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupC
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -16218,6 +17572,8 @@ type KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOu
 	CompressionFormat() *string
 	SetCompressionFormat(val *string)
 	CompressionFormatInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -16353,6 +17709,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupC
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -16449,7 +17815,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguratio
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16461,7 +17827,7 @@ func NewKinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguratio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -16495,6 +17861,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupC
 	_jsii_.Set(
 		j,
 		"compressionFormat",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -16732,6 +18106,8 @@ type KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOpti
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -16775,6 +18151,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwa
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -16856,7 +18242,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingO
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16868,7 +18254,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -16878,6 +18264,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwa
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17043,6 +18437,8 @@ type KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference inter
 	BufferingSizeInput() *float64
 	CloudwatchLoggingOptions() KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptionsOutputReference
 	CloudwatchLoggingOptionsInput() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions
+	InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -17169,6 +18565,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputR
 	_jsii_.Get(
 		j,
 		"cloudwatchLoggingOptionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamHttpEndpointConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17350,7 +18756,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference(te
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17362,7 +18768,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -17388,6 +18794,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputR
 	_jsii_.Set(
 		j,
 		"bufferingSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17658,6 +19072,8 @@ type KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurati
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Processors() *[]*KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationProcessors
@@ -17697,6 +19113,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcess
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17758,7 +19184,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigur
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17770,7 +19196,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -17780,6 +19206,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcess
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17956,6 +19390,8 @@ type KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationO
 	ContentEncoding() *string
 	SetContentEncoding(val *string)
 	ContentEncodingInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18017,6 +19453,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequest
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -18053,7 +19499,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurati
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18065,7 +19511,7 @@ func NewKinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -18083,6 +19529,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequest
 	_jsii_.Set(
 		j,
 		"contentEncoding",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18220,6 +19674,8 @@ type KinesisFirehoseDeliveryStreamKinesisSourceConfiguration struct {
 
 type KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *KinesisFirehoseDeliveryStreamKinesisSourceConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamKinesisSourceConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KinesisStreamArn() *string
@@ -18243,6 +19699,16 @@ type KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference inte
 // The jsii proxy struct for KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference
 type jsiiProxy_KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamKinesisSourceConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamKinesisSourceConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference) IsSingleItem() *bool {
@@ -18321,7 +19787,7 @@ func NewKinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference(t
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18333,9 +19799,17 @@ func NewKinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamKinesisSourceConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamKinesisSourceConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18510,6 +19984,8 @@ type KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsO
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -18553,6 +20029,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchL
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18634,7 +20120,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptio
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18646,7 +20132,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -18656,6 +20142,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchL
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18824,6 +20318,8 @@ type KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference interface
 	DataTableName() *string
 	SetDataTableName(val *string)
 	DataTableNameInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Password() *string
@@ -18967,6 +20463,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputRefer
 	_jsii_.Get(
 		j,
 		"dataTableNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamRedshiftConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19148,7 +20654,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference(terraf
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19160,7 +20666,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -19194,6 +20700,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputRefer
 	_jsii_.Set(
 		j,
 		"dataTableName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19440,6 +20954,8 @@ type KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOu
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Processors() *[]*KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationProcessors
@@ -19479,6 +20995,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingC
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19540,7 +21066,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguratio
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19552,7 +21078,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguratio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -19562,6 +21088,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingC
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19749,6 +21283,8 @@ type KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationClou
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -19792,6 +21328,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupCon
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19873,7 +21419,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationC
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19885,7 +21431,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -19895,6 +21441,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupCon
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20063,6 +21617,8 @@ type KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutp
 	CompressionFormat() *string
 	SetCompressionFormat(val *string)
 	CompressionFormatInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -20198,6 +21754,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupCon
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -20294,7 +21860,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationO
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20306,7 +21872,7 @@ func NewKinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -20340,6 +21906,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupCon
 	_jsii_.Set(
 		j,
 		"compressionFormat",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20567,6 +22141,8 @@ type KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputR
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -20610,6 +22186,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLogging
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -20691,7 +22277,7 @@ func NewKinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutp
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20703,7 +22289,7 @@ func NewKinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -20713,6 +22299,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLogging
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamS3ConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20881,6 +22475,8 @@ type KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference interface {
 	CompressionFormat() *string
 	SetCompressionFormat(val *string)
 	CompressionFormatInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamS3Configuration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamS3Configuration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -21016,6 +22612,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference) 
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamS3Configuration {
+	var returns *KinesisFirehoseDeliveryStreamS3Configuration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -21112,7 +22718,7 @@ func NewKinesisFirehoseDeliveryStreamS3ConfigurationOutputReference(terraformRes
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21124,7 +22730,7 @@ func NewKinesisFirehoseDeliveryStreamS3ConfigurationOutputReference_Override(k K
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -21158,6 +22764,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference) 
 	_jsii_.Set(
 		j,
 		"compressionFormat",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamS3ConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamS3Configuration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -21364,6 +22978,8 @@ type KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference interface 
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamServerSideEncryption
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamServerSideEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyArn() *string
@@ -21407,6 +23023,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamServerSideEncryptionOutputRefere
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamServerSideEncryption {
+	var returns *KinesisFirehoseDeliveryStreamServerSideEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -21488,7 +23114,7 @@ func NewKinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference(terrafo
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21500,7 +23126,7 @@ func NewKinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -21510,6 +23136,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamServerSideEncryptionOutputRefere
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamServerSideEncryptionOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamServerSideEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -21699,6 +23333,8 @@ type KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOut
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroupName() *string
@@ -21742,6 +23378,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLog
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions {
+	var returns *KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -21823,7 +23469,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21835,7 +23481,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -21845,6 +23491,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLog
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22013,6 +23667,8 @@ type KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference interface {
 	HecToken() *string
 	SetHecToken(val *string)
 	HecTokenInput() *string
+	InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ProcessingConfiguration() KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference
@@ -22148,6 +23804,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReferen
 	return returns
 }
 
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamSplunkConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -22244,7 +23910,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference(terrafor
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22256,7 +23922,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -22290,6 +23956,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReferen
 	_jsii_.Set(
 		j,
 		"hecToken",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22496,6 +24170,8 @@ type KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutp
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration
+	SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Processors() *[]*KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationProcessors
@@ -22535,6 +24211,16 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingCon
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference) InternalValue() *KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration {
+	var returns *KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -22596,7 +24282,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationO
 	j := jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22608,7 +24294,7 @@ func NewKinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -22618,6 +24304,14 @@ func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingCon
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfigurationOutputReference) SetInternalValue(val *KinesisFirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22810,6 +24504,8 @@ type KinesisStream interface {
 	ShardLevelMetrics() *[]*string
 	SetShardLevelMetrics(val *[]*string)
 	ShardLevelMetricsInput() *[]*string
+	StreamModeDetails() KinesisStreamStreamModeDetailsOutputReference
+	StreamModeDetailsInput() *KinesisStreamStreamModeDetails
 	Tags() interface{}
 	SetTags(val interface{})
 	TagsAll() interface{}
@@ -22828,13 +24524,16 @@ type KinesisStream interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutStreamModeDetails(value *KinesisStreamStreamModeDetails)
 	PutTimeouts(value *KinesisStreamTimeouts)
 	ResetEncryptionType()
 	ResetEnforceConsumerDeletion()
 	ResetKmsKeyId()
 	ResetOverrideLogicalId()
 	ResetRetentionPeriod()
+	ResetShardCount()
 	ResetShardLevelMetrics()
+	ResetStreamModeDetails()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
@@ -23109,6 +24808,26 @@ func (j *jsiiProxy_KinesisStream) ShardLevelMetricsInput() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_KinesisStream) StreamModeDetails() KinesisStreamStreamModeDetailsOutputReference {
+	var returns KinesisStreamStreamModeDetailsOutputReference
+	_jsii_.Get(
+		j,
+		"streamModeDetails",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStream) StreamModeDetailsInput() *KinesisStreamStreamModeDetails {
+	var returns *KinesisStreamStreamModeDetails
+	_jsii_.Get(
+		j,
+		"streamModeDetailsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisStream) Tags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -23206,7 +24925,7 @@ func NewKinesisStream(scope constructs.Construct, id *string, config *KinesisStr
 	j := jsiiProxy_KinesisStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStream",
+		"hashicorp_aws.kinesis.KinesisStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23219,7 +24938,7 @@ func NewKinesisStream_Override(k KinesisStream, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStream",
+		"hashicorp_aws.kinesis.KinesisStream",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -23339,7 +25058,7 @@ func KinesisStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.KinesisStream",
+		"hashicorp_aws.kinesis.KinesisStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23352,7 +25071,7 @@ func KinesisStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.KinesisStream",
+		"hashicorp_aws.kinesis.KinesisStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -23448,6 +25167,14 @@ func (k *jsiiProxy_KinesisStream) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (k *jsiiProxy_KinesisStream) PutStreamModeDetails(value *KinesisStreamStreamModeDetails) {
+	_jsii_.InvokeVoid(
+		k,
+		"putStreamModeDetails",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KinesisStream) PutTimeouts(value *KinesisStreamTimeouts) {
 	_jsii_.InvokeVoid(
 		k,
@@ -23498,10 +25225,26 @@ func (k *jsiiProxy_KinesisStream) ResetRetentionPeriod() {
 	)
 }
 
+func (k *jsiiProxy_KinesisStream) ResetShardCount() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetShardCount",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KinesisStream) ResetShardLevelMetrics() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetShardLevelMetrics",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KinesisStream) ResetStreamModeDetails() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetStreamModeDetails",
 		nil, // no parameters
 	)
 }
@@ -23586,6 +25329,7 @@ func (k *jsiiProxy_KinesisStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type KinesisStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23597,8 +25341,6 @@ type KinesisStreamConfig struct {
 	Provider cdktf.TerraformProvider `json:"provider"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#name KinesisStream#name}.
 	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#shard_count KinesisStream#shard_count}.
-	ShardCount *float64 `json:"shardCount"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#encryption_type KinesisStream#encryption_type}.
 	EncryptionType *string `json:"encryptionType"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#enforce_consumer_deletion KinesisStream#enforce_consumer_deletion}.
@@ -23607,8 +25349,14 @@ type KinesisStreamConfig struct {
 	KmsKeyId *string `json:"kmsKeyId"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#retention_period KinesisStream#retention_period}.
 	RetentionPeriod *float64 `json:"retentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#shard_count KinesisStream#shard_count}.
+	ShardCount *float64 `json:"shardCount"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#shard_level_metrics KinesisStream#shard_level_metrics}.
 	ShardLevelMetrics *[]*string `json:"shardLevelMetrics"`
+	// stream_mode_details block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#stream_mode_details KinesisStream#stream_mode_details}
+	StreamModeDetails *KinesisStreamStreamModeDetails `json:"streamModeDetails"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#tags KinesisStream#tags}.
 	Tags interface{} `json:"tags"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#tags_all KinesisStream#tags_all}.
@@ -23874,7 +25622,7 @@ func NewKinesisStreamConsumer(scope constructs.Construct, id *string, config *Ki
 	j := jsiiProxy_KinesisStreamConsumer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStreamConsumer",
+		"hashicorp_aws.kinesis.KinesisStreamConsumer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23887,7 +25635,7 @@ func NewKinesisStreamConsumer_Override(k KinesisStreamConsumer, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStreamConsumer",
+		"hashicorp_aws.kinesis.KinesisStreamConsumer",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -23951,7 +25699,7 @@ func KinesisStreamConsumer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.KinesisStreamConsumer",
+		"hashicorp_aws.kinesis.KinesisStreamConsumer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23964,7 +25712,7 @@ func KinesisStreamConsumer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.KinesisStreamConsumer",
+		"hashicorp_aws.kinesis.KinesisStreamConsumer",
 		"tfResourceType",
 		&returns,
 	)
@@ -24126,6 +25874,7 @@ func (k *jsiiProxy_KinesisStreamConsumer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type KinesisStreamConsumerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24139,6 +25888,245 @@ type KinesisStreamConsumerConfig struct {
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream_consumer.html#stream_arn KinesisStreamConsumer#stream_arn}.
 	StreamArn *string `json:"streamArn"`
+}
+
+type KinesisStreamStreamModeDetails struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kinesis_stream.html#stream_mode KinesisStream#stream_mode}.
+	StreamMode *string `json:"streamMode"`
+}
+
+type KinesisStreamStreamModeDetailsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *KinesisStreamStreamModeDetails
+	SetInternalValue(val *KinesisStreamStreamModeDetails)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	StreamMode() *string
+	SetStreamMode(val *string)
+	StreamModeInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for KinesisStreamStreamModeDetailsOutputReference
+type jsiiProxy_KinesisStreamStreamModeDetailsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) InternalValue() *KinesisStreamStreamModeDetails {
+	var returns *KinesisStreamStreamModeDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) StreamMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"streamMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) StreamModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"streamModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewKinesisStreamStreamModeDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) KinesisStreamStreamModeDetailsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_KinesisStreamStreamModeDetailsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.KinesisStreamStreamModeDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewKinesisStreamStreamModeDetailsOutputReference_Override(k KinesisStreamStreamModeDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.kinesis.KinesisStreamStreamModeDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		k,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) SetInternalValue(val *KinesisStreamStreamModeDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) SetStreamMode(val *string) {
+	_jsii_.Set(
+		j,
+		"streamMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		k,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KinesisStreamStreamModeDetailsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		k,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
 }
 
 type KinesisStreamTimeouts struct {
@@ -24158,6 +26146,8 @@ type KinesisStreamTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *KinesisStreamTimeouts
+	SetInternalValue(val *KinesisStreamTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -24223,6 +26213,16 @@ func (j *jsiiProxy_KinesisStreamTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KinesisStreamTimeoutsOutputReference) InternalValue() *KinesisStreamTimeouts {
+	var returns *KinesisStreamTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisStreamTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -24279,7 +26279,7 @@ func NewKinesisStreamTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_KinesisStreamTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStreamTimeoutsOutputReference",
+		"hashicorp_aws.kinesis.KinesisStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24291,7 +26291,7 @@ func NewKinesisStreamTimeoutsOutputReference_Override(k KinesisStreamTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisStreamTimeoutsOutputReference",
+		"hashicorp_aws.kinesis.KinesisStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -24309,6 +26309,14 @@ func (j *jsiiProxy_KinesisStreamTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisStreamTimeoutsOutputReference) SetInternalValue(val *KinesisStreamTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -24864,7 +26872,7 @@ func NewKinesisVideoStream(scope constructs.Construct, id *string, config *Kines
 	j := jsiiProxy_KinesisVideoStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisVideoStream",
+		"hashicorp_aws.kinesis.KinesisVideoStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24877,7 +26885,7 @@ func NewKinesisVideoStream_Override(k KinesisVideoStream, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisVideoStream",
+		"hashicorp_aws.kinesis.KinesisVideoStream",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -24981,7 +26989,7 @@ func KinesisVideoStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.KinesisVideoStream",
+		"hashicorp_aws.kinesis.KinesisVideoStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24994,7 +27002,7 @@ func KinesisVideoStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.KinesisVideoStream",
+		"hashicorp_aws.kinesis.KinesisVideoStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -25220,6 +27228,7 @@ func (k *jsiiProxy_KinesisVideoStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Kinesis.
 type KinesisVideoStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25266,6 +27275,8 @@ type KinesisVideoStreamTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *KinesisVideoStreamTimeouts
+	SetInternalValue(val *KinesisVideoStreamTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -25331,6 +27342,16 @@ func (j *jsiiProxy_KinesisVideoStreamTimeoutsOutputReference) DeleteInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_KinesisVideoStreamTimeoutsOutputReference) InternalValue() *KinesisVideoStreamTimeouts {
+	var returns *KinesisVideoStreamTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KinesisVideoStreamTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -25387,7 +27408,7 @@ func NewKinesisVideoStreamTimeoutsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_KinesisVideoStreamTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisVideoStreamTimeoutsOutputReference",
+		"hashicorp_aws.kinesis.KinesisVideoStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25399,7 +27420,7 @@ func NewKinesisVideoStreamTimeoutsOutputReference_Override(k KinesisVideoStreamT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.KinesisVideoStreamTimeoutsOutputReference",
+		"hashicorp_aws.kinesis.KinesisVideoStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -25417,6 +27438,14 @@ func (j *jsiiProxy_KinesisVideoStreamTimeoutsOutputReference) SetDelete(val *str
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KinesisVideoStreamTimeoutsOutputReference) SetInternalValue(val *KinesisVideoStreamTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -26040,7 +28069,7 @@ func NewKinesisanalyticsv2Application(scope constructs.Construct, id *string, co
 	j := jsiiProxy_Kinesisanalyticsv2Application{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2Application",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2Application",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26053,7 +28082,7 @@ func NewKinesisanalyticsv2Application_Override(k Kinesisanalyticsv2Application, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2Application",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2Application",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -26165,7 +28194,7 @@ func Kinesisanalyticsv2Application_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2Application",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2Application",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26178,7 +28207,7 @@ func Kinesisanalyticsv2Application_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2Application",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2Application",
 		"tfResourceType",
 		&returns,
 	)
@@ -26463,6 +28492,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigu
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3ContentLocation() Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference
@@ -26488,6 +28519,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigu
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference) IsSingleItem() *bool {
@@ -26566,7 +28607,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26578,9 +28619,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -26741,6 +28790,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigu
 	FileKey() *string
 	SetFileKey(val *string)
 	FileKeyInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ObjectVersion() *string
@@ -26804,6 +28855,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicat
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -26860,7 +28921,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26872,7 +28933,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -26890,6 +28951,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicat
 	_jsii_.Set(
 		j,
 		"fileKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -27025,6 +29094,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigu
 	CodeContentType() *string
 	SetCodeContentType(val *string)
 	CodeContentTypeInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -27086,6 +29157,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicat
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -27122,7 +29203,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27134,7 +29215,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -27144,6 +29225,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicat
 	_jsii_.Set(
 		j,
 		"codeContentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationCodeConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -27279,6 +29368,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotCon
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SnapshotsEnabled() interface{}
@@ -27299,6 +29390,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotCon
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference) IsSingleItem() *bool {
@@ -27357,7 +29458,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshot
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27369,9 +29470,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshot
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationApplicationSnapshotConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -27500,6 +29609,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties 
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PropertyGroup() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup
@@ -27520,6 +29631,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesO
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference) IsSingleItem() *bool {
@@ -27578,7 +29699,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperti
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27590,9 +29711,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentPropertiesOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -27756,6 +29885,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfig
 	ConfigurationType() *string
 	SetConfigurationType(val *string)
 	ConfigurationTypeInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MinPauseBetweenCheckpoints() *float64
@@ -27841,6 +29972,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -27897,7 +30038,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27909,7 +30050,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -27935,6 +30076,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Set(
 		j,
 		"configurationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28093,6 +30242,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfig
 	ConfigurationType() *string
 	SetConfigurationType(val *string)
 	ConfigurationTypeInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -28135,6 +30286,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Get(
 		j,
 		"configurationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28216,7 +30377,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28228,7 +30389,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -28238,6 +30399,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Set(
 		j,
 		"configurationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28386,6 +30555,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfig
 	cdktf.ComplexObject
 	CheckpointConfiguration() Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfigurationOutputReference
 	CheckpointConfigurationInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MonitoringConfiguration() Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfigurationOutputReference
@@ -28430,6 +30601,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Get(
 		j,
 		"checkpointConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28511,7 +30692,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28523,9 +30704,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -28704,6 +30893,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfig
 	ConfigurationType() *string
 	SetConfigurationType(val *string)
 	ConfigurationTypeInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Parallelism() *float64
@@ -28767,6 +30958,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Get(
 		j,
 		"configurationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28848,7 +31049,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28860,7 +31061,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -28878,6 +31079,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApp
 	_jsii_.Set(
 		j,
 		"configurationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29040,6 +31249,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference interf
 	EnvironmentPropertiesInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationEnvironmentProperties
 	FlinkApplicationConfiguration() Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfigurationOutputReference
 	FlinkApplicationConfigurationInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationFlinkApplicationConfiguration
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RunConfiguration() Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference
@@ -29158,6 +31369,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationOutputRe
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -29254,7 +31475,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationOutputReference(ter
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29266,9 +31487,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -29507,6 +31736,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplic
 	ApplicationRestoreType() *string
 	SetApplicationRestoreType(val *string)
 	ApplicationRestoreTypeInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SnapshotName() *string
@@ -29546,6 +31777,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfi
 	_jsii_.Get(
 		j,
 		"applicationRestoreTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29607,7 +31848,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApp
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29619,7 +31860,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -29629,6 +31870,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfi
 	_jsii_.Set(
 		j,
 		"applicationRestoreType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29775,6 +32024,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkR
 	AllowNonRestoredState() interface{}
 	SetAllowNonRestoredState(val interface{})
 	AllowNonRestoredStateInput() interface{}
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -29810,6 +32061,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfi
 	_jsii_.Get(
 		j,
 		"allowNonRestoredStateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29851,7 +32112,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFli
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29863,7 +32124,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFli
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -29873,6 +32134,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfi
 	_jsii_.Set(
 		j,
 		"allowNonRestoredState",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29999,6 +32268,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutput
 	ApplicationRestoreConfigurationInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationApplicationRestoreConfiguration
 	FlinkRunConfiguration() Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationOutputReference
 	FlinkRunConfigurationInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationFlinkRunConfiguration
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30062,6 +32333,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfi
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -30098,7 +32379,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOut
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30110,9 +32391,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationRunConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30310,6 +32599,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	Count() *float64
 	SetCount(val *float64)
 	CountInput() *float64
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30345,6 +32636,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Get(
 		j,
 		"countInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30386,7 +32687,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30398,7 +32699,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -30408,6 +32709,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelismOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30542,6 +32851,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -30562,6 +32873,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference) IsSingleItem() *bool {
@@ -30620,7 +32941,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30632,9 +32953,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30758,6 +33087,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	cdktf.ComplexObject
 	InputLambdaProcessor() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorOutputReference
 	InputLambdaProcessorInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessor
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30793,6 +33124,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Get(
 		j,
 		"inputLambdaProcessorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30834,7 +33175,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30846,9 +33187,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30983,6 +33332,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumn() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordColumn
@@ -31010,6 +33361,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference) IsSingleItem() *bool {
@@ -31108,7 +33469,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31120,9 +33481,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31304,6 +33673,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumnDelimiter() *string
@@ -31327,6 +33698,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) IsSingleItem() *bool {
@@ -31405,7 +33786,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31417,9 +33798,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31554,6 +33943,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordRowPath() *string
@@ -31574,6 +33965,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) IsSingleItem() *bool {
@@ -31632,7 +34033,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31644,9 +34045,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31770,6 +34179,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	cdktf.ComplexObject
 	CsvMappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference
 	CsvMappingParametersInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JsonMappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference
@@ -31810,6 +34221,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Get(
 		j,
 		"csvMappingParametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -31871,7 +34292,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31883,9 +34304,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32031,6 +34460,8 @@ func (k *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormat
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormat)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersOutputReference
@@ -32054,6 +34485,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormat {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormat
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference) IsSingleItem() *bool {
@@ -32132,7 +34573,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32144,9 +34585,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormat) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32286,6 +34735,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -32306,6 +34757,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference) IsSingleItem() *bool {
@@ -32364,7 +34825,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32376,9 +34837,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32505,6 +34974,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -32525,6 +34996,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference) IsSingleItem() *bool {
@@ -32583,7 +35064,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32595,9 +35076,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32728,6 +35217,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	InputStartingPositionConfiguration() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration
 	SetInputStartingPositionConfiguration(val *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration)
 	InputStartingPositionConfigurationInput() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KinesisFirehoseInput() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInputOutputReference
@@ -32844,6 +35335,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -32940,7 +35441,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32952,7 +35453,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -32962,6 +35463,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Set(
 		j,
 		"inputStartingPositionConfiguration",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -33190,6 +35699,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordFormatType() *string
@@ -33210,6 +35721,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference) IsSingleItem() *bool {
@@ -33268,7 +35789,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33280,9 +35801,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchemaOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33409,6 +35938,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -33429,6 +35960,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference) IsSingleItem() *bool {
@@ -33487,7 +36028,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33499,9 +36040,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33628,6 +36177,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -33648,6 +36199,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference) IsSingleItem() *bool {
@@ -33706,7 +36267,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33718,9 +36279,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33847,6 +36416,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceArn() *string
@@ -33867,6 +36438,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference) IsSingleItem() *bool {
@@ -33925,7 +36506,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33937,9 +36518,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34063,6 +36652,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	cdktf.ComplexObject
 	Input() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInputOutputReference
 	InputInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationInput
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Output() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutput
@@ -34107,6 +36698,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Get(
 		j,
 		"inputInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -34188,7 +36789,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34200,9 +36801,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34377,6 +36986,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReferenceSchema() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference
@@ -34403,6 +37014,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference) IsSingleItem() *bool {
@@ -34501,7 +37122,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34513,9 +37134,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34666,6 +37295,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchema
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchema)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumn() *[]*Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordColumn
@@ -34693,6 +37324,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchema {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchema
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference) IsSingleItem() *bool {
@@ -34791,7 +37432,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34803,9 +37444,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchema) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34987,6 +37636,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordColumnDelimiter() *string
@@ -35010,6 +37661,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) IsSingleItem() *bool {
@@ -35088,7 +37749,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35100,9 +37761,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35237,6 +37906,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordRowPath() *string
@@ -35257,6 +37928,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) IsSingleItem() *bool {
@@ -35315,7 +37996,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35327,9 +38008,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35453,6 +38142,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	cdktf.ComplexObject
 	CsvMappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParametersOutputReference
 	CsvMappingParametersInput() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersCsvMappingParameters
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParameters
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JsonMappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersOutputReference
@@ -35493,6 +38184,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Get(
 		j,
 		"csvMappingParametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParameters {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35554,7 +38255,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35566,9 +38267,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35714,6 +38423,8 @@ func (k *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormat
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormat)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MappingParameters() Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersOutputReference
@@ -35737,6 +38448,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormat {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormat
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference) IsSingleItem() *bool {
@@ -35815,7 +38536,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35827,9 +38548,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormat) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35972,6 +38701,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigur
 	FileKey() *string
 	SetFileKey(val *string)
 	FileKeyInput() *string
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36031,6 +38762,16 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	return returns
 }
 
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36067,7 +38808,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36079,7 +38820,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
 	)
@@ -36097,6 +38838,14 @@ func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlAppli
 	_jsii_.Set(
 		j,
 		"fileKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36218,6 +38967,8 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration struc
 
 type Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -36241,6 +38992,16 @@ type Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutput
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration {
+	var returns *Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference) IsSingleItem() *bool {
@@ -36319,7 +39080,7 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOut
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36331,9 +39092,17 @@ func NewKinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfigurationOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationApplicationConfigurationVpcConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36468,6 +39237,8 @@ type Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions struct {
 
 type Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions
+	SetInternalValue(val *Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogStreamArn() *string
@@ -36488,6 +39259,16 @@ type Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference interf
 // The jsii proxy struct for Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference
 type jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference) InternalValue() *Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions {
+	var returns *Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference) IsSingleItem() *bool {
@@ -36546,7 +39327,7 @@ func NewKinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference(ter
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36558,9 +39339,17 @@ func NewKinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		k,
+	)
+}
+
+func (j *jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputReference) SetInternalValue(val *Kinesisanalyticsv2ApplicationCloudwatchLoggingOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36680,6 +39469,7 @@ func (k *jsiiProxy_Kinesisanalyticsv2ApplicationCloudwatchLoggingOptionsOutputRe
 	return returns
 }
 
+// AWS Kinesis.
 type Kinesisanalyticsv2ApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -36970,7 +39760,7 @@ func NewKinesisanalyticsv2ApplicationSnapshot(scope constructs.Construct, id *st
 	j := jsiiProxy_Kinesisanalyticsv2ApplicationSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationSnapshot",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -36983,7 +39773,7 @@ func NewKinesisanalyticsv2ApplicationSnapshot_Override(k Kinesisanalyticsv2Appli
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationSnapshot",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationSnapshot",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -37047,7 +39837,7 @@ func Kinesisanalyticsv2ApplicationSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationSnapshot",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37060,7 +39850,7 @@ func Kinesisanalyticsv2ApplicationSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Kinesis.Kinesisanalyticsv2ApplicationSnapshot",
+		"hashicorp_aws.kinesis.Kinesisanalyticsv2ApplicationSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -37222,6 +40012,7 @@ func (k *jsiiProxy_Kinesisanalyticsv2ApplicationSnapshot) ToTerraform() interfac
 	return returns
 }
 
+// AWS Kinesis.
 type Kinesisanalyticsv2ApplicationSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

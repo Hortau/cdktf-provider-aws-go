@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResources",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResources",
 		reflect.TypeOf((*DataAwsResourcegroupstaggingapiResources)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -61,11 +61,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesConfig",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesConfig",
 		reflect.TypeOf((*DataAwsResourcegroupstaggingapiResourcesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
 		reflect.TypeOf((*DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -87,7 +87,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
 		reflect.TypeOf((*DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -109,11 +109,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesTagFilter",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesTagFilter",
 		reflect.TypeOf((*DataAwsResourcegroupstaggingapiResourcesTagFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroup",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroup",
 		reflect.TypeOf((*ResourcegroupsGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -165,21 +165,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroupConfig",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroupConfig",
 		reflect.TypeOf((*ResourcegroupsGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroupResourceQuery",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroupResourceQuery",
 		reflect.TypeOf((*ResourcegroupsGroupResourceQuery)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroupResourceQueryOutputReference",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroupResourceQueryOutputReference",
 		reflect.TypeOf((*ResourcegroupsGroupResourceQueryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

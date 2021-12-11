@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnector",
 		reflect.TypeOf((*ChimeVoiceConnector)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -53,11 +53,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroup",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroup",
 		reflect.TypeOf((*ChimeVoiceConnectorGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -99,15 +99,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroupConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroupConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroupConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroupConnector",
 		reflect.TypeOf((*ChimeVoiceConnectorGroupConnector)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLogging",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLogging",
 		reflect.TypeOf((*ChimeVoiceConnectorLogging)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -149,11 +149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLoggingConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLoggingConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorLoggingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOrigination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOrigination",
 		reflect.TypeOf((*ChimeVoiceConnectorOrigination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -197,15 +197,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOriginationConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOriginationConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorOriginationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOriginationRoute",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOriginationRoute",
 		reflect.TypeOf((*ChimeVoiceConnectorOriginationRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreaming",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreaming",
 		reflect.TypeOf((*ChimeVoiceConnectorStreaming)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -252,11 +252,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreamingConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreamingConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorStreamingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTermination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTermination",
 		reflect.TypeOf((*ChimeVoiceConnectorTermination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -308,11 +308,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorTerminationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentials",
 		reflect.TypeOf((*ChimeVoiceConnectorTerminationCredentials)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -353,11 +353,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentialsConfig",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentialsConfig",
 		reflect.TypeOf((*ChimeVoiceConnectorTerminationCredentialsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentialsCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentialsCredentials",
 		reflect.TypeOf((*ChimeVoiceConnectorTerminationCredentialsCredentials)(nil)).Elem(),
 	)
 }

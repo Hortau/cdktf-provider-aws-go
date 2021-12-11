@@ -601,7 +601,7 @@ func NewOpsworksApplication(scope constructs.Construct, id *string, config *Opsw
 	j := jsiiProxy_OpsworksApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksApplication",
+		"hashicorp_aws.opsworks.OpsworksApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -614,7 +614,7 @@ func NewOpsworksApplication_Override(o OpsworksApplication, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksApplication",
+		"hashicorp_aws.opsworks.OpsworksApplication",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -798,7 +798,7 @@ func OpsworksApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksApplication",
+		"hashicorp_aws.opsworks.OpsworksApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -811,7 +811,7 @@ func OpsworksApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksApplication",
+		"hashicorp_aws.opsworks.OpsworksApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -1100,6 +1100,7 @@ type OpsworksApplicationAppSource struct {
 	Username *string `json:"username"`
 }
 
+// AWS OpsWorks.
 type OpsworksApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1916,7 +1917,7 @@ func NewOpsworksCustomLayer(scope constructs.Construct, id *string, config *Opsw
 	j := jsiiProxy_OpsworksCustomLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayer",
+		"hashicorp_aws.opsworks.OpsworksCustomLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1929,7 +1930,7 @@ func NewOpsworksCustomLayer_Override(o OpsworksCustomLayer, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayer",
+		"hashicorp_aws.opsworks.OpsworksCustomLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -2161,7 +2162,7 @@ func OpsworksCustomLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayer",
+		"hashicorp_aws.opsworks.OpsworksCustomLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2174,7 +2175,7 @@ func OpsworksCustomLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayer",
+		"hashicorp_aws.opsworks.OpsworksCustomLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2496,6 +2497,7 @@ func (o *jsiiProxy_OpsworksCustomLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksCustomLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3368,7 +3370,7 @@ func NewOpsworksGangliaLayer(scope constructs.Construct, id *string, config *Ops
 	j := jsiiProxy_OpsworksGangliaLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayer",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3381,7 +3383,7 @@ func NewOpsworksGangliaLayer_Override(o OpsworksGangliaLayer, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayer",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -3629,7 +3631,7 @@ func OpsworksGangliaLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayer",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3642,7 +3644,7 @@ func OpsworksGangliaLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayer",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -3988,6 +3990,7 @@ func (o *jsiiProxy_OpsworksGangliaLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksGangliaLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4936,7 +4939,7 @@ func NewOpsworksHaproxyLayer(scope constructs.Construct, id *string, config *Ops
 	j := jsiiProxy_OpsworksHaproxyLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayer",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4949,7 +4952,7 @@ func NewOpsworksHaproxyLayer_Override(o OpsworksHaproxyLayer, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayer",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -5221,7 +5224,7 @@ func OpsworksHaproxyLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayer",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5234,7 +5237,7 @@ func OpsworksHaproxyLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayer",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -5604,6 +5607,7 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksHaproxyLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6966,7 +6970,7 @@ func NewOpsworksInstance(scope constructs.Construct, id *string, config *Opswork
 	j := jsiiProxy_OpsworksInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksInstance",
+		"hashicorp_aws.opsworks.OpsworksInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6979,7 +6983,7 @@ func NewOpsworksInstance_Override(o OpsworksInstance, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksInstance",
+		"hashicorp_aws.opsworks.OpsworksInstance",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -7379,7 +7383,7 @@ func OpsworksInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksInstance",
+		"hashicorp_aws.opsworks.OpsworksInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7392,7 +7396,7 @@ func OpsworksInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksInstance",
+		"hashicorp_aws.opsworks.OpsworksInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -7906,6 +7910,7 @@ func (o *jsiiProxy_OpsworksInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8065,6 +8070,8 @@ type OpsworksInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *OpsworksInstanceTimeouts
+	SetInternalValue(val *OpsworksInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8130,6 +8137,16 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) DeleteInput() *strin
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) InternalValue() *OpsworksInstanceTimeouts {
+	var returns *OpsworksInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8186,7 +8203,7 @@ func NewOpsworksInstanceTimeoutsOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_OpsworksInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceTimeoutsOutputReference",
+		"hashicorp_aws.opsworks.OpsworksInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8198,7 +8215,7 @@ func NewOpsworksInstanceTimeoutsOutputReference_Override(o OpsworksInstanceTimeo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceTimeoutsOutputReference",
+		"hashicorp_aws.opsworks.OpsworksInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		o,
 	)
@@ -8216,6 +8233,14 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetDelete(val *strin
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetInternalValue(val *OpsworksInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9205,7 +9230,7 @@ func NewOpsworksJavaAppLayer(scope constructs.Construct, id *string, config *Ops
 	j := jsiiProxy_OpsworksJavaAppLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayer",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9218,7 +9243,7 @@ func NewOpsworksJavaAppLayer_Override(o OpsworksJavaAppLayer, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayer",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -9482,7 +9507,7 @@ func OpsworksJavaAppLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayer",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9495,7 +9520,7 @@ func OpsworksJavaAppLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayer",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -9865,6 +9890,7 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksJavaAppLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10698,7 +10724,7 @@ func NewOpsworksMemcachedLayer(scope constructs.Construct, id *string, config *O
 	j := jsiiProxy_OpsworksMemcachedLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayer",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10711,7 +10737,7 @@ func NewOpsworksMemcachedLayer_Override(o OpsworksMemcachedLayer, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayer",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -10943,7 +10969,7 @@ func OpsworksMemcachedLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayer",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10956,7 +10982,7 @@ func OpsworksMemcachedLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayer",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -11294,6 +11320,7 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksMemcachedLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12143,7 +12170,7 @@ func NewOpsworksMysqlLayer(scope constructs.Construct, id *string, config *Opswo
 	j := jsiiProxy_OpsworksMysqlLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayer",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12156,7 +12183,7 @@ func NewOpsworksMysqlLayer_Override(o OpsworksMysqlLayer, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayer",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -12396,7 +12423,7 @@ func OpsworksMysqlLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayer",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12409,7 +12436,7 @@ func OpsworksMysqlLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayer",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -12755,6 +12782,7 @@ func (o *jsiiProxy_OpsworksMysqlLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksMysqlLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13582,7 +13610,7 @@ func NewOpsworksNodejsAppLayer(scope constructs.Construct, id *string, config *O
 	j := jsiiProxy_OpsworksNodejsAppLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13595,7 +13623,7 @@ func NewOpsworksNodejsAppLayer_Override(o OpsworksNodejsAppLayer, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -13827,7 +13855,7 @@ func OpsworksNodejsAppLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13840,7 +13868,7 @@ func OpsworksNodejsAppLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -14178,6 +14206,7 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksNodejsAppLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14560,7 +14589,7 @@ func NewOpsworksPermission(scope constructs.Construct, id *string, config *Opswo
 	j := jsiiProxy_OpsworksPermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksPermission",
+		"hashicorp_aws.opsworks.OpsworksPermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14573,7 +14602,7 @@ func NewOpsworksPermission_Override(o OpsworksPermission, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksPermission",
+		"hashicorp_aws.opsworks.OpsworksPermission",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -14661,7 +14690,7 @@ func OpsworksPermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksPermission",
+		"hashicorp_aws.opsworks.OpsworksPermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14674,7 +14703,7 @@ func OpsworksPermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksPermission",
+		"hashicorp_aws.opsworks.OpsworksPermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -14868,6 +14897,7 @@ func (o *jsiiProxy_OpsworksPermission) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksPermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15614,7 +15644,7 @@ func NewOpsworksPhpAppLayer(scope constructs.Construct, id *string, config *Opsw
 	j := jsiiProxy_OpsworksPhpAppLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayer",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15627,7 +15657,7 @@ func NewOpsworksPhpAppLayer_Override(o OpsworksPhpAppLayer, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayer",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -15851,7 +15881,7 @@ func OpsworksPhpAppLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayer",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15864,7 +15894,7 @@ func OpsworksPhpAppLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayer",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -16194,6 +16224,7 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksPhpAppLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17137,7 +17168,7 @@ func NewOpsworksRailsAppLayer(scope constructs.Construct, id *string, config *Op
 	j := jsiiProxy_OpsworksRailsAppLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17150,7 +17181,7 @@ func NewOpsworksRailsAppLayer_Override(o OpsworksRailsAppLayer, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -17422,7 +17453,7 @@ func OpsworksRailsAppLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17435,7 +17466,7 @@ func OpsworksRailsAppLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -17813,6 +17844,7 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksRailsAppLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18178,7 +18210,7 @@ func NewOpsworksRdsDbInstance(scope constructs.Construct, id *string, config *Op
 	j := jsiiProxy_OpsworksRdsDbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstance",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18191,7 +18223,7 @@ func NewOpsworksRdsDbInstance_Override(o OpsworksRdsDbInstance, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstance",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstance",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -18271,7 +18303,7 @@ func OpsworksRdsDbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstance",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18284,7 +18316,7 @@ func OpsworksRdsDbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstance",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -18446,6 +18478,7 @@ func (o *jsiiProxy_OpsworksRdsDbInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksRdsDbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19222,7 +19255,7 @@ func NewOpsworksStack(scope constructs.Construct, id *string, config *OpsworksSt
 	j := jsiiProxy_OpsworksStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksStack",
+		"hashicorp_aws.opsworks.OpsworksStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19235,7 +19268,7 @@ func NewOpsworksStack_Override(o OpsworksStack, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksStack",
+		"hashicorp_aws.opsworks.OpsworksStack",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -19467,7 +19500,7 @@ func OpsworksStack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksStack",
+		"hashicorp_aws.opsworks.OpsworksStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19480,7 +19513,7 @@ func OpsworksStack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksStack",
+		"hashicorp_aws.opsworks.OpsworksStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -19794,6 +19827,7 @@ func (o *jsiiProxy_OpsworksStack) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20593,7 +20627,7 @@ func NewOpsworksStaticWebLayer(scope constructs.Construct, id *string, config *O
 	j := jsiiProxy_OpsworksStaticWebLayer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayer",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20606,7 +20640,7 @@ func NewOpsworksStaticWebLayer_Override(o OpsworksStaticWebLayer, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayer",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayer",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -20830,7 +20864,7 @@ func OpsworksStaticWebLayer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayer",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20843,7 +20877,7 @@ func OpsworksStaticWebLayer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayer",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayer",
 		"tfResourceType",
 		&returns,
 	)
@@ -21173,6 +21207,7 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksStaticWebLayerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21528,7 +21563,7 @@ func NewOpsworksUserProfile(scope constructs.Construct, id *string, config *Opsw
 	j := jsiiProxy_OpsworksUserProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfile",
+		"hashicorp_aws.opsworks.OpsworksUserProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21541,7 +21576,7 @@ func NewOpsworksUserProfile_Override(o OpsworksUserProfile, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfile",
+		"hashicorp_aws.opsworks.OpsworksUserProfile",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -21621,7 +21656,7 @@ func OpsworksUserProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfile",
+		"hashicorp_aws.opsworks.OpsworksUserProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21634,7 +21669,7 @@ func OpsworksUserProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfile",
+		"hashicorp_aws.opsworks.OpsworksUserProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -21812,6 +21847,7 @@ func (o *jsiiProxy_OpsworksUserProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS OpsWorks.
 type OpsworksUserProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

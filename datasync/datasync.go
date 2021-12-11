@@ -447,7 +447,7 @@ func NewDatasyncAgent(scope constructs.Construct, id *string, config *DatasyncAg
 	j := jsiiProxy_DatasyncAgent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncAgent",
+		"hashicorp_aws.datasync.DatasyncAgent",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -460,7 +460,7 @@ func NewDatasyncAgent_Override(d DatasyncAgent, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncAgent",
+		"hashicorp_aws.datasync.DatasyncAgent",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -580,7 +580,7 @@ func DatasyncAgent_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncAgent",
+		"hashicorp_aws.datasync.DatasyncAgent",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -593,7 +593,7 @@ func DatasyncAgent_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncAgent",
+		"hashicorp_aws.datasync.DatasyncAgent",
 		"tfResourceType",
 		&returns,
 	)
@@ -843,6 +843,7 @@ func (d *jsiiProxy_DatasyncAgent) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncAgentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -886,6 +887,8 @@ type DatasyncAgentTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DatasyncAgentTimeouts
+	SetInternalValue(val *DatasyncAgentTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -921,6 +924,16 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) CreateInput() *string {
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) InternalValue() *DatasyncAgentTimeouts {
+	var returns *DatasyncAgentTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -962,7 +975,7 @@ func NewDatasyncAgentTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DatasyncAgentTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncAgentTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncAgentTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -974,7 +987,7 @@ func NewDatasyncAgentTimeoutsOutputReference_Override(d DatasyncAgentTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncAgentTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncAgentTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -984,6 +997,14 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetCreate(val *string) 
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetInternalValue(val *DatasyncAgentTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1431,7 +1452,7 @@ func NewDatasyncLocationEfs(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DatasyncLocationEfs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationEfs",
+		"hashicorp_aws.datasync.DatasyncLocationEfs",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1444,7 +1465,7 @@ func NewDatasyncLocationEfs_Override(d DatasyncLocationEfs, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationEfs",
+		"hashicorp_aws.datasync.DatasyncLocationEfs",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1524,7 +1545,7 @@ func DatasyncLocationEfs_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncLocationEfs",
+		"hashicorp_aws.datasync.DatasyncLocationEfs",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1537,7 +1558,7 @@ func DatasyncLocationEfs_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncLocationEfs",
+		"hashicorp_aws.datasync.DatasyncLocationEfs",
 		"tfResourceType",
 		&returns,
 	)
@@ -1731,6 +1752,7 @@ func (d *jsiiProxy_DatasyncLocationEfs) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncLocationEfsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1763,6 +1785,8 @@ type DatasyncLocationEfsEc2Config struct {
 
 type DatasyncLocationEfsEc2ConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DatasyncLocationEfsEc2Config
+	SetInternalValue(val *DatasyncLocationEfsEc2Config)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupArns() *[]*string
@@ -1786,6 +1810,16 @@ type DatasyncLocationEfsEc2ConfigOutputReference interface {
 // The jsii proxy struct for DatasyncLocationEfsEc2ConfigOutputReference
 type jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) InternalValue() *DatasyncLocationEfsEc2Config {
+	var returns *DatasyncLocationEfsEc2Config
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) IsSingleItem() *bool {
@@ -1864,7 +1898,7 @@ func NewDatasyncLocationEfsEc2ConfigOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationEfsEc2ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationEfsEc2ConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1876,9 +1910,17 @@ func NewDatasyncLocationEfsEc2ConfigOutputReference_Override(d DatasyncLocationE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationEfsEc2ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationEfsEc2ConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) SetInternalValue(val *DatasyncLocationEfsEc2Config) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2414,7 +2456,7 @@ func NewDatasyncLocationFsxWindowsFileSystem(scope constructs.Construct, id *str
 	j := jsiiProxy_DatasyncLocationFsxWindowsFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystem",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2427,7 +2469,7 @@ func NewDatasyncLocationFsxWindowsFileSystem_Override(d DatasyncLocationFsxWindo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystem",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystem",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2539,7 +2581,7 @@ func DatasyncLocationFsxWindowsFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystem",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2552,7 +2594,7 @@ func DatasyncLocationFsxWindowsFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystem",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -2746,6 +2788,7 @@ func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) ToTerraform() interface
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncLocationFsxWindowsFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3123,7 +3166,7 @@ func NewDatasyncLocationNfs(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DatasyncLocationNfs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfs",
+		"hashicorp_aws.datasync.DatasyncLocationNfs",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3136,7 +3179,7 @@ func NewDatasyncLocationNfs_Override(d DatasyncLocationNfs, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfs",
+		"hashicorp_aws.datasync.DatasyncLocationNfs",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3216,7 +3259,7 @@ func DatasyncLocationNfs_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncLocationNfs",
+		"hashicorp_aws.datasync.DatasyncLocationNfs",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3229,7 +3272,7 @@ func DatasyncLocationNfs_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncLocationNfs",
+		"hashicorp_aws.datasync.DatasyncLocationNfs",
 		"tfResourceType",
 		&returns,
 	)
@@ -3431,6 +3474,7 @@ func (d *jsiiProxy_DatasyncLocationNfs) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncLocationNfsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3465,6 +3509,8 @@ type DatasyncLocationNfsMountOptions struct {
 
 type DatasyncLocationNfsMountOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DatasyncLocationNfsMountOptions
+	SetInternalValue(val *DatasyncLocationNfsMountOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3486,6 +3532,16 @@ type DatasyncLocationNfsMountOptionsOutputReference interface {
 // The jsii proxy struct for DatasyncLocationNfsMountOptionsOutputReference
 type jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) InternalValue() *DatasyncLocationNfsMountOptions {
+	var returns *DatasyncLocationNfsMountOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) IsSingleItem() *bool {
@@ -3544,7 +3600,7 @@ func NewDatasyncLocationNfsMountOptionsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsMountOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3556,9 +3612,17 @@ func NewDatasyncLocationNfsMountOptionsOutputReference_Override(d DatasyncLocati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsMountOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) SetInternalValue(val *DatasyncLocationNfsMountOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3696,6 +3760,8 @@ type DatasyncLocationNfsOnPremConfigOutputReference interface {
 	AgentArns() *[]*string
 	SetAgentArns(val *[]*string)
 	AgentArnsInput() *[]*string
+	InternalValue() *DatasyncLocationNfsOnPremConfig
+	SetInternalValue(val *DatasyncLocationNfsOnPremConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3730,6 +3796,16 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) AgentArnsInpu
 	_jsii_.Get(
 		j,
 		"agentArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) InternalValue() *DatasyncLocationNfsOnPremConfig {
+	var returns *DatasyncLocationNfsOnPremConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3771,7 +3847,7 @@ func NewDatasyncLocationNfsOnPremConfigOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsOnPremConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsOnPremConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3783,7 +3859,7 @@ func NewDatasyncLocationNfsOnPremConfigOutputReference_Override(d DatasyncLocati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsOnPremConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsOnPremConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -3793,6 +3869,14 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetAgentArns(
 	_jsii_.Set(
 		j,
 		"agentArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetInternalValue(val *DatasyncLocationNfsOnPremConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4279,7 +4363,7 @@ func NewDatasyncLocationS3(scope constructs.Construct, id *string, config *Datas
 	j := jsiiProxy_DatasyncLocationS3{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationS3",
+		"hashicorp_aws.datasync.DatasyncLocationS3",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4292,7 +4376,7 @@ func NewDatasyncLocationS3_Override(d DatasyncLocationS3, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationS3",
+		"hashicorp_aws.datasync.DatasyncLocationS3",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4388,7 +4472,7 @@ func DatasyncLocationS3_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncLocationS3",
+		"hashicorp_aws.datasync.DatasyncLocationS3",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4401,7 +4485,7 @@ func DatasyncLocationS3_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncLocationS3",
+		"hashicorp_aws.datasync.DatasyncLocationS3",
 		"tfResourceType",
 		&returns,
 	)
@@ -4603,6 +4687,7 @@ func (d *jsiiProxy_DatasyncLocationS3) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncLocationS3Config struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4640,6 +4725,8 @@ type DatasyncLocationS3S3ConfigOutputReference interface {
 	BucketAccessRoleArn() *string
 	SetBucketAccessRoleArn(val *string)
 	BucketAccessRoleArnInput() *string
+	InternalValue() *DatasyncLocationS3S3Config
+	SetInternalValue(val *DatasyncLocationS3S3Config)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4674,6 +4761,16 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) BucketAccessRoleAr
 	_jsii_.Get(
 		j,
 		"bucketAccessRoleArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) InternalValue() *DatasyncLocationS3S3Config {
+	var returns *DatasyncLocationS3S3Config
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4715,7 +4812,7 @@ func NewDatasyncLocationS3S3ConfigOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_DatasyncLocationS3S3ConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationS3S3ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationS3S3ConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4727,7 +4824,7 @@ func NewDatasyncLocationS3S3ConfigOutputReference_Override(d DatasyncLocationS3S
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationS3S3ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationS3S3ConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -4737,6 +4834,14 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetBucketAccessRol
 	_jsii_.Set(
 		j,
 		"bucketAccessRoleArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetInternalValue(val *DatasyncLocationS3S3Config) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5269,7 +5374,7 @@ func NewDatasyncLocationSmb(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DatasyncLocationSmb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationSmb",
+		"hashicorp_aws.datasync.DatasyncLocationSmb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5282,7 +5387,7 @@ func NewDatasyncLocationSmb_Override(d DatasyncLocationSmb, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationSmb",
+		"hashicorp_aws.datasync.DatasyncLocationSmb",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5394,7 +5499,7 @@ func DatasyncLocationSmb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncLocationSmb",
+		"hashicorp_aws.datasync.DatasyncLocationSmb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5407,7 +5512,7 @@ func DatasyncLocationSmb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncLocationSmb",
+		"hashicorp_aws.datasync.DatasyncLocationSmb",
 		"tfResourceType",
 		&returns,
 	)
@@ -5609,6 +5714,7 @@ func (d *jsiiProxy_DatasyncLocationSmb) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncLocationSmbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5647,6 +5753,8 @@ type DatasyncLocationSmbMountOptions struct {
 
 type DatasyncLocationSmbMountOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DatasyncLocationSmbMountOptions
+	SetInternalValue(val *DatasyncLocationSmbMountOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5668,6 +5776,16 @@ type DatasyncLocationSmbMountOptionsOutputReference interface {
 // The jsii proxy struct for DatasyncLocationSmbMountOptionsOutputReference
 type jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) InternalValue() *DatasyncLocationSmbMountOptions {
+	var returns *DatasyncLocationSmbMountOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) IsSingleItem() *bool {
@@ -5726,7 +5844,7 @@ func NewDatasyncLocationSmbMountOptionsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationSmbMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationSmbMountOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5738,9 +5856,17 @@ func NewDatasyncLocationSmbMountOptionsOutputReference_Override(d DatasyncLocati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncLocationSmbMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationSmbMountOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) SetInternalValue(val *DatasyncLocationSmbMountOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6304,7 +6430,7 @@ func NewDatasyncTask(scope constructs.Construct, id *string, config *DatasyncTas
 	j := jsiiProxy_DatasyncTask{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTask",
+		"hashicorp_aws.datasync.DatasyncTask",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6317,7 +6443,7 @@ func NewDatasyncTask_Override(d DatasyncTask, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTask",
+		"hashicorp_aws.datasync.DatasyncTask",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6413,7 +6539,7 @@ func DatasyncTask_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSync.DatasyncTask",
+		"hashicorp_aws.datasync.DatasyncTask",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6426,7 +6552,7 @@ func DatasyncTask_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSync.DatasyncTask",
+		"hashicorp_aws.datasync.DatasyncTask",
 		"tfResourceType",
 		&returns,
 	)
@@ -6684,6 +6810,7 @@ func (d *jsiiProxy_DatasyncTask) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DataSync.
 type DatasyncTaskConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6735,6 +6862,8 @@ type DatasyncTaskExcludesOutputReference interface {
 	FilterType() *string
 	SetFilterType(val *string)
 	FilterTypeInput() *string
+	InternalValue() *DatasyncTaskExcludes
+	SetInternalValue(val *DatasyncTaskExcludes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6774,6 +6903,16 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) FilterTypeInput() *strin
 	_jsii_.Get(
 		j,
 		"filterTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) InternalValue() *DatasyncTaskExcludes {
+	var returns *DatasyncTaskExcludes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6835,7 +6974,7 @@ func NewDatasyncTaskExcludesOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DatasyncTaskExcludesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskExcludesOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskExcludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6847,7 +6986,7 @@ func NewDatasyncTaskExcludesOutputReference_Override(d DatasyncTaskExcludesOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskExcludesOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskExcludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -6857,6 +6996,14 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetFilterType(val *strin
 	_jsii_.Set(
 		j,
 		"filterType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetInternalValue(val *DatasyncTaskExcludes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7033,6 +7180,8 @@ type DatasyncTaskOptionsOutputReference interface {
 	Gid() *string
 	SetGid(val *string)
 	GidInput() *string
+	InternalValue() *DatasyncTaskOptions
+	SetInternalValue(val *DatasyncTaskOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -7150,6 +7299,16 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) GidInput() *string {
 	_jsii_.Get(
 		j,
 		"gidInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) InternalValue() *DatasyncTaskOptions {
+	var returns *DatasyncTaskOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7391,7 +7550,7 @@ func NewDatasyncTaskOptionsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DatasyncTaskOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7403,7 +7562,7 @@ func NewDatasyncTaskOptionsOutputReference_Override(d DatasyncTaskOptionsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -7429,6 +7588,14 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetGid(val *string) {
 	_jsii_.Set(
 		j,
 		"gid",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetInternalValue(val *DatasyncTaskOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7732,6 +7899,8 @@ type DatasyncTaskSchedule struct {
 
 type DatasyncTaskScheduleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DatasyncTaskSchedule
+	SetInternalValue(val *DatasyncTaskSchedule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ScheduleExpression() *string
@@ -7752,6 +7921,16 @@ type DatasyncTaskScheduleOutputReference interface {
 // The jsii proxy struct for DatasyncTaskScheduleOutputReference
 type jsiiProxy_DatasyncTaskScheduleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) InternalValue() *DatasyncTaskSchedule {
+	var returns *DatasyncTaskSchedule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) IsSingleItem() *bool {
@@ -7810,7 +7989,7 @@ func NewDatasyncTaskScheduleOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DatasyncTaskScheduleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskScheduleOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7822,9 +8001,17 @@ func NewDatasyncTaskScheduleOutputReference_Override(d DatasyncTaskScheduleOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskScheduleOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) SetInternalValue(val *DatasyncTaskSchedule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7954,6 +8141,8 @@ type DatasyncTaskTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DatasyncTaskTimeouts
+	SetInternalValue(val *DatasyncTaskTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7989,6 +8178,16 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) CreateInput() *string {
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) InternalValue() *DatasyncTaskTimeouts {
+	var returns *DatasyncTaskTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8030,7 +8229,7 @@ func NewDatasyncTaskTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DatasyncTaskTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8042,7 +8241,7 @@ func NewDatasyncTaskTimeoutsOutputReference_Override(d DatasyncTaskTimeoutsOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSync.DatasyncTaskTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -8052,6 +8251,14 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetCreate(val *string) {
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetInternalValue(val *DatasyncTaskTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

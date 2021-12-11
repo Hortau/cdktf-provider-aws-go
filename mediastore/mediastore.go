@@ -289,7 +289,7 @@ func NewMediaStoreContainer(scope constructs.Construct, id *string, config *Medi
 	j := jsiiProxy_MediaStoreContainer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaStore.MediaStoreContainer",
+		"hashicorp_aws.mediastore.MediaStoreContainer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -302,7 +302,7 @@ func NewMediaStoreContainer_Override(m MediaStoreContainer, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaStore.MediaStoreContainer",
+		"hashicorp_aws.mediastore.MediaStoreContainer",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -374,7 +374,7 @@ func MediaStoreContainer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MediaStore.MediaStoreContainer",
+		"hashicorp_aws.mediastore.MediaStoreContainer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -387,7 +387,7 @@ func MediaStoreContainer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MediaStore.MediaStoreContainer",
+		"hashicorp_aws.mediastore.MediaStoreContainer",
 		"tfResourceType",
 		&returns,
 	)
@@ -565,6 +565,7 @@ func (m *jsiiProxy_MediaStoreContainer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Media Store.
 type MediaStoreContainerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -815,7 +816,7 @@ func NewMediaStoreContainerPolicy(scope constructs.Construct, id *string, config
 	j := jsiiProxy_MediaStoreContainerPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicy",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -828,7 +829,7 @@ func NewMediaStoreContainerPolicy_Override(m MediaStoreContainerPolicy, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicy",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicy",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -892,7 +893,7 @@ func MediaStoreContainerPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicy",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -905,7 +906,7 @@ func MediaStoreContainerPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicy",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -1067,6 +1068,7 @@ func (m *jsiiProxy_MediaStoreContainerPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Media Store.
 type MediaStoreContainerPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

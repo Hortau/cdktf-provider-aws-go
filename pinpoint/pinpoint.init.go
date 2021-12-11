@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannel",
+		"hashicorp_aws.pinpoint.PinpointAdmChannel",
 		reflect.TypeOf((*PinpointAdmChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointAdmChannelConfig",
 		reflect.TypeOf((*PinpointAdmChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsChannel",
 		reflect.TypeOf((*PinpointApnsChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -121,11 +121,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointApnsChannelConfig",
 		reflect.TypeOf((*PinpointApnsChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannel",
 		reflect.TypeOf((*PinpointApnsSandboxChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -188,11 +188,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannelConfig",
 		reflect.TypeOf((*PinpointApnsSandboxChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannel",
 		reflect.TypeOf((*PinpointApnsVoipChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -255,11 +255,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannelConfig",
 		reflect.TypeOf((*PinpointApnsVoipChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannel",
 		reflect.TypeOf((*PinpointApnsVoipSandboxChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -322,11 +322,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannelConfig",
 		reflect.TypeOf((*PinpointApnsVoipSandboxChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointApp",
+		"hashicorp_aws.pinpoint.PinpointApp",
 		reflect.TypeOf((*PinpointApp)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -389,17 +389,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointAppCampaignHook",
+		"hashicorp_aws.pinpoint.PinpointAppCampaignHook",
 		reflect.TypeOf((*PinpointAppCampaignHook)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointAppCampaignHookOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppCampaignHookOutputReference",
 		reflect.TypeOf((*PinpointAppCampaignHookOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -422,15 +423,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointAppConfig",
+		"hashicorp_aws.pinpoint.PinpointAppConfig",
 		reflect.TypeOf((*PinpointAppConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointAppLimits",
+		"hashicorp_aws.pinpoint.PinpointAppLimits",
 		reflect.TypeOf((*PinpointAppLimits)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointAppLimitsOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppLimitsOutputReference",
 		reflect.TypeOf((*PinpointAppLimitsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "daily", GoGetter: "Daily"},
@@ -439,6 +440,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -462,11 +464,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointAppQuietTime",
+		"hashicorp_aws.pinpoint.PinpointAppQuietTime",
 		reflect.TypeOf((*PinpointAppQuietTime)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointAppQuietTimeOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppQuietTimeOutputReference",
 		reflect.TypeOf((*PinpointAppQuietTimeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "end", GoGetter: "End"},
@@ -475,6 +477,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -492,7 +495,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannel",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannel",
 		reflect.TypeOf((*PinpointBaiduChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -538,11 +541,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannelConfig",
 		reflect.TypeOf((*PinpointBaiduChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannel",
+		"hashicorp_aws.pinpoint.PinpointEmailChannel",
 		reflect.TypeOf((*PinpointEmailChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -595,11 +598,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointEmailChannelConfig",
 		reflect.TypeOf((*PinpointEmailChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointEventStream",
+		"hashicorp_aws.pinpoint.PinpointEventStream",
 		reflect.TypeOf((*PinpointEventStream)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -642,11 +645,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointEventStreamConfig",
+		"hashicorp_aws.pinpoint.PinpointEventStreamConfig",
 		reflect.TypeOf((*PinpointEventStreamConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannel",
+		"hashicorp_aws.pinpoint.PinpointGcmChannel",
 		reflect.TypeOf((*PinpointGcmChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -690,11 +693,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointGcmChannelConfig",
 		reflect.TypeOf((*PinpointGcmChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannel",
+		"hashicorp_aws.pinpoint.PinpointSmsChannel",
 		reflect.TypeOf((*PinpointSmsChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -744,7 +747,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannelConfig",
+		"hashicorp_aws.pinpoint.PinpointSmsChannelConfig",
 		reflect.TypeOf((*PinpointSmsChannelConfig)(nil)).Elem(),
 	)
 }

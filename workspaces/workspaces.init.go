@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundle",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundle",
 		reflect.TypeOf((*DataAwsWorkspacesBundle)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,7 +58,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleComputeType",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleComputeType",
 		reflect.TypeOf((*DataAwsWorkspacesBundleComputeType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -78,11 +78,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleConfig",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleConfig",
 		reflect.TypeOf((*DataAwsWorkspacesBundleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleRootStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleRootStorage",
 		reflect.TypeOf((*DataAwsWorkspacesBundleRootStorage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "capacity", GoGetter: "Capacity"},
@@ -102,7 +102,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleUserStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleUserStorage",
 		reflect.TypeOf((*DataAwsWorkspacesBundleUserStorage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "capacity", GoGetter: "Capacity"},
@@ -122,7 +122,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectory",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectory",
 		reflect.TypeOf((*DataAwsWorkspacesDirectory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -177,11 +177,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryConfig",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryConfig",
 		reflect.TypeOf((*DataAwsWorkspacesDirectoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
 		reflect.TypeOf((*DataAwsWorkspacesDirectorySelfServicePermissions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "changeComputeType", GoGetter: "ChangeComputeType"},
@@ -205,7 +205,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
 		reflect.TypeOf((*DataAwsWorkspacesDirectoryWorkspaceAccessProperties)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -232,7 +232,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
 		reflect.TypeOf((*DataAwsWorkspacesDirectoryWorkspaceCreationProperties)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -256,7 +256,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImage",
 		reflect.TypeOf((*DataAwsWorkspacesImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -300,11 +300,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImageConfig",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImageConfig",
 		reflect.TypeOf((*DataAwsWorkspacesImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspace",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspace",
 		reflect.TypeOf((*DataAwsWorkspacesWorkspace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -361,11 +361,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspaceConfig",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceConfig",
 		reflect.TypeOf((*DataAwsWorkspacesWorkspaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
 		reflect.TypeOf((*DataAwsWorkspacesWorkspaceWorkspaceProperties)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -389,7 +389,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesDirectory",
+		"hashicorp_aws.workspaces.WorkspacesDirectory",
 		reflect.TypeOf((*WorkspacesDirectory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -460,15 +460,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryConfig",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryConfig",
 		reflect.TypeOf((*WorkspacesDirectoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesDirectorySelfServicePermissions",
+		"hashicorp_aws.workspaces.WorkspacesDirectorySelfServicePermissions",
 		reflect.TypeOf((*WorkspacesDirectorySelfServicePermissions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
 		reflect.TypeOf((*WorkspacesDirectorySelfServicePermissionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "changeComputeType", GoGetter: "ChangeComputeType"},
@@ -479,6 +479,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "increaseVolumeSize", GoGetter: "IncreaseVolumeSize"},
 			_jsii_.MemberProperty{JsiiProperty: "increaseVolumeSizeInput", GoGetter: "IncreaseVolumeSizeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -503,11 +504,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceAccessProperties",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceAccessProperties",
 		reflect.TypeOf((*WorkspacesDirectoryWorkspaceAccessProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
 		reflect.TypeOf((*WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deviceTypeAndroid", GoGetter: "DeviceTypeAndroid"},
@@ -530,6 +531,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -551,11 +553,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceCreationProperties",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceCreationProperties",
 		reflect.TypeOf((*WorkspacesDirectoryWorkspaceCreationProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
 		reflect.TypeOf((*WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customSecurityGroupId", GoGetter: "CustomSecurityGroupId"},
@@ -570,6 +572,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -590,7 +593,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroup",
+		"hashicorp_aws.workspaces.WorkspacesIpGroup",
 		reflect.TypeOf((*WorkspacesIpGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -641,15 +644,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroupConfig",
+		"hashicorp_aws.workspaces.WorkspacesIpGroupConfig",
 		reflect.TypeOf((*WorkspacesIpGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroupRules",
+		"hashicorp_aws.workspaces.WorkspacesIpGroupRules",
 		reflect.TypeOf((*WorkspacesIpGroupRules)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspace",
+		"hashicorp_aws.workspaces.WorkspacesWorkspace",
 		reflect.TypeOf((*WorkspacesWorkspace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -718,15 +721,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceConfig",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceConfig",
 		reflect.TypeOf((*WorkspacesWorkspaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceTimeouts",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceTimeouts",
 		reflect.TypeOf((*WorkspacesWorkspaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
 		reflect.TypeOf((*WorkspacesWorkspaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -737,6 +740,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -755,11 +759,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceWorkspaceProperties",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceWorkspaceProperties",
 		reflect.TypeOf((*WorkspacesWorkspaceWorkspaceProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
 		reflect.TypeOf((*WorkspacesWorkspaceWorkspacePropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "computeTypeName", GoGetter: "ComputeTypeName"},
@@ -768,6 +772,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftAlias",
+		"hashicorp_aws.gamelift.GameliftAlias",
 		reflect.TypeOf((*GameliftAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -60,15 +60,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftAliasConfig",
+		"hashicorp_aws.gamelift.GameliftAliasConfig",
 		reflect.TypeOf((*GameliftAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftAliasRoutingStrategy",
+		"hashicorp_aws.gamelift.GameliftAliasRoutingStrategy",
 		reflect.TypeOf((*GameliftAliasRoutingStrategy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftAliasRoutingStrategyOutputReference",
+		"hashicorp_aws.gamelift.GameliftAliasRoutingStrategyOutputReference",
 		reflect.TypeOf((*GameliftAliasRoutingStrategyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fleetId", GoGetter: "FleetId"},
@@ -77,6 +77,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -96,7 +97,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftBuild",
+		"hashicorp_aws.gamelift.GameliftBuild",
 		reflect.TypeOf((*GameliftBuild)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -150,15 +151,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftBuildConfig",
+		"hashicorp_aws.gamelift.GameliftBuildConfig",
 		reflect.TypeOf((*GameliftBuildConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftBuildStorageLocation",
+		"hashicorp_aws.gamelift.GameliftBuildStorageLocation",
 		reflect.TypeOf((*GameliftBuildStorageLocation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftBuildStorageLocationOutputReference",
+		"hashicorp_aws.gamelift.GameliftBuildStorageLocationOutputReference",
 		reflect.TypeOf((*GameliftBuildStorageLocationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -167,6 +168,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -184,7 +186,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftFleet",
+		"hashicorp_aws.gamelift.GameliftFleet",
 		reflect.TypeOf((*GameliftFleet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -266,25 +268,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetConfig",
+		"hashicorp_aws.gamelift.GameliftFleetConfig",
 		reflect.TypeOf((*GameliftFleetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetEc2InboundPermission",
+		"hashicorp_aws.gamelift.GameliftFleetEc2InboundPermission",
 		reflect.TypeOf((*GameliftFleetEc2InboundPermission)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetResourceCreationLimitPolicy",
+		"hashicorp_aws.gamelift.GameliftFleetResourceCreationLimitPolicy",
 		reflect.TypeOf((*GameliftFleetResourceCreationLimitPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftFleetResourceCreationLimitPolicyOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetResourceCreationLimitPolicyOutputReference",
 		reflect.TypeOf((*GameliftFleetResourceCreationLimitPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -304,11 +307,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetRuntimeConfiguration",
+		"hashicorp_aws.gamelift.GameliftFleetRuntimeConfiguration",
 		reflect.TypeOf((*GameliftFleetRuntimeConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftFleetRuntimeConfigurationOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetRuntimeConfigurationOutputReference",
 		reflect.TypeOf((*GameliftFleetRuntimeConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "gameSessionActivationTimeoutSeconds", GoGetter: "GameSessionActivationTimeoutSeconds"},
@@ -317,6 +320,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -337,15 +341,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetRuntimeConfigurationServerProcess",
+		"hashicorp_aws.gamelift.GameliftFleetRuntimeConfigurationServerProcess",
 		reflect.TypeOf((*GameliftFleetRuntimeConfigurationServerProcess)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftFleetTimeouts",
+		"hashicorp_aws.gamelift.GameliftFleetTimeouts",
 		reflect.TypeOf((*GameliftFleetTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftFleetTimeoutsOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetTimeoutsOutputReference",
 		reflect.TypeOf((*GameliftFleetTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -356,6 +360,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -371,7 +376,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueue",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueue",
 		reflect.TypeOf((*GameliftGameSessionQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -426,11 +431,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueueConfig",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueueConfig",
 		reflect.TypeOf((*GameliftGameSessionQueueConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueuePlayerLatencyPolicy",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueuePlayerLatencyPolicy",
 		reflect.TypeOf((*GameliftGameSessionQueuePlayerLatencyPolicy)(nil)).Elem(),
 	)
 }

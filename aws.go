@@ -10,6 +10,647 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/internal"
 )
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html aws_account_alternate_contact}.
+type AccountAlternateContact interface {
+	cdktf.TerraformResource
+	AccountId() *string
+	SetAccountId(val *string)
+	AccountIdInput() *string
+	AlternateContactType() *string
+	SetAlternateContactType(val *string)
+	AlternateContactTypeInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	EmailAddress() *string
+	SetEmailAddress(val *string)
+	EmailAddressInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	PhoneNumber() *string
+	SetPhoneNumber(val *string)
+	PhoneNumberInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Title() *string
+	SetTitle(val *string)
+	TitleInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetAccountId()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for AccountAlternateContact
+type jsiiProxy_AccountAlternateContact struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_AccountAlternateContact) AccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) AccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) AlternateContactType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"alternateContactType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) AlternateContactTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"alternateContactTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) EmailAddress() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"emailAddress",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) EmailAddressInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"emailAddressInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) PhoneNumber() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"phoneNumber",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) PhoneNumberInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"phoneNumberInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) Title() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"title",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccountAlternateContact) TitleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"titleInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html aws_account_alternate_contact} Resource.
+func NewAccountAlternateContact(scope constructs.Construct, id *string, config *AccountAlternateContactConfig) AccountAlternateContact {
+	_init_.Initialize()
+
+	j := jsiiProxy_AccountAlternateContact{}
+
+	_jsii_.Create(
+		"hashicorp_aws.AccountAlternateContact",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html aws_account_alternate_contact} Resource.
+func NewAccountAlternateContact_Override(a AccountAlternateContact, scope constructs.Construct, id *string, config *AccountAlternateContactConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.AccountAlternateContact",
+		[]interface{}{scope, id, config},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetAccountId(val *string) {
+	_jsii_.Set(
+		j,
+		"accountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetAlternateContactType(val *string) {
+	_jsii_.Set(
+		j,
+		"alternateContactType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetEmailAddress(val *string) {
+	_jsii_.Set(
+		j,
+		"emailAddress",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetPhoneNumber(val *string) {
+	_jsii_.Set(
+		j,
+		"phoneNumber",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AccountAlternateContact) SetTitle(val *string) {
+	_jsii_.Set(
+		j,
+		"title",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func AccountAlternateContact_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.AccountAlternateContact",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func AccountAlternateContact_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.AccountAlternateContact",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		a,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		a,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (a *jsiiProxy_AccountAlternateContact) ResetAccountId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetAccountId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AccountAlternateContact) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (a *jsiiProxy_AccountAlternateContact) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (a *jsiiProxy_AccountAlternateContact) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type AccountAlternateContactConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#alternate_contact_type AccountAlternateContact#alternate_contact_type}.
+	AlternateContactType *string `json:"alternateContactType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#email_address AccountAlternateContact#email_address}.
+	EmailAddress *string `json:"emailAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#name AccountAlternateContact#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#phone_number AccountAlternateContact#phone_number}.
+	PhoneNumber *string `json:"phoneNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#title AccountAlternateContact#title}.
+	Title *string `json:"title"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/account_alternate_contact.html#account_id AccountAlternateContact#account_id}.
+	AccountId *string `json:"accountId"`
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws aws}.
 type AwsProvider interface {
 	cdktf.TerraformProvider
@@ -1184,509 +1825,6 @@ type AwsProviderAssumeRole struct {
 	TransitiveTagKeys *[]*string `json:"transitiveTagKeys"`
 }
 
-type AwsProviderAssumeRoleOutputReference interface {
-	cdktf.ComplexObject
-	DurationSeconds() *float64
-	SetDurationSeconds(val *float64)
-	DurationSecondsInput() *float64
-	ExternalId() *string
-	SetExternalId(val *string)
-	ExternalIdInput() *string
-	IsSingleItem() *bool
-	SetIsSingleItem(val *bool)
-	Policy() *string
-	SetPolicy(val *string)
-	PolicyArns() *[]*string
-	SetPolicyArns(val *[]*string)
-	PolicyArnsInput() *[]*string
-	PolicyInput() *string
-	RoleArn() *string
-	SetRoleArn(val *string)
-	RoleArnInput() *string
-	SessionName() *string
-	SetSessionName(val *string)
-	SessionNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
-	TerraformAttribute() *string
-	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	TransitiveTagKeys() *[]*string
-	SetTransitiveTagKeys(val *[]*string)
-	TransitiveTagKeysInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
-	GetListAttribute(terraformAttribute *string) *[]*string
-	GetNumberAttribute(terraformAttribute *string) *float64
-	GetStringAttribute(terraformAttribute *string) *string
-	InterpolationAsList() cdktf.IResolvable
-	InterpolationForAttribute(property *string) cdktf.IResolvable
-	ResetDurationSeconds()
-	ResetExternalId()
-	ResetPolicy()
-	ResetPolicyArns()
-	ResetRoleArn()
-	ResetSessionName()
-	ResetTags()
-	ResetTransitiveTagKeys()
-}
-
-// The jsii proxy struct for AwsProviderAssumeRoleOutputReference
-type jsiiProxy_AwsProviderAssumeRoleOutputReference struct {
-	internal.Type__cdktfComplexObject
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) DurationSeconds() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"durationSeconds",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) DurationSecondsInput() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"durationSecondsInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) ExternalId() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"externalId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) ExternalIdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"externalIdInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) IsSingleItem() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"isSingleItem",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) Policy() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"policy",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) PolicyArns() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"policyArns",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) PolicyArnsInput() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"policyArnsInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) PolicyInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"policyInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) RoleArn() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"roleArn",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) RoleArnInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"roleArnInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SessionName() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"sessionName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SessionNameInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"sessionNameInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) Tags() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"tags",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) TagsInput() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"tagsInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) TerraformAttribute() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"terraformAttribute",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
-	_jsii_.Get(
-		j,
-		"terraformResource",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) TransitiveTagKeys() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"transitiveTagKeys",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) TransitiveTagKeysInput() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"transitiveTagKeysInput",
-		&returns,
-	)
-	return returns
-}
-
-func NewAwsProviderAssumeRoleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AwsProviderAssumeRoleOutputReference {
-	_init_.Initialize()
-
-	j := jsiiProxy_AwsProviderAssumeRoleOutputReference{}
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderAssumeRoleOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		&j,
-	)
-
-	return &j
-}
-
-func NewAwsProviderAssumeRoleOutputReference_Override(a AwsProviderAssumeRoleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
-	_init_.Initialize()
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderAssumeRoleOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		a,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetDurationSeconds(val *float64) {
-	_jsii_.Set(
-		j,
-		"durationSeconds",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetExternalId(val *string) {
-	_jsii_.Set(
-		j,
-		"externalId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetIsSingleItem(val *bool) {
-	_jsii_.Set(
-		j,
-		"isSingleItem",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetPolicy(val *string) {
-	_jsii_.Set(
-		j,
-		"policy",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetPolicyArns(val *[]*string) {
-	_jsii_.Set(
-		j,
-		"policyArns",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetRoleArn(val *string) {
-	_jsii_.Set(
-		j,
-		"roleArn",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetSessionName(val *string) {
-	_jsii_.Set(
-		j,
-		"sessionName",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetTags(val interface{}) {
-	_jsii_.Set(
-		j,
-		"tags",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetTerraformAttribute(val *string) {
-	_jsii_.Set(
-		j,
-		"terraformAttribute",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
-	_jsii_.Set(
-		j,
-		"terraformResource",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderAssumeRoleOutputReference) SetTransitiveTagKeys(val *[]*string) {
-	_jsii_.Set(
-		j,
-		"transitiveTagKeys",
-		val,
-	)
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
-
-	_jsii_.Invoke(
-		a,
-		"getBooleanAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		a,
-		"getListAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
-	var returns *float64
-
-	_jsii_.Invoke(
-		a,
-		"getNumberAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
-	var returns *string
-
-	_jsii_.Invoke(
-		a,
-		"getStringAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) InterpolationAsList() cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationAsList",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationForAttribute",
-		[]interface{}{property},
-		&returns,
-	)
-
-	return returns
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetDurationSeconds() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetDurationSeconds",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetExternalId() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetExternalId",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetPolicy() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetPolicy",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetPolicyArns() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetPolicyArns",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetRoleArn() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetRoleArn",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetSessionName() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetSessionName",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetTags() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetTags",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderAssumeRoleOutputReference) ResetTransitiveTagKeys() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetTransitiveTagKeys",
-		nil, // no parameters
-	)
-}
-
 type AwsProviderConfig struct {
 	// The region where AWS operations will take place. Examples are us-east-1, us-west-2, etc.
 	//
@@ -1786,234 +1924,15 @@ type AwsProviderDefaultTags struct {
 	Tags interface{} `json:"tags"`
 }
 
-type AwsProviderDefaultTagsOutputReference interface {
-	cdktf.ComplexObject
-	IsSingleItem() *bool
-	SetIsSingleItem(val *bool)
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
-	TerraformAttribute() *string
-	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
-	GetListAttribute(terraformAttribute *string) *[]*string
-	GetNumberAttribute(terraformAttribute *string) *float64
-	GetStringAttribute(terraformAttribute *string) *string
-	InterpolationAsList() cdktf.IResolvable
-	InterpolationForAttribute(property *string) cdktf.IResolvable
-	ResetTags()
-}
-
-// The jsii proxy struct for AwsProviderDefaultTagsOutputReference
-type jsiiProxy_AwsProviderDefaultTagsOutputReference struct {
-	internal.Type__cdktfComplexObject
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) IsSingleItem() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"isSingleItem",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) Tags() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"tags",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) TagsInput() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"tagsInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) TerraformAttribute() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"terraformAttribute",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
-	_jsii_.Get(
-		j,
-		"terraformResource",
-		&returns,
-	)
-	return returns
-}
-
-func NewAwsProviderDefaultTagsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AwsProviderDefaultTagsOutputReference {
-	_init_.Initialize()
-
-	j := jsiiProxy_AwsProviderDefaultTagsOutputReference{}
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderDefaultTagsOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		&j,
-	)
-
-	return &j
-}
-
-func NewAwsProviderDefaultTagsOutputReference_Override(a AwsProviderDefaultTagsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
-	_init_.Initialize()
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderDefaultTagsOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		a,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) SetIsSingleItem(val *bool) {
-	_jsii_.Set(
-		j,
-		"isSingleItem",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) SetTags(val interface{}) {
-	_jsii_.Set(
-		j,
-		"tags",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) SetTerraformAttribute(val *string) {
-	_jsii_.Set(
-		j,
-		"terraformAttribute",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderDefaultTagsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
-	_jsii_.Set(
-		j,
-		"terraformResource",
-		val,
-	)
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
-
-	_jsii_.Invoke(
-		a,
-		"getBooleanAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		a,
-		"getListAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
-	var returns *float64
-
-	_jsii_.Invoke(
-		a,
-		"getNumberAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
-	var returns *string
-
-	_jsii_.Invoke(
-		a,
-		"getStringAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) InterpolationAsList() cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationAsList",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationForAttribute",
-		[]interface{}{property},
-		&returns,
-	)
-
-	return returns
-}
-
-func (a *jsiiProxy_AwsProviderDefaultTagsOutputReference) ResetTags() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetTags",
-		nil, // no parameters
-	)
-}
-
 type AwsProviderEndpoints struct {
 	// Use this to override the default service endpoint URL.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#accessanalyzer AwsProvider#accessanalyzer}
 	Accessanalyzer *string `json:"accessanalyzer"`
+	// Use this to override the default service endpoint URL.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#account AwsProvider#account}
+	Account *string `json:"account"`
 	// Use this to override the default service endpoint URL.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#acm AwsProvider#acm}
@@ -2026,6 +1945,10 @@ type AwsProviderEndpoints struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#alexaforbusiness AwsProvider#alexaforbusiness}
 	Alexaforbusiness *string `json:"alexaforbusiness"`
+	// Use this to override the default service endpoint URL.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#amp AwsProvider#amp}
+	Amp *string `json:"amp"`
 	// Use this to override the default service endpoint URL.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#amplify AwsProvider#amplify}
@@ -2430,6 +2353,14 @@ type AwsProviderEndpoints struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#es AwsProvider#es}
 	Es *string `json:"es"`
+	// Use this to override the default service endpoint URL.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#eventbridge AwsProvider#eventbridge}
+	Eventbridge *string `json:"eventbridge"`
+	// Use this to override the default service endpoint URL.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#events AwsProvider#events}
+	Events *string `json:"events"`
 	// Use this to override the default service endpoint URL.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws#finspace AwsProvider#finspace}
@@ -3207,269 +3138,6 @@ type AwsProviderIgnoreTags struct {
 	Keys *[]*string `json:"keys"`
 }
 
-type AwsProviderIgnoreTagsOutputReference interface {
-	cdktf.ComplexObject
-	IsSingleItem() *bool
-	SetIsSingleItem(val *bool)
-	KeyPrefixes() *[]*string
-	SetKeyPrefixes(val *[]*string)
-	KeyPrefixesInput() *[]*string
-	Keys() *[]*string
-	SetKeys(val *[]*string)
-	KeysInput() *[]*string
-	TerraformAttribute() *string
-	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
-	GetListAttribute(terraformAttribute *string) *[]*string
-	GetNumberAttribute(terraformAttribute *string) *float64
-	GetStringAttribute(terraformAttribute *string) *string
-	InterpolationAsList() cdktf.IResolvable
-	InterpolationForAttribute(property *string) cdktf.IResolvable
-	ResetKeyPrefixes()
-	ResetKeys()
-}
-
-// The jsii proxy struct for AwsProviderIgnoreTagsOutputReference
-type jsiiProxy_AwsProviderIgnoreTagsOutputReference struct {
-	internal.Type__cdktfComplexObject
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) IsSingleItem() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"isSingleItem",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) KeyPrefixes() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"keyPrefixes",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) KeyPrefixesInput() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"keyPrefixesInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) Keys() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"keys",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) KeysInput() *[]*string {
-	var returns *[]*string
-	_jsii_.Get(
-		j,
-		"keysInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) TerraformAttribute() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"terraformAttribute",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
-	_jsii_.Get(
-		j,
-		"terraformResource",
-		&returns,
-	)
-	return returns
-}
-
-func NewAwsProviderIgnoreTagsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AwsProviderIgnoreTagsOutputReference {
-	_init_.Initialize()
-
-	j := jsiiProxy_AwsProviderIgnoreTagsOutputReference{}
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderIgnoreTagsOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		&j,
-	)
-
-	return &j
-}
-
-func NewAwsProviderIgnoreTagsOutputReference_Override(a AwsProviderIgnoreTagsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
-	_init_.Initialize()
-
-	_jsii_.Create(
-		"hashicorp_aws.AwsProviderIgnoreTagsOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		a,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) SetIsSingleItem(val *bool) {
-	_jsii_.Set(
-		j,
-		"isSingleItem",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) SetKeyPrefixes(val *[]*string) {
-	_jsii_.Set(
-		j,
-		"keyPrefixes",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) SetKeys(val *[]*string) {
-	_jsii_.Set(
-		j,
-		"keys",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) SetTerraformAttribute(val *string) {
-	_jsii_.Set(
-		j,
-		"terraformAttribute",
-		val,
-	)
-}
-
-func (j *jsiiProxy_AwsProviderIgnoreTagsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
-	_jsii_.Set(
-		j,
-		"terraformResource",
-		val,
-	)
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
-
-	_jsii_.Invoke(
-		a,
-		"getBooleanAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		a,
-		"getListAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
-	var returns *float64
-
-	_jsii_.Invoke(
-		a,
-		"getNumberAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
-	var returns *string
-
-	_jsii_.Invoke(
-		a,
-		"getStringAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) InterpolationAsList() cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationAsList",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		a,
-		"interpolationForAttribute",
-		[]interface{}{property},
-		&returns,
-	)
-
-	return returns
-}
-
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) ResetKeyPrefixes() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetKeyPrefixes",
-		nil, // no parameters
-	)
-}
-
-func (a *jsiiProxy_AwsProviderIgnoreTagsOutputReference) ResetKeys() {
-	_jsii_.InvokeVoid(
-		a,
-		"resetKeys",
-		nil, // no parameters
-	)
-}
-
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudcontrolapi_resource.html aws_cloudcontrolapi_resource}.
 type CloudcontrolapiResource interface {
 	cdktf.TerraformResource
@@ -4168,6 +3836,8 @@ type CloudcontrolapiResourceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudcontrolapiResourceTimeouts
+	SetInternalValue(val *CloudcontrolapiResourceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4228,6 +3898,16 @@ func (j *jsiiProxy_CloudcontrolapiResourceTimeoutsOutputReference) DeleteInput()
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudcontrolapiResourceTimeoutsOutputReference) InternalValue() *CloudcontrolapiResourceTimeouts {
+	var returns *CloudcontrolapiResourceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4319,6 +3999,14 @@ func (j *jsiiProxy_CloudcontrolapiResourceTimeoutsOutputReference) SetDelete(val
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudcontrolapiResourceTimeoutsOutputReference) SetInternalValue(val *CloudcontrolapiResourceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6656,4 +6344,544 @@ type DataAwsIdentitystoreUserFilter struct {
 	AttributePath *string `json:"attributePath"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/identitystore_user.html#attribute_value DataAwsIdentitystoreUser#attribute_value}.
 	AttributeValue *string `json:"attributeValue"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/detective_graph.html aws_detective_graph}.
+type DetectiveGraph interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	CreatedTime() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	GraphArn() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DetectiveGraph
+type jsiiProxy_DetectiveGraph struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_DetectiveGraph) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) CreatedTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createdTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) GraphArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"graphArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DetectiveGraph) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/detective_graph.html aws_detective_graph} Resource.
+func NewDetectiveGraph(scope constructs.Construct, id *string, config *DetectiveGraphConfig) DetectiveGraph {
+	_init_.Initialize()
+
+	j := jsiiProxy_DetectiveGraph{}
+
+	_jsii_.Create(
+		"hashicorp_aws.DetectiveGraph",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/detective_graph.html aws_detective_graph} Resource.
+func NewDetectiveGraph_Override(d DetectiveGraph, scope constructs.Construct, id *string, config *DetectiveGraphConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.DetectiveGraph",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DetectiveGraph) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DetectiveGraph_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.DetectiveGraph",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DetectiveGraph_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.DetectiveGraph",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DetectiveGraph) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DetectiveGraph) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DetectiveGraph) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DetectiveGraph) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DetectiveGraph) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type DetectiveGraphConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/detective_graph.html#tags DetectiveGraph#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/detective_graph.html#tags_all DetectiveGraph#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
 }

@@ -25,6 +25,9 @@ type Alb interface {
 	CustomerOwnedIpv4PoolInput() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
+	SetDesyncMitigationMode(val *string)
+	DesyncMitigationModeInput() *string
 	DnsName() *string
 	DropInvalidHeaderFields() interface{}
 	SetDropInvalidHeaderFields(val interface{})
@@ -38,6 +41,9 @@ type Alb interface {
 	EnableHttp2() interface{}
 	SetEnableHttp2(val interface{})
 	EnableHttp2Input() interface{}
+	EnableWafFailOpen() interface{}
+	SetEnableWafFailOpen(val interface{})
+	EnableWafFailOpenInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -98,10 +104,12 @@ type Alb interface {
 	PutTimeouts(value *AlbTimeouts)
 	ResetAccessLogs()
 	ResetCustomerOwnedIpv4Pool()
+	ResetDesyncMitigationMode()
 	ResetDropInvalidHeaderFields()
 	ResetEnableCrossZoneLoadBalancing()
 	ResetEnableDeletionProtection()
 	ResetEnableHttp2()
+	ResetEnableWafFailOpen()
 	ResetIdleTimeout()
 	ResetInternal()
 	ResetIpAddressType()
@@ -226,6 +234,26 @@ func (j *jsiiProxy_Alb) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_Alb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Alb) DesyncMitigationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationModeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Alb) DnsName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -311,6 +339,26 @@ func (j *jsiiProxy_Alb) EnableHttp2Input() interface{} {
 	_jsii_.Get(
 		j,
 		"enableHttp2Input",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Alb) EnableWafFailOpen() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpen",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Alb) EnableWafFailOpenInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpenInput",
 		&returns,
 	)
 	return returns
@@ -683,7 +731,7 @@ func NewAlb(scope constructs.Construct, id *string, config *AlbConfig) Alb {
 	j := jsiiProxy_Alb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.Alb",
+		"hashicorp_aws.elb.Alb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -696,7 +744,7 @@ func NewAlb_Override(a Alb, scope constructs.Construct, id *string, config *AlbC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.Alb",
+		"hashicorp_aws.elb.Alb",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -722,6 +770,14 @@ func (j *jsiiProxy_Alb) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Alb) SetDesyncMitigationMode(val *string) {
+	_jsii_.Set(
+		j,
+		"desyncMitigationMode",
 		val,
 	)
 }
@@ -754,6 +810,14 @@ func (j *jsiiProxy_Alb) SetEnableHttp2(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enableHttp2",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Alb) SetEnableWafFailOpen(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enableWafFailOpen",
 		val,
 	)
 }
@@ -872,7 +936,7 @@ func Alb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.Alb",
+		"hashicorp_aws.elb.Alb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -885,7 +949,7 @@ func Alb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.Alb",
+		"hashicorp_aws.elb.Alb",
 		"tfResourceType",
 		&returns,
 	)
@@ -1013,6 +1077,14 @@ func (a *jsiiProxy_Alb) ResetCustomerOwnedIpv4Pool() {
 	)
 }
 
+func (a *jsiiProxy_Alb) ResetDesyncMitigationMode() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetDesyncMitigationMode",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_Alb) ResetDropInvalidHeaderFields() {
 	_jsii_.InvokeVoid(
 		a,
@@ -1041,6 +1113,14 @@ func (a *jsiiProxy_Alb) ResetEnableHttp2() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetEnableHttp2",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_Alb) ResetEnableWafFailOpen() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetEnableWafFailOpen",
 		nil, // no parameters
 	)
 }
@@ -1224,6 +1304,8 @@ type AlbAccessLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *AlbAccessLogs
+	SetInternalValue(val *AlbAccessLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -1288,6 +1370,16 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) EnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_AlbAccessLogsOutputReference) InternalValue() *AlbAccessLogs {
+	var returns *AlbAccessLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AlbAccessLogsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1344,7 +1436,7 @@ func NewAlbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_AlbAccessLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbAccessLogsOutputReference",
+		"hashicorp_aws.elb.AlbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1356,7 +1448,7 @@ func NewAlbAccessLogsOutputReference_Override(a AlbAccessLogsOutputReference, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbAccessLogsOutputReference",
+		"hashicorp_aws.elb.AlbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1374,6 +1466,14 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) SetEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbAccessLogsOutputReference) SetInternalValue(val *AlbAccessLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1510,6 +1610,7 @@ func (a *jsiiProxy_AlbAccessLogsOutputReference) ResetPrefix() {
 	)
 }
 
+// AWS Elastic Load Balancer.
 type AlbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1525,6 +1626,8 @@ type AlbConfig struct {
 	AccessLogs *AlbAccessLogs `json:"accessLogs"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#customer_owned_ipv4_pool Alb#customer_owned_ipv4_pool}.
 	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#desync_mitigation_mode Alb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#drop_invalid_header_fields Alb#drop_invalid_header_fields}.
 	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_cross_zone_load_balancing Alb#enable_cross_zone_load_balancing}.
@@ -1533,6 +1636,8 @@ type AlbConfig struct {
 	EnableDeletionProtection interface{} `json:"enableDeletionProtection"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_http2 Alb#enable_http2}.
 	EnableHttp2 interface{} `json:"enableHttp2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_waf_fail_open Alb#enable_waf_fail_open}.
+	EnableWafFailOpen interface{} `json:"enableWafFailOpen"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#idle_timeout Alb#idle_timeout}.
 	IdleTimeout *float64 `json:"idleTimeout"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#internal Alb#internal}.
@@ -1999,7 +2104,7 @@ func NewAlbListener(scope constructs.Construct, id *string, config *AlbListenerC
 	j := jsiiProxy_AlbListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListener",
+		"hashicorp_aws.elb.AlbListener",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2012,7 +2117,7 @@ func NewAlbListener_Override(a AlbListener, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListener",
+		"hashicorp_aws.elb.AlbListener",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2132,7 +2237,7 @@ func AlbListener_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AlbListener",
+		"hashicorp_aws.elb.AlbListener",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2145,7 +2250,7 @@ func AlbListener_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AlbListener",
+		"hashicorp_aws.elb.AlbListener",
 		"tfResourceType",
 		&returns,
 	)
@@ -2612,7 +2717,7 @@ func NewAlbListenerCertificate(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_AlbListenerCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerCertificate",
+		"hashicorp_aws.elb.AlbListenerCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2625,7 +2730,7 @@ func NewAlbListenerCertificate_Override(a AlbListenerCertificate, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerCertificate",
+		"hashicorp_aws.elb.AlbListenerCertificate",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2689,7 +2794,7 @@ func AlbListenerCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AlbListenerCertificate",
+		"hashicorp_aws.elb.AlbListenerCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2702,7 +2807,7 @@ func AlbListenerCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AlbListenerCertificate",
+		"hashicorp_aws.elb.AlbListenerCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -2864,6 +2969,7 @@ func (a *jsiiProxy_AlbListenerCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type AlbListenerCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2879,6 +2985,7 @@ type AlbListenerCertificateConfig struct {
 	ListenerArn *string `json:"listenerArn"`
 }
 
+// AWS Elastic Load Balancer.
 type AlbListenerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2967,6 +3074,8 @@ type AlbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	AuthenticationRequestExtraParams() interface{}
 	SetAuthenticationRequestExtraParams(val interface{})
 	AuthenticationRequestExtraParamsInput() interface{}
+	InternalValue() *AlbListenerDefaultActionAuthenticateCognito
+	SetInternalValue(val *AlbListenerDefaultActionAuthenticateCognito)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnUnauthenticatedRequest() *string
@@ -3027,6 +3136,16 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) A
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) InternalValue() *AlbListenerDefaultActionAuthenticateCognito {
+	var returns *AlbListenerDefaultActionAuthenticateCognito
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3208,7 +3327,7 @@ func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference(terraformReso
 	j := jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3220,7 +3339,7 @@ func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference_Override(a Al
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3230,6 +3349,14 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) S
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) SetInternalValue(val *AlbListenerDefaultActionAuthenticateCognito) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3477,6 +3604,8 @@ type AlbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *AlbListenerDefaultActionAuthenticateOidc
+	SetInternalValue(val *AlbListenerDefaultActionAuthenticateOidc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -3597,6 +3726,16 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) Clie
 	_jsii_.Get(
 		j,
 		"clientSecretInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) InternalValue() *AlbListenerDefaultActionAuthenticateOidc {
+	var returns *AlbListenerDefaultActionAuthenticateOidc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3778,7 +3917,7 @@ func NewAlbListenerDefaultActionAuthenticateOidcOutputReference(terraformResourc
 	j := jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3790,7 +3929,7 @@ func NewAlbListenerDefaultActionAuthenticateOidcOutputReference_Override(a AlbLi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3824,6 +3963,14 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetC
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetInternalValue(val *AlbListenerDefaultActionAuthenticateOidc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4046,6 +4193,8 @@ type AlbListenerDefaultActionFixedResponseOutputReference interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
+	InternalValue() *AlbListenerDefaultActionFixedResponse
+	SetInternalValue(val *AlbListenerDefaultActionFixedResponse)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageBody() *string
@@ -4088,6 +4237,16 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) Content
 	_jsii_.Get(
 		j,
 		"contentTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) InternalValue() *AlbListenerDefaultActionFixedResponse {
+	var returns *AlbListenerDefaultActionFixedResponse
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4169,7 +4328,7 @@ func NewAlbListenerDefaultActionFixedResponseOutputReference(terraformResource c
 	j := jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4181,7 +4340,7 @@ func NewAlbListenerDefaultActionFixedResponseOutputReference_Override(a AlbListe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4191,6 +4350,14 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetCont
 	_jsii_.Set(
 		j,
 		"contentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetInternalValue(val *AlbListenerDefaultActionFixedResponse) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4348,6 +4515,8 @@ type AlbListenerDefaultActionForward struct {
 
 type AlbListenerDefaultActionForwardOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerDefaultActionForward
+	SetInternalValue(val *AlbListenerDefaultActionForward)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Stickiness() AlbListenerDefaultActionForwardStickinessOutputReference
@@ -4372,6 +4541,16 @@ type AlbListenerDefaultActionForwardOutputReference interface {
 // The jsii proxy struct for AlbListenerDefaultActionForwardOutputReference
 type jsiiProxy_AlbListenerDefaultActionForwardOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) InternalValue() *AlbListenerDefaultActionForward {
+	var returns *AlbListenerDefaultActionForward
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) IsSingleItem() *bool {
@@ -4450,7 +4629,7 @@ func NewAlbListenerDefaultActionForwardOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AlbListenerDefaultActionForwardOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4462,9 +4641,17 @@ func NewAlbListenerDefaultActionForwardOutputReference_Override(a AlbListenerDef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetInternalValue(val *AlbListenerDefaultActionForward) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4615,6 +4802,8 @@ type AlbListenerDefaultActionForwardStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *AlbListenerDefaultActionForwardStickiness
+	SetInternalValue(val *AlbListenerDefaultActionForwardStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4675,6 +4864,16 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Ena
 	return returns
 }
 
+func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) InternalValue() *AlbListenerDefaultActionForwardStickiness {
+	var returns *AlbListenerDefaultActionForwardStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4711,7 +4910,7 @@ func NewAlbListenerDefaultActionForwardStickinessOutputReference(terraformResour
 	j := jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4723,7 +4922,7 @@ func NewAlbListenerDefaultActionForwardStickinessOutputReference_Override(a AlbL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4741,6 +4940,14 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Set
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) SetInternalValue(val *AlbListenerDefaultActionForwardStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4888,6 +5095,8 @@ type AlbListenerDefaultActionRedirectOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *AlbListenerDefaultActionRedirect
+	SetInternalValue(val *AlbListenerDefaultActionRedirect)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -4942,6 +5151,16 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) HostInput() 
 	_jsii_.Get(
 		j,
 		"hostInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) InternalValue() *AlbListenerDefaultActionRedirect {
+	var returns *AlbListenerDefaultActionRedirect
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5083,7 +5302,7 @@ func NewAlbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AlbListenerDefaultActionRedirectOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5095,7 +5314,7 @@ func NewAlbListenerDefaultActionRedirectOutputReference_Override(a AlbListenerDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5105,6 +5324,14 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetHost(val 
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetInternalValue(val *AlbListenerDefaultActionRedirect) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5636,7 +5863,7 @@ func NewAlbListenerRule(scope constructs.Construct, id *string, config *AlbListe
 	j := jsiiProxy_AlbListenerRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRule",
+		"hashicorp_aws.elb.AlbListenerRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5649,7 +5876,7 @@ func NewAlbListenerRule_Override(a AlbListenerRule, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRule",
+		"hashicorp_aws.elb.AlbListenerRule",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -5745,7 +5972,7 @@ func AlbListenerRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AlbListenerRule",
+		"hashicorp_aws.elb.AlbListenerRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5758,7 +5985,7 @@ func AlbListenerRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AlbListenerRule",
+		"hashicorp_aws.elb.AlbListenerRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -5997,6 +6224,8 @@ type AlbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	AuthenticationRequestExtraParams() interface{}
 	SetAuthenticationRequestExtraParams(val interface{})
 	AuthenticationRequestExtraParamsInput() interface{}
+	InternalValue() *AlbListenerRuleActionAuthenticateCognito
+	SetInternalValue(val *AlbListenerRuleActionAuthenticateCognito)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnUnauthenticatedRequest() *string
@@ -6057,6 +6286,16 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) Auth
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) InternalValue() *AlbListenerRuleActionAuthenticateCognito {
+	var returns *AlbListenerRuleActionAuthenticateCognito
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6238,7 +6477,7 @@ func NewAlbListenerRuleActionAuthenticateCognitoOutputReference(terraformResourc
 	j := jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6250,7 +6489,7 @@ func NewAlbListenerRuleActionAuthenticateCognitoOutputReference_Override(a AlbLi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6260,6 +6499,14 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetA
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetInternalValue(val *AlbListenerRuleActionAuthenticateCognito) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6507,6 +6754,8 @@ type AlbListenerRuleActionAuthenticateOidcOutputReference interface {
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *AlbListenerRuleActionAuthenticateOidc
+	SetInternalValue(val *AlbListenerRuleActionAuthenticateOidc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -6627,6 +6876,16 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) ClientS
 	_jsii_.Get(
 		j,
 		"clientSecretInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) InternalValue() *AlbListenerRuleActionAuthenticateOidc {
+	var returns *AlbListenerRuleActionAuthenticateOidc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6808,7 +7067,7 @@ func NewAlbListenerRuleActionAuthenticateOidcOutputReference(terraformResource c
 	j := jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6820,7 +7079,7 @@ func NewAlbListenerRuleActionAuthenticateOidcOutputReference_Override(a AlbListe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6854,6 +7113,14 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetClie
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetInternalValue(val *AlbListenerRuleActionAuthenticateOidc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7076,6 +7343,8 @@ type AlbListenerRuleActionFixedResponseOutputReference interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
+	InternalValue() *AlbListenerRuleActionFixedResponse
+	SetInternalValue(val *AlbListenerRuleActionFixedResponse)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageBody() *string
@@ -7118,6 +7387,16 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) ContentTyp
 	_jsii_.Get(
 		j,
 		"contentTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) InternalValue() *AlbListenerRuleActionFixedResponse {
+	var returns *AlbListenerRuleActionFixedResponse
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7199,7 +7478,7 @@ func NewAlbListenerRuleActionFixedResponseOutputReference(terraformResource cdkt
 	j := jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7211,7 +7490,7 @@ func NewAlbListenerRuleActionFixedResponseOutputReference_Override(a AlbListener
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -7221,6 +7500,14 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetContent
 	_jsii_.Set(
 		j,
 		"contentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetInternalValue(val *AlbListenerRuleActionFixedResponse) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7378,6 +7665,8 @@ type AlbListenerRuleActionForward struct {
 
 type AlbListenerRuleActionForwardOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerRuleActionForward
+	SetInternalValue(val *AlbListenerRuleActionForward)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Stickiness() AlbListenerRuleActionForwardStickinessOutputReference
@@ -7402,6 +7691,16 @@ type AlbListenerRuleActionForwardOutputReference interface {
 // The jsii proxy struct for AlbListenerRuleActionForwardOutputReference
 type jsiiProxy_AlbListenerRuleActionForwardOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) InternalValue() *AlbListenerRuleActionForward {
+	var returns *AlbListenerRuleActionForward
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) IsSingleItem() *bool {
@@ -7480,7 +7779,7 @@ func NewAlbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_AlbListenerRuleActionForwardOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7492,9 +7791,17 @@ func NewAlbListenerRuleActionForwardOutputReference_Override(a AlbListenerRuleAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetInternalValue(val *AlbListenerRuleActionForward) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7645,6 +7952,8 @@ type AlbListenerRuleActionForwardStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *AlbListenerRuleActionForwardStickiness
+	SetInternalValue(val *AlbListenerRuleActionForwardStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7705,6 +8014,16 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) Enable
 	return returns
 }
 
+func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) InternalValue() *AlbListenerRuleActionForwardStickiness {
+	var returns *AlbListenerRuleActionForwardStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7741,7 +8060,7 @@ func NewAlbListenerRuleActionForwardStickinessOutputReference(terraformResource 
 	j := jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7753,7 +8072,7 @@ func NewAlbListenerRuleActionForwardStickinessOutputReference_Override(a AlbList
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -7771,6 +8090,14 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetEna
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetInternalValue(val *AlbListenerRuleActionForwardStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7918,6 +8245,8 @@ type AlbListenerRuleActionRedirectOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *AlbListenerRuleActionRedirect
+	SetInternalValue(val *AlbListenerRuleActionRedirect)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -7972,6 +8301,16 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) HostInput() *st
 	_jsii_.Get(
 		j,
 		"hostInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) InternalValue() *AlbListenerRuleActionRedirect {
+	var returns *AlbListenerRuleActionRedirect
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8113,7 +8452,7 @@ func NewAlbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_AlbListenerRuleActionRedirectOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8125,7 +8464,7 @@ func NewAlbListenerRuleActionRedirectOutputReference_Override(a AlbListenerRuleA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -8135,6 +8474,14 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetHost(val *st
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetInternalValue(val *AlbListenerRuleActionRedirect) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8361,6 +8708,8 @@ type AlbListenerRuleConditionHostHeader struct {
 
 type AlbListenerRuleConditionHostHeaderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerRuleConditionHostHeader
+	SetInternalValue(val *AlbListenerRuleConditionHostHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8381,6 +8730,16 @@ type AlbListenerRuleConditionHostHeaderOutputReference interface {
 // The jsii proxy struct for AlbListenerRuleConditionHostHeaderOutputReference
 type jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) InternalValue() *AlbListenerRuleConditionHostHeader {
+	var returns *AlbListenerRuleConditionHostHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) IsSingleItem() *bool {
@@ -8439,7 +8798,7 @@ func NewAlbListenerRuleConditionHostHeaderOutputReference(terraformResource cdkt
 	j := jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHostHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8451,9 +8810,17 @@ func NewAlbListenerRuleConditionHostHeaderOutputReference_Override(a AlbListener
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHostHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) SetInternalValue(val *AlbListenerRuleConditionHostHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8585,6 +8952,8 @@ type AlbListenerRuleConditionHttpHeaderOutputReference interface {
 	HttpHeaderName() *string
 	SetHttpHeaderName(val *string)
 	HttpHeaderNameInput() *string
+	InternalValue() *AlbListenerRuleConditionHttpHeader
+	SetInternalValue(val *AlbListenerRuleConditionHttpHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8622,6 +8991,16 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) HttpHeader
 	_jsii_.Get(
 		j,
 		"httpHeaderNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) InternalValue() *AlbListenerRuleConditionHttpHeader {
+	var returns *AlbListenerRuleConditionHttpHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8683,7 +9062,7 @@ func NewAlbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdkt
 	j := jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8695,7 +9074,7 @@ func NewAlbListenerRuleConditionHttpHeaderOutputReference_Override(a AlbListener
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -8705,6 +9084,14 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetHttpHea
 	_jsii_.Set(
 		j,
 		"httpHeaderName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetInternalValue(val *AlbListenerRuleConditionHttpHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8832,6 +9219,8 @@ type AlbListenerRuleConditionHttpRequestMethod struct {
 
 type AlbListenerRuleConditionHttpRequestMethodOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerRuleConditionHttpRequestMethod
+	SetInternalValue(val *AlbListenerRuleConditionHttpRequestMethod)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8852,6 +9241,16 @@ type AlbListenerRuleConditionHttpRequestMethodOutputReference interface {
 // The jsii proxy struct for AlbListenerRuleConditionHttpRequestMethodOutputReference
 type jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) InternalValue() *AlbListenerRuleConditionHttpRequestMethod {
+	var returns *AlbListenerRuleConditionHttpRequestMethod
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) IsSingleItem() *bool {
@@ -8910,7 +9309,7 @@ func NewAlbListenerRuleConditionHttpRequestMethodOutputReference(terraformResour
 	j := jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpRequestMethodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8922,9 +9321,17 @@ func NewAlbListenerRuleConditionHttpRequestMethodOutputReference_Override(a AlbL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpRequestMethodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) SetInternalValue(val *AlbListenerRuleConditionHttpRequestMethod) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9051,6 +9458,8 @@ type AlbListenerRuleConditionPathPattern struct {
 
 type AlbListenerRuleConditionPathPatternOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerRuleConditionPathPattern
+	SetInternalValue(val *AlbListenerRuleConditionPathPattern)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9071,6 +9480,16 @@ type AlbListenerRuleConditionPathPatternOutputReference interface {
 // The jsii proxy struct for AlbListenerRuleConditionPathPatternOutputReference
 type jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) InternalValue() *AlbListenerRuleConditionPathPattern {
+	var returns *AlbListenerRuleConditionPathPattern
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) IsSingleItem() *bool {
@@ -9129,7 +9548,7 @@ func NewAlbListenerRuleConditionPathPatternOutputReference(terraformResource cdk
 	j := jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionPathPatternOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9141,9 +9560,17 @@ func NewAlbListenerRuleConditionPathPatternOutputReference_Override(a AlbListene
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionPathPatternOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) SetInternalValue(val *AlbListenerRuleConditionPathPattern) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9277,6 +9704,8 @@ type AlbListenerRuleConditionSourceIp struct {
 
 type AlbListenerRuleConditionSourceIpOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerRuleConditionSourceIp
+	SetInternalValue(val *AlbListenerRuleConditionSourceIp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9297,6 +9726,16 @@ type AlbListenerRuleConditionSourceIpOutputReference interface {
 // The jsii proxy struct for AlbListenerRuleConditionSourceIpOutputReference
 type jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) InternalValue() *AlbListenerRuleConditionSourceIp {
+	var returns *AlbListenerRuleConditionSourceIp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) IsSingleItem() *bool {
@@ -9355,7 +9794,7 @@ func NewAlbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionSourceIpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9367,9 +9806,17 @@ func NewAlbListenerRuleConditionSourceIpOutputReference_Override(a AlbListenerRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionSourceIpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) SetInternalValue(val *AlbListenerRuleConditionSourceIp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9489,6 +9936,7 @@ func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) Interpolatio
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type AlbListenerRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9523,6 +9971,8 @@ type AlbListenerTimeouts struct {
 
 type AlbListenerTimeoutsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AlbListenerTimeouts
+	SetInternalValue(val *AlbListenerTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Read() *string
@@ -9544,6 +9994,16 @@ type AlbListenerTimeoutsOutputReference interface {
 // The jsii proxy struct for AlbListenerTimeoutsOutputReference
 type jsiiProxy_AlbListenerTimeoutsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) InternalValue() *AlbListenerTimeouts {
+	var returns *AlbListenerTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) IsSingleItem() *bool {
@@ -9602,7 +10062,7 @@ func NewAlbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_AlbListenerTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9614,9 +10074,17 @@ func NewAlbListenerTimeoutsOutputReference_Override(a AlbListenerTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) SetInternalValue(val *AlbListenerTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9761,6 +10229,9 @@ type AlbTargetGroup interface {
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
+	ConnectionTermination() interface{}
+	SetConnectionTermination(val interface{})
+	ConnectionTerminationInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
 	Count() interface{}
 	SetCount(val interface{})
@@ -9836,6 +10307,7 @@ type AlbTargetGroup interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutHealthCheck(value *AlbTargetGroupHealthCheck)
 	PutStickiness(value *AlbTargetGroupStickiness)
+	ResetConnectionTermination()
 	ResetDeregistrationDelay()
 	ResetHealthCheck()
 	ResetLambdaMultiValueHeadersEnabled()
@@ -9890,6 +10362,26 @@ func (j *jsiiProxy_AlbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbTargetGroup) ConnectionTermination() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTermination",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbTargetGroup) ConnectionTerminationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTerminationInput",
 		&returns,
 	)
 	return returns
@@ -10372,7 +10864,7 @@ func NewAlbTargetGroup(scope constructs.Construct, id *string, config *AlbTarget
 	j := jsiiProxy_AlbTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroup",
+		"hashicorp_aws.elb.AlbTargetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10385,9 +10877,17 @@ func NewAlbTargetGroup_Override(a AlbTargetGroup, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroup",
+		"hashicorp_aws.elb.AlbTargetGroup",
 		[]interface{}{scope, id, config},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AlbTargetGroup) SetConnectionTermination(val interface{}) {
+	_jsii_.Set(
+		j,
+		"connectionTermination",
+		val,
 	)
 }
 
@@ -10553,7 +11053,7 @@ func AlbTargetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AlbTargetGroup",
+		"hashicorp_aws.elb.AlbTargetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10566,7 +11066,7 @@ func AlbTargetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AlbTargetGroup",
+		"hashicorp_aws.elb.AlbTargetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -10675,6 +11175,14 @@ func (a *jsiiProxy_AlbTargetGroup) PutStickiness(value *AlbTargetGroupStickiness
 		a,
 		"putStickiness",
 		[]interface{}{value},
+	)
+}
+
+func (a *jsiiProxy_AlbTargetGroup) ResetConnectionTermination() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetConnectionTermination",
+		nil, // no parameters
 	)
 }
 
@@ -11161,7 +11669,7 @@ func NewAlbTargetGroupAttachment(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_AlbTargetGroupAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachment",
+		"hashicorp_aws.elb.AlbTargetGroupAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11174,7 +11682,7 @@ func NewAlbTargetGroupAttachment_Override(a AlbTargetGroupAttachment, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachment",
+		"hashicorp_aws.elb.AlbTargetGroupAttachment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -11254,7 +11762,7 @@ func AlbTargetGroupAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachment",
+		"hashicorp_aws.elb.AlbTargetGroupAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11267,7 +11775,7 @@ func AlbTargetGroupAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachment",
+		"hashicorp_aws.elb.AlbTargetGroupAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -11445,6 +11953,7 @@ func (a *jsiiProxy_AlbTargetGroupAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type AlbTargetGroupAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11464,6 +11973,7 @@ type AlbTargetGroupAttachmentConfig struct {
 	Port *float64 `json:"port"`
 }
 
+// AWS Elastic Load Balancer.
 type AlbTargetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11473,6 +11983,8 @@ type AlbTargetGroupConfig struct {
 	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#connection_termination AlbTargetGroup#connection_termination}.
+	ConnectionTermination interface{} `json:"connectionTermination"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#deregistration_delay AlbTargetGroup#deregistration_delay}.
 	DeregistrationDelay *string `json:"deregistrationDelay"`
 	// health_check block.
@@ -11542,6 +12054,8 @@ type AlbTargetGroupHealthCheckOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *AlbTargetGroupHealthCheck
+	SetInternalValue(val *AlbTargetGroupHealthCheck)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -11626,6 +12140,16 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) HealthyThresholdInp
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) InternalValue() *AlbTargetGroupHealthCheck {
+	var returns *AlbTargetGroupHealthCheck
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11807,7 +12331,7 @@ func NewAlbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_AlbTargetGroupHealthCheckOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11819,7 +12343,7 @@ func NewAlbTargetGroupHealthCheckOutputReference_Override(a AlbTargetGroupHealth
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -11837,6 +12361,14 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetHealthyThreshold
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetInternalValue(val *AlbTargetGroupHealthCheck) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12099,6 +12631,8 @@ type AlbTargetGroupStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *AlbTargetGroupStickiness
+	SetInternalValue(val *AlbTargetGroupStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12184,6 +12718,16 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) EnabledInput() inter
 	return returns
 }
 
+func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) InternalValue() *AlbTargetGroupStickiness {
+	var returns *AlbTargetGroupStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12240,7 +12784,7 @@ func NewAlbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_AlbTargetGroupStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12252,7 +12796,7 @@ func NewAlbTargetGroupStickinessOutputReference_Override(a AlbTargetGroupStickin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -12278,6 +12822,14 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetEnabled(val inter
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetInternalValue(val *AlbTargetGroupStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12439,6 +12991,8 @@ type AlbTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *AlbTimeouts
+	SetInternalValue(val *AlbTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12504,6 +13058,16 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AlbTimeoutsOutputReference) InternalValue() *AlbTimeouts {
+	var returns *AlbTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AlbTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12560,7 +13124,7 @@ func NewAlbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_AlbTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12572,7 +13136,7 @@ func NewAlbTimeoutsOutputReference_Override(a AlbTimeoutsOutputReference, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AlbTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -12590,6 +13154,14 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AlbTimeoutsOutputReference) SetInternalValue(val *AlbTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13013,7 +13585,7 @@ func NewAppCookieStickinessPolicy(scope constructs.Construct, id *string, config
 	j := jsiiProxy_AppCookieStickinessPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicy",
+		"hashicorp_aws.elb.AppCookieStickinessPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13026,7 +13598,7 @@ func NewAppCookieStickinessPolicy_Override(a AppCookieStickinessPolicy, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicy",
+		"hashicorp_aws.elb.AppCookieStickinessPolicy",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -13106,7 +13678,7 @@ func AppCookieStickinessPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicy",
+		"hashicorp_aws.elb.AppCookieStickinessPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13119,7 +13691,7 @@ func AppCookieStickinessPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicy",
+		"hashicorp_aws.elb.AppCookieStickinessPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -13281,6 +13853,7 @@ func (a *jsiiProxy_AppCookieStickinessPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type AppCookieStickinessPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13312,10 +13885,12 @@ type DataAwsAlb interface {
 	CustomerOwnedIpv4Pool() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
 	DnsName() *string
 	DropInvalidHeaderFields() interface{}
 	EnableDeletionProtection() interface{}
 	EnableHttp2() interface{}
+	EnableWafFailOpen() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -13435,6 +14010,16 @@ func (j *jsiiProxy_DataAwsAlb) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsAlb) DnsName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -13470,6 +14055,16 @@ func (j *jsiiProxy_DataAwsAlb) EnableHttp2() interface{} {
 	_jsii_.Get(
 		j,
 		"enableHttp2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsAlb) EnableWafFailOpen() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpen",
 		&returns,
 	)
 	return returns
@@ -13702,7 +14297,7 @@ func NewDataAwsAlb(scope constructs.Construct, id *string, config *DataAwsAlbCon
 	j := jsiiProxy_DataAwsAlb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlb",
+		"hashicorp_aws.elb.DataAwsAlb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13715,7 +14310,7 @@ func NewDataAwsAlb_Override(d DataAwsAlb, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlb",
+		"hashicorp_aws.elb.DataAwsAlb",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13779,7 +14374,7 @@ func DataAwsAlb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsAlb",
+		"hashicorp_aws.elb.DataAwsAlb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13792,7 +14387,7 @@ func DataAwsAlb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsAlb",
+		"hashicorp_aws.elb.DataAwsAlb",
 		"tfResourceType",
 		&returns,
 	)
@@ -14086,7 +14681,7 @@ func NewDataAwsAlbAccessLogs(terraformResource cdktf.ITerraformResource, terrafo
 	j := jsiiProxy_DataAwsAlbAccessLogs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbAccessLogs",
+		"hashicorp_aws.elb.DataAwsAlbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -14099,7 +14694,7 @@ func NewDataAwsAlbAccessLogs_Override(d DataAwsAlbAccessLogs, terraformResource 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbAccessLogs",
+		"hashicorp_aws.elb.DataAwsAlbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -14199,6 +14794,7 @@ func (d *jsiiProxy_DataAwsAlbAccessLogs) InterpolationForAttribute(property *str
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsAlbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14529,7 +15125,7 @@ func NewDataAwsAlbListener(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsAlbListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListener",
+		"hashicorp_aws.elb.DataAwsAlbListener",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14542,7 +15138,7 @@ func NewDataAwsAlbListener_Override(d DataAwsAlbListener, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListener",
+		"hashicorp_aws.elb.DataAwsAlbListener",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -14614,7 +15210,7 @@ func DataAwsAlbListener_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsAlbListener",
+		"hashicorp_aws.elb.DataAwsAlbListener",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14627,7 +15223,7 @@ func DataAwsAlbListener_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsAlbListener",
+		"hashicorp_aws.elb.DataAwsAlbListener",
 		"tfResourceType",
 		&returns,
 	)
@@ -14826,6 +15422,7 @@ func (d *jsiiProxy_DataAwsAlbListener) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsAlbListenerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14988,7 +15585,7 @@ func NewDataAwsAlbListenerDefaultAction(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsAlbListenerDefaultAction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultAction",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15001,7 +15598,7 @@ func NewDataAwsAlbListenerDefaultAction_Override(d DataAwsAlbListenerDefaultActi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultAction",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -15246,7 +15843,7 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateCognito(terraformResource cdk
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateCognito",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15259,7 +15856,7 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateCognito_Override(d DataAwsAlb
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateCognito",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -15537,7 +16134,7 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15550,7 +16147,7 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateOidc_Override(d DataAwsAlbLis
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -15740,7 +16337,7 @@ func NewDataAwsAlbListenerDefaultActionFixedResponse(terraformResource cdktf.ITe
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionFixedResponse",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15753,7 +16350,7 @@ func NewDataAwsAlbListenerDefaultActionFixedResponse_Override(d DataAwsAlbListen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionFixedResponse",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -15932,7 +16529,7 @@ func NewDataAwsAlbListenerDefaultActionForward(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForward{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForward",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15945,7 +16542,7 @@ func NewDataAwsAlbListenerDefaultActionForward_Override(d DataAwsAlbListenerDefa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForward",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16124,7 +16721,7 @@ func NewDataAwsAlbListenerDefaultActionForwardStickiness(terraformResource cdktf
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -16137,7 +16734,7 @@ func NewDataAwsAlbListenerDefaultActionForwardStickiness_Override(d DataAwsAlbLi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16316,7 +16913,7 @@ func NewDataAwsAlbListenerDefaultActionForwardTargetGroup(terraformResource cdkt
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardTargetGroup",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -16329,7 +16926,7 @@ func NewDataAwsAlbListenerDefaultActionForwardTargetGroup_Override(d DataAwsAlbL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardTargetGroup",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16552,7 +17149,7 @@ func NewDataAwsAlbListenerDefaultActionRedirect(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionRedirect{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionRedirect",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -16565,7 +17162,7 @@ func NewDataAwsAlbListenerDefaultActionRedirect_Override(d DataAwsAlbListenerDef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionRedirect",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16777,7 +17374,7 @@ func NewDataAwsAlbSubnetMapping(terraformResource cdktf.ITerraformResource, terr
 	j := jsiiProxy_DataAwsAlbSubnetMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsAlbSubnetMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -16790,7 +17387,7 @@ func NewDataAwsAlbSubnetMapping_Override(d DataAwsAlbSubnetMapping, terraformRes
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsAlbSubnetMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16896,6 +17493,7 @@ type DataAwsAlbTargetGroup interface {
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
+	ConnectionTermination() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
 	Count() interface{}
 	SetCount(val interface{})
@@ -16978,6 +17576,16 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsAlbTargetGroup) ConnectionTermination() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTermination",
 		&returns,
 	)
 	return returns
@@ -17270,7 +17878,7 @@ func NewDataAwsAlbTargetGroup(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsAlbTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17283,7 +17891,7 @@ func NewDataAwsAlbTargetGroup_Override(d DataAwsAlbTargetGroup, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -17347,7 +17955,7 @@ func DataAwsAlbTargetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17360,7 +17968,7 @@ func DataAwsAlbTargetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -17564,6 +18172,7 @@ func (d *jsiiProxy_DataAwsAlbTargetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsAlbTargetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17735,7 +18344,7 @@ func NewDataAwsAlbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DataAwsAlbTargetGroupHealthCheck{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -17748,7 +18357,7 @@ func NewDataAwsAlbTargetGroupHealthCheck_Override(d DataAwsAlbTargetGroupHealthC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -17949,7 +18558,7 @@ func NewDataAwsAlbTargetGroupStickiness(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsAlbTargetGroupStickiness{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -17962,7 +18571,7 @@ func NewDataAwsAlbTargetGroupStickiness_Override(d DataAwsAlbTargetGroupStickine
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -18074,10 +18683,12 @@ type DataAwsLb interface {
 	CustomerOwnedIpv4Pool() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
 	DnsName() *string
 	DropInvalidHeaderFields() interface{}
 	EnableDeletionProtection() interface{}
 	EnableHttp2() interface{}
+	EnableWafFailOpen() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -18197,6 +18808,16 @@ func (j *jsiiProxy_DataAwsLb) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsLb) DnsName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -18232,6 +18853,16 @@ func (j *jsiiProxy_DataAwsLb) EnableHttp2() interface{} {
 	_jsii_.Get(
 		j,
 		"enableHttp2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsLb) EnableWafFailOpen() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpen",
 		&returns,
 	)
 	return returns
@@ -18464,7 +19095,7 @@ func NewDataAwsLb(scope constructs.Construct, id *string, config *DataAwsLbConfi
 	j := jsiiProxy_DataAwsLb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLb",
+		"hashicorp_aws.elb.DataAwsLb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18477,7 +19108,7 @@ func NewDataAwsLb_Override(d DataAwsLb, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLb",
+		"hashicorp_aws.elb.DataAwsLb",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18541,7 +19172,7 @@ func DataAwsLb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsLb",
+		"hashicorp_aws.elb.DataAwsLb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18554,7 +19185,7 @@ func DataAwsLb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsLb",
+		"hashicorp_aws.elb.DataAwsLb",
 		"tfResourceType",
 		&returns,
 	)
@@ -18848,7 +19479,7 @@ func NewDataAwsLbAccessLogs(terraformResource cdktf.ITerraformResource, terrafor
 	j := jsiiProxy_DataAwsLbAccessLogs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbAccessLogs",
+		"hashicorp_aws.elb.DataAwsLbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -18861,7 +19492,7 @@ func NewDataAwsLbAccessLogs_Override(d DataAwsLbAccessLogs, terraformResource cd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbAccessLogs",
+		"hashicorp_aws.elb.DataAwsLbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -18961,6 +19592,7 @@ func (d *jsiiProxy_DataAwsLbAccessLogs) InterpolationForAttribute(property *stri
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsLbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19291,7 +19923,7 @@ func NewDataAwsLbListener(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsLbListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListener",
+		"hashicorp_aws.elb.DataAwsLbListener",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19304,7 +19936,7 @@ func NewDataAwsLbListener_Override(d DataAwsLbListener, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListener",
+		"hashicorp_aws.elb.DataAwsLbListener",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -19376,7 +20008,7 @@ func DataAwsLbListener_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsLbListener",
+		"hashicorp_aws.elb.DataAwsLbListener",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19389,7 +20021,7 @@ func DataAwsLbListener_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsLbListener",
+		"hashicorp_aws.elb.DataAwsLbListener",
 		"tfResourceType",
 		&returns,
 	)
@@ -19588,6 +20220,7 @@ func (d *jsiiProxy_DataAwsLbListener) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsLbListenerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19750,7 +20383,7 @@ func NewDataAwsLbListenerDefaultAction(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsLbListenerDefaultAction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultAction",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -19763,7 +20396,7 @@ func NewDataAwsLbListenerDefaultAction_Override(d DataAwsLbListenerDefaultAction
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultAction",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -20008,7 +20641,7 @@ func NewDataAwsLbListenerDefaultActionAuthenticateCognito(terraformResource cdkt
 	j := jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateCognito",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20021,7 +20654,7 @@ func NewDataAwsLbListenerDefaultActionAuthenticateCognito_Override(d DataAwsLbLi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateCognito",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -20299,7 +20932,7 @@ func NewDataAwsLbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20312,7 +20945,7 @@ func NewDataAwsLbListenerDefaultActionAuthenticateOidc_Override(d DataAwsLbListe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -20502,7 +21135,7 @@ func NewDataAwsLbListenerDefaultActionFixedResponse(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionFixedResponse",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20515,7 +21148,7 @@ func NewDataAwsLbListenerDefaultActionFixedResponse_Override(d DataAwsLbListener
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionFixedResponse",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -20694,7 +21327,7 @@ func NewDataAwsLbListenerDefaultActionForward(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForward{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForward",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20707,7 +21340,7 @@ func NewDataAwsLbListenerDefaultActionForward_Override(d DataAwsLbListenerDefaul
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForward",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -20886,7 +21519,7 @@ func NewDataAwsLbListenerDefaultActionForwardStickiness(terraformResource cdktf.
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20899,7 +21532,7 @@ func NewDataAwsLbListenerDefaultActionForwardStickiness_Override(d DataAwsLbList
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21078,7 +21711,7 @@ func NewDataAwsLbListenerDefaultActionForwardTargetGroup(terraformResource cdktf
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardTargetGroup",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21091,7 +21724,7 @@ func NewDataAwsLbListenerDefaultActionForwardTargetGroup_Override(d DataAwsLbLis
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardTargetGroup",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21314,7 +21947,7 @@ func NewDataAwsLbListenerDefaultActionRedirect(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsLbListenerDefaultActionRedirect{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionRedirect",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21327,7 +21960,7 @@ func NewDataAwsLbListenerDefaultActionRedirect_Override(d DataAwsLbListenerDefau
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionRedirect",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21539,7 +22172,7 @@ func NewDataAwsLbSubnetMapping(terraformResource cdktf.ITerraformResource, terra
 	j := jsiiProxy_DataAwsLbSubnetMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsLbSubnetMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21552,7 +22185,7 @@ func NewDataAwsLbSubnetMapping_Override(d DataAwsLbSubnetMapping, terraformResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsLbSubnetMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21658,6 +22291,7 @@ type DataAwsLbTargetGroup interface {
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
+	ConnectionTermination() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
 	Count() interface{}
 	SetCount(val interface{})
@@ -21740,6 +22374,16 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsLbTargetGroup) ConnectionTermination() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTermination",
 		&returns,
 	)
 	return returns
@@ -22032,7 +22676,7 @@ func NewDataAwsLbTargetGroup(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsLbTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbTargetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22045,7 +22689,7 @@ func NewDataAwsLbTargetGroup_Override(d DataAwsLbTargetGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbTargetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22109,7 +22753,7 @@ func DataAwsLbTargetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbTargetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22122,7 +22766,7 @@ func DataAwsLbTargetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbTargetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -22326,6 +22970,7 @@ func (d *jsiiProxy_DataAwsLbTargetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type DataAwsLbTargetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22497,7 +23142,7 @@ func NewDataAwsLbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsLbTargetGroupHealthCheck{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -22510,7 +23155,7 @@ func NewDataAwsLbTargetGroupHealthCheck_Override(d DataAwsLbTargetGroupHealthChe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -22711,7 +23356,7 @@ func NewDataAwsLbTargetGroupStickiness(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsLbTargetGroupStickiness{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -22724,7 +23369,7 @@ func NewDataAwsLbTargetGroupStickiness_Override(d DataAwsLbTargetGroupStickiness
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupStickiness",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -22840,6 +23485,9 @@ type Lb interface {
 	CustomerOwnedIpv4PoolInput() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
+	SetDesyncMitigationMode(val *string)
+	DesyncMitigationModeInput() *string
 	DnsName() *string
 	DropInvalidHeaderFields() interface{}
 	SetDropInvalidHeaderFields(val interface{})
@@ -22853,6 +23501,9 @@ type Lb interface {
 	EnableHttp2() interface{}
 	SetEnableHttp2(val interface{})
 	EnableHttp2Input() interface{}
+	EnableWafFailOpen() interface{}
+	SetEnableWafFailOpen(val interface{})
+	EnableWafFailOpenInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -22913,10 +23564,12 @@ type Lb interface {
 	PutTimeouts(value *LbTimeouts)
 	ResetAccessLogs()
 	ResetCustomerOwnedIpv4Pool()
+	ResetDesyncMitigationMode()
 	ResetDropInvalidHeaderFields()
 	ResetEnableCrossZoneLoadBalancing()
 	ResetEnableDeletionProtection()
 	ResetEnableHttp2()
+	ResetEnableWafFailOpen()
 	ResetIdleTimeout()
 	ResetInternal()
 	ResetIpAddressType()
@@ -23041,6 +23694,26 @@ func (j *jsiiProxy_Lb) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_Lb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Lb) DesyncMitigationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationModeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Lb) DnsName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -23126,6 +23799,26 @@ func (j *jsiiProxy_Lb) EnableHttp2Input() interface{} {
 	_jsii_.Get(
 		j,
 		"enableHttp2Input",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Lb) EnableWafFailOpen() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpen",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Lb) EnableWafFailOpenInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableWafFailOpenInput",
 		&returns,
 	)
 	return returns
@@ -23498,7 +24191,7 @@ func NewLb(scope constructs.Construct, id *string, config *LbConfig) Lb {
 	j := jsiiProxy_Lb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.Lb",
+		"hashicorp_aws.elb.Lb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23511,7 +24204,7 @@ func NewLb_Override(l Lb, scope constructs.Construct, id *string, config *LbConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.Lb",
+		"hashicorp_aws.elb.Lb",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -23537,6 +24230,14 @@ func (j *jsiiProxy_Lb) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Lb) SetDesyncMitigationMode(val *string) {
+	_jsii_.Set(
+		j,
+		"desyncMitigationMode",
 		val,
 	)
 }
@@ -23569,6 +24270,14 @@ func (j *jsiiProxy_Lb) SetEnableHttp2(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enableHttp2",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Lb) SetEnableWafFailOpen(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enableWafFailOpen",
 		val,
 	)
 }
@@ -23687,7 +24396,7 @@ func Lb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.Lb",
+		"hashicorp_aws.elb.Lb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23700,7 +24409,7 @@ func Lb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.Lb",
+		"hashicorp_aws.elb.Lb",
 		"tfResourceType",
 		&returns,
 	)
@@ -23828,6 +24537,14 @@ func (l *jsiiProxy_Lb) ResetCustomerOwnedIpv4Pool() {
 	)
 }
 
+func (l *jsiiProxy_Lb) ResetDesyncMitigationMode() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDesyncMitigationMode",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_Lb) ResetDropInvalidHeaderFields() {
 	_jsii_.InvokeVoid(
 		l,
@@ -23856,6 +24573,14 @@ func (l *jsiiProxy_Lb) ResetEnableHttp2() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetEnableHttp2",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_Lb) ResetEnableWafFailOpen() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetEnableWafFailOpen",
 		nil, // no parameters
 	)
 }
@@ -24039,6 +24764,8 @@ type LbAccessLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LbAccessLogs
+	SetInternalValue(val *LbAccessLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -24103,6 +24830,16 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) EnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LbAccessLogsOutputReference) InternalValue() *LbAccessLogs {
+	var returns *LbAccessLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbAccessLogsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -24159,7 +24896,7 @@ func NewLbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource, 
 	j := jsiiProxy_LbAccessLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbAccessLogsOutputReference",
+		"hashicorp_aws.elb.LbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24171,7 +24908,7 @@ func NewLbAccessLogsOutputReference_Override(l LbAccessLogsOutputReference, terr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbAccessLogsOutputReference",
+		"hashicorp_aws.elb.LbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -24189,6 +24926,14 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) SetEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbAccessLogsOutputReference) SetInternalValue(val *LbAccessLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -24325,6 +25070,7 @@ func (l *jsiiProxy_LbAccessLogsOutputReference) ResetPrefix() {
 	)
 }
 
+// AWS Elastic Load Balancer.
 type LbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24340,6 +25086,8 @@ type LbConfig struct {
 	AccessLogs *LbAccessLogs `json:"accessLogs"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#customer_owned_ipv4_pool Lb#customer_owned_ipv4_pool}.
 	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#desync_mitigation_mode Lb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#drop_invalid_header_fields Lb#drop_invalid_header_fields}.
 	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_cross_zone_load_balancing Lb#enable_cross_zone_load_balancing}.
@@ -24348,6 +25096,8 @@ type LbConfig struct {
 	EnableDeletionProtection interface{} `json:"enableDeletionProtection"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_http2 Lb#enable_http2}.
 	EnableHttp2 interface{} `json:"enableHttp2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_waf_fail_open Lb#enable_waf_fail_open}.
+	EnableWafFailOpen interface{} `json:"enableWafFailOpen"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#idle_timeout Lb#idle_timeout}.
 	IdleTimeout *float64 `json:"idleTimeout"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#internal Lb#internal}.
@@ -24658,7 +25408,7 @@ func NewLbCookieStickinessPolicy(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_LbCookieStickinessPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicy",
+		"hashicorp_aws.elb.LbCookieStickinessPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24671,7 +25421,7 @@ func NewLbCookieStickinessPolicy_Override(l LbCookieStickinessPolicy, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicy",
+		"hashicorp_aws.elb.LbCookieStickinessPolicy",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -24751,7 +25501,7 @@ func LbCookieStickinessPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicy",
+		"hashicorp_aws.elb.LbCookieStickinessPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24764,7 +25514,7 @@ func LbCookieStickinessPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicy",
+		"hashicorp_aws.elb.LbCookieStickinessPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -24934,6 +25684,7 @@ func (l *jsiiProxy_LbCookieStickinessPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LbCookieStickinessPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25389,7 +26140,7 @@ func NewLbListener(scope constructs.Construct, id *string, config *LbListenerCon
 	j := jsiiProxy_LbListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListener",
+		"hashicorp_aws.elb.LbListener",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -25402,7 +26153,7 @@ func NewLbListener_Override(l LbListener, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListener",
+		"hashicorp_aws.elb.LbListener",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -25522,7 +26273,7 @@ func LbListener_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbListener",
+		"hashicorp_aws.elb.LbListener",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25535,7 +26286,7 @@ func LbListener_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbListener",
+		"hashicorp_aws.elb.LbListener",
 		"tfResourceType",
 		&returns,
 	)
@@ -26002,7 +26753,7 @@ func NewLbListenerCertificate(scope constructs.Construct, id *string, config *Lb
 	j := jsiiProxy_LbListenerCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerCertificate",
+		"hashicorp_aws.elb.LbListenerCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26015,7 +26766,7 @@ func NewLbListenerCertificate_Override(l LbListenerCertificate, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerCertificate",
+		"hashicorp_aws.elb.LbListenerCertificate",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -26079,7 +26830,7 @@ func LbListenerCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbListenerCertificate",
+		"hashicorp_aws.elb.LbListenerCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26092,7 +26843,7 @@ func LbListenerCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbListenerCertificate",
+		"hashicorp_aws.elb.LbListenerCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -26254,6 +27005,7 @@ func (l *jsiiProxy_LbListenerCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LbListenerCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26269,6 +27021,7 @@ type LbListenerCertificateConfig struct {
 	ListenerArn *string `json:"listenerArn"`
 }
 
+// AWS Elastic Load Balancer.
 type LbListenerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26357,6 +27110,8 @@ type LbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	AuthenticationRequestExtraParams() interface{}
 	SetAuthenticationRequestExtraParams(val interface{})
 	AuthenticationRequestExtraParamsInput() interface{}
+	InternalValue() *LbListenerDefaultActionAuthenticateCognito
+	SetInternalValue(val *LbListenerDefaultActionAuthenticateCognito)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnUnauthenticatedRequest() *string
@@ -26417,6 +27172,16 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Au
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) InternalValue() *LbListenerDefaultActionAuthenticateCognito {
+	var returns *LbListenerDefaultActionAuthenticateCognito
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -26598,7 +27363,7 @@ func NewLbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResou
 	j := jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26610,7 +27375,7 @@ func NewLbListenerDefaultActionAuthenticateCognitoOutputReference_Override(l LbL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -26620,6 +27385,14 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Se
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) SetInternalValue(val *LbListenerDefaultActionAuthenticateCognito) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -26867,6 +27640,8 @@ type LbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *LbListenerDefaultActionAuthenticateOidc
+	SetInternalValue(val *LbListenerDefaultActionAuthenticateOidc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -26987,6 +27762,16 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) Clien
 	_jsii_.Get(
 		j,
 		"clientSecretInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) InternalValue() *LbListenerDefaultActionAuthenticateOidc {
+	var returns *LbListenerDefaultActionAuthenticateOidc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27168,7 +27953,7 @@ func NewLbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource
 	j := jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27180,7 +27965,7 @@ func NewLbListenerDefaultActionAuthenticateOidcOutputReference_Override(l LbList
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -27214,6 +27999,14 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetCl
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetInternalValue(val *LbListenerDefaultActionAuthenticateOidc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -27436,6 +28229,8 @@ type LbListenerDefaultActionFixedResponseOutputReference interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
+	InternalValue() *LbListenerDefaultActionFixedResponse
+	SetInternalValue(val *LbListenerDefaultActionFixedResponse)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageBody() *string
@@ -27478,6 +28273,16 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) ContentT
 	_jsii_.Get(
 		j,
 		"contentTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) InternalValue() *LbListenerDefaultActionFixedResponse {
+	var returns *LbListenerDefaultActionFixedResponse
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27559,7 +28364,7 @@ func NewLbListenerDefaultActionFixedResponseOutputReference(terraformResource cd
 	j := jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27571,7 +28376,7 @@ func NewLbListenerDefaultActionFixedResponseOutputReference_Override(l LbListene
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -27581,6 +28386,14 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetConte
 	_jsii_.Set(
 		j,
 		"contentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetInternalValue(val *LbListenerDefaultActionFixedResponse) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -27738,6 +28551,8 @@ type LbListenerDefaultActionForward struct {
 
 type LbListenerDefaultActionForwardOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerDefaultActionForward
+	SetInternalValue(val *LbListenerDefaultActionForward)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Stickiness() LbListenerDefaultActionForwardStickinessOutputReference
@@ -27762,6 +28577,16 @@ type LbListenerDefaultActionForwardOutputReference interface {
 // The jsii proxy struct for LbListenerDefaultActionForwardOutputReference
 type jsiiProxy_LbListenerDefaultActionForwardOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) InternalValue() *LbListenerDefaultActionForward {
+	var returns *LbListenerDefaultActionForward
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) IsSingleItem() *bool {
@@ -27840,7 +28665,7 @@ func NewLbListenerDefaultActionForwardOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_LbListenerDefaultActionForwardOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27852,9 +28677,17 @@ func NewLbListenerDefaultActionForwardOutputReference_Override(l LbListenerDefau
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetInternalValue(val *LbListenerDefaultActionForward) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -28005,6 +28838,8 @@ type LbListenerDefaultActionForwardStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LbListenerDefaultActionForwardStickiness
+	SetInternalValue(val *LbListenerDefaultActionForwardStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -28065,6 +28900,16 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) Enab
 	return returns
 }
 
+func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) InternalValue() *LbListenerDefaultActionForwardStickiness {
+	var returns *LbListenerDefaultActionForwardStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -28101,7 +28946,7 @@ func NewLbListenerDefaultActionForwardStickinessOutputReference(terraformResourc
 	j := jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28113,7 +28958,7 @@ func NewLbListenerDefaultActionForwardStickinessOutputReference_Override(l LbLis
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -28131,6 +28976,14 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetE
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetInternalValue(val *LbListenerDefaultActionForwardStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28278,6 +29131,8 @@ type LbListenerDefaultActionRedirectOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *LbListenerDefaultActionRedirect
+	SetInternalValue(val *LbListenerDefaultActionRedirect)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -28332,6 +29187,16 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) HostInput() *
 	_jsii_.Get(
 		j,
 		"hostInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) InternalValue() *LbListenerDefaultActionRedirect {
+	var returns *LbListenerDefaultActionRedirect
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28473,7 +29338,7 @@ func NewLbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_LbListenerDefaultActionRedirectOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28485,7 +29350,7 @@ func NewLbListenerDefaultActionRedirectOutputReference_Override(l LbListenerDefa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -28495,6 +29360,14 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetHost(val *
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetInternalValue(val *LbListenerDefaultActionRedirect) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29026,7 +29899,7 @@ func NewLbListenerRule(scope constructs.Construct, id *string, config *LbListene
 	j := jsiiProxy_LbListenerRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRule",
+		"hashicorp_aws.elb.LbListenerRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -29039,7 +29912,7 @@ func NewLbListenerRule_Override(l LbListenerRule, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRule",
+		"hashicorp_aws.elb.LbListenerRule",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -29135,7 +30008,7 @@ func LbListenerRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbListenerRule",
+		"hashicorp_aws.elb.LbListenerRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -29148,7 +30021,7 @@ func LbListenerRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbListenerRule",
+		"hashicorp_aws.elb.LbListenerRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -29387,6 +30260,8 @@ type LbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	AuthenticationRequestExtraParams() interface{}
 	SetAuthenticationRequestExtraParams(val interface{})
 	AuthenticationRequestExtraParamsInput() interface{}
+	InternalValue() *LbListenerRuleActionAuthenticateCognito
+	SetInternalValue(val *LbListenerRuleActionAuthenticateCognito)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnUnauthenticatedRequest() *string
@@ -29447,6 +30322,16 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) Authe
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) InternalValue() *LbListenerRuleActionAuthenticateCognito {
+	var returns *LbListenerRuleActionAuthenticateCognito
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29628,7 +30513,7 @@ func NewLbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource
 	j := jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29640,7 +30525,7 @@ func NewLbListenerRuleActionAuthenticateCognitoOutputReference_Override(l LbList
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateCognitoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -29650,6 +30535,14 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetAu
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetInternalValue(val *LbListenerRuleActionAuthenticateCognito) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29897,6 +30790,8 @@ type LbListenerRuleActionAuthenticateOidcOutputReference interface {
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *LbListenerRuleActionAuthenticateOidc
+	SetInternalValue(val *LbListenerRuleActionAuthenticateOidc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -30017,6 +30912,16 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) ClientSe
 	_jsii_.Get(
 		j,
 		"clientSecretInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) InternalValue() *LbListenerRuleActionAuthenticateOidc {
+	var returns *LbListenerRuleActionAuthenticateOidc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30198,7 +31103,7 @@ func NewLbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cd
 	j := jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30210,7 +31115,7 @@ func NewLbListenerRuleActionAuthenticateOidcOutputReference_Override(l LbListene
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -30244,6 +31149,14 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetClien
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetInternalValue(val *LbListenerRuleActionAuthenticateOidc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30466,6 +31379,8 @@ type LbListenerRuleActionFixedResponseOutputReference interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
+	InternalValue() *LbListenerRuleActionFixedResponse
+	SetInternalValue(val *LbListenerRuleActionFixedResponse)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageBody() *string
@@ -30508,6 +31423,16 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) ContentType
 	_jsii_.Get(
 		j,
 		"contentTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) InternalValue() *LbListenerRuleActionFixedResponse {
+	var returns *LbListenerRuleActionFixedResponse
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30589,7 +31514,7 @@ func NewLbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf
 	j := jsiiProxy_LbListenerRuleActionFixedResponseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30601,7 +31526,7 @@ func NewLbListenerRuleActionFixedResponseOutputReference_Override(l LbListenerRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionFixedResponseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -30611,6 +31536,14 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetContentT
 	_jsii_.Set(
 		j,
 		"contentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetInternalValue(val *LbListenerRuleActionFixedResponse) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30768,6 +31701,8 @@ type LbListenerRuleActionForward struct {
 
 type LbListenerRuleActionForwardOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerRuleActionForward
+	SetInternalValue(val *LbListenerRuleActionForward)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Stickiness() LbListenerRuleActionForwardStickinessOutputReference
@@ -30792,6 +31727,16 @@ type LbListenerRuleActionForwardOutputReference interface {
 // The jsii proxy struct for LbListenerRuleActionForwardOutputReference
 type jsiiProxy_LbListenerRuleActionForwardOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) InternalValue() *LbListenerRuleActionForward {
+	var returns *LbListenerRuleActionForward
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) IsSingleItem() *bool {
@@ -30870,7 +31815,7 @@ func NewLbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_LbListenerRuleActionForwardOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30882,9 +31827,17 @@ func NewLbListenerRuleActionForwardOutputReference_Override(l LbListenerRuleActi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetInternalValue(val *LbListenerRuleActionForward) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31035,6 +31988,8 @@ type LbListenerRuleActionForwardStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LbListenerRuleActionForwardStickiness
+	SetInternalValue(val *LbListenerRuleActionForwardStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -31095,6 +32050,16 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) Enabled
 	return returns
 }
 
+func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) InternalValue() *LbListenerRuleActionForwardStickiness {
+	var returns *LbListenerRuleActionForwardStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -31131,7 +32096,7 @@ func NewLbListenerRuleActionForwardStickinessOutputReference(terraformResource c
 	j := jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31143,7 +32108,7 @@ func NewLbListenerRuleActionForwardStickinessOutputReference_Override(l LbListen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -31161,6 +32126,14 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetEnab
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetInternalValue(val *LbListenerRuleActionForwardStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -31308,6 +32281,8 @@ type LbListenerRuleActionRedirectOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *LbListenerRuleActionRedirect
+	SetInternalValue(val *LbListenerRuleActionRedirect)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -31362,6 +32337,16 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) HostInput() *str
 	_jsii_.Get(
 		j,
 		"hostInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) InternalValue() *LbListenerRuleActionRedirect {
+	var returns *LbListenerRuleActionRedirect
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -31503,7 +32488,7 @@ func NewLbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_LbListenerRuleActionRedirectOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31515,7 +32500,7 @@ func NewLbListenerRuleActionRedirectOutputReference_Override(l LbListenerRuleAct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionRedirectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -31525,6 +32510,14 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetHost(val *str
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetInternalValue(val *LbListenerRuleActionRedirect) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -31751,6 +32744,8 @@ type LbListenerRuleConditionHostHeader struct {
 
 type LbListenerRuleConditionHostHeaderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerRuleConditionHostHeader
+	SetInternalValue(val *LbListenerRuleConditionHostHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -31771,6 +32766,16 @@ type LbListenerRuleConditionHostHeaderOutputReference interface {
 // The jsii proxy struct for LbListenerRuleConditionHostHeaderOutputReference
 type jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) InternalValue() *LbListenerRuleConditionHostHeader {
+	var returns *LbListenerRuleConditionHostHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) IsSingleItem() *bool {
@@ -31829,7 +32834,7 @@ func NewLbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf
 	j := jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHostHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31841,9 +32846,17 @@ func NewLbListenerRuleConditionHostHeaderOutputReference_Override(l LbListenerRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHostHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) SetInternalValue(val *LbListenerRuleConditionHostHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31975,6 +32988,8 @@ type LbListenerRuleConditionHttpHeaderOutputReference interface {
 	HttpHeaderName() *string
 	SetHttpHeaderName(val *string)
 	HttpHeaderNameInput() *string
+	InternalValue() *LbListenerRuleConditionHttpHeader
+	SetInternalValue(val *LbListenerRuleConditionHttpHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32012,6 +33027,16 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) HttpHeaderN
 	_jsii_.Get(
 		j,
 		"httpHeaderNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) InternalValue() *LbListenerRuleConditionHttpHeader {
+	var returns *LbListenerRuleConditionHttpHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -32073,7 +33098,7 @@ func NewLbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf
 	j := jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32085,7 +33110,7 @@ func NewLbListenerRuleConditionHttpHeaderOutputReference_Override(l LbListenerRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -32095,6 +33120,14 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetHttpHead
 	_jsii_.Set(
 		j,
 		"httpHeaderName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetInternalValue(val *LbListenerRuleConditionHttpHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -32222,6 +33255,8 @@ type LbListenerRuleConditionHttpRequestMethod struct {
 
 type LbListenerRuleConditionHttpRequestMethodOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerRuleConditionHttpRequestMethod
+	SetInternalValue(val *LbListenerRuleConditionHttpRequestMethod)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32242,6 +33277,16 @@ type LbListenerRuleConditionHttpRequestMethodOutputReference interface {
 // The jsii proxy struct for LbListenerRuleConditionHttpRequestMethodOutputReference
 type jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) InternalValue() *LbListenerRuleConditionHttpRequestMethod {
+	var returns *LbListenerRuleConditionHttpRequestMethod
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) IsSingleItem() *bool {
@@ -32300,7 +33345,7 @@ func NewLbListenerRuleConditionHttpRequestMethodOutputReference(terraformResourc
 	j := jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpRequestMethodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32312,9 +33357,17 @@ func NewLbListenerRuleConditionHttpRequestMethodOutputReference_Override(l LbLis
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpRequestMethodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) SetInternalValue(val *LbListenerRuleConditionHttpRequestMethod) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32441,6 +33494,8 @@ type LbListenerRuleConditionPathPattern struct {
 
 type LbListenerRuleConditionPathPatternOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerRuleConditionPathPattern
+	SetInternalValue(val *LbListenerRuleConditionPathPattern)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32461,6 +33516,16 @@ type LbListenerRuleConditionPathPatternOutputReference interface {
 // The jsii proxy struct for LbListenerRuleConditionPathPatternOutputReference
 type jsiiProxy_LbListenerRuleConditionPathPatternOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) InternalValue() *LbListenerRuleConditionPathPattern {
+	var returns *LbListenerRuleConditionPathPattern
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) IsSingleItem() *bool {
@@ -32519,7 +33584,7 @@ func NewLbListenerRuleConditionPathPatternOutputReference(terraformResource cdkt
 	j := jsiiProxy_LbListenerRuleConditionPathPatternOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionPathPatternOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32531,9 +33596,17 @@ func NewLbListenerRuleConditionPathPatternOutputReference_Override(l LbListenerR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionPathPatternOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) SetInternalValue(val *LbListenerRuleConditionPathPattern) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32667,6 +33740,8 @@ type LbListenerRuleConditionSourceIp struct {
 
 type LbListenerRuleConditionSourceIpOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerRuleConditionSourceIp
+	SetInternalValue(val *LbListenerRuleConditionSourceIp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32687,6 +33762,16 @@ type LbListenerRuleConditionSourceIpOutputReference interface {
 // The jsii proxy struct for LbListenerRuleConditionSourceIpOutputReference
 type jsiiProxy_LbListenerRuleConditionSourceIpOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) InternalValue() *LbListenerRuleConditionSourceIp {
+	var returns *LbListenerRuleConditionSourceIp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) IsSingleItem() *bool {
@@ -32745,7 +33830,7 @@ func NewLbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_LbListenerRuleConditionSourceIpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionSourceIpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32757,9 +33842,17 @@ func NewLbListenerRuleConditionSourceIpOutputReference_Override(l LbListenerRule
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionSourceIpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) SetInternalValue(val *LbListenerRuleConditionSourceIp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32879,6 +33972,7 @@ func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) Interpolation
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LbListenerRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -32913,6 +34007,8 @@ type LbListenerTimeouts struct {
 
 type LbListenerTimeoutsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LbListenerTimeouts
+	SetInternalValue(val *LbListenerTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Read() *string
@@ -32934,6 +34030,16 @@ type LbListenerTimeoutsOutputReference interface {
 // The jsii proxy struct for LbListenerTimeoutsOutputReference
 type jsiiProxy_LbListenerTimeoutsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LbListenerTimeoutsOutputReference) InternalValue() *LbListenerTimeouts {
+	var returns *LbListenerTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbListenerTimeoutsOutputReference) IsSingleItem() *bool {
@@ -32992,7 +34098,7 @@ func NewLbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_LbListenerTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33004,9 +34110,17 @@ func NewLbListenerTimeoutsOutputReference_Override(l LbListenerTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbListenerTimeoutsOutputReference) SetInternalValue(val *LbListenerTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33414,7 +34528,7 @@ func NewLbSslNegotiationPolicy(scope constructs.Construct, id *string, config *L
 	j := jsiiProxy_LbSslNegotiationPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicy",
+		"hashicorp_aws.elb.LbSslNegotiationPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -33427,7 +34541,7 @@ func NewLbSslNegotiationPolicy_Override(l LbSslNegotiationPolicy, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicy",
+		"hashicorp_aws.elb.LbSslNegotiationPolicy",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -33507,7 +34621,7 @@ func LbSslNegotiationPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicy",
+		"hashicorp_aws.elb.LbSslNegotiationPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -33520,7 +34634,7 @@ func LbSslNegotiationPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicy",
+		"hashicorp_aws.elb.LbSslNegotiationPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -33697,6 +34811,7 @@ type LbSslNegotiationPolicyAttribute struct {
 	Value *string `json:"value"`
 }
 
+// AWS Elastic Load Balancer.
 type LbSslNegotiationPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -33735,6 +34850,9 @@ type LbTargetGroup interface {
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
+	ConnectionTermination() interface{}
+	SetConnectionTermination(val interface{})
+	ConnectionTerminationInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
 	Count() interface{}
 	SetCount(val interface{})
@@ -33810,6 +34928,7 @@ type LbTargetGroup interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutHealthCheck(value *LbTargetGroupHealthCheck)
 	PutStickiness(value *LbTargetGroupStickiness)
+	ResetConnectionTermination()
 	ResetDeregistrationDelay()
 	ResetHealthCheck()
 	ResetLambdaMultiValueHeadersEnabled()
@@ -33864,6 +34983,26 @@ func (j *jsiiProxy_LbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbTargetGroup) ConnectionTermination() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTermination",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbTargetGroup) ConnectionTerminationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionTerminationInput",
 		&returns,
 	)
 	return returns
@@ -34346,7 +35485,7 @@ func NewLbTargetGroup(scope constructs.Construct, id *string, config *LbTargetGr
 	j := jsiiProxy_LbTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroup",
+		"hashicorp_aws.elb.LbTargetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -34359,9 +35498,17 @@ func NewLbTargetGroup_Override(l LbTargetGroup, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroup",
+		"hashicorp_aws.elb.LbTargetGroup",
 		[]interface{}{scope, id, config},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbTargetGroup) SetConnectionTermination(val interface{}) {
+	_jsii_.Set(
+		j,
+		"connectionTermination",
+		val,
 	)
 }
 
@@ -34527,7 +35674,7 @@ func LbTargetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbTargetGroup",
+		"hashicorp_aws.elb.LbTargetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -34540,7 +35687,7 @@ func LbTargetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbTargetGroup",
+		"hashicorp_aws.elb.LbTargetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -34649,6 +35796,14 @@ func (l *jsiiProxy_LbTargetGroup) PutStickiness(value *LbTargetGroupStickiness) 
 		l,
 		"putStickiness",
 		[]interface{}{value},
+	)
+}
+
+func (l *jsiiProxy_LbTargetGroup) ResetConnectionTermination() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetConnectionTermination",
+		nil, // no parameters
 	)
 }
 
@@ -35135,7 +36290,7 @@ func NewLbTargetGroupAttachment(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_LbTargetGroupAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupAttachment",
+		"hashicorp_aws.elb.LbTargetGroupAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -35148,7 +36303,7 @@ func NewLbTargetGroupAttachment_Override(l LbTargetGroupAttachment, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupAttachment",
+		"hashicorp_aws.elb.LbTargetGroupAttachment",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -35228,7 +36383,7 @@ func LbTargetGroupAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LbTargetGroupAttachment",
+		"hashicorp_aws.elb.LbTargetGroupAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -35241,7 +36396,7 @@ func LbTargetGroupAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LbTargetGroupAttachment",
+		"hashicorp_aws.elb.LbTargetGroupAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -35419,6 +36574,7 @@ func (l *jsiiProxy_LbTargetGroupAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LbTargetGroupAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -35438,6 +36594,7 @@ type LbTargetGroupAttachmentConfig struct {
 	Port *float64 `json:"port"`
 }
 
+// AWS Elastic Load Balancer.
 type LbTargetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -35447,6 +36604,8 @@ type LbTargetGroupConfig struct {
 	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#connection_termination LbTargetGroup#connection_termination}.
+	ConnectionTermination interface{} `json:"connectionTermination"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#deregistration_delay LbTargetGroup#deregistration_delay}.
 	DeregistrationDelay *string `json:"deregistrationDelay"`
 	// health_check block.
@@ -35516,6 +36675,8 @@ type LbTargetGroupHealthCheckOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *LbTargetGroupHealthCheck
+	SetInternalValue(val *LbTargetGroupHealthCheck)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -35600,6 +36761,16 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) HealthyThresholdInpu
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) InternalValue() *LbTargetGroupHealthCheck {
+	var returns *LbTargetGroupHealthCheck
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35781,7 +36952,7 @@ func NewLbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_LbTargetGroupHealthCheckOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35793,7 +36964,7 @@ func NewLbTargetGroupHealthCheckOutputReference_Override(l LbTargetGroupHealthCh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -35811,6 +36982,14 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetHealthyThreshold(
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetInternalValue(val *LbTargetGroupHealthCheck) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36073,6 +37252,8 @@ type LbTargetGroupStickinessOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LbTargetGroupStickiness
+	SetInternalValue(val *LbTargetGroupStickiness)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36158,6 +37339,16 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) EnabledInput() interf
 	return returns
 }
 
+func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) InternalValue() *LbTargetGroupStickiness {
+	var returns *LbTargetGroupStickiness
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36214,7 +37405,7 @@ func NewLbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_LbTargetGroupStickinessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36226,7 +37417,7 @@ func NewLbTargetGroupStickinessOutputReference_Override(l LbTargetGroupStickines
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupStickinessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -36252,6 +37443,14 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetEnabled(val interf
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetInternalValue(val *LbTargetGroupStickiness) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36413,6 +37612,8 @@ type LbTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *LbTimeouts
+	SetInternalValue(val *LbTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36478,6 +37679,16 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LbTimeoutsOutputReference) InternalValue() *LbTimeouts {
+	var returns *LbTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36534,7 +37745,7 @@ func NewLbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, te
 	j := jsiiProxy_LbTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36546,7 +37757,7 @@ func NewLbTimeoutsOutputReference_Override(l LbTimeoutsOutputReference, terrafor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LbTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -36564,6 +37775,14 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbTimeoutsOutputReference) SetInternalValue(val *LbTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36965,7 +38184,7 @@ func NewLoadBalancerBackendServerPolicy(scope constructs.Construct, id *string, 
 	j := jsiiProxy_LoadBalancerBackendServerPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicy",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -36978,7 +38197,7 @@ func NewLoadBalancerBackendServerPolicy_Override(l LoadBalancerBackendServerPoli
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicy",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicy",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -37050,7 +38269,7 @@ func LoadBalancerBackendServerPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicy",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37063,7 +38282,7 @@ func LoadBalancerBackendServerPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicy",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -37233,6 +38452,7 @@ func (l *jsiiProxy_LoadBalancerBackendServerPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LoadBalancerBackendServerPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -37507,7 +38727,7 @@ func NewLoadBalancerListenerPolicy(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_LoadBalancerListenerPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicy",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -37520,7 +38740,7 @@ func NewLoadBalancerListenerPolicy_Override(l LoadBalancerListenerPolicy, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicy",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicy",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -37592,7 +38812,7 @@ func LoadBalancerListenerPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicy",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37605,7 +38825,7 @@ func LoadBalancerListenerPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicy",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -37775,6 +38995,7 @@ func (l *jsiiProxy_LoadBalancerListenerPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LoadBalancerListenerPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -38072,7 +39293,7 @@ func NewLoadBalancerPolicy(scope constructs.Construct, id *string, config *LoadB
 	j := jsiiProxy_LoadBalancerPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerPolicy",
+		"hashicorp_aws.elb.LoadBalancerPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -38085,7 +39306,7 @@ func NewLoadBalancerPolicy_Override(l LoadBalancerPolicy, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.LoadBalancerPolicy",
+		"hashicorp_aws.elb.LoadBalancerPolicy",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -38165,7 +39386,7 @@ func LoadBalancerPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.LoadBalancerPolicy",
+		"hashicorp_aws.elb.LoadBalancerPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -38178,7 +39399,7 @@ func LoadBalancerPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.LoadBalancerPolicy",
+		"hashicorp_aws.elb.LoadBalancerPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -38348,6 +39569,7 @@ func (l *jsiiProxy_LoadBalancerPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type LoadBalancerPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -38609,7 +39831,7 @@ func NewProxyProtocolPolicy(scope constructs.Construct, id *string, config *Prox
 	j := jsiiProxy_ProxyProtocolPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.ProxyProtocolPolicy",
+		"hashicorp_aws.elb.ProxyProtocolPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -38622,7 +39844,7 @@ func NewProxyProtocolPolicy_Override(p ProxyProtocolPolicy, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ELB.ProxyProtocolPolicy",
+		"hashicorp_aws.elb.ProxyProtocolPolicy",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -38686,7 +39908,7 @@ func ProxyProtocolPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ELB.ProxyProtocolPolicy",
+		"hashicorp_aws.elb.ProxyProtocolPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -38699,7 +39921,7 @@ func ProxyProtocolPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ELB.ProxyProtocolPolicy",
+		"hashicorp_aws.elb.ProxyProtocolPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -38861,6 +40083,7 @@ func (p *jsiiProxy_ProxyProtocolPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Load Balancer.
 type ProxyProtocolPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

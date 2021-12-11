@@ -1,12 +1,12 @@
 package shield
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/shield/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/shield/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/shield_protection.html aws_shield_protection}.
@@ -294,7 +294,6 @@ func (j *jsiiProxy_ShieldProtection) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/shield_protection.html aws_shield_protection} Resource.
 func NewShieldProtection(scope constructs.Construct, id *string, config *ShieldProtectionConfig) ShieldProtection {
 	_init_.Initialize()
@@ -302,7 +301,7 @@ func NewShieldProtection(scope constructs.Construct, id *string, config *ShieldP
 	j := jsiiProxy_ShieldProtection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Shield.ShieldProtection",
+		"hashicorp_aws.shield.ShieldProtection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -315,7 +314,7 @@ func NewShieldProtection_Override(s ShieldProtection, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Shield.ShieldProtection",
+		"hashicorp_aws.shield.ShieldProtection",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -395,7 +394,7 @@ func ShieldProtection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Shield.ShieldProtection",
+		"hashicorp_aws.shield.ShieldProtection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -408,7 +407,7 @@ func ShieldProtection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Shield.ShieldProtection",
+		"hashicorp_aws.shield.ShieldProtection",
 		"tfResourceType",
 		&returns,
 	)
@@ -586,6 +585,7 @@ func (s *jsiiProxy_ShieldProtection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Shield Protection.
 type ShieldProtectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -961,7 +961,6 @@ func (j *jsiiProxy_ShieldProtectionGroup) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/shield_protection_group.html aws_shield_protection_group} Resource.
 func NewShieldProtectionGroup(scope constructs.Construct, id *string, config *ShieldProtectionGroupConfig) ShieldProtectionGroup {
 	_init_.Initialize()
@@ -969,7 +968,7 @@ func NewShieldProtectionGroup(scope constructs.Construct, id *string, config *Sh
 	j := jsiiProxy_ShieldProtectionGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Shield.ShieldProtectionGroup",
+		"hashicorp_aws.shield.ShieldProtectionGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -982,7 +981,7 @@ func NewShieldProtectionGroup_Override(s ShieldProtectionGroup, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Shield.ShieldProtectionGroup",
+		"hashicorp_aws.shield.ShieldProtectionGroup",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1086,7 +1085,7 @@ func ShieldProtectionGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Shield.ShieldProtectionGroup",
+		"hashicorp_aws.shield.ShieldProtectionGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1099,7 +1098,7 @@ func ShieldProtectionGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Shield.ShieldProtectionGroup",
+		"hashicorp_aws.shield.ShieldProtectionGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -1293,6 +1292,7 @@ func (s *jsiiProxy_ShieldProtectionGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Shield Protection.
 type ShieldProtectionGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1317,4 +1317,3 @@ type ShieldProtectionGroupConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/shield_protection_group.html#tags_all ShieldProtectionGroup#tags_all}.
 	TagsAll interface{} `json:"tagsAll"`
 }
-

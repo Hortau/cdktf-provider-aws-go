@@ -282,7 +282,7 @@ func NewDataAwsWorkspacesBundle(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsWorkspacesBundle{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundle",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundle",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -295,7 +295,7 @@ func NewDataAwsWorkspacesBundle_Override(d DataAwsWorkspacesBundle, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundle",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundle",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -367,7 +367,7 @@ func DataAwsWorkspacesBundle_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundle",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundle",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -380,7 +380,7 @@ func DataAwsWorkspacesBundle_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundle",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundle",
 		"tfResourceType",
 		&returns,
 	)
@@ -673,7 +673,7 @@ func NewDataAwsWorkspacesBundleComputeType(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsWorkspacesBundleComputeType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleComputeType",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleComputeType",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -686,7 +686,7 @@ func NewDataAwsWorkspacesBundleComputeType_Override(d DataAwsWorkspacesBundleCom
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleComputeType",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleComputeType",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -786,6 +786,7 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) InterpolationForAttribute
 	return returns
 }
 
+// AWS WorkSpaces.
 type DataAwsWorkspacesBundleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -871,7 +872,7 @@ func NewDataAwsWorkspacesBundleRootStorage(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsWorkspacesBundleRootStorage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleRootStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleRootStorage",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -884,7 +885,7 @@ func NewDataAwsWorkspacesBundleRootStorage_Override(d DataAwsWorkspacesBundleRoo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleRootStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleRootStorage",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1052,7 +1053,7 @@ func NewDataAwsWorkspacesBundleUserStorage(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsWorkspacesBundleUserStorage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleUserStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleUserStorage",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1065,7 +1066,7 @@ func NewDataAwsWorkspacesBundleUserStorage_Override(d DataAwsWorkspacesBundleUse
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesBundleUserStorage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleUserStorage",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1512,7 +1513,7 @@ func NewDataAwsWorkspacesDirectory(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsWorkspacesDirectory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectory",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectory",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1525,7 +1526,7 @@ func NewDataAwsWorkspacesDirectory_Override(d DataAwsWorkspacesDirectory, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectory",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectory",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1589,7 +1590,7 @@ func DataAwsWorkspacesDirectory_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectory",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectory",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1602,7 +1603,7 @@ func DataAwsWorkspacesDirectory_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectory",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectory",
 		"tfResourceType",
 		&returns,
 	)
@@ -1811,6 +1812,7 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectory) WorkspaceCreationProperties(index
 	return returns
 }
 
+// AWS WorkSpaces.
 type DataAwsWorkspacesDirectoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1938,7 +1940,7 @@ func NewDataAwsWorkspacesDirectorySelfServicePermissions(terraformResource cdktf
 	j := jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1951,7 +1953,7 @@ func NewDataAwsWorkspacesDirectorySelfServicePermissions_Override(d DataAwsWorks
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2196,7 +2198,7 @@ func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties(terraformResource cd
 	j := jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2209,7 +2211,7 @@ func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties_Override(d DataAwsWo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2421,7 +2423,7 @@ func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties(terraformResource 
 	j := jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2434,7 +2436,7 @@ func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties_Override(d DataAws
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2799,7 +2801,7 @@ func NewDataAwsWorkspacesImage(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsWorkspacesImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2812,7 +2814,7 @@ func NewDataAwsWorkspacesImage_Override(d DataAwsWorkspacesImage, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImage",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2868,7 +2870,7 @@ func DataAwsWorkspacesImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2881,7 +2883,7 @@ func DataAwsWorkspacesImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesImage",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -3043,6 +3045,7 @@ func (d *jsiiProxy_DataAwsWorkspacesImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WorkSpaces.
 type DataAwsWorkspacesImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3417,7 +3420,7 @@ func NewDataAwsWorkspacesWorkspace(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsWorkspacesWorkspace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspace",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3430,7 +3433,7 @@ func NewDataAwsWorkspacesWorkspace_Override(d DataAwsWorkspacesWorkspace, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspace",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspace",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3510,7 +3513,7 @@ func DataAwsWorkspacesWorkspace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspace",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3523,7 +3526,7 @@ func DataAwsWorkspacesWorkspace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspace",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspace",
 		"tfResourceType",
 		&returns,
 	)
@@ -3730,6 +3733,7 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspace) WorkspaceProperties(index *string
 	return returns
 }
 
+// AWS WorkSpaces.
 type DataAwsWorkspacesWorkspaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3861,7 +3865,7 @@ func NewDataAwsWorkspacesWorkspaceWorkspaceProperties(terraformResource cdktf.IT
 	j := jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3874,7 +3878,7 @@ func NewDataAwsWorkspacesWorkspaceWorkspaceProperties_Override(d DataAwsWorkspac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
+		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4440,7 +4444,7 @@ func NewWorkspacesDirectory(scope constructs.Construct, id *string, config *Work
 	j := jsiiProxy_WorkspacesDirectory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectory",
+		"hashicorp_aws.workspaces.WorkspacesDirectory",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4453,7 +4457,7 @@ func NewWorkspacesDirectory_Override(w WorkspacesDirectory, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectory",
+		"hashicorp_aws.workspaces.WorkspacesDirectory",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -4541,7 +4545,7 @@ func WorkspacesDirectory_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.WorkspacesDirectory",
+		"hashicorp_aws.workspaces.WorkspacesDirectory",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4554,7 +4558,7 @@ func WorkspacesDirectory_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.WorkspacesDirectory",
+		"hashicorp_aws.workspaces.WorkspacesDirectory",
 		"tfResourceType",
 		&returns,
 	)
@@ -4796,6 +4800,7 @@ func (w *jsiiProxy_WorkspacesDirectory) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WorkSpaces.
 type WorkspacesDirectoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4850,6 +4855,8 @@ type WorkspacesDirectorySelfServicePermissionsOutputReference interface {
 	IncreaseVolumeSize() interface{}
 	SetIncreaseVolumeSize(val interface{})
 	IncreaseVolumeSizeInput() interface{}
+	InternalValue() *WorkspacesDirectorySelfServicePermissions
+	SetInternalValue(val *WorkspacesDirectorySelfServicePermissions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RebuildWorkspace() interface{}
@@ -4918,6 +4925,16 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Inc
 	_jsii_.Get(
 		j,
 		"increaseVolumeSizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) InternalValue() *WorkspacesDirectorySelfServicePermissions {
+	var returns *WorkspacesDirectorySelfServicePermissions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5019,7 +5036,7 @@ func NewWorkspacesDirectorySelfServicePermissionsOutputReference(terraformResour
 	j := jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5031,7 +5048,7 @@ func NewWorkspacesDirectorySelfServicePermissionsOutputReference_Override(w Work
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectorySelfServicePermissionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -5049,6 +5066,14 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Set
 	_jsii_.Set(
 		j,
 		"increaseVolumeSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) SetInternalValue(val *WorkspacesDirectorySelfServicePermissions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5270,6 +5295,8 @@ type WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference interface {
 	DeviceTypeZeroclient() *string
 	SetDeviceTypeZeroclient(val *string)
 	DeviceTypeZeroclientInput() *string
+	InternalValue() *WorkspacesDirectoryWorkspaceAccessProperties
+	SetInternalValue(val *WorkspacesDirectoryWorkspaceAccessProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5457,6 +5484,16 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 	return returns
 }
 
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) InternalValue() *WorkspacesDirectoryWorkspaceAccessProperties {
+	var returns *WorkspacesDirectoryWorkspaceAccessProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5493,7 +5530,7 @@ func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference(terraformRes
 	j := jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5505,7 +5542,7 @@ func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference_Override(w W
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -5571,6 +5608,14 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 	_jsii_.Set(
 		j,
 		"deviceTypeZeroclient",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) SetInternalValue(val *WorkspacesDirectoryWorkspaceAccessProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5774,6 +5819,8 @@ type WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference interface {
 	EnableMaintenanceMode() interface{}
 	SetEnableMaintenanceMode(val interface{})
 	EnableMaintenanceModeInput() interface{}
+	InternalValue() *WorkspacesDirectoryWorkspaceCreationProperties
+	SetInternalValue(val *WorkspacesDirectoryWorkspaceCreationProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5881,6 +5928,16 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	return returns
 }
 
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) InternalValue() *WorkspacesDirectoryWorkspaceCreationProperties {
+	var returns *WorkspacesDirectoryWorkspaceCreationProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5937,7 +5994,7 @@ func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference(terraformR
 	j := jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5949,7 +6006,7 @@ func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference_Override(w
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -5983,6 +6040,14 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	_jsii_.Set(
 		j,
 		"enableMaintenanceMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) SetInternalValue(val *WorkspacesDirectoryWorkspaceCreationProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6449,7 +6514,7 @@ func NewWorkspacesIpGroup(scope constructs.Construct, id *string, config *Worksp
 	j := jsiiProxy_WorkspacesIpGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroup",
+		"hashicorp_aws.workspaces.WorkspacesIpGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6462,7 +6527,7 @@ func NewWorkspacesIpGroup_Override(w WorkspacesIpGroup, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroup",
+		"hashicorp_aws.workspaces.WorkspacesIpGroup",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -6550,7 +6615,7 @@ func WorkspacesIpGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroup",
+		"hashicorp_aws.workspaces.WorkspacesIpGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6563,7 +6628,7 @@ func WorkspacesIpGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.WorkspacesIpGroup",
+		"hashicorp_aws.workspaces.WorkspacesIpGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6757,6 +6822,7 @@ func (w *jsiiProxy_WorkspacesIpGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WorkSpaces.
 type WorkspacesIpGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7244,7 +7310,7 @@ func NewWorkspacesWorkspace(scope constructs.Construct, id *string, config *Work
 	j := jsiiProxy_WorkspacesWorkspace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspace",
+		"hashicorp_aws.workspaces.WorkspacesWorkspace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7257,7 +7323,7 @@ func NewWorkspacesWorkspace_Override(w WorkspacesWorkspace, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspace",
+		"hashicorp_aws.workspaces.WorkspacesWorkspace",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -7369,7 +7435,7 @@ func WorkspacesWorkspace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspace",
+		"hashicorp_aws.workspaces.WorkspacesWorkspace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7382,7 +7448,7 @@ func WorkspacesWorkspace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspace",
+		"hashicorp_aws.workspaces.WorkspacesWorkspace",
 		"tfResourceType",
 		&returns,
 	)
@@ -7616,6 +7682,7 @@ func (w *jsiiProxy_WorkspacesWorkspace) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WorkSpaces.
 type WorkspacesWorkspaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7668,6 +7735,8 @@ type WorkspacesWorkspaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *WorkspacesWorkspaceTimeouts
+	SetInternalValue(val *WorkspacesWorkspaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7733,6 +7802,16 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) InternalValue() *WorkspacesWorkspaceTimeouts {
+	var returns *WorkspacesWorkspaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7789,7 +7868,7 @@ func NewWorkspacesWorkspaceTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7801,7 +7880,7 @@ func NewWorkspacesWorkspaceTimeoutsOutputReference_Override(w WorkspacesWorkspac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -7819,6 +7898,14 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetInternalValue(val *WorkspacesWorkspaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7981,6 +8068,8 @@ type WorkspacesWorkspaceWorkspacePropertiesOutputReference interface {
 	ComputeTypeName() *string
 	SetComputeTypeName(val *string)
 	ComputeTypeNameInput() *string
+	InternalValue() *WorkspacesWorkspaceWorkspaceProperties
+	SetInternalValue(val *WorkspacesWorkspaceWorkspaceProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RootVolumeSizeGib() *float64
@@ -8032,6 +8121,16 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) Comput
 	_jsii_.Get(
 		j,
 		"computeTypeNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) InternalValue() *WorkspacesWorkspaceWorkspaceProperties {
+	var returns *WorkspacesWorkspaceWorkspaceProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8153,7 +8252,7 @@ func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference(terraformResource 
 	j := jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8165,7 +8264,7 @@ func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference_Override(w Workspa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
+		"hashicorp_aws.workspaces.WorkspacesWorkspaceWorkspacePropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -8175,6 +8274,14 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetCom
 	_jsii_.Set(
 		j,
 		"computeTypeName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetInternalValue(val *WorkspacesWorkspaceWorkspaceProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoIdentityPool",
+		"hashicorp_aws.cognito.CognitoIdentityPool",
 		reflect.TypeOf((*CognitoIdentityPool)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -75,15 +75,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolCognitoIdentityProviders",
+		"hashicorp_aws.cognito.CognitoIdentityPoolCognitoIdentityProviders",
 		reflect.TypeOf((*CognitoIdentityPoolCognitoIdentityProviders)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolConfig",
+		"hashicorp_aws.cognito.CognitoIdentityPoolConfig",
 		reflect.TypeOf((*CognitoIdentityPoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachment",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachment",
 		reflect.TypeOf((*CognitoIdentityPoolRolesAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -127,19 +127,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachmentConfig",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachmentConfig",
 		reflect.TypeOf((*CognitoIdentityPoolRolesAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachmentRoleMapping",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachmentRoleMapping",
 		reflect.TypeOf((*CognitoIdentityPoolRolesAttachmentRoleMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachmentRoleMappingMappingRule",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachmentRoleMappingMappingRule",
 		reflect.TypeOf((*CognitoIdentityPoolRolesAttachmentRoleMappingMappingRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoIdentityProvider",
+		"hashicorp_aws.cognito.CognitoIdentityProvider",
 		reflect.TypeOf((*CognitoIdentityProvider)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -190,11 +190,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoIdentityProviderConfig",
+		"hashicorp_aws.cognito.CognitoIdentityProviderConfig",
 		reflect.TypeOf((*CognitoIdentityProviderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoResourceServer",
+		"hashicorp_aws.cognito.CognitoResourceServer",
 		reflect.TypeOf((*CognitoResourceServer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -241,15 +241,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoResourceServerConfig",
+		"hashicorp_aws.cognito.CognitoResourceServerConfig",
 		reflect.TypeOf((*CognitoResourceServerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoResourceServerScope",
+		"hashicorp_aws.cognito.CognitoResourceServerScope",
 		reflect.TypeOf((*CognitoResourceServerScope)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserGroup",
+		"hashicorp_aws.cognito.CognitoUserGroup",
 		reflect.TypeOf((*CognitoUserGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -299,11 +299,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserGroupConfig",
+		"hashicorp_aws.cognito.CognitoUserGroupConfig",
 		reflect.TypeOf((*CognitoUserGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPool",
+		"hashicorp_aws.cognito.CognitoUserPool",
 		reflect.TypeOf((*CognitoUserPool)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountRecoverySetting", GoGetter: "AccountRecoverySetting"},
@@ -426,17 +426,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolAccountRecoverySetting",
+		"hashicorp_aws.cognito.CognitoUserPoolAccountRecoverySetting",
 		reflect.TypeOf((*CognitoUserPoolAccountRecoverySetting)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
 		reflect.TypeOf((*CognitoUserPoolAccountRecoverySettingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -452,19 +453,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolAccountRecoverySettingRecoveryMechanism",
+		"hashicorp_aws.cognito.CognitoUserPoolAccountRecoverySettingRecoveryMechanism",
 		reflect.TypeOf((*CognitoUserPoolAccountRecoverySettingRecoveryMechanism)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfig",
 		reflect.TypeOf((*CognitoUserPoolAdminCreateUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate",
 		reflect.TypeOf((*CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
 		reflect.TypeOf((*CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "emailMessage", GoGetter: "EmailMessage"},
@@ -475,6 +476,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -493,7 +495,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
 		reflect.TypeOf((*CognitoUserPoolAdminCreateUserConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowAdminCreateUserOnly", GoGetter: "AllowAdminCreateUserOnly"},
@@ -502,6 +504,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inviteMessageTemplate", GoGetter: "InviteMessageTemplate"},
@@ -520,7 +523,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolClient",
+		"hashicorp_aws.cognito.CognitoUserPoolClient",
 		reflect.TypeOf((*CognitoUserPoolClient)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessTokenValidity", GoGetter: "AccessTokenValidity"},
@@ -618,11 +621,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientAnalyticsConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolClientAnalyticsConfiguration",
 		reflect.TypeOf((*CognitoUserPoolClientAnalyticsConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolClientAnalyticsConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "applicationArn", GoGetter: "ApplicationArn"},
@@ -635,6 +638,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -657,15 +661,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolClientConfig",
 		reflect.TypeOf((*CognitoUserPoolClientConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientTokenValidityUnits",
+		"hashicorp_aws.cognito.CognitoUserPoolClientTokenValidityUnits",
 		reflect.TypeOf((*CognitoUserPoolClientTokenValidityUnits)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
 		reflect.TypeOf((*CognitoUserPoolClientTokenValidityUnitsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessToken", GoGetter: "AccessToken"},
@@ -676,6 +680,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idToken", GoGetter: "IdToken"},
 			_jsii_.MemberProperty{JsiiProperty: "idTokenInput", GoGetter: "IdTokenInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -694,15 +699,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolConfig",
 		reflect.TypeOf((*CognitoUserPoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolDeviceConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolDeviceConfiguration",
 		reflect.TypeOf((*CognitoUserPoolDeviceConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolDeviceConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolDeviceConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolDeviceConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "challengeRequiredOnNewDevice", GoGetter: "ChallengeRequiredOnNewDevice"},
@@ -713,6 +718,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -728,7 +734,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomain",
+		"hashicorp_aws.cognito.CognitoUserPoolDomain",
 		reflect.TypeOf((*CognitoUserPoolDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -776,15 +782,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomainConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolDomainConfig",
 		reflect.TypeOf((*CognitoUserPoolDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolEmailConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolEmailConfiguration",
 		reflect.TypeOf((*CognitoUserPoolEmailConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolEmailConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolEmailConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolEmailConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "configurationSet", GoGetter: "ConfigurationSet"},
@@ -797,6 +803,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -819,21 +826,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfig",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomEmailSender",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomEmailSender",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfigCustomEmailSender)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -851,17 +859,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomSmsSender",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomSmsSender",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfigCustomSmsSender)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -879,7 +888,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigOutputReference",
 		reflect.TypeOf((*CognitoUserPoolLambdaConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "createAuthChallenge", GoGetter: "CreateAuthChallenge"},
@@ -896,6 +905,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -940,17 +950,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolPasswordPolicy",
+		"hashicorp_aws.cognito.CognitoUserPoolPasswordPolicy",
 		reflect.TypeOf((*CognitoUserPoolPasswordPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolPasswordPolicyOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolPasswordPolicyOutputReference",
 		reflect.TypeOf((*CognitoUserPoolPasswordPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -982,21 +993,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchema",
+		"hashicorp_aws.cognito.CognitoUserPoolSchema",
 		reflect.TypeOf((*CognitoUserPoolSchema)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaNumberAttributeConstraints",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaNumberAttributeConstraints",
 		reflect.TypeOf((*CognitoUserPoolSchemaNumberAttributeConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
 		reflect.TypeOf((*CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1016,17 +1028,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaStringAttributeConstraints",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaStringAttributeConstraints",
 		reflect.TypeOf((*CognitoUserPoolSchemaStringAttributeConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
 		reflect.TypeOf((*CognitoUserPoolSchemaStringAttributeConstraintsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1046,11 +1059,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolSmsConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolSmsConfiguration",
 		reflect.TypeOf((*CognitoUserPoolSmsConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolSmsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSmsConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolSmsConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "externalId", GoGetter: "ExternalId"},
@@ -1059,6 +1072,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1074,11 +1088,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolSoftwareTokenMfaConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolSoftwareTokenMfaConfiguration",
 		reflect.TypeOf((*CognitoUserPoolSoftwareTokenMfaConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -1087,6 +1101,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1100,7 +1115,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomization",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomization",
 		reflect.TypeOf((*CognitoUserPoolUiCustomization)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1152,15 +1167,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomizationConfig",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomizationConfig",
 		reflect.TypeOf((*CognitoUserPoolUiCustomizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolUserPoolAddOns",
+		"hashicorp_aws.cognito.CognitoUserPoolUserPoolAddOns",
 		reflect.TypeOf((*CognitoUserPoolUserPoolAddOns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
 		reflect.TypeOf((*CognitoUserPoolUserPoolAddOnsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "advancedSecurityMode", GoGetter: "AdvancedSecurityMode"},
@@ -1169,6 +1184,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1182,11 +1198,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolUsernameConfiguration",
+		"hashicorp_aws.cognito.CognitoUserPoolUsernameConfiguration",
 		reflect.TypeOf((*CognitoUserPoolUsernameConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolUsernameConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUsernameConfigurationOutputReference",
 		reflect.TypeOf((*CognitoUserPoolUsernameConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "caseSensitive", GoGetter: "CaseSensitive"},
@@ -1195,6 +1211,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1208,11 +1225,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.CognitoUserPoolVerificationMessageTemplate",
+		"hashicorp_aws.cognito.CognitoUserPoolVerificationMessageTemplate",
 		reflect.TypeOf((*CognitoUserPoolVerificationMessageTemplate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
 		reflect.TypeOf((*CognitoUserPoolVerificationMessageTemplateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultEmailOption", GoGetter: "DefaultEmailOption"},
@@ -1229,6 +1246,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1250,7 +1268,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPools",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPools",
 		reflect.TypeOf((*DataAwsCognitoUserPools)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1291,7 +1309,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPoolsConfig",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolsConfig",
 		reflect.TypeOf((*DataAwsCognitoUserPoolsConfig)(nil)).Elem(),
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueConnection",
+		"hashicorp_aws.glue.DataAwsGlueConnection",
 		reflect.TypeOf((*DataAwsGlueConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -57,11 +57,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueConnectionConfig",
+		"hashicorp_aws.glue.DataAwsGlueConnectionConfig",
 		reflect.TypeOf((*DataAwsGlueConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
+		"hashicorp_aws.glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
 		reflect.TypeOf((*DataAwsGlueConnectionPhysicalConnectionRequirements)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZone", GoGetter: "AvailabilityZone"},
@@ -83,7 +83,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettings",
 		reflect.TypeOf((*DataAwsGlueDataCatalogEncryptionSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -123,11 +123,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsConfig",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsConfig",
 		reflect.TypeOf((*DataAwsGlueDataCatalogEncryptionSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
 		reflect.TypeOf((*DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -148,7 +148,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
 		reflect.TypeOf((*DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsKmsKeyId", GoGetter: "AwsKmsKeyId"},
@@ -169,7 +169,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
+		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
 		reflect.TypeOf((*DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogEncryptionMode", GoGetter: "CatalogEncryptionMode"},
@@ -190,7 +190,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.DataAwsGlueScript",
+		"hashicorp_aws.glue.DataAwsGlueScript",
 		reflect.TypeOf((*DataAwsGlueScript)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -236,23 +236,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueScriptConfig",
+		"hashicorp_aws.glue.DataAwsGlueScriptConfig",
 		reflect.TypeOf((*DataAwsGlueScriptConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueScriptDagEdge",
+		"hashicorp_aws.glue.DataAwsGlueScriptDagEdge",
 		reflect.TypeOf((*DataAwsGlueScriptDagEdge)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueScriptDagNode",
+		"hashicorp_aws.glue.DataAwsGlueScriptDagNode",
 		reflect.TypeOf((*DataAwsGlueScriptDagNode)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.DataAwsGlueScriptDagNodeArgs",
+		"hashicorp_aws.glue.DataAwsGlueScriptDagNodeArgs",
 		reflect.TypeOf((*DataAwsGlueScriptDagNodeArgs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabase",
 		reflect.TypeOf((*GlueCatalogDatabase)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -308,15 +308,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogDatabaseConfig",
+		"hashicorp_aws.glue.GlueCatalogDatabaseConfig",
 		reflect.TypeOf((*GlueCatalogDatabaseConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogDatabaseTargetDatabase",
+		"hashicorp_aws.glue.GlueCatalogDatabaseTargetDatabase",
 		reflect.TypeOf((*GlueCatalogDatabaseTargetDatabase)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
+		"hashicorp_aws.glue.GlueCatalogDatabaseTargetDatabaseOutputReference",
 		reflect.TypeOf((*GlueCatalogDatabaseTargetDatabaseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -327,6 +327,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -340,7 +341,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTable",
+		"hashicorp_aws.glue.GlueCatalogTable",
 		reflect.TypeOf((*GlueCatalogTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -420,27 +421,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableConfig",
+		"hashicorp_aws.glue.GlueCatalogTableConfig",
 		reflect.TypeOf((*GlueCatalogTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTablePartitionIndex",
+		"hashicorp_aws.glue.GlueCatalogTablePartitionIndex",
 		reflect.TypeOf((*GlueCatalogTablePartitionIndex)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTablePartitionKeys",
+		"hashicorp_aws.glue.GlueCatalogTablePartitionKeys",
 		reflect.TypeOf((*GlueCatalogTablePartitionKeys)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptor",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptor",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptor)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorColumns",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorColumns",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorOutputReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketColumns", GoGetter: "BucketColumns"},
@@ -455,6 +456,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inputFormat", GoGetter: "InputFormat"},
 			_jsii_.MemberProperty{JsiiProperty: "inputFormatInput", GoGetter: "InputFormatInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -502,17 +504,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSchemaReference)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -535,17 +538,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -568,17 +572,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSerDeInfo",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSerDeInfo",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSerDeInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSerDeInfoOutputReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSerDeInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -601,17 +606,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSkewedInfo",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSkewedInfo",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSkewedInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSkewedInfoOutputReference",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSkewedInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -634,15 +640,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableStorageDescriptorSortColumns",
+		"hashicorp_aws.glue.GlueCatalogTableStorageDescriptorSortColumns",
 		reflect.TypeOf((*GlueCatalogTableStorageDescriptorSortColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCatalogTableTargetTable",
+		"hashicorp_aws.glue.GlueCatalogTableTargetTable",
 		reflect.TypeOf((*GlueCatalogTableTargetTable)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCatalogTableTargetTableOutputReference",
+		"hashicorp_aws.glue.GlueCatalogTableTargetTableOutputReference",
 		reflect.TypeOf((*GlueCatalogTableTargetTableOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -653,6 +659,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -668,7 +675,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueClassifier",
+		"hashicorp_aws.glue.GlueClassifier",
 		reflect.TypeOf((*GlueClassifier)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -723,15 +730,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueClassifierConfig",
+		"hashicorp_aws.glue.GlueClassifierConfig",
 		reflect.TypeOf((*GlueClassifierConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueClassifierCsvClassifier",
+		"hashicorp_aws.glue.GlueClassifierCsvClassifier",
 		reflect.TypeOf((*GlueClassifierCsvClassifier)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueClassifierCsvClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierCsvClassifierOutputReference",
 		reflect.TypeOf((*GlueClassifierCsvClassifierOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowSingleColumn", GoGetter: "AllowSingleColumn"},
@@ -748,6 +755,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "header", GoGetter: "Header"},
 			_jsii_.MemberProperty{JsiiProperty: "headerInput", GoGetter: "HeaderInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -769,11 +777,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueClassifierGrokClassifier",
+		"hashicorp_aws.glue.GlueClassifierGrokClassifier",
 		reflect.TypeOf((*GlueClassifierGrokClassifier)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueClassifierGrokClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierGrokClassifierOutputReference",
 		reflect.TypeOf((*GlueClassifierGrokClassifierOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "classification", GoGetter: "Classification"},
@@ -786,6 +794,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "grokPattern", GoGetter: "GrokPattern"},
 			_jsii_.MemberProperty{JsiiProperty: "grokPatternInput", GoGetter: "GrokPatternInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -800,17 +809,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueClassifierJsonClassifier",
+		"hashicorp_aws.glue.GlueClassifierJsonClassifier",
 		reflect.TypeOf((*GlueClassifierJsonClassifier)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueClassifierJsonClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierJsonClassifierOutputReference",
 		reflect.TypeOf((*GlueClassifierJsonClassifierOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -826,11 +836,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueClassifierXmlClassifier",
+		"hashicorp_aws.glue.GlueClassifierXmlClassifier",
 		reflect.TypeOf((*GlueClassifierXmlClassifier)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueClassifierXmlClassifierOutputReference",
+		"hashicorp_aws.glue.GlueClassifierXmlClassifierOutputReference",
 		reflect.TypeOf((*GlueClassifierXmlClassifierOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "classification", GoGetter: "Classification"},
@@ -839,6 +849,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -854,7 +865,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueConnection",
+		"hashicorp_aws.glue.GlueConnection",
 		reflect.TypeOf((*GlueConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -919,15 +930,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueConnectionConfig",
+		"hashicorp_aws.glue.GlueConnectionConfig",
 		reflect.TypeOf((*GlueConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueConnectionPhysicalConnectionRequirements",
+		"hashicorp_aws.glue.GlueConnectionPhysicalConnectionRequirements",
 		reflect.TypeOf((*GlueConnectionPhysicalConnectionRequirements)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
+		"hashicorp_aws.glue.GlueConnectionPhysicalConnectionRequirementsOutputReference",
 		reflect.TypeOf((*GlueConnectionPhysicalConnectionRequirementsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZone", GoGetter: "AvailabilityZone"},
@@ -936,6 +947,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -956,7 +968,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCrawler",
+		"hashicorp_aws.glue.GlueCrawler",
 		reflect.TypeOf((*GlueCrawler)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1051,27 +1063,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerCatalogTarget",
+		"hashicorp_aws.glue.GlueCrawlerCatalogTarget",
 		reflect.TypeOf((*GlueCrawlerCatalogTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerConfig",
+		"hashicorp_aws.glue.GlueCrawlerConfig",
 		reflect.TypeOf((*GlueCrawlerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerDynamodbTarget",
+		"hashicorp_aws.glue.GlueCrawlerDynamodbTarget",
 		reflect.TypeOf((*GlueCrawlerDynamodbTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerJdbcTarget",
+		"hashicorp_aws.glue.GlueCrawlerJdbcTarget",
 		reflect.TypeOf((*GlueCrawlerJdbcTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerLineageConfiguration",
+		"hashicorp_aws.glue.GlueCrawlerLineageConfiguration",
 		reflect.TypeOf((*GlueCrawlerLineageConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCrawlerLineageConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerLineageConfigurationOutputReference",
 		reflect.TypeOf((*GlueCrawlerLineageConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "crawlerLineageSettings", GoGetter: "CrawlerLineageSettings"},
@@ -1080,6 +1092,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1094,21 +1107,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerMongodbTarget",
+		"hashicorp_aws.glue.GlueCrawlerMongodbTarget",
 		reflect.TypeOf((*GlueCrawlerMongodbTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerRecrawlPolicy",
+		"hashicorp_aws.glue.GlueCrawlerRecrawlPolicy",
 		reflect.TypeOf((*GlueCrawlerRecrawlPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCrawlerRecrawlPolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerRecrawlPolicyOutputReference",
 		reflect.TypeOf((*GlueCrawlerRecrawlPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1125,15 +1139,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerS3Target",
+		"hashicorp_aws.glue.GlueCrawlerS3Target",
 		reflect.TypeOf((*GlueCrawlerS3Target)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueCrawlerSchemaChangePolicy",
+		"hashicorp_aws.glue.GlueCrawlerSchemaChangePolicy",
 		reflect.TypeOf((*GlueCrawlerSchemaChangePolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueCrawlerSchemaChangePolicyOutputReference",
+		"hashicorp_aws.glue.GlueCrawlerSchemaChangePolicyOutputReference",
 		reflect.TypeOf((*GlueCrawlerSchemaChangePolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deleteBehavior", GoGetter: "DeleteBehavior"},
@@ -1142,6 +1156,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1159,7 +1174,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettings",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1202,19 +1217,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsConfig",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsConfig",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsKmsKeyId", GoGetter: "AwsKmsKeyId"},
@@ -1223,6 +1238,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1239,11 +1255,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogEncryptionMode", GoGetter: "CatalogEncryptionMode"},
@@ -1252,6 +1268,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1268,7 +1285,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
+		"hashicorp_aws.glue.GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference",
 		reflect.TypeOf((*GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "connectionPasswordEncryption", GoGetter: "ConnectionPasswordEncryption"},
@@ -1279,6 +1296,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1294,7 +1312,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueDevEndpoint",
+		"hashicorp_aws.glue.GlueDevEndpoint",
 		reflect.TypeOf((*GlueDevEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1386,11 +1404,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueDevEndpointConfig",
+		"hashicorp_aws.glue.GlueDevEndpointConfig",
 		reflect.TypeOf((*GlueDevEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueJob",
+		"hashicorp_aws.glue.GlueJob",
 		reflect.TypeOf((*GlueJob)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1482,17 +1500,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueJobCommand",
+		"hashicorp_aws.glue.GlueJobCommand",
 		reflect.TypeOf((*GlueJobCommand)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueJobCommandOutputReference",
+		"hashicorp_aws.glue.GlueJobCommandOutputReference",
 		reflect.TypeOf((*GlueJobCommandOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1514,21 +1533,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueJobConfig",
+		"hashicorp_aws.glue.GlueJobConfig",
 		reflect.TypeOf((*GlueJobConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueJobExecutionProperty",
+		"hashicorp_aws.glue.GlueJobExecutionProperty",
 		reflect.TypeOf((*GlueJobExecutionProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueJobExecutionPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobExecutionPropertyOutputReference",
 		reflect.TypeOf((*GlueJobExecutionPropertyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1545,17 +1565,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueJobNotificationProperty",
+		"hashicorp_aws.glue.GlueJobNotificationProperty",
 		reflect.TypeOf((*GlueJobNotificationProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueJobNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueJobNotificationPropertyOutputReference",
 		reflect.TypeOf((*GlueJobNotificationPropertyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1572,7 +1593,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueMlTransform",
+		"hashicorp_aws.glue.GlueMlTransform",
 		reflect.TypeOf((*GlueMlTransform)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1648,23 +1669,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueMlTransformConfig",
+		"hashicorp_aws.glue.GlueMlTransformConfig",
 		reflect.TypeOf((*GlueMlTransformConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueMlTransformInputRecordTables",
+		"hashicorp_aws.glue.GlueMlTransformInputRecordTables",
 		reflect.TypeOf((*GlueMlTransformInputRecordTables)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueMlTransformParameters",
+		"hashicorp_aws.glue.GlueMlTransformParameters",
 		reflect.TypeOf((*GlueMlTransformParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueMlTransformParametersFindMatchesParameters",
+		"hashicorp_aws.glue.GlueMlTransformParametersFindMatchesParameters",
 		reflect.TypeOf((*GlueMlTransformParametersFindMatchesParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersFindMatchesParametersOutputReference",
 		reflect.TypeOf((*GlueMlTransformParametersFindMatchesParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accuracyCostTradeOff", GoGetter: "AccuracyCostTradeOff"},
@@ -1675,6 +1696,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1696,7 +1718,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueMlTransformParametersOutputReference",
+		"hashicorp_aws.glue.GlueMlTransformParametersOutputReference",
 		reflect.TypeOf((*GlueMlTransformParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "findMatchesParameters", GoGetter: "FindMatchesParameters"},
@@ -1705,6 +1727,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1721,7 +1744,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueMlTransformSchema",
+		"hashicorp_aws.glue.GlueMlTransformSchema",
 		reflect.TypeOf((*GlueMlTransformSchema)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1742,7 +1765,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartition",
+		"hashicorp_aws.glue.GluePartition",
 		reflect.TypeOf((*GluePartition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1798,11 +1821,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionConfig",
+		"hashicorp_aws.glue.GluePartitionConfig",
 		reflect.TypeOf((*GluePartitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndex",
 		reflect.TypeOf((*GluePartitionIndex)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1849,15 +1872,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionIndexConfig",
+		"hashicorp_aws.glue.GluePartitionIndexConfig",
 		reflect.TypeOf((*GluePartitionIndexConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionIndexPartitionIndex",
+		"hashicorp_aws.glue.GluePartitionIndexPartitionIndex",
 		reflect.TypeOf((*GluePartitionIndexPartitionIndex)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartitionIndexPartitionIndexOutputReference",
+		"hashicorp_aws.glue.GluePartitionIndexPartitionIndexOutputReference",
 		reflect.TypeOf((*GluePartitionIndexPartitionIndexOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1866,6 +1889,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "indexName", GoGetter: "IndexName"},
 			_jsii_.MemberProperty{JsiiProperty: "indexNameInput", GoGetter: "IndexNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1883,15 +1907,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptor",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptor",
 		reflect.TypeOf((*GluePartitionStorageDescriptor)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorColumns",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorColumns",
 		reflect.TypeOf((*GluePartitionStorageDescriptorColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorOutputReference",
 		reflect.TypeOf((*GluePartitionStorageDescriptorOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketColumns", GoGetter: "BucketColumns"},
@@ -1906,6 +1930,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inputFormat", GoGetter: "InputFormat"},
 			_jsii_.MemberProperty{JsiiProperty: "inputFormatInput", GoGetter: "InputFormatInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1949,17 +1974,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSerDeInfo",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSerDeInfo",
 		reflect.TypeOf((*GluePartitionStorageDescriptorSerDeInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSerDeInfoOutputReference",
 		reflect.TypeOf((*GluePartitionStorageDescriptorSerDeInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1982,17 +2008,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSkewedInfo",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSkewedInfo",
 		reflect.TypeOf((*GluePartitionStorageDescriptorSkewedInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSkewedInfoOutputReference",
 		reflect.TypeOf((*GluePartitionStorageDescriptorSkewedInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2015,11 +2042,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GluePartitionStorageDescriptorSortColumns",
+		"hashicorp_aws.glue.GluePartitionStorageDescriptorSortColumns",
 		reflect.TypeOf((*GluePartitionStorageDescriptorSortColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueRegistry",
+		"hashicorp_aws.glue.GlueRegistry",
 		reflect.TypeOf((*GlueRegistry)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2068,11 +2095,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueRegistryConfig",
+		"hashicorp_aws.glue.GlueRegistryConfig",
 		reflect.TypeOf((*GlueRegistryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueResourcePolicy",
+		"hashicorp_aws.glue.GlueResourcePolicy",
 		reflect.TypeOf((*GlueResourcePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2114,11 +2141,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueResourcePolicyConfig",
+		"hashicorp_aws.glue.GlueResourcePolicyConfig",
 		reflect.TypeOf((*GlueResourcePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSchema",
+		"hashicorp_aws.glue.GlueSchema",
 		reflect.TypeOf((*GlueSchema)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2180,11 +2207,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSchemaConfig",
+		"hashicorp_aws.glue.GlueSchemaConfig",
 		reflect.TypeOf((*GlueSchemaConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSecurityConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfiguration",
 		reflect.TypeOf((*GlueSecurityConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2226,19 +2253,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationConfig",
+		"hashicorp_aws.glue.GlueSecurityConfigurationConfig",
 		reflect.TypeOf((*GlueSecurityConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfiguration",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfiguration",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchEncryptionMode", GoGetter: "CloudwatchEncryptionMode"},
@@ -2247,6 +2274,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2264,17 +2292,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2294,7 +2323,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationOutputReference",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchEncryption", GoGetter: "CloudwatchEncryption"},
@@ -2303,6 +2332,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2323,17 +2353,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationS3Encryption",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationS3Encryption",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationS3Encryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
+		"hashicorp_aws.glue.GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference",
 		reflect.TypeOf((*GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2353,7 +2384,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueTrigger",
+		"hashicorp_aws.glue.GlueTrigger",
 		reflect.TypeOf((*GlueTrigger)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actions", GoGetter: "Actions"},
@@ -2424,21 +2455,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerActions",
+		"hashicorp_aws.glue.GlueTriggerActions",
 		reflect.TypeOf((*GlueTriggerActions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerActionsNotificationProperty",
+		"hashicorp_aws.glue.GlueTriggerActionsNotificationProperty",
 		reflect.TypeOf((*GlueTriggerActionsNotificationProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueTriggerActionsNotificationPropertyOutputReference",
+		"hashicorp_aws.glue.GlueTriggerActionsNotificationPropertyOutputReference",
 		reflect.TypeOf((*GlueTriggerActionsNotificationPropertyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2455,19 +2487,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerConfig",
+		"hashicorp_aws.glue.GlueTriggerConfig",
 		reflect.TypeOf((*GlueTriggerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerPredicate",
+		"hashicorp_aws.glue.GlueTriggerPredicate",
 		reflect.TypeOf((*GlueTriggerPredicate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerPredicateConditions",
+		"hashicorp_aws.glue.GlueTriggerPredicateConditions",
 		reflect.TypeOf((*GlueTriggerPredicateConditions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueTriggerPredicateOutputReference",
+		"hashicorp_aws.glue.GlueTriggerPredicateOutputReference",
 		reflect.TypeOf((*GlueTriggerPredicateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "conditions", GoGetter: "Conditions"},
@@ -2476,6 +2508,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2492,11 +2525,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueTriggerTimeouts",
+		"hashicorp_aws.glue.GlueTriggerTimeouts",
 		reflect.TypeOf((*GlueTriggerTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueTriggerTimeoutsOutputReference",
+		"hashicorp_aws.glue.GlueTriggerTimeoutsOutputReference",
 		reflect.TypeOf((*GlueTriggerTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2507,6 +2540,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2522,7 +2556,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueUserDefinedFunction",
+		"hashicorp_aws.glue.GlueUserDefinedFunction",
 		reflect.TypeOf((*GlueUserDefinedFunction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2577,15 +2611,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueUserDefinedFunctionConfig",
+		"hashicorp_aws.glue.GlueUserDefinedFunctionConfig",
 		reflect.TypeOf((*GlueUserDefinedFunctionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueUserDefinedFunctionResourceUris",
+		"hashicorp_aws.glue.GlueUserDefinedFunctionResourceUris",
 		reflect.TypeOf((*GlueUserDefinedFunctionResourceUris)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glue.GlueWorkflow",
+		"hashicorp_aws.glue.GlueWorkflow",
 		reflect.TypeOf((*GlueWorkflow)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2641,7 +2675,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glue.GlueWorkflowConfig",
+		"hashicorp_aws.glue.GlueWorkflowConfig",
 		reflect.TypeOf((*GlueWorkflowConfig)(nil)).Elem(),
 	)
 }

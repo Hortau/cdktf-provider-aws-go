@@ -265,7 +265,7 @@ func NewDataAwsSqsQueue(scope constructs.Construct, id *string, config *DataAwsS
 	j := jsiiProxy_DataAwsSqsQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.DataAwsSqsQueue",
+		"hashicorp_aws.sqs.DataAwsSqsQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -278,7 +278,7 @@ func NewDataAwsSqsQueue_Override(d DataAwsSqsQueue, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.DataAwsSqsQueue",
+		"hashicorp_aws.sqs.DataAwsSqsQueue",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -342,7 +342,7 @@ func DataAwsSqsQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SQS.DataAwsSqsQueue",
+		"hashicorp_aws.sqs.DataAwsSqsQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -355,7 +355,7 @@ func DataAwsSqsQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SQS.DataAwsSqsQueue",
+		"hashicorp_aws.sqs.DataAwsSqsQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -525,6 +525,7 @@ func (d *jsiiProxy_DataAwsSqsQueue) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Queue Service.
 type DataAwsSqsQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -601,6 +602,9 @@ type SqsQueue interface {
 	RedrivePolicy() *string
 	SetRedrivePolicy(val *string)
 	RedrivePolicyInput() *string
+	SqsManagedSseEnabled() interface{}
+	SetSqsManagedSseEnabled(val interface{})
+	SqsManagedSseEnabledInput() interface{}
 	Tags() interface{}
 	SetTags(val interface{})
 	TagsAll() interface{}
@@ -636,6 +640,7 @@ type SqsQueue interface {
 	ResetPolicy()
 	ResetReceiveWaitTimeSeconds()
 	ResetRedrivePolicy()
+	ResetSqsManagedSseEnabled()
 	ResetTags()
 	ResetTagsAll()
 	ResetVisibilityTimeoutSeconds()
@@ -1050,6 +1055,26 @@ func (j *jsiiProxy_SqsQueue) RedrivePolicyInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SqsQueue) SqsManagedSseEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sqsManagedSseEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SqsQueue) SqsManagedSseEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sqsManagedSseEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SqsQueue) Tags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1157,7 +1182,7 @@ func NewSqsQueue(scope constructs.Construct, id *string, config *SqsQueueConfig)
 	j := jsiiProxy_SqsQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.SqsQueue",
+		"hashicorp_aws.sqs.SqsQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1170,7 +1195,7 @@ func NewSqsQueue_Override(s SqsQueue, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.SqsQueue",
+		"hashicorp_aws.sqs.SqsQueue",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1320,6 +1345,14 @@ func (j *jsiiProxy_SqsQueue) SetRedrivePolicy(val *string) {
 	)
 }
 
+func (j *jsiiProxy_SqsQueue) SetSqsManagedSseEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"sqsManagedSseEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SqsQueue) SetTags(val interface{}) {
 	_jsii_.Set(
 		j,
@@ -1354,7 +1387,7 @@ func SqsQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SQS.SqsQueue",
+		"hashicorp_aws.sqs.SqsQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1367,7 +1400,7 @@ func SqsQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SQS.SqsQueue",
+		"hashicorp_aws.sqs.SqsQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -1585,6 +1618,14 @@ func (s *jsiiProxy_SqsQueue) ResetRedrivePolicy() {
 	)
 }
 
+func (s *jsiiProxy_SqsQueue) ResetSqsManagedSseEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSqsManagedSseEnabled",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SqsQueue) ResetTags() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1665,6 +1706,7 @@ func (s *jsiiProxy_SqsQueue) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Queue Service.
 type SqsQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1702,6 +1744,8 @@ type SqsQueueConfig struct {
 	ReceiveWaitTimeSeconds *float64 `json:"receiveWaitTimeSeconds"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#redrive_policy SqsQueue#redrive_policy}.
 	RedrivePolicy *string `json:"redrivePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#sqs_managed_sse_enabled SqsQueue#sqs_managed_sse_enabled}.
+	SqsManagedSseEnabled interface{} `json:"sqsManagedSseEnabled"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#tags SqsQueue#tags}.
 	Tags interface{} `json:"tags"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#tags_all SqsQueue#tags_all}.
@@ -1943,7 +1987,7 @@ func NewSqsQueuePolicy(scope constructs.Construct, id *string, config *SqsQueueP
 	j := jsiiProxy_SqsQueuePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.SqsQueuePolicy",
+		"hashicorp_aws.sqs.SqsQueuePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1956,7 +2000,7 @@ func NewSqsQueuePolicy_Override(s SqsQueuePolicy, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SQS.SqsQueuePolicy",
+		"hashicorp_aws.sqs.SqsQueuePolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2020,7 +2064,7 @@ func SqsQueuePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SQS.SqsQueuePolicy",
+		"hashicorp_aws.sqs.SqsQueuePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2033,7 +2077,7 @@ func SqsQueuePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SQS.SqsQueuePolicy",
+		"hashicorp_aws.sqs.SqsQueuePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2195,6 +2239,7 @@ func (s *jsiiProxy_SqsQueuePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Queue Service.
 type SqsQueuePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

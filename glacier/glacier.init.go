@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glacier.GlacierVault",
+		"hashicorp_aws.glacier.GlacierVault",
 		reflect.TypeOf((*GlacierVault)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPolicy", GoGetter: "AccessPolicy"},
@@ -62,11 +62,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glacier.GlacierVaultConfig",
+		"hashicorp_aws.glacier.GlacierVaultConfig",
 		reflect.TypeOf((*GlacierVaultConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glacier.GlacierVaultLock",
+		"hashicorp_aws.glacier.GlacierVaultLock",
 		reflect.TypeOf((*GlacierVaultLock)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -112,15 +112,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glacier.GlacierVaultLockConfig",
+		"hashicorp_aws.glacier.GlacierVaultLockConfig",
 		reflect.TypeOf((*GlacierVaultLockConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Glacier.GlacierVaultNotification",
+		"hashicorp_aws.glacier.GlacierVaultNotification",
 		reflect.TypeOf((*GlacierVaultNotification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Glacier.GlacierVaultNotificationOutputReference",
+		"hashicorp_aws.glacier.GlacierVaultNotificationOutputReference",
 		reflect.TypeOf((*GlacierVaultNotificationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "events", GoGetter: "Events"},
@@ -129,6 +129,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

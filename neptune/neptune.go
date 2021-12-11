@@ -369,7 +369,7 @@ func NewDataAwsNeptuneEngineVersion(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsNeptuneEngineVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersion",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -382,7 +382,7 @@ func NewDataAwsNeptuneEngineVersion_Override(d DataAwsNeptuneEngineVersion, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersion",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -462,7 +462,7 @@ func DataAwsNeptuneEngineVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersion",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -475,7 +475,7 @@ func DataAwsNeptuneEngineVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersion",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -669,6 +669,7 @@ func (d *jsiiProxy_DataAwsNeptuneEngineVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type DataAwsNeptuneEngineVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1184,7 +1185,7 @@ func NewDataAwsNeptuneOrderableDbInstance(scope constructs.Construct, id *string
 	j := jsiiProxy_DataAwsNeptuneOrderableDbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstance",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1197,7 +1198,7 @@ func NewDataAwsNeptuneOrderableDbInstance_Override(d DataAwsNeptuneOrderableDbIn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstance",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1293,7 +1294,7 @@ func DataAwsNeptuneOrderableDbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstance",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1306,7 +1307,7 @@ func DataAwsNeptuneOrderableDbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstance",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -1516,6 +1517,7 @@ func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Neptune.
 type DataAwsNeptuneOrderableDbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2440,7 +2442,7 @@ func NewNeptuneCluster(scope constructs.Construct, id *string, config *NeptuneCl
 	j := jsiiProxy_NeptuneCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneCluster",
+		"hashicorp_aws.neptune.NeptuneCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2453,7 +2455,7 @@ func NewNeptuneCluster_Override(n NeptuneCluster, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneCluster",
+		"hashicorp_aws.neptune.NeptuneCluster",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -2709,7 +2711,7 @@ func NeptuneCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneCluster",
+		"hashicorp_aws.neptune.NeptuneCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2722,7 +2724,7 @@ func NeptuneCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneCluster",
+		"hashicorp_aws.neptune.NeptuneCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -3108,6 +3110,7 @@ func (n *jsiiProxy_NeptuneCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3549,7 +3552,7 @@ func NewNeptuneClusterEndpoint(scope constructs.Construct, id *string, config *N
 	j := jsiiProxy_NeptuneClusterEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpoint",
+		"hashicorp_aws.neptune.NeptuneClusterEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3562,7 +3565,7 @@ func NewNeptuneClusterEndpoint_Override(n NeptuneClusterEndpoint, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpoint",
+		"hashicorp_aws.neptune.NeptuneClusterEndpoint",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -3666,7 +3669,7 @@ func NeptuneClusterEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpoint",
+		"hashicorp_aws.neptune.NeptuneClusterEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3679,7 +3682,7 @@ func NeptuneClusterEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpoint",
+		"hashicorp_aws.neptune.NeptuneClusterEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -3873,6 +3876,7 @@ func (n *jsiiProxy_NeptuneClusterEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneClusterEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4616,7 +4620,7 @@ func NewNeptuneClusterInstance(scope constructs.Construct, id *string, config *N
 	j := jsiiProxy_NeptuneClusterInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterInstance",
+		"hashicorp_aws.neptune.NeptuneClusterInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4629,7 +4633,7 @@ func NewNeptuneClusterInstance_Override(n NeptuneClusterInstance, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterInstance",
+		"hashicorp_aws.neptune.NeptuneClusterInstance",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -4821,7 +4825,7 @@ func NeptuneClusterInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneClusterInstance",
+		"hashicorp_aws.neptune.NeptuneClusterInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4834,7 +4838,7 @@ func NeptuneClusterInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneClusterInstance",
+		"hashicorp_aws.neptune.NeptuneClusterInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -5140,6 +5144,7 @@ func (n *jsiiProxy_NeptuneClusterInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneClusterInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5208,6 +5213,8 @@ type NeptuneClusterInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *NeptuneClusterInstanceTimeouts
+	SetInternalValue(val *NeptuneClusterInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5273,6 +5280,16 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) DeleteInput() 
 	return returns
 }
 
+func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) InternalValue() *NeptuneClusterInstanceTimeouts {
+	var returns *NeptuneClusterInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5329,7 +5346,7 @@ func NewNeptuneClusterInstanceTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5341,7 +5358,7 @@ func NewNeptuneClusterInstanceTimeoutsOutputReference_Override(n NeptuneClusterI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -5359,6 +5376,14 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetDelete(val 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetInternalValue(val *NeptuneClusterInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5868,7 +5893,7 @@ func NewNeptuneClusterParameterGroup(scope constructs.Construct, id *string, con
 	j := jsiiProxy_NeptuneClusterParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroup",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5881,7 +5906,7 @@ func NewNeptuneClusterParameterGroup_Override(n NeptuneClusterParameterGroup, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroup",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -5985,7 +6010,7 @@ func NeptuneClusterParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroup",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5998,7 +6023,7 @@ func NeptuneClusterParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroup",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6208,6 +6233,7 @@ func (n *jsiiProxy_NeptuneClusterParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneClusterParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6644,7 +6670,7 @@ func NewNeptuneClusterSnapshot(scope constructs.Construct, id *string, config *N
 	j := jsiiProxy_NeptuneClusterSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshot",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6657,7 +6683,7 @@ func NewNeptuneClusterSnapshot_Override(n NeptuneClusterSnapshot, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshot",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshot",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -6721,7 +6747,7 @@ func NeptuneClusterSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshot",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6734,7 +6760,7 @@ func NeptuneClusterSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshot",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -6912,6 +6938,7 @@ func (n *jsiiProxy_NeptuneClusterSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneClusterSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6941,6 +6968,8 @@ type NeptuneClusterSnapshotTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *NeptuneClusterSnapshotTimeouts
+	SetInternalValue(val *NeptuneClusterSnapshotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6976,6 +7005,16 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) CreateInput() 
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) InternalValue() *NeptuneClusterSnapshotTimeouts {
+	var returns *NeptuneClusterSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7017,7 +7056,7 @@ func NewNeptuneClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7029,7 +7068,7 @@ func NewNeptuneClusterSnapshotTimeoutsOutputReference_Override(n NeptuneClusterS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -7039,6 +7078,14 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetCreate(val 
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetInternalValue(val *NeptuneClusterSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7176,6 +7223,8 @@ type NeptuneClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *NeptuneClusterTimeouts
+	SetInternalValue(val *NeptuneClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7241,6 +7290,16 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) DeleteInput() *string 
 	return returns
 }
 
+func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) InternalValue() *NeptuneClusterTimeouts {
+	var returns *NeptuneClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7297,7 +7356,7 @@ func NewNeptuneClusterTimeoutsOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_NeptuneClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7309,7 +7368,7 @@ func NewNeptuneClusterTimeoutsOutputReference_Override(n NeptuneClusterTimeoutsO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneClusterTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -7327,6 +7386,14 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetDelete(val *string)
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetInternalValue(val *NeptuneClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7919,7 +7986,7 @@ func NewNeptuneEventSubscription(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_NeptuneEventSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneEventSubscription",
+		"hashicorp_aws.neptune.NeptuneEventSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7932,7 +7999,7 @@ func NewNeptuneEventSubscription_Override(n NeptuneEventSubscription, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneEventSubscription",
+		"hashicorp_aws.neptune.NeptuneEventSubscription",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -8052,7 +8119,7 @@ func NeptuneEventSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneEventSubscription",
+		"hashicorp_aws.neptune.NeptuneEventSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8065,7 +8132,7 @@ func NeptuneEventSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneEventSubscription",
+		"hashicorp_aws.neptune.NeptuneEventSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -8307,6 +8374,7 @@ func (n *jsiiProxy_NeptuneEventSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneEventSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8357,6 +8425,8 @@ type NeptuneEventSubscriptionTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *NeptuneEventSubscriptionTimeouts
+	SetInternalValue(val *NeptuneEventSubscriptionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8422,6 +8492,16 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) DeleteInput(
 	return returns
 }
 
+func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) InternalValue() *NeptuneEventSubscriptionTimeouts {
+	var returns *NeptuneEventSubscriptionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8478,7 +8558,7 @@ func NewNeptuneEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8490,7 +8570,7 @@ func NewNeptuneEventSubscriptionTimeoutsOutputReference_Override(n NeptuneEventS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -8508,6 +8588,14 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetDelete(va
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetInternalValue(val *NeptuneEventSubscriptionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8992,7 +9080,7 @@ func NewNeptuneParameterGroup(scope constructs.Construct, id *string, config *Ne
 	j := jsiiProxy_NeptuneParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneParameterGroup",
+		"hashicorp_aws.neptune.NeptuneParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9005,7 +9093,7 @@ func NewNeptuneParameterGroup_Override(n NeptuneParameterGroup, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneParameterGroup",
+		"hashicorp_aws.neptune.NeptuneParameterGroup",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -9101,7 +9189,7 @@ func NeptuneParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneParameterGroup",
+		"hashicorp_aws.neptune.NeptuneParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9114,7 +9202,7 @@ func NeptuneParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneParameterGroup",
+		"hashicorp_aws.neptune.NeptuneParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -9308,6 +9396,7 @@ func (n *jsiiProxy_NeptuneParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9683,7 +9772,7 @@ func NewNeptuneSubnetGroup(scope constructs.Construct, id *string, config *Neptu
 	j := jsiiProxy_NeptuneSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroup",
+		"hashicorp_aws.neptune.NeptuneSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9696,7 +9785,7 @@ func NewNeptuneSubnetGroup_Override(n NeptuneSubnetGroup, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroup",
+		"hashicorp_aws.neptune.NeptuneSubnetGroup",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -9792,7 +9881,7 @@ func NeptuneSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroup",
+		"hashicorp_aws.neptune.NeptuneSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9805,7 +9894,7 @@ func NeptuneSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroup",
+		"hashicorp_aws.neptune.NeptuneSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -10007,6 +10096,7 @@ func (n *jsiiProxy_NeptuneSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Neptune.
 type NeptuneSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

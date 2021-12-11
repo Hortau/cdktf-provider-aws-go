@@ -383,7 +383,7 @@ func NewCloudhsmV2Cluster(scope constructs.Construct, id *string, config *Cloudh
 	j := jsiiProxy_CloudhsmV2Cluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Cluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -396,7 +396,7 @@ func NewCloudhsmV2Cluster_Override(c CloudhsmV2Cluster, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Cluster",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -484,7 +484,7 @@ func CloudhsmV2Cluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Cluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -497,7 +497,7 @@ func CloudhsmV2Cluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Cluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -824,7 +824,7 @@ func NewCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_CloudhsmV2ClusterClusterCertificates{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterClusterCertificates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -837,7 +837,7 @@ func NewCloudhsmV2ClusterClusterCertificates_Override(c CloudhsmV2ClusterCluster
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterClusterCertificates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		c,
 	)
@@ -937,6 +937,7 @@ func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) InterpolationForAttribu
 	return returns
 }
 
+// AWS CloudHSM.
 type CloudhsmV2ClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -979,6 +980,8 @@ type CloudhsmV2ClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudhsmV2ClusterTimeouts
+	SetInternalValue(val *CloudhsmV2ClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1044,6 +1047,16 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) DeleteInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) InternalValue() *CloudhsmV2ClusterTimeouts {
+	var returns *CloudhsmV2ClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1100,7 +1113,7 @@ func NewCloudhsmV2ClusterTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1112,7 +1125,7 @@ func NewCloudhsmV2ClusterTimeoutsOutputReference_Override(c CloudhsmV2ClusterTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1130,6 +1143,14 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetDelete(val *stri
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetInternalValue(val *CloudhsmV2ClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1613,7 +1634,7 @@ func NewCloudhsmV2Hsm(scope constructs.Construct, id *string, config *CloudhsmV2
 	j := jsiiProxy_CloudhsmV2Hsm{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Hsm",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Hsm",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1626,7 +1647,7 @@ func NewCloudhsmV2Hsm_Override(c CloudhsmV2Hsm, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Hsm",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Hsm",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1706,7 +1727,7 @@ func CloudhsmV2Hsm_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Hsm",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Hsm",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1719,7 +1740,7 @@ func CloudhsmV2Hsm_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Hsm",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Hsm",
 		"tfResourceType",
 		&returns,
 	)
@@ -1921,6 +1942,7 @@ func (c *jsiiProxy_CloudhsmV2Hsm) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudHSM.
 type CloudhsmV2HsmConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1959,6 +1981,8 @@ type CloudhsmV2HsmTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudhsmV2HsmTimeouts
+	SetInternalValue(val *CloudhsmV2HsmTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2020,6 +2044,16 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) InternalValue() *CloudhsmV2HsmTimeouts {
+	var returns *CloudhsmV2HsmTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2056,7 +2090,7 @@ func NewCloudhsmV2HsmTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2HsmTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2HsmTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2068,7 +2102,7 @@ func NewCloudhsmV2HsmTimeoutsOutputReference_Override(c CloudhsmV2HsmTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.CloudhsmV2HsmTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2HsmTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2086,6 +2120,14 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetInternalValue(val *CloudhsmV2HsmTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2482,7 +2524,7 @@ func NewDataAwsCloudhsmV2Cluster(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsCloudhsmV2Cluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2Cluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2495,7 +2537,7 @@ func NewDataAwsCloudhsmV2Cluster_Override(d DataAwsCloudhsmV2Cluster, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2Cluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2559,7 +2601,7 @@ func DataAwsCloudhsmV2Cluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2Cluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2572,7 +2614,7 @@ func DataAwsCloudhsmV2Cluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2Cluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -2867,7 +2909,7 @@ func NewDataAwsCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterClusterCertificates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2880,7 +2922,7 @@ func NewDataAwsCloudhsmV2ClusterClusterCertificates_Override(d DataAwsCloudhsmV2
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterClusterCertificates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2980,6 +3022,7 @@ func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) InterpolationFor
 	return returns
 }
 
+// AWS CloudHSM.
 type DataAwsCloudhsmV2ClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

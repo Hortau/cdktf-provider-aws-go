@@ -431,7 +431,7 @@ func NewBatchComputeEnvironment(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_BatchComputeEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironment",
+		"hashicorp_aws.batch.BatchComputeEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -444,7 +444,7 @@ func NewBatchComputeEnvironment_Override(b BatchComputeEnvironment, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironment",
+		"hashicorp_aws.batch.BatchComputeEnvironment",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -548,7 +548,7 @@ func BatchComputeEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Batch.BatchComputeEnvironment",
+		"hashicorp_aws.batch.BatchComputeEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -561,7 +561,7 @@ func BatchComputeEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Batch.BatchComputeEnvironment",
+		"hashicorp_aws.batch.BatchComputeEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -841,6 +841,8 @@ type BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference inte
 	ImageType() *string
 	SetImageType(val *string)
 	ImageTypeInput() *string
+	InternalValue() *BatchComputeEnvironmentComputeResourcesEc2Configuration
+	SetInternalValue(val *BatchComputeEnvironmentComputeResourcesEc2Configuration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -902,6 +904,16 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 	return returns
 }
 
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) InternalValue() *BatchComputeEnvironmentComputeResourcesEc2Configuration {
+	var returns *BatchComputeEnvironmentComputeResourcesEc2Configuration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -938,7 +950,7 @@ func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference(t
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -950,7 +962,7 @@ func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -968,6 +980,14 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 	_jsii_.Set(
 		j,
 		"imageType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) SetInternalValue(val *BatchComputeEnvironmentComputeResourcesEc2Configuration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1107,6 +1127,8 @@ type BatchComputeEnvironmentComputeResourcesLaunchTemplate struct {
 
 type BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *BatchComputeEnvironmentComputeResourcesLaunchTemplate
+	SetInternalValue(val *BatchComputeEnvironmentComputeResourcesLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateId() *string
@@ -1136,6 +1158,16 @@ type BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference interf
 // The jsii proxy struct for BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference
 type jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) InternalValue() *BatchComputeEnvironmentComputeResourcesLaunchTemplate {
+	var returns *BatchComputeEnvironmentComputeResourcesLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) IsSingleItem() *bool {
@@ -1234,7 +1266,7 @@ func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference(ter
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1246,9 +1278,17 @@ func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
+	)
+}
+
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) SetInternalValue(val *BatchComputeEnvironmentComputeResourcesLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1433,6 +1473,8 @@ type BatchComputeEnvironmentComputeResourcesOutputReference interface {
 	InstanceType() *[]*string
 	SetInstanceType(val *[]*string)
 	InstanceTypeInput() *[]*string
+	InternalValue() *BatchComputeEnvironmentComputeResources
+	SetInternalValue(val *BatchComputeEnvironmentComputeResources)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplate() BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference
@@ -1649,6 +1691,16 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Insta
 	return returns
 }
 
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) InternalValue() *BatchComputeEnvironmentComputeResources {
+	var returns *BatchComputeEnvironmentComputeResources
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1845,7 +1897,7 @@ func NewBatchComputeEnvironmentComputeResourcesOutputReference(terraformResource
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1857,7 +1909,7 @@ func NewBatchComputeEnvironmentComputeResourcesOutputReference_Override(b BatchC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -1915,6 +1967,14 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetIn
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetInternalValue(val *BatchComputeEnvironmentComputeResources) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2195,6 +2255,7 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Reset
 	)
 }
 
+// AWS Batch.
 type BatchComputeEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2671,7 +2732,7 @@ func NewBatchJobDefinition(scope constructs.Construct, id *string, config *Batch
 	j := jsiiProxy_BatchJobDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinition",
+		"hashicorp_aws.batch.BatchJobDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2684,7 +2745,7 @@ func NewBatchJobDefinition_Override(b BatchJobDefinition, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinition",
+		"hashicorp_aws.batch.BatchJobDefinition",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -2796,7 +2857,7 @@ func BatchJobDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Batch.BatchJobDefinition",
+		"hashicorp_aws.batch.BatchJobDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2809,7 +2870,7 @@ func BatchJobDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Batch.BatchJobDefinition",
+		"hashicorp_aws.batch.BatchJobDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -3051,6 +3112,7 @@ func (b *jsiiProxy_BatchJobDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Batch.
 type BatchJobDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3114,6 +3176,8 @@ type BatchJobDefinitionRetryStrategyOutputReference interface {
 	EvaluateOnExit() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
 	SetEvaluateOnExit(val *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit)
 	EvaluateOnExitInput() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
+	InternalValue() *BatchJobDefinitionRetryStrategy
+	SetInternalValue(val *BatchJobDefinitionRetryStrategy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3175,6 +3239,16 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExi
 	return returns
 }
 
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) InternalValue() *BatchJobDefinitionRetryStrategy {
+	var returns *BatchJobDefinitionRetryStrategy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3211,7 +3285,7 @@ func NewBatchJobDefinitionRetryStrategyOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinitionRetryStrategyOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionRetryStrategyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3223,7 +3297,7 @@ func NewBatchJobDefinitionRetryStrategyOutputReference_Override(b BatchJobDefini
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinitionRetryStrategyOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionRetryStrategyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -3241,6 +3315,14 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetEvaluateOn
 	_jsii_.Set(
 		j,
 		"evaluateOnExit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetInternalValue(val *BatchJobDefinitionRetryStrategy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3379,6 +3461,8 @@ type BatchJobDefinitionTimeoutOutputReference interface {
 	AttemptDurationSeconds() *float64
 	SetAttemptDurationSeconds(val *float64)
 	AttemptDurationSecondsInput() *float64
+	InternalValue() *BatchJobDefinitionTimeout
+	SetInternalValue(val *BatchJobDefinitionTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3414,6 +3498,16 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) AttemptDurationSeco
 	_jsii_.Get(
 		j,
 		"attemptDurationSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) InternalValue() *BatchJobDefinitionTimeout {
+	var returns *BatchJobDefinitionTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3455,7 +3549,7 @@ func NewBatchJobDefinitionTimeoutOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_BatchJobDefinitionTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinitionTimeoutOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3467,7 +3561,7 @@ func NewBatchJobDefinitionTimeoutOutputReference_Override(b BatchJobDefinitionTi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobDefinitionTimeoutOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -3477,6 +3571,14 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetAttemptDurationS
 	_jsii_.Set(
 		j,
 		"attemptDurationSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetInternalValue(val *BatchJobDefinitionTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3935,7 +4037,7 @@ func NewBatchJobQueue(scope constructs.Construct, id *string, config *BatchJobQu
 	j := jsiiProxy_BatchJobQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobQueue",
+		"hashicorp_aws.batch.BatchJobQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3948,7 +4050,7 @@ func NewBatchJobQueue_Override(b BatchJobQueue, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.BatchJobQueue",
+		"hashicorp_aws.batch.BatchJobQueue",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -4044,7 +4146,7 @@ func BatchJobQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Batch.BatchJobQueue",
+		"hashicorp_aws.batch.BatchJobQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4057,7 +4159,7 @@ func BatchJobQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Batch.BatchJobQueue",
+		"hashicorp_aws.batch.BatchJobQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -4235,6 +4337,7 @@ func (b *jsiiProxy_BatchJobQueue) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Batch.
 type BatchJobQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4569,7 +4672,7 @@ func NewDataAwsBatchComputeEnvironment(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsBatchComputeEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironment",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4582,7 +4685,7 @@ func NewDataAwsBatchComputeEnvironment_Override(d DataAwsBatchComputeEnvironment
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironment",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironment",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4646,7 +4749,7 @@ func DataAwsBatchComputeEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironment",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4659,7 +4762,7 @@ func DataAwsBatchComputeEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironment",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -4829,6 +4932,7 @@ func (d *jsiiProxy_DataAwsBatchComputeEnvironment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Batch.
 type DataAwsBatchComputeEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5134,7 +5238,7 @@ func NewDataAwsBatchJobQueue(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsBatchJobQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueue",
+		"hashicorp_aws.batch.DataAwsBatchJobQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5147,7 +5251,7 @@ func NewDataAwsBatchJobQueue_Override(d DataAwsBatchJobQueue, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueue",
+		"hashicorp_aws.batch.DataAwsBatchJobQueue",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5211,7 +5315,7 @@ func DataAwsBatchJobQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueue",
+		"hashicorp_aws.batch.DataAwsBatchJobQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5224,7 +5328,7 @@ func DataAwsBatchJobQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueue",
+		"hashicorp_aws.batch.DataAwsBatchJobQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -5486,7 +5590,7 @@ func NewDataAwsBatchJobQueueComputeEnvironmentOrder(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
+		"hashicorp_aws.batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5499,7 +5603,7 @@ func NewDataAwsBatchJobQueueComputeEnvironmentOrder_Override(d DataAwsBatchJobQu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
+		"hashicorp_aws.batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5599,6 +5703,7 @@ func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) InterpolationFor
 	return returns
 }
 
+// AWS Batch.
 type DataAwsBatchJobQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

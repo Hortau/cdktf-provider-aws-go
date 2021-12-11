@@ -287,7 +287,7 @@ func NewDataAwsServerlessapplicationrepositoryApplication(scope constructs.Const
 	j := jsiiProxy_DataAwsServerlessapplicationrepositoryApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplication",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -300,7 +300,7 @@ func NewDataAwsServerlessapplicationrepositoryApplication_Override(d DataAwsServ
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplication",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplication",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -364,7 +364,7 @@ func DataAwsServerlessapplicationrepositoryApplication_IsConstruct(x interface{}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplication",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -377,7 +377,7 @@ func DataAwsServerlessapplicationrepositoryApplication_TfResourceType() *string 
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplication",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -547,6 +547,7 @@ func (d *jsiiProxy_DataAwsServerlessapplicationrepositoryApplication) ToTerrafor
 	return returns
 }
 
+// AWS Serverless Application Repository.
 type DataAwsServerlessapplicationrepositoryApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -939,7 +940,7 @@ func NewServerlessapplicationrepositoryCloudformationStack(scope constructs.Cons
 	j := jsiiProxy_ServerlessapplicationrepositoryCloudformationStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStack",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -952,7 +953,7 @@ func NewServerlessapplicationrepositoryCloudformationStack_Override(s Serverless
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStack",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStack",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1056,7 +1057,7 @@ func ServerlessapplicationrepositoryCloudformationStack_IsConstruct(x interface{
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStack",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1069,7 +1070,7 @@ func ServerlessapplicationrepositoryCloudformationStack_TfResourceType() *string
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStack",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -1292,6 +1293,7 @@ func (s *jsiiProxy_ServerlessapplicationrepositoryCloudformationStack) ToTerrafo
 	return returns
 }
 
+// AWS Serverless Application Repository.
 type ServerlessapplicationrepositoryCloudformationStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1338,6 +1340,8 @@ type ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference i
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ServerlessapplicationrepositoryCloudformationStackTimeouts
+	SetInternalValue(val *ServerlessapplicationrepositoryCloudformationStackTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1403,6 +1407,16 @@ func (j *jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOut
 	return returns
 }
 
+func (j *jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference) InternalValue() *ServerlessapplicationrepositoryCloudformationStackTimeouts {
+	var returns *ServerlessapplicationrepositoryCloudformationStackTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1459,7 +1473,7 @@ func NewServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReferenc
 	j := jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1471,7 +1485,7 @@ func NewServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -1489,6 +1503,14 @@ func (j *jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOut
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference) SetInternalValue(val *ServerlessapplicationrepositoryCloudformationStackTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

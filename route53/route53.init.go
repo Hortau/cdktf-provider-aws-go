@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSet",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSet",
 		reflect.TypeOf((*DataAwsRoute53DelegationSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -49,11 +49,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSetConfig",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSetConfig",
 		reflect.TypeOf((*DataAwsRoute53DelegationSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpoint",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpoint",
 		reflect.TypeOf((*DataAwsRoute53ResolverEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -102,15 +102,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpointConfig",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpointConfig",
 		reflect.TypeOf((*DataAwsRoute53ResolverEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpointFilter",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpointFilter",
 		reflect.TypeOf((*DataAwsRoute53ResolverEndpointFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRule",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRule",
 		reflect.TypeOf((*DataAwsRoute53ResolverRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -168,11 +168,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRuleConfig",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRuleConfig",
 		reflect.TypeOf((*DataAwsRoute53ResolverRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRules",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRules",
 		reflect.TypeOf((*DataAwsRoute53ResolverRules)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -222,11 +222,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRulesConfig",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRulesConfig",
 		reflect.TypeOf((*DataAwsRoute53ResolverRulesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.DataAwsRoute53Zone",
+		"hashicorp_aws.route53.DataAwsRoute53Zone",
 		reflect.TypeOf((*DataAwsRoute53Zone)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -287,11 +287,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.DataAwsRoute53ZoneConfig",
+		"hashicorp_aws.route53.DataAwsRoute53ZoneConfig",
 		reflect.TypeOf((*DataAwsRoute53ZoneConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53DelegationSet",
+		"hashicorp_aws.route53.Route53DelegationSet",
 		reflect.TypeOf((*Route53DelegationSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -333,11 +333,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53DelegationSetConfig",
+		"hashicorp_aws.route53.Route53DelegationSetConfig",
 		reflect.TypeOf((*Route53DelegationSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53HealthCheck",
+		"hashicorp_aws.route53.Route53HealthCheck",
 		reflect.TypeOf((*Route53HealthCheck)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -440,11 +440,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53HealthCheckConfig",
+		"hashicorp_aws.route53.Route53HealthCheckConfig",
 		reflect.TypeOf((*Route53HealthCheckConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssec",
+		"hashicorp_aws.route53.Route53HostedZoneDnssec",
 		reflect.TypeOf((*Route53HostedZoneDnssec)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -486,11 +486,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssecConfig",
+		"hashicorp_aws.route53.Route53HostedZoneDnssecConfig",
 		reflect.TypeOf((*Route53HostedZoneDnssecConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53KeySigningKey",
+		"hashicorp_aws.route53.Route53KeySigningKey",
 		reflect.TypeOf((*Route53KeySigningKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -546,11 +546,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53KeySigningKeyConfig",
+		"hashicorp_aws.route53.Route53KeySigningKeyConfig",
 		reflect.TypeOf((*Route53KeySigningKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53QueryLog",
+		"hashicorp_aws.route53.Route53QueryLog",
 		reflect.TypeOf((*Route53QueryLog)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -592,11 +592,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53QueryLogConfig",
+		"hashicorp_aws.route53.Route53QueryLogConfig",
 		reflect.TypeOf((*Route53QueryLogConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53Record",
+		"hashicorp_aws.route53.Route53Record",
 		reflect.TypeOf((*Route53Record)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -673,31 +673,31 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordAlias",
+		"hashicorp_aws.route53.Route53RecordAlias",
 		reflect.TypeOf((*Route53RecordAlias)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordConfig",
+		"hashicorp_aws.route53.Route53RecordConfig",
 		reflect.TypeOf((*Route53RecordConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordFailoverRoutingPolicy",
+		"hashicorp_aws.route53.Route53RecordFailoverRoutingPolicy",
 		reflect.TypeOf((*Route53RecordFailoverRoutingPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordGeolocationRoutingPolicy",
+		"hashicorp_aws.route53.Route53RecordGeolocationRoutingPolicy",
 		reflect.TypeOf((*Route53RecordGeolocationRoutingPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordLatencyRoutingPolicy",
+		"hashicorp_aws.route53.Route53RecordLatencyRoutingPolicy",
 		reflect.TypeOf((*Route53RecordLatencyRoutingPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecordWeightedRoutingPolicy",
+		"hashicorp_aws.route53.Route53RecordWeightedRoutingPolicy",
 		reflect.TypeOf((*Route53RecordWeightedRoutingPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigCluster",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigCluster",
 		reflect.TypeOf((*Route53RecoverycontrolconfigCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -739,7 +739,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
 		reflect.TypeOf((*Route53RecoverycontrolconfigClusterClusterEndpoints)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -760,11 +760,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigClusterConfig",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterConfig",
 		reflect.TypeOf((*Route53RecoverycontrolconfigClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanel",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanel",
 		reflect.TypeOf((*Route53RecoverycontrolconfigControlPanel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -809,11 +809,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanelConfig",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanelConfig",
 		reflect.TypeOf((*Route53RecoverycontrolconfigControlPanelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControl",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControl",
 		reflect.TypeOf((*Route53RecoverycontrolconfigRoutingControl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -859,11 +859,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControlConfig",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControlConfig",
 		reflect.TypeOf((*Route53RecoverycontrolconfigRoutingControlConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRule",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRule",
 		reflect.TypeOf((*Route53RecoverycontrolconfigSafetyRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -920,21 +920,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRuleConfig",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRuleConfig",
 		reflect.TypeOf((*Route53RecoverycontrolconfigSafetyRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRuleRuleConfig",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRuleRuleConfig",
 		reflect.TypeOf((*Route53RecoverycontrolconfigSafetyRuleRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
 		reflect.TypeOf((*Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inverted", GoGetter: "Inverted"},
@@ -954,7 +955,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCell",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCell",
 		reflect.TypeOf((*Route53RecoveryreadinessCell)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1008,15 +1009,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCellConfig",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCellConfig",
 		reflect.TypeOf((*Route53RecoveryreadinessCellConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCellTimeouts",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCellTimeouts",
 		reflect.TypeOf((*Route53RecoveryreadinessCellTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessCellTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -1025,6 +1026,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1039,7 +1041,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheck",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheck",
 		reflect.TypeOf((*Route53RecoveryreadinessReadinessCheck)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1091,15 +1093,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheckConfig",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheckConfig",
 		reflect.TypeOf((*Route53RecoveryreadinessReadinessCheckConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheckTimeouts",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheckTimeouts",
 		reflect.TypeOf((*Route53RecoveryreadinessReadinessCheckTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -1108,6 +1110,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1122,7 +1125,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroup",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroup",
 		reflect.TypeOf((*Route53RecoveryreadinessRecoveryGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1175,15 +1178,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroupConfig",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroupConfig",
 		reflect.TypeOf((*Route53RecoveryreadinessRecoveryGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroupTimeouts",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroupTimeouts",
 		reflect.TypeOf((*Route53RecoveryreadinessRecoveryGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -1192,6 +1195,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1206,7 +1210,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSet",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSet",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1260,19 +1264,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetConfig",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetConfig",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResources",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResources",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResources)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResource",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResource",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "domainName", GoGetter: "DomainName"},
@@ -1283,6 +1287,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "hostedZoneArn", GoGetter: "HostedZoneArn"},
 			_jsii_.MemberProperty{JsiiProperty: "hostedZoneArnInput", GoGetter: "HostedZoneArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1307,15 +1312,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -1324,6 +1329,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1338,13 +1344,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1366,11 +1373,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "domainName", GoGetter: "DomainName"},
@@ -1379,6 +1386,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1396,11 +1404,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetTimeouts",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetTimeouts",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
 		reflect.TypeOf((*Route53RecoveryreadinessResourceSetTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -1409,6 +1417,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1423,7 +1432,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfig",
 		reflect.TypeOf((*Route53ResolverDnssecConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1465,11 +1474,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfigConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfigConfig",
 		reflect.TypeOf((*Route53ResolverDnssecConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverEndpoint",
+		"hashicorp_aws.route53.Route53ResolverEndpoint",
 		reflect.TypeOf((*Route53ResolverEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1527,19 +1536,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverEndpointConfig",
+		"hashicorp_aws.route53.Route53ResolverEndpointConfig",
 		reflect.TypeOf((*Route53ResolverEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverEndpointIpAddress",
+		"hashicorp_aws.route53.Route53ResolverEndpointIpAddress",
 		reflect.TypeOf((*Route53ResolverEndpointIpAddress)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverEndpointTimeouts",
+		"hashicorp_aws.route53.Route53ResolverEndpointTimeouts",
 		reflect.TypeOf((*Route53ResolverEndpointTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverEndpointTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverEndpointTimeoutsOutputReference",
 		reflect.TypeOf((*Route53ResolverEndpointTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1550,6 +1559,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1568,7 +1578,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfig",
 		reflect.TypeOf((*Route53ResolverFirewallConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1611,11 +1621,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfigConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfigConfig",
 		reflect.TypeOf((*Route53ResolverFirewallConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainList",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainList",
 		reflect.TypeOf((*Route53ResolverFirewallDomainList)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1664,11 +1674,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainListConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainListConfig",
 		reflect.TypeOf((*Route53ResolverFirewallDomainListConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRule",
+		"hashicorp_aws.route53.Route53ResolverFirewallRule",
 		reflect.TypeOf((*Route53ResolverFirewallRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -1727,11 +1737,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleConfig",
 		reflect.TypeOf((*Route53ResolverFirewallRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroup",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroup",
 		reflect.TypeOf((*Route53ResolverFirewallRuleGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1779,7 +1789,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociation",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociation",
 		reflect.TypeOf((*Route53ResolverFirewallRuleGroupAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1834,15 +1844,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociationConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociationConfig",
 		reflect.TypeOf((*Route53ResolverFirewallRuleGroupAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupConfig",
 		reflect.TypeOf((*Route53ResolverFirewallRuleGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfig",
 		reflect.TypeOf((*Route53ResolverQueryLogConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1892,7 +1902,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociation",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociation",
 		reflect.TypeOf((*Route53ResolverQueryLogConfigAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1933,15 +1943,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociationConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociationConfig",
 		reflect.TypeOf((*Route53ResolverQueryLogConfigAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigConfig",
 		reflect.TypeOf((*Route53ResolverQueryLogConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverRule",
+		"hashicorp_aws.route53.Route53ResolverRule",
 		reflect.TypeOf((*Route53ResolverRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2004,7 +2014,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociation",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociation",
 		reflect.TypeOf((*Route53ResolverRuleAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2052,15 +2062,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociationConfig",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociationConfig",
 		reflect.TypeOf((*Route53ResolverRuleAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociationTimeouts",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociationTimeouts",
 		reflect.TypeOf((*Route53ResolverRuleAssociationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
 		reflect.TypeOf((*Route53ResolverRuleAssociationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2071,6 +2081,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2086,19 +2097,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverRuleConfig",
+		"hashicorp_aws.route53.Route53ResolverRuleConfig",
 		reflect.TypeOf((*Route53ResolverRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverRuleTargetIp",
+		"hashicorp_aws.route53.Route53ResolverRuleTargetIp",
 		reflect.TypeOf((*Route53ResolverRuleTargetIp)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ResolverRuleTimeouts",
+		"hashicorp_aws.route53.Route53ResolverRuleTimeouts",
 		reflect.TypeOf((*Route53ResolverRuleTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ResolverRuleTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleTimeoutsOutputReference",
 		reflect.TypeOf((*Route53ResolverRuleTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2109,6 +2120,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2127,7 +2139,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorization",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorization",
 		reflect.TypeOf((*Route53VpcAssociationAuthorization)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2171,11 +2183,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorizationConfig",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorizationConfig",
 		reflect.TypeOf((*Route53VpcAssociationAuthorizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53Zone",
+		"hashicorp_aws.route53.Route53Zone",
 		reflect.TypeOf((*Route53Zone)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2235,7 +2247,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Route53.Route53ZoneAssociation",
+		"hashicorp_aws.route53.Route53ZoneAssociation",
 		reflect.TypeOf((*Route53ZoneAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2280,15 +2292,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ZoneAssociationConfig",
+		"hashicorp_aws.route53.Route53ZoneAssociationConfig",
 		reflect.TypeOf((*Route53ZoneAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ZoneConfig",
+		"hashicorp_aws.route53.Route53ZoneConfig",
 		reflect.TypeOf((*Route53ZoneConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Route53.Route53ZoneVpc",
+		"hashicorp_aws.route53.Route53ZoneVpc",
 		reflect.TypeOf((*Route53ZoneVpc)(nil)).Elem(),
 	)
 }

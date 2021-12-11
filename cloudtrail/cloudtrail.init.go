@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudTrail.Cloudtrail",
+		"hashicorp_aws.cloudtrail.Cloudtrail",
 		reflect.TypeOf((*Cloudtrail)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -96,31 +96,31 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailAdvancedEventSelector",
+		"hashicorp_aws.cloudtrail.CloudtrailAdvancedEventSelector",
 		reflect.TypeOf((*CloudtrailAdvancedEventSelector)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailAdvancedEventSelectorFieldSelector",
+		"hashicorp_aws.cloudtrail.CloudtrailAdvancedEventSelectorFieldSelector",
 		reflect.TypeOf((*CloudtrailAdvancedEventSelectorFieldSelector)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailConfig",
+		"hashicorp_aws.cloudtrail.CloudtrailConfig",
 		reflect.TypeOf((*CloudtrailConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailEventSelector",
+		"hashicorp_aws.cloudtrail.CloudtrailEventSelector",
 		reflect.TypeOf((*CloudtrailEventSelector)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailEventSelectorDataResource",
+		"hashicorp_aws.cloudtrail.CloudtrailEventSelectorDataResource",
 		reflect.TypeOf((*CloudtrailEventSelectorDataResource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.CloudtrailInsightSelector",
+		"hashicorp_aws.cloudtrail.CloudtrailInsightSelector",
 		reflect.TypeOf((*CloudtrailInsightSelector)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccount",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccount",
 		reflect.TypeOf((*DataAwsCloudtrailServiceAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -161,7 +161,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccountConfig",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccountConfig",
 		reflect.TypeOf((*DataAwsCloudtrailServiceAccountConfig)(nil)).Elem(),
 	)
 }

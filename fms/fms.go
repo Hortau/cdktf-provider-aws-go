@@ -220,7 +220,7 @@ func NewFmsAdminAccount(scope constructs.Construct, id *string, config *FmsAdmin
 	j := jsiiProxy_FmsAdminAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsAdminAccount",
+		"hashicorp_aws.fms.FmsAdminAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -233,7 +233,7 @@ func NewFmsAdminAccount_Override(f FmsAdminAccount, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsAdminAccount",
+		"hashicorp_aws.fms.FmsAdminAccount",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -289,7 +289,7 @@ func FmsAdminAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FMS.FmsAdminAccount",
+		"hashicorp_aws.fms.FmsAdminAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -302,7 +302,7 @@ func FmsAdminAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FMS.FmsAdminAccount",
+		"hashicorp_aws.fms.FmsAdminAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -472,6 +472,7 @@ func (f *jsiiProxy_FmsAdminAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Firewall Management Service.
 type FmsAdminAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -931,7 +932,7 @@ func NewFmsPolicy(scope constructs.Construct, id *string, config *FmsPolicyConfi
 	j := jsiiProxy_FmsPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicy",
+		"hashicorp_aws.fms.FmsPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -944,7 +945,7 @@ func NewFmsPolicy_Override(f FmsPolicy, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicy",
+		"hashicorp_aws.fms.FmsPolicy",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -1048,7 +1049,7 @@ func FmsPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FMS.FmsPolicy",
+		"hashicorp_aws.fms.FmsPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1061,7 +1062,7 @@ func FmsPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FMS.FmsPolicy",
+		"hashicorp_aws.fms.FmsPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -1303,6 +1304,7 @@ func (f *jsiiProxy_FmsPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Firewall Management Service.
 type FmsPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1352,6 +1354,8 @@ type FmsPolicyExcludeMapOutputReference interface {
 	Account() *[]*string
 	SetAccount(val *[]*string)
 	AccountInput() *[]*string
+	InternalValue() *FmsPolicyExcludeMap
+	SetInternalValue(val *FmsPolicyExcludeMap)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Orgunit() *[]*string
@@ -1391,6 +1395,16 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) AccountInput() *[]*string
 	_jsii_.Get(
 		j,
 		"accountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) InternalValue() *FmsPolicyExcludeMap {
+	var returns *FmsPolicyExcludeMap
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1452,7 +1466,7 @@ func NewFmsPolicyExcludeMapOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_FmsPolicyExcludeMapOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicyExcludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyExcludeMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1464,7 +1478,7 @@ func NewFmsPolicyExcludeMapOutputReference_Override(f FmsPolicyExcludeMapOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicyExcludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyExcludeMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -1474,6 +1488,14 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetAccount(val *[]*string
 	_jsii_.Set(
 		j,
 		"account",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetInternalValue(val *FmsPolicyExcludeMap) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1622,6 +1644,8 @@ type FmsPolicyIncludeMapOutputReference interface {
 	Account() *[]*string
 	SetAccount(val *[]*string)
 	AccountInput() *[]*string
+	InternalValue() *FmsPolicyIncludeMap
+	SetInternalValue(val *FmsPolicyIncludeMap)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Orgunit() *[]*string
@@ -1661,6 +1685,16 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) AccountInput() *[]*string
 	_jsii_.Get(
 		j,
 		"accountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) InternalValue() *FmsPolicyIncludeMap {
+	var returns *FmsPolicyIncludeMap
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1722,7 +1756,7 @@ func NewFmsPolicyIncludeMapOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_FmsPolicyIncludeMapOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicyIncludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyIncludeMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1734,7 +1768,7 @@ func NewFmsPolicyIncludeMapOutputReference_Override(f FmsPolicyIncludeMapOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicyIncludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyIncludeMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -1744,6 +1778,14 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetAccount(val *[]*string
 	_jsii_.Set(
 		j,
 		"account",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetInternalValue(val *FmsPolicyIncludeMap) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1889,6 +1931,8 @@ type FmsPolicySecurityServicePolicyData struct {
 
 type FmsPolicySecurityServicePolicyDataOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *FmsPolicySecurityServicePolicyData
+	SetInternalValue(val *FmsPolicySecurityServicePolicyData)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ManagedServiceData() *string
@@ -1913,6 +1957,16 @@ type FmsPolicySecurityServicePolicyDataOutputReference interface {
 // The jsii proxy struct for FmsPolicySecurityServicePolicyDataOutputReference
 type jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) InternalValue() *FmsPolicySecurityServicePolicyData {
+	var returns *FmsPolicySecurityServicePolicyData
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) IsSingleItem() *bool {
@@ -1991,7 +2045,7 @@ func NewFmsPolicySecurityServicePolicyDataOutputReference(terraformResource cdkt
 	j := jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicySecurityServicePolicyDataOutputReference",
+		"hashicorp_aws.fms.FmsPolicySecurityServicePolicyDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2003,9 +2057,17 @@ func NewFmsPolicySecurityServicePolicyDataOutputReference_Override(f FmsPolicySe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FMS.FmsPolicySecurityServicePolicyDataOutputReference",
+		"hashicorp_aws.fms.FmsPolicySecurityServicePolicyDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
+	)
+}
+
+func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) SetInternalValue(val *FmsPolicySecurityServicePolicyData) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

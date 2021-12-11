@@ -455,7 +455,7 @@ func NewNetworkfirewallFirewall(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_NetworkfirewallFirewall{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewall",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewall",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -468,7 +468,7 @@ func NewNetworkfirewallFirewall_Override(n NetworkfirewallFirewall, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewall",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewall",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -596,7 +596,7 @@ func NetworkfirewallFirewall_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewall",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewall",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -609,7 +609,7 @@ func NetworkfirewallFirewall_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewall",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewall",
 		"tfResourceType",
 		&returns,
 	)
@@ -832,6 +832,7 @@ func (n *jsiiProxy_NetworkfirewallFirewall) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Network Firewall.
 type NetworkfirewallFirewallConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -933,7 +934,7 @@ func NewNetworkfirewallFirewallFirewallStatus(terraformResource cdktf.ITerraform
 	j := jsiiProxy_NetworkfirewallFirewallFirewallStatus{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatus",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatus",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -946,7 +947,7 @@ func NewNetworkfirewallFirewallFirewallStatus_Override(n NetworkfirewallFirewall
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatus",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatus",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		n,
 	)
@@ -1125,7 +1126,7 @@ func NewNetworkfirewallFirewallFirewallStatusSyncStates(terraformResource cdktf.
 	j := jsiiProxy_NetworkfirewallFirewallFirewallStatusSyncStates{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatusSyncStates",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatusSyncStates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1138,7 +1139,7 @@ func NewNetworkfirewallFirewallFirewallStatusSyncStates_Override(n Networkfirewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatusSyncStates",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatusSyncStates",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		n,
 	)
@@ -1317,7 +1318,7 @@ func NewNetworkfirewallFirewallFirewallStatusSyncStatesAttachment(terraformResou
 	j := jsiiProxy_NetworkfirewallFirewallFirewallStatusSyncStatesAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatusSyncStatesAttachment",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatusSyncStatesAttachment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1330,7 +1331,7 @@ func NewNetworkfirewallFirewallFirewallStatusSyncStatesAttachment_Override(n Net
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallFirewallStatusSyncStatesAttachment",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallFirewallStatusSyncStatesAttachment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		n,
 	)
@@ -1757,7 +1758,7 @@ func NewNetworkfirewallFirewallPolicy(scope constructs.Construct, id *string, co
 	j := jsiiProxy_NetworkfirewallFirewallPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1770,7 +1771,7 @@ func NewNetworkfirewallFirewallPolicy_Override(n NetworkfirewallFirewallPolicy, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicy",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -1850,7 +1851,7 @@ func NetworkfirewallFirewallPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1863,7 +1864,7 @@ func NetworkfirewallFirewallPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2057,6 +2058,7 @@ func (n *jsiiProxy_NetworkfirewallFirewallPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Network Firewall.
 type NetworkfirewallFirewallPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2101,6 +2103,8 @@ type NetworkfirewallFirewallPolicyFirewallPolicy struct {
 
 type NetworkfirewallFirewallPolicyFirewallPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicy
+	SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	StatefulRuleGroupReference() *[]*NetworkfirewallFirewallPolicyFirewallPolicyStatefulRuleGroupReference
@@ -2136,6 +2140,16 @@ type NetworkfirewallFirewallPolicyFirewallPolicyOutputReference interface {
 // The jsii proxy struct for NetworkfirewallFirewallPolicyFirewallPolicyOutputReference
 type jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyOutputReference) InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicy {
+	var returns *NetworkfirewallFirewallPolicyFirewallPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyOutputReference) IsSingleItem() *bool {
@@ -2274,7 +2288,7 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyOutputReference(terraformReso
 	j := jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2286,9 +2300,17 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyOutputReference_Override(n Ne
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyOutputReference) SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2487,6 +2509,8 @@ type NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefin
 
 type NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition
+	SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PublishMetricAction() NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference
@@ -2507,6 +2531,16 @@ type NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefin
 // The jsii proxy struct for NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference
 type jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference) InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition {
+	var returns *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference) IsSingleItem() *bool {
@@ -2565,7 +2599,7 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDe
 	j := jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2577,9 +2611,17 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionOutputReference) SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2716,6 +2758,8 @@ type NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefin
 	Dimension() *[]*NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension
 	SetDimension(val *[]*NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension)
 	DimensionInput() *[]*NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension
+	InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction
+	SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2750,6 +2794,16 @@ func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomAct
 	_jsii_.Get(
 		j,
 		"dimensionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference) InternalValue() *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction {
+	var returns *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2791,7 +2845,7 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDe
 	j := jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2803,7 +2857,7 @@ func NewNetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -2813,6 +2867,14 @@ func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomAct
 	_jsii_.Set(
 		j,
 		"dimension",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionOutputReference) SetInternalValue(val *NetworkfirewallFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3170,7 +3232,7 @@ func NewNetworkfirewallLoggingConfiguration(scope constructs.Construct, id *stri
 	j := jsiiProxy_NetworkfirewallLoggingConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfiguration",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3183,7 +3245,7 @@ func NewNetworkfirewallLoggingConfiguration_Override(n NetworkfirewallLoggingCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfiguration",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfiguration",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -3239,7 +3301,7 @@ func NetworkfirewallLoggingConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfiguration",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3252,7 +3314,7 @@ func NetworkfirewallLoggingConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfiguration",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -3422,6 +3484,7 @@ func (n *jsiiProxy_NetworkfirewallLoggingConfiguration) ToTerraform() interface{
 	return returns
 }
 
+// AWS Network Firewall.
 type NetworkfirewallLoggingConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3457,6 +3520,8 @@ type NetworkfirewallLoggingConfigurationLoggingConfigurationLogDestinationConfig
 
 type NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallLoggingConfigurationLoggingConfiguration
+	SetInternalValue(val *NetworkfirewallLoggingConfigurationLoggingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogDestinationConfig() *[]*NetworkfirewallLoggingConfigurationLoggingConfigurationLogDestinationConfig
@@ -3477,6 +3542,16 @@ type NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference inte
 // The jsii proxy struct for NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference
 type jsiiProxy_NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference) InternalValue() *NetworkfirewallLoggingConfigurationLoggingConfiguration {
+	var returns *NetworkfirewallLoggingConfigurationLoggingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference) IsSingleItem() *bool {
@@ -3535,7 +3610,7 @@ func NewNetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference(t
 	j := jsiiProxy_NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3547,9 +3622,17 @@ func NewNetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallLoggingConfigurationLoggingConfigurationOutputReference) SetInternalValue(val *NetworkfirewallLoggingConfigurationLoggingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3902,7 +3985,7 @@ func NewNetworkfirewallResourcePolicy(scope constructs.Construct, id *string, co
 	j := jsiiProxy_NetworkfirewallResourcePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallResourcePolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallResourcePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3915,7 +3998,7 @@ func NewNetworkfirewallResourcePolicy_Override(n NetworkfirewallResourcePolicy, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallResourcePolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallResourcePolicy",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -3979,7 +4062,7 @@ func NetworkfirewallResourcePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallResourcePolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallResourcePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3992,7 +4075,7 @@ func NetworkfirewallResourcePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallResourcePolicy",
+		"hashicorp_aws.networkfirewall.NetworkfirewallResourcePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -4154,6 +4237,7 @@ func (n *jsiiProxy_NetworkfirewallResourcePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Network Firewall.
 type NetworkfirewallResourcePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4567,7 +4651,7 @@ func NewNetworkfirewallRuleGroup(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_NetworkfirewallRuleGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroup",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4580,7 +4664,7 @@ func NewNetworkfirewallRuleGroup_Override(n NetworkfirewallRuleGroup, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroup",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroup",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -4684,7 +4768,7 @@ func NetworkfirewallRuleGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroup",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4697,7 +4781,7 @@ func NetworkfirewallRuleGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroup",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -4907,6 +4991,7 @@ func (n *jsiiProxy_NetworkfirewallRuleGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Network Firewall.
 type NetworkfirewallRuleGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4949,6 +5034,8 @@ type NetworkfirewallRuleGroupRuleGroup struct {
 
 type NetworkfirewallRuleGroupRuleGroupOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallRuleGroupRuleGroup
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroup)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RulesSource() NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference
@@ -4973,6 +5060,16 @@ type NetworkfirewallRuleGroupRuleGroupOutputReference interface {
 // The jsii proxy struct for NetworkfirewallRuleGroupRuleGroupOutputReference
 type jsiiProxy_NetworkfirewallRuleGroupRuleGroupOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroup {
+	var returns *NetworkfirewallRuleGroupRuleGroup
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupOutputReference) IsSingleItem() *bool {
@@ -5051,7 +5148,7 @@ func NewNetworkfirewallRuleGroupRuleGroupOutputReference(terraformResource cdktf
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5063,9 +5160,17 @@ func NewNetworkfirewallRuleGroupRuleGroupOutputReference_Override(n Networkfirew
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroup) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5231,6 +5336,8 @@ type NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference in
 	Definition() *[]*string
 	SetDefinition(val *[]*string)
 	DefinitionInput() *[]*string
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSet
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSet)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5265,6 +5372,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutp
 	_jsii_.Get(
 		j,
 		"definitionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSet {
+	var returns *NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSet
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5306,7 +5423,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5318,7 +5435,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -5328,6 +5445,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutp
 	_jsii_.Set(
 		j,
 		"definition",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSet) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5442,6 +5567,8 @@ func (n *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSetsIpSetOutp
 
 type NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariables
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariables)
 	IpSets() *[]*NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSets
 	SetIpSets(val *[]*NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSets)
 	IpSetsInput() *[]*NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSets
@@ -5467,6 +5594,16 @@ type NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference interface {
 // The jsii proxy struct for NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference
 type jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariables {
+	var returns *NetworkfirewallRuleGroupRuleGroupRuleVariables
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference) IpSets() *[]*NetworkfirewallRuleGroupRuleGroupRuleVariablesIpSets {
@@ -5545,7 +5682,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference(terraformR
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5557,9 +5694,17 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference_Override(n
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariables) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5722,6 +5867,8 @@ type NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReferenc
 	Definition() *[]*string
 	SetDefinition(val *[]*string)
 	DefinitionInput() *[]*string
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5756,6 +5903,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet
 	_jsii_.Get(
 		j,
 		"definitionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet {
+	var returns *NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5797,7 +5954,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputRefer
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5809,7 +5966,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -5819,6 +5976,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet
 	_jsii_.Set(
 		j,
 		"definition",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSetOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRuleVariablesPortSetsPortSet) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5950,6 +6115,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSource struct {
 
 type NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSource
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RulesSourceList() NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference
@@ -5983,6 +6150,16 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference interface {
 // The jsii proxy struct for NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference
 type jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSource {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference) IsSingleItem() *bool {
@@ -6101,7 +6278,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference(terraformRes
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6113,9 +6290,17 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference_Override(n N
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6305,6 +6490,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference 
 	GeneratedRulesType() *string
 	SetGeneratedRulesType(val *string)
 	GeneratedRulesTypeInput() *string
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceList
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceList)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Targets() *[]*string
@@ -6345,6 +6532,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOu
 	_jsii_.Get(
 		j,
 		"generatedRulesTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceList {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceList
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6426,7 +6623,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReferen
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6438,7 +6635,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -6448,6 +6645,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOu
 	_jsii_.Set(
 		j,
 		"generatedRulesType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceListOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceRulesSourceList) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6615,6 +6820,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReferen
 	Direction() *string
 	SetDirection(val *string)
 	DirectionInput() *string
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeader
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Protocol() *string
@@ -6698,6 +6905,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeade
 	_jsii_.Get(
 		j,
 		"directionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeader {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6799,7 +7016,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputRefe
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6811,7 +7028,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -6837,6 +7054,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeade
 	_jsii_.Set(
 		j,
 		"direction",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeaderOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatefulRuleHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7009,6 +7234,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsC
 
 type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinition
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PublishMetricAction() NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference
@@ -7029,6 +7256,16 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsC
 // The jsii proxy struct for NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference
 type jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinition {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference) IsSingleItem() *bool {
@@ -7087,7 +7324,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7099,9 +7336,17 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7238,6 +7483,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsC
 	Dimension() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionDimension
 	SetDimension(val *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionDimension)
 	DimensionInput() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionDimension
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricAction
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7272,6 +7519,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Get(
 		j,
 		"dimensionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricAction {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricAction
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7313,7 +7570,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7325,7 +7582,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -7335,6 +7592,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Set(
 		j,
 		"dimension",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7452,6 +7717,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsO
 	CustomAction() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction
 	SetCustomAction(val *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction)
 	CustomActionInput() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	StatelessRule() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule
@@ -7490,6 +7757,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Get(
 		j,
 		"customActionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7551,7 +7828,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7563,7 +7840,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -7573,6 +7850,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Set(
 		j,
 		"customAction",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7764,6 +8049,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsS
 	DestinationPort() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesDestinationPort
 	SetDestinationPort(val *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesDestinationPort)
 	DestinationPortInput() *[]*NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesDestinationPort
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Protocols() *[]*float64
@@ -7836,6 +8123,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Get(
 		j,
 		"destinationPortInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7957,7 +8254,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7969,7 +8266,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -7987,6 +8284,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Set(
 		j,
 		"destinationPort",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8203,6 +8508,8 @@ type NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsS
 	Actions() *[]*string
 	SetActions(val *[]*string)
 	ActionsInput() *[]*string
+	InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinition
+	SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MatchAttributes() NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesOutputReference
@@ -8240,6 +8547,16 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Get(
 		j,
 		"actionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference) InternalValue() *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinition {
+	var returns *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8301,7 +8618,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	j := jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8313,7 +8630,7 @@ func NewNetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.NetworkFirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference",
+		"hashicorp_aws.networkfirewall.NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		n,
 	)
@@ -8323,6 +8640,14 @@ func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAnd
 	_jsii_.Set(
 		j,
 		"actions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionOutputReference) SetInternalValue(val *NetworkfirewallRuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

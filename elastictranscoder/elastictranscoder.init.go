@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipeline",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipeline",
 		reflect.TypeOf((*ElastictranscoderPipeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -77,15 +77,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineConfig",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineConfig",
 		reflect.TypeOf((*ElastictranscoderPipelineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineContentConfig",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineContentConfig",
 		reflect.TypeOf((*ElastictranscoderPipelineContentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineContentConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineContentConfigOutputReference",
 		reflect.TypeOf((*ElastictranscoderPipelineContentConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -94,6 +94,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -111,15 +112,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineContentConfigPermissions",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineContentConfigPermissions",
 		reflect.TypeOf((*ElastictranscoderPipelineContentConfigPermissions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineNotifications",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineNotifications",
 		reflect.TypeOf((*ElastictranscoderPipelineNotifications)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineNotificationsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineNotificationsOutputReference",
 		reflect.TypeOf((*ElastictranscoderPipelineNotificationsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "completed", GoGetter: "Completed"},
@@ -130,6 +131,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -151,11 +153,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineThumbnailConfig",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineThumbnailConfig",
 		reflect.TypeOf((*ElastictranscoderPipelineThumbnailConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
 		reflect.TypeOf((*ElastictranscoderPipelineThumbnailConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -164,6 +166,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -181,11 +184,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineThumbnailConfigPermissions",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineThumbnailConfigPermissions",
 		reflect.TypeOf((*ElastictranscoderPipelineThumbnailConfigPermissions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPreset",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPreset",
 		reflect.TypeOf((*ElastictranscoderPreset)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -256,15 +259,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudio",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudio",
 		reflect.TypeOf((*ElastictranscoderPresetAudio)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioCodecOptions",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioCodecOptions",
 		reflect.TypeOf((*ElastictranscoderPresetAudioCodecOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
 		reflect.TypeOf((*ElastictranscoderPresetAudioCodecOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bitDepth", GoGetter: "BitDepth"},
@@ -275,6 +278,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -296,7 +300,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioOutputReference",
 		reflect.TypeOf((*ElastictranscoderPresetAudioOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "audioPackingMode", GoGetter: "AudioPackingMode"},
@@ -311,6 +315,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -331,15 +336,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetConfig",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetConfig",
 		reflect.TypeOf((*ElastictranscoderPresetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetThumbnails",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetThumbnails",
 		reflect.TypeOf((*ElastictranscoderPresetThumbnails)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetThumbnailsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetThumbnailsOutputReference",
 		reflect.TypeOf((*ElastictranscoderPresetThumbnailsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "aspectRatio", GoGetter: "AspectRatio"},
@@ -350,6 +355,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -383,11 +389,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetVideo",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetVideo",
 		reflect.TypeOf((*ElastictranscoderPresetVideo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetVideoOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetVideoOutputReference",
 		reflect.TypeOf((*ElastictranscoderPresetVideoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "aspectRatio", GoGetter: "AspectRatio"},
@@ -406,6 +412,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -446,7 +453,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetVideoWatermarks",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetVideoWatermarks",
 		reflect.TypeOf((*ElastictranscoderPresetVideoWatermarks)(nil)).Elem(),
 	)
 }

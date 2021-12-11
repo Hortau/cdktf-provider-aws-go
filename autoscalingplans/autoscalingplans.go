@@ -276,7 +276,7 @@ func NewAutoscalingplansScalingPlan(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_AutoscalingplansScalingPlan{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlan",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlan",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -289,7 +289,7 @@ func NewAutoscalingplansScalingPlan_Override(a AutoscalingplansScalingPlan, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlan",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlan",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -353,7 +353,7 @@ func AutoscalingplansScalingPlan_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlan",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlan",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -366,7 +366,7 @@ func AutoscalingplansScalingPlan_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlan",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlan",
 		"tfResourceType",
 		&returns,
 	)
@@ -550,6 +550,8 @@ type AutoscalingplansScalingPlanApplicationSourceOutputReference interface {
 	CloudformationStackArn() *string
 	SetCloudformationStackArn(val *string)
 	CloudformationStackArnInput() *string
+	InternalValue() *AutoscalingplansScalingPlanApplicationSource
+	SetInternalValue(val *AutoscalingplansScalingPlanApplicationSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TagFilter() *[]*AutoscalingplansScalingPlanApplicationSourceTagFilter
@@ -589,6 +591,16 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanApplicationSourceOutputReference) 
 	_jsii_.Get(
 		j,
 		"cloudformationStackArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanApplicationSourceOutputReference) InternalValue() *AutoscalingplansScalingPlanApplicationSource {
+	var returns *AutoscalingplansScalingPlanApplicationSource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -650,7 +662,7 @@ func NewAutoscalingplansScalingPlanApplicationSourceOutputReference(terraformRes
 	j := jsiiProxy_AutoscalingplansScalingPlanApplicationSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -662,7 +674,7 @@ func NewAutoscalingplansScalingPlanApplicationSourceOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -672,6 +684,14 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanApplicationSourceOutputReference) 
 	_jsii_.Set(
 		j,
 		"cloudformationStackArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanApplicationSourceOutputReference) SetInternalValue(val *AutoscalingplansScalingPlanApplicationSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -815,6 +835,7 @@ type AutoscalingplansScalingPlanApplicationSourceTagFilter struct {
 	Values *[]*string `json:"values"`
 }
 
+// AWS Auto Scaling Plans.
 type AutoscalingplansScalingPlanConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -891,6 +912,8 @@ type AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificat
 	Dimensions() interface{}
 	SetDimensions(val interface{})
 	DimensionsInput() interface{}
+	InternalValue() *AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification
+	SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetricName() *string
@@ -939,6 +962,16 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMe
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference) InternalValue() *AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification {
+	var returns *AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1060,7 +1093,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecifi
 	j := jsiiProxy_AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1072,7 +1105,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecifi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1082,6 +1115,14 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMe
 	_jsii_.Set(
 		j,
 		"dimensions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1251,6 +1292,8 @@ type AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificat
 
 type AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification
+	SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedLoadMetricType() *string
@@ -1275,6 +1318,16 @@ type AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificat
 // The jsii proxy struct for AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference) InternalValue() *AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification {
+	var returns *AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -1353,7 +1406,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecifi
 	j := jsiiProxy_AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1365,9 +1418,17 @@ func NewAutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecifi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1542,6 +1603,8 @@ type AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCus
 	Dimensions() interface{}
 	SetDimensions(val interface{})
 	DimensionsInput() interface{}
+	InternalValue() *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification
+	SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetricName() *string
@@ -1590,6 +1653,16 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingCo
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference) InternalValue() *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification {
+	var returns *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1711,7 +1784,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration
 	j := jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1723,7 +1796,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1733,6 +1806,14 @@ func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingCo
 	_jsii_.Set(
 		j,
 		"dimensions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1902,6 +1983,8 @@ type AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPre
 
 type AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification
+	SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedScalingMetricType() *string
@@ -1926,6 +2009,16 @@ type AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPre
 // The jsii proxy struct for AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference) InternalValue() *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification {
+	var returns *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -2004,7 +2097,7 @@ func NewAutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration
 	j := jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2016,9 +2109,17 @@ func NewAutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

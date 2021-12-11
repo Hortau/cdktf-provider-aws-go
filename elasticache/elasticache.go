@@ -442,7 +442,7 @@ func NewDataAwsElasticacheCluster(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsElasticacheCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheCluster",
+		"hashicorp_aws.elasticache.DataAwsElasticacheCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -455,7 +455,7 @@ func NewDataAwsElasticacheCluster_Override(d DataAwsElasticacheCluster, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheCluster",
+		"hashicorp_aws.elasticache.DataAwsElasticacheCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -519,7 +519,7 @@ func DataAwsElasticacheCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheCluster",
+		"hashicorp_aws.elasticache.DataAwsElasticacheCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -532,7 +532,7 @@ func DataAwsElasticacheCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheCluster",
+		"hashicorp_aws.elasticache.DataAwsElasticacheCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -816,7 +816,7 @@ func NewDataAwsElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DataAwsElasticacheClusterCacheNodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.DataAwsElasticacheClusterCacheNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -829,7 +829,7 @@ func NewDataAwsElasticacheClusterCacheNodes_Override(d DataAwsElasticacheCluster
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.DataAwsElasticacheClusterCacheNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -929,6 +929,7 @@ func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) InterpolationForAttribut
 	return returns
 }
 
+// AWS ElastiCache.
 type DataAwsElasticacheClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1308,7 +1309,7 @@ func NewDataAwsElasticacheReplicationGroup(scope constructs.Construct, id *strin
 	j := jsiiProxy_DataAwsElasticacheReplicationGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1321,7 +1322,7 @@ func NewDataAwsElasticacheReplicationGroup_Override(d DataAwsElasticacheReplicat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1377,7 +1378,7 @@ func DataAwsElasticacheReplicationGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1390,7 +1391,7 @@ func DataAwsElasticacheReplicationGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -1552,6 +1553,7 @@ func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) ToTerraform() interface{}
 	return returns
 }
 
+// AWS ElastiCache.
 type DataAwsElasticacheReplicationGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1895,7 +1897,7 @@ func NewDataAwsElasticacheUser(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsElasticacheUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUser",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1908,7 +1910,7 @@ func NewDataAwsElasticacheUser_Override(d DataAwsElasticacheUser, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUser",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUser",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2004,7 +2006,7 @@ func DataAwsElasticacheUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUser",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2017,7 +2019,7 @@ func DataAwsElasticacheUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUser",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -2219,6 +2221,7 @@ func (d *jsiiProxy_DataAwsElasticacheUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type DataAwsElasticacheUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3049,7 +3052,7 @@ func NewElasticacheCluster(scope constructs.Construct, id *string, config *Elast
 	j := jsiiProxy_ElasticacheCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheCluster",
+		"hashicorp_aws.elasticache.ElasticacheCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3062,7 +3065,7 @@ func NewElasticacheCluster_Override(e ElasticacheCluster, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheCluster",
+		"hashicorp_aws.elasticache.ElasticacheCluster",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3302,7 +3305,7 @@ func ElasticacheCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheCluster",
+		"hashicorp_aws.elasticache.ElasticacheCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3315,7 +3318,7 @@ func ElasticacheCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheCluster",
+		"hashicorp_aws.elasticache.ElasticacheCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -3775,7 +3778,7 @@ func NewElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_ElasticacheClusterCacheNodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.ElasticacheClusterCacheNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3788,7 +3791,7 @@ func NewElasticacheClusterCacheNodes_Override(e ElasticacheClusterCacheNodes, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.ElasticacheClusterCacheNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -3888,6 +3891,7 @@ func (e *jsiiProxy_ElasticacheClusterCacheNodes) InterpolationForAttribute(prope
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4314,7 +4318,7 @@ func NewElasticacheGlobalReplicationGroup(scope constructs.Construct, id *string
 	j := jsiiProxy_ElasticacheGlobalReplicationGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4327,7 +4331,7 @@ func NewElasticacheGlobalReplicationGroup_Override(e ElasticacheGlobalReplicatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -4399,7 +4403,7 @@ func ElasticacheGlobalReplicationGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4412,7 +4416,7 @@ func ElasticacheGlobalReplicationGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -4582,6 +4586,7 @@ func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheGlobalReplicationGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4939,7 +4944,7 @@ func NewElasticacheParameterGroup(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ElasticacheParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroup",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4952,7 +4957,7 @@ func NewElasticacheParameterGroup_Override(e ElasticacheParameterGroup, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroup",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -5048,7 +5053,7 @@ func ElasticacheParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroup",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5061,7 +5066,7 @@ func ElasticacheParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroup",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -5255,6 +5260,7 @@ func (e *jsiiProxy_ElasticacheParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5317,6 +5323,9 @@ type ElasticacheReplicationGroup interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	Count() interface{}
 	SetCount(val interface{})
+	DataTieringEnabled() interface{}
+	SetDataTieringEnabled(val interface{})
+	DataTieringEnabledInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -5425,6 +5434,7 @@ type ElasticacheReplicationGroup interface {
 	ResetAutoMinorVersionUpgrade()
 	ResetAvailabilityZones()
 	ResetClusterMode()
+	ResetDataTieringEnabled()
 	ResetEngine()
 	ResetEngineVersion()
 	ResetFinalSnapshotIdentifier()
@@ -5655,6 +5665,26 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroup) DataTieringEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataTieringEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroup) DataTieringEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataTieringEnabledInput",
 		&returns,
 	)
 	return returns
@@ -6317,7 +6347,7 @@ func NewElasticacheReplicationGroup(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ElasticacheReplicationGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6330,7 +6360,7 @@ func NewElasticacheReplicationGroup_Override(e ElasticacheReplicationGroup, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6388,6 +6418,14 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroup) SetDataTieringEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"dataTieringEnabled",
 		val,
 	)
 }
@@ -6618,7 +6656,7 @@ func ElasticacheReplicationGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6631,7 +6669,7 @@ func ElasticacheReplicationGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6795,6 +6833,14 @@ func (e *jsiiProxy_ElasticacheReplicationGroup) ResetClusterMode() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetClusterMode",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ElasticacheReplicationGroup) ResetDataTieringEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetDataTieringEnabled",
 		nil, // no parameters
 	)
 }
@@ -7058,6 +7104,8 @@ type ElasticacheReplicationGroupClusterMode struct {
 
 type ElasticacheReplicationGroupClusterModeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ElasticacheReplicationGroupClusterMode
+	SetInternalValue(val *ElasticacheReplicationGroupClusterMode)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NumNodeGroups() *float64
@@ -7082,6 +7130,16 @@ type ElasticacheReplicationGroupClusterModeOutputReference interface {
 // The jsii proxy struct for ElasticacheReplicationGroupClusterModeOutputReference
 type jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) InternalValue() *ElasticacheReplicationGroupClusterMode {
+	var returns *ElasticacheReplicationGroupClusterMode
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) IsSingleItem() *bool {
@@ -7160,7 +7218,7 @@ func NewElasticacheReplicationGroupClusterModeOutputReference(terraformResource 
 	j := jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupClusterModeOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupClusterModeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7172,9 +7230,17 @@ func NewElasticacheReplicationGroupClusterModeOutputReference_Override(e Elastic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupClusterModeOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupClusterModeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) SetInternalValue(val *ElasticacheReplicationGroupClusterMode) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7310,6 +7376,7 @@ func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) ResetN
 	)
 }
 
+// AWS ElastiCache.
 type ElasticacheReplicationGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7339,6 +7406,8 @@ type ElasticacheReplicationGroupConfig struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#cluster_mode ElasticacheReplicationGroup#cluster_mode}
 	ClusterMode *ElasticacheReplicationGroupClusterMode `json:"clusterMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#data_tiering_enabled ElasticacheReplicationGroup#data_tiering_enabled}.
+	DataTieringEnabled interface{} `json:"dataTieringEnabled"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#engine ElasticacheReplicationGroup#engine}.
 	Engine *string `json:"engine"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#engine_version ElasticacheReplicationGroup#engine_version}.
@@ -7406,6 +7475,8 @@ type ElasticacheReplicationGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ElasticacheReplicationGroupTimeouts
+	SetInternalValue(val *ElasticacheReplicationGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7471,6 +7542,16 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) DeleteInp
 	return returns
 }
 
+func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) InternalValue() *ElasticacheReplicationGroupTimeouts {
+	var returns *ElasticacheReplicationGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7527,7 +7608,7 @@ func NewElasticacheReplicationGroupTimeoutsOutputReference(terraformResource cdk
 	j := jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupTimeoutsOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7539,7 +7620,7 @@ func NewElasticacheReplicationGroupTimeoutsOutputReference_Override(e Elasticach
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupTimeoutsOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -7557,6 +7638,14 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetDelete
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetInternalValue(val *ElasticacheReplicationGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7958,7 +8047,7 @@ func NewElasticacheSecurityGroup(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ElasticacheSecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroup",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7971,7 +8060,7 @@ func NewElasticacheSecurityGroup_Override(e ElasticacheSecurityGroup, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroup",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -8043,7 +8132,7 @@ func ElasticacheSecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroup",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8056,7 +8145,7 @@ func ElasticacheSecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroup",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -8226,6 +8315,7 @@ func (e *jsiiProxy_ElasticacheSecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheSecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8559,7 +8649,7 @@ func NewElasticacheSubnetGroup(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_ElasticacheSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroup",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8572,7 +8662,7 @@ func NewElasticacheSubnetGroup_Override(e ElasticacheSubnetGroup, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroup",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -8660,7 +8750,7 @@ func ElasticacheSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroup",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8673,7 +8763,7 @@ func ElasticacheSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroup",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -8859,6 +8949,7 @@ func (e *jsiiProxy_ElasticacheSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9266,7 +9357,7 @@ func NewElasticacheUser(scope constructs.Construct, id *string, config *Elastica
 	j := jsiiProxy_ElasticacheUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheUser",
+		"hashicorp_aws.elasticache.ElasticacheUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9279,7 +9370,7 @@ func NewElasticacheUser_Override(e ElasticacheUser, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheUser",
+		"hashicorp_aws.elasticache.ElasticacheUser",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -9391,7 +9482,7 @@ func ElasticacheUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheUser",
+		"hashicorp_aws.elasticache.ElasticacheUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9404,7 +9495,7 @@ func ElasticacheUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheUser",
+		"hashicorp_aws.elasticache.ElasticacheUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -9598,6 +9689,7 @@ func (e *jsiiProxy_ElasticacheUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9941,7 +10033,7 @@ func NewElasticacheUserGroup(scope constructs.Construct, id *string, config *Ela
 	j := jsiiProxy_ElasticacheUserGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroup",
+		"hashicorp_aws.elasticache.ElasticacheUserGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9954,7 +10046,7 @@ func NewElasticacheUserGroup_Override(e ElasticacheUserGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroup",
+		"hashicorp_aws.elasticache.ElasticacheUserGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -10042,7 +10134,7 @@ func ElasticacheUserGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroup",
+		"hashicorp_aws.elasticache.ElasticacheUserGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10055,7 +10147,7 @@ func ElasticacheUserGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroup",
+		"hashicorp_aws.elasticache.ElasticacheUserGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -10241,6 +10333,7 @@ func (e *jsiiProxy_ElasticacheUserGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElastiCache.
 type ElasticacheUserGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

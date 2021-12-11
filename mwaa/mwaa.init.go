@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironment",
+		"hashicorp_aws.mwaa.MwaaEnvironment",
 		reflect.TypeOf((*MwaaEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -108,11 +108,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentConfig",
+		"hashicorp_aws.mwaa.MwaaEnvironmentConfig",
 		reflect.TypeOf((*MwaaEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdated",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdated",
 		reflect.TypeOf((*MwaaEnvironmentLastUpdated)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -134,7 +134,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdatedError",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdatedError",
 		reflect.TypeOf((*MwaaEnvironmentLastUpdatedError)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -155,15 +155,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfiguration",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfiguration",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationDagProcessingLogs",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationDagProcessingLogs",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationDagProcessingLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -172,6 +172,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -189,7 +190,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dagProcessingLogs", GoGetter: "DagProcessingLogs"},
@@ -198,6 +199,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -229,11 +231,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationSchedulerLogs",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationSchedulerLogs",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationSchedulerLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -242,6 +244,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -259,11 +262,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationTaskLogs",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationTaskLogs",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationTaskLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -272,6 +275,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -289,11 +293,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWebserverLogs",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWebserverLogs",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationWebserverLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -302,6 +306,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -319,11 +324,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWorkerLogs",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWorkerLogs",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationWorkerLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -332,6 +337,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -349,17 +355,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MWAA.MwaaEnvironmentNetworkConfiguration",
+		"hashicorp_aws.mwaa.MwaaEnvironmentNetworkConfiguration",
 		reflect.TypeOf((*MwaaEnvironmentNetworkConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MWAA.MwaaEnvironmentNetworkConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentNetworkConfigurationOutputReference",
 		reflect.TypeOf((*MwaaEnvironmentNetworkConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -289,7 +289,7 @@ func NewPinpointAdmChannel(scope constructs.Construct, id *string, config *Pinpo
 	j := jsiiProxy_PinpointAdmChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannel",
+		"hashicorp_aws.pinpoint.PinpointAdmChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -302,7 +302,7 @@ func NewPinpointAdmChannel_Override(p PinpointAdmChannel, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannel",
+		"hashicorp_aws.pinpoint.PinpointAdmChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -382,7 +382,7 @@ func PinpointAdmChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannel",
+		"hashicorp_aws.pinpoint.PinpointAdmChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -395,7 +395,7 @@ func PinpointAdmChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointAdmChannel",
+		"hashicorp_aws.pinpoint.PinpointAdmChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -565,6 +565,7 @@ func (p *jsiiProxy_PinpointAdmChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointAdmChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -986,7 +987,7 @@ func NewPinpointApnsChannel(scope constructs.Construct, id *string, config *Pinp
 	j := jsiiProxy_PinpointApnsChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -999,7 +1000,7 @@ func NewPinpointApnsChannel_Override(p PinpointApnsChannel, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -1119,7 +1120,7 @@ func PinpointApnsChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1132,7 +1133,7 @@ func PinpointApnsChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointApnsChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -1358,6 +1359,7 @@ func (p *jsiiProxy_PinpointApnsChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointApnsChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1789,7 +1791,7 @@ func NewPinpointApnsSandboxChannel(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_PinpointApnsSandboxChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1802,7 +1804,7 @@ func NewPinpointApnsSandboxChannel_Override(p PinpointApnsSandboxChannel, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -1922,7 +1924,7 @@ func PinpointApnsSandboxChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1935,7 +1937,7 @@ func PinpointApnsSandboxChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointApnsSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsSandboxChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -2161,6 +2163,7 @@ func (p *jsiiProxy_PinpointApnsSandboxChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointApnsSandboxChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2592,7 +2595,7 @@ func NewPinpointApnsVoipChannel(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_PinpointApnsVoipChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2605,7 +2608,7 @@ func NewPinpointApnsVoipChannel_Override(p PinpointApnsVoipChannel, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -2725,7 +2728,7 @@ func PinpointApnsVoipChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2738,7 +2741,7 @@ func PinpointApnsVoipChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -2964,6 +2967,7 @@ func (p *jsiiProxy_PinpointApnsVoipChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointApnsVoipChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3395,7 +3399,7 @@ func NewPinpointApnsVoipSandboxChannel(scope constructs.Construct, id *string, c
 	j := jsiiProxy_PinpointApnsVoipSandboxChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3408,7 +3412,7 @@ func NewPinpointApnsVoipSandboxChannel_Override(p PinpointApnsVoipSandboxChannel
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -3528,7 +3532,7 @@ func PinpointApnsVoipSandboxChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3541,7 +3545,7 @@ func PinpointApnsVoipSandboxChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointApnsVoipSandboxChannel",
+		"hashicorp_aws.pinpoint.PinpointApnsVoipSandboxChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -3767,6 +3771,7 @@ func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointApnsVoipSandboxChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4173,7 +4178,7 @@ func NewPinpointApp(scope constructs.Construct, id *string, config *PinpointAppC
 	j := jsiiProxy_PinpointApp{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApp",
+		"hashicorp_aws.pinpoint.PinpointApp",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4186,7 +4191,7 @@ func NewPinpointApp_Override(p PinpointApp, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointApp",
+		"hashicorp_aws.pinpoint.PinpointApp",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -4266,7 +4271,7 @@ func PinpointApp_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointApp",
+		"hashicorp_aws.pinpoint.PinpointApp",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4279,7 +4284,7 @@ func PinpointApp_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointApp",
+		"hashicorp_aws.pinpoint.PinpointApp",
 		"tfResourceType",
 		&returns,
 	)
@@ -4532,6 +4537,8 @@ type PinpointAppCampaignHook struct {
 
 type PinpointAppCampaignHookOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *PinpointAppCampaignHook
+	SetInternalValue(val *PinpointAppCampaignHook)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LambdaFunctionName() *string
@@ -4561,6 +4568,16 @@ type PinpointAppCampaignHookOutputReference interface {
 // The jsii proxy struct for PinpointAppCampaignHookOutputReference
 type jsiiProxy_PinpointAppCampaignHookOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) InternalValue() *PinpointAppCampaignHook {
+	var returns *PinpointAppCampaignHook
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) IsSingleItem() *bool {
@@ -4659,7 +4676,7 @@ func NewPinpointAppCampaignHookOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_PinpointAppCampaignHookOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppCampaignHookOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppCampaignHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4671,9 +4688,17 @@ func NewPinpointAppCampaignHookOutputReference_Override(p PinpointAppCampaignHoo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppCampaignHookOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppCampaignHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		p,
+	)
+}
+
+func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) SetInternalValue(val *PinpointAppCampaignHook) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4833,6 +4858,7 @@ func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) ResetWebUrl() {
 	)
 }
 
+// AWS Pinpoint.
 type PinpointAppConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4880,6 +4906,8 @@ type PinpointAppLimitsOutputReference interface {
 	Daily() *float64
 	SetDaily(val *float64)
 	DailyInput() *float64
+	InternalValue() *PinpointAppLimits
+	SetInternalValue(val *PinpointAppLimits)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaximumDuration() *float64
@@ -4927,6 +4955,16 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) DailyInput() *float64 {
 	_jsii_.Get(
 		j,
 		"dailyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PinpointAppLimitsOutputReference) InternalValue() *PinpointAppLimits {
+	var returns *PinpointAppLimits
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5028,7 +5066,7 @@ func NewPinpointAppLimitsOutputReference(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_PinpointAppLimitsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppLimitsOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppLimitsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5040,7 +5078,7 @@ func NewPinpointAppLimitsOutputReference_Override(p PinpointAppLimitsOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppLimitsOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppLimitsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		p,
 	)
@@ -5050,6 +5088,14 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetDaily(val *float64) {
 	_jsii_.Set(
 		j,
 		"daily",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetInternalValue(val *PinpointAppLimits) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5230,6 +5276,8 @@ type PinpointAppQuietTimeOutputReference interface {
 	End() *string
 	SetEnd(val *string)
 	EndInput() *string
+	InternalValue() *PinpointAppQuietTime
+	SetInternalValue(val *PinpointAppQuietTime)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Start() *string
@@ -5269,6 +5317,16 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) EndInput() *string {
 	_jsii_.Get(
 		j,
 		"endInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) InternalValue() *PinpointAppQuietTime {
+	var returns *PinpointAppQuietTime
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5330,7 +5388,7 @@ func NewPinpointAppQuietTimeOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_PinpointAppQuietTimeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppQuietTimeOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppQuietTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5342,7 +5400,7 @@ func NewPinpointAppQuietTimeOutputReference_Override(p PinpointAppQuietTimeOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointAppQuietTimeOutputReference",
+		"hashicorp_aws.pinpoint.PinpointAppQuietTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		p,
 	)
@@ -5352,6 +5410,14 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetEnd(val *string) {
 	_jsii_.Set(
 		j,
 		"end",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetInternalValue(val *PinpointAppQuietTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5768,7 +5834,7 @@ func NewPinpointBaiduChannel(scope constructs.Construct, id *string, config *Pin
 	j := jsiiProxy_PinpointBaiduChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannel",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5781,7 +5847,7 @@ func NewPinpointBaiduChannel_Override(p PinpointBaiduChannel, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannel",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -5861,7 +5927,7 @@ func PinpointBaiduChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannel",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5874,7 +5940,7 @@ func PinpointBaiduChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointBaiduChannel",
+		"hashicorp_aws.pinpoint.PinpointBaiduChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -6044,6 +6110,7 @@ func (p *jsiiProxy_PinpointBaiduChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointBaiduChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6402,7 +6469,7 @@ func NewPinpointEmailChannel(scope constructs.Construct, id *string, config *Pin
 	j := jsiiProxy_PinpointEmailChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannel",
+		"hashicorp_aws.pinpoint.PinpointEmailChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6415,7 +6482,7 @@ func NewPinpointEmailChannel_Override(p PinpointEmailChannel, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannel",
+		"hashicorp_aws.pinpoint.PinpointEmailChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -6511,7 +6578,7 @@ func PinpointEmailChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannel",
+		"hashicorp_aws.pinpoint.PinpointEmailChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6524,7 +6591,7 @@ func PinpointEmailChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointEmailChannel",
+		"hashicorp_aws.pinpoint.PinpointEmailChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -6710,6 +6777,7 @@ func (p *jsiiProxy_PinpointEmailChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointEmailChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6989,7 +7057,7 @@ func NewPinpointEventStream(scope constructs.Construct, id *string, config *Pinp
 	j := jsiiProxy_PinpointEventStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointEventStream",
+		"hashicorp_aws.pinpoint.PinpointEventStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7002,7 +7070,7 @@ func NewPinpointEventStream_Override(p PinpointEventStream, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointEventStream",
+		"hashicorp_aws.pinpoint.PinpointEventStream",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -7074,7 +7142,7 @@ func PinpointEventStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointEventStream",
+		"hashicorp_aws.pinpoint.PinpointEventStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7087,7 +7155,7 @@ func PinpointEventStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointEventStream",
+		"hashicorp_aws.pinpoint.PinpointEventStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -7249,6 +7317,7 @@ func (p *jsiiProxy_PinpointEventStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointEventStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7523,7 +7592,7 @@ func NewPinpointGcmChannel(scope constructs.Construct, id *string, config *Pinpo
 	j := jsiiProxy_PinpointGcmChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannel",
+		"hashicorp_aws.pinpoint.PinpointGcmChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7536,7 +7605,7 @@ func NewPinpointGcmChannel_Override(p PinpointGcmChannel, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannel",
+		"hashicorp_aws.pinpoint.PinpointGcmChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -7608,7 +7677,7 @@ func PinpointGcmChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannel",
+		"hashicorp_aws.pinpoint.PinpointGcmChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7621,7 +7690,7 @@ func PinpointGcmChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointGcmChannel",
+		"hashicorp_aws.pinpoint.PinpointGcmChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -7791,6 +7860,7 @@ func (p *jsiiProxy_PinpointGcmChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointGcmChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8112,7 +8182,7 @@ func NewPinpointSmsChannel(scope constructs.Construct, id *string, config *Pinpo
 	j := jsiiProxy_PinpointSmsChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannel",
+		"hashicorp_aws.pinpoint.PinpointSmsChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8125,7 +8195,7 @@ func NewPinpointSmsChannel_Override(p PinpointSmsChannel, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannel",
+		"hashicorp_aws.pinpoint.PinpointSmsChannel",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -8205,7 +8275,7 @@ func PinpointSmsChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannel",
+		"hashicorp_aws.pinpoint.PinpointSmsChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8218,7 +8288,7 @@ func PinpointSmsChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pinpoint.PinpointSmsChannel",
+		"hashicorp_aws.pinpoint.PinpointSmsChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -8404,6 +8474,7 @@ func (p *jsiiProxy_PinpointSmsChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pinpoint.
 type PinpointSmsChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

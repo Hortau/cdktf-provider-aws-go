@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.DataAwsSsmDocument",
+		"hashicorp_aws.ssm.DataAwsSsmDocument",
 		reflect.TypeOf((*DataAwsSsmDocument)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.DataAwsSsmDocumentConfig",
+		"hashicorp_aws.ssm.DataAwsSsmDocumentConfig",
 		reflect.TypeOf((*DataAwsSsmDocumentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.DataAwsSsmParameter",
+		"hashicorp_aws.ssm.DataAwsSsmParameter",
 		reflect.TypeOf((*DataAwsSsmParameter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -106,11 +106,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.DataAwsSsmParameterConfig",
+		"hashicorp_aws.ssm.DataAwsSsmParameterConfig",
 		reflect.TypeOf((*DataAwsSsmParameterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPath",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPath",
 		reflect.TypeOf((*DataAwsSsmParametersByPath)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -156,11 +156,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPathConfig",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPathConfig",
 		reflect.TypeOf((*DataAwsSsmParametersByPathConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaseline",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaseline",
 		reflect.TypeOf((*DataAwsSsmPatchBaseline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -210,11 +210,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaselineConfig",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaselineConfig",
 		reflect.TypeOf((*DataAwsSsmPatchBaselineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmActivation",
+		"hashicorp_aws.ssm.SsmActivation",
 		reflect.TypeOf((*SsmActivation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activationCode", GoGetter: "ActivationCode"},
@@ -274,11 +274,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmActivationConfig",
+		"hashicorp_aws.ssm.SsmActivationConfig",
 		reflect.TypeOf((*SsmActivationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmAssociation",
+		"hashicorp_aws.ssm.SsmAssociation",
 		reflect.TypeOf((*SsmAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -355,29 +355,33 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmAssociationConfig",
+		"hashicorp_aws.ssm.SsmAssociationConfig",
 		reflect.TypeOf((*SsmAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmAssociationOutputLocation",
+		"hashicorp_aws.ssm.SsmAssociationOutputLocation",
 		reflect.TypeOf((*SsmAssociationOutputLocation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmAssociationOutputLocationOutputReference",
+		"hashicorp_aws.ssm.SsmAssociationOutputLocationOutputReference",
 		reflect.TypeOf((*SsmAssociationOutputLocationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
 			_jsii_.MemberMethod{JsiiMethod: "resetS3KeyPrefix", GoMethod: "ResetS3KeyPrefix"},
+			_jsii_.MemberMethod{JsiiMethod: "resetS3Region", GoMethod: "ResetS3Region"},
 			_jsii_.MemberProperty{JsiiProperty: "s3BucketName", GoGetter: "S3BucketName"},
 			_jsii_.MemberProperty{JsiiProperty: "s3BucketNameInput", GoGetter: "S3BucketNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "s3KeyPrefix", GoGetter: "S3KeyPrefix"},
 			_jsii_.MemberProperty{JsiiProperty: "s3KeyPrefixInput", GoGetter: "S3KeyPrefixInput"},
+			_jsii_.MemberProperty{JsiiProperty: "s3Region", GoGetter: "S3Region"},
+			_jsii_.MemberProperty{JsiiProperty: "s3RegionInput", GoGetter: "S3RegionInput"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
 		},
@@ -388,11 +392,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmAssociationTargets",
+		"hashicorp_aws.ssm.SsmAssociationTargets",
 		reflect.TypeOf((*SsmAssociationTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmDocument",
+		"hashicorp_aws.ssm.SsmDocument",
 		reflect.TypeOf((*SsmDocument)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -469,15 +473,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmDocumentAttachmentsSource",
+		"hashicorp_aws.ssm.SsmDocumentAttachmentsSource",
 		reflect.TypeOf((*SsmDocumentAttachmentsSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmDocumentConfig",
+		"hashicorp_aws.ssm.SsmDocumentConfig",
 		reflect.TypeOf((*SsmDocumentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmDocumentParameter",
+		"hashicorp_aws.ssm.SsmDocumentParameter",
 		reflect.TypeOf((*SsmDocumentParameter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -500,7 +504,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindow",
+		"hashicorp_aws.ssm.SsmMaintenanceWindow",
 		reflect.TypeOf((*SsmMaintenanceWindow)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -572,11 +576,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowConfig",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowConfig",
 		reflect.TypeOf((*SsmMaintenanceWindowConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTarget",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTarget",
 		reflect.TypeOf((*SsmMaintenanceWindowTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -628,15 +632,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTargetConfig",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTargetConfig",
 		reflect.TypeOf((*SsmMaintenanceWindowTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTargetTargets",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTargetTargets",
 		reflect.TypeOf((*SsmMaintenanceWindowTargetTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTask",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTask",
 		reflect.TypeOf((*SsmMaintenanceWindowTask)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -702,23 +706,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskConfig",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskConfig",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTargets",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTargets",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParameters",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParameters",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "documentVersion", GoGetter: "DocumentVersion"},
@@ -727,6 +731,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -744,15 +749,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientContext", GoGetter: "ClientContext"},
@@ -761,6 +766,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -781,7 +787,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automationParameters", GoGetter: "AutomationParameters"},
@@ -790,6 +796,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -817,15 +824,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchLogGroupName", GoGetter: "CloudwatchLogGroupName"},
@@ -836,6 +843,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -851,17 +859,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -884,7 +893,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchConfig", GoGetter: "CloudwatchConfig"},
@@ -901,6 +910,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -939,15 +949,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameter",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameter",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
 		reflect.TypeOf((*SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -956,6 +966,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "input", GoGetter: "Input"},
 			_jsii_.MemberProperty{JsiiProperty: "inputInput", GoGetter: "InputInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -973,7 +984,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmParameter",
+		"hashicorp_aws.ssm.SsmParameter",
 		reflect.TypeOf((*SsmParameter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1042,11 +1053,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmParameterConfig",
+		"hashicorp_aws.ssm.SsmParameterConfig",
 		reflect.TypeOf((*SsmParameterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmPatchBaseline",
+		"hashicorp_aws.ssm.SsmPatchBaseline",
 		reflect.TypeOf((*SsmPatchBaseline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1122,27 +1133,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchBaselineApprovalRule",
+		"hashicorp_aws.ssm.SsmPatchBaselineApprovalRule",
 		reflect.TypeOf((*SsmPatchBaselineApprovalRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchBaselineApprovalRulePatchFilter",
+		"hashicorp_aws.ssm.SsmPatchBaselineApprovalRulePatchFilter",
 		reflect.TypeOf((*SsmPatchBaselineApprovalRulePatchFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchBaselineConfig",
+		"hashicorp_aws.ssm.SsmPatchBaselineConfig",
 		reflect.TypeOf((*SsmPatchBaselineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchBaselineGlobalFilter",
+		"hashicorp_aws.ssm.SsmPatchBaselineGlobalFilter",
 		reflect.TypeOf((*SsmPatchBaselineGlobalFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchBaselineSource",
+		"hashicorp_aws.ssm.SsmPatchBaselineSource",
 		reflect.TypeOf((*SsmPatchBaselineSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmPatchGroup",
+		"hashicorp_aws.ssm.SsmPatchGroup",
 		reflect.TypeOf((*SsmPatchGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1183,11 +1194,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmPatchGroupConfig",
+		"hashicorp_aws.ssm.SsmPatchGroupConfig",
 		reflect.TypeOf((*SsmPatchGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmResourceDataSync",
+		"hashicorp_aws.ssm.SsmResourceDataSync",
 		reflect.TypeOf((*SsmResourceDataSync)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1229,15 +1240,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmResourceDataSyncConfig",
+		"hashicorp_aws.ssm.SsmResourceDataSyncConfig",
 		reflect.TypeOf((*SsmResourceDataSyncConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSM.SsmResourceDataSyncS3Destination",
+		"hashicorp_aws.ssm.SsmResourceDataSyncS3Destination",
 		reflect.TypeOf((*SsmResourceDataSyncS3Destination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSM.SsmResourceDataSyncS3DestinationOutputReference",
+		"hashicorp_aws.ssm.SsmResourceDataSyncS3DestinationOutputReference",
 		reflect.TypeOf((*SsmResourceDataSyncS3DestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketName", GoGetter: "BucketName"},
@@ -1246,6 +1257,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

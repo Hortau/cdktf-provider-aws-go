@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.DataAwsLexBot",
+		"hashicorp_aws.lex.DataAwsLexBot",
 		reflect.TypeOf((*DataAwsLexBot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -64,7 +64,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.DataAwsLexBotAlias",
+		"hashicorp_aws.lex.DataAwsLexBotAlias",
 		reflect.TypeOf((*DataAwsLexBotAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -111,15 +111,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.DataAwsLexBotAliasConfig",
+		"hashicorp_aws.lex.DataAwsLexBotAliasConfig",
 		reflect.TypeOf((*DataAwsLexBotAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.DataAwsLexBotConfig",
+		"hashicorp_aws.lex.DataAwsLexBotConfig",
 		reflect.TypeOf((*DataAwsLexBotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.DataAwsLexIntent",
+		"hashicorp_aws.lex.DataAwsLexIntent",
 		reflect.TypeOf((*DataAwsLexIntent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -167,11 +167,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.DataAwsLexIntentConfig",
+		"hashicorp_aws.lex.DataAwsLexIntentConfig",
 		reflect.TypeOf((*DataAwsLexIntentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.DataAwsLexSlotType",
+		"hashicorp_aws.lex.DataAwsLexSlotType",
 		reflect.TypeOf((*DataAwsLexSlotType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -219,11 +219,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.DataAwsLexSlotTypeConfig",
+		"hashicorp_aws.lex.DataAwsLexSlotTypeConfig",
 		reflect.TypeOf((*DataAwsLexSlotTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.DataAwsLexSlotTypeEnumerationValue",
+		"hashicorp_aws.lex.DataAwsLexSlotTypeEnumerationValue",
 		reflect.TypeOf((*DataAwsLexSlotTypeEnumerationValue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -244,7 +244,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBot",
+		"hashicorp_aws.lex.LexBot",
 		reflect.TypeOf((*LexBot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "abortStatement", GoGetter: "AbortStatement"},
@@ -332,21 +332,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAbortStatement",
+		"hashicorp_aws.lex.LexBotAbortStatement",
 		reflect.TypeOf((*LexBotAbortStatement)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAbortStatementMessage",
+		"hashicorp_aws.lex.LexBotAbortStatementMessage",
 		reflect.TypeOf((*LexBotAbortStatementMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotAbortStatementOutputReference",
+		"hashicorp_aws.lex.LexBotAbortStatementOutputReference",
 		reflect.TypeOf((*LexBotAbortStatementOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -365,7 +366,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotAlias",
+		"hashicorp_aws.lex.LexBotAlias",
 		reflect.TypeOf((*LexBotAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -423,19 +424,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAliasConfig",
+		"hashicorp_aws.lex.LexBotAliasConfig",
 		reflect.TypeOf((*LexBotAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAliasConversationLogs",
+		"hashicorp_aws.lex.LexBotAliasConversationLogs",
 		reflect.TypeOf((*LexBotAliasConversationLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAliasConversationLogsLogSettings",
+		"hashicorp_aws.lex.LexBotAliasConversationLogsLogSettings",
 		reflect.TypeOf((*LexBotAliasConversationLogsLogSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotAliasConversationLogsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasConversationLogsOutputReference",
 		reflect.TypeOf((*LexBotAliasConversationLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -444,6 +445,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iamRoleArn", GoGetter: "IamRoleArn"},
 			_jsii_.MemberProperty{JsiiProperty: "iamRoleArnInput", GoGetter: "IamRoleArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -460,11 +462,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotAliasTimeouts",
+		"hashicorp_aws.lex.LexBotAliasTimeouts",
 		reflect.TypeOf((*LexBotAliasTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotAliasTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasTimeoutsOutputReference",
 		reflect.TypeOf((*LexBotAliasTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -475,6 +477,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -493,21 +496,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotClarificationPrompt",
+		"hashicorp_aws.lex.LexBotClarificationPrompt",
 		reflect.TypeOf((*LexBotClarificationPrompt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotClarificationPromptMessage",
+		"hashicorp_aws.lex.LexBotClarificationPromptMessage",
 		reflect.TypeOf((*LexBotClarificationPromptMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotClarificationPromptOutputReference",
+		"hashicorp_aws.lex.LexBotClarificationPromptOutputReference",
 		reflect.TypeOf((*LexBotClarificationPromptOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -528,19 +532,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotConfig",
+		"hashicorp_aws.lex.LexBotConfig",
 		reflect.TypeOf((*LexBotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotIntent",
+		"hashicorp_aws.lex.LexBotIntent",
 		reflect.TypeOf((*LexBotIntent)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexBotTimeouts",
+		"hashicorp_aws.lex.LexBotTimeouts",
 		reflect.TypeOf((*LexBotTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexBotTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotTimeoutsOutputReference",
 		reflect.TypeOf((*LexBotTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -551,6 +555,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -569,7 +574,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntent",
+		"hashicorp_aws.lex.LexIntent",
 		reflect.TypeOf((*LexIntent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -655,21 +660,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentConclusionStatement",
+		"hashicorp_aws.lex.LexIntentConclusionStatement",
 		reflect.TypeOf((*LexIntentConclusionStatement)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentConclusionStatementMessage",
+		"hashicorp_aws.lex.LexIntentConclusionStatementMessage",
 		reflect.TypeOf((*LexIntentConclusionStatementMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentConclusionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentConclusionStatementOutputReference",
 		reflect.TypeOf((*LexIntentConclusionStatementOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -688,25 +694,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentConfig",
+		"hashicorp_aws.lex.LexIntentConfig",
 		reflect.TypeOf((*LexIntentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentConfirmationPrompt",
+		"hashicorp_aws.lex.LexIntentConfirmationPrompt",
 		reflect.TypeOf((*LexIntentConfirmationPrompt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentConfirmationPromptMessage",
+		"hashicorp_aws.lex.LexIntentConfirmationPromptMessage",
 		reflect.TypeOf((*LexIntentConfirmationPromptMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentConfirmationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentConfirmationPromptOutputReference",
 		reflect.TypeOf((*LexIntentConfirmationPromptOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -727,17 +734,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentDialogCodeHook",
+		"hashicorp_aws.lex.LexIntentDialogCodeHook",
 		reflect.TypeOf((*LexIntentDialogCodeHook)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentDialogCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentDialogCodeHookOutputReference",
 		reflect.TypeOf((*LexIntentDialogCodeHookOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -755,17 +763,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFollowUpPrompt",
+		"hashicorp_aws.lex.LexIntentFollowUpPrompt",
 		reflect.TypeOf((*LexIntentFollowUpPrompt)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptOutputReference",
 		reflect.TypeOf((*LexIntentFollowUpPromptOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -785,21 +794,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptPrompt",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptPrompt",
 		reflect.TypeOf((*LexIntentFollowUpPromptPrompt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptPromptMessage",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptPromptMessage",
 		reflect.TypeOf((*LexIntentFollowUpPromptPromptMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptPromptOutputReference",
 		reflect.TypeOf((*LexIntentFollowUpPromptPromptOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -820,21 +830,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptRejectionStatement",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptRejectionStatement",
 		reflect.TypeOf((*LexIntentFollowUpPromptRejectionStatement)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptRejectionStatementMessage",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptRejectionStatementMessage",
 		reflect.TypeOf((*LexIntentFollowUpPromptRejectionStatementMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
 		reflect.TypeOf((*LexIntentFollowUpPromptRejectionStatementOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -853,21 +864,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivity",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivity",
 		reflect.TypeOf((*LexIntentFulfillmentActivity)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityCodeHook",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityCodeHook",
 		reflect.TypeOf((*LexIntentFulfillmentActivityCodeHook)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityCodeHookOutputReference",
 		reflect.TypeOf((*LexIntentFulfillmentActivityCodeHookOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -885,7 +897,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityOutputReference",
 		reflect.TypeOf((*LexIntentFulfillmentActivityOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "codeHook", GoGetter: "CodeHook"},
@@ -894,6 +906,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -911,21 +924,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentRejectionStatement",
+		"hashicorp_aws.lex.LexIntentRejectionStatement",
 		reflect.TypeOf((*LexIntentRejectionStatement)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentRejectionStatementMessage",
+		"hashicorp_aws.lex.LexIntentRejectionStatementMessage",
 		reflect.TypeOf((*LexIntentRejectionStatementMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentRejectionStatementOutputReference",
 		reflect.TypeOf((*LexIntentRejectionStatementOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -944,25 +958,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentSlot",
+		"hashicorp_aws.lex.LexIntentSlot",
 		reflect.TypeOf((*LexIntentSlot)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentSlotValueElicitationPrompt",
+		"hashicorp_aws.lex.LexIntentSlotValueElicitationPrompt",
 		reflect.TypeOf((*LexIntentSlotValueElicitationPrompt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentSlotValueElicitationPromptMessage",
+		"hashicorp_aws.lex.LexIntentSlotValueElicitationPromptMessage",
 		reflect.TypeOf((*LexIntentSlotValueElicitationPromptMessage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentSlotValueElicitationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentSlotValueElicitationPromptOutputReference",
 		reflect.TypeOf((*LexIntentSlotValueElicitationPromptOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -983,11 +998,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexIntentTimeouts",
+		"hashicorp_aws.lex.LexIntentTimeouts",
 		reflect.TypeOf((*LexIntentTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexIntentTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexIntentTimeoutsOutputReference",
 		reflect.TypeOf((*LexIntentTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -998,6 +1013,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1016,7 +1032,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexSlotType",
+		"hashicorp_aws.lex.LexSlotType",
 		reflect.TypeOf((*LexSlotType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1074,19 +1090,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexSlotTypeConfig",
+		"hashicorp_aws.lex.LexSlotTypeConfig",
 		reflect.TypeOf((*LexSlotTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexSlotTypeEnumerationValue",
+		"hashicorp_aws.lex.LexSlotTypeEnumerationValue",
 		reflect.TypeOf((*LexSlotTypeEnumerationValue)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lex.LexSlotTypeTimeouts",
+		"hashicorp_aws.lex.LexSlotTypeTimeouts",
 		reflect.TypeOf((*LexSlotTypeTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lex.LexSlotTypeTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexSlotTypeTimeoutsOutputReference",
 		reflect.TypeOf((*LexSlotTypeTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1097,6 +1113,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

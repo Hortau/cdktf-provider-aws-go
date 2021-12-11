@@ -396,7 +396,7 @@ func NewDataAwsMqBroker(scope constructs.Construct, id *string, config *DataAwsM
 	j := jsiiProxy_DataAwsMqBroker{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBroker",
+		"hashicorp_aws.mq.DataAwsMqBroker",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -409,7 +409,7 @@ func NewDataAwsMqBroker_Override(d DataAwsMqBroker, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBroker",
+		"hashicorp_aws.mq.DataAwsMqBroker",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -481,7 +481,7 @@ func DataAwsMqBroker_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MQ.DataAwsMqBroker",
+		"hashicorp_aws.mq.DataAwsMqBroker",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -494,7 +494,7 @@ func DataAwsMqBroker_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MQ.DataAwsMqBroker",
+		"hashicorp_aws.mq.DataAwsMqBroker",
 		"tfResourceType",
 		&returns,
 	)
@@ -771,6 +771,7 @@ func (d *jsiiProxy_DataAwsMqBroker) User(index *string) DataAwsMqBrokerUser {
 	return returns
 }
 
+// AWS Managed Message Queue.
 type DataAwsMqBrokerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -867,7 +868,7 @@ func NewDataAwsMqBrokerConfiguration(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_DataAwsMqBrokerConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerConfiguration",
+		"hashicorp_aws.mq.DataAwsMqBrokerConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -880,7 +881,7 @@ func NewDataAwsMqBrokerConfiguration_Override(d DataAwsMqBrokerConfiguration, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerConfiguration",
+		"hashicorp_aws.mq.DataAwsMqBrokerConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1059,7 +1060,7 @@ func NewDataAwsMqBrokerEncryptionOptions(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DataAwsMqBrokerEncryptionOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerEncryptionOptions",
+		"hashicorp_aws.mq.DataAwsMqBrokerEncryptionOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1072,7 +1073,7 @@ func NewDataAwsMqBrokerEncryptionOptions_Override(d DataAwsMqBrokerEncryptionOpt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerEncryptionOptions",
+		"hashicorp_aws.mq.DataAwsMqBrokerEncryptionOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1262,7 +1263,7 @@ func NewDataAwsMqBrokerInstances(terraformResource cdktf.ITerraformResource, ter
 	j := jsiiProxy_DataAwsMqBrokerInstances{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerInstances",
+		"hashicorp_aws.mq.DataAwsMqBrokerInstances",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1275,7 +1276,7 @@ func NewDataAwsMqBrokerInstances_Override(d DataAwsMqBrokerInstances, terraformR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerInstances",
+		"hashicorp_aws.mq.DataAwsMqBrokerInstances",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1553,7 +1554,7 @@ func NewDataAwsMqBrokerLdapServerMetadata(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DataAwsMqBrokerLdapServerMetadata{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLdapServerMetadata",
+		"hashicorp_aws.mq.DataAwsMqBrokerLdapServerMetadata",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1566,7 +1567,7 @@ func NewDataAwsMqBrokerLdapServerMetadata_Override(d DataAwsMqBrokerLdapServerMe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLdapServerMetadata",
+		"hashicorp_aws.mq.DataAwsMqBrokerLdapServerMetadata",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1745,7 +1746,7 @@ func NewDataAwsMqBrokerLogs(terraformResource cdktf.ITerraformResource, terrafor
 	j := jsiiProxy_DataAwsMqBrokerLogs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLogs",
+		"hashicorp_aws.mq.DataAwsMqBrokerLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1758,7 +1759,7 @@ func NewDataAwsMqBrokerLogs_Override(d DataAwsMqBrokerLogs, terraformResource cd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLogs",
+		"hashicorp_aws.mq.DataAwsMqBrokerLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1948,7 +1949,7 @@ func NewDataAwsMqBrokerMaintenanceWindowStartTime(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerMaintenanceWindowStartTime",
+		"hashicorp_aws.mq.DataAwsMqBrokerMaintenanceWindowStartTime",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1961,7 +1962,7 @@ func NewDataAwsMqBrokerMaintenanceWindowStartTime_Override(d DataAwsMqBrokerMain
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerMaintenanceWindowStartTime",
+		"hashicorp_aws.mq.DataAwsMqBrokerMaintenanceWindowStartTime",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2151,7 +2152,7 @@ func NewDataAwsMqBrokerUser(terraformResource cdktf.ITerraformResource, terrafor
 	j := jsiiProxy_DataAwsMqBrokerUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerUser",
+		"hashicorp_aws.mq.DataAwsMqBrokerUser",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2164,7 +2165,7 @@ func NewDataAwsMqBrokerUser_Override(d DataAwsMqBrokerUser, terraformResource cd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.DataAwsMqBrokerUser",
+		"hashicorp_aws.mq.DataAwsMqBrokerUser",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2938,7 +2939,7 @@ func NewMqBroker(scope constructs.Construct, id *string, config *MqBrokerConfig)
 	j := jsiiProxy_MqBroker{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBroker",
+		"hashicorp_aws.mq.MqBroker",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2951,7 +2952,7 @@ func NewMqBroker_Override(m MqBroker, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBroker",
+		"hashicorp_aws.mq.MqBroker",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -3119,7 +3120,7 @@ func MqBroker_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MQ.MqBroker",
+		"hashicorp_aws.mq.MqBroker",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3132,7 +3133,7 @@ func MqBroker_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MQ.MqBroker",
+		"hashicorp_aws.mq.MqBroker",
 		"tfResourceType",
 		&returns,
 	)
@@ -3467,6 +3468,7 @@ func (m *jsiiProxy_MqBroker) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Message Queue.
 type MqBrokerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3540,6 +3542,8 @@ type MqBrokerConfiguration struct {
 type MqBrokerConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	Id() *string
+	InternalValue() *MqBrokerConfiguration
+	SetInternalValue(val *MqBrokerConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Revision() *float64
@@ -3568,6 +3572,16 @@ func (j *jsiiProxy_MqBrokerConfigurationOutputReference) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MqBrokerConfigurationOutputReference) InternalValue() *MqBrokerConfiguration {
+	var returns *MqBrokerConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3629,7 +3643,7 @@ func NewMqBrokerConfigurationOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_MqBrokerConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerConfigurationOutputReference",
+		"hashicorp_aws.mq.MqBrokerConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3641,9 +3655,17 @@ func NewMqBrokerConfigurationOutputReference_Override(m MqBrokerConfigurationOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerConfigurationOutputReference",
+		"hashicorp_aws.mq.MqBrokerConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MqBrokerConfigurationOutputReference) SetInternalValue(val *MqBrokerConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3780,6 +3802,8 @@ type MqBrokerEncryptionOptions struct {
 
 type MqBrokerEncryptionOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *MqBrokerEncryptionOptions
+	SetInternalValue(val *MqBrokerEncryptionOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -3805,6 +3829,16 @@ type MqBrokerEncryptionOptionsOutputReference interface {
 // The jsii proxy struct for MqBrokerEncryptionOptionsOutputReference
 type jsiiProxy_MqBrokerEncryptionOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) InternalValue() *MqBrokerEncryptionOptions {
+	var returns *MqBrokerEncryptionOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) IsSingleItem() *bool {
@@ -3883,7 +3917,7 @@ func NewMqBrokerEncryptionOptionsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_MqBrokerEncryptionOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerEncryptionOptionsOutputReference",
+		"hashicorp_aws.mq.MqBrokerEncryptionOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3895,9 +3929,17 @@ func NewMqBrokerEncryptionOptionsOutputReference_Override(m MqBrokerEncryptionOp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerEncryptionOptionsOutputReference",
+		"hashicorp_aws.mq.MqBrokerEncryptionOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) SetInternalValue(val *MqBrokerEncryptionOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4131,7 +4173,7 @@ func NewMqBrokerInstances(terraformResource cdktf.ITerraformResource, terraformA
 	j := jsiiProxy_MqBrokerInstances{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerInstances",
+		"hashicorp_aws.mq.MqBrokerInstances",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4144,7 +4186,7 @@ func NewMqBrokerInstances_Override(m MqBrokerInstances, terraformResource cdktf.
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerInstances",
+		"hashicorp_aws.mq.MqBrokerInstances",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)
@@ -4274,6 +4316,8 @@ type MqBrokerLdapServerMetadataOutputReference interface {
 	Hosts() *[]*string
 	SetHosts(val *[]*string)
 	HostsInput() *[]*string
+	InternalValue() *MqBrokerLdapServerMetadata
+	SetInternalValue(val *MqBrokerLdapServerMetadata)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleBase() *string
@@ -4349,6 +4393,16 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) HostsInput() *[]*s
 	_jsii_.Get(
 		j,
 		"hostsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) InternalValue() *MqBrokerLdapServerMetadata {
+	var returns *MqBrokerLdapServerMetadata
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4590,7 +4644,7 @@ func NewMqBrokerLdapServerMetadataOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_MqBrokerLdapServerMetadataOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerLdapServerMetadataOutputReference",
+		"hashicorp_aws.mq.MqBrokerLdapServerMetadataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4602,7 +4656,7 @@ func NewMqBrokerLdapServerMetadataOutputReference_Override(m MqBrokerLdapServerM
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerLdapServerMetadataOutputReference",
+		"hashicorp_aws.mq.MqBrokerLdapServerMetadataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4612,6 +4666,14 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetHosts(val *[]*s
 	_jsii_.Set(
 		j,
 		"hosts",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetInternalValue(val *MqBrokerLdapServerMetadata) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4907,6 +4969,8 @@ type MqBrokerLogsOutputReference interface {
 	General() interface{}
 	SetGeneral(val interface{})
 	GeneralInput() interface{}
+	InternalValue() *MqBrokerLogs
+	SetInternalValue(val *MqBrokerLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4968,6 +5032,16 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) GeneralInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_MqBrokerLogsOutputReference) InternalValue() *MqBrokerLogs {
+	var returns *MqBrokerLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MqBrokerLogsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5004,7 +5078,7 @@ func NewMqBrokerLogsOutputReference(terraformResource cdktf.ITerraformResource, 
 	j := jsiiProxy_MqBrokerLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerLogsOutputReference",
+		"hashicorp_aws.mq.MqBrokerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5016,7 +5090,7 @@ func NewMqBrokerLogsOutputReference_Override(m MqBrokerLogsOutputReference, terr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerLogsOutputReference",
+		"hashicorp_aws.mq.MqBrokerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -5034,6 +5108,14 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) SetGeneral(val interface{}) {
 	_jsii_.Set(
 		j,
 		"general",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MqBrokerLogsOutputReference) SetInternalValue(val *MqBrokerLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5176,6 +5258,8 @@ type MqBrokerMaintenanceWindowStartTimeOutputReference interface {
 	DayOfWeek() *string
 	SetDayOfWeek(val *string)
 	DayOfWeekInput() *string
+	InternalValue() *MqBrokerMaintenanceWindowStartTime
+	SetInternalValue(val *MqBrokerMaintenanceWindowStartTime)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5216,6 +5300,16 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) DayOfWeekI
 	_jsii_.Get(
 		j,
 		"dayOfWeekInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) InternalValue() *MqBrokerMaintenanceWindowStartTime {
+	var returns *MqBrokerMaintenanceWindowStartTime
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5297,7 +5391,7 @@ func NewMqBrokerMaintenanceWindowStartTimeOutputReference(terraformResource cdkt
 	j := jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerMaintenanceWindowStartTimeOutputReference",
+		"hashicorp_aws.mq.MqBrokerMaintenanceWindowStartTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5309,7 +5403,7 @@ func NewMqBrokerMaintenanceWindowStartTimeOutputReference_Override(m MqBrokerMai
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqBrokerMaintenanceWindowStartTimeOutputReference",
+		"hashicorp_aws.mq.MqBrokerMaintenanceWindowStartTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -5319,6 +5413,14 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetDayOfWe
 	_jsii_.Set(
 		j,
 		"dayOfWeek",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetInternalValue(val *MqBrokerMaintenanceWindowStartTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5855,7 +5957,7 @@ func NewMqConfiguration(scope constructs.Construct, id *string, config *MqConfig
 	j := jsiiProxy_MqConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqConfiguration",
+		"hashicorp_aws.mq.MqConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5868,7 +5970,7 @@ func NewMqConfiguration_Override(m MqConfiguration, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MQ.MqConfiguration",
+		"hashicorp_aws.mq.MqConfiguration",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -5980,7 +6082,7 @@ func MqConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MQ.MqConfiguration",
+		"hashicorp_aws.mq.MqConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5993,7 +6095,7 @@ func MqConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MQ.MqConfiguration",
+		"hashicorp_aws.mq.MqConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -6187,6 +6289,7 @@ func (m *jsiiProxy_MqConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Message Queue.
 type MqConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

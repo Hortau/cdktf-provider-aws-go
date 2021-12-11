@@ -1,12 +1,12 @@
 package athena
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/athena/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/athena/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html aws_athena_database}.
@@ -283,7 +283,6 @@ func (j *jsiiProxy_AthenaDatabase) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html aws_athena_database} Resource.
 func NewAthenaDatabase(scope constructs.Construct, id *string, config *AthenaDatabaseConfig) AthenaDatabase {
 	_init_.Initialize()
@@ -291,7 +290,7 @@ func NewAthenaDatabase(scope constructs.Construct, id *string, config *AthenaDat
 	j := jsiiProxy_AthenaDatabase{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaDatabase",
+		"hashicorp_aws.athena.AthenaDatabase",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -304,7 +303,7 @@ func NewAthenaDatabase_Override(a AthenaDatabase, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaDatabase",
+		"hashicorp_aws.athena.AthenaDatabase",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -376,7 +375,7 @@ func AthenaDatabase_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Athena.AthenaDatabase",
+		"hashicorp_aws.athena.AthenaDatabase",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -389,7 +388,7 @@ func AthenaDatabase_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Athena.AthenaDatabase",
+		"hashicorp_aws.athena.AthenaDatabase",
 		"tfResourceType",
 		&returns,
 	)
@@ -575,6 +574,7 @@ func (a *jsiiProxy_AthenaDatabase) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Athena.
 type AthenaDatabaseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -608,6 +608,8 @@ type AthenaDatabaseEncryptionConfigurationOutputReference interface {
 	EncryptionOption() *string
 	SetEncryptionOption(val *string)
 	EncryptionOptionInput() *string
+	InternalValue() *AthenaDatabaseEncryptionConfiguration
+	SetInternalValue(val *AthenaDatabaseEncryptionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKey() *string
@@ -646,6 +648,16 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) Encrypt
 	_jsii_.Get(
 		j,
 		"encryptionOptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) InternalValue() *AthenaDatabaseEncryptionConfiguration {
+	var returns *AthenaDatabaseEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -701,14 +713,13 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) Terrafo
 	return returns
 }
 
-
 func NewAthenaDatabaseEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaDatabaseEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaDatabaseEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaDatabaseEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -720,7 +731,7 @@ func NewAthenaDatabaseEncryptionConfigurationOutputReference_Override(a AthenaDa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaDatabaseEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaDatabaseEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -730,6 +741,14 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetEncr
 	_jsii_.Set(
 		j,
 		"encryptionOption",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetInternalValue(val *AthenaDatabaseEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1155,7 +1174,6 @@ func (j *jsiiProxy_AthenaNamedQuery) WorkgroupInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html aws_athena_named_query} Resource.
 func NewAthenaNamedQuery(scope constructs.Construct, id *string, config *AthenaNamedQueryConfig) AthenaNamedQuery {
 	_init_.Initialize()
@@ -1163,7 +1181,7 @@ func NewAthenaNamedQuery(scope constructs.Construct, id *string, config *AthenaN
 	j := jsiiProxy_AthenaNamedQuery{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaNamedQuery",
+		"hashicorp_aws.athena.AthenaNamedQuery",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1176,7 +1194,7 @@ func NewAthenaNamedQuery_Override(a AthenaNamedQuery, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaNamedQuery",
+		"hashicorp_aws.athena.AthenaNamedQuery",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1264,7 +1282,7 @@ func AthenaNamedQuery_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Athena.AthenaNamedQuery",
+		"hashicorp_aws.athena.AthenaNamedQuery",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1277,7 +1295,7 @@ func AthenaNamedQuery_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Athena.AthenaNamedQuery",
+		"hashicorp_aws.athena.AthenaNamedQuery",
 		"tfResourceType",
 		&returns,
 	)
@@ -1455,6 +1473,7 @@ func (a *jsiiProxy_AthenaNamedQuery) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Athena.
 type AthenaNamedQueryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1834,7 +1853,6 @@ func (j *jsiiProxy_AthenaWorkgroup) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html aws_athena_workgroup} Resource.
 func NewAthenaWorkgroup(scope constructs.Construct, id *string, config *AthenaWorkgroupConfig) AthenaWorkgroup {
 	_init_.Initialize()
@@ -1842,7 +1860,7 @@ func NewAthenaWorkgroup(scope constructs.Construct, id *string, config *AthenaWo
 	j := jsiiProxy_AthenaWorkgroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroup",
+		"hashicorp_aws.athena.AthenaWorkgroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1855,7 +1873,7 @@ func NewAthenaWorkgroup_Override(a AthenaWorkgroup, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroup",
+		"hashicorp_aws.athena.AthenaWorkgroup",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1951,7 +1969,7 @@ func AthenaWorkgroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Athena.AthenaWorkgroup",
+		"hashicorp_aws.athena.AthenaWorkgroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1964,7 +1982,7 @@ func AthenaWorkgroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Athena.AthenaWorkgroup",
+		"hashicorp_aws.athena.AthenaWorkgroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -2182,6 +2200,7 @@ func (a *jsiiProxy_AthenaWorkgroup) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Athena.
 type AthenaWorkgroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2214,6 +2233,10 @@ type AthenaWorkgroupConfiguration struct {
 	BytesScannedCutoffPerQuery *float64 `json:"bytesScannedCutoffPerQuery"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#enforce_workgroup_configuration AthenaWorkgroup#enforce_workgroup_configuration}.
 	EnforceWorkgroupConfiguration interface{} `json:"enforceWorkgroupConfiguration"`
+	// engine_version block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#engine_version AthenaWorkgroup#engine_version}
+	EngineVersion *AthenaWorkgroupConfigurationEngineVersion `json:"engineVersion"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#publish_cloudwatch_metrics_enabled AthenaWorkgroup#publish_cloudwatch_metrics_enabled}.
 	PublishCloudwatchMetricsEnabled interface{} `json:"publishCloudwatchMetricsEnabled"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#requester_pays_enabled AthenaWorkgroup#requester_pays_enabled}.
@@ -2224,6 +2247,254 @@ type AthenaWorkgroupConfiguration struct {
 	ResultConfiguration *AthenaWorkgroupConfigurationResultConfiguration `json:"resultConfiguration"`
 }
 
+type AthenaWorkgroupConfigurationEngineVersion struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#selected_engine_version AthenaWorkgroup#selected_engine_version}.
+	SelectedEngineVersion *string `json:"selectedEngineVersion"`
+}
+
+type AthenaWorkgroupConfigurationEngineVersionOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *AthenaWorkgroupConfigurationEngineVersion
+	SetInternalValue(val *AthenaWorkgroupConfigurationEngineVersion)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	SelectedEngineVersion() *string
+	SetSelectedEngineVersion(val *string)
+	SelectedEngineVersionInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetSelectedEngineVersion()
+}
+
+// The jsii proxy struct for AthenaWorkgroupConfigurationEngineVersionOutputReference
+type jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) InternalValue() *AthenaWorkgroupConfigurationEngineVersion {
+	var returns *AthenaWorkgroupConfigurationEngineVersion
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SelectedEngineVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"selectedEngineVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SelectedEngineVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"selectedEngineVersionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewAthenaWorkgroupConfigurationEngineVersionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationEngineVersionOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationEngineVersionOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewAthenaWorkgroupConfigurationEngineVersionOutputReference_Override(a AthenaWorkgroupConfigurationEngineVersionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationEngineVersionOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetInternalValue(val *AthenaWorkgroupConfigurationEngineVersion) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetSelectedEngineVersion(val *string) {
+	_jsii_.Set(
+		j,
+		"selectedEngineVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) ResetSelectedEngineVersion() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetSelectedEngineVersion",
+		nil, // no parameters
+	)
+}
+
 type AthenaWorkgroupConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	BytesScannedCutoffPerQuery() *float64
@@ -2232,6 +2503,10 @@ type AthenaWorkgroupConfigurationOutputReference interface {
 	EnforceWorkgroupConfiguration() interface{}
 	SetEnforceWorkgroupConfiguration(val interface{})
 	EnforceWorkgroupConfigurationInput() interface{}
+	EngineVersion() AthenaWorkgroupConfigurationEngineVersionOutputReference
+	EngineVersionInput() *AthenaWorkgroupConfigurationEngineVersion
+	InternalValue() *AthenaWorkgroupConfiguration
+	SetInternalValue(val *AthenaWorkgroupConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PublishCloudwatchMetricsEnabled() interface{}
@@ -2252,9 +2527,11 @@ type AthenaWorkgroupConfigurationOutputReference interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutEngineVersion(value *AthenaWorkgroupConfigurationEngineVersion)
 	PutResultConfiguration(value *AthenaWorkgroupConfigurationResultConfiguration)
 	ResetBytesScannedCutoffPerQuery()
 	ResetEnforceWorkgroupConfiguration()
+	ResetEngineVersion()
 	ResetPublishCloudwatchMetricsEnabled()
 	ResetRequesterPaysEnabled()
 	ResetResultConfiguration()
@@ -2300,6 +2577,36 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) EnforceWorkgroup
 	_jsii_.Get(
 		j,
 		"enforceWorkgroupConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) EngineVersion() AthenaWorkgroupConfigurationEngineVersionOutputReference {
+	var returns AthenaWorkgroupConfigurationEngineVersionOutputReference
+	_jsii_.Get(
+		j,
+		"engineVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) EngineVersionInput() *AthenaWorkgroupConfigurationEngineVersion {
+	var returns *AthenaWorkgroupConfigurationEngineVersion
+	_jsii_.Get(
+		j,
+		"engineVersionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) InternalValue() *AthenaWorkgroupConfiguration {
+	var returns *AthenaWorkgroupConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2395,14 +2702,13 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) TerraformResourc
 	return returns
 }
 
-
 func NewAthenaWorkgroupConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2414,7 +2720,7 @@ func NewAthenaWorkgroupConfigurationOutputReference_Override(a AthenaWorkgroupCo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2432,6 +2738,14 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetEnforceWorkgr
 	_jsii_.Set(
 		j,
 		"enforceWorkgroupConfiguration",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetInternalValue(val *AthenaWorkgroupConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2560,6 +2874,14 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) InterpolationFor
 	return returns
 }
 
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) PutEngineVersion(value *AthenaWorkgroupConfigurationEngineVersion) {
+	_jsii_.InvokeVoid(
+		a,
+		"putEngineVersion",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) PutResultConfiguration(value *AthenaWorkgroupConfigurationResultConfiguration) {
 	_jsii_.InvokeVoid(
 		a,
@@ -2580,6 +2902,14 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) ResetEnforceWork
 	_jsii_.InvokeVoid(
 		a,
 		"resetEnforceWorkgroupConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) ResetEngineVersion() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetEngineVersion",
 		nil, // no parameters
 	)
 }
@@ -2629,6 +2959,8 @@ type AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutpu
 	EncryptionOption() *string
 	SetEncryptionOption(val *string)
 	EncryptionOptionInput() *string
+	InternalValue() *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration
+	SetInternalValue(val *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -2668,6 +3000,16 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	_jsii_.Get(
 		j,
 		"encryptionOptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) InternalValue() *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration {
+	var returns *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2723,14 +3065,13 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	return returns
 }
 
-
 func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2742,7 +3083,7 @@ func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2752,6 +3093,14 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	_jsii_.Set(
 		j,
 		"encryptionOption",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) SetInternalValue(val *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2892,6 +3241,8 @@ type AthenaWorkgroupConfigurationResultConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	EncryptionConfiguration() AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference
 	EncryptionConfigurationInput() *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration
+	InternalValue() *AthenaWorkgroupConfigurationResultConfiguration
+	SetInternalValue(val *AthenaWorkgroupConfigurationResultConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OutputLocation() *string
@@ -2932,6 +3283,16 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 	_jsii_.Get(
 		j,
 		"encryptionConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) InternalValue() *AthenaWorkgroupConfigurationResultConfiguration {
+	var returns *AthenaWorkgroupConfigurationResultConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2987,14 +3348,13 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 	return returns
 }
 
-
 func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3006,9 +3366,17 @@ func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) SetInternalValue(val *AthenaWorkgroupConfigurationResultConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3151,4 +3519,3 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 		nil, // no parameters
 	)
 }
-

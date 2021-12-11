@@ -219,7 +219,7 @@ func NewMacieMemberAccountAssociation(scope constructs.Construct, id *string, co
 	j := jsiiProxy_MacieMemberAccountAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociation",
+		"hashicorp_aws.macie.MacieMemberAccountAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -232,7 +232,7 @@ func NewMacieMemberAccountAssociation_Override(m MacieMemberAccountAssociation, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociation",
+		"hashicorp_aws.macie.MacieMemberAccountAssociation",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -288,7 +288,7 @@ func MacieMemberAccountAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociation",
+		"hashicorp_aws.macie.MacieMemberAccountAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -301,7 +301,7 @@ func MacieMemberAccountAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociation",
+		"hashicorp_aws.macie.MacieMemberAccountAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -463,6 +463,7 @@ func (m *jsiiProxy_MacieMemberAccountAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie.
 type MacieMemberAccountAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -758,7 +759,7 @@ func NewMacieS3BucketAssociation(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_MacieS3BucketAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieS3BucketAssociation",
+		"hashicorp_aws.macie.MacieS3BucketAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -771,7 +772,7 @@ func NewMacieS3BucketAssociation_Override(m MacieS3BucketAssociation, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieS3BucketAssociation",
+		"hashicorp_aws.macie.MacieS3BucketAssociation",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -843,7 +844,7 @@ func MacieS3BucketAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie.MacieS3BucketAssociation",
+		"hashicorp_aws.macie.MacieS3BucketAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -856,7 +857,7 @@ func MacieS3BucketAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie.MacieS3BucketAssociation",
+		"hashicorp_aws.macie.MacieS3BucketAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1062,6 +1063,8 @@ type MacieS3BucketAssociationClassificationTypeOutputReference interface {
 	Continuous() *string
 	SetContinuous(val *string)
 	ContinuousInput() *string
+	InternalValue() *MacieS3BucketAssociationClassificationType
+	SetInternalValue(val *MacieS3BucketAssociationClassificationType)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OneTime() *string
@@ -1101,6 +1104,16 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Co
 	_jsii_.Get(
 		j,
 		"continuousInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) InternalValue() *MacieS3BucketAssociationClassificationType {
+	var returns *MacieS3BucketAssociationClassificationType
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1162,7 +1175,7 @@ func NewMacieS3BucketAssociationClassificationTypeOutputReference(terraformResou
 	j := jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieS3BucketAssociationClassificationTypeOutputReference",
+		"hashicorp_aws.macie.MacieS3BucketAssociationClassificationTypeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1174,7 +1187,7 @@ func NewMacieS3BucketAssociationClassificationTypeOutputReference_Override(m Mac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie.MacieS3BucketAssociationClassificationTypeOutputReference",
+		"hashicorp_aws.macie.MacieS3BucketAssociationClassificationTypeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -1184,6 +1197,14 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Se
 	_jsii_.Set(
 		j,
 		"continuous",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) SetInternalValue(val *MacieS3BucketAssociationClassificationType) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1320,6 +1341,7 @@ func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Re
 	)
 }
 
+// AWS Macie.
 type MacieS3BucketAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -275,7 +275,7 @@ func NewDataAwsServiceDiscoveryDnsNamespace(scope constructs.Construct, id *stri
 	j := jsiiProxy_DataAwsServiceDiscoveryDnsNamespace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespace",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -288,7 +288,7 @@ func NewDataAwsServiceDiscoveryDnsNamespace_Override(d DataAwsServiceDiscoveryDn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespace",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespace",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -352,7 +352,7 @@ func DataAwsServiceDiscoveryDnsNamespace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespace",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -365,7 +365,7 @@ func DataAwsServiceDiscoveryDnsNamespace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespace",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespace",
 		"tfResourceType",
 		&returns,
 	)
@@ -527,6 +527,7 @@ func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) ToTerraform() interface{
 	return returns
 }
 
+// AWS Service Discovery.
 type DataAwsServiceDiscoveryDnsNamespaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -835,7 +836,7 @@ func NewServiceDiscoveryHttpNamespace(scope constructs.Construct, id *string, co
 	j := jsiiProxy_ServiceDiscoveryHttpNamespace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -848,7 +849,7 @@ func NewServiceDiscoveryHttpNamespace_Override(s ServiceDiscoveryHttpNamespace, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespace",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -928,7 +929,7 @@ func ServiceDiscoveryHttpNamespace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -941,7 +942,7 @@ func ServiceDiscoveryHttpNamespace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespace",
 		"tfResourceType",
 		&returns,
 	)
@@ -1127,6 +1128,7 @@ func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Discovery.
 type ServiceDiscoveryHttpNamespaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1402,7 +1404,7 @@ func NewServiceDiscoveryInstance(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ServiceDiscoveryInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstance",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1415,7 +1417,7 @@ func NewServiceDiscoveryInstance_Override(s ServiceDiscoveryInstance, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstance",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstance",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1487,7 +1489,7 @@ func ServiceDiscoveryInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstance",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1500,7 +1502,7 @@ func ServiceDiscoveryInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstance",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -1662,6 +1664,7 @@ func (s *jsiiProxy_ServiceDiscoveryInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Discovery.
 type ServiceDiscoveryInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2006,7 +2009,7 @@ func NewServiceDiscoveryPrivateDnsNamespace(scope constructs.Construct, id *stri
 	j := jsiiProxy_ServiceDiscoveryPrivateDnsNamespace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2019,7 +2022,7 @@ func NewServiceDiscoveryPrivateDnsNamespace_Override(s ServiceDiscoveryPrivateDn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespace",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2107,7 +2110,7 @@ func ServiceDiscoveryPrivateDnsNamespace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2120,7 +2123,7 @@ func ServiceDiscoveryPrivateDnsNamespace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespace",
 		"tfResourceType",
 		&returns,
 	)
@@ -2306,6 +2309,7 @@ func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) ToTerraform() interface{
 	return returns
 }
 
+// AWS Service Discovery.
 type ServiceDiscoveryPrivateDnsNamespaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2631,7 +2635,7 @@ func NewServiceDiscoveryPublicDnsNamespace(scope constructs.Construct, id *strin
 	j := jsiiProxy_ServiceDiscoveryPublicDnsNamespace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2644,7 +2648,7 @@ func NewServiceDiscoveryPublicDnsNamespace_Override(s ServiceDiscoveryPublicDnsN
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespace",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2724,7 +2728,7 @@ func ServiceDiscoveryPublicDnsNamespace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2737,7 +2741,7 @@ func ServiceDiscoveryPublicDnsNamespace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespace",
 		"tfResourceType",
 		&returns,
 	)
@@ -2923,6 +2927,7 @@ func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Service Discovery.
 type ServiceDiscoveryPublicDnsNamespaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3355,7 +3360,7 @@ func NewServiceDiscoveryService(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ServiceDiscoveryService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryService",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3368,7 +3373,7 @@ func NewServiceDiscoveryService_Override(s ServiceDiscoveryService, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryService",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryService",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3464,7 +3469,7 @@ func ServiceDiscoveryService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryService",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3477,7 +3482,7 @@ func ServiceDiscoveryService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryService",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryService",
 		"tfResourceType",
 		&returns,
 	)
@@ -3727,6 +3732,7 @@ func (s *jsiiProxy_ServiceDiscoveryService) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Discovery.
 type ServiceDiscoveryServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3785,6 +3791,8 @@ type ServiceDiscoveryServiceDnsConfigOutputReference interface {
 	DnsRecords() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
 	SetDnsRecords(val *[]*ServiceDiscoveryServiceDnsConfigDnsRecords)
 	DnsRecordsInput() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
+	InternalValue() *ServiceDiscoveryServiceDnsConfig
+	SetInternalValue(val *ServiceDiscoveryServiceDnsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NamespaceId() *string
@@ -3826,6 +3834,16 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecordsIn
 	_jsii_.Get(
 		j,
 		"dnsRecordsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) InternalValue() *ServiceDiscoveryServiceDnsConfig {
+	var returns *ServiceDiscoveryServiceDnsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3907,7 +3925,7 @@ func NewServiceDiscoveryServiceDnsConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3919,7 +3937,7 @@ func NewServiceDiscoveryServiceDnsConfigOutputReference_Override(s ServiceDiscov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -3929,6 +3947,14 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetDnsRecord
 	_jsii_.Set(
 		j,
 		"dnsRecords",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetInternalValue(val *ServiceDiscoveryServiceDnsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4079,6 +4105,8 @@ type ServiceDiscoveryServiceHealthCheckConfigOutputReference interface {
 	FailureThreshold() *float64
 	SetFailureThreshold(val *float64)
 	FailureThresholdInput() *float64
+	InternalValue() *ServiceDiscoveryServiceHealthCheckConfig
+	SetInternalValue(val *ServiceDiscoveryServiceHealthCheckConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourcePath() *string
@@ -4122,6 +4150,16 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) Fail
 	_jsii_.Get(
 		j,
 		"failureThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) InternalValue() *ServiceDiscoveryServiceHealthCheckConfig {
+	var returns *ServiceDiscoveryServiceHealthCheckConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4203,7 +4241,7 @@ func NewServiceDiscoveryServiceHealthCheckConfigOutputReference(terraformResourc
 	j := jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4215,7 +4253,7 @@ func NewServiceDiscoveryServiceHealthCheckConfigOutputReference_Override(s Servi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4225,6 +4263,14 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetF
 	_jsii_.Set(
 		j,
 		"failureThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetInternalValue(val *ServiceDiscoveryServiceHealthCheckConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4387,6 +4433,8 @@ type ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference interface {
 	FailureThreshold() *float64
 	SetFailureThreshold(val *float64)
 	FailureThresholdInput() *float64
+	InternalValue() *ServiceDiscoveryServiceHealthCheckCustomConfig
+	SetInternalValue(val *ServiceDiscoveryServiceHealthCheckCustomConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4422,6 +4470,16 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 	_jsii_.Get(
 		j,
 		"failureThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) InternalValue() *ServiceDiscoveryServiceHealthCheckCustomConfig {
+	var returns *ServiceDiscoveryServiceHealthCheckCustomConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4463,7 +4521,7 @@ func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference(terraformR
 	j := jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4475,7 +4533,7 @@ func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference_Override(s
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4485,6 +4543,14 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 	_jsii_.Set(
 		j,
 		"failureThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) SetInternalValue(val *ServiceDiscoveryServiceHealthCheckCustomConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

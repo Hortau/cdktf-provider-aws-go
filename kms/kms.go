@@ -252,7 +252,7 @@ func NewDataAwsKmsAlias(scope constructs.Construct, id *string, config *DataAwsK
 	j := jsiiProxy_DataAwsKmsAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsAlias",
+		"hashicorp_aws.kms.DataAwsKmsAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -265,7 +265,7 @@ func NewDataAwsKmsAlias_Override(d DataAwsKmsAlias, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsAlias",
+		"hashicorp_aws.kms.DataAwsKmsAlias",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -321,7 +321,7 @@ func DataAwsKmsAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsAlias",
+		"hashicorp_aws.kms.DataAwsKmsAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -334,7 +334,7 @@ func DataAwsKmsAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsAlias",
+		"hashicorp_aws.kms.DataAwsKmsAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -496,6 +496,7 @@ func (d *jsiiProxy_DataAwsKmsAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -777,7 +778,7 @@ func NewDataAwsKmsCiphertext(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsKmsCiphertext{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertext",
+		"hashicorp_aws.kms.DataAwsKmsCiphertext",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -790,7 +791,7 @@ func NewDataAwsKmsCiphertext_Override(d DataAwsKmsCiphertext, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertext",
+		"hashicorp_aws.kms.DataAwsKmsCiphertext",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -862,7 +863,7 @@ func DataAwsKmsCiphertext_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertext",
+		"hashicorp_aws.kms.DataAwsKmsCiphertext",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -875,7 +876,7 @@ func DataAwsKmsCiphertext_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertext",
+		"hashicorp_aws.kms.DataAwsKmsCiphertext",
 		"tfResourceType",
 		&returns,
 	)
@@ -1045,6 +1046,7 @@ func (d *jsiiProxy_DataAwsKmsCiphertext) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsCiphertextConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1451,7 +1453,7 @@ func NewDataAwsKmsKey(scope constructs.Construct, id *string, config *DataAwsKms
 	j := jsiiProxy_DataAwsKmsKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKey",
+		"hashicorp_aws.kms.DataAwsKmsKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1464,7 +1466,7 @@ func NewDataAwsKmsKey_Override(d DataAwsKmsKey, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKey",
+		"hashicorp_aws.kms.DataAwsKmsKey",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1528,7 +1530,7 @@ func DataAwsKmsKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsKey",
+		"hashicorp_aws.kms.DataAwsKmsKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1541,7 +1543,7 @@ func DataAwsKmsKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsKey",
+		"hashicorp_aws.kms.DataAwsKmsKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -1724,6 +1726,7 @@ func (d *jsiiProxy_DataAwsKmsKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1829,7 +1832,7 @@ func NewDataAwsKmsKeyMultiRegionConfiguration(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfiguration",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1842,7 +1845,7 @@ func NewDataAwsKmsKeyMultiRegionConfiguration_Override(d DataAwsKmsKeyMultiRegio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfiguration",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2021,7 +2024,7 @@ func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey(terraformResource cdktf.
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2034,7 +2037,7 @@ func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey_Override(d DataAwsKmsKey
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2213,7 +2216,7 @@ func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys(terraformResource cdktf
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2226,7 +2229,7 @@ func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys_Override(d DataAwsKmsKe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2626,7 +2629,7 @@ func NewDataAwsKmsPublicKey(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsKmsPublicKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKey",
+		"hashicorp_aws.kms.DataAwsKmsPublicKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2639,7 +2642,7 @@ func NewDataAwsKmsPublicKey_Override(d DataAwsKmsPublicKey, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKey",
+		"hashicorp_aws.kms.DataAwsKmsPublicKey",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2703,7 +2706,7 @@ func DataAwsKmsPublicKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKey",
+		"hashicorp_aws.kms.DataAwsKmsPublicKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2716,7 +2719,7 @@ func DataAwsKmsPublicKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKey",
+		"hashicorp_aws.kms.DataAwsKmsPublicKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -2886,6 +2889,7 @@ func (d *jsiiProxy_DataAwsKmsPublicKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsPublicKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3111,7 +3115,7 @@ func NewDataAwsKmsSecret(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsKmsSecret{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecret",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3124,7 +3128,7 @@ func NewDataAwsKmsSecret_Override(d DataAwsKmsSecret, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecret",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3180,7 +3184,7 @@ func DataAwsKmsSecret_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecret",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3193,7 +3197,7 @@ func DataAwsKmsSecret_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecret",
 		"tfResourceType",
 		&returns,
 	)
@@ -3355,6 +3359,7 @@ func (d *jsiiProxy_DataAwsKmsSecret) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsSecretConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3592,7 +3597,7 @@ func NewDataAwsKmsSecrets(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsKmsSecrets{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsSecrets",
+		"hashicorp_aws.kms.DataAwsKmsSecrets",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3605,7 +3610,7 @@ func NewDataAwsKmsSecrets_Override(d DataAwsKmsSecrets, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.DataAwsKmsSecrets",
+		"hashicorp_aws.kms.DataAwsKmsSecrets",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3661,7 +3666,7 @@ func DataAwsKmsSecrets_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.DataAwsKmsSecrets",
+		"hashicorp_aws.kms.DataAwsKmsSecrets",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3674,7 +3679,7 @@ func DataAwsKmsSecrets_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.DataAwsKmsSecrets",
+		"hashicorp_aws.kms.DataAwsKmsSecrets",
 		"tfResourceType",
 		&returns,
 	)
@@ -3849,6 +3854,7 @@ func (d *jsiiProxy_DataAwsKmsSecrets) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type DataAwsKmsSecretsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4155,7 +4161,7 @@ func NewKmsAlias(scope constructs.Construct, id *string, config *KmsAliasConfig)
 	j := jsiiProxy_KmsAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsAlias",
+		"hashicorp_aws.kms.KmsAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4168,7 +4174,7 @@ func NewKmsAlias_Override(k KmsAlias, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsAlias",
+		"hashicorp_aws.kms.KmsAlias",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -4240,7 +4246,7 @@ func KmsAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsAlias",
+		"hashicorp_aws.kms.KmsAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4253,7 +4259,7 @@ func KmsAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsAlias",
+		"hashicorp_aws.kms.KmsAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -4431,6 +4437,7 @@ func (k *jsiiProxy_KmsAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4716,7 +4723,7 @@ func NewKmsCiphertext(scope constructs.Construct, id *string, config *KmsCiphert
 	j := jsiiProxy_KmsCiphertext{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsCiphertext",
+		"hashicorp_aws.kms.KmsCiphertext",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4729,7 +4736,7 @@ func NewKmsCiphertext_Override(k KmsCiphertext, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsCiphertext",
+		"hashicorp_aws.kms.KmsCiphertext",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -4801,7 +4808,7 @@ func KmsCiphertext_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsCiphertext",
+		"hashicorp_aws.kms.KmsCiphertext",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4814,7 +4821,7 @@ func KmsCiphertext_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsCiphertext",
+		"hashicorp_aws.kms.KmsCiphertext",
 		"tfResourceType",
 		&returns,
 	)
@@ -4984,6 +4991,7 @@ func (k *jsiiProxy_KmsCiphertext) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsCiphertextConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5472,7 +5480,7 @@ func NewKmsExternalKey(scope constructs.Construct, id *string, config *KmsExtern
 	j := jsiiProxy_KmsExternalKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsExternalKey",
+		"hashicorp_aws.kms.KmsExternalKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5485,7 +5493,7 @@ func NewKmsExternalKey_Override(k KmsExternalKey, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsExternalKey",
+		"hashicorp_aws.kms.KmsExternalKey",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -5613,7 +5621,7 @@ func KmsExternalKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsExternalKey",
+		"hashicorp_aws.kms.KmsExternalKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5626,7 +5634,7 @@ func KmsExternalKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsExternalKey",
+		"hashicorp_aws.kms.KmsExternalKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -5868,6 +5876,7 @@ func (k *jsiiProxy_KmsExternalKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsExternalKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6297,7 +6306,7 @@ func NewKmsGrant(scope constructs.Construct, id *string, config *KmsGrantConfig)
 	j := jsiiProxy_KmsGrant{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsGrant",
+		"hashicorp_aws.kms.KmsGrant",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6310,7 +6319,7 @@ func NewKmsGrant_Override(k KmsGrant, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsGrant",
+		"hashicorp_aws.kms.KmsGrant",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -6422,7 +6431,7 @@ func KmsGrant_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsGrant",
+		"hashicorp_aws.kms.KmsGrant",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6435,7 +6444,7 @@ func KmsGrant_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsGrant",
+		"hashicorp_aws.kms.KmsGrant",
 		"tfResourceType",
 		&returns,
 	)
@@ -6637,6 +6646,7 @@ func (k *jsiiProxy_KmsGrant) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsGrantConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7146,7 +7156,7 @@ func NewKmsKey(scope constructs.Construct, id *string, config *KmsKeyConfig) Kms
 	j := jsiiProxy_KmsKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsKey",
+		"hashicorp_aws.kms.KmsKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7159,7 +7169,7 @@ func NewKmsKey_Override(k KmsKey, scope constructs.Construct, id *string, config
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsKey",
+		"hashicorp_aws.kms.KmsKey",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -7295,7 +7305,7 @@ func KmsKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsKey",
+		"hashicorp_aws.kms.KmsKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7308,7 +7318,7 @@ func KmsKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsKey",
+		"hashicorp_aws.kms.KmsKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -7558,6 +7568,7 @@ func (k *jsiiProxy_KmsKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8072,7 +8083,7 @@ func NewKmsReplicaExternalKey(scope constructs.Construct, id *string, config *Km
 	j := jsiiProxy_KmsReplicaExternalKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsReplicaExternalKey",
+		"hashicorp_aws.kms.KmsReplicaExternalKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8085,7 +8096,7 @@ func NewKmsReplicaExternalKey_Override(k KmsReplicaExternalKey, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsReplicaExternalKey",
+		"hashicorp_aws.kms.KmsReplicaExternalKey",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -8213,7 +8224,7 @@ func KmsReplicaExternalKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsReplicaExternalKey",
+		"hashicorp_aws.kms.KmsReplicaExternalKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8226,7 +8237,7 @@ func KmsReplicaExternalKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsReplicaExternalKey",
+		"hashicorp_aws.kms.KmsReplicaExternalKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -8460,6 +8471,7 @@ func (k *jsiiProxy_KmsReplicaExternalKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsReplicaExternalKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8924,7 +8936,7 @@ func NewKmsReplicaKey(scope constructs.Construct, id *string, config *KmsReplica
 	j := jsiiProxy_KmsReplicaKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsReplicaKey",
+		"hashicorp_aws.kms.KmsReplicaKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8937,7 +8949,7 @@ func NewKmsReplicaKey_Override(k KmsReplicaKey, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.KMS.KmsReplicaKey",
+		"hashicorp_aws.kms.KmsReplicaKey",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -9049,7 +9061,7 @@ func KmsReplicaKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.KMS.KmsReplicaKey",
+		"hashicorp_aws.kms.KmsReplicaKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9062,7 +9074,7 @@ func KmsReplicaKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.KMS.KmsReplicaKey",
+		"hashicorp_aws.kms.KmsReplicaKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -9280,6 +9292,7 @@ func (k *jsiiProxy_KmsReplicaKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Key Management Service.
 type KmsReplicaKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

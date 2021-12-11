@@ -1,4 +1,4 @@
-package cloudwatcheventbridge
+package eventbridge
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
-	"github.com/hortau/cdktf-provider-aws-go/cloudwatcheventbridge/internal"
+	"github.com/hortau/cdktf-provider-aws-go/eventbridge/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html aws_cloudwatch_event_api_destination}.
@@ -347,7 +347,7 @@ func NewCloudwatchEventApiDestination(scope constructs.Construct, id *string, co
 	j := jsiiProxy_CloudwatchEventApiDestination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestination",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -360,7 +360,7 @@ func NewCloudwatchEventApiDestination_Override(c CloudwatchEventApiDestination, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestination",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestination",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -456,7 +456,7 @@ func CloudwatchEventApiDestination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestination",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -469,7 +469,7 @@ func CloudwatchEventApiDestination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventApiDestination",
+		"hashicorp_aws.eventbridge.CloudwatchEventApiDestination",
 		"tfResourceType",
 		&returns,
 	)
@@ -647,6 +647,7 @@ func (c *jsiiProxy_CloudwatchEventApiDestination) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventApiDestinationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -986,7 +987,7 @@ func NewCloudwatchEventArchive(scope constructs.Construct, id *string, config *C
 	j := jsiiProxy_CloudwatchEventArchive{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchive",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchive",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -999,7 +1000,7 @@ func NewCloudwatchEventArchive_Override(c CloudwatchEventArchive, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchive",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchive",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1087,7 +1088,7 @@ func CloudwatchEventArchive_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchive",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchive",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1100,7 +1101,7 @@ func CloudwatchEventArchive_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventArchive",
+		"hashicorp_aws.eventbridge.CloudwatchEventArchive",
 		"tfResourceType",
 		&returns,
 	)
@@ -1286,6 +1287,7 @@ func (c *jsiiProxy_CloudwatchEventArchive) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventArchiveConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1600,7 +1602,7 @@ func NewCloudwatchEventBus(scope constructs.Construct, id *string, config *Cloud
 	j := jsiiProxy_CloudwatchEventBus{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBus",
+		"hashicorp_aws.eventbridge.CloudwatchEventBus",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1613,7 +1615,7 @@ func NewCloudwatchEventBus_Override(c CloudwatchEventBus, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBus",
+		"hashicorp_aws.eventbridge.CloudwatchEventBus",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1693,7 +1695,7 @@ func CloudwatchEventBus_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBus",
+		"hashicorp_aws.eventbridge.CloudwatchEventBus",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1706,7 +1708,7 @@ func CloudwatchEventBus_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBus",
+		"hashicorp_aws.eventbridge.CloudwatchEventBus",
 		"tfResourceType",
 		&returns,
 	)
@@ -1892,6 +1894,7 @@ func (c *jsiiProxy_CloudwatchEventBus) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventBusConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2145,7 +2148,7 @@ func NewCloudwatchEventBusPolicy(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_CloudwatchEventBusPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2158,7 +2161,7 @@ func NewCloudwatchEventBusPolicy_Override(c CloudwatchEventBusPolicy, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2222,7 +2225,7 @@ func CloudwatchEventBusPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2235,7 +2238,7 @@ func CloudwatchEventBusPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventBusPolicy",
+		"hashicorp_aws.eventbridge.CloudwatchEventBusPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2405,6 +2408,7 @@ func (c *jsiiProxy_CloudwatchEventBusPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventBusPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2722,7 +2726,7 @@ func NewCloudwatchEventConnection(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CloudwatchEventConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2735,7 +2739,7 @@ func NewCloudwatchEventConnection_Override(c CloudwatchEventConnection, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnection",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2807,7 +2811,7 @@ func CloudwatchEventConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2820,7 +2824,7 @@ func CloudwatchEventConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -3026,6 +3030,8 @@ type CloudwatchEventConnectionAuthParametersApiKey struct {
 
 type CloudwatchEventConnectionAuthParametersApiKeyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventConnectionAuthParametersApiKey
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersApiKey)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -3049,6 +3055,16 @@ type CloudwatchEventConnectionAuthParametersApiKeyOutputReference interface {
 // The jsii proxy struct for CloudwatchEventConnectionAuthParametersApiKeyOutputReference
 type jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersApiKey {
+	var returns *CloudwatchEventConnectionAuthParametersApiKey
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) IsSingleItem() *bool {
@@ -3127,7 +3143,7 @@ func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference(terraformRe
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3139,9 +3155,17 @@ func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference_Override(c 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersApiKeyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersApiKey) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3278,6 +3302,8 @@ type CloudwatchEventConnectionAuthParametersBasic struct {
 
 type CloudwatchEventConnectionAuthParametersBasicOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventConnectionAuthParametersBasic
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersBasic)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Password() *string
@@ -3301,6 +3327,16 @@ type CloudwatchEventConnectionAuthParametersBasicOutputReference interface {
 // The jsii proxy struct for CloudwatchEventConnectionAuthParametersBasicOutputReference
 type jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersBasic {
+	var returns *CloudwatchEventConnectionAuthParametersBasic
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) IsSingleItem() *bool {
@@ -3379,7 +3415,7 @@ func NewCloudwatchEventConnectionAuthParametersBasicOutputReference(terraformRes
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3391,9 +3427,17 @@ func NewCloudwatchEventConnectionAuthParametersBasicOutputReference_Override(c C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersBasicOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersBasic) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3562,6 +3606,8 @@ type CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputRefere
 	Header() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
 	SetHeader(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader)
 	HeaderInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
+	InternalValue() *CloudwatchEventConnectionAuthParametersInvocationHttpParameters
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersInvocationHttpParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryString() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString
@@ -3627,6 +3673,16 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersInvocationHttpParameters {
+	var returns *CloudwatchEventConnectionAuthParametersInvocationHttpParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3683,7 +3739,7 @@ func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputRef
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3695,7 +3751,7 @@ func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3713,6 +3769,14 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	_jsii_.Set(
 		j,
 		"header",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersInvocationHttpParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3896,6 +3960,8 @@ type CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *CloudwatchEventConnectionAuthParametersOauthClientParameters
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauthClientParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3955,6 +4021,16 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersOauthClientParameters {
+	var returns *CloudwatchEventConnectionAuthParametersOauthClientParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3991,7 +4067,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputRefere
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4003,7 +4079,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputRefere
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4021,6 +4097,14 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauthClientParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4174,6 +4258,8 @@ type CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputRefere
 	Header() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
 	SetHeader(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader)
 	HeaderInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
+	InternalValue() *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryString() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString
@@ -4239,6 +4325,16 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters {
+	var returns *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4295,7 +4391,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputRef
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4307,7 +4403,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4325,6 +4421,14 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	_jsii_.Set(
 		j,
 		"header",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4488,6 +4592,8 @@ type CloudwatchEventConnectionAuthParametersOauthOutputReference interface {
 	HttpMethod() *string
 	SetHttpMethod(val *string)
 	HttpMethodInput() *string
+	InternalValue() *CloudwatchEventConnectionAuthParametersOauth
+	SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauth)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OauthHttpParameters() CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference
@@ -4572,6 +4678,16 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) InternalValue() *CloudwatchEventConnectionAuthParametersOauth {
+	var returns *CloudwatchEventConnectionAuthParametersOauth
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4628,7 +4744,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOutputReference(terraformRes
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4640,7 +4756,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOutputReference_Override(c C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOauthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4658,6 +4774,14 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 	_jsii_.Set(
 		j,
 		"httpMethod",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauth) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4800,6 +4924,8 @@ type CloudwatchEventConnectionAuthParametersOutputReference interface {
 	ApiKeyInput() *CloudwatchEventConnectionAuthParametersApiKey
 	Basic() CloudwatchEventConnectionAuthParametersBasicOutputReference
 	BasicInput() *CloudwatchEventConnectionAuthParametersBasic
+	InternalValue() *CloudwatchEventConnectionAuthParameters
+	SetInternalValue(val *CloudwatchEventConnectionAuthParameters)
 	InvocationHttpParameters() CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference
 	InvocationHttpParametersInput() *CloudwatchEventConnectionAuthParametersInvocationHttpParameters
 	IsSingleItem() *bool
@@ -4866,6 +4992,16 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) Basic
 	_jsii_.Get(
 		j,
 		"basicInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) InternalValue() *CloudwatchEventConnectionAuthParameters {
+	var returns *CloudwatchEventConnectionAuthParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4947,7 +5083,7 @@ func NewCloudwatchEventConnectionAuthParametersOutputReference(terraformResource
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4959,9 +5095,17 @@ func NewCloudwatchEventConnectionAuthParametersOutputReference_Override(c Cloudw
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventConnectionAuthParametersOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventConnectionAuthParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) SetInternalValue(val *CloudwatchEventConnectionAuthParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5137,6 +5281,7 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) Reset
 	)
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5463,7 +5608,7 @@ func NewCloudwatchEventPermission(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CloudwatchEventPermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermission",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5476,7 +5621,7 @@ func NewCloudwatchEventPermission_Override(c CloudwatchEventPermission, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermission",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermission",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -5556,7 +5701,7 @@ func CloudwatchEventPermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermission",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5569,7 +5714,7 @@ func CloudwatchEventPermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermission",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -5774,6 +5919,8 @@ type CloudwatchEventPermissionCondition struct {
 
 type CloudwatchEventPermissionConditionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventPermissionCondition
+	SetInternalValue(val *CloudwatchEventPermissionCondition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -5800,6 +5947,16 @@ type CloudwatchEventPermissionConditionOutputReference interface {
 // The jsii proxy struct for CloudwatchEventPermissionConditionOutputReference
 type jsiiProxy_CloudwatchEventPermissionConditionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) InternalValue() *CloudwatchEventPermissionCondition {
+	var returns *CloudwatchEventPermissionCondition
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) IsSingleItem() *bool {
@@ -5898,7 +6055,7 @@ func NewCloudwatchEventPermissionConditionOutputReference(terraformResource cdkt
 	j := jsiiProxy_CloudwatchEventPermissionConditionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermissionConditionOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermissionConditionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5910,9 +6067,17 @@ func NewCloudwatchEventPermissionConditionOutputReference_Override(c CloudwatchE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventPermissionConditionOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventPermissionConditionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) SetInternalValue(val *CloudwatchEventPermissionCondition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6048,6 +6213,7 @@ func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) Interpolat
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventPermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6509,7 +6675,7 @@ func NewCloudwatchEventRule(scope constructs.Construct, id *string, config *Clou
 	j := jsiiProxy_CloudwatchEventRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRule",
+		"hashicorp_aws.eventbridge.CloudwatchEventRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6522,7 +6688,7 @@ func NewCloudwatchEventRule_Override(c CloudwatchEventRule, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRule",
+		"hashicorp_aws.eventbridge.CloudwatchEventRule",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -6650,7 +6816,7 @@ func CloudwatchEventRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRule",
+		"hashicorp_aws.eventbridge.CloudwatchEventRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6663,7 +6829,7 @@ func CloudwatchEventRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventRule",
+		"hashicorp_aws.eventbridge.CloudwatchEventRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -6905,6 +7071,7 @@ func (c *jsiiProxy_CloudwatchEventRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7529,7 +7696,7 @@ func NewCloudwatchEventTarget(scope constructs.Construct, id *string, config *Cl
 	j := jsiiProxy_CloudwatchEventTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7542,7 +7709,7 @@ func NewCloudwatchEventTarget_Override(c CloudwatchEventTarget, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTarget",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -7654,7 +7821,7 @@ func CloudwatchEventTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7667,7 +7834,7 @@ func CloudwatchEventTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTarget",
+		"hashicorp_aws.eventbridge.CloudwatchEventTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -8037,6 +8204,8 @@ type CloudwatchEventTargetBatchTargetOutputReference interface {
 	ArraySize() *float64
 	SetArraySize(val *float64)
 	ArraySizeInput() *float64
+	InternalValue() *CloudwatchEventTargetBatchTarget
+	SetInternalValue(val *CloudwatchEventTargetBatchTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JobAttempts() *float64
@@ -8082,6 +8251,16 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) ArraySizeInp
 	_jsii_.Get(
 		j,
 		"arraySizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) InternalValue() *CloudwatchEventTargetBatchTarget {
+	var returns *CloudwatchEventTargetBatchTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8183,7 +8362,7 @@ func NewCloudwatchEventTargetBatchTargetOutputReference(terraformResource cdktf.
 	j := jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetBatchTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetBatchTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8195,7 +8374,7 @@ func NewCloudwatchEventTargetBatchTargetOutputReference_Override(c CloudwatchEve
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetBatchTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetBatchTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8205,6 +8384,14 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetArraySize
 	_jsii_.Set(
 		j,
 		"arraySize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetBatchTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8357,6 +8544,7 @@ func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) ResetJobAtte
 	)
 }
 
+// AWS CloudWatch Event Bridge.
 type CloudwatchEventTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8432,6 +8620,8 @@ type CloudwatchEventTargetDeadLetterConfigOutputReference interface {
 	Arn() *string
 	SetArn(val *string)
 	ArnInput() *string
+	InternalValue() *CloudwatchEventTargetDeadLetterConfig
+	SetInternalValue(val *CloudwatchEventTargetDeadLetterConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8467,6 +8657,16 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) ArnInpu
 	_jsii_.Get(
 		j,
 		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) InternalValue() *CloudwatchEventTargetDeadLetterConfig {
+	var returns *CloudwatchEventTargetDeadLetterConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8508,7 +8708,7 @@ func NewCloudwatchEventTargetDeadLetterConfigOutputReference(terraformResource c
 	j := jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8520,7 +8720,7 @@ func NewCloudwatchEventTargetDeadLetterConfigOutputReference_Override(c Cloudwat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetDeadLetterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8530,6 +8730,14 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetArn(
 	_jsii_.Set(
 		j,
 		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetInternalValue(val *CloudwatchEventTargetDeadLetterConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8693,6 +8901,8 @@ type CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference interface
 	AssignPublicIp() interface{}
 	SetAssignPublicIp(val interface{})
 	AssignPublicIpInput() interface{}
+	InternalValue() *CloudwatchEventTargetEcsTargetNetworkConfiguration
+	SetInternalValue(val *CloudwatchEventTargetEcsTargetNetworkConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroups() *[]*string
@@ -8735,6 +8945,16 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 	_jsii_.Get(
 		j,
 		"assignPublicIpInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) InternalValue() *CloudwatchEventTargetEcsTargetNetworkConfiguration {
+	var returns *CloudwatchEventTargetEcsTargetNetworkConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8816,7 +9036,7 @@ func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference(terraf
 	j := jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8828,7 +9048,7 @@ func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8838,6 +9058,14 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 	_jsii_.Set(
 		j,
 		"assignPublicIp",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) SetInternalValue(val *CloudwatchEventTargetEcsTargetNetworkConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8993,6 +9221,8 @@ type CloudwatchEventTargetEcsTargetOutputReference interface {
 	Group() *string
 	SetGroup(val *string)
 	GroupInput() *string
+	InternalValue() *CloudwatchEventTargetEcsTarget
+	SetInternalValue(val *CloudwatchEventTargetEcsTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchType() *string
@@ -9101,6 +9331,16 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GroupInput() *
 	_jsii_.Get(
 		j,
 		"groupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) InternalValue() *CloudwatchEventTargetEcsTarget {
+	var returns *CloudwatchEventTargetEcsTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9302,7 +9542,7 @@ func NewCloudwatchEventTargetEcsTargetOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9314,7 +9554,7 @@ func NewCloudwatchEventTargetEcsTargetOutputReference_Override(c CloudwatchEvent
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetEcsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetEcsTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -9340,6 +9580,14 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetGroup(val *
 	_jsii_.Set(
 		j,
 		"group",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetEcsTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9617,6 +9865,8 @@ type CloudwatchEventTargetHttpTargetOutputReference interface {
 	HeaderParameters() interface{}
 	SetHeaderParameters(val interface{})
 	HeaderParametersInput() interface{}
+	InternalValue() *CloudwatchEventTargetHttpTarget
+	SetInternalValue(val *CloudwatchEventTargetHttpTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PathParameterValues() *[]*string
@@ -9660,6 +9910,16 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParamet
 	_jsii_.Get(
 		j,
 		"headerParametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) InternalValue() *CloudwatchEventTargetHttpTarget {
+	var returns *CloudwatchEventTargetHttpTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9741,7 +10001,7 @@ func NewCloudwatchEventTargetHttpTargetOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetHttpTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetHttpTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9753,7 +10013,7 @@ func NewCloudwatchEventTargetHttpTargetOutputReference_Override(c CloudwatchEven
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetHttpTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetHttpTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -9763,6 +10023,14 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetHeaderPara
 	_jsii_.Set(
 		j,
 		"headerParameters",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetHttpTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9930,6 +10198,8 @@ type CloudwatchEventTargetInputTransformerOutputReference interface {
 	InputTemplate() *string
 	SetInputTemplate(val *string)
 	InputTemplateInput() *string
+	InternalValue() *CloudwatchEventTargetInputTransformer
+	SetInternalValue(val *CloudwatchEventTargetInputTransformer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9990,6 +10260,16 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputTe
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InternalValue() *CloudwatchEventTargetInputTransformer {
+	var returns *CloudwatchEventTargetInputTransformer
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10026,7 +10306,7 @@ func NewCloudwatchEventTargetInputTransformerOutputReference(terraformResource c
 	j := jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetInputTransformerOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetInputTransformerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10038,7 +10318,7 @@ func NewCloudwatchEventTargetInputTransformerOutputReference_Override(c Cloudwat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetInputTransformerOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetInputTransformerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -10056,6 +10336,14 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetInpu
 	_jsii_.Set(
 		j,
 		"inputTemplate",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetInternalValue(val *CloudwatchEventTargetInputTransformer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10183,6 +10471,8 @@ type CloudwatchEventTargetKinesisTarget struct {
 
 type CloudwatchEventTargetKinesisTargetOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventTargetKinesisTarget
+	SetInternalValue(val *CloudwatchEventTargetKinesisTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PartitionKeyPath() *string
@@ -10204,6 +10494,16 @@ type CloudwatchEventTargetKinesisTargetOutputReference interface {
 // The jsii proxy struct for CloudwatchEventTargetKinesisTargetOutputReference
 type jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) InternalValue() *CloudwatchEventTargetKinesisTarget {
+	var returns *CloudwatchEventTargetKinesisTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) IsSingleItem() *bool {
@@ -10262,7 +10562,7 @@ func NewCloudwatchEventTargetKinesisTargetOutputReference(terraformResource cdkt
 	j := jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetKinesisTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetKinesisTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10274,9 +10574,17 @@ func NewCloudwatchEventTargetKinesisTargetOutputReference_Override(c CloudwatchE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetKinesisTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetKinesisTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetKinesisTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10427,6 +10735,8 @@ type CloudwatchEventTargetRedshiftTargetOutputReference interface {
 	DbUser() *string
 	SetDbUser(val *string)
 	DbUserInput() *string
+	InternalValue() *CloudwatchEventTargetRedshiftTarget
+	SetInternalValue(val *CloudwatchEventTargetRedshiftTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretsManagerArn() *string
@@ -10498,6 +10808,16 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) DbUserInp
 	_jsii_.Get(
 		j,
 		"dbUserInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) InternalValue() *CloudwatchEventTargetRedshiftTarget {
+	var returns *CloudwatchEventTargetRedshiftTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10619,7 +10939,7 @@ func NewCloudwatchEventTargetRedshiftTargetOutputReference(terraformResource cdk
 	j := jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRedshiftTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRedshiftTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10631,7 +10951,7 @@ func NewCloudwatchEventTargetRedshiftTargetOutputReference_Override(c Cloudwatch
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRedshiftTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRedshiftTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -10649,6 +10969,14 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetDbUser
 	_jsii_.Set(
 		j,
 		"dbUser",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetRedshiftTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10842,6 +11170,8 @@ type CloudwatchEventTargetRetryPolicy struct {
 
 type CloudwatchEventTargetRetryPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventTargetRetryPolicy
+	SetInternalValue(val *CloudwatchEventTargetRetryPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaximumEventAgeInSeconds() *float64
@@ -10867,6 +11197,16 @@ type CloudwatchEventTargetRetryPolicyOutputReference interface {
 // The jsii proxy struct for CloudwatchEventTargetRetryPolicyOutputReference
 type jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) InternalValue() *CloudwatchEventTargetRetryPolicy {
+	var returns *CloudwatchEventTargetRetryPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) IsSingleItem() *bool {
@@ -10945,7 +11285,7 @@ func NewCloudwatchEventTargetRetryPolicyOutputReference(terraformResource cdktf.
 	j := jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRetryPolicyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10957,9 +11297,17 @@ func NewCloudwatchEventTargetRetryPolicyOutputReference_Override(c CloudwatchEve
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetRetryPolicyOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) SetInternalValue(val *CloudwatchEventTargetRetryPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11117,6 +11465,8 @@ type CloudwatchEventTargetSqsTarget struct {
 
 type CloudwatchEventTargetSqsTargetOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudwatchEventTargetSqsTarget
+	SetInternalValue(val *CloudwatchEventTargetSqsTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageGroupId() *string
@@ -11138,6 +11488,16 @@ type CloudwatchEventTargetSqsTargetOutputReference interface {
 // The jsii proxy struct for CloudwatchEventTargetSqsTargetOutputReference
 type jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) InternalValue() *CloudwatchEventTargetSqsTarget {
+	var returns *CloudwatchEventTargetSqsTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) IsSingleItem() *bool {
@@ -11196,7 +11556,7 @@ func NewCloudwatchEventTargetSqsTargetOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetSqsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetSqsTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11208,9 +11568,17 @@ func NewCloudwatchEventTargetSqsTargetOutputReference_Override(c CloudwatchEvent
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.CloudwatchEventTargetSqsTargetOutputReference",
+		"hashicorp_aws.eventbridge.CloudwatchEventTargetSqsTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) SetInternalValue(val *CloudwatchEventTargetSqsTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11581,7 +11949,7 @@ func NewDataAwsCloudwatchEventConnection(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsCloudwatchEventConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11594,7 +11962,7 @@ func NewDataAwsCloudwatchEventConnection_Override(d DataAwsCloudwatchEventConnec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -11650,7 +12018,7 @@ func DataAwsCloudwatchEventConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11663,7 +12031,7 @@ func DataAwsCloudwatchEventConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventConnection",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -11825,6 +12193,7 @@ func (d *jsiiProxy_DataAwsCloudwatchEventConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type DataAwsCloudwatchEventConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12093,7 +12462,7 @@ func NewDataAwsCloudwatchEventSource(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsCloudwatchEventSource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSource",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12106,7 +12475,7 @@ func NewDataAwsCloudwatchEventSource_Override(d DataAwsCloudwatchEventSource, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSource",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSource",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12162,7 +12531,7 @@ func DataAwsCloudwatchEventSource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSource",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12175,7 +12544,7 @@ func DataAwsCloudwatchEventSource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatchEventBridge.DataAwsCloudwatchEventSource",
+		"hashicorp_aws.eventbridge.DataAwsCloudwatchEventSource",
 		"tfResourceType",
 		&returns,
 	)
@@ -12345,6 +12714,7 @@ func (d *jsiiProxy_DataAwsCloudwatchEventSource) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch Event Bridge.
 type DataAwsCloudwatchEventSourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

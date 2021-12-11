@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.DataAwsSnsTopic",
+		"hashicorp_aws.sns.DataAwsSnsTopic",
 		reflect.TypeOf((*DataAwsSnsTopic)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.DataAwsSnsTopicConfig",
+		"hashicorp_aws.sns.DataAwsSnsTopicConfig",
 		reflect.TypeOf((*DataAwsSnsTopicConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.SnsPlatformApplication",
+		"hashicorp_aws.sns.SnsPlatformApplication",
 		reflect.TypeOf((*SnsPlatformApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -120,11 +120,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.SnsPlatformApplicationConfig",
+		"hashicorp_aws.sns.SnsPlatformApplicationConfig",
 		reflect.TypeOf((*SnsPlatformApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.SnsSmsPreferences",
+		"hashicorp_aws.sns.SnsSmsPreferences",
 		reflect.TypeOf((*SnsSmsPreferences)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -179,11 +179,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.SnsSmsPreferencesConfig",
+		"hashicorp_aws.sns.SnsSmsPreferencesConfig",
 		reflect.TypeOf((*SnsSmsPreferencesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.SnsTopic",
+		"hashicorp_aws.sns.SnsTopic",
 		reflect.TypeOf((*SnsTopic)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -297,11 +297,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.SnsTopicConfig",
+		"hashicorp_aws.sns.SnsTopicConfig",
 		reflect.TypeOf((*SnsTopicConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.SnsTopicPolicy",
+		"hashicorp_aws.sns.SnsTopicPolicy",
 		reflect.TypeOf((*SnsTopicPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -343,11 +343,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.SnsTopicPolicyConfig",
+		"hashicorp_aws.sns.SnsTopicPolicyConfig",
 		reflect.TypeOf((*SnsTopicPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SNS.SnsTopicSubscription",
+		"hashicorp_aws.sns.SnsTopicSubscription",
 		reflect.TypeOf((*SnsTopicSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -415,7 +415,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SNS.SnsTopicSubscriptionConfig",
+		"hashicorp_aws.sns.SnsTopicSubscriptionConfig",
 		reflect.TypeOf((*SnsTopicSubscriptionConfig)(nil)).Elem(),
 	)
 }

@@ -296,7 +296,7 @@ func NewDataAwsS3Bucket(scope constructs.Construct, id *string, config *DataAwsS
 	j := jsiiProxy_DataAwsS3Bucket{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3Bucket",
+		"hashicorp_aws.s3.DataAwsS3Bucket",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -309,7 +309,7 @@ func NewDataAwsS3Bucket_Override(d DataAwsS3Bucket, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3Bucket",
+		"hashicorp_aws.s3.DataAwsS3Bucket",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -365,7 +365,7 @@ func DataAwsS3Bucket_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.DataAwsS3Bucket",
+		"hashicorp_aws.s3.DataAwsS3Bucket",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -378,7 +378,7 @@ func DataAwsS3Bucket_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.DataAwsS3Bucket",
+		"hashicorp_aws.s3.DataAwsS3Bucket",
 		"tfResourceType",
 		&returns,
 	)
@@ -540,6 +540,7 @@ func (d *jsiiProxy_DataAwsS3Bucket) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type DataAwsS3BucketConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1068,7 +1069,7 @@ func NewDataAwsS3BucketObject(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsS3BucketObject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3BucketObject",
+		"hashicorp_aws.s3.DataAwsS3BucketObject",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1081,7 +1082,7 @@ func NewDataAwsS3BucketObject_Override(d DataAwsS3BucketObject, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3BucketObject",
+		"hashicorp_aws.s3.DataAwsS3BucketObject",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1169,7 +1170,7 @@ func DataAwsS3BucketObject_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.DataAwsS3BucketObject",
+		"hashicorp_aws.s3.DataAwsS3BucketObject",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1182,7 +1183,7 @@ func DataAwsS3BucketObject_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.DataAwsS3BucketObject",
+		"hashicorp_aws.s3.DataAwsS3BucketObject",
 		"tfResourceType",
 		&returns,
 	)
@@ -1381,6 +1382,7 @@ func (d *jsiiProxy_DataAwsS3BucketObject) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type DataAwsS3BucketObjectConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1789,7 +1791,7 @@ func NewDataAwsS3BucketObjects(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsS3BucketObjects{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3BucketObjects",
+		"hashicorp_aws.s3.DataAwsS3BucketObjects",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1802,7 +1804,7 @@ func NewDataAwsS3BucketObjects_Override(d DataAwsS3BucketObjects, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.DataAwsS3BucketObjects",
+		"hashicorp_aws.s3.DataAwsS3BucketObjects",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1906,7 +1908,7 @@ func DataAwsS3BucketObjects_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.DataAwsS3BucketObjects",
+		"hashicorp_aws.s3.DataAwsS3BucketObjects",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1919,7 +1921,7 @@ func DataAwsS3BucketObjects_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.DataAwsS3BucketObjects",
+		"hashicorp_aws.s3.DataAwsS3BucketObjects",
 		"tfResourceType",
 		&returns,
 	)
@@ -2129,6 +2131,7 @@ func (d *jsiiProxy_DataAwsS3BucketObjects) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type DataAwsS3BucketObjectsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2160,6 +2163,7 @@ type S3AccessPoint interface {
 	AccountId() *string
 	SetAccountId(val *string)
 	AccountIdInput() *string
+	Alias() *string
 	Arn() *string
 	Bucket() *string
 	SetBucket(val *string)
@@ -2196,6 +2200,7 @@ type S3AccessPoint interface {
 	VpcConfiguration() S3AccessPointVpcConfigurationOutputReference
 	VpcConfigurationInput() *S3AccessPointVpcConfiguration
 	AddOverride(path *string, value interface{})
+	Endpoints(key *string) *string
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
@@ -2235,6 +2240,16 @@ func (j *jsiiProxy_S3AccessPoint) AccountIdInput() *string {
 	_jsii_.Get(
 		j,
 		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3AccessPoint) Alias() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"alias",
 		&returns,
 	)
 	return returns
@@ -2527,7 +2542,7 @@ func NewS3AccessPoint(scope constructs.Construct, id *string, config *S3AccessPo
 	j := jsiiProxy_S3AccessPoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPoint",
+		"hashicorp_aws.s3.S3AccessPoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2540,7 +2555,7 @@ func NewS3AccessPoint_Override(s S3AccessPoint, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPoint",
+		"hashicorp_aws.s3.S3AccessPoint",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2620,7 +2635,7 @@ func S3AccessPoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3AccessPoint",
+		"hashicorp_aws.s3.S3AccessPoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2633,7 +2648,7 @@ func S3AccessPoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3AccessPoint",
+		"hashicorp_aws.s3.S3AccessPoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -2647,6 +2662,19 @@ func (s *jsiiProxy_S3AccessPoint) AddOverride(path *string, value interface{}) {
 		"addOverride",
 		[]interface{}{path, value},
 	)
+}
+
+func (s *jsiiProxy_S3AccessPoint) Endpoints(key *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"endpoints",
+		[]interface{}{key},
+		&returns,
+	)
+
+	return returns
 }
 
 // Experimental.
@@ -2843,6 +2871,7 @@ func (s *jsiiProxy_S3AccessPoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3AccessPointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2892,6 +2921,8 @@ type S3AccessPointPublicAccessBlockConfigurationOutputReference interface {
 	IgnorePublicAcls() interface{}
 	SetIgnorePublicAcls(val interface{})
 	IgnorePublicAclsInput() interface{}
+	InternalValue() *S3AccessPointPublicAccessBlockConfiguration
+	SetInternalValue(val *S3AccessPointPublicAccessBlockConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RestrictPublicBuckets() interface{}
@@ -2978,6 +3009,16 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) I
 	return returns
 }
 
+func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) InternalValue() *S3AccessPointPublicAccessBlockConfiguration {
+	var returns *S3AccessPointPublicAccessBlockConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3034,7 +3075,7 @@ func NewS3AccessPointPublicAccessBlockConfigurationOutputReference(terraformReso
 	j := jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3046,7 +3087,7 @@ func NewS3AccessPointPublicAccessBlockConfigurationOutputReference_Override(s S3
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -3072,6 +3113,14 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) S
 	_jsii_.Set(
 		j,
 		"ignorePublicAcls",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) SetInternalValue(val *S3AccessPointPublicAccessBlockConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3231,6 +3280,8 @@ type S3AccessPointVpcConfiguration struct {
 
 type S3AccessPointVpcConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3AccessPointVpcConfiguration
+	SetInternalValue(val *S3AccessPointVpcConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3251,6 +3302,16 @@ type S3AccessPointVpcConfigurationOutputReference interface {
 // The jsii proxy struct for S3AccessPointVpcConfigurationOutputReference
 type jsiiProxy_S3AccessPointVpcConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) InternalValue() *S3AccessPointVpcConfiguration {
+	var returns *S3AccessPointVpcConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) IsSingleItem() *bool {
@@ -3309,7 +3370,7 @@ func NewS3AccessPointVpcConfigurationOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_S3AccessPointVpcConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPointVpcConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3321,9 +3382,17 @@ func NewS3AccessPointVpcConfigurationOutputReference_Override(s S3AccessPointVpc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccessPointVpcConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) SetInternalValue(val *S3AccessPointVpcConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3750,7 +3819,7 @@ func NewS3AccountPublicAccessBlock(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_S3AccountPublicAccessBlock{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlock",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlock",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3763,7 +3832,7 @@ func NewS3AccountPublicAccessBlock_Override(s S3AccountPublicAccessBlock, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlock",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlock",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3851,7 +3920,7 @@ func S3AccountPublicAccessBlock_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlock",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlock",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3864,7 +3933,7 @@ func S3AccountPublicAccessBlock_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlock",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlock",
 		"tfResourceType",
 		&returns,
 	)
@@ -4066,6 +4135,7 @@ func (s *jsiiProxy_S3AccountPublicAccessBlock) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3AccountPublicAccessBlockConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4822,7 +4892,7 @@ func NewS3Bucket(scope constructs.Construct, id *string, config *S3BucketConfig)
 	j := jsiiProxy_S3Bucket{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3Bucket",
+		"hashicorp_aws.s3.S3Bucket",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4835,7 +4905,7 @@ func NewS3Bucket_Override(s S3Bucket, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3Bucket",
+		"hashicorp_aws.s3.S3Bucket",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5011,7 +5081,7 @@ func S3Bucket_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3Bucket",
+		"hashicorp_aws.s3.S3Bucket",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5024,7 +5094,7 @@ func S3Bucket_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3Bucket",
+		"hashicorp_aws.s3.S3Bucket",
 		"tfResourceType",
 		&returns,
 	)
@@ -5675,7 +5745,7 @@ func NewS3BucketAnalyticsConfiguration(scope constructs.Construct, id *string, c
 	j := jsiiProxy_S3BucketAnalyticsConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfiguration",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5688,7 +5758,7 @@ func NewS3BucketAnalyticsConfiguration_Override(s S3BucketAnalyticsConfiguration
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfiguration",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfiguration",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5752,7 +5822,7 @@ func S3BucketAnalyticsConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfiguration",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5765,7 +5835,7 @@ func S3BucketAnalyticsConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfiguration",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -5959,6 +6029,7 @@ func (s *jsiiProxy_S3BucketAnalyticsConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketAnalyticsConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5991,6 +6062,8 @@ type S3BucketAnalyticsConfigurationFilter struct {
 
 type S3BucketAnalyticsConfigurationFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketAnalyticsConfigurationFilter
+	SetInternalValue(val *S3BucketAnalyticsConfigurationFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -6016,6 +6089,16 @@ type S3BucketAnalyticsConfigurationFilterOutputReference interface {
 // The jsii proxy struct for S3BucketAnalyticsConfigurationFilterOutputReference
 type jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) InternalValue() *S3BucketAnalyticsConfigurationFilter {
+	var returns *S3BucketAnalyticsConfigurationFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) IsSingleItem() *bool {
@@ -6094,7 +6177,7 @@ func NewS3BucketAnalyticsConfigurationFilterOutputReference(terraformResource cd
 	j := jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6106,9 +6189,17 @@ func NewS3BucketAnalyticsConfigurationFilterOutputReference_Override(s S3BucketA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetInternalValue(val *S3BucketAnalyticsConfigurationFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6277,6 +6368,8 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination str
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination
+	SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3BucketDestination() S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference
@@ -6297,6 +6390,16 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutp
 // The jsii proxy struct for S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference
 type jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination {
+	var returns *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) IsSingleItem() *bool {
@@ -6355,7 +6458,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationO
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6367,9 +6470,17 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6511,6 +6622,8 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3Bu
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination
+	SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -6596,6 +6709,16 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	return returns
 }
 
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination {
+	var returns *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6652,7 +6775,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6664,7 +6787,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6690,6 +6813,14 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6838,6 +6969,8 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference
 	cdktf.ComplexObject
 	Destination() S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference
 	DestinationInput() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination
+	InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport
+	SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OutputSchemaVersion() *string
@@ -6877,6 +7010,16 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 	_jsii_.Get(
 		j,
 		"destinationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport {
+	var returns *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6938,7 +7081,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputRefere
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6950,9 +7093,17 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputRefere
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7092,6 +7243,8 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference interface
 	cdktf.ComplexObject
 	DataExport() S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference
 	DataExportInput() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport
+	InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysis
+	SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysis)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7127,6 +7280,16 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 	_jsii_.Get(
 		j,
 		"dataExportInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) InternalValue() *S3BucketAnalyticsConfigurationStorageClassAnalysis {
+	var returns *S3BucketAnalyticsConfigurationStorageClassAnalysis
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7168,7 +7331,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference(terraf
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7180,9 +7343,17 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) SetInternalValue(val *S3BucketAnalyticsConfigurationStorageClassAnalysis) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7302,6 +7473,7 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 	)
 }
 
+// AWS Simple Storage Service.
 type S3BucketConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7395,6 +7567,925 @@ type S3BucketGrant struct {
 	Id *string `json:"id"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#uri S3Bucket#uri}.
 	Uri *string `json:"uri"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration}.
+type S3BucketIntelligentTieringConfiguration interface {
+	cdktf.TerraformResource
+	Bucket() *string
+	SetBucket(val *string)
+	BucketInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() S3BucketIntelligentTieringConfigurationFilterOutputReference
+	FilterInput() *S3BucketIntelligentTieringConfigurationFilter
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Tiering() *[]*S3BucketIntelligentTieringConfigurationTiering
+	SetTiering(val *[]*S3BucketIntelligentTieringConfigurationTiering)
+	TieringInput() *[]*S3BucketIntelligentTieringConfigurationTiering
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutFilter(value *S3BucketIntelligentTieringConfigurationFilter)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	ResetStatus()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3BucketIntelligentTieringConfiguration
+type jsiiProxy_S3BucketIntelligentTieringConfiguration struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Bucket() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucket",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) BucketInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Filter() S3BucketIntelligentTieringConfigurationFilterOutputReference {
+	var returns S3BucketIntelligentTieringConfigurationFilterOutputReference
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) FilterInput() *S3BucketIntelligentTieringConfigurationFilter {
+	var returns *S3BucketIntelligentTieringConfigurationFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Tiering() *[]*S3BucketIntelligentTieringConfigurationTiering {
+	var returns *[]*S3BucketIntelligentTieringConfigurationTiering
+	_jsii_.Get(
+		j,
+		"tiering",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TieringInput() *[]*S3BucketIntelligentTieringConfigurationTiering {
+	var returns *[]*S3BucketIntelligentTieringConfigurationTiering
+	_jsii_.Get(
+		j,
+		"tieringInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration} Resource.
+func NewS3BucketIntelligentTieringConfiguration(scope constructs.Construct, id *string, config *S3BucketIntelligentTieringConfigurationConfig) S3BucketIntelligentTieringConfiguration {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketIntelligentTieringConfiguration{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfiguration",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration} Resource.
+func NewS3BucketIntelligentTieringConfiguration_Override(s S3BucketIntelligentTieringConfiguration, scope constructs.Construct, id *string, config *S3BucketIntelligentTieringConfigurationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfiguration",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetBucket(val *string) {
+	_jsii_.Set(
+		j,
+		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetTiering(val *[]*S3BucketIntelligentTieringConfigurationTiering) {
+	_jsii_.Set(
+		j,
+		"tiering",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3BucketIntelligentTieringConfiguration_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfiguration",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3BucketIntelligentTieringConfiguration_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfiguration",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) PutFilter(value *S3BucketIntelligentTieringConfigurationFilter) {
+	_jsii_.InvokeVoid(
+		s,
+		"putFilter",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ResetFilter() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ResetStatus() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetStatus",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3BucketIntelligentTieringConfigurationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#bucket S3BucketIntelligentTieringConfiguration#bucket}.
+	Bucket *string `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#name S3BucketIntelligentTieringConfiguration#name}.
+	Name *string `json:"name"`
+	// tiering block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#tiering S3BucketIntelligentTieringConfiguration#tiering}
+	Tiering *[]*S3BucketIntelligentTieringConfigurationTiering `json:"tiering"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#filter S3BucketIntelligentTieringConfiguration#filter}
+	Filter *S3BucketIntelligentTieringConfigurationFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#status S3BucketIntelligentTieringConfiguration#status}.
+	Status *string `json:"status"`
+}
+
+type S3BucketIntelligentTieringConfigurationFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#prefix S3BucketIntelligentTieringConfiguration#prefix}.
+	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#tags S3BucketIntelligentTieringConfiguration#tags}.
+	Tags interface{} `json:"tags"`
+}
+
+type S3BucketIntelligentTieringConfigurationFilterOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketIntelligentTieringConfigurationFilter
+	SetInternalValue(val *S3BucketIntelligentTieringConfigurationFilter)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Prefix() *string
+	SetPrefix(val *string)
+	PrefixInput() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetPrefix()
+	ResetTags()
+}
+
+// The jsii proxy struct for S3BucketIntelligentTieringConfigurationFilterOutputReference
+type jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) InternalValue() *S3BucketIntelligentTieringConfigurationFilter {
+	var returns *S3BucketIntelligentTieringConfigurationFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) Prefix() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) PrefixInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketIntelligentTieringConfigurationFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketIntelligentTieringConfigurationFilterOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationFilterOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketIntelligentTieringConfigurationFilterOutputReference_Override(s S3BucketIntelligentTieringConfigurationFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationFilterOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetInternalValue(val *S3BucketIntelligentTieringConfigurationFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetPrefix(val *string) {
+	_jsii_.Set(
+		j,
+		"prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) ResetPrefix() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPrefix",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) ResetTags() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+type S3BucketIntelligentTieringConfigurationTiering struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#access_tier S3BucketIntelligentTieringConfiguration#access_tier}.
+	AccessTier *string `json:"accessTier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#days S3BucketIntelligentTieringConfiguration#days}.
+	Days *float64 `json:"days"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html aws_s3_bucket_inventory}.
@@ -7771,7 +8862,7 @@ func NewS3BucketInventory(scope constructs.Construct, id *string, config *S3Buck
 	j := jsiiProxy_S3BucketInventory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventory",
+		"hashicorp_aws.s3.S3BucketInventory",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7784,7 +8875,7 @@ func NewS3BucketInventory_Override(s S3BucketInventory, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventory",
+		"hashicorp_aws.s3.S3BucketInventory",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -7872,7 +8963,7 @@ func S3BucketInventory_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketInventory",
+		"hashicorp_aws.s3.S3BucketInventory",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7885,7 +8976,7 @@ func S3BucketInventory_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketInventory",
+		"hashicorp_aws.s3.S3BucketInventory",
 		"tfResourceType",
 		&returns,
 	)
@@ -8095,6 +9186,7 @@ func (s *jsiiProxy_S3BucketInventory) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketInventoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8163,6 +9255,8 @@ type S3BucketInventoryDestinationBucketEncryption struct {
 
 type S3BucketInventoryDestinationBucketEncryptionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketInventoryDestinationBucketEncryption
+	SetInternalValue(val *S3BucketInventoryDestinationBucketEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SseKms() S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference
@@ -8188,6 +9282,16 @@ type S3BucketInventoryDestinationBucketEncryptionOutputReference interface {
 // The jsii proxy struct for S3BucketInventoryDestinationBucketEncryptionOutputReference
 type jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) InternalValue() *S3BucketInventoryDestinationBucketEncryption {
+	var returns *S3BucketInventoryDestinationBucketEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) IsSingleItem() *bool {
@@ -8266,7 +9370,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionOutputReference(terraformRes
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8278,9 +9382,17 @@ func NewS3BucketInventoryDestinationBucketEncryptionOutputReference_Override(s S
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) SetInternalValue(val *S3BucketInventoryDestinationBucketEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8431,6 +9543,8 @@ type S3BucketInventoryDestinationBucketEncryptionSseKms struct {
 
 type S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketInventoryDestinationBucketEncryptionSseKms
+	SetInternalValue(val *S3BucketInventoryDestinationBucketEncryptionSseKms)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyId() *string
@@ -8451,6 +9565,16 @@ type S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference interface
 // The jsii proxy struct for S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference
 type jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) InternalValue() *S3BucketInventoryDestinationBucketEncryptionSseKms {
+	var returns *S3BucketInventoryDestinationBucketEncryptionSseKms
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) IsSingleItem() *bool {
@@ -8509,7 +9633,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference(terraf
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8521,9 +9645,17 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) SetInternalValue(val *S3BucketInventoryDestinationBucketEncryptionSseKms) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8648,6 +9780,8 @@ type S3BucketInventoryDestinationBucketEncryptionSseS3 struct {
 
 type S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketInventoryDestinationBucketEncryptionSseS3
+	SetInternalValue(val *S3BucketInventoryDestinationBucketEncryptionSseS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8665,6 +9799,16 @@ type S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference interface 
 // The jsii proxy struct for S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference
 type jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) InternalValue() *S3BucketInventoryDestinationBucketEncryptionSseS3 {
+	var returns *S3BucketInventoryDestinationBucketEncryptionSseS3
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) IsSingleItem() *bool {
@@ -8703,7 +9847,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference(terrafo
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8715,9 +9859,17 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) SetInternalValue(val *S3BucketInventoryDestinationBucketEncryptionSseS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8842,6 +9994,8 @@ type S3BucketInventoryDestinationBucketOutputReference interface {
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *S3BucketInventoryDestinationBucket
+	SetInternalValue(val *S3BucketInventoryDestinationBucket)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -8948,6 +10102,16 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) FormatInpu
 	return returns
 }
 
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) InternalValue() *S3BucketInventoryDestinationBucket {
+	var returns *S3BucketInventoryDestinationBucket
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9004,7 +10168,7 @@ func NewS3BucketInventoryDestinationBucketOutputReference(terraformResource cdkt
 	j := jsiiProxy_S3BucketInventoryDestinationBucketOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9016,7 +10180,7 @@ func NewS3BucketInventoryDestinationBucketOutputReference_Override(s S3BucketInv
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9042,6 +10206,14 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetFormat(
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetInternalValue(val *S3BucketInventoryDestinationBucket) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9198,6 +10370,8 @@ type S3BucketInventoryDestinationOutputReference interface {
 	cdktf.ComplexObject
 	Bucket() S3BucketInventoryDestinationBucketOutputReference
 	BucketInput() *S3BucketInventoryDestinationBucket
+	InternalValue() *S3BucketInventoryDestination
+	SetInternalValue(val *S3BucketInventoryDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9233,6 +10407,16 @@ func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) BucketInput() *S
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) InternalValue() *S3BucketInventoryDestination {
+	var returns *S3BucketInventoryDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9274,7 +10458,7 @@ func NewS3BucketInventoryDestinationOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_S3BucketInventoryDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9286,9 +10470,17 @@ func NewS3BucketInventoryDestinationOutputReference_Override(s S3BucketInventory
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) SetInternalValue(val *S3BucketInventoryDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9415,6 +10607,8 @@ type S3BucketInventoryFilter struct {
 
 type S3BucketInventoryFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketInventoryFilter
+	SetInternalValue(val *S3BucketInventoryFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -9436,6 +10630,16 @@ type S3BucketInventoryFilterOutputReference interface {
 // The jsii proxy struct for S3BucketInventoryFilterOutputReference
 type jsiiProxy_S3BucketInventoryFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) InternalValue() *S3BucketInventoryFilter {
+	var returns *S3BucketInventoryFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) IsSingleItem() *bool {
@@ -9494,7 +10698,7 @@ func NewS3BucketInventoryFilterOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_S3BucketInventoryFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9506,9 +10710,17 @@ func NewS3BucketInventoryFilterOutputReference_Override(s S3BucketInventoryFilte
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) SetInternalValue(val *S3BucketInventoryFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9646,6 +10858,8 @@ type S3BucketInventoryScheduleOutputReference interface {
 	Frequency() *string
 	SetFrequency(val *string)
 	FrequencyInput() *string
+	InternalValue() *S3BucketInventorySchedule
+	SetInternalValue(val *S3BucketInventorySchedule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9680,6 +10894,16 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) FrequencyInput() *s
 	_jsii_.Get(
 		j,
 		"frequencyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) InternalValue() *S3BucketInventorySchedule {
+	var returns *S3BucketInventorySchedule
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9721,7 +10945,7 @@ func NewS3BucketInventoryScheduleOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_S3BucketInventoryScheduleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryScheduleOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9733,7 +10957,7 @@ func NewS3BucketInventoryScheduleOutputReference_Override(s S3BucketInventorySch
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketInventoryScheduleOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9743,6 +10967,14 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetFrequency(val *s
 	_jsii_.Set(
 		j,
 		"frequency",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetInternalValue(val *S3BucketInventorySchedule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9904,6 +11136,8 @@ type S3BucketLifecycleRuleExpirationOutputReference interface {
 	ExpiredObjectDeleteMarker() interface{}
 	SetExpiredObjectDeleteMarker(val interface{})
 	ExpiredObjectDeleteMarkerInput() interface{}
+	InternalValue() *S3BucketLifecycleRuleExpiration
+	SetInternalValue(val *S3BucketLifecycleRuleExpiration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9986,6 +11220,16 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) ExpiredObject
 	return returns
 }
 
+func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) InternalValue() *S3BucketLifecycleRuleExpiration {
+	var returns *S3BucketLifecycleRuleExpiration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10022,7 +11266,7 @@ func NewS3BucketLifecycleRuleExpirationOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10034,7 +11278,7 @@ func NewS3BucketLifecycleRuleExpirationOutputReference_Override(s S3BucketLifecy
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10060,6 +11304,14 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetExpiredObj
 	_jsii_.Set(
 		j,
 		"expiredObjectDeleteMarker",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetInternalValue(val *S3BucketLifecycleRuleExpiration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10206,6 +11458,8 @@ type S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference interface {
 	Days() *float64
 	SetDays(val *float64)
 	DaysInput() *float64
+	InternalValue() *S3BucketLifecycleRuleNoncurrentVersionExpiration
+	SetInternalValue(val *S3BucketLifecycleRuleNoncurrentVersionExpiration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10241,6 +11495,16 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 	_jsii_.Get(
 		j,
 		"daysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) InternalValue() *S3BucketLifecycleRuleNoncurrentVersionExpiration {
+	var returns *S3BucketLifecycleRuleNoncurrentVersionExpiration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10282,7 +11546,7 @@ func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference(terrafor
 	j := jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10294,7 +11558,7 @@ func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10304,6 +11568,14 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 	_jsii_.Set(
 		j,
 		"days",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) SetInternalValue(val *S3BucketLifecycleRuleNoncurrentVersionExpiration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10704,7 +11976,7 @@ func NewS3BucketMetric(scope constructs.Construct, id *string, config *S3BucketM
 	j := jsiiProxy_S3BucketMetric{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketMetric",
+		"hashicorp_aws.s3.S3BucketMetric",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10717,7 +11989,7 @@ func NewS3BucketMetric_Override(s S3BucketMetric, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketMetric",
+		"hashicorp_aws.s3.S3BucketMetric",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -10781,7 +12053,7 @@ func S3BucketMetric_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketMetric",
+		"hashicorp_aws.s3.S3BucketMetric",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10794,7 +12066,7 @@ func S3BucketMetric_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketMetric",
+		"hashicorp_aws.s3.S3BucketMetric",
 		"tfResourceType",
 		&returns,
 	)
@@ -10972,6 +12244,7 @@ func (s *jsiiProxy_S3BucketMetric) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketMetricConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11000,6 +12273,8 @@ type S3BucketMetricFilter struct {
 
 type S3BucketMetricFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketMetricFilter
+	SetInternalValue(val *S3BucketMetricFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -11025,6 +12300,16 @@ type S3BucketMetricFilterOutputReference interface {
 // The jsii proxy struct for S3BucketMetricFilterOutputReference
 type jsiiProxy_S3BucketMetricFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) InternalValue() *S3BucketMetricFilter {
+	var returns *S3BucketMetricFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketMetricFilterOutputReference) IsSingleItem() *bool {
@@ -11103,7 +12388,7 @@ func NewS3BucketMetricFilterOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_S3BucketMetricFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketMetricFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketMetricFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11115,9 +12400,17 @@ func NewS3BucketMetricFilterOutputReference_Override(s S3BucketMetricFilterOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketMetricFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketMetricFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetInternalValue(val *S3BucketMetricFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11543,7 +12836,7 @@ func NewS3BucketNotification(scope constructs.Construct, id *string, config *S3B
 	j := jsiiProxy_S3BucketNotification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketNotification",
+		"hashicorp_aws.s3.S3BucketNotification",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11556,7 +12849,7 @@ func NewS3BucketNotification_Override(s S3BucketNotification, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketNotification",
+		"hashicorp_aws.s3.S3BucketNotification",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11636,7 +12929,7 @@ func S3BucketNotification_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketNotification",
+		"hashicorp_aws.s3.S3BucketNotification",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11649,7 +12942,7 @@ func S3BucketNotification_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketNotification",
+		"hashicorp_aws.s3.S3BucketNotification",
 		"tfResourceType",
 		&returns,
 	)
@@ -11835,6 +13128,7 @@ func (s *jsiiProxy_S3BucketNotification) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketNotificationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12695,7 +13989,7 @@ func NewS3BucketObject(scope constructs.Construct, id *string, config *S3BucketO
 	j := jsiiProxy_S3BucketObject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObject",
+		"hashicorp_aws.s3.S3BucketObject",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12708,7 +14002,7 @@ func NewS3BucketObject_Override(s S3BucketObject, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObject",
+		"hashicorp_aws.s3.S3BucketObject",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12956,7 +14250,7 @@ func S3BucketObject_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketObject",
+		"hashicorp_aws.s3.S3BucketObject",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12969,7 +14263,7 @@ func S3BucketObject_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketObject",
+		"hashicorp_aws.s3.S3BucketObject",
 		"tfResourceType",
 		&returns,
 	)
@@ -13315,6 +14609,7 @@ func (s *jsiiProxy_S3BucketObject) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketObjectConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13387,6 +14682,8 @@ type S3BucketObjectLockConfiguration struct {
 
 type S3BucketObjectLockConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketObjectLockConfiguration
+	SetInternalValue(val *S3BucketObjectLockConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ObjectLockEnabled() *string
@@ -13411,6 +14708,16 @@ type S3BucketObjectLockConfigurationOutputReference interface {
 // The jsii proxy struct for S3BucketObjectLockConfigurationOutputReference
 type jsiiProxy_S3BucketObjectLockConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) InternalValue() *S3BucketObjectLockConfiguration {
+	var returns *S3BucketObjectLockConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) IsSingleItem() *bool {
@@ -13489,7 +14796,7 @@ func NewS3BucketObjectLockConfigurationOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_S3BucketObjectLockConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13501,9 +14808,17 @@ func NewS3BucketObjectLockConfigurationOutputReference_Override(s S3BucketObject
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) SetInternalValue(val *S3BucketObjectLockConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13660,6 +14975,8 @@ type S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference interfac
 	Days() *float64
 	SetDays(val *float64)
 	DaysInput() *float64
+	InternalValue() *S3BucketObjectLockConfigurationRuleDefaultRetention
+	SetInternalValue(val *S3BucketObjectLockConfigurationRuleDefaultRetention)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -13702,6 +15019,16 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 	_jsii_.Get(
 		j,
 		"daysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) InternalValue() *S3BucketObjectLockConfigurationRuleDefaultRetention {
+	var returns *S3BucketObjectLockConfigurationRuleDefaultRetention
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13783,7 +15110,7 @@ func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference(terra
 	j := jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13795,7 +15122,7 @@ func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -13805,6 +15132,14 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 	_jsii_.Set(
 		j,
 		"days",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) SetInternalValue(val *S3BucketObjectLockConfigurationRuleDefaultRetention) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13953,6 +15288,8 @@ type S3BucketObjectLockConfigurationRuleOutputReference interface {
 	cdktf.ComplexObject
 	DefaultRetention() S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference
 	DefaultRetentionInput() *S3BucketObjectLockConfigurationRuleDefaultRetention
+	InternalValue() *S3BucketObjectLockConfigurationRule
+	SetInternalValue(val *S3BucketObjectLockConfigurationRule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13988,6 +15325,16 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) DefaultRe
 	_jsii_.Get(
 		j,
 		"defaultRetentionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) InternalValue() *S3BucketObjectLockConfigurationRule {
+	var returns *S3BucketObjectLockConfigurationRule
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14029,7 +15376,7 @@ func NewS3BucketObjectLockConfigurationRuleOutputReference(terraformResource cdk
 	j := jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14041,9 +15388,17 @@ func NewS3BucketObjectLockConfigurationRuleOutputReference_Override(s S3BucketOb
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) SetInternalValue(val *S3BucketObjectLockConfigurationRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14396,7 +15751,7 @@ func NewS3BucketOwnershipControls(scope constructs.Construct, id *string, config
 	j := jsiiProxy_S3BucketOwnershipControls{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketOwnershipControls",
+		"hashicorp_aws.s3.S3BucketOwnershipControls",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14409,7 +15764,7 @@ func NewS3BucketOwnershipControls_Override(s S3BucketOwnershipControls, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketOwnershipControls",
+		"hashicorp_aws.s3.S3BucketOwnershipControls",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -14465,7 +15820,7 @@ func S3BucketOwnershipControls_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketOwnershipControls",
+		"hashicorp_aws.s3.S3BucketOwnershipControls",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14478,7 +15833,7 @@ func S3BucketOwnershipControls_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketOwnershipControls",
+		"hashicorp_aws.s3.S3BucketOwnershipControls",
 		"tfResourceType",
 		&returns,
 	)
@@ -14648,6 +16003,7 @@ func (s *jsiiProxy_S3BucketOwnershipControls) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketOwnershipControlsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14672,6 +16028,8 @@ type S3BucketOwnershipControlsRule struct {
 
 type S3BucketOwnershipControlsRuleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketOwnershipControlsRule
+	SetInternalValue(val *S3BucketOwnershipControlsRule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ObjectOwnership() *string
@@ -14692,6 +16050,16 @@ type S3BucketOwnershipControlsRuleOutputReference interface {
 // The jsii proxy struct for S3BucketOwnershipControlsRuleOutputReference
 type jsiiProxy_S3BucketOwnershipControlsRuleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) InternalValue() *S3BucketOwnershipControlsRule {
+	var returns *S3BucketOwnershipControlsRule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) IsSingleItem() *bool {
@@ -14750,7 +16118,7 @@ func NewS3BucketOwnershipControlsRuleOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_S3BucketOwnershipControlsRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketOwnershipControlsRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketOwnershipControlsRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14762,9 +16130,17 @@ func NewS3BucketOwnershipControlsRuleOutputReference_Override(s S3BucketOwnershi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketOwnershipControlsRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketOwnershipControlsRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) SetInternalValue(val *S3BucketOwnershipControlsRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15117,7 +16493,7 @@ func NewS3BucketPolicy(scope constructs.Construct, id *string, config *S3BucketP
 	j := jsiiProxy_S3BucketPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketPolicy",
+		"hashicorp_aws.s3.S3BucketPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15130,7 +16506,7 @@ func NewS3BucketPolicy_Override(s S3BucketPolicy, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketPolicy",
+		"hashicorp_aws.s3.S3BucketPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -15194,7 +16570,7 @@ func S3BucketPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketPolicy",
+		"hashicorp_aws.s3.S3BucketPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15207,7 +16583,7 @@ func S3BucketPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketPolicy",
+		"hashicorp_aws.s3.S3BucketPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -15369,6 +16745,7 @@ func (s *jsiiProxy_S3BucketPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15690,7 +17067,7 @@ func NewS3BucketPublicAccessBlock(scope constructs.Construct, id *string, config
 	j := jsiiProxy_S3BucketPublicAccessBlock{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlock",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlock",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15703,7 +17080,7 @@ func NewS3BucketPublicAccessBlock_Override(s S3BucketPublicAccessBlock, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlock",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlock",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -15791,7 +17168,7 @@ func S3BucketPublicAccessBlock_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlock",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlock",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15804,7 +17181,7 @@ func S3BucketPublicAccessBlock_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlock",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlock",
 		"tfResourceType",
 		&returns,
 	)
@@ -15998,6 +17375,7 @@ func (s *jsiiProxy_S3BucketPublicAccessBlock) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3BucketPublicAccessBlockConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16028,8 +17406,546 @@ type S3BucketReplicationConfiguration struct {
 	Rules *[]*S3BucketReplicationConfigurationRules `json:"rules"`
 }
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration}.
+type S3BucketReplicationConfigurationA interface {
+	cdktf.TerraformResource
+	Bucket() *string
+	SetBucket(val *string)
+	BucketInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Role() *string
+	SetRole(val *string)
+	RoleInput() *string
+	Rule() *[]*S3BucketReplicationConfigurationRule
+	SetRule(val *[]*S3BucketReplicationConfigurationRule)
+	RuleInput() *[]*S3BucketReplicationConfigurationRule
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationA
+type jsiiProxy_S3BucketReplicationConfigurationA struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Bucket() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucket",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) BucketInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Role() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"role",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) RoleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"roleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Rule() *[]*S3BucketReplicationConfigurationRule {
+	var returns *[]*S3BucketReplicationConfigurationRule
+	_jsii_.Get(
+		j,
+		"rule",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) RuleInput() *[]*S3BucketReplicationConfigurationRule {
+	var returns *[]*S3BucketReplicationConfigurationRule
+	_jsii_.Get(
+		j,
+		"ruleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration} Resource.
+func NewS3BucketReplicationConfigurationA(scope constructs.Construct, id *string, config *S3BucketReplicationConfigurationAConfig) S3BucketReplicationConfigurationA {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationA{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationA",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration} Resource.
+func NewS3BucketReplicationConfigurationA_Override(s S3BucketReplicationConfigurationA, scope constructs.Construct, id *string, config *S3BucketReplicationConfigurationAConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationA",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetBucket(val *string) {
+	_jsii_.Set(
+		j,
+		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetRole(val *string) {
+	_jsii_.Set(
+		j,
+		"role",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetRule(val *[]*S3BucketReplicationConfigurationRule) {
+	_jsii_.Set(
+		j,
+		"rule",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3BucketReplicationConfigurationA_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationA",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3BucketReplicationConfigurationA_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationA",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3BucketReplicationConfigurationAConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#bucket S3BucketReplicationConfigurationA#bucket}.
+	Bucket *string `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#role S3BucketReplicationConfigurationA#role}.
+	Role *string `json:"role"`
+	// rule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#rule S3BucketReplicationConfigurationA#rule}
+	Rule *[]*S3BucketReplicationConfigurationRule `json:"rule"`
+}
+
 type S3BucketReplicationConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfiguration
+	SetInternalValue(val *S3BucketReplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Role() *string
@@ -16053,6 +17969,16 @@ type S3BucketReplicationConfigurationOutputReference interface {
 // The jsii proxy struct for S3BucketReplicationConfigurationOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) InternalValue() *S3BucketReplicationConfiguration {
+	var returns *S3BucketReplicationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) IsSingleItem() *bool {
@@ -16131,7 +18057,7 @@ func NewS3BucketReplicationConfigurationOutputReference(terraformResource cdktf.
 	j := jsiiProxy_S3BucketReplicationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16143,9 +18069,17 @@ func NewS3BucketReplicationConfigurationOutputReference_Override(s S3BucketRepli
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetInternalValue(val *S3BucketReplicationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16273,6 +18207,4197 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) Interpolatio
 	return returns
 }
 
+type S3BucketReplicationConfigurationRule struct {
+	// destination block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#destination S3BucketReplicationConfigurationA#destination}
+	Destination *S3BucketReplicationConfigurationRuleDestination `json:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+	// delete_marker_replication block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#delete_marker_replication S3BucketReplicationConfigurationA#delete_marker_replication}
+	DeleteMarkerReplication *S3BucketReplicationConfigurationRuleDeleteMarkerReplication `json:"deleteMarkerReplication"`
+	// existing_object_replication block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#existing_object_replication S3BucketReplicationConfigurationA#existing_object_replication}
+	ExistingObjectReplication *S3BucketReplicationConfigurationRuleExistingObjectReplication `json:"existingObjectReplication"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#filter S3BucketReplicationConfigurationA#filter}
+	Filter *S3BucketReplicationConfigurationRuleFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#id S3BucketReplicationConfigurationA#id}.
+	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#priority S3BucketReplicationConfigurationA#priority}.
+	Priority *float64 `json:"priority"`
+	// source_selection_criteria block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#source_selection_criteria S3BucketReplicationConfigurationA#source_selection_criteria}
+	SourceSelectionCriteria *S3BucketReplicationConfigurationRuleSourceSelectionCriteria `json:"sourceSelectionCriteria"`
+}
+
+type S3BucketReplicationConfigurationRuleDeleteMarkerReplication struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+}
+
+type S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDeleteMarkerReplication
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDeleteMarkerReplication)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDeleteMarkerReplication {
+	var returns *S3BucketReplicationConfigurationRuleDeleteMarkerReplication
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDeleteMarkerReplication) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleDestination struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#bucket S3BucketReplicationConfigurationA#bucket}.
+	Bucket *string `json:"bucket"`
+	// access_control_translation block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#access_control_translation S3BucketReplicationConfigurationA#access_control_translation}
+	AccessControlTranslation *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation `json:"accessControlTranslation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#account S3BucketReplicationConfigurationA#account}.
+	Account *string `json:"account"`
+	// encryption_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#encryption_configuration S3BucketReplicationConfigurationA#encryption_configuration}
+	EncryptionConfiguration *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration `json:"encryptionConfiguration"`
+	// metrics block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#metrics S3BucketReplicationConfigurationA#metrics}
+	Metrics *S3BucketReplicationConfigurationRuleDestinationMetrics `json:"metrics"`
+	// replication_time block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replication_time S3BucketReplicationConfigurationA#replication_time}
+	ReplicationTime *S3BucketReplicationConfigurationRuleDestinationReplicationTime `json:"replicationTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#storage_class S3BucketReplicationConfigurationA#storage_class}.
+	StorageClass *string `json:"storageClass"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#owner S3BucketReplicationConfigurationA#owner}.
+	Owner *string `json:"owner"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Owner() *string
+	SetOwner(val *string)
+	OwnerInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation {
+	var returns *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) Owner() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"owner",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) OwnerInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ownerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetOwner(val *string) {
+	_jsii_.Set(
+		j,
+		"owner",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replica_kms_key_id S3BucketReplicationConfigurationA#replica_kms_key_id}.
+	ReplicaKmsKeyId *string `json:"replicaKmsKeyId"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	ReplicaKmsKeyId() *string
+	SetReplicaKmsKeyId(val *string)
+	ReplicaKmsKeyIdInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration {
+	var returns *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) ReplicaKmsKeyId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicaKmsKeyId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) ReplicaKmsKeyIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicaKmsKeyIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetReplicaKmsKeyId(val *string) {
+	_jsii_.Set(
+		j,
+		"replicaKmsKeyId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleDestinationMetrics struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+	// event_threshold block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#event_threshold S3BucketReplicationConfigurationA#event_threshold}
+	EventThreshold *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold `json:"eventThreshold"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#minutes S3BucketReplicationConfigurationA#minutes}.
+	Minutes *float64 `json:"minutes"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Minutes() *float64
+	SetMinutes(val *float64)
+	MinutesInput() *float64
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold {
+	var returns *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) Minutes() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minutes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) MinutesInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minutesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetMinutes(val *float64) {
+	_jsii_.Set(
+		j,
+		"minutes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference interface {
+	cdktf.ComplexObject
+	EventThreshold() S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference
+	EventThresholdInput() *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationMetrics
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationMetrics)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutEventThreshold(value *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold)
+	ResetEventThreshold()
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) EventThreshold() S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference
+	_jsii_.Get(
+		j,
+		"eventThreshold",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) EventThresholdInput() *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold {
+	var returns *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold
+	_jsii_.Get(
+		j,
+		"eventThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationMetrics {
+	var returns *S3BucketReplicationConfigurationRuleDestinationMetrics
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationMetrics) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) PutEventThreshold(value *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold) {
+	_jsii_.InvokeVoid(
+		s,
+		"putEventThreshold",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) ResetEventThreshold() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEventThreshold",
+		nil, // no parameters
+	)
+}
+
+type S3BucketReplicationConfigurationRuleDestinationOutputReference interface {
+	cdktf.ComplexObject
+	AccessControlTranslation() S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference
+	AccessControlTranslationInput() *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation
+	Account() *string
+	SetAccount(val *string)
+	AccountInput() *string
+	Bucket() *string
+	SetBucket(val *string)
+	BucketInput() *string
+	EncryptionConfiguration() S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference
+	EncryptionConfigurationInput() *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration
+	InternalValue() *S3BucketReplicationConfigurationRuleDestination
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestination)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Metrics() S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference
+	MetricsInput() *S3BucketReplicationConfigurationRuleDestinationMetrics
+	ReplicationTime() S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference
+	ReplicationTimeInput() *S3BucketReplicationConfigurationRuleDestinationReplicationTime
+	StorageClass() *string
+	SetStorageClass(val *string)
+	StorageClassInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAccessControlTranslation(value *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation)
+	PutEncryptionConfiguration(value *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration)
+	PutMetrics(value *S3BucketReplicationConfigurationRuleDestinationMetrics)
+	PutReplicationTime(value *S3BucketReplicationConfigurationRuleDestinationReplicationTime)
+	ResetAccessControlTranslation()
+	ResetAccount()
+	ResetEncryptionConfiguration()
+	ResetMetrics()
+	ResetReplicationTime()
+	ResetStorageClass()
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) AccessControlTranslation() S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference
+	_jsii_.Get(
+		j,
+		"accessControlTranslation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) AccessControlTranslationInput() *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation {
+	var returns *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation
+	_jsii_.Get(
+		j,
+		"accessControlTranslationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) Account() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"account",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) AccountInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) Bucket() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucket",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) BucketInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) EncryptionConfiguration() S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"encryptionConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) EncryptionConfigurationInput() *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration {
+	var returns *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"encryptionConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestination {
+	var returns *S3BucketReplicationConfigurationRuleDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) Metrics() S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference
+	_jsii_.Get(
+		j,
+		"metrics",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) MetricsInput() *S3BucketReplicationConfigurationRuleDestinationMetrics {
+	var returns *S3BucketReplicationConfigurationRuleDestinationMetrics
+	_jsii_.Get(
+		j,
+		"metricsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ReplicationTime() S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference
+	_jsii_.Get(
+		j,
+		"replicationTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ReplicationTimeInput() *S3BucketReplicationConfigurationRuleDestinationReplicationTime {
+	var returns *S3BucketReplicationConfigurationRuleDestinationReplicationTime
+	_jsii_.Get(
+		j,
+		"replicationTimeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) StorageClass() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageClass",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) StorageClassInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageClassInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetAccount(val *string) {
+	_jsii_.Set(
+		j,
+		"account",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetBucket(val *string) {
+	_jsii_.Set(
+		j,
+		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetStorageClass(val *string) {
+	_jsii_.Set(
+		j,
+		"storageClass",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) PutAccessControlTranslation(value *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation) {
+	_jsii_.InvokeVoid(
+		s,
+		"putAccessControlTranslation",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) PutEncryptionConfiguration(value *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration) {
+	_jsii_.InvokeVoid(
+		s,
+		"putEncryptionConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) PutMetrics(value *S3BucketReplicationConfigurationRuleDestinationMetrics) {
+	_jsii_.InvokeVoid(
+		s,
+		"putMetrics",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) PutReplicationTime(value *S3BucketReplicationConfigurationRuleDestinationReplicationTime) {
+	_jsii_.InvokeVoid(
+		s,
+		"putReplicationTime",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetAccessControlTranslation() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccessControlTranslation",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetAccount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccount",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetEncryptionConfiguration() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEncryptionConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetMetrics() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMetrics",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetReplicationTime() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetReplicationTime",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) ResetStorageClass() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetStorageClass",
+		nil, // no parameters
+	)
+}
+
+type S3BucketReplicationConfigurationRuleDestinationReplicationTime struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+	// time block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#time S3BucketReplicationConfigurationA#time}
+	Time *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime `json:"time"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationReplicationTime
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationReplicationTime)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Time() S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference
+	TimeInput() *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutTime(value *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime)
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationReplicationTime {
+	var returns *S3BucketReplicationConfigurationRuleDestinationReplicationTime
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) Time() S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference {
+	var returns S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference
+	_jsii_.Get(
+		j,
+		"time",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) TimeInput() *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime {
+	var returns *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime
+	_jsii_.Get(
+		j,
+		"timeInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationReplicationTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) PutTime(value *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime) {
+	_jsii_.InvokeVoid(
+		s,
+		"putTime",
+		[]interface{}{value},
+	)
+}
+
+type S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#minutes S3BucketReplicationConfigurationA#minutes}.
+	Minutes *float64 `json:"minutes"`
+}
+
+type S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Minutes() *float64
+	SetMinutes(val *float64)
+	MinutesInput() *float64
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime {
+	var returns *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) Minutes() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minutes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) MinutesInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minutesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetMinutes(val *float64) {
+	_jsii_.Set(
+		j,
+		"minutes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleExistingObjectReplication struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+}
+
+type S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleExistingObjectReplication
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleExistingObjectReplication)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleExistingObjectReplication {
+	var returns *S3BucketReplicationConfigurationRuleExistingObjectReplication
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleExistingObjectReplication) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleFilter struct {
+	// and block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#and S3BucketReplicationConfigurationA#and}
+	And *S3BucketReplicationConfigurationRuleFilterAnd `json:"and"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix"`
+	// tag block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#tag S3BucketReplicationConfigurationA#tag}
+	Tag *S3BucketReplicationConfigurationRuleFilterTag `json:"tag"`
+}
+
+type S3BucketReplicationConfigurationRuleFilterAnd struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#tags S3BucketReplicationConfigurationA#tags}.
+	Tags interface{} `json:"tags"`
+}
+
+type S3BucketReplicationConfigurationRuleFilterAndOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleFilterAnd
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleFilterAnd)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Prefix() *string
+	SetPrefix(val *string)
+	PrefixInput() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetPrefix()
+	ResetTags()
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleFilterAndOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleFilterAnd {
+	var returns *S3BucketReplicationConfigurationRuleFilterAnd
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) Prefix() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) PrefixInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterAndOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterAndOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterAndOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterAndOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleFilterAnd) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetPrefix(val *string) {
+	_jsii_.Set(
+		j,
+		"prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) ResetPrefix() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPrefix",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) ResetTags() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+type S3BucketReplicationConfigurationRuleFilterOutputReference interface {
+	cdktf.ComplexObject
+	And() S3BucketReplicationConfigurationRuleFilterAndOutputReference
+	AndInput() *S3BucketReplicationConfigurationRuleFilterAnd
+	InternalValue() *S3BucketReplicationConfigurationRuleFilter
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleFilter)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Prefix() *string
+	SetPrefix(val *string)
+	PrefixInput() *string
+	Tag() S3BucketReplicationConfigurationRuleFilterTagOutputReference
+	TagInput() *S3BucketReplicationConfigurationRuleFilterTag
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAnd(value *S3BucketReplicationConfigurationRuleFilterAnd)
+	PutTag(value *S3BucketReplicationConfigurationRuleFilterTag)
+	ResetAnd()
+	ResetPrefix()
+	ResetTag()
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleFilterOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) And() S3BucketReplicationConfigurationRuleFilterAndOutputReference {
+	var returns S3BucketReplicationConfigurationRuleFilterAndOutputReference
+	_jsii_.Get(
+		j,
+		"and",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) AndInput() *S3BucketReplicationConfigurationRuleFilterAnd {
+	var returns *S3BucketReplicationConfigurationRuleFilterAnd
+	_jsii_.Get(
+		j,
+		"andInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleFilter {
+	var returns *S3BucketReplicationConfigurationRuleFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Prefix() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) PrefixInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Tag() S3BucketReplicationConfigurationRuleFilterTagOutputReference {
+	var returns S3BucketReplicationConfigurationRuleFilterTagOutputReference
+	_jsii_.Get(
+		j,
+		"tag",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) TagInput() *S3BucketReplicationConfigurationRuleFilterTag {
+	var returns *S3BucketReplicationConfigurationRuleFilterTag
+	_jsii_.Get(
+		j,
+		"tagInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetPrefix(val *string) {
+	_jsii_.Set(
+		j,
+		"prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) PutAnd(value *S3BucketReplicationConfigurationRuleFilterAnd) {
+	_jsii_.InvokeVoid(
+		s,
+		"putAnd",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) PutTag(value *S3BucketReplicationConfigurationRuleFilterTag) {
+	_jsii_.InvokeVoid(
+		s,
+		"putTag",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) ResetAnd() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAnd",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) ResetPrefix() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPrefix",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) ResetTag() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTag",
+		nil, // no parameters
+	)
+}
+
+type S3BucketReplicationConfigurationRuleFilterTag struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#key S3BucketReplicationConfigurationA#key}.
+	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#value S3BucketReplicationConfigurationA#value}.
+	Value *string `json:"value"`
+}
+
+type S3BucketReplicationConfigurationRuleFilterTagOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleFilterTag
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleFilterTag)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Key() *string
+	SetKey(val *string)
+	KeyInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Value() *string
+	SetValue(val *string)
+	ValueInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleFilterTagOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleFilterTag {
+	var returns *S3BucketReplicationConfigurationRuleFilterTag
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) Key() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"key",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) KeyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) Value() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) ValueInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"valueInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterTagOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterTagOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterTagOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterTagOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleFilterTag) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetKey(val *string) {
+	_jsii_.Set(
+		j,
+		"key",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetValue(val *string) {
+	_jsii_.Set(
+		j,
+		"value",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteria struct {
+	// replica_modifications block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replica_modifications S3BucketReplicationConfigurationA#replica_modifications}
+	ReplicaModifications *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications `json:"replicaModifications"`
+	// sse_kms_encrypted_objects block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#sse_kms_encrypted_objects S3BucketReplicationConfigurationA#sse_kms_encrypted_objects}
+	SseKmsEncryptedObjects *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sseKmsEncryptedObjects"`
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteria
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteria)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	ReplicaModifications() S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference
+	ReplicaModificationsInput() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications
+	SseKmsEncryptedObjects() S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference
+	SseKmsEncryptedObjectsInput() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutReplicaModifications(value *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications)
+	PutSseKmsEncryptedObjects(value *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects)
+	ResetReplicaModifications()
+	ResetSseKmsEncryptedObjects()
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteria {
+	var returns *S3BucketReplicationConfigurationRuleSourceSelectionCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) ReplicaModifications() S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference {
+	var returns S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference
+	_jsii_.Get(
+		j,
+		"replicaModifications",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) ReplicaModificationsInput() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications {
+	var returns *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications
+	_jsii_.Get(
+		j,
+		"replicaModificationsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SseKmsEncryptedObjects() S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
+	var returns S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference
+	_jsii_.Get(
+		j,
+		"sseKmsEncryptedObjects",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SseKmsEncryptedObjectsInput() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects {
+	var returns *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects
+	_jsii_.Get(
+		j,
+		"sseKmsEncryptedObjectsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) PutReplicaModifications(value *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications) {
+	_jsii_.InvokeVoid(
+		s,
+		"putReplicaModifications",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) PutSseKmsEncryptedObjects(value *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects) {
+	_jsii_.InvokeVoid(
+		s,
+		"putSseKmsEncryptedObjects",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) ResetReplicaModifications() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetReplicaModifications",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) ResetSseKmsEncryptedObjects() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSseKmsEncryptedObjects",
+		nil, // no parameters
+	)
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications {
+	var returns *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status"`
+}
+
+type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects
+	SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Status() *string
+	SetStatus(val *string)
+	StatusInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference
+type jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) InternalValue() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects {
+	var returns *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) StatusInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statusInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetStatus(val *string) {
+	_jsii_.Set(
+		j,
+		"status",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
 type S3BucketReplicationConfigurationRules struct {
 	// destination block.
 	//
@@ -16328,6 +22453,8 @@ type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation st
 
 type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Owner() *string
@@ -16348,6 +22475,16 @@ type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOut
 // The jsii proxy struct for S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation {
+	var returns *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) IsSingleItem() *bool {
@@ -16406,7 +22543,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslation
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16418,9 +22555,17 @@ func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslation
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16549,6 +22694,8 @@ type S3BucketReplicationConfigurationRulesDestinationMetrics struct {
 
 type S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRulesDestinationMetrics
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationMetrics)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Minutes() *float64
@@ -16574,6 +22721,16 @@ type S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference inte
 // The jsii proxy struct for S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesDestinationMetrics {
+	var returns *S3BucketReplicationConfigurationRulesDestinationMetrics
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) IsSingleItem() *bool {
@@ -16652,7 +22809,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference(t
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16664,9 +22821,17 @@ func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationMetrics) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16820,6 +22985,8 @@ type S3BucketReplicationConfigurationRulesDestinationOutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *S3BucketReplicationConfigurationRulesDestination
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Metrics() S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference
@@ -16913,6 +23080,16 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesDestination {
+	var returns *S3BucketReplicationConfigurationRulesDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17034,7 +23211,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationOutputReference(terrafor
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17046,7 +23223,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -17064,6 +23241,14 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17273,6 +23458,8 @@ type S3BucketReplicationConfigurationRulesDestinationReplicationTime struct {
 
 type S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRulesDestinationReplicationTime
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationReplicationTime)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Minutes() *float64
@@ -17298,6 +23485,16 @@ type S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputRefere
 // The jsii proxy struct for S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesDestinationReplicationTime {
+	var returns *S3BucketReplicationConfigurationRulesDestinationReplicationTime
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) IsSingleItem() *bool {
@@ -17376,7 +23573,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputRef
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17388,9 +23585,17 @@ func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesDestinationReplicationTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17543,6 +23748,8 @@ type S3BucketReplicationConfigurationRulesFilter struct {
 
 type S3BucketReplicationConfigurationRulesFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRulesFilter
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -17568,6 +23775,16 @@ type S3BucketReplicationConfigurationRulesFilterOutputReference interface {
 // The jsii proxy struct for S3BucketReplicationConfigurationRulesFilterOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesFilter {
+	var returns *S3BucketReplicationConfigurationRulesFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) IsSingleItem() *bool {
@@ -17646,7 +23863,7 @@ func NewS3BucketReplicationConfigurationRulesFilterOutputReference(terraformReso
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17658,9 +23875,17 @@ func NewS3BucketReplicationConfigurationRulesFilterOutputReference_Override(s S3
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17813,6 +24038,8 @@ type S3BucketReplicationConfigurationRulesSourceSelectionCriteria struct {
 
 type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketReplicationConfigurationRulesSourceSelectionCriteria
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesSourceSelectionCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SseKmsEncryptedObjects() S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference
@@ -17834,6 +24061,16 @@ type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference
 // The jsii proxy struct for S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference
 type jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesSourceSelectionCriteria {
+	var returns *S3BucketReplicationConfigurationRulesSourceSelectionCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) IsSingleItem() *bool {
@@ -17892,7 +24129,7 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputRefere
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17904,9 +24141,17 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputRefere
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesSourceSelectionCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18044,6 +24289,8 @@ type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncrypted
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects
+	SetInternalValue(val *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18078,6 +24325,16 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) InternalValue() *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects {
+	var returns *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18119,7 +24376,7 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryp
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18131,7 +24388,7 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -18141,6 +24398,14 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetInternalValue(val *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18262,6 +24527,8 @@ type S3BucketServerSideEncryptionConfiguration struct {
 
 type S3BucketServerSideEncryptionConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketServerSideEncryptionConfiguration
+	SetInternalValue(val *S3BucketServerSideEncryptionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Rule() S3BucketServerSideEncryptionConfigurationRuleOutputReference
@@ -18282,6 +24549,16 @@ type S3BucketServerSideEncryptionConfigurationOutputReference interface {
 // The jsii proxy struct for S3BucketServerSideEncryptionConfigurationOutputReference
 type jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) InternalValue() *S3BucketServerSideEncryptionConfiguration {
+	var returns *S3BucketServerSideEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) IsSingleItem() *bool {
@@ -18340,7 +24617,7 @@ func NewS3BucketServerSideEncryptionConfigurationOutputReference(terraformResour
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18352,9 +24629,17 @@ func NewS3BucketServerSideEncryptionConfigurationOutputReference_Override(s S3Bu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) SetInternalValue(val *S3BucketServerSideEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18492,6 +24777,8 @@ type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDef
 
 type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault
+	SetInternalValue(val *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsMasterKeyId() *string
@@ -18516,6 +24803,16 @@ type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDef
 // The jsii proxy struct for S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference
 type jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) InternalValue() *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault {
+	var returns *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) IsSingleItem() *bool {
@@ -18594,7 +24891,7 @@ func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionBy
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18606,9 +24903,17 @@ func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionBy
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) SetInternalValue(val *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18751,6 +25056,8 @@ type S3BucketServerSideEncryptionConfigurationRuleOutputReference interface {
 	BucketKeyEnabled() interface{}
 	SetBucketKeyEnabled(val interface{})
 	BucketKeyEnabledInput() interface{}
+	InternalValue() *S3BucketServerSideEncryptionConfigurationRule
+	SetInternalValue(val *S3BucketServerSideEncryptionConfigurationRule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18812,6 +25119,16 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 	return returns
 }
 
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) InternalValue() *S3BucketServerSideEncryptionConfigurationRule {
+	var returns *S3BucketServerSideEncryptionConfigurationRule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -18848,7 +25165,7 @@ func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference(terraformRe
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18860,7 +25177,7 @@ func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference_Override(s 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -18870,6 +25187,14 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 	_jsii_.Set(
 		j,
 		"bucketKeyEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) SetInternalValue(val *S3BucketServerSideEncryptionConfigurationRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19010,6 +25335,8 @@ type S3BucketVersioningOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *S3BucketVersioning
+	SetInternalValue(val *S3BucketVersioning)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MfaDelete() interface{}
@@ -19049,6 +25376,16 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) EnabledInput() interface{}
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketVersioningOutputReference) InternalValue() *S3BucketVersioning {
+	var returns *S3BucketVersioning
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19110,7 +25447,7 @@ func NewS3BucketVersioningOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_S3BucketVersioningOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketVersioningOutputReference",
+		"hashicorp_aws.s3.S3BucketVersioningOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19122,7 +25459,7 @@ func NewS3BucketVersioningOutputReference_Override(s S3BucketVersioningOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketVersioningOutputReference",
+		"hashicorp_aws.s3.S3BucketVersioningOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -19132,6 +25469,14 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) SetEnabled(val interface{}
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketVersioningOutputReference) SetInternalValue(val *S3BucketVersioning) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19287,6 +25632,8 @@ type S3BucketWebsiteOutputReference interface {
 	IndexDocument() *string
 	SetIndexDocument(val *string)
 	IndexDocumentInput() *string
+	InternalValue() *S3BucketWebsite
+	SetInternalValue(val *S3BucketWebsite)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RedirectAllRequestsTo() *string
@@ -19351,6 +25698,16 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) IndexDocumentInput() *string 
 	_jsii_.Get(
 		j,
 		"indexDocumentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketWebsiteOutputReference) InternalValue() *S3BucketWebsite {
+	var returns *S3BucketWebsite
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19432,7 +25789,7 @@ func NewS3BucketWebsiteOutputReference(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_S3BucketWebsiteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketWebsiteOutputReference",
+		"hashicorp_aws.s3.S3BucketWebsiteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19444,7 +25801,7 @@ func NewS3BucketWebsiteOutputReference_Override(s S3BucketWebsiteOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3BucketWebsiteOutputReference",
+		"hashicorp_aws.s3.S3BucketWebsiteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -19462,6 +25819,14 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetIndexDocument(val *string)
 	_jsii_.Set(
 		j,
 		"indexDocument",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetInternalValue(val *S3BucketWebsite) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19620,6 +25985,518 @@ func (s *jsiiProxy_S3BucketWebsiteOutputReference) ResetRoutingRules() {
 		"resetRoutingRules",
 		nil, // no parameters
 	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy}.
+type S3ControlAccessPointPolicy interface {
+	cdktf.TerraformResource
+	AccessPointArn() *string
+	SetAccessPointArn(val *string)
+	AccessPointArnInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	HasPublicAccessPolicy() interface{}
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Policy() *string
+	SetPolicy(val *string)
+	PolicyInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3ControlAccessPointPolicy
+type jsiiProxy_S3ControlAccessPointPolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) AccessPointArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accessPointArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) AccessPointArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accessPointArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) HasPublicAccessPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"hasPublicAccessPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) PolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy} Resource.
+func NewS3ControlAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlAccessPointPolicyConfig) S3ControlAccessPointPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlAccessPointPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy} Resource.
+func NewS3ControlAccessPointPolicy_Override(s S3ControlAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlAccessPointPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetAccessPointArn(val *string) {
+	_jsii_.Set(
+		j,
+		"accessPointArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3ControlAccessPointPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3ControlAccessPointPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3ControlAccessPointPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3ControlAccessPointPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlAccessPointPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3ControlAccessPointPolicyConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html#access_point_arn S3ControlAccessPointPolicy#access_point_arn}.
+	AccessPointArn *string `json:"accessPointArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html#policy S3ControlAccessPointPolicy#policy}.
+	Policy *string `json:"policy"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html aws_s3control_bucket}.
@@ -19936,7 +26813,7 @@ func NewS3ControlBucket(scope constructs.Construct, id *string, config *S3Contro
 	j := jsiiProxy_S3ControlBucket{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucket",
+		"hashicorp_aws.s3.S3ControlBucket",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19949,7 +26826,7 @@ func NewS3ControlBucket_Override(s S3ControlBucket, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucket",
+		"hashicorp_aws.s3.S3ControlBucket",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -20029,7 +26906,7 @@ func S3ControlBucket_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3ControlBucket",
+		"hashicorp_aws.s3.S3ControlBucket",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20042,7 +26919,7 @@ func S3ControlBucket_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3ControlBucket",
+		"hashicorp_aws.s3.S3ControlBucket",
 		"tfResourceType",
 		&returns,
 	)
@@ -20220,6 +27097,7 @@ func (s *jsiiProxy_S3ControlBucket) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3ControlBucketConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20472,7 +27350,7 @@ func NewS3ControlBucketLifecycleConfiguration(scope constructs.Construct, id *st
 	j := jsiiProxy_S3ControlBucketLifecycleConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfiguration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20485,7 +27363,7 @@ func NewS3ControlBucketLifecycleConfiguration_Override(s S3ControlBucketLifecycl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfiguration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfiguration",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -20549,7 +27427,7 @@ func S3ControlBucketLifecycleConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfiguration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20562,7 +27440,7 @@ func S3ControlBucketLifecycleConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfiguration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -20724,6 +27602,7 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) ToTerraform() interfac
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3ControlBucketLifecycleConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20770,6 +27649,8 @@ type S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutp
 	DaysAfterInitiation() *float64
 	SetDaysAfterInitiation(val *float64)
 	DaysAfterInitiationInput() *float64
+	InternalValue() *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload
+	SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -20804,6 +27685,16 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 	_jsii_.Get(
 		j,
 		"daysAfterInitiationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) InternalValue() *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload {
+	var returns *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -20845,7 +27736,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadO
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20857,7 +27748,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -20867,6 +27758,14 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 	_jsii_.Set(
 		j,
 		"daysAfterInitiation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20999,6 +27898,8 @@ type S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference interfac
 	ExpiredObjectDeleteMarker() interface{}
 	SetExpiredObjectDeleteMarker(val interface{})
 	ExpiredObjectDeleteMarkerInput() interface{}
+	InternalValue() *S3ControlBucketLifecycleConfigurationRuleExpiration
+	SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleExpiration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -21081,6 +27982,16 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 	return returns
 }
 
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) InternalValue() *S3ControlBucketLifecycleConfigurationRuleExpiration {
+	var returns *S3ControlBucketLifecycleConfigurationRuleExpiration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -21117,7 +28028,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference(terra
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21129,7 +28040,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -21155,6 +28066,14 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 	_jsii_.Set(
 		j,
 		"expiredObjectDeleteMarker",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleExpiration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -21300,6 +28219,8 @@ type S3ControlBucketLifecycleConfigurationRuleFilter struct {
 
 type S3ControlBucketLifecycleConfigurationRuleFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *S3ControlBucketLifecycleConfigurationRuleFilter
+	SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -21325,6 +28246,16 @@ type S3ControlBucketLifecycleConfigurationRuleFilterOutputReference interface {
 // The jsii proxy struct for S3ControlBucketLifecycleConfigurationRuleFilterOutputReference
 type jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) InternalValue() *S3ControlBucketLifecycleConfigurationRuleFilter {
+	var returns *S3ControlBucketLifecycleConfigurationRuleFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) IsSingleItem() *bool {
@@ -21403,7 +28334,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference(terraform
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21415,9 +28346,17 @@ func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) SetInternalValue(val *S3ControlBucketLifecycleConfigurationRuleFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21794,7 +28733,7 @@ func NewS3ControlBucketPolicy(scope constructs.Construct, id *string, config *S3
 	j := jsiiProxy_S3ControlBucketPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketPolicy",
+		"hashicorp_aws.s3.S3ControlBucketPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21807,7 +28746,7 @@ func NewS3ControlBucketPolicy_Override(s S3ControlBucketPolicy, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ControlBucketPolicy",
+		"hashicorp_aws.s3.S3ControlBucketPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -21871,7 +28810,7 @@ func S3ControlBucketPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3ControlBucketPolicy",
+		"hashicorp_aws.s3.S3ControlBucketPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21884,7 +28823,7 @@ func S3ControlBucketPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3ControlBucketPolicy",
+		"hashicorp_aws.s3.S3ControlBucketPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -22046,6 +28985,7 @@ func (s *jsiiProxy_S3ControlBucketPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3ControlBucketPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22059,6 +28999,4732 @@ type S3ControlBucketPolicyConfig struct {
 	Bucket *string `json:"bucket"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html#policy S3ControlBucketPolicy#policy}.
 	Policy *string `json:"policy"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point}.
+type S3ControlMultiRegionAccessPoint interface {
+	cdktf.TerraformResource
+	AccountId() *string
+	SetAccountId(val *string)
+	AccountIdInput() *string
+	Alias() *string
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Details() S3ControlMultiRegionAccessPointDetailsOutputReference
+	DetailsInput() *S3ControlMultiRegionAccessPointDetails
+	DomainName() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Status() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() S3ControlMultiRegionAccessPointTimeoutsOutputReference
+	TimeoutsInput() *S3ControlMultiRegionAccessPointTimeouts
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutDetails(value *S3ControlMultiRegionAccessPointDetails)
+	PutTimeouts(value *S3ControlMultiRegionAccessPointTimeouts)
+	ResetAccountId()
+	ResetOverrideLogicalId()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPoint
+type jsiiProxy_S3ControlMultiRegionAccessPoint struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) AccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) AccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Alias() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"alias",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Details() S3ControlMultiRegionAccessPointDetailsOutputReference {
+	var returns S3ControlMultiRegionAccessPointDetailsOutputReference
+	_jsii_.Get(
+		j,
+		"details",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) DetailsInput() *S3ControlMultiRegionAccessPointDetails {
+	var returns *S3ControlMultiRegionAccessPointDetails
+	_jsii_.Get(
+		j,
+		"detailsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) DomainName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Timeouts() S3ControlMultiRegionAccessPointTimeoutsOutputReference {
+	var returns S3ControlMultiRegionAccessPointTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) TimeoutsInput() *S3ControlMultiRegionAccessPointTimeouts {
+	var returns *S3ControlMultiRegionAccessPointTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point} Resource.
+func NewS3ControlMultiRegionAccessPoint(scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointConfig) S3ControlMultiRegionAccessPoint {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPoint{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPoint",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point} Resource.
+func NewS3ControlMultiRegionAccessPoint_Override(s S3ControlMultiRegionAccessPoint, scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPoint",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetAccountId(val *string) {
+	_jsii_.Set(
+		j,
+		"accountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3ControlMultiRegionAccessPoint_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPoint",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3ControlMultiRegionAccessPoint_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPoint",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) PutDetails(value *S3ControlMultiRegionAccessPointDetails) {
+	_jsii_.InvokeVoid(
+		s,
+		"putDetails",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) PutTimeouts(value *S3ControlMultiRegionAccessPointTimeouts) {
+	_jsii_.InvokeVoid(
+		s,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ResetAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccountId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3ControlMultiRegionAccessPointConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// details block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#details S3ControlMultiRegionAccessPoint#details}
+	Details *S3ControlMultiRegionAccessPointDetails `json:"details"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#account_id S3ControlMultiRegionAccessPoint#account_id}.
+	AccountId *string `json:"accountId"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#timeouts S3ControlMultiRegionAccessPoint#timeouts}
+	Timeouts *S3ControlMultiRegionAccessPointTimeouts `json:"timeouts"`
+}
+
+type S3ControlMultiRegionAccessPointDetails struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#name S3ControlMultiRegionAccessPoint#name}.
+	Name *string `json:"name"`
+	// region block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#region S3ControlMultiRegionAccessPoint#region}
+	Region *[]*S3ControlMultiRegionAccessPointDetailsRegion `json:"region"`
+	// public_access_block block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#public_access_block S3ControlMultiRegionAccessPoint#public_access_block}
+	PublicAccessBlock *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock `json:"publicAccessBlock"`
+}
+
+type S3ControlMultiRegionAccessPointDetailsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3ControlMultiRegionAccessPointDetails
+	SetInternalValue(val *S3ControlMultiRegionAccessPointDetails)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	PublicAccessBlock() S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference
+	PublicAccessBlockInput() *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock
+	Region() *[]*S3ControlMultiRegionAccessPointDetailsRegion
+	SetRegion(val *[]*S3ControlMultiRegionAccessPointDetailsRegion)
+	RegionInput() *[]*S3ControlMultiRegionAccessPointDetailsRegion
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutPublicAccessBlock(value *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock)
+	ResetPublicAccessBlock()
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointDetailsOutputReference
+type jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) InternalValue() *S3ControlMultiRegionAccessPointDetails {
+	var returns *S3ControlMultiRegionAccessPointDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) PublicAccessBlock() S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference {
+	var returns S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference
+	_jsii_.Get(
+		j,
+		"publicAccessBlock",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) PublicAccessBlockInput() *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock {
+	var returns *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock
+	_jsii_.Get(
+		j,
+		"publicAccessBlockInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Region() *[]*S3ControlMultiRegionAccessPointDetailsRegion {
+	var returns *[]*S3ControlMultiRegionAccessPointDetailsRegion
+	_jsii_.Get(
+		j,
+		"region",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) RegionInput() *[]*S3ControlMultiRegionAccessPointDetailsRegion {
+	var returns *[]*S3ControlMultiRegionAccessPointDetailsRegion
+	_jsii_.Get(
+		j,
+		"regionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlMultiRegionAccessPointDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlMultiRegionAccessPointDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetInternalValue(val *S3ControlMultiRegionAccessPointDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetRegion(val *[]*S3ControlMultiRegionAccessPointDetailsRegion) {
+	_jsii_.Set(
+		j,
+		"region",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) PutPublicAccessBlock(value *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock) {
+	_jsii_.InvokeVoid(
+		s,
+		"putPublicAccessBlock",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) ResetPublicAccessBlock() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPublicAccessBlock",
+		nil, // no parameters
+	)
+}
+
+type S3ControlMultiRegionAccessPointDetailsPublicAccessBlock struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#block_public_acls S3ControlMultiRegionAccessPoint#block_public_acls}.
+	BlockPublicAcls interface{} `json:"blockPublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#block_public_policy S3ControlMultiRegionAccessPoint#block_public_policy}.
+	BlockPublicPolicy interface{} `json:"blockPublicPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#ignore_public_acls S3ControlMultiRegionAccessPoint#ignore_public_acls}.
+	IgnorePublicAcls interface{} `json:"ignorePublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#restrict_public_buckets S3ControlMultiRegionAccessPoint#restrict_public_buckets}.
+	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets"`
+}
+
+type S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference interface {
+	cdktf.ComplexObject
+	BlockPublicAcls() interface{}
+	SetBlockPublicAcls(val interface{})
+	BlockPublicAclsInput() interface{}
+	BlockPublicPolicy() interface{}
+	SetBlockPublicPolicy(val interface{})
+	BlockPublicPolicyInput() interface{}
+	IgnorePublicAcls() interface{}
+	SetIgnorePublicAcls(val interface{})
+	IgnorePublicAclsInput() interface{}
+	InternalValue() *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock
+	SetInternalValue(val *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	RestrictPublicBuckets() interface{}
+	SetRestrictPublicBuckets(val interface{})
+	RestrictPublicBucketsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetBlockPublicAcls()
+	ResetBlockPublicPolicy()
+	ResetIgnorePublicAcls()
+	ResetRestrictPublicBuckets()
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference
+type jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) BlockPublicAcls() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"blockPublicAcls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) BlockPublicAclsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"blockPublicAclsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) BlockPublicPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"blockPublicPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) BlockPublicPolicyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"blockPublicPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) IgnorePublicAcls() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ignorePublicAcls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) IgnorePublicAclsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ignorePublicAclsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) InternalValue() *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock {
+	var returns *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) RestrictPublicBuckets() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"restrictPublicBuckets",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) RestrictPublicBucketsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"restrictPublicBucketsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetBlockPublicAcls(val interface{}) {
+	_jsii_.Set(
+		j,
+		"blockPublicAcls",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetBlockPublicPolicy(val interface{}) {
+	_jsii_.Set(
+		j,
+		"blockPublicPolicy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetIgnorePublicAcls(val interface{}) {
+	_jsii_.Set(
+		j,
+		"ignorePublicAcls",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetInternalValue(val *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetRestrictPublicBuckets(val interface{}) {
+	_jsii_.Set(
+		j,
+		"restrictPublicBuckets",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) ResetBlockPublicAcls() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetBlockPublicAcls",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) ResetBlockPublicPolicy() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetBlockPublicPolicy",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) ResetIgnorePublicAcls() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIgnorePublicAcls",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) ResetRestrictPublicBuckets() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetRestrictPublicBuckets",
+		nil, // no parameters
+	)
+}
+
+type S3ControlMultiRegionAccessPointDetailsRegion struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#bucket S3ControlMultiRegionAccessPoint#bucket}.
+	Bucket *string `json:"bucket"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy}.
+type S3ControlMultiRegionAccessPointPolicy interface {
+	cdktf.TerraformResource
+	AccountId() *string
+	SetAccountId(val *string)
+	AccountIdInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Details() S3ControlMultiRegionAccessPointPolicyDetailsOutputReference
+	DetailsInput() *S3ControlMultiRegionAccessPointPolicyDetails
+	Established() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Proposed() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference
+	TimeoutsInput() *S3ControlMultiRegionAccessPointPolicyTimeouts
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutDetails(value *S3ControlMultiRegionAccessPointPolicyDetails)
+	PutTimeouts(value *S3ControlMultiRegionAccessPointPolicyTimeouts)
+	ResetAccountId()
+	ResetOverrideLogicalId()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointPolicy
+type jsiiProxy_S3ControlMultiRegionAccessPointPolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) AccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) AccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Details() S3ControlMultiRegionAccessPointPolicyDetailsOutputReference {
+	var returns S3ControlMultiRegionAccessPointPolicyDetailsOutputReference
+	_jsii_.Get(
+		j,
+		"details",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) DetailsInput() *S3ControlMultiRegionAccessPointPolicyDetails {
+	var returns *S3ControlMultiRegionAccessPointPolicyDetails
+	_jsii_.Get(
+		j,
+		"detailsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Established() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"established",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Proposed() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"proposed",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Timeouts() S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference {
+	var returns S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) TimeoutsInput() *S3ControlMultiRegionAccessPointPolicyTimeouts {
+	var returns *S3ControlMultiRegionAccessPointPolicyTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy} Resource.
+func NewS3ControlMultiRegionAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointPolicyConfig) S3ControlMultiRegionAccessPointPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy} Resource.
+func NewS3ControlMultiRegionAccessPointPolicy_Override(s S3ControlMultiRegionAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetAccountId(val *string) {
+	_jsii_.Set(
+		j,
+		"accountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3ControlMultiRegionAccessPointPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3ControlMultiRegionAccessPointPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) PutDetails(value *S3ControlMultiRegionAccessPointPolicyDetails) {
+	_jsii_.InvokeVoid(
+		s,
+		"putDetails",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) PutTimeouts(value *S3ControlMultiRegionAccessPointPolicyTimeouts) {
+	_jsii_.InvokeVoid(
+		s,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ResetAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccountId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3ControlMultiRegionAccessPointPolicyConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// details block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#details S3ControlMultiRegionAccessPointPolicy#details}
+	Details *S3ControlMultiRegionAccessPointPolicyDetails `json:"details"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#account_id S3ControlMultiRegionAccessPointPolicy#account_id}.
+	AccountId *string `json:"accountId"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#timeouts S3ControlMultiRegionAccessPointPolicy#timeouts}
+	Timeouts *S3ControlMultiRegionAccessPointPolicyTimeouts `json:"timeouts"`
+}
+
+type S3ControlMultiRegionAccessPointPolicyDetails struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#name S3ControlMultiRegionAccessPointPolicy#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#policy S3ControlMultiRegionAccessPointPolicy#policy}.
+	Policy *string `json:"policy"`
+}
+
+type S3ControlMultiRegionAccessPointPolicyDetailsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *S3ControlMultiRegionAccessPointPolicyDetails
+	SetInternalValue(val *S3ControlMultiRegionAccessPointPolicyDetails)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Policy() *string
+	SetPolicy(val *string)
+	PolicyInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointPolicyDetailsOutputReference
+type jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) InternalValue() *S3ControlMultiRegionAccessPointPolicyDetails {
+	var returns *S3ControlMultiRegionAccessPointPolicyDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) PolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyDetailsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetInternalValue(val *S3ControlMultiRegionAccessPointPolicyDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type S3ControlMultiRegionAccessPointPolicyTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#create S3ControlMultiRegionAccessPointPolicy#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#update S3ControlMultiRegionAccessPointPolicy#update}.
+	Update *string `json:"update"`
+}
+
+type S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	InternalValue() *S3ControlMultiRegionAccessPointPolicyTimeouts
+	SetInternalValue(val *S3ControlMultiRegionAccessPointPolicyTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference
+type jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) InternalValue() *S3ControlMultiRegionAccessPointPolicyTimeouts {
+	var returns *S3ControlMultiRegionAccessPointPolicyTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetInternalValue(val *S3ControlMultiRegionAccessPointPolicyTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+type S3ControlMultiRegionAccessPointTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#create S3ControlMultiRegionAccessPoint#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#delete S3ControlMultiRegionAccessPoint#delete}.
+	Delete *string `json:"delete"`
+}
+
+type S3ControlMultiRegionAccessPointTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *S3ControlMultiRegionAccessPointTimeouts
+	SetInternalValue(val *S3ControlMultiRegionAccessPointTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+}
+
+// The jsii proxy struct for S3ControlMultiRegionAccessPointTimeoutsOutputReference
+type jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) InternalValue() *S3ControlMultiRegionAccessPointTimeouts {
+	var returns *S3ControlMultiRegionAccessPointTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetInternalValue(val *S3ControlMultiRegionAccessPointTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point}.
+type S3ControlObjectLambdaAccessPoint interface {
+	cdktf.TerraformResource
+	AccountId() *string
+	SetAccountId(val *string)
+	AccountIdInput() *string
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	Configuration() S3ControlObjectLambdaAccessPointConfigurationOutputReference
+	ConfigurationInput() *S3ControlObjectLambdaAccessPointConfiguration
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutConfiguration(value *S3ControlObjectLambdaAccessPointConfiguration)
+	ResetAccountId()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3ControlObjectLambdaAccessPoint
+type jsiiProxy_S3ControlObjectLambdaAccessPoint struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) AccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) AccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Configuration() S3ControlObjectLambdaAccessPointConfigurationOutputReference {
+	var returns S3ControlObjectLambdaAccessPointConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"configuration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) ConfigurationInput() *S3ControlObjectLambdaAccessPointConfiguration {
+	var returns *S3ControlObjectLambdaAccessPointConfiguration
+	_jsii_.Get(
+		j,
+		"configurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point} Resource.
+func NewS3ControlObjectLambdaAccessPoint(scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointConfig) S3ControlObjectLambdaAccessPoint {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlObjectLambdaAccessPoint{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPoint",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point} Resource.
+func NewS3ControlObjectLambdaAccessPoint_Override(s S3ControlObjectLambdaAccessPoint, scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPoint",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetAccountId(val *string) {
+	_jsii_.Set(
+		j,
+		"accountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3ControlObjectLambdaAccessPoint_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPoint",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3ControlObjectLambdaAccessPoint_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPoint",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) PutConfiguration(value *S3ControlObjectLambdaAccessPointConfiguration) {
+	_jsii_.InvokeVoid(
+		s,
+		"putConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ResetAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccountId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3ControlObjectLambdaAccessPointConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#configuration S3ControlObjectLambdaAccessPoint#configuration}
+	Configuration *S3ControlObjectLambdaAccessPointConfiguration `json:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#name S3ControlObjectLambdaAccessPoint#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#account_id S3ControlObjectLambdaAccessPoint#account_id}.
+	AccountId *string `json:"accountId"`
+}
+
+type S3ControlObjectLambdaAccessPointConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#supporting_access_point S3ControlObjectLambdaAccessPoint#supporting_access_point}.
+	SupportingAccessPoint *string `json:"supportingAccessPoint"`
+	// transformation_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#transformation_configuration S3ControlObjectLambdaAccessPoint#transformation_configuration}
+	TransformationConfiguration *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration `json:"transformationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#allowed_features S3ControlObjectLambdaAccessPoint#allowed_features}.
+	AllowedFeatures *[]*string `json:"allowedFeatures"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#cloud_watch_metrics_enabled S3ControlObjectLambdaAccessPoint#cloud_watch_metrics_enabled}.
+	CloudWatchMetricsEnabled interface{} `json:"cloudWatchMetricsEnabled"`
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	AllowedFeatures() *[]*string
+	SetAllowedFeatures(val *[]*string)
+	AllowedFeaturesInput() *[]*string
+	CloudWatchMetricsEnabled() interface{}
+	SetCloudWatchMetricsEnabled(val interface{})
+	CloudWatchMetricsEnabledInput() interface{}
+	InternalValue() *S3ControlObjectLambdaAccessPointConfiguration
+	SetInternalValue(val *S3ControlObjectLambdaAccessPointConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	SupportingAccessPoint() *string
+	SetSupportingAccessPoint(val *string)
+	SupportingAccessPointInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	TransformationConfiguration() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+	SetTransformationConfiguration(val *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration)
+	TransformationConfigurationInput() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetAllowedFeatures()
+	ResetCloudWatchMetricsEnabled()
+}
+
+// The jsii proxy struct for S3ControlObjectLambdaAccessPointConfigurationOutputReference
+type jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) AllowedFeatures() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedFeatures",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) AllowedFeaturesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedFeaturesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) CloudWatchMetricsEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cloudWatchMetricsEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) CloudWatchMetricsEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cloudWatchMetricsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) InternalValue() *S3ControlObjectLambdaAccessPointConfiguration {
+	var returns *S3ControlObjectLambdaAccessPointConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SupportingAccessPoint() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"supportingAccessPoint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SupportingAccessPointInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"supportingAccessPointInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfiguration() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration {
+	var returns *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+	_jsii_.Get(
+		j,
+		"transformationConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfigurationInput() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration {
+	var returns *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+	_jsii_.Get(
+		j,
+		"transformationConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetAllowedFeatures(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"allowedFeatures",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetCloudWatchMetricsEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"cloudWatchMetricsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetInternalValue(val *S3ControlObjectLambdaAccessPointConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetSupportingAccessPoint(val *string) {
+	_jsii_.Set(
+		j,
+		"supportingAccessPoint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTransformationConfiguration(val *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration) {
+	_jsii_.Set(
+		j,
+		"transformationConfiguration",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) ResetAllowedFeatures() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAllowedFeatures",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) ResetCloudWatchMetricsEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCloudWatchMetricsEnabled",
+		nil, // no parameters
+	)
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#actions S3ControlObjectLambdaAccessPoint#actions}.
+	Actions *[]*string `json:"actions"`
+	// content_transformation block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#content_transformation S3ControlObjectLambdaAccessPoint#content_transformation}
+	ContentTransformation *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation `json:"contentTransformation"`
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation struct {
+	// aws_lambda block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#aws_lambda S3ControlObjectLambdaAccessPoint#aws_lambda}
+	AwsLambda *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda `json:"awsLambda"`
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#function_arn S3ControlObjectLambdaAccessPoint#function_arn}.
+	FunctionArn *string `json:"functionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#function_payload S3ControlObjectLambdaAccessPoint#function_payload}.
+	FunctionPayload *string `json:"functionPayload"`
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference interface {
+	cdktf.ComplexObject
+	FunctionArn() *string
+	SetFunctionArn(val *string)
+	FunctionArnInput() *string
+	FunctionPayload() *string
+	SetFunctionPayload(val *string)
+	FunctionPayloadInput() *string
+	InternalValue() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda
+	SetInternalValue(val *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetFunctionPayload()
+}
+
+// The jsii proxy struct for S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference
+type jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) FunctionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) FunctionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) FunctionPayload() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionPayload",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) FunctionPayloadInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionPayloadInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) InternalValue() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda {
+	var returns *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetFunctionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"functionArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetFunctionPayload(val *string) {
+	_jsii_.Set(
+		j,
+		"functionPayload",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetInternalValue(val *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) ResetFunctionPayload() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFunctionPayload",
+		nil, // no parameters
+	)
+}
+
+type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference interface {
+	cdktf.ComplexObject
+	AwsLambda() S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference
+	AwsLambdaInput() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda
+	InternalValue() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation
+	SetInternalValue(val *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAwsLambda(value *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda)
+}
+
+// The jsii proxy struct for S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference
+type jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) AwsLambda() S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference {
+	var returns S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference
+	_jsii_.Get(
+		j,
+		"awsLambda",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) AwsLambdaInput() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda {
+	var returns *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda
+	_jsii_.Get(
+		j,
+		"awsLambdaInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) InternalValue() *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation {
+	var returns *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetInternalValue(val *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) PutAwsLambda(value *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda) {
+	_jsii_.InvokeVoid(
+		s,
+		"putAwsLambda",
+		[]interface{}{value},
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy}.
+type S3ControlObjectLambdaAccessPointPolicy interface {
+	cdktf.TerraformResource
+	AccountId() *string
+	SetAccountId(val *string)
+	AccountIdInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	HasPublicAccessPolicy() interface{}
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Policy() *string
+	SetPolicy(val *string)
+	PolicyInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetAccountId()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for S3ControlObjectLambdaAccessPointPolicy
+type jsiiProxy_S3ControlObjectLambdaAccessPointPolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) AccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) AccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) HasPublicAccessPolicy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"hasPublicAccessPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) PolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy} Resource.
+func NewS3ControlObjectLambdaAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointPolicyConfig) S3ControlObjectLambdaAccessPointPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_S3ControlObjectLambdaAccessPointPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy} Resource.
+func NewS3ControlObjectLambdaAccessPointPolicy_Override(s S3ControlObjectLambdaAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicy",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetAccountId(val *string) {
+	_jsii_.Set(
+		j,
+		"accountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func S3ControlObjectLambdaAccessPointPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func S3ControlObjectLambdaAccessPointPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ResetAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccountId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Storage Service.
+type S3ControlObjectLambdaAccessPointPolicyConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#name S3ControlObjectLambdaAccessPointPolicy#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#policy S3ControlObjectLambdaAccessPointPolicy#policy}.
+	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#account_id S3ControlObjectLambdaAccessPointPolicy#account_id}.
+	AccountId *string `json:"accountId"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html aws_s3_object_copy}.
@@ -23247,7 +34913,7 @@ func NewS3ObjectCopy(scope constructs.Construct, id *string, config *S3ObjectCop
 	j := jsiiProxy_S3ObjectCopy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ObjectCopy",
+		"hashicorp_aws.s3.S3ObjectCopy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23260,7 +34926,7 @@ func NewS3ObjectCopy_Override(s S3ObjectCopy, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3ObjectCopy",
+		"hashicorp_aws.s3.S3ObjectCopy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -23620,7 +35286,7 @@ func S3ObjectCopy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3ObjectCopy",
+		"hashicorp_aws.s3.S3ObjectCopy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23633,7 +35299,7 @@ func S3ObjectCopy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3ObjectCopy",
+		"hashicorp_aws.s3.S3ObjectCopy",
 		"tfResourceType",
 		&returns,
 	)
@@ -24083,6 +35749,7 @@ func (s *jsiiProxy_S3ObjectCopy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3ObjectCopyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24477,7 +36144,7 @@ func NewS3OutpostsEndpoint(scope constructs.Construct, id *string, config *S3Out
 	j := jsiiProxy_S3OutpostsEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3OutpostsEndpoint",
+		"hashicorp_aws.s3.S3OutpostsEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24490,7 +36157,7 @@ func NewS3OutpostsEndpoint_Override(s S3OutpostsEndpoint, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3OutpostsEndpoint",
+		"hashicorp_aws.s3.S3OutpostsEndpoint",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -24562,7 +36229,7 @@ func S3OutpostsEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.S3.S3OutpostsEndpoint",
+		"hashicorp_aws.s3.S3OutpostsEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24575,7 +36242,7 @@ func S3OutpostsEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.S3.S3OutpostsEndpoint",
+		"hashicorp_aws.s3.S3OutpostsEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -24750,6 +36417,7 @@ func (s *jsiiProxy_S3OutpostsEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Storage Service.
 type S3OutpostsEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24835,7 +36503,7 @@ func NewS3OutpostsEndpointNetworkInterfaces(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_S3OutpostsEndpointNetworkInterfaces{}
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3OutpostsEndpointNetworkInterfaces",
+		"hashicorp_aws.s3.S3OutpostsEndpointNetworkInterfaces",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -24848,7 +36516,7 @@ func NewS3OutpostsEndpointNetworkInterfaces_Override(s S3OutpostsEndpointNetwork
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.S3.S3OutpostsEndpointNetworkInterfaces",
+		"hashicorp_aws.s3.S3OutpostsEndpointNetworkInterfaces",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)

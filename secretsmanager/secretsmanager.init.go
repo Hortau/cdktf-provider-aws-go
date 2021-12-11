@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecret",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecret)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretConfig",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretConfig",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotation",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretRotation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -102,11 +102,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationConfig",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationConfig",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretRotationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRotationRules",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretRotationRotationRules)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automaticallyAfterDays", GoGetter: "AutomaticallyAfterDays"},
@@ -126,7 +126,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRules",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretRotationRules)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automaticallyAfterDays", GoGetter: "AutomaticallyAfterDays"},
@@ -146,7 +146,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersion",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -195,11 +195,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersionConfig",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersionConfig",
 		reflect.TypeOf((*DataAwsSecretsmanagerSecretVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecret",
 		reflect.TypeOf((*SecretsmanagerSecret)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -275,11 +275,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretConfig",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretConfig",
 		reflect.TypeOf((*SecretsmanagerSecretConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicy",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicy",
 		reflect.TypeOf((*SecretsmanagerSecretPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -323,15 +323,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicyConfig",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicyConfig",
 		reflect.TypeOf((*SecretsmanagerSecretPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretReplica",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretReplica",
 		reflect.TypeOf((*SecretsmanagerSecretReplica)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotation",
 		reflect.TypeOf((*SecretsmanagerSecretRotation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -379,15 +379,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationConfig",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationConfig",
 		reflect.TypeOf((*SecretsmanagerSecretRotationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRotationRules",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRotationRules",
 		reflect.TypeOf((*SecretsmanagerSecretRotationRotationRules)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRotationRulesOutputReference",
 		reflect.TypeOf((*SecretsmanagerSecretRotationRotationRulesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automaticallyAfterDays", GoGetter: "AutomaticallyAfterDays"},
@@ -396,6 +396,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -409,11 +410,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRules",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRules",
 		reflect.TypeOf((*SecretsmanagerSecretRotationRules)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRulesOutputReference",
 		reflect.TypeOf((*SecretsmanagerSecretRotationRulesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automaticallyAfterDays", GoGetter: "AutomaticallyAfterDays"},
@@ -422,6 +423,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -435,7 +437,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersion",
 		reflect.TypeOf((*SecretsmanagerSecretVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -485,7 +487,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersionConfig",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersionConfig",
 		reflect.TypeOf((*SecretsmanagerSecretVersionConfig)(nil)).Elem(),
 	)
 }

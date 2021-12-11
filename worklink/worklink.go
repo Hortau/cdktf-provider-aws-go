@@ -407,7 +407,7 @@ func NewWorklinkFleet(scope constructs.Construct, id *string, config *WorklinkFl
 	j := jsiiProxy_WorklinkFleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleet",
+		"hashicorp_aws.worklink.WorklinkFleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -420,7 +420,7 @@ func NewWorklinkFleet_Override(w WorklinkFleet, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleet",
+		"hashicorp_aws.worklink.WorklinkFleet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -508,7 +508,7 @@ func WorklinkFleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WorkLink.WorklinkFleet",
+		"hashicorp_aws.worklink.WorklinkFleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -521,7 +521,7 @@ func WorklinkFleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WorkLink.WorklinkFleet",
+		"hashicorp_aws.worklink.WorklinkFleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -747,6 +747,7 @@ func (w *jsiiProxy_WorklinkFleet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WorkLink.
 type WorklinkFleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -785,6 +786,8 @@ type WorklinkFleetIdentityProvider struct {
 
 type WorklinkFleetIdentityProviderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WorklinkFleetIdentityProvider
+	SetInternalValue(val *WorklinkFleetIdentityProvider)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SamlMetadata() *string
@@ -808,6 +811,16 @@ type WorklinkFleetIdentityProviderOutputReference interface {
 // The jsii proxy struct for WorklinkFleetIdentityProviderOutputReference
 type jsiiProxy_WorklinkFleetIdentityProviderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) InternalValue() *WorklinkFleetIdentityProvider {
+	var returns *WorklinkFleetIdentityProvider
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) IsSingleItem() *bool {
@@ -886,7 +899,7 @@ func NewWorklinkFleetIdentityProviderOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_WorklinkFleetIdentityProviderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleetIdentityProviderOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetIdentityProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -898,9 +911,17 @@ func NewWorklinkFleetIdentityProviderOutputReference_Override(w WorklinkFleetIde
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleetIdentityProviderOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetIdentityProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) SetInternalValue(val *WorklinkFleetIdentityProvider) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1039,6 +1060,8 @@ type WorklinkFleetNetwork struct {
 
 type WorklinkFleetNetworkOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WorklinkFleetNetwork
+	SetInternalValue(val *WorklinkFleetNetwork)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -1065,6 +1088,16 @@ type WorklinkFleetNetworkOutputReference interface {
 // The jsii proxy struct for WorklinkFleetNetworkOutputReference
 type jsiiProxy_WorklinkFleetNetworkOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) InternalValue() *WorklinkFleetNetwork {
+	var returns *WorklinkFleetNetwork
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) IsSingleItem() *bool {
@@ -1163,7 +1196,7 @@ func NewWorklinkFleetNetworkOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_WorklinkFleetNetworkOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleetNetworkOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetNetworkOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1175,9 +1208,17 @@ func NewWorklinkFleetNetworkOutputReference_Override(w WorklinkFleetNetworkOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkFleetNetworkOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetNetworkOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) SetInternalValue(val *WorklinkFleetNetwork) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1581,7 +1622,7 @@ func NewWorklinkWebsiteCertificateAuthorityAssociation(scope constructs.Construc
 	j := jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociation",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1594,7 +1635,7 @@ func NewWorklinkWebsiteCertificateAuthorityAssociation_Override(w WorklinkWebsit
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociation",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociation",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -1666,7 +1707,7 @@ func WorklinkWebsiteCertificateAuthorityAssociation_IsConstruct(x interface{}) *
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociation",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1679,7 +1720,7 @@ func WorklinkWebsiteCertificateAuthorityAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociation",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1849,6 +1890,7 @@ func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) ToTerraform()
 	return returns
 }
 
+// AWS WorkLink.
 type WorklinkWebsiteCertificateAuthorityAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

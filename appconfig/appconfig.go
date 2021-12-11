@@ -302,7 +302,7 @@ func NewAppconfigApplication(scope constructs.Construct, id *string, config *App
 	j := jsiiProxy_AppconfigApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigApplication",
+		"hashicorp_aws.appconfig.AppconfigApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -315,7 +315,7 @@ func NewAppconfigApplication_Override(a AppconfigApplication, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigApplication",
+		"hashicorp_aws.appconfig.AppconfigApplication",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -395,7 +395,7 @@ func AppconfigApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigApplication",
+		"hashicorp_aws.appconfig.AppconfigApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -408,7 +408,7 @@ func AppconfigApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigApplication",
+		"hashicorp_aws.appconfig.AppconfigApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -594,6 +594,7 @@ func (a *jsiiProxy_AppconfigApplication) ToTerraform() interface{} {
 	return returns
 }
 
+// AppConfig.
 type AppconfigApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1011,7 +1012,7 @@ func NewAppconfigConfigurationProfile(scope constructs.Construct, id *string, co
 	j := jsiiProxy_AppconfigConfigurationProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfile",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1024,7 +1025,7 @@ func NewAppconfigConfigurationProfile_Override(a AppconfigConfigurationProfile, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfile",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfile",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1136,7 +1137,7 @@ func AppconfigConfigurationProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfile",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1149,7 +1150,7 @@ func AppconfigConfigurationProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfile",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -1351,6 +1352,7 @@ func (a *jsiiProxy_AppconfigConfigurationProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AppConfig.
 type AppconfigConfigurationProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1794,7 +1796,7 @@ func NewAppconfigDeployment(scope constructs.Construct, id *string, config *Appc
 	j := jsiiProxy_AppconfigDeployment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigDeployment",
+		"hashicorp_aws.appconfig.AppconfigDeployment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1807,7 +1809,7 @@ func NewAppconfigDeployment_Override(a AppconfigDeployment, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigDeployment",
+		"hashicorp_aws.appconfig.AppconfigDeployment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1919,7 +1921,7 @@ func AppconfigDeployment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigDeployment",
+		"hashicorp_aws.appconfig.AppconfigDeployment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1932,7 +1934,7 @@ func AppconfigDeployment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigDeployment",
+		"hashicorp_aws.appconfig.AppconfigDeployment",
 		"tfResourceType",
 		&returns,
 	)
@@ -2118,6 +2120,7 @@ func (a *jsiiProxy_AppconfigDeployment) ToTerraform() interface{} {
 	return returns
 }
 
+// AppConfig.
 type AppconfigDeploymentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2555,7 +2558,7 @@ func NewAppconfigDeploymentStrategy(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_AppconfigDeploymentStrategy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategy",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2568,7 +2571,7 @@ func NewAppconfigDeploymentStrategy_Override(a AppconfigDeploymentStrategy, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategy",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategy",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2688,7 +2691,7 @@ func AppconfigDeploymentStrategy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategy",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2701,7 +2704,7 @@ func AppconfigDeploymentStrategy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategy",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2903,6 +2906,7 @@ func (a *jsiiProxy_AppconfigDeploymentStrategy) ToTerraform() interface{} {
 	return returns
 }
 
+// AppConfig.
 type AppconfigDeploymentStrategyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3294,7 +3298,7 @@ func NewAppconfigEnvironment(scope constructs.Construct, id *string, config *App
 	j := jsiiProxy_AppconfigEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigEnvironment",
+		"hashicorp_aws.appconfig.AppconfigEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3307,7 +3311,7 @@ func NewAppconfigEnvironment_Override(a AppconfigEnvironment, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigEnvironment",
+		"hashicorp_aws.appconfig.AppconfigEnvironment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3403,7 +3407,7 @@ func AppconfigEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigEnvironment",
+		"hashicorp_aws.appconfig.AppconfigEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3416,7 +3420,7 @@ func AppconfigEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigEnvironment",
+		"hashicorp_aws.appconfig.AppconfigEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -3610,6 +3614,7 @@ func (a *jsiiProxy_AppconfigEnvironment) ToTerraform() interface{} {
 	return returns
 }
 
+// AppConfig.
 type AppconfigEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3967,7 +3972,7 @@ func NewAppconfigHostedConfigurationVersion(scope constructs.Construct, id *stri
 	j := jsiiProxy_AppconfigHostedConfigurationVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersion",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3980,7 +3985,7 @@ func NewAppconfigHostedConfigurationVersion_Override(a AppconfigHostedConfigurat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersion",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersion",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4068,7 +4073,7 @@ func AppconfigHostedConfigurationVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersion",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4081,7 +4086,7 @@ func AppconfigHostedConfigurationVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersion",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -4251,6 +4256,7 @@ func (a *jsiiProxy_AppconfigHostedConfigurationVersion) ToTerraform() interface{
 	return returns
 }
 
+// AppConfig.
 type AppconfigHostedConfigurationVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

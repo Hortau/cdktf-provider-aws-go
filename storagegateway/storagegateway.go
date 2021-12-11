@@ -278,7 +278,7 @@ func NewDataAwsStoragegatewayLocalDisk(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsStoragegatewayLocalDisk{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDisk",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDisk",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -291,7 +291,7 @@ func NewDataAwsStoragegatewayLocalDisk_Override(d DataAwsStoragegatewayLocalDisk
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDisk",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDisk",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -363,7 +363,7 @@ func DataAwsStoragegatewayLocalDisk_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDisk",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDisk",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -376,7 +376,7 @@ func DataAwsStoragegatewayLocalDisk_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.DataAwsStoragegatewayLocalDisk",
+		"hashicorp_aws.storagegateway.DataAwsStoragegatewayLocalDisk",
 		"tfResourceType",
 		&returns,
 	)
@@ -554,6 +554,7 @@ func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type DataAwsStoragegatewayLocalDiskConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -804,7 +805,7 @@ func NewStoragegatewayCache(scope constructs.Construct, id *string, config *Stor
 	j := jsiiProxy_StoragegatewayCache{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayCache",
+		"hashicorp_aws.storagegateway.StoragegatewayCache",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -817,7 +818,7 @@ func NewStoragegatewayCache_Override(s StoragegatewayCache, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayCache",
+		"hashicorp_aws.storagegateway.StoragegatewayCache",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -881,7 +882,7 @@ func StoragegatewayCache_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayCache",
+		"hashicorp_aws.storagegateway.StoragegatewayCache",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -894,7 +895,7 @@ func StoragegatewayCache_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayCache",
+		"hashicorp_aws.storagegateway.StoragegatewayCache",
 		"tfResourceType",
 		&returns,
 	)
@@ -1056,6 +1057,7 @@ func (s *jsiiProxy_StoragegatewayCache) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayCacheConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1571,7 +1573,7 @@ func NewStoragegatewayCachedIscsiVolume(scope constructs.Construct, id *string, 
 	j := jsiiProxy_StoragegatewayCachedIscsiVolume{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolume",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1584,7 +1586,7 @@ func NewStoragegatewayCachedIscsiVolume_Override(s StoragegatewayCachedIscsiVolu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolume",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1712,7 +1714,7 @@ func StoragegatewayCachedIscsiVolume_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolume",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1725,7 +1727,7 @@ func StoragegatewayCachedIscsiVolume_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayCachedIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayCachedIscsiVolume",
 		"tfResourceType",
 		&returns,
 	)
@@ -1935,6 +1937,7 @@ func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayCachedIscsiVolumeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2352,7 +2355,7 @@ func NewStoragegatewayFileSystemAssociation(scope constructs.Construct, id *stri
 	j := jsiiProxy_StoragegatewayFileSystemAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociation",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2365,7 +2368,7 @@ func NewStoragegatewayFileSystemAssociation_Override(s StoragegatewayFileSystemA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociation",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2469,7 +2472,7 @@ func StoragegatewayFileSystemAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociation",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2482,7 +2485,7 @@ func StoragegatewayFileSystemAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociation",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -2694,6 +2697,8 @@ type StoragegatewayFileSystemAssociationCacheAttributesOutputReference interface
 	CacheStaleTimeoutInSeconds() *float64
 	SetCacheStaleTimeoutInSeconds(val *float64)
 	CacheStaleTimeoutInSecondsInput() *float64
+	InternalValue() *StoragegatewayFileSystemAssociationCacheAttributes
+	SetInternalValue(val *StoragegatewayFileSystemAssociationCacheAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2729,6 +2734,16 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	_jsii_.Get(
 		j,
 		"cacheStaleTimeoutInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) InternalValue() *StoragegatewayFileSystemAssociationCacheAttributes {
+	var returns *StoragegatewayFileSystemAssociationCacheAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2770,7 +2785,7 @@ func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference(terraf
 	j := jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2782,7 +2797,7 @@ func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayFileSystemAssociationCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2792,6 +2807,14 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	_jsii_.Set(
 		j,
 		"cacheStaleTimeoutInSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) SetInternalValue(val *StoragegatewayFileSystemAssociationCacheAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2912,6 +2935,7 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	)
 }
 
+// AWS Storage Gateway.
 type StoragegatewayFileSystemAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3614,7 +3638,7 @@ func NewStoragegatewayGateway(scope constructs.Construct, id *string, config *St
 	j := jsiiProxy_StoragegatewayGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGateway",
+		"hashicorp_aws.storagegateway.StoragegatewayGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3627,7 +3651,7 @@ func NewStoragegatewayGateway_Override(s StoragegatewayGateway, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGateway",
+		"hashicorp_aws.storagegateway.StoragegatewayGateway",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3803,7 +3827,7 @@ func StoragegatewayGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayGateway",
+		"hashicorp_aws.storagegateway.StoragegatewayGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3816,7 +3840,7 @@ func StoragegatewayGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayGateway",
+		"hashicorp_aws.storagegateway.StoragegatewayGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -4135,6 +4159,7 @@ func (s *jsiiProxy_StoragegatewayGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4254,7 +4279,7 @@ func NewStoragegatewayGatewayGatewayNetworkInterface(terraformResource cdktf.ITe
 	j := jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayGatewayNetworkInterface",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayGatewayNetworkInterface",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4267,7 +4292,7 @@ func NewStoragegatewayGatewayGatewayNetworkInterface_Override(s StoragegatewayGa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayGatewayNetworkInterface",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayGatewayNetworkInterface",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -4390,6 +4415,8 @@ type StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference interface {
 	DomainName() *string
 	SetDomainName(val *string)
 	DomainNameInput() *string
+	InternalValue() *StoragegatewayGatewaySmbActiveDirectorySettings
+	SetInternalValue(val *StoragegatewayGatewaySmbActiveDirectorySettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrganizationalUnit() *string
@@ -4459,6 +4486,16 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 	_jsii_.Get(
 		j,
 		"domainNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) InternalValue() *StoragegatewayGatewaySmbActiveDirectorySettings {
+	var returns *StoragegatewayGatewaySmbActiveDirectorySettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4580,7 +4617,7 @@ func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference(terraform
 	j := jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4592,7 +4629,7 @@ func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4610,6 +4647,14 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 	_jsii_.Set(
 		j,
 		"domainName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) SetInternalValue(val *StoragegatewayGatewaySmbActiveDirectorySettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4788,6 +4833,8 @@ type StoragegatewayGatewayTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *StoragegatewayGatewayTimeouts
+	SetInternalValue(val *StoragegatewayGatewayTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4823,6 +4870,16 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) CreateInput() *
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) InternalValue() *StoragegatewayGatewayTimeouts {
+	var returns *StoragegatewayGatewayTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4864,7 +4921,7 @@ func NewStoragegatewayGatewayTimeoutsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4876,7 +4933,7 @@ func NewStoragegatewayGatewayTimeoutsOutputReference_Override(s StoragegatewayGa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayGatewayTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayGatewayTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4886,6 +4943,14 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetCreate(val *
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetInternalValue(val *StoragegatewayGatewayTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5702,7 +5767,7 @@ func NewStoragegatewayNfsFileShare(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_StoragegatewayNfsFileShare{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShare",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5715,7 +5780,7 @@ func NewStoragegatewayNfsFileShare_Override(s StoragegatewayNfsFileShare, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShare",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5899,7 +5964,7 @@ func StoragegatewayNfsFileShare_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShare",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5912,7 +5977,7 @@ func StoragegatewayNfsFileShare_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShare",
 		"tfResourceType",
 		&returns,
 	)
@@ -6236,6 +6301,8 @@ type StoragegatewayNfsFileShareCacheAttributesOutputReference interface {
 	CacheStaleTimeoutInSeconds() *float64
 	SetCacheStaleTimeoutInSeconds(val *float64)
 	CacheStaleTimeoutInSecondsInput() *float64
+	InternalValue() *StoragegatewayNfsFileShareCacheAttributes
+	SetInternalValue(val *StoragegatewayNfsFileShareCacheAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6271,6 +6338,16 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Cac
 	_jsii_.Get(
 		j,
 		"cacheStaleTimeoutInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) InternalValue() *StoragegatewayNfsFileShareCacheAttributes {
+	var returns *StoragegatewayNfsFileShareCacheAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6312,7 +6389,7 @@ func NewStoragegatewayNfsFileShareCacheAttributesOutputReference(terraformResour
 	j := jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6324,7 +6401,7 @@ func NewStoragegatewayNfsFileShareCacheAttributesOutputReference_Override(s Stor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6334,6 +6411,14 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Set
 	_jsii_.Set(
 		j,
 		"cacheStaleTimeoutInSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) SetInternalValue(val *StoragegatewayNfsFileShareCacheAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6454,6 +6539,7 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Res
 	)
 }
 
+// AWS Storage Gateway.
 type StoragegatewayNfsFileShareConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6533,6 +6619,8 @@ type StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference interface {
 	GroupId() *string
 	SetGroupId(val *string)
 	GroupIdInput() *string
+	InternalValue() *StoragegatewayNfsFileShareNfsFileShareDefaults
+	SetInternalValue(val *StoragegatewayNfsFileShareNfsFileShareDefaults)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OwnerId() *string
@@ -6619,6 +6707,16 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 	return returns
 }
 
+func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) InternalValue() *StoragegatewayNfsFileShareNfsFileShareDefaults {
+	var returns *StoragegatewayNfsFileShareNfsFileShareDefaults
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6675,7 +6773,7 @@ func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference(terraformR
 	j := jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6687,7 +6785,7 @@ func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference_Override(s
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6713,6 +6811,14 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 	_jsii_.Set(
 		j,
 		"groupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) SetInternalValue(val *StoragegatewayNfsFileShareNfsFileShareDefaults) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6882,6 +6988,8 @@ type StoragegatewayNfsFileShareTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *StoragegatewayNfsFileShareTimeouts
+	SetInternalValue(val *StoragegatewayNfsFileShareTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6947,6 +7055,16 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) DeleteInpu
 	return returns
 }
 
+func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) InternalValue() *StoragegatewayNfsFileShareTimeouts {
+	var returns *StoragegatewayNfsFileShareTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7003,7 +7121,7 @@ func NewStoragegatewayNfsFileShareTimeoutsOutputReference(terraformResource cdkt
 	j := jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7015,7 +7133,7 @@ func NewStoragegatewayNfsFileShareTimeoutsOutputReference_Override(s Storagegate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewayNfsFileShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -7033,6 +7151,14 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetDelete(
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetInternalValue(val *StoragegatewayNfsFileShareTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8042,7 +8168,7 @@ func NewStoragegatewaySmbFileShare(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_StoragegatewaySmbFileShare{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShare",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8055,7 +8181,7 @@ func NewStoragegatewaySmbFileShare_Override(s StoragegatewaySmbFileShare, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShare",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8303,7 +8429,7 @@ func StoragegatewaySmbFileShare_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShare",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8316,7 +8442,7 @@ func StoragegatewaySmbFileShare_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShare",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShare",
 		"tfResourceType",
 		&returns,
 	)
@@ -8696,6 +8822,8 @@ type StoragegatewaySmbFileShareCacheAttributesOutputReference interface {
 	CacheStaleTimeoutInSeconds() *float64
 	SetCacheStaleTimeoutInSeconds(val *float64)
 	CacheStaleTimeoutInSecondsInput() *float64
+	InternalValue() *StoragegatewaySmbFileShareCacheAttributes
+	SetInternalValue(val *StoragegatewaySmbFileShareCacheAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8731,6 +8859,16 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Cac
 	_jsii_.Get(
 		j,
 		"cacheStaleTimeoutInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) InternalValue() *StoragegatewaySmbFileShareCacheAttributes {
+	var returns *StoragegatewaySmbFileShareCacheAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8772,7 +8910,7 @@ func NewStoragegatewaySmbFileShareCacheAttributesOutputReference(terraformResour
 	j := jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8784,7 +8922,7 @@ func NewStoragegatewaySmbFileShareCacheAttributesOutputReference_Override(s Stor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareCacheAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -8794,6 +8932,14 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Set
 	_jsii_.Set(
 		j,
 		"cacheStaleTimeoutInSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) SetInternalValue(val *StoragegatewaySmbFileShareCacheAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8914,6 +9060,7 @@ func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Res
 	)
 }
 
+// AWS Storage Gateway.
 type StoragegatewaySmbFileShareConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9000,6 +9147,8 @@ type StoragegatewaySmbFileShareTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *StoragegatewaySmbFileShareTimeouts
+	SetInternalValue(val *StoragegatewaySmbFileShareTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9065,6 +9214,16 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) DeleteInpu
 	return returns
 }
 
+func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) InternalValue() *StoragegatewaySmbFileShareTimeouts {
+	var returns *StoragegatewaySmbFileShareTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9121,7 +9280,7 @@ func NewStoragegatewaySmbFileShareTimeoutsOutputReference(terraformResource cdkt
 	j := jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9133,7 +9292,7 @@ func NewStoragegatewaySmbFileShareTimeoutsOutputReference_Override(s Storagegate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
+		"hashicorp_aws.storagegateway.StoragegatewaySmbFileShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9151,6 +9310,14 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetDelete(
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetInternalValue(val *StoragegatewaySmbFileShareTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9827,7 +9994,7 @@ func NewStoragegatewayStoredIscsiVolume(scope constructs.Construct, id *string, 
 	j := jsiiProxy_StoragegatewayStoredIscsiVolume{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolume",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9840,7 +10007,7 @@ func NewStoragegatewayStoredIscsiVolume_Override(s StoragegatewayStoredIscsiVolu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolume",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -9968,7 +10135,7 @@ func StoragegatewayStoredIscsiVolume_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolume",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9981,7 +10148,7 @@ func StoragegatewayStoredIscsiVolume_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayStoredIscsiVolume",
+		"hashicorp_aws.storagegateway.StoragegatewayStoredIscsiVolume",
 		"tfResourceType",
 		&returns,
 	)
@@ -10183,6 +10350,7 @@ func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayStoredIscsiVolumeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10554,7 +10722,7 @@ func NewStoragegatewayTapePool(scope constructs.Construct, id *string, config *S
 	j := jsiiProxy_StoragegatewayTapePool{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePool",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePool",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10567,7 +10735,7 @@ func NewStoragegatewayTapePool_Override(s StoragegatewayTapePool, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePool",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePool",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -10663,7 +10831,7 @@ func StoragegatewayTapePool_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePool",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePool",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10676,7 +10844,7 @@ func StoragegatewayTapePool_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayTapePool",
+		"hashicorp_aws.storagegateway.StoragegatewayTapePool",
 		"tfResourceType",
 		&returns,
 	)
@@ -10870,6 +11038,7 @@ func (s *jsiiProxy_StoragegatewayTapePool) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayTapePoolConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11151,7 +11320,7 @@ func NewStoragegatewayUploadBuffer(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_StoragegatewayUploadBuffer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBuffer",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBuffer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11164,7 +11333,7 @@ func NewStoragegatewayUploadBuffer_Override(s StoragegatewayUploadBuffer, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBuffer",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBuffer",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11236,7 +11405,7 @@ func StoragegatewayUploadBuffer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBuffer",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBuffer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11249,7 +11418,7 @@ func StoragegatewayUploadBuffer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayUploadBuffer",
+		"hashicorp_aws.storagegateway.StoragegatewayUploadBuffer",
 		"tfResourceType",
 		&returns,
 	)
@@ -11427,6 +11596,7 @@ func (s *jsiiProxy_StoragegatewayUploadBuffer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayUploadBufferConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11677,7 +11847,7 @@ func NewStoragegatewayWorkingStorage(scope constructs.Construct, id *string, con
 	j := jsiiProxy_StoragegatewayWorkingStorage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorage",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11690,7 +11860,7 @@ func NewStoragegatewayWorkingStorage_Override(s StoragegatewayWorkingStorage, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorage",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorage",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11754,7 +11924,7 @@ func StoragegatewayWorkingStorage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorage",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11767,7 +11937,7 @@ func StoragegatewayWorkingStorage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.StorageGateway.StoragegatewayWorkingStorage",
+		"hashicorp_aws.storagegateway.StoragegatewayWorkingStorage",
 		"tfResourceType",
 		&returns,
 	)
@@ -11929,6 +12099,7 @@ func (s *jsiiProxy_StoragegatewayWorkingStorage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Storage Gateway.
 type StoragegatewayWorkingStorageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

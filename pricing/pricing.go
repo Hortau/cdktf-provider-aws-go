@@ -253,7 +253,7 @@ func NewDataAwsPricingProduct(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsPricingProduct{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Pricing.DataAwsPricingProduct",
+		"hashicorp_aws.pricing.DataAwsPricingProduct",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -266,7 +266,7 @@ func NewDataAwsPricingProduct_Override(d DataAwsPricingProduct, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Pricing.DataAwsPricingProduct",
+		"hashicorp_aws.pricing.DataAwsPricingProduct",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -330,7 +330,7 @@ func DataAwsPricingProduct_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Pricing.DataAwsPricingProduct",
+		"hashicorp_aws.pricing.DataAwsPricingProduct",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -343,7 +343,7 @@ func DataAwsPricingProduct_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Pricing.DataAwsPricingProduct",
+		"hashicorp_aws.pricing.DataAwsPricingProduct",
 		"tfResourceType",
 		&returns,
 	)
@@ -505,6 +505,7 @@ func (d *jsiiProxy_DataAwsPricingProduct) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Pricing.
 type DataAwsPricingProductConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

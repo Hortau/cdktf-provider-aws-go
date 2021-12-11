@@ -325,7 +325,7 @@ func NewGameliftAlias(scope constructs.Construct, id *string, config *GameliftAl
 	j := jsiiProxy_GameliftAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftAlias",
+		"hashicorp_aws.gamelift.GameliftAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -338,7 +338,7 @@ func NewGameliftAlias_Override(g GameliftAlias, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftAlias",
+		"hashicorp_aws.gamelift.GameliftAlias",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -418,7 +418,7 @@ func GameliftAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GameLift.GameliftAlias",
+		"hashicorp_aws.gamelift.GameliftAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -431,7 +431,7 @@ func GameliftAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GameLift.GameliftAlias",
+		"hashicorp_aws.gamelift.GameliftAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -625,6 +625,7 @@ func (g *jsiiProxy_GameliftAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GameLift.
 type GameliftAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -662,6 +663,8 @@ type GameliftAliasRoutingStrategyOutputReference interface {
 	FleetId() *string
 	SetFleetId(val *string)
 	FleetIdInput() *string
+	InternalValue() *GameliftAliasRoutingStrategy
+	SetInternalValue(val *GameliftAliasRoutingStrategy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Message() *string
@@ -704,6 +707,16 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) FleetIdInput() *
 	_jsii_.Get(
 		j,
 		"fleetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) InternalValue() *GameliftAliasRoutingStrategy {
+	var returns *GameliftAliasRoutingStrategy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -785,7 +798,7 @@ func NewGameliftAliasRoutingStrategyOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_GameliftAliasRoutingStrategyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftAliasRoutingStrategyOutputReference",
+		"hashicorp_aws.gamelift.GameliftAliasRoutingStrategyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -797,7 +810,7 @@ func NewGameliftAliasRoutingStrategyOutputReference_Override(g GameliftAliasRout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftAliasRoutingStrategyOutputReference",
+		"hashicorp_aws.gamelift.GameliftAliasRoutingStrategyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -807,6 +820,14 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetFleetId(val *
 	_jsii_.Set(
 		j,
 		"fleetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetInternalValue(val *GameliftAliasRoutingStrategy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1290,7 +1311,7 @@ func NewGameliftBuild(scope constructs.Construct, id *string, config *GameliftBu
 	j := jsiiProxy_GameliftBuild{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftBuild",
+		"hashicorp_aws.gamelift.GameliftBuild",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1303,7 +1324,7 @@ func NewGameliftBuild_Override(g GameliftBuild, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftBuild",
+		"hashicorp_aws.gamelift.GameliftBuild",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -1391,7 +1412,7 @@ func GameliftBuild_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GameLift.GameliftBuild",
+		"hashicorp_aws.gamelift.GameliftBuild",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1404,7 +1425,7 @@ func GameliftBuild_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GameLift.GameliftBuild",
+		"hashicorp_aws.gamelift.GameliftBuild",
 		"tfResourceType",
 		&returns,
 	)
@@ -1598,6 +1619,7 @@ func (g *jsiiProxy_GameliftBuild) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GameLift.
 type GameliftBuildConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1637,6 +1659,8 @@ type GameliftBuildStorageLocationOutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *GameliftBuildStorageLocation
+	SetInternalValue(val *GameliftBuildStorageLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -1677,6 +1701,16 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) BucketInput() *s
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) InternalValue() *GameliftBuildStorageLocation {
+	var returns *GameliftBuildStorageLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1758,7 +1792,7 @@ func NewGameliftBuildStorageLocationOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_GameliftBuildStorageLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftBuildStorageLocationOutputReference",
+		"hashicorp_aws.gamelift.GameliftBuildStorageLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1770,7 +1804,7 @@ func NewGameliftBuildStorageLocationOutputReference_Override(g GameliftBuildStor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftBuildStorageLocationOutputReference",
+		"hashicorp_aws.gamelift.GameliftBuildStorageLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -1780,6 +1814,14 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetBucket(val *s
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetInternalValue(val *GameliftBuildStorageLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2461,7 +2503,7 @@ func NewGameliftFleet(scope constructs.Construct, id *string, config *GameliftFl
 	j := jsiiProxy_GameliftFleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleet",
+		"hashicorp_aws.gamelift.GameliftFleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2474,7 +2516,7 @@ func NewGameliftFleet_Override(g GameliftFleet, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleet",
+		"hashicorp_aws.gamelift.GameliftFleet",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -2610,7 +2652,7 @@ func GameliftFleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GameLift.GameliftFleet",
+		"hashicorp_aws.gamelift.GameliftFleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2623,7 +2665,7 @@ func GameliftFleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GameLift.GameliftFleet",
+		"hashicorp_aws.gamelift.GameliftFleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -2897,6 +2939,7 @@ func (g *jsiiProxy_GameliftFleet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GameLift.
 type GameliftFleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2964,6 +3007,8 @@ type GameliftFleetResourceCreationLimitPolicy struct {
 
 type GameliftFleetResourceCreationLimitPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GameliftFleetResourceCreationLimitPolicy
+	SetInternalValue(val *GameliftFleetResourceCreationLimitPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NewGameSessionsPerCreator() *float64
@@ -2989,6 +3034,16 @@ type GameliftFleetResourceCreationLimitPolicyOutputReference interface {
 // The jsii proxy struct for GameliftFleetResourceCreationLimitPolicyOutputReference
 type jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) InternalValue() *GameliftFleetResourceCreationLimitPolicy {
+	var returns *GameliftFleetResourceCreationLimitPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) IsSingleItem() *bool {
@@ -3067,7 +3122,7 @@ func NewGameliftFleetResourceCreationLimitPolicyOutputReference(terraformResourc
 	j := jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetResourceCreationLimitPolicyOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetResourceCreationLimitPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3079,9 +3134,17 @@ func NewGameliftFleetResourceCreationLimitPolicyOutputReference_Override(g Gamel
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetResourceCreationLimitPolicyOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetResourceCreationLimitPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) SetInternalValue(val *GameliftFleetResourceCreationLimitPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3241,6 +3304,8 @@ type GameliftFleetRuntimeConfigurationOutputReference interface {
 	GameSessionActivationTimeoutSeconds() *float64
 	SetGameSessionActivationTimeoutSeconds(val *float64)
 	GameSessionActivationTimeoutSecondsInput() *float64
+	InternalValue() *GameliftFleetRuntimeConfiguration
+	SetInternalValue(val *GameliftFleetRuntimeConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConcurrentGameSessionActivations() *float64
@@ -3284,6 +3349,16 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GameSession
 	_jsii_.Get(
 		j,
 		"gameSessionActivationTimeoutSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) InternalValue() *GameliftFleetRuntimeConfiguration {
+	var returns *GameliftFleetRuntimeConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3365,7 +3440,7 @@ func NewGameliftFleetRuntimeConfigurationOutputReference(terraformResource cdktf
 	j := jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetRuntimeConfigurationOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetRuntimeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3377,7 +3452,7 @@ func NewGameliftFleetRuntimeConfigurationOutputReference_Override(g GameliftFlee
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetRuntimeConfigurationOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetRuntimeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -3387,6 +3462,14 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetGameSess
 	_jsii_.Set(
 		j,
 		"gameSessionActivationTimeoutSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetInternalValue(val *GameliftFleetRuntimeConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3563,6 +3646,8 @@ type GameliftFleetTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *GameliftFleetTimeouts
+	SetInternalValue(val *GameliftFleetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3624,6 +3709,16 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) InternalValue() *GameliftFleetTimeouts {
+	var returns *GameliftFleetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3660,7 +3755,7 @@ func NewGameliftFleetTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_GameliftFleetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetTimeoutsOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3672,7 +3767,7 @@ func NewGameliftFleetTimeoutsOutputReference_Override(g GameliftFleetTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftFleetTimeoutsOutputReference",
+		"hashicorp_aws.gamelift.GameliftFleetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -3690,6 +3785,14 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetInternalValue(val *GameliftFleetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4159,7 +4262,7 @@ func NewGameliftGameSessionQueue(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_GameliftGameSessionQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueue",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4172,7 +4275,7 @@ func NewGameliftGameSessionQueue_Override(g GameliftGameSessionQueue, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueue",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueue",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -4268,7 +4371,7 @@ func GameliftGameSessionQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueue",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4281,7 +4384,7 @@ func GameliftGameSessionQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GameLift.GameliftGameSessionQueue",
+		"hashicorp_aws.gamelift.GameliftGameSessionQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -4483,6 +4586,7 @@ func (g *jsiiProxy_GameliftGameSessionQueue) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GameLift.
 type GameliftGameSessionQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

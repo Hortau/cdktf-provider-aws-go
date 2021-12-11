@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodePipeline.Codepipeline",
+		"hashicorp_aws.codepipeline.Codepipeline",
 		reflect.TypeOf((*Codepipeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -60,15 +60,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineArtifactStore",
+		"hashicorp_aws.codepipeline.CodepipelineArtifactStore",
 		reflect.TypeOf((*CodepipelineArtifactStore)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineArtifactStoreEncryptionKey",
+		"hashicorp_aws.codepipeline.CodepipelineArtifactStoreEncryptionKey",
 		reflect.TypeOf((*CodepipelineArtifactStoreEncryptionKey)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodePipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
 		reflect.TypeOf((*CodepipelineArtifactStoreEncryptionKeyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -77,6 +77,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -92,19 +93,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineConfig",
+		"hashicorp_aws.codepipeline.CodepipelineConfig",
 		reflect.TypeOf((*CodepipelineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineStage",
+		"hashicorp_aws.codepipeline.CodepipelineStage",
 		reflect.TypeOf((*CodepipelineStage)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineStageAction",
+		"hashicorp_aws.codepipeline.CodepipelineStageAction",
 		reflect.TypeOf((*CodepipelineStageAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhook",
+		"hashicorp_aws.codepipeline.CodepipelineWebhook",
 		reflect.TypeOf((*CodepipelineWebhook)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -162,11 +163,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookAuthenticationConfiguration",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookAuthenticationConfiguration",
 		reflect.TypeOf((*CodepipelineWebhookAuthenticationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
 		reflect.TypeOf((*CodepipelineWebhookAuthenticationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowedIpRange", GoGetter: "AllowedIpRange"},
@@ -175,6 +176,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -192,11 +194,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookConfig",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookConfig",
 		reflect.TypeOf((*CodepipelineWebhookConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookFilter",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookFilter",
 		reflect.TypeOf((*CodepipelineWebhookFilter)(nil)).Elem(),
 	)
 }

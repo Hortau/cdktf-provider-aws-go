@@ -467,7 +467,7 @@ func NewQuicksightDataSource(scope constructs.Construct, id *string, config *Qui
 	j := jsiiProxy_QuicksightDataSource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSource",
+		"hashicorp_aws.quicksight.QuicksightDataSource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -480,7 +480,7 @@ func NewQuicksightDataSource_Override(q QuicksightDataSource, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSource",
+		"hashicorp_aws.quicksight.QuicksightDataSource",
 		[]interface{}{scope, id, config},
 		q,
 	)
@@ -584,7 +584,7 @@ func QuicksightDataSource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QuickSight.QuicksightDataSource",
+		"hashicorp_aws.quicksight.QuicksightDataSource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -597,7 +597,7 @@ func QuicksightDataSource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QuickSight.QuicksightDataSource",
+		"hashicorp_aws.quicksight.QuicksightDataSource",
 		"tfResourceType",
 		&returns,
 	)
@@ -847,6 +847,7 @@ func (q *jsiiProxy_QuicksightDataSource) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS QuickSight.
 type QuicksightDataSourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -908,6 +909,8 @@ type QuicksightDataSourceCredentialsCredentialPair struct {
 
 type QuicksightDataSourceCredentialsCredentialPairOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceCredentialsCredentialPair
+	SetInternalValue(val *QuicksightDataSourceCredentialsCredentialPair)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Password() *string
@@ -931,6 +934,16 @@ type QuicksightDataSourceCredentialsCredentialPairOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceCredentialsCredentialPairOutputReference
 type jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) InternalValue() *QuicksightDataSourceCredentialsCredentialPair {
+	var returns *QuicksightDataSourceCredentialsCredentialPair
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) IsSingleItem() *bool {
@@ -1009,7 +1022,7 @@ func NewQuicksightDataSourceCredentialsCredentialPairOutputReference(terraformRe
 	j := jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1021,9 +1034,17 @@ func NewQuicksightDataSourceCredentialsCredentialPairOutputReference_Override(q 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) SetInternalValue(val *QuicksightDataSourceCredentialsCredentialPair) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1158,6 +1179,8 @@ type QuicksightDataSourceCredentialsOutputReference interface {
 	CopySourceArnInput() *string
 	CredentialPair() QuicksightDataSourceCredentialsCredentialPairOutputReference
 	CredentialPairInput() *QuicksightDataSourceCredentialsCredentialPair
+	InternalValue() *QuicksightDataSourceCredentials
+	SetInternalValue(val *QuicksightDataSourceCredentials)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1220,6 +1243,16 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) CredentialPai
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) InternalValue() *QuicksightDataSourceCredentials {
+	var returns *QuicksightDataSourceCredentials
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1256,7 +1289,7 @@ func NewQuicksightDataSourceCredentialsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_QuicksightDataSourceCredentialsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1268,7 +1301,7 @@ func NewQuicksightDataSourceCredentialsOutputReference_Override(q QuicksightData
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -1278,6 +1311,14 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetCopySource
 	_jsii_.Set(
 		j,
 		"copySourceArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetInternalValue(val *QuicksightDataSourceCredentials) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1507,6 +1548,8 @@ type QuicksightDataSourceParametersAmazonElasticsearchOutputReference interface 
 	Domain() *string
 	SetDomain(val *string)
 	DomainInput() *string
+	InternalValue() *QuicksightDataSourceParametersAmazonElasticsearch
+	SetInternalValue(val *QuicksightDataSourceParametersAmazonElasticsearch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1541,6 +1584,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 	_jsii_.Get(
 		j,
 		"domainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) InternalValue() *QuicksightDataSourceParametersAmazonElasticsearch {
+	var returns *QuicksightDataSourceParametersAmazonElasticsearch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1582,7 +1635,7 @@ func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference(terrafo
 	j := jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1594,7 +1647,7 @@ func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -1604,6 +1657,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 	_jsii_.Set(
 		j,
 		"domain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) SetInternalValue(val *QuicksightDataSourceParametersAmazonElasticsearch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1723,6 +1784,8 @@ type QuicksightDataSourceParametersAthena struct {
 
 type QuicksightDataSourceParametersAthenaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceParametersAthena
+	SetInternalValue(val *QuicksightDataSourceParametersAthena)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1744,6 +1807,16 @@ type QuicksightDataSourceParametersAthenaOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceParametersAthenaOutputReference
 type jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) InternalValue() *QuicksightDataSourceParametersAthena {
+	var returns *QuicksightDataSourceParametersAthena
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) IsSingleItem() *bool {
@@ -1802,7 +1875,7 @@ func NewQuicksightDataSourceParametersAthenaOutputReference(terraformResource cd
 	j := jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAthenaOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAthenaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1814,9 +1887,17 @@ func NewQuicksightDataSourceParametersAthenaOutputReference_Override(q Quicksigh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAthenaOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAthenaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) SetInternalValue(val *QuicksightDataSourceParametersAthena) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1961,6 +2042,8 @@ type QuicksightDataSourceParametersAuroraOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersAurora
+	SetInternalValue(val *QuicksightDataSourceParametersAurora)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -2023,6 +2106,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) HostInpu
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) InternalValue() *QuicksightDataSourceParametersAurora {
+	var returns *QuicksightDataSourceParametersAurora
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2079,7 +2172,7 @@ func NewQuicksightDataSourceParametersAuroraOutputReference(terraformResource cd
 	j := jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2091,7 +2184,7 @@ func NewQuicksightDataSourceParametersAuroraOutputReference_Override(q Quicksigh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -2109,6 +2202,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetHost(
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetInternalValue(val *QuicksightDataSourceParametersAurora) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2246,6 +2347,8 @@ type QuicksightDataSourceParametersAuroraPostgresqlOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersAuroraPostgresql
+	SetInternalValue(val *QuicksightDataSourceParametersAuroraPostgresql)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -2308,6 +2411,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) InternalValue() *QuicksightDataSourceParametersAuroraPostgresql {
+	var returns *QuicksightDataSourceParametersAuroraPostgresql
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2364,7 +2477,7 @@ func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference(terraformR
 	j := jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2376,7 +2489,7 @@ func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference_Override(q
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -2394,6 +2507,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) SetInternalValue(val *QuicksightDataSourceParametersAuroraPostgresql) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2524,6 +2645,8 @@ type QuicksightDataSourceParametersAwsIotAnalyticsOutputReference interface {
 	DataSetName() *string
 	SetDataSetName(val *string)
 	DataSetNameInput() *string
+	InternalValue() *QuicksightDataSourceParametersAwsIotAnalytics
+	SetInternalValue(val *QuicksightDataSourceParametersAwsIotAnalytics)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2558,6 +2681,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 	_jsii_.Get(
 		j,
 		"dataSetNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) InternalValue() *QuicksightDataSourceParametersAwsIotAnalytics {
+	var returns *QuicksightDataSourceParametersAwsIotAnalytics
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2599,7 +2732,7 @@ func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference(terraformRe
 	j := jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2611,7 +2744,7 @@ func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference_Override(q 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -2621,6 +2754,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 	_jsii_.Set(
 		j,
 		"dataSetName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) SetInternalValue(val *QuicksightDataSourceParametersAwsIotAnalytics) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2740,6 +2881,8 @@ type QuicksightDataSourceParametersJira struct {
 
 type QuicksightDataSourceParametersJiraOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceParametersJira
+	SetInternalValue(val *QuicksightDataSourceParametersJira)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SiteBaseUrl() *string
@@ -2760,6 +2903,16 @@ type QuicksightDataSourceParametersJiraOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceParametersJiraOutputReference
 type jsiiProxy_QuicksightDataSourceParametersJiraOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) InternalValue() *QuicksightDataSourceParametersJira {
+	var returns *QuicksightDataSourceParametersJira
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) IsSingleItem() *bool {
@@ -2818,7 +2971,7 @@ func NewQuicksightDataSourceParametersJiraOutputReference(terraformResource cdkt
 	j := jsiiProxy_QuicksightDataSourceParametersJiraOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersJiraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersJiraOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2830,9 +2983,17 @@ func NewQuicksightDataSourceParametersJiraOutputReference_Override(q QuicksightD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersJiraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersJiraOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) SetInternalValue(val *QuicksightDataSourceParametersJira) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2969,6 +3130,8 @@ type QuicksightDataSourceParametersMariaDbOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersMariaDb
+	SetInternalValue(val *QuicksightDataSourceParametersMariaDb)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -3031,6 +3194,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) HostInp
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) InternalValue() *QuicksightDataSourceParametersMariaDb {
+	var returns *QuicksightDataSourceParametersMariaDb
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3087,7 +3260,7 @@ func NewQuicksightDataSourceParametersMariaDbOutputReference(terraformResource c
 	j := jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMariaDbOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMariaDbOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3099,7 +3272,7 @@ func NewQuicksightDataSourceParametersMariaDbOutputReference_Override(q Quicksig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMariaDbOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMariaDbOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -3117,6 +3290,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetHost
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetInternalValue(val *QuicksightDataSourceParametersMariaDb) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3254,6 +3435,8 @@ type QuicksightDataSourceParametersMysqlOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersMysql
+	SetInternalValue(val *QuicksightDataSourceParametersMysql)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -3316,6 +3499,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) HostInput
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) InternalValue() *QuicksightDataSourceParametersMysql {
+	var returns *QuicksightDataSourceParametersMysql
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3372,7 +3565,7 @@ func NewQuicksightDataSourceParametersMysqlOutputReference(terraformResource cdk
 	j := jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMysqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMysqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3384,7 +3577,7 @@ func NewQuicksightDataSourceParametersMysqlOutputReference_Override(q Quicksight
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMysqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMysqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -3402,6 +3595,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetHost(v
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetInternalValue(val *QuicksightDataSourceParametersMysql) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3539,6 +3740,8 @@ type QuicksightDataSourceParametersOracleOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersOracle
+	SetInternalValue(val *QuicksightDataSourceParametersOracle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -3601,6 +3804,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) HostInpu
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) InternalValue() *QuicksightDataSourceParametersOracle {
+	var returns *QuicksightDataSourceParametersOracle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3657,7 +3870,7 @@ func NewQuicksightDataSourceParametersOracleOutputReference(terraformResource cd
 	j := jsiiProxy_QuicksightDataSourceParametersOracleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOracleOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOracleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3669,7 +3882,7 @@ func NewQuicksightDataSourceParametersOracleOutputReference_Override(q Quicksigh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOracleOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOracleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -3687,6 +3900,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetHost(
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetInternalValue(val *QuicksightDataSourceParametersOracle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3819,6 +4040,8 @@ type QuicksightDataSourceParametersOutputReference interface {
 	AuroraPostgresqlInput() *QuicksightDataSourceParametersAuroraPostgresql
 	AwsIotAnalytics() QuicksightDataSourceParametersAwsIotAnalyticsOutputReference
 	AwsIotAnalyticsInput() *QuicksightDataSourceParametersAwsIotAnalytics
+	InternalValue() *QuicksightDataSourceParameters
+	SetInternalValue(val *QuicksightDataSourceParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Jira() QuicksightDataSourceParametersJiraOutputReference
@@ -4003,6 +4226,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) AwsIotAnalytic
 	_jsii_.Get(
 		j,
 		"awsIotAnalyticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) InternalValue() *QuicksightDataSourceParameters {
+	var returns *QuicksightDataSourceParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4344,7 +4577,7 @@ func NewQuicksightDataSourceParametersOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_QuicksightDataSourceParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4356,9 +4589,17 @@ func NewQuicksightDataSourceParametersOutputReference_Override(q QuicksightDataS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) SetInternalValue(val *QuicksightDataSourceParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4807,6 +5048,8 @@ type QuicksightDataSourceParametersPostgresqlOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersPostgresql
+	SetInternalValue(val *QuicksightDataSourceParametersPostgresql)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -4869,6 +5112,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) Host
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) InternalValue() *QuicksightDataSourceParametersPostgresql {
+	var returns *QuicksightDataSourceParametersPostgresql
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4925,7 +5178,7 @@ func NewQuicksightDataSourceParametersPostgresqlOutputReference(terraformResourc
 	j := jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPostgresqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4937,7 +5190,7 @@ func NewQuicksightDataSourceParametersPostgresqlOutputReference_Override(q Quick
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPostgresqlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -4955,6 +5208,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetH
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetInternalValue(val *QuicksightDataSourceParametersPostgresql) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5092,6 +5353,8 @@ type QuicksightDataSourceParametersPrestoOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersPresto
+	SetInternalValue(val *QuicksightDataSourceParametersPresto)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -5154,6 +5417,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) HostInpu
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) InternalValue() *QuicksightDataSourceParametersPresto {
+	var returns *QuicksightDataSourceParametersPresto
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5210,7 +5483,7 @@ func NewQuicksightDataSourceParametersPrestoOutputReference(terraformResource cd
 	j := jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPrestoOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPrestoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5222,7 +5495,7 @@ func NewQuicksightDataSourceParametersPrestoOutputReference_Override(q Quicksigh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPrestoOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPrestoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -5240,6 +5513,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetHost(
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetInternalValue(val *QuicksightDataSourceParametersPresto) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5375,6 +5656,8 @@ type QuicksightDataSourceParametersRdsOutputReference interface {
 	InstanceId() *string
 	SetInstanceId(val *string)
 	InstanceIdInput() *string
+	InternalValue() *QuicksightDataSourceParametersRds
+	SetInternalValue(val *QuicksightDataSourceParametersRds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5434,6 +5717,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) InstanceIdI
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) InternalValue() *QuicksightDataSourceParametersRds {
+	var returns *QuicksightDataSourceParametersRds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5470,7 +5763,7 @@ func NewQuicksightDataSourceParametersRdsOutputReference(terraformResource cdktf
 	j := jsiiProxy_QuicksightDataSourceParametersRdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRdsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5482,7 +5775,7 @@ func NewQuicksightDataSourceParametersRdsOutputReference_Override(q QuicksightDa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRdsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -5500,6 +5793,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetInstance
 	_jsii_.Set(
 		j,
 		"instanceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetInternalValue(val *QuicksightDataSourceParametersRds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5634,6 +5935,8 @@ type QuicksightDataSourceParametersRedshiftOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersRedshift
+	SetInternalValue(val *QuicksightDataSourceParametersRedshift)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -5719,6 +6022,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) HostIn
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) InternalValue() *QuicksightDataSourceParametersRedshift {
+	var returns *QuicksightDataSourceParametersRedshift
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5775,7 +6088,7 @@ func NewQuicksightDataSourceParametersRedshiftOutputReference(terraformResource 
 	j := jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRedshiftOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRedshiftOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5787,7 +6100,7 @@ func NewQuicksightDataSourceParametersRedshiftOutputReference_Override(q Quicksi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRedshiftOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRedshiftOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -5813,6 +6126,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetHos
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetInternalValue(val *QuicksightDataSourceParametersRedshift) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5976,6 +6297,8 @@ type QuicksightDataSourceParametersS3ManifestFileLocationOutputReference interfa
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *QuicksightDataSourceParametersS3ManifestFileLocation
+	SetInternalValue(val *QuicksightDataSourceParametersS3ManifestFileLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -6013,6 +6336,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) InternalValue() *QuicksightDataSourceParametersS3ManifestFileLocation {
+	var returns *QuicksightDataSourceParametersS3ManifestFileLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6074,7 +6407,7 @@ func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference(terr
 	j := jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6086,7 +6419,7 @@ func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -6096,6 +6429,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) SetInternalValue(val *QuicksightDataSourceParametersS3ManifestFileLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6218,6 +6559,8 @@ func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 
 type QuicksightDataSourceParametersS3OutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceParametersS3
+	SetInternalValue(val *QuicksightDataSourceParametersS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ManifestFileLocation() QuicksightDataSourceParametersS3ManifestFileLocationOutputReference
@@ -6238,6 +6581,16 @@ type QuicksightDataSourceParametersS3OutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceParametersS3OutputReference
 type jsiiProxy_QuicksightDataSourceParametersS3OutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) InternalValue() *QuicksightDataSourceParametersS3 {
+	var returns *QuicksightDataSourceParametersS3
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) IsSingleItem() *bool {
@@ -6296,7 +6649,7 @@ func NewQuicksightDataSourceParametersS3OutputReference(terraformResource cdktf.
 	j := jsiiProxy_QuicksightDataSourceParametersS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3OutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6308,9 +6661,17 @@ func NewQuicksightDataSourceParametersS3OutputReference_Override(q QuicksightDat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3OutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) SetInternalValue(val *QuicksightDataSourceParametersS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6437,6 +6798,8 @@ type QuicksightDataSourceParametersServiceNow struct {
 
 type QuicksightDataSourceParametersServiceNowOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceParametersServiceNow
+	SetInternalValue(val *QuicksightDataSourceParametersServiceNow)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SiteBaseUrl() *string
@@ -6457,6 +6820,16 @@ type QuicksightDataSourceParametersServiceNowOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceParametersServiceNowOutputReference
 type jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) InternalValue() *QuicksightDataSourceParametersServiceNow {
+	var returns *QuicksightDataSourceParametersServiceNow
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) IsSingleItem() *bool {
@@ -6515,7 +6888,7 @@ func NewQuicksightDataSourceParametersServiceNowOutputReference(terraformResourc
 	j := jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersServiceNowOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersServiceNowOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6527,9 +6900,17 @@ func NewQuicksightDataSourceParametersServiceNowOutputReference_Override(q Quick
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersServiceNowOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersServiceNowOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) SetInternalValue(val *QuicksightDataSourceParametersServiceNow) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6666,6 +7047,8 @@ type QuicksightDataSourceParametersSnowflakeOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersSnowflake
+	SetInternalValue(val *QuicksightDataSourceParametersSnowflake)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6728,6 +7111,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) HostI
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) InternalValue() *QuicksightDataSourceParametersSnowflake {
+	var returns *QuicksightDataSourceParametersSnowflake
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6784,7 +7177,7 @@ func NewQuicksightDataSourceParametersSnowflakeOutputReference(terraformResource
 	j := jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSnowflakeOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSnowflakeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6796,7 +7189,7 @@ func NewQuicksightDataSourceParametersSnowflakeOutputReference_Override(q Quicks
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSnowflakeOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSnowflakeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -6814,6 +7207,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetHo
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetInternalValue(val *QuicksightDataSourceParametersSnowflake) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6946,6 +7347,8 @@ type QuicksightDataSourceParametersSparkOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersSpark
+	SetInternalValue(val *QuicksightDataSourceParametersSpark)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -6983,6 +7386,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) HostInput
 	_jsii_.Get(
 		j,
 		"hostInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) InternalValue() *QuicksightDataSourceParametersSpark {
+	var returns *QuicksightDataSourceParametersSpark
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7044,7 +7457,7 @@ func NewQuicksightDataSourceParametersSparkOutputReference(terraformResource cdk
 	j := jsiiProxy_QuicksightDataSourceParametersSparkOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSparkOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSparkOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7056,7 +7469,7 @@ func NewQuicksightDataSourceParametersSparkOutputReference_Override(q Quicksight
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSparkOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSparkOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -7066,6 +7479,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetHost(v
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetInternalValue(val *QuicksightDataSourceParametersSpark) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7203,6 +7624,8 @@ type QuicksightDataSourceParametersSqlServerOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersSqlServer
+	SetInternalValue(val *QuicksightDataSourceParametersSqlServer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -7265,6 +7688,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) HostI
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) InternalValue() *QuicksightDataSourceParametersSqlServer {
+	var returns *QuicksightDataSourceParametersSqlServer
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7321,7 +7754,7 @@ func NewQuicksightDataSourceParametersSqlServerOutputReference(terraformResource
 	j := jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSqlServerOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSqlServerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7333,7 +7766,7 @@ func NewQuicksightDataSourceParametersSqlServerOutputReference_Override(q Quicks
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSqlServerOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSqlServerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -7351,6 +7784,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetHo
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetInternalValue(val *QuicksightDataSourceParametersSqlServer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7488,6 +7929,8 @@ type QuicksightDataSourceParametersTeradataOutputReference interface {
 	Host() *string
 	SetHost(val *string)
 	HostInput() *string
+	InternalValue() *QuicksightDataSourceParametersTeradata
+	SetInternalValue(val *QuicksightDataSourceParametersTeradata)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -7550,6 +7993,16 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) HostIn
 	return returns
 }
 
+func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) InternalValue() *QuicksightDataSourceParametersTeradata {
+	var returns *QuicksightDataSourceParametersTeradata
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7606,7 +8059,7 @@ func NewQuicksightDataSourceParametersTeradataOutputReference(terraformResource 
 	j := jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTeradataOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTeradataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7618,7 +8071,7 @@ func NewQuicksightDataSourceParametersTeradataOutputReference_Override(q Quicksi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTeradataOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTeradataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -7636,6 +8089,14 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetHos
 	_jsii_.Set(
 		j,
 		"host",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetInternalValue(val *QuicksightDataSourceParametersTeradata) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7765,6 +8226,8 @@ type QuicksightDataSourceParametersTwitter struct {
 
 type QuicksightDataSourceParametersTwitterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceParametersTwitter
+	SetInternalValue(val *QuicksightDataSourceParametersTwitter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRows() *float64
@@ -7788,6 +8251,16 @@ type QuicksightDataSourceParametersTwitterOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceParametersTwitterOutputReference
 type jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) InternalValue() *QuicksightDataSourceParametersTwitter {
+	var returns *QuicksightDataSourceParametersTwitter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) IsSingleItem() *bool {
@@ -7866,7 +8339,7 @@ func NewQuicksightDataSourceParametersTwitterOutputReference(terraformResource c
 	j := jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTwitterOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTwitterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7878,9 +8351,17 @@ func NewQuicksightDataSourceParametersTwitterOutputReference_Override(q Quicksig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTwitterOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTwitterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) SetInternalValue(val *QuicksightDataSourceParametersTwitter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8025,6 +8506,8 @@ type QuicksightDataSourceSslPropertiesOutputReference interface {
 	DisableSsl() interface{}
 	SetDisableSsl(val interface{})
 	DisableSslInput() interface{}
+	InternalValue() *QuicksightDataSourceSslProperties
+	SetInternalValue(val *QuicksightDataSourceSslProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8059,6 +8542,16 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) DisableSslI
 	_jsii_.Get(
 		j,
 		"disableSslInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) InternalValue() *QuicksightDataSourceSslProperties {
+	var returns *QuicksightDataSourceSslProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8100,7 +8593,7 @@ func NewQuicksightDataSourceSslPropertiesOutputReference(terraformResource cdktf
 	j := jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceSslPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceSslPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8112,7 +8605,7 @@ func NewQuicksightDataSourceSslPropertiesOutputReference_Override(q QuicksightDa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceSslPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceSslPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
 	)
@@ -8122,6 +8615,14 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetDisableS
 	_jsii_.Set(
 		j,
 		"disableSsl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetInternalValue(val *QuicksightDataSourceSslProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8241,6 +8742,8 @@ type QuicksightDataSourceVpcConnectionProperties struct {
 
 type QuicksightDataSourceVpcConnectionPropertiesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *QuicksightDataSourceVpcConnectionProperties
+	SetInternalValue(val *QuicksightDataSourceVpcConnectionProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8261,6 +8764,16 @@ type QuicksightDataSourceVpcConnectionPropertiesOutputReference interface {
 // The jsii proxy struct for QuicksightDataSourceVpcConnectionPropertiesOutputReference
 type jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) InternalValue() *QuicksightDataSourceVpcConnectionProperties {
+	var returns *QuicksightDataSourceVpcConnectionProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) IsSingleItem() *bool {
@@ -8319,7 +8832,7 @@ func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference(terraformReso
 	j := jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8331,9 +8844,17 @@ func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference_Override(q Qu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		q,
+	)
+}
+
+func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) SetInternalValue(val *QuicksightDataSourceVpcConnectionProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8746,7 +9267,7 @@ func NewQuicksightGroup(scope constructs.Construct, id *string, config *Quicksig
 	j := jsiiProxy_QuicksightGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightGroup",
+		"hashicorp_aws.quicksight.QuicksightGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8759,7 +9280,7 @@ func NewQuicksightGroup_Override(q QuicksightGroup, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightGroup",
+		"hashicorp_aws.quicksight.QuicksightGroup",
 		[]interface{}{scope, id, config},
 		q,
 	)
@@ -8839,7 +9360,7 @@ func QuicksightGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QuickSight.QuicksightGroup",
+		"hashicorp_aws.quicksight.QuicksightGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8852,7 +9373,7 @@ func QuicksightGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QuickSight.QuicksightGroup",
+		"hashicorp_aws.quicksight.QuicksightGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -9038,6 +9559,7 @@ func (q *jsiiProxy_QuicksightGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS QuickSight.
 type QuicksightGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9349,7 +9871,7 @@ func NewQuicksightGroupMembership(scope constructs.Construct, id *string, config
 	j := jsiiProxy_QuicksightGroupMembership{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembership",
+		"hashicorp_aws.quicksight.QuicksightGroupMembership",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9362,7 +9884,7 @@ func NewQuicksightGroupMembership_Override(q QuicksightGroupMembership, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembership",
+		"hashicorp_aws.quicksight.QuicksightGroupMembership",
 		[]interface{}{scope, id, config},
 		q,
 	)
@@ -9442,7 +9964,7 @@ func QuicksightGroupMembership_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembership",
+		"hashicorp_aws.quicksight.QuicksightGroupMembership",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9455,7 +9977,7 @@ func QuicksightGroupMembership_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembership",
+		"hashicorp_aws.quicksight.QuicksightGroupMembership",
 		"tfResourceType",
 		&returns,
 	)
@@ -9633,6 +10155,7 @@ func (q *jsiiProxy_QuicksightGroupMembership) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS QuickSight.
 type QuicksightGroupMembershipConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10039,7 +10562,7 @@ func NewQuicksightUser(scope constructs.Construct, id *string, config *Quicksigh
 	j := jsiiProxy_QuicksightUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightUser",
+		"hashicorp_aws.quicksight.QuicksightUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10052,7 +10575,7 @@ func NewQuicksightUser_Override(q QuicksightUser, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QuickSight.QuicksightUser",
+		"hashicorp_aws.quicksight.QuicksightUser",
 		[]interface{}{scope, id, config},
 		q,
 	)
@@ -10164,7 +10687,7 @@ func QuicksightUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QuickSight.QuicksightUser",
+		"hashicorp_aws.quicksight.QuicksightUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10177,7 +10700,7 @@ func QuicksightUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QuickSight.QuicksightUser",
+		"hashicorp_aws.quicksight.QuicksightUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -10379,6 +10902,7 @@ func (q *jsiiProxy_QuicksightUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS QuickSight.
 type QuicksightUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

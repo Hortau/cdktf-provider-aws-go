@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProject",
+		"hashicorp_aws.codebuild.CodebuildProject",
 		reflect.TypeOf((*CodebuildProject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -112,11 +112,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectArtifacts",
+		"hashicorp_aws.codebuild.CodebuildProjectArtifacts",
 		reflect.TypeOf((*CodebuildProjectArtifacts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectArtifactsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectArtifactsOutputReference",
 		reflect.TypeOf((*CodebuildProjectArtifactsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "artifactIdentifier", GoGetter: "ArtifactIdentifier"},
@@ -127,6 +127,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -162,11 +163,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfig",
 		reflect.TypeOf((*CodebuildProjectBuildBatchConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectBuildBatchConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "combineArtifacts", GoGetter: "CombineArtifacts"},
@@ -175,6 +176,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -198,11 +200,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigRestrictions",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigRestrictions",
 		reflect.TypeOf((*CodebuildProjectBuildBatchConfigRestrictions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
 		reflect.TypeOf((*CodebuildProjectBuildBatchConfigRestrictionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "computeTypesAllowed", GoGetter: "ComputeTypesAllowed"},
@@ -211,6 +213,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -228,17 +231,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectCache",
+		"hashicorp_aws.codebuild.CodebuildProjectCache",
 		reflect.TypeOf((*CodebuildProjectCache)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectCacheOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectCacheOutputReference",
 		reflect.TypeOf((*CodebuildProjectCacheOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -261,19 +265,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectConfig",
 		reflect.TypeOf((*CodebuildProjectConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironment",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironment",
 		reflect.TypeOf((*CodebuildProjectEnvironment)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentEnvironmentVariable",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentEnvironmentVariable",
 		reflect.TypeOf((*CodebuildProjectEnvironmentEnvironmentVariable)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentOutputReference",
 		reflect.TypeOf((*CodebuildProjectEnvironmentOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -290,6 +294,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "imageInput", GoGetter: "ImageInput"},
 			_jsii_.MemberProperty{JsiiProperty: "imagePullCredentialsType", GoGetter: "ImagePullCredentialsType"},
 			_jsii_.MemberProperty{JsiiProperty: "imagePullCredentialsTypeInput", GoGetter: "ImagePullCredentialsTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -315,11 +320,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentRegistryCredential",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentRegistryCredential",
 		reflect.TypeOf((*CodebuildProjectEnvironmentRegistryCredential)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
 		reflect.TypeOf((*CodebuildProjectEnvironmentRegistryCredentialOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "credential", GoGetter: "Credential"},
@@ -330,6 +335,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -343,19 +349,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectFileSystemLocations",
+		"hashicorp_aws.codebuild.CodebuildProjectFileSystemLocations",
 		reflect.TypeOf((*CodebuildProjectFileSystemLocations)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfig",
 		reflect.TypeOf((*CodebuildProjectLogsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigCloudwatchLogs",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigCloudwatchLogs",
 		reflect.TypeOf((*CodebuildProjectLogsConfigCloudwatchLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
 		reflect.TypeOf((*CodebuildProjectLogsConfigCloudwatchLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -364,6 +370,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "groupName", GoGetter: "GroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "groupNameInput", GoGetter: "GroupNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -384,7 +391,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectLogsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchLogs", GoGetter: "CloudwatchLogs"},
@@ -393,6 +400,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -412,11 +420,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigS3Logs",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigS3Logs",
 		reflect.TypeOf((*CodebuildProjectLogsConfigS3Logs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigS3LogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigS3LogsOutputReference",
 		reflect.TypeOf((*CodebuildProjectLogsConfigS3LogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "encryptionDisabled", GoGetter: "EncryptionDisabled"},
@@ -425,6 +433,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -445,25 +454,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondaryArtifacts",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondaryArtifacts",
 		reflect.TypeOf((*CodebuildProjectSecondaryArtifacts)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySources",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySources",
 		reflect.TypeOf((*CodebuildProjectSecondarySources)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesAuth",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesAuth",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesAuth)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesAuthOutputReference",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesAuthOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -482,11 +492,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesBuildStatusConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesBuildStatusConfig",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesBuildStatusConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "context", GoGetter: "Context"},
@@ -495,6 +505,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -512,11 +523,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesGitSubmodulesConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesGitSubmodulesConfig",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesGitSubmodulesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fetchSubmodules", GoGetter: "FetchSubmodules"},
@@ -525,6 +536,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -538,21 +550,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSource",
+		"hashicorp_aws.codebuild.CodebuildProjectSource",
 		reflect.TypeOf((*CodebuildProjectSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceAuth",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceAuth",
 		reflect.TypeOf((*CodebuildProjectSourceAuth)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceAuthOutputReference",
 		reflect.TypeOf((*CodebuildProjectSourceAuthOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -571,11 +584,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceBuildStatusConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceBuildStatusConfig",
 		reflect.TypeOf((*CodebuildProjectSourceBuildStatusConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectSourceBuildStatusConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "context", GoGetter: "Context"},
@@ -584,6 +597,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -601,11 +615,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceGitSubmodulesConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceGitSubmodulesConfig",
 		reflect.TypeOf((*CodebuildProjectSourceGitSubmodulesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectSourceGitSubmodulesConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fetchSubmodules", GoGetter: "FetchSubmodules"},
@@ -614,6 +628,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -627,7 +642,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceOutputReference",
 		reflect.TypeOf((*CodebuildProjectSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "auth", GoGetter: "Auth"},
@@ -646,6 +661,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "gitSubmodulesConfigInput", GoGetter: "GitSubmodulesConfigInput"},
 			_jsii_.MemberProperty{JsiiProperty: "insecureSsl", GoGetter: "InsecureSsl"},
 			_jsii_.MemberProperty{JsiiProperty: "insecureSslInput", GoGetter: "InsecureSslInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -676,17 +692,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildProjectVpcConfig",
+		"hashicorp_aws.codebuild.CodebuildProjectVpcConfig",
 		reflect.TypeOf((*CodebuildProjectVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildProjectVpcConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectVpcConfigOutputReference",
 		reflect.TypeOf((*CodebuildProjectVpcConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -706,7 +723,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroup",
+		"hashicorp_aws.codebuild.CodebuildReportGroup",
 		reflect.TypeOf((*CodebuildReportGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -761,21 +778,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupConfig",
+		"hashicorp_aws.codebuild.CodebuildReportGroupConfig",
 		reflect.TypeOf((*CodebuildReportGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfig",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfig",
 		reflect.TypeOf((*CodebuildReportGroupExportConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigOutputReference",
 		reflect.TypeOf((*CodebuildReportGroupExportConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -795,11 +813,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigS3Destination",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigS3Destination",
 		reflect.TypeOf((*CodebuildReportGroupExportConfigS3Destination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
 		reflect.TypeOf((*CodebuildReportGroupExportConfigS3DestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -812,6 +830,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -832,7 +851,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredential",
+		"hashicorp_aws.codebuild.CodebuildSourceCredential",
 		reflect.TypeOf((*CodebuildSourceCredential)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -879,11 +898,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredentialConfig",
+		"hashicorp_aws.codebuild.CodebuildSourceCredentialConfig",
 		reflect.TypeOf((*CodebuildSourceCredentialConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeBuild.CodebuildWebhook",
+		"hashicorp_aws.codebuild.CodebuildWebhook",
 		reflect.TypeOf((*CodebuildWebhook)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -934,15 +953,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildWebhookConfig",
+		"hashicorp_aws.codebuild.CodebuildWebhookConfig",
 		reflect.TypeOf((*CodebuildWebhookConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildWebhookFilterGroup",
+		"hashicorp_aws.codebuild.CodebuildWebhookFilterGroup",
 		reflect.TypeOf((*CodebuildWebhookFilterGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeBuild.CodebuildWebhookFilterGroupFilter",
+		"hashicorp_aws.codebuild.CodebuildWebhookFilterGroupFilter",
 		reflect.TypeOf((*CodebuildWebhookFilterGroupFilter)(nil)).Elem(),
 	)
 }

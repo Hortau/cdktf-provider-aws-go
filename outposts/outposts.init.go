@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpost",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpost",
 		reflect.TypeOf((*DataAwsOutpostsOutpost)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostConfig",
 		reflect.TypeOf((*DataAwsOutpostsOutpostConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceType",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceType",
 		reflect.TypeOf((*DataAwsOutpostsOutpostInstanceType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -105,11 +105,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypeConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypeConfig",
 		reflect.TypeOf((*DataAwsOutpostsOutpostInstanceTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypes",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypes",
 		reflect.TypeOf((*DataAwsOutpostsOutpostInstanceTypes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -149,11 +149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypesConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypesConfig",
 		reflect.TypeOf((*DataAwsOutpostsOutpostInstanceTypesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutposts",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutposts",
 		reflect.TypeOf((*DataAwsOutpostsOutposts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -204,11 +204,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostsConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostsConfig",
 		reflect.TypeOf((*DataAwsOutpostsOutpostsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSite",
+		"hashicorp_aws.outposts.DataAwsOutpostsSite",
 		reflect.TypeOf((*DataAwsOutpostsSite)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -250,11 +250,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSiteConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsSiteConfig",
 		reflect.TypeOf((*DataAwsOutpostsSiteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSites",
+		"hashicorp_aws.outposts.DataAwsOutpostsSites",
 		reflect.TypeOf((*DataAwsOutpostsSites)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -292,7 +292,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSitesConfig",
+		"hashicorp_aws.outposts.DataAwsOutpostsSitesConfig",
 		reflect.TypeOf((*DataAwsOutpostsSitesConfig)(nil)).Elem(),
 	)
 }

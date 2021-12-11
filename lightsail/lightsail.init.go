@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailDomain",
+		"hashicorp_aws.lightsail.LightsailDomain",
 		reflect.TypeOf((*LightsailDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailDomainConfig",
+		"hashicorp_aws.lightsail.LightsailDomainConfig",
 		reflect.TypeOf((*LightsailDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailInstance",
+		"hashicorp_aws.lightsail.LightsailInstance",
 		reflect.TypeOf((*LightsailInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -119,11 +119,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailInstanceConfig",
+		"hashicorp_aws.lightsail.LightsailInstanceConfig",
 		reflect.TypeOf((*LightsailInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPorts",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPorts",
 		reflect.TypeOf((*LightsailInstancePublicPorts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -164,15 +164,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPortsConfig",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPortsConfig",
 		reflect.TypeOf((*LightsailInstancePublicPortsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPortsPortInfo",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPortsPortInfo",
 		reflect.TypeOf((*LightsailInstancePublicPortsPortInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailKeyPair",
+		"hashicorp_aws.lightsail.LightsailKeyPair",
 		reflect.TypeOf((*LightsailKeyPair)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -226,11 +226,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailKeyPairConfig",
+		"hashicorp_aws.lightsail.LightsailKeyPairConfig",
 		reflect.TypeOf((*LightsailKeyPairConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailStaticIp",
+		"hashicorp_aws.lightsail.LightsailStaticIp",
 		reflect.TypeOf((*LightsailStaticIp)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -272,7 +272,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachment",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachment",
 		reflect.TypeOf((*LightsailStaticIpAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -314,11 +314,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachmentConfig",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachmentConfig",
 		reflect.TypeOf((*LightsailStaticIpAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Lightsail.LightsailStaticIpConfig",
+		"hashicorp_aws.lightsail.LightsailStaticIpConfig",
 		reflect.TypeOf((*LightsailStaticIpConfig)(nil)).Elem(),
 	)
 }

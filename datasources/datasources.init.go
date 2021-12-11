@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsArn",
+		"hashicorp_aws.datasources.DataAwsArn",
 		reflect.TypeOf((*DataAwsArn)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
@@ -52,11 +52,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsArnConfig",
+		"hashicorp_aws.datasources.DataAwsArnConfig",
 		reflect.TypeOf((*DataAwsArnConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZone",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZone",
 		reflect.TypeOf((*DataAwsAvailabilityZone)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -116,15 +116,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZoneConfig",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZoneConfig",
 		reflect.TypeOf((*DataAwsAvailabilityZoneConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZoneFilter",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZoneFilter",
 		reflect.TypeOf((*DataAwsAvailabilityZoneFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZones",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZones",
 		reflect.TypeOf((*DataAwsAvailabilityZones)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -179,15 +179,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZonesConfig",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZonesConfig",
 		reflect.TypeOf((*DataAwsAvailabilityZonesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZonesFilter",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZonesFilter",
 		reflect.TypeOf((*DataAwsAvailabilityZonesFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccount",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccount",
 		reflect.TypeOf((*DataAwsBillingServiceAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -225,11 +225,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccountConfig",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccountConfig",
 		reflect.TypeOf((*DataAwsBillingServiceAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentity",
+		"hashicorp_aws.datasources.DataAwsCallerIdentity",
 		reflect.TypeOf((*DataAwsCallerIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -269,11 +269,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentityConfig",
+		"hashicorp_aws.datasources.DataAwsCallerIdentityConfig",
 		reflect.TypeOf((*DataAwsCallerIdentityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserId",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserId",
 		reflect.TypeOf((*DataAwsCanonicalUserId)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -311,11 +311,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserIdConfig",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserIdConfig",
 		reflect.TypeOf((*DataAwsCanonicalUserIdConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElb",
+		"hashicorp_aws.datasources.DataAwsElb",
 		reflect.TypeOf((*DataAwsElb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accessLogs", GoMethod: "AccessLogs"},
@@ -329,6 +329,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "crossZoneLoadBalancing", GoGetter: "CrossZoneLoadBalancing"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
@@ -374,7 +375,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElbAccessLogs",
+		"hashicorp_aws.datasources.DataAwsElbAccessLogs",
 		reflect.TypeOf((*DataAwsElbAccessLogs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -397,11 +398,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsElbConfig",
+		"hashicorp_aws.datasources.DataAwsElbConfig",
 		reflect.TypeOf((*DataAwsElbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElbHealthCheck",
+		"hashicorp_aws.datasources.DataAwsElbHealthCheck",
 		reflect.TypeOf((*DataAwsElbHealthCheck)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -425,7 +426,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneId",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneId",
 		reflect.TypeOf((*DataAwsElbHostedZoneId)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -465,11 +466,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneIdConfig",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneIdConfig",
 		reflect.TypeOf((*DataAwsElbHostedZoneIdConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElbListener",
+		"hashicorp_aws.datasources.DataAwsElbListener",
 		reflect.TypeOf((*DataAwsElbListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -493,7 +494,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccount",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccount",
 		reflect.TypeOf((*DataAwsElbServiceAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -534,11 +535,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccountConfig",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccountConfig",
 		reflect.TypeOf((*DataAwsElbServiceAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsIpRanges",
+		"hashicorp_aws.datasources.DataAwsIpRanges",
 		reflect.TypeOf((*DataAwsIpRanges)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -587,11 +588,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsIpRangesConfig",
+		"hashicorp_aws.datasources.DataAwsIpRangesConfig",
 		reflect.TypeOf((*DataAwsIpRangesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfiguration",
+		"hashicorp_aws.datasources.DataAwsLaunchConfiguration",
 		reflect.TypeOf((*DataAwsLaunchConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -648,11 +649,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationConfig",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationConfig",
 		reflect.TypeOf((*DataAwsLaunchConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEbsBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEbsBlockDevice",
 		reflect.TypeOf((*DataAwsLaunchConfigurationEbsBlockDevice)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -680,7 +681,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEphemeralBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEphemeralBlockDevice",
 		reflect.TypeOf((*DataAwsLaunchConfigurationEphemeralBlockDevice)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -701,7 +702,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationMetadataOptions",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationMetadataOptions",
 		reflect.TypeOf((*DataAwsLaunchConfigurationMetadataOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -723,7 +724,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationRootBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationRootBlockDevice",
 		reflect.TypeOf((*DataAwsLaunchConfigurationRootBlockDevice)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -748,7 +749,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsPartition",
+		"hashicorp_aws.datasources.DataAwsPartition",
 		reflect.TypeOf((*DataAwsPartition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -788,11 +789,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsPartitionConfig",
+		"hashicorp_aws.datasources.DataAwsPartitionConfig",
 		reflect.TypeOf((*DataAwsPartitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsPrefixList",
+		"hashicorp_aws.datasources.DataAwsPrefixList",
 		reflect.TypeOf((*DataAwsPrefixList)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -839,15 +840,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsPrefixListConfig",
+		"hashicorp_aws.datasources.DataAwsPrefixListConfig",
 		reflect.TypeOf((*DataAwsPrefixListConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsPrefixListFilter",
+		"hashicorp_aws.datasources.DataAwsPrefixListFilter",
 		reflect.TypeOf((*DataAwsPrefixListFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsRegion",
+		"hashicorp_aws.datasources.DataAwsRegion",
 		reflect.TypeOf((*DataAwsRegion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -891,11 +892,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsRegionConfig",
+		"hashicorp_aws.datasources.DataAwsRegionConfig",
 		reflect.TypeOf((*DataAwsRegionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.DataAwsRegions",
+		"hashicorp_aws.datasources.DataAwsRegions",
 		reflect.TypeOf((*DataAwsRegions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -939,15 +940,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsRegionsConfig",
+		"hashicorp_aws.datasources.DataAwsRegionsConfig",
 		reflect.TypeOf((*DataAwsRegionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.DataAwsRegionsFilter",
+		"hashicorp_aws.datasources.DataAwsRegionsFilter",
 		reflect.TypeOf((*DataAwsRegionsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.Elb",
+		"hashicorp_aws.datasources.Elb",
 		reflect.TypeOf((*Elb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLogs", GoGetter: "AccessLogs"},
@@ -966,6 +967,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "crossZoneLoadBalancing", GoGetter: "CrossZoneLoadBalancing"},
 			_jsii_.MemberProperty{JsiiProperty: "crossZoneLoadBalancingInput", GoGetter: "CrossZoneLoadBalancingInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationModeInput", GoGetter: "DesyncMitigationModeInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
@@ -1001,6 +1004,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetConnectionDraining", GoMethod: "ResetConnectionDraining"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConnectionDrainingTimeout", GoMethod: "ResetConnectionDrainingTimeout"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCrossZoneLoadBalancing", GoMethod: "ResetCrossZoneLoadBalancing"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDesyncMitigationMode", GoMethod: "ResetDesyncMitigationMode"},
 			_jsii_.MemberMethod{JsiiMethod: "resetHealthCheck", GoMethod: "ResetHealthCheck"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIdleTimeout", GoMethod: "ResetIdleTimeout"},
 			_jsii_.MemberMethod{JsiiMethod: "resetInstances", GoMethod: "ResetInstances"},
@@ -1040,11 +1044,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.ElbAccessLogs",
+		"hashicorp_aws.datasources.ElbAccessLogs",
 		reflect.TypeOf((*ElbAccessLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.ElbAccessLogsOutputReference",
+		"hashicorp_aws.datasources.ElbAccessLogsOutputReference",
 		reflect.TypeOf((*ElbAccessLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -1057,6 +1061,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -1075,7 +1080,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.ElbAttachment",
+		"hashicorp_aws.datasources.ElbAttachment",
 		reflect.TypeOf((*ElbAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1116,19 +1121,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.ElbAttachmentConfig",
+		"hashicorp_aws.datasources.ElbAttachmentConfig",
 		reflect.TypeOf((*ElbAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.ElbConfig",
+		"hashicorp_aws.datasources.ElbConfig",
 		reflect.TypeOf((*ElbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.ElbHealthCheck",
+		"hashicorp_aws.datasources.ElbHealthCheck",
 		reflect.TypeOf((*ElbHealthCheck)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.ElbHealthCheckOutputReference",
+		"hashicorp_aws.datasources.ElbHealthCheckOutputReference",
 		reflect.TypeOf((*ElbHealthCheckOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1137,6 +1142,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -1158,11 +1164,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.ElbListener",
+		"hashicorp_aws.datasources.ElbListener",
 		reflect.TypeOf((*ElbListener)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.LaunchConfiguration",
+		"hashicorp_aws.datasources.LaunchConfiguration",
 		reflect.TypeOf((*LaunchConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1260,23 +1266,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.LaunchConfigurationConfig",
+		"hashicorp_aws.datasources.LaunchConfigurationConfig",
 		reflect.TypeOf((*LaunchConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.LaunchConfigurationEbsBlockDevice",
+		"hashicorp_aws.datasources.LaunchConfigurationEbsBlockDevice",
 		reflect.TypeOf((*LaunchConfigurationEbsBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.LaunchConfigurationEphemeralBlockDevice",
+		"hashicorp_aws.datasources.LaunchConfigurationEphemeralBlockDevice",
 		reflect.TypeOf((*LaunchConfigurationEphemeralBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.LaunchConfigurationMetadataOptions",
+		"hashicorp_aws.datasources.LaunchConfigurationMetadataOptions",
 		reflect.TypeOf((*LaunchConfigurationMetadataOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.LaunchConfigurationMetadataOptionsOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationMetadataOptionsOutputReference",
 		reflect.TypeOf((*LaunchConfigurationMetadataOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1289,6 +1295,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "httpPutResponseHopLimitInput", GoGetter: "HttpPutResponseHopLimitInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpTokens", GoGetter: "HttpTokens"},
 			_jsii_.MemberProperty{JsiiProperty: "httpTokensInput", GoGetter: "HttpTokensInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1305,11 +1312,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSources.LaunchConfigurationRootBlockDevice",
+		"hashicorp_aws.datasources.LaunchConfigurationRootBlockDevice",
 		reflect.TypeOf((*LaunchConfigurationRootBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSources.LaunchConfigurationRootBlockDeviceOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationRootBlockDeviceOutputReference",
 		reflect.TypeOf((*LaunchConfigurationRootBlockDeviceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deleteOnTermination", GoGetter: "DeleteOnTermination"},
@@ -1320,6 +1327,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iops", GoGetter: "Iops"},

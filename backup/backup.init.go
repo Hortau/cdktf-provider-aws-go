@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupGlobalSettings",
+		"hashicorp_aws.backup.BackupGlobalSettings",
 		reflect.TypeOf((*BackupGlobalSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -47,11 +47,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupGlobalSettingsConfig",
+		"hashicorp_aws.backup.BackupGlobalSettingsConfig",
 		reflect.TypeOf((*BackupGlobalSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupPlan",
+		"hashicorp_aws.backup.BackupPlan",
 		reflect.TypeOf((*BackupPlan)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -103,27 +103,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanAdvancedBackupSetting",
+		"hashicorp_aws.backup.BackupPlanAdvancedBackupSetting",
 		reflect.TypeOf((*BackupPlanAdvancedBackupSetting)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanConfig",
+		"hashicorp_aws.backup.BackupPlanConfig",
 		reflect.TypeOf((*BackupPlanConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanRule",
+		"hashicorp_aws.backup.BackupPlanRule",
 		reflect.TypeOf((*BackupPlanRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanRuleCopyAction",
+		"hashicorp_aws.backup.BackupPlanRuleCopyAction",
 		reflect.TypeOf((*BackupPlanRuleCopyAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanRuleCopyActionLifecycle",
+		"hashicorp_aws.backup.BackupPlanRuleCopyActionLifecycle",
 		reflect.TypeOf((*BackupPlanRuleCopyActionLifecycle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupPlanRuleCopyActionLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleCopyActionLifecycleOutputReference",
 		reflect.TypeOf((*BackupPlanRuleCopyActionLifecycleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "coldStorageAfter", GoGetter: "ColdStorageAfter"},
@@ -134,6 +134,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -149,11 +150,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupPlanRuleLifecycle",
+		"hashicorp_aws.backup.BackupPlanRuleLifecycle",
 		reflect.TypeOf((*BackupPlanRuleLifecycle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupPlanRuleLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleLifecycleOutputReference",
 		reflect.TypeOf((*BackupPlanRuleLifecycleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "coldStorageAfter", GoGetter: "ColdStorageAfter"},
@@ -164,6 +165,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -179,7 +181,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupRegionSettings",
+		"hashicorp_aws.backup.BackupRegionSettings",
 		reflect.TypeOf((*BackupRegionSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -201,6 +203,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetResourceTypeManagementPreference", GoMethod: "ResetResourceTypeManagementPreference"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceTypeManagementPreference", GoGetter: "ResourceTypeManagementPreference"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceTypeManagementPreferenceInput", GoGetter: "ResourceTypeManagementPreferenceInput"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceTypeOptInPreference", GoGetter: "ResourceTypeOptInPreference"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceTypeOptInPreferenceInput", GoGetter: "ResourceTypeOptInPreferenceInput"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
@@ -218,11 +223,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupRegionSettingsConfig",
+		"hashicorp_aws.backup.BackupRegionSettingsConfig",
 		reflect.TypeOf((*BackupRegionSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupSelection",
+		"hashicorp_aws.backup.BackupSelection",
 		reflect.TypeOf((*BackupSelection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -271,15 +276,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupSelectionConfig",
+		"hashicorp_aws.backup.BackupSelectionConfig",
 		reflect.TypeOf((*BackupSelectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupSelectionSelectionTag",
+		"hashicorp_aws.backup.BackupSelectionSelectionTag",
 		reflect.TypeOf((*BackupSelectionSelectionTag)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupVault",
+		"hashicorp_aws.backup.BackupVault",
 		reflect.TypeOf((*BackupVault)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -329,11 +334,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupVaultConfig",
+		"hashicorp_aws.backup.BackupVaultConfig",
 		reflect.TypeOf((*BackupVaultConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupVaultLockConfiguration",
+		"hashicorp_aws.backup.BackupVaultLockConfiguration",
 		reflect.TypeOf((*BackupVaultLockConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -382,11 +387,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupVaultLockConfigurationConfig",
+		"hashicorp_aws.backup.BackupVaultLockConfigurationConfig",
 		reflect.TypeOf((*BackupVaultLockConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupVaultNotifications",
+		"hashicorp_aws.backup.BackupVaultNotifications",
 		reflect.TypeOf((*BackupVaultNotifications)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -430,11 +435,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupVaultNotificationsConfig",
+		"hashicorp_aws.backup.BackupVaultNotificationsConfig",
 		reflect.TypeOf((*BackupVaultNotificationsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.BackupVaultPolicy",
+		"hashicorp_aws.backup.BackupVaultPolicy",
 		reflect.TypeOf((*BackupVaultPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -476,11 +481,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.BackupVaultPolicyConfig",
+		"hashicorp_aws.backup.BackupVaultPolicyConfig",
 		reflect.TypeOf((*BackupVaultPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.DataAwsBackupPlan",
+		"hashicorp_aws.backup.DataAwsBackupPlan",
 		reflect.TypeOf((*DataAwsBackupPlan)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -525,11 +530,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.DataAwsBackupPlanConfig",
+		"hashicorp_aws.backup.DataAwsBackupPlanConfig",
 		reflect.TypeOf((*DataAwsBackupPlanConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.DataAwsBackupSelection",
+		"hashicorp_aws.backup.DataAwsBackupSelection",
 		reflect.TypeOf((*DataAwsBackupSelection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -573,11 +578,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.DataAwsBackupSelectionConfig",
+		"hashicorp_aws.backup.DataAwsBackupSelectionConfig",
 		reflect.TypeOf((*DataAwsBackupSelectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Backup.DataAwsBackupVault",
+		"hashicorp_aws.backup.DataAwsBackupVault",
 		reflect.TypeOf((*DataAwsBackupVault)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -622,7 +627,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Backup.DataAwsBackupVaultConfig",
+		"hashicorp_aws.backup.DataAwsBackupVaultConfig",
 		reflect.TypeOf((*DataAwsBackupVaultConfig)(nil)).Elem(),
 	)
 }

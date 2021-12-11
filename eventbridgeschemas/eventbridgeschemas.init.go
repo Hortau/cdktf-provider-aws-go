@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscoverer",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscoverer",
 		reflect.TypeOf((*SchemasDiscoverer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -57,11 +57,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscovererConfig",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscovererConfig",
 		reflect.TypeOf((*SchemasDiscovererConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistry",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistry",
 		reflect.TypeOf((*SchemasRegistry)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -110,11 +110,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistryConfig",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistryConfig",
 		reflect.TypeOf((*SchemasRegistryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchema",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchema",
 		reflect.TypeOf((*SchemasSchema)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -172,7 +172,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchemaConfig",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchemaConfig",
 		reflect.TypeOf((*SchemasSchemaConfig)(nil)).Elem(),
 	)
 }

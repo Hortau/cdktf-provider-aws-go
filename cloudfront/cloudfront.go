@@ -25,8 +25,6 @@ type CloudfrontCachePolicy interface {
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
-	SetEtag(val *string)
-	EtagInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -60,11 +58,9 @@ type CloudfrontCachePolicy interface {
 	PutParametersInCacheKeyAndForwardedToOrigin(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin)
 	ResetComment()
 	ResetDefaultTtl()
-	ResetEtag()
 	ResetMaxTtl()
 	ResetMinTtl()
 	ResetOverrideLogicalId()
-	ResetParametersInCacheKeyAndForwardedToOrigin()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -161,16 +157,6 @@ func (j *jsiiProxy_CloudfrontCachePolicy) Etag() *string {
 	_jsii_.Get(
 		j,
 		"etag",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_CloudfrontCachePolicy) EtagInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"etagInput",
 		&returns,
 	)
 	return returns
@@ -363,7 +349,7 @@ func NewCloudfrontCachePolicy(scope constructs.Construct, id *string, config *Cl
 	j := jsiiProxy_CloudfrontCachePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -376,7 +362,7 @@ func NewCloudfrontCachePolicy_Override(c CloudfrontCachePolicy, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -410,14 +396,6 @@ func (j *jsiiProxy_CloudfrontCachePolicy) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
-		val,
-	)
-}
-
-func (j *jsiiProxy_CloudfrontCachePolicy) SetEtag(val *string) {
-	_jsii_.Set(
-		j,
-		"etag",
 		val,
 	)
 }
@@ -472,7 +450,7 @@ func CloudfrontCachePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -485,7 +463,7 @@ func CloudfrontCachePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -605,14 +583,6 @@ func (c *jsiiProxy_CloudfrontCachePolicy) ResetDefaultTtl() {
 	)
 }
 
-func (c *jsiiProxy_CloudfrontCachePolicy) ResetEtag() {
-	_jsii_.InvokeVoid(
-		c,
-		"resetEtag",
-		nil, // no parameters
-	)
-}
-
 func (c *jsiiProxy_CloudfrontCachePolicy) ResetMaxTtl() {
 	_jsii_.InvokeVoid(
 		c,
@@ -635,14 +605,6 @@ func (c *jsiiProxy_CloudfrontCachePolicy) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetOverrideLogicalId",
-		nil, // no parameters
-	)
-}
-
-func (c *jsiiProxy_CloudfrontCachePolicy) ResetParametersInCacheKeyAndForwardedToOrigin() {
-	_jsii_.InvokeVoid(
-		c,
-		"resetParametersInCacheKeyAndForwardedToOrigin",
 		nil, // no parameters
 	)
 }
@@ -703,6 +665,7 @@ func (c *jsiiProxy_CloudfrontCachePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontCachePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -714,20 +677,18 @@ type CloudfrontCachePolicyConfig struct {
 	Provider cdktf.TerraformProvider `json:"provider"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#name CloudfrontCachePolicy#name}.
 	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#comment CloudfrontCachePolicy#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#default_ttl CloudfrontCachePolicy#default_ttl}.
-	DefaultTtl *float64 `json:"defaultTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#etag CloudfrontCachePolicy#etag}.
-	Etag *string `json:"etag"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#max_ttl CloudfrontCachePolicy#max_ttl}.
-	MaxTtl *float64 `json:"maxTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#min_ttl CloudfrontCachePolicy#min_ttl}.
-	MinTtl *float64 `json:"minTtl"`
 	// parameters_in_cache_key_and_forwarded_to_origin block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#parameters_in_cache_key_and_forwarded_to_origin CloudfrontCachePolicy#parameters_in_cache_key_and_forwarded_to_origin}
 	ParametersInCacheKeyAndForwardedToOrigin *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin `json:"parametersInCacheKeyAndForwardedToOrigin"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#comment CloudfrontCachePolicy#comment}.
+	Comment *string `json:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#default_ttl CloudfrontCachePolicy#default_ttl}.
+	DefaultTtl *float64 `json:"defaultTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#max_ttl CloudfrontCachePolicy#max_ttl}.
+	MaxTtl *float64 `json:"maxTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#min_ttl CloudfrontCachePolicy#min_ttl}.
+	MinTtl *float64 `json:"minTtl"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin struct {
@@ -765,6 +726,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigC
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -786,6 +749,16 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigC
 // The jsii proxy struct for CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference
 type jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) IsSingleItem() *bool {
@@ -844,7 +817,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -856,9 +829,17 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -993,6 +974,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigO
 	CookieBehaviorInput() *string
 	Cookies() CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference
 	CookiesInput() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1054,6 +1037,16 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1090,7 +1083,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1102,7 +1095,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1112,6 +1105,14 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	_jsii_.Set(
 		j,
 		"cookieBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1256,6 +1257,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigH
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -1277,6 +1280,16 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigH
 // The jsii proxy struct for CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference
 type jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) IsSingleItem() *bool {
@@ -1335,7 +1348,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1347,9 +1360,17 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1484,6 +1505,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigO
 	HeaderBehaviorInput() *string
 	Headers() CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference
 	HeadersInput() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1546,6 +1569,16 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1582,7 +1615,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1594,7 +1627,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1604,6 +1637,14 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	_jsii_.Set(
 		j,
 		"headerBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1752,6 +1793,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReferenc
 	EnableAcceptEncodingGzipInput() interface{}
 	HeadersConfig() CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference
 	HeadersConfigInput() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryStringsConfig() CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference
@@ -1858,6 +1901,16 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1914,7 +1967,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputRefer
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1926,7 +1979,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1944,6 +1997,14 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	_jsii_.Set(
 		j,
 		"enableAcceptEncodingGzip",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2107,6 +2168,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryStringBehavior() *string
@@ -2131,6 +2194,16 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 // The jsii proxy struct for CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference
 type jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) IsSingleItem() *bool {
@@ -2209,7 +2282,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2221,9 +2294,17 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2366,6 +2447,8 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings
+	SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -2387,6 +2470,16 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 // The jsii proxy struct for CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference
 type jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) InternalValue() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings {
+	var returns *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) IsSingleItem() *bool {
@@ -2445,7 +2538,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2457,9 +2550,17 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) SetInternalValue(val *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3339,7 +3440,7 @@ func NewCloudfrontDistribution(scope constructs.Construct, id *string, config *C
 	j := jsiiProxy_CloudfrontDistribution{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistribution",
+		"hashicorp_aws.cloudfront.CloudfrontDistribution",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3352,7 +3453,7 @@ func NewCloudfrontDistribution_Override(c CloudfrontDistribution, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistribution",
+		"hashicorp_aws.cloudfront.CloudfrontDistribution",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3528,7 +3629,7 @@ func CloudfrontDistribution_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontDistribution",
+		"hashicorp_aws.cloudfront.CloudfrontDistribution",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3541,7 +3642,7 @@ func CloudfrontDistribution_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontDistribution",
+		"hashicorp_aws.cloudfront.CloudfrontDistribution",
 		"tfResourceType",
 		&returns,
 	)
@@ -3881,6 +3982,7 @@ func (c *jsiiProxy_CloudfrontDistribution) TrustedSigners(index *string) Cloudfr
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontDistributionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4031,6 +4133,8 @@ type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputRefer
 	Forward() *string
 	SetForward(val *string)
 	ForwardInput() *string
+	InternalValue() *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies
+	SetInternalValue(val *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4069,6 +4173,16 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 	_jsii_.Get(
 		j,
 		"forwardInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) InternalValue() *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies {
+	var returns *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4130,7 +4244,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputRe
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4142,7 +4256,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4152,6 +4266,14 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 	_jsii_.Set(
 		j,
 		"forward",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) SetInternalValue(val *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4287,6 +4409,8 @@ type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference in
 	Headers() *[]*string
 	SetHeaders(val *[]*string)
 	HeadersInput() *[]*string
+	InternalValue() *CloudfrontDistributionDefaultCacheBehaviorForwardedValues
+	SetInternalValue(val *CloudfrontDistributionDefaultCacheBehaviorForwardedValues)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryString() interface{}
@@ -4350,6 +4474,16 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 	_jsii_.Get(
 		j,
 		"headersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) InternalValue() *CloudfrontDistributionDefaultCacheBehaviorForwardedValues {
+	var returns *CloudfrontDistributionDefaultCacheBehaviorForwardedValues
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4431,7 +4565,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4443,7 +4577,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4453,6 +4587,14 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 	_jsii_.Set(
 		j,
 		"headers",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) SetInternalValue(val *CloudfrontDistributionDefaultCacheBehaviorForwardedValues) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4646,6 +4788,8 @@ type CloudfrontDistributionDefaultCacheBehaviorOutputReference interface {
 	FunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
 	SetFunctionAssociation(val *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation)
 	FunctionAssociationInput() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
+	InternalValue() *CloudfrontDistributionDefaultCacheBehavior
+	SetInternalValue(val *CloudfrontDistributionDefaultCacheBehavior)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LambdaFunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation
@@ -4869,6 +5013,16 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Fu
 	_jsii_.Get(
 		j,
 		"functionAssociationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) InternalValue() *CloudfrontDistributionDefaultCacheBehavior {
+	var returns *CloudfrontDistributionDefaultCacheBehavior
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5130,7 +5284,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference(terraformResou
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5142,7 +5296,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference_Override(c Clo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5200,6 +5354,14 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Se
 	_jsii_.Set(
 		j,
 		"functionAssociation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetInternalValue(val *CloudfrontDistributionDefaultCacheBehavior) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5545,6 +5707,8 @@ type CloudfrontDistributionLoggingConfigOutputReference interface {
 	IncludeCookies() interface{}
 	SetIncludeCookies(val interface{})
 	IncludeCookiesInput() interface{}
+	InternalValue() *CloudfrontDistributionLoggingConfig
+	SetInternalValue(val *CloudfrontDistributionLoggingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -5609,6 +5773,16 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) IncludeCo
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) InternalValue() *CloudfrontDistributionLoggingConfig {
+	var returns *CloudfrontDistributionLoggingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5665,7 +5839,7 @@ func NewCloudfrontDistributionLoggingConfigOutputReference(terraformResource cdk
 	j := jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionLoggingConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionLoggingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5677,7 +5851,7 @@ func NewCloudfrontDistributionLoggingConfigOutputReference_Override(c Cloudfront
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionLoggingConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionLoggingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5695,6 +5869,14 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetInclud
 	_jsii_.Set(
 		j,
 		"includeCookies",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetInternalValue(val *CloudfrontDistributionLoggingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5905,6 +6087,8 @@ type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputRefer
 	Forward() *string
 	SetForward(val *string)
 	ForwardInput() *string
+	InternalValue() *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies
+	SetInternalValue(val *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5943,6 +6127,16 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 	_jsii_.Get(
 		j,
 		"forwardInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) InternalValue() *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies {
+	var returns *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6004,7 +6198,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputRe
 	j := jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6016,7 +6210,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6026,6 +6220,14 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 	_jsii_.Set(
 		j,
 		"forward",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) SetInternalValue(val *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6161,6 +6363,8 @@ type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference in
 	Headers() *[]*string
 	SetHeaders(val *[]*string)
 	HeadersInput() *[]*string
+	InternalValue() *CloudfrontDistributionOrderedCacheBehaviorForwardedValues
+	SetInternalValue(val *CloudfrontDistributionOrderedCacheBehaviorForwardedValues)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryString() interface{}
@@ -6224,6 +6428,16 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 	_jsii_.Get(
 		j,
 		"headersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) InternalValue() *CloudfrontDistributionOrderedCacheBehaviorForwardedValues {
+	var returns *CloudfrontDistributionOrderedCacheBehaviorForwardedValues
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6305,7 +6519,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference
 	j := jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6317,7 +6531,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6327,6 +6541,14 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 	_jsii_.Set(
 		j,
 		"headers",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) SetInternalValue(val *CloudfrontDistributionOrderedCacheBehaviorForwardedValues) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6554,6 +6776,8 @@ type CloudfrontDistributionOriginCustomOriginConfigOutputReference interface {
 	HttpsPort() *float64
 	SetHttpsPort(val *float64)
 	HttpsPortInput() *float64
+	InternalValue() *CloudfrontDistributionOriginCustomOriginConfig
+	SetInternalValue(val *CloudfrontDistributionOriginCustomOriginConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OriginKeepaliveTimeout() *float64
@@ -6622,6 +6846,16 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 	_jsii_.Get(
 		j,
 		"httpsPortInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) InternalValue() *CloudfrontDistributionOriginCustomOriginConfig {
+	var returns *CloudfrontDistributionOriginCustomOriginConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6743,7 +6977,7 @@ func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference(terraformR
 	j := jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6755,7 +6989,7 @@ func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference_Override(c
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6773,6 +7007,14 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 	_jsii_.Set(
 		j,
 		"httpsPort",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) SetInternalValue(val *CloudfrontDistributionOriginCustomOriginConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6953,6 +7195,8 @@ type CloudfrontDistributionOriginGroupFailoverCriteria struct {
 
 type CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontDistributionOriginGroupFailoverCriteria
+	SetInternalValue(val *CloudfrontDistributionOriginGroupFailoverCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	StatusCodes() *[]*float64
@@ -6973,6 +7217,16 @@ type CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference interface 
 // The jsii proxy struct for CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference
 type jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) InternalValue() *CloudfrontDistributionOriginGroupFailoverCriteria {
+	var returns *CloudfrontDistributionOriginGroupFailoverCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) IsSingleItem() *bool {
@@ -7031,7 +7285,7 @@ func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference(terrafo
 	j := jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7043,9 +7297,17 @@ func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) SetInternalValue(val *CloudfrontDistributionOriginGroupFailoverCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7182,6 +7444,8 @@ type CloudfrontDistributionOriginOriginShieldOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *CloudfrontDistributionOriginOriginShield
+	SetInternalValue(val *CloudfrontDistributionOriginOriginShield)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OriginShieldRegion() *string
@@ -7219,6 +7483,16 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) Enab
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) InternalValue() *CloudfrontDistributionOriginOriginShield {
+	var returns *CloudfrontDistributionOriginOriginShield
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7280,7 +7554,7 @@ func NewCloudfrontDistributionOriginOriginShieldOutputReference(terraformResourc
 	j := jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginOriginShieldOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginOriginShieldOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7292,7 +7566,7 @@ func NewCloudfrontDistributionOriginOriginShieldOutputReference_Override(c Cloud
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginOriginShieldOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginOriginShieldOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -7302,6 +7576,14 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetE
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetInternalValue(val *CloudfrontDistributionOriginOriginShield) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7429,6 +7711,8 @@ type CloudfrontDistributionOriginS3OriginConfig struct {
 
 type CloudfrontDistributionOriginS3OriginConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontDistributionOriginS3OriginConfig
+	SetInternalValue(val *CloudfrontDistributionOriginS3OriginConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OriginAccessIdentity() *string
@@ -7449,6 +7733,16 @@ type CloudfrontDistributionOriginS3OriginConfigOutputReference interface {
 // The jsii proxy struct for CloudfrontDistributionOriginS3OriginConfigOutputReference
 type jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) InternalValue() *CloudfrontDistributionOriginS3OriginConfig {
+	var returns *CloudfrontDistributionOriginS3OriginConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) IsSingleItem() *bool {
@@ -7507,7 +7801,7 @@ func NewCloudfrontDistributionOriginS3OriginConfigOutputReference(terraformResou
 	j := jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7519,9 +7813,17 @@ func NewCloudfrontDistributionOriginS3OriginConfigOutputReference_Override(c Clo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) SetInternalValue(val *CloudfrontDistributionOriginS3OriginConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7657,6 +7959,8 @@ type CloudfrontDistributionRestrictionsGeoRestriction struct {
 
 type CloudfrontDistributionRestrictionsGeoRestrictionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontDistributionRestrictionsGeoRestriction
+	SetInternalValue(val *CloudfrontDistributionRestrictionsGeoRestriction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Locations() *[]*string
@@ -7681,6 +7985,16 @@ type CloudfrontDistributionRestrictionsGeoRestrictionOutputReference interface {
 // The jsii proxy struct for CloudfrontDistributionRestrictionsGeoRestrictionOutputReference
 type jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) InternalValue() *CloudfrontDistributionRestrictionsGeoRestriction {
+	var returns *CloudfrontDistributionRestrictionsGeoRestriction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) IsSingleItem() *bool {
@@ -7759,7 +8073,7 @@ func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference(terrafor
 	j := jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7771,9 +8085,17 @@ func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) SetInternalValue(val *CloudfrontDistributionRestrictionsGeoRestriction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7913,6 +8235,8 @@ type CloudfrontDistributionRestrictionsOutputReference interface {
 	cdktf.ComplexObject
 	GeoRestriction() CloudfrontDistributionRestrictionsGeoRestrictionOutputReference
 	GeoRestrictionInput() *CloudfrontDistributionRestrictionsGeoRestriction
+	InternalValue() *CloudfrontDistributionRestrictions
+	SetInternalValue(val *CloudfrontDistributionRestrictions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7948,6 +8272,16 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GeoRestric
 	_jsii_.Get(
 		j,
 		"geoRestrictionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) InternalValue() *CloudfrontDistributionRestrictions {
+	var returns *CloudfrontDistributionRestrictions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7989,7 +8323,7 @@ func NewCloudfrontDistributionRestrictionsOutputReference(terraformResource cdkt
 	j := jsiiProxy_CloudfrontDistributionRestrictionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8001,9 +8335,17 @@ func NewCloudfrontDistributionRestrictionsOutputReference_Override(c CloudfrontD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) SetInternalValue(val *CloudfrontDistributionRestrictions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8202,7 +8544,7 @@ func NewCloudfrontDistributionTrustedKeyGroups(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_CloudfrontDistributionTrustedKeyGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroups",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -8215,7 +8557,7 @@ func NewCloudfrontDistributionTrustedKeyGroups_Override(c CloudfrontDistribution
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroups",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		c,
 	)
@@ -8394,7 +8736,7 @@ func NewCloudfrontDistributionTrustedKeyGroupsItems(terraformResource cdktf.ITer
 	j := jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroupsItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroupsItems",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -8407,7 +8749,7 @@ func NewCloudfrontDistributionTrustedKeyGroupsItems_Override(c CloudfrontDistrib
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroupsItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroupsItems",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		c,
 	)
@@ -8586,7 +8928,7 @@ func NewCloudfrontDistributionTrustedSigners(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_CloudfrontDistributionTrustedSigners{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSigners",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSigners",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -8599,7 +8941,7 @@ func NewCloudfrontDistributionTrustedSigners_Override(c CloudfrontDistributionTr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSigners",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSigners",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		c,
 	)
@@ -8778,7 +9120,7 @@ func NewCloudfrontDistributionTrustedSignersItems(terraformResource cdktf.ITerra
 	j := jsiiProxy_CloudfrontDistributionTrustedSignersItems{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSignersItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSignersItems",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -8791,7 +9133,7 @@ func NewCloudfrontDistributionTrustedSignersItems_Override(c CloudfrontDistribut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSignersItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSignersItems",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		c,
 	)
@@ -8915,6 +9257,8 @@ type CloudfrontDistributionViewerCertificateOutputReference interface {
 	IamCertificateId() *string
 	SetIamCertificateId(val *string)
 	IamCertificateIdInput() *string
+	InternalValue() *CloudfrontDistributionViewerCertificate
+	SetInternalValue(val *CloudfrontDistributionViewerCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MinimumProtocolVersion() *string
@@ -9005,6 +9349,16 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) IamCe
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) InternalValue() *CloudfrontDistributionViewerCertificate {
+	var returns *CloudfrontDistributionViewerCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9081,7 +9435,7 @@ func NewCloudfrontDistributionViewerCertificateOutputReference(terraformResource
 	j := jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionViewerCertificateOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionViewerCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9093,7 +9447,7 @@ func NewCloudfrontDistributionViewerCertificateOutputReference_Override(c Cloudf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionViewerCertificateOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionViewerCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -9119,6 +9473,14 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetIa
 	_jsii_.Set(
 		j,
 		"iamCertificateId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetInternalValue(val *CloudfrontDistributionViewerCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9287,6 +9649,2715 @@ func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) Reset
 	)
 }
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config}.
+type CloudfrontFieldLevelEncryptionConfig interface {
+	cdktf.TerraformResource
+	CallerReference() *string
+	CdktfStack() cdktf.TerraformStack
+	Comment() *string
+	SetComment(val *string)
+	CommentInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	ContentTypeProfileConfig() CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference
+	ContentTypeProfileConfigInput() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Etag() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	QueryArgProfileConfig() CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference
+	QueryArgProfileConfigInput() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutContentTypeProfileConfig(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig)
+	PutQueryArgProfileConfig(value *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig)
+	ResetComment()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionConfig
+type jsiiProxy_CloudfrontFieldLevelEncryptionConfig struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) CallerReference() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"callerReference",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Comment() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"comment",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) CommentInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"commentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ContentTypeProfileConfig() CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference {
+	var returns CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference
+	_jsii_.Get(
+		j,
+		"contentTypeProfileConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ContentTypeProfileConfigInput() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig {
+	var returns *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig
+	_jsii_.Get(
+		j,
+		"contentTypeProfileConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Etag() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"etag",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) QueryArgProfileConfig() CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference {
+	var returns CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference
+	_jsii_.Get(
+		j,
+		"queryArgProfileConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) QueryArgProfileConfigInput() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig {
+	var returns *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig
+	_jsii_.Get(
+		j,
+		"queryArgProfileConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config} Resource.
+func NewCloudfrontFieldLevelEncryptionConfig(scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionConfigConfig) CloudfrontFieldLevelEncryptionConfig {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfig{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfig",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config} Resource.
+func NewCloudfrontFieldLevelEncryptionConfig_Override(c CloudfrontFieldLevelEncryptionConfig, scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionConfigConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfig",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetComment(val *string) {
+	_jsii_.Set(
+		j,
+		"comment",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CloudfrontFieldLevelEncryptionConfig_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfig",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CloudfrontFieldLevelEncryptionConfig_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfig",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) PutContentTypeProfileConfig(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig) {
+	_jsii_.InvokeVoid(
+		c,
+		"putContentTypeProfileConfig",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) PutQueryArgProfileConfig(value *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig) {
+	_jsii_.InvokeVoid(
+		c,
+		"putQueryArgProfileConfig",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ResetComment() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetComment",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CloudFront.
+type CloudfrontFieldLevelEncryptionConfigConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// content_type_profile_config block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type_profile_config CloudfrontFieldLevelEncryptionConfig#content_type_profile_config}
+	ContentTypeProfileConfig *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig `json:"contentTypeProfileConfig"`
+	// query_arg_profile_config block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg_profile_config CloudfrontFieldLevelEncryptionConfig#query_arg_profile_config}
+	QueryArgProfileConfig *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig `json:"queryArgProfileConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#comment CloudfrontFieldLevelEncryptionConfig#comment}.
+	Comment *string `json:"comment"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig struct {
+	// content_type_profiles block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type_profiles CloudfrontFieldLevelEncryptionConfig#content_type_profiles}
+	ContentTypeProfiles *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles `json:"contentTypeProfiles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#forward_when_content_type_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_content_type_is_unknown}.
+	ForwardWhenContentTypeIsUnknown interface{} `json:"forwardWhenContentTypeIsUnknown"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles struct {
+	// items block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#items CloudfrontFieldLevelEncryptionConfig#items}
+	Items *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems `json:"items"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type CloudfrontFieldLevelEncryptionConfig#content_type}.
+	ContentType *string `json:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#format CloudfrontFieldLevelEncryptionConfig#format}.
+	Format *string `json:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
+	ProfileId *string `json:"profileId"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Items() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+	SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems)
+	ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles {
+	var returns *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+	_jsii_.Get(
+		j,
+		"items",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+	_jsii_.Get(
+		j,
+		"itemsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems) {
+	_jsii_.Set(
+		j,
+		"items",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference interface {
+	cdktf.ComplexObject
+	ContentTypeProfiles() CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference
+	ContentTypeProfilesInput() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles
+	ForwardWhenContentTypeIsUnknown() interface{}
+	SetForwardWhenContentTypeIsUnknown(val interface{})
+	ForwardWhenContentTypeIsUnknownInput() interface{}
+	InternalValue() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutContentTypeProfiles(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles)
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) ContentTypeProfiles() CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference {
+	var returns CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference
+	_jsii_.Get(
+		j,
+		"contentTypeProfiles",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) ContentTypeProfilesInput() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles {
+	var returns *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles
+	_jsii_.Get(
+		j,
+		"contentTypeProfilesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) ForwardWhenContentTypeIsUnknown() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forwardWhenContentTypeIsUnknown",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) ForwardWhenContentTypeIsUnknownInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forwardWhenContentTypeIsUnknownInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig {
+	var returns *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetForwardWhenContentTypeIsUnknown(val interface{}) {
+	_jsii_.Set(
+		j,
+		"forwardWhenContentTypeIsUnknown",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) PutContentTypeProfiles(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles) {
+	_jsii_.InvokeVoid(
+		c,
+		"putContentTypeProfiles",
+		[]interface{}{value},
+	)
+}
+
+type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#forward_when_query_arg_profile_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_query_arg_profile_is_unknown}.
+	ForwardWhenQueryArgProfileIsUnknown interface{} `json:"forwardWhenQueryArgProfileIsUnknown"`
+	// query_arg_profiles block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg_profiles CloudfrontFieldLevelEncryptionConfig#query_arg_profiles}
+	QueryArgProfiles *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles `json:"queryArgProfiles"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference interface {
+	cdktf.ComplexObject
+	ForwardWhenQueryArgProfileIsUnknown() interface{}
+	SetForwardWhenQueryArgProfileIsUnknown(val interface{})
+	ForwardWhenQueryArgProfileIsUnknownInput() interface{}
+	InternalValue() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	QueryArgProfiles() CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference
+	QueryArgProfilesInput() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutQueryArgProfiles(value *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles)
+	ResetQueryArgProfiles()
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) ForwardWhenQueryArgProfileIsUnknown() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forwardWhenQueryArgProfileIsUnknown",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) ForwardWhenQueryArgProfileIsUnknownInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forwardWhenQueryArgProfileIsUnknownInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig {
+	var returns *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) QueryArgProfiles() CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference {
+	var returns CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference
+	_jsii_.Get(
+		j,
+		"queryArgProfiles",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) QueryArgProfilesInput() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles {
+	var returns *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles
+	_jsii_.Get(
+		j,
+		"queryArgProfilesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetForwardWhenQueryArgProfileIsUnknown(val interface{}) {
+	_jsii_.Set(
+		j,
+		"forwardWhenQueryArgProfileIsUnknown",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) PutQueryArgProfiles(value *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles) {
+	_jsii_.InvokeVoid(
+		c,
+		"putQueryArgProfiles",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) ResetQueryArgProfiles() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetQueryArgProfiles",
+		nil, // no parameters
+	)
+}
+
+type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles struct {
+	// items block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#items CloudfrontFieldLevelEncryptionConfig#items}
+	Items *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems `json:"items"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
+	ProfileId *string `json:"profileId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg CloudfrontFieldLevelEncryptionConfig#query_arg}.
+	QueryArg *string `json:"queryArg"`
+}
+
+type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Items() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+	SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems)
+	ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetItems()
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles {
+	var returns *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+	_jsii_.Get(
+		j,
+		"items",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+	_jsii_.Get(
+		j,
+		"itemsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems) {
+	_jsii_.Set(
+		j,
+		"items",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) ResetItems() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetItems",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile}.
+type CloudfrontFieldLevelEncryptionProfile interface {
+	cdktf.TerraformResource
+	CallerReference() *string
+	CdktfStack() cdktf.TerraformStack
+	Comment() *string
+	SetComment(val *string)
+	CommentInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	EncryptionEntities() CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference
+	EncryptionEntitiesInput() *CloudfrontFieldLevelEncryptionProfileEncryptionEntities
+	Etag() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutEncryptionEntities(value *CloudfrontFieldLevelEncryptionProfileEncryptionEntities)
+	ResetComment()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionProfile
+type jsiiProxy_CloudfrontFieldLevelEncryptionProfile struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) CallerReference() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"callerReference",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Comment() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"comment",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) CommentInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"commentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) EncryptionEntities() CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference {
+	var returns CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference
+	_jsii_.Get(
+		j,
+		"encryptionEntities",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) EncryptionEntitiesInput() *CloudfrontFieldLevelEncryptionProfileEncryptionEntities {
+	var returns *CloudfrontFieldLevelEncryptionProfileEncryptionEntities
+	_jsii_.Get(
+		j,
+		"encryptionEntitiesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Etag() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"etag",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile} Resource.
+func NewCloudfrontFieldLevelEncryptionProfile(scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionProfileConfig) CloudfrontFieldLevelEncryptionProfile {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionProfile{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfile",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile} Resource.
+func NewCloudfrontFieldLevelEncryptionProfile_Override(c CloudfrontFieldLevelEncryptionProfile, scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionProfileConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfile",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetComment(val *string) {
+	_jsii_.Set(
+		j,
+		"comment",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CloudfrontFieldLevelEncryptionProfile_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfile",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CloudfrontFieldLevelEncryptionProfile_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfile",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) PutEncryptionEntities(value *CloudfrontFieldLevelEncryptionProfileEncryptionEntities) {
+	_jsii_.InvokeVoid(
+		c,
+		"putEncryptionEntities",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ResetComment() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetComment",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CloudFront.
+type CloudfrontFieldLevelEncryptionProfileConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// encryption_entities block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#encryption_entities CloudfrontFieldLevelEncryptionProfile#encryption_entities}
+	EncryptionEntities *CloudfrontFieldLevelEncryptionProfileEncryptionEntities `json:"encryptionEntities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#name CloudfrontFieldLevelEncryptionProfile#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#comment CloudfrontFieldLevelEncryptionProfile#comment}.
+	Comment *string `json:"comment"`
+}
+
+type CloudfrontFieldLevelEncryptionProfileEncryptionEntities struct {
+	// items block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#items CloudfrontFieldLevelEncryptionProfile#items}
+	Items *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems `json:"items"`
+}
+
+type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems struct {
+	// field_patterns block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#field_patterns CloudfrontFieldLevelEncryptionProfile#field_patterns}
+	FieldPatterns *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns `json:"fieldPatterns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#provider_id CloudfrontFieldLevelEncryptionProfile#provider_id}.
+	ProviderId *string `json:"providerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#public_key_id CloudfrontFieldLevelEncryptionProfile#public_key_id}.
+	PublicKeyId *string `json:"publicKeyId"`
+}
+
+type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#items CloudfrontFieldLevelEncryptionProfile#items}.
+	Items *[]*string `json:"items"`
+}
+
+type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Items() *[]*string
+	SetItems(val *[]*string)
+	ItemsInput() *[]*string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetItems()
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns {
+	var returns *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) Items() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"items",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) ItemsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"itemsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetItems(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"items",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) ResetItems() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetItems",
+		nil, // no parameters
+	)
+}
+
+type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *CloudfrontFieldLevelEncryptionProfileEncryptionEntities
+	SetInternalValue(val *CloudfrontFieldLevelEncryptionProfileEncryptionEntities)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Items() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+	SetItems(val *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems)
+	ItemsInput() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetItems()
+}
+
+// The jsii proxy struct for CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference
+type jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) InternalValue() *CloudfrontFieldLevelEncryptionProfileEncryptionEntities {
+	var returns *CloudfrontFieldLevelEncryptionProfileEncryptionEntities
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+	_jsii_.Get(
+		j,
+		"items",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems {
+	var returns *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+	_jsii_.Get(
+		j,
+		"itemsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetInternalValue(val *CloudfrontFieldLevelEncryptionProfileEncryptionEntities) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems) {
+	_jsii_.Set(
+		j,
+		"items",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) ResetItems() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetItems",
+		nil, // no parameters
+	)
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html aws_cloudfront_function}.
 type CloudfrontFunction interface {
 	cdktf.TerraformResource
@@ -9309,6 +12380,7 @@ type CloudfrontFunction interface {
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LiveStageEtag() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -9487,6 +12559,16 @@ func (j *jsiiProxy_CloudfrontFunction) Lifecycle() *cdktf.TerraformResourceLifec
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontFunction) LiveStageEtag() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"liveStageEtag",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontFunction) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -9624,7 +12706,7 @@ func NewCloudfrontFunction(scope constructs.Construct, id *string, config *Cloud
 	j := jsiiProxy_CloudfrontFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontFunction",
+		"hashicorp_aws.cloudfront.CloudfrontFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9637,7 +12719,7 @@ func NewCloudfrontFunction_Override(c CloudfrontFunction, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontFunction",
+		"hashicorp_aws.cloudfront.CloudfrontFunction",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -9725,7 +12807,7 @@ func CloudfrontFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontFunction",
+		"hashicorp_aws.cloudfront.CloudfrontFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9738,7 +12820,7 @@ func CloudfrontFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontFunction",
+		"hashicorp_aws.cloudfront.CloudfrontFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -9916,6 +12998,7 @@ func (c *jsiiProxy_CloudfrontFunction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10205,7 +13288,7 @@ func NewCloudfrontKeyGroup(scope constructs.Construct, id *string, config *Cloud
 	j := jsiiProxy_CloudfrontKeyGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroup",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10218,7 +13301,7 @@ func NewCloudfrontKeyGroup_Override(c CloudfrontKeyGroup, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroup",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -10290,7 +13373,7 @@ func CloudfrontKeyGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroup",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10303,7 +13386,7 @@ func CloudfrontKeyGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroup",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -10473,6 +13556,7 @@ func (c *jsiiProxy_CloudfrontKeyGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontKeyGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10723,7 +13807,7 @@ func NewCloudfrontMonitoringSubscription(scope constructs.Construct, id *string,
 	j := jsiiProxy_CloudfrontMonitoringSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10736,7 +13820,7 @@ func NewCloudfrontMonitoringSubscription_Override(c CloudfrontMonitoringSubscrip
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscription",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -10792,7 +13876,7 @@ func CloudfrontMonitoringSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10805,7 +13889,7 @@ func CloudfrontMonitoringSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -10975,6 +14059,7 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontMonitoringSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11001,6 +14086,8 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscription struct {
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontMonitoringSubscriptionMonitoringSubscription
+	SetInternalValue(val *CloudfrontMonitoringSubscriptionMonitoringSubscription)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RealtimeMetricsSubscriptionConfig() CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference
@@ -11021,6 +14108,16 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference inter
 // The jsii proxy struct for CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference
 type jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) InternalValue() *CloudfrontMonitoringSubscriptionMonitoringSubscription {
+	var returns *CloudfrontMonitoringSubscriptionMonitoringSubscription
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) IsSingleItem() *bool {
@@ -11079,7 +14176,7 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference(te
 	j := jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11091,9 +14188,17 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) SetInternalValue(val *CloudfrontMonitoringSubscriptionMonitoringSubscription) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11220,6 +14325,8 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscr
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig
+	SetInternalValue(val *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RealtimeMetricsSubscriptionStatus() *string
@@ -11240,6 +14347,16 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscr
 // The jsii proxy struct for CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference
 type jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) InternalValue() *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig {
+	var returns *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) IsSingleItem() *bool {
@@ -11298,7 +14415,7 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSub
 	j := jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11310,9 +14427,17 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSub
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) SetInternalValue(val *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11698,7 +14823,7 @@ func NewCloudfrontOriginAccessIdentity(scope constructs.Construct, id *string, c
 	j := jsiiProxy_CloudfrontOriginAccessIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentity",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11711,7 +14836,7 @@ func NewCloudfrontOriginAccessIdentity_Override(c CloudfrontOriginAccessIdentity
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentity",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentity",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -11767,7 +14892,7 @@ func CloudfrontOriginAccessIdentity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentity",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11780,7 +14905,7 @@ func CloudfrontOriginAccessIdentity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentity",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentity",
 		"tfResourceType",
 		&returns,
 	)
@@ -11950,6 +15075,7 @@ func (c *jsiiProxy_CloudfrontOriginAccessIdentity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontOriginAccessIdentityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11978,8 +15104,6 @@ type CloudfrontOriginRequestPolicy interface {
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
-	SetEtag(val *string)
-	EtagInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HeadersConfig() CloudfrontOriginRequestPolicyHeadersConfigOutputReference
@@ -12010,7 +15134,6 @@ type CloudfrontOriginRequestPolicy interface {
 	PutHeadersConfig(value *CloudfrontOriginRequestPolicyHeadersConfig)
 	PutQueryStringsConfig(value *CloudfrontOriginRequestPolicyQueryStringsConfig)
 	ResetComment()
-	ResetEtag()
 	ResetOverrideLogicalId()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -12108,16 +15231,6 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicy) Etag() *string {
 	_jsii_.Get(
 		j,
 		"etag",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_CloudfrontOriginRequestPolicy) EtagInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"etagInput",
 		&returns,
 	)
 	return returns
@@ -12290,7 +15403,7 @@ func NewCloudfrontOriginRequestPolicy(scope constructs.Construct, id *string, co
 	j := jsiiProxy_CloudfrontOriginRequestPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12303,7 +15416,7 @@ func NewCloudfrontOriginRequestPolicy_Override(c CloudfrontOriginRequestPolicy, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -12329,14 +15442,6 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicy) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
-		val,
-	)
-}
-
-func (j *jsiiProxy_CloudfrontOriginRequestPolicy) SetEtag(val *string) {
-	_jsii_.Set(
-		j,
-		"etag",
 		val,
 	)
 }
@@ -12375,7 +15480,7 @@ func CloudfrontOriginRequestPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12388,7 +15493,7 @@ func CloudfrontOriginRequestPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -12516,14 +15621,6 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicy) ResetComment() {
 	)
 }
 
-func (c *jsiiProxy_CloudfrontOriginRequestPolicy) ResetEtag() {
-	_jsii_.InvokeVoid(
-		c,
-		"resetEtag",
-		nil, // no parameters
-	)
-}
-
 // Resets a previously passed logical Id to use the auto-generated logical id again.
 // Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicy) ResetOverrideLogicalId() {
@@ -12590,6 +15687,7 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontOriginRequestPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12615,8 +15713,6 @@ type CloudfrontOriginRequestPolicyConfig struct {
 	QueryStringsConfig *CloudfrontOriginRequestPolicyQueryStringsConfig `json:"queryStringsConfig"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#comment CloudfrontOriginRequestPolicy#comment}.
 	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#etag CloudfrontOriginRequestPolicy#etag}.
-	Etag *string `json:"etag"`
 }
 
 type CloudfrontOriginRequestPolicyCookiesConfig struct {
@@ -12635,6 +15731,8 @@ type CloudfrontOriginRequestPolicyCookiesConfigCookies struct {
 
 type CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontOriginRequestPolicyCookiesConfigCookies
+	SetInternalValue(val *CloudfrontOriginRequestPolicyCookiesConfigCookies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -12656,6 +15754,16 @@ type CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference interface 
 // The jsii proxy struct for CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference
 type jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) InternalValue() *CloudfrontOriginRequestPolicyCookiesConfigCookies {
+	var returns *CloudfrontOriginRequestPolicyCookiesConfigCookies
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) IsSingleItem() *bool {
@@ -12714,7 +15822,7 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference(terrafo
 	j := jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12726,9 +15834,17 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyCookiesConfigCookies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12863,6 +15979,8 @@ type CloudfrontOriginRequestPolicyCookiesConfigOutputReference interface {
 	CookieBehaviorInput() *string
 	Cookies() CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference
 	CookiesInput() *CloudfrontOriginRequestPolicyCookiesConfigCookies
+	InternalValue() *CloudfrontOriginRequestPolicyCookiesConfig
+	SetInternalValue(val *CloudfrontOriginRequestPolicyCookiesConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12924,6 +16042,16 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Co
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) InternalValue() *CloudfrontOriginRequestPolicyCookiesConfig {
+	var returns *CloudfrontOriginRequestPolicyCookiesConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12960,7 +16088,7 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference(terraformResou
 	j := jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12972,7 +16100,7 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference_Override(c Clo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -12982,6 +16110,14 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Se
 	_jsii_.Set(
 		j,
 		"cookieBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyCookiesConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13126,6 +16262,8 @@ type CloudfrontOriginRequestPolicyHeadersConfigHeaders struct {
 
 type CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontOriginRequestPolicyHeadersConfigHeaders
+	SetInternalValue(val *CloudfrontOriginRequestPolicyHeadersConfigHeaders)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -13147,6 +16285,16 @@ type CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference interface 
 // The jsii proxy struct for CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference
 type jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) InternalValue() *CloudfrontOriginRequestPolicyHeadersConfigHeaders {
+	var returns *CloudfrontOriginRequestPolicyHeadersConfigHeaders
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) IsSingleItem() *bool {
@@ -13205,7 +16353,7 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference(terrafo
 	j := jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13217,9 +16365,17 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyHeadersConfigHeaders) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13354,6 +16510,8 @@ type CloudfrontOriginRequestPolicyHeadersConfigOutputReference interface {
 	HeaderBehaviorInput() *string
 	Headers() CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference
 	HeadersInput() *CloudfrontOriginRequestPolicyHeadersConfigHeaders
+	InternalValue() *CloudfrontOriginRequestPolicyHeadersConfig
+	SetInternalValue(val *CloudfrontOriginRequestPolicyHeadersConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13416,6 +16574,16 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) He
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) InternalValue() *CloudfrontOriginRequestPolicyHeadersConfig {
+	var returns *CloudfrontOriginRequestPolicyHeadersConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13452,7 +16620,7 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference(terraformResou
 	j := jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13464,7 +16632,7 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference_Override(c Clo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -13474,6 +16642,14 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Se
 	_jsii_.Set(
 		j,
 		"headerBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyHeadersConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13621,6 +16797,8 @@ type CloudfrontOriginRequestPolicyQueryStringsConfig struct {
 
 type CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontOriginRequestPolicyQueryStringsConfig
+	SetInternalValue(val *CloudfrontOriginRequestPolicyQueryStringsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueryStringBehavior() *string
@@ -13645,6 +16823,16 @@ type CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference interface {
 // The jsii proxy struct for CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference
 type jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) InternalValue() *CloudfrontOriginRequestPolicyQueryStringsConfig {
+	var returns *CloudfrontOriginRequestPolicyQueryStringsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) IsSingleItem() *bool {
@@ -13723,7 +16911,7 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference(terraform
 	j := jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13735,9 +16923,17 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyQueryStringsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13880,6 +17076,8 @@ type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings struct {
 
 type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings
+	SetInternalValue(val *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -13901,6 +17099,16 @@ type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference 
 // The jsii proxy struct for CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference
 type jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) InternalValue() *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings {
+	var returns *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) IsSingleItem() *bool {
@@ -13959,7 +17167,7 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReferen
 	j := jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13971,9 +17179,17 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) SetInternalValue(val *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14405,7 +17621,7 @@ func NewCloudfrontPublicKey(scope constructs.Construct, id *string, config *Clou
 	j := jsiiProxy_CloudfrontPublicKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKey",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14418,7 +17634,7 @@ func NewCloudfrontPublicKey_Override(c CloudfrontPublicKey, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKey",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKey",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -14498,7 +17714,7 @@ func CloudfrontPublicKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKey",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14511,7 +17727,7 @@ func CloudfrontPublicKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKey",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -14697,6 +17913,7 @@ func (c *jsiiProxy_CloudfrontPublicKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontPublicKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15006,7 +18223,7 @@ func NewCloudfrontRealtimeLogConfig(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_CloudfrontRealtimeLogConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15019,7 +18236,7 @@ func NewCloudfrontRealtimeLogConfig_Override(c CloudfrontRealtimeLogConfig, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfig",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -15091,7 +18308,7 @@ func CloudfrontRealtimeLogConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15104,7 +18321,7 @@ func CloudfrontRealtimeLogConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -15274,6 +18491,7 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontRealtimeLogConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15313,6 +18531,8 @@ type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig struct {
 
 type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig
+	SetInternalValue(val *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -15336,6 +18556,16 @@ type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference inter
 // The jsii proxy struct for CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference
 type jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) InternalValue() *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig {
+	var returns *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) IsSingleItem() *bool {
@@ -15414,7 +18644,7 @@ func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference(te
 	j := jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15426,9 +18656,17 @@ func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) SetInternalValue(val *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15558,6 +18796,8 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 
 type CloudfrontRealtimeLogConfigEndpointOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontRealtimeLogConfigEndpoint
+	SetInternalValue(val *CloudfrontRealtimeLogConfigEndpoint)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KinesisStreamConfig() CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference
@@ -15581,6 +18821,16 @@ type CloudfrontRealtimeLogConfigEndpointOutputReference interface {
 // The jsii proxy struct for CloudfrontRealtimeLogConfigEndpointOutputReference
 type jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) InternalValue() *CloudfrontRealtimeLogConfigEndpoint {
+	var returns *CloudfrontRealtimeLogConfigEndpoint
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) IsSingleItem() *bool {
@@ -15659,7 +18909,7 @@ func NewCloudfrontRealtimeLogConfigEndpointOutputReference(terraformResource cdk
 	j := jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15671,9 +18921,17 @@ func NewCloudfrontRealtimeLogConfigEndpointOutputReference_Override(c Cloudfront
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) SetInternalValue(val *CloudfrontRealtimeLogConfigEndpoint) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16131,7 +19389,7 @@ func NewCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *string, 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16144,7 +19402,7 @@ func NewCloudfrontResponseHeadersPolicy_Override(c CloudfrontResponseHeadersPoli
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -16216,7 +19474,7 @@ func CloudfrontResponseHeadersPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16229,7 +19487,7 @@ func CloudfrontResponseHeadersPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -16455,6 +19713,7 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type CloudfrontResponseHeadersPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16516,6 +19775,8 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders struct {
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -16537,6 +19798,16 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputRef
 // The jsii proxy struct for CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders {
+	var returns *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) IsSingleItem() *bool {
@@ -16595,7 +19866,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutput
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16607,9 +19878,17 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16744,6 +20023,8 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods struct {
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -16765,6 +20046,16 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputRef
 // The jsii proxy struct for CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods {
+	var returns *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) IsSingleItem() *bool {
@@ -16823,7 +20114,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutput
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16835,9 +20126,17 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16972,6 +20271,8 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins struct {
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -16993,6 +20294,16 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputRef
 // The jsii proxy struct for CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins {
+	var returns *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) IsSingleItem() *bool {
@@ -17051,7 +20362,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutput
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17063,9 +20374,17 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17200,6 +20519,8 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders struct 
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*string
@@ -17221,6 +20542,16 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputRe
 // The jsii proxy struct for CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders {
+	var returns *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) IsSingleItem() *bool {
@@ -17279,7 +20610,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutpu
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17291,9 +20622,17 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17437,6 +20776,8 @@ type CloudfrontResponseHeadersPolicyCorsConfigOutputReference interface {
 	AccessControlMaxAgeSec() *float64
 	SetAccessControlMaxAgeSec(val *float64)
 	AccessControlMaxAgeSecInput() *float64
+	InternalValue() *CloudfrontResponseHeadersPolicyCorsConfig
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OriginOverride() interface{}
@@ -17585,6 +20926,16 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Acc
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCorsConfig {
+	var returns *CloudfrontResponseHeadersPolicyCorsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -17641,7 +20992,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference(terraformResour
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17653,7 +21004,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference_Override(c Clou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -17671,6 +21022,14 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Set
 	_jsii_.Set(
 		j,
 		"accessControlMaxAgeSec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCorsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17857,6 +21216,8 @@ type CloudfrontResponseHeadersPolicyCustomHeadersConfigItems struct {
 
 type CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicyCustomHeadersConfig
+	SetInternalValue(val *CloudfrontResponseHeadersPolicyCustomHeadersConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Items() *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems
@@ -17878,6 +21239,16 @@ type CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference interface
 // The jsii proxy struct for CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) InternalValue() *CloudfrontResponseHeadersPolicyCustomHeadersConfig {
+	var returns *CloudfrontResponseHeadersPolicyCustomHeadersConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) IsSingleItem() *bool {
@@ -17936,7 +21307,7 @@ func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference(terraf
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17948,9 +21319,17 @@ func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicyCustomHeadersConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18117,6 +21496,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOu
 	ContentSecurityPolicy() *string
 	SetContentSecurityPolicy(val *string)
 	ContentSecurityPolicyInput() *string
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Override() interface{}
@@ -18154,6 +21535,16 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 	_jsii_.Get(
 		j,
 		"contentSecurityPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18215,7 +21606,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolic
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18227,7 +21618,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -18237,6 +21628,14 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 	_jsii_.Set(
 		j,
 		"contentSecurityPolicy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18364,6 +21763,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions stru
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Override() interface{}
@@ -18384,6 +21785,16 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutpu
 // The jsii proxy struct for CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) IsSingleItem() *bool {
@@ -18442,7 +21853,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOu
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18454,9 +21865,17 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18588,6 +22007,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputRefer
 	FrameOption() *string
 	SetFrameOption(val *string)
 	FrameOptionInput() *string
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Override() interface{}
@@ -18625,6 +22046,16 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 	_jsii_.Get(
 		j,
 		"frameOptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18686,7 +22117,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputRe
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18698,7 +22129,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -18708,6 +22139,14 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 	_jsii_.Set(
 		j,
 		"frameOption",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18836,6 +22275,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference interfa
 	ContentTypeOptionsInput() *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions
 	FrameOptions() CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference
 	FrameOptionsInput() *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfig
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReferrerPolicy() CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference
@@ -18928,6 +22369,16 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 	_jsii_.Get(
 		j,
 		"frameOptionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfig {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19029,7 +22480,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference(terr
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19041,9 +22492,17 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -19260,6 +22719,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy struct {
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Override() interface{}
@@ -19283,6 +22744,16 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputRef
 // The jsii proxy struct for CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) IsSingleItem() *bool {
@@ -19361,7 +22832,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutput
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19373,9 +22844,17 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -19522,6 +23001,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity
 	IncludeSubdomains() interface{}
 	SetIncludeSubdomains(val interface{})
 	IncludeSubdomainsInput() interface{}
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Override() interface{}
@@ -19584,6 +23065,16 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 	_jsii_.Get(
 		j,
 		"includeSubdomainsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19665,7 +23156,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecur
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19677,7 +23168,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -19695,6 +23186,14 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 	_jsii_.Set(
 		j,
 		"includeSubdomains",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19852,6 +23351,8 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection struct {
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
+	SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ModeBlock() interface{}
@@ -19883,6 +23384,16 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputRefe
 // The jsii proxy struct for CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference
 type jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) InternalValue() *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection {
+	var returns *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) IsSingleItem() *bool {
@@ -20001,7 +23512,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputR
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20013,9 +23524,17 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) SetInternalValue(val *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20455,7 +23974,7 @@ func NewDataAwsCloudfrontCachePolicy(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsCloudfrontCachePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20468,7 +23987,7 @@ func NewDataAwsCloudfrontCachePolicy_Override(d DataAwsCloudfrontCachePolicy, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20532,7 +24051,7 @@ func DataAwsCloudfrontCachePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20545,7 +24064,7 @@ func DataAwsCloudfrontCachePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -20736,6 +24255,7 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontCachePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20863,7 +24383,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin(ter
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -20876,7 +24396,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21055,7 +24575,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21068,7 +24588,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21236,7 +24756,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21249,7 +24769,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21428,7 +24948,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21441,7 +24961,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21609,7 +25129,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21622,7 +25142,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21801,7 +25321,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21814,7 +25334,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21982,7 +25502,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21995,7 +25515,7 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -22406,7 +25926,7 @@ func NewDataAwsCloudfrontDistribution(scope constructs.Construct, id *string, co
 	j := jsiiProxy_DataAwsCloudfrontDistribution{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistribution",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistribution",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22419,7 +25939,7 @@ func NewDataAwsCloudfrontDistribution_Override(d DataAwsCloudfrontDistribution, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistribution",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistribution",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22483,7 +26003,7 @@ func DataAwsCloudfrontDistribution_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistribution",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistribution",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22496,7 +26016,7 @@ func DataAwsCloudfrontDistribution_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistribution",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistribution",
 		"tfResourceType",
 		&returns,
 	)
@@ -22666,6 +26186,7 @@ func (d *jsiiProxy_DataAwsCloudfrontDistribution) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontDistributionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22991,7 +26512,7 @@ func NewDataAwsCloudfrontFunction(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsCloudfrontFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunction",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23004,7 +26525,7 @@ func NewDataAwsCloudfrontFunction_Override(d DataAwsCloudfrontFunction, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunction",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunction",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -23068,7 +26589,7 @@ func DataAwsCloudfrontFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunction",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23081,7 +26602,7 @@ func DataAwsCloudfrontFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunction",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -23243,6 +26764,7 @@ func (d *jsiiProxy_DataAwsCloudfrontFunction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23469,7 +26991,7 @@ func NewDataAwsCloudfrontLogDeliveryCanonicalUserId(scope constructs.Construct, 
 	j := jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23482,7 +27004,7 @@ func NewDataAwsCloudfrontLogDeliveryCanonicalUserId_Override(d DataAwsCloudfront
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -23538,7 +27060,7 @@ func DataAwsCloudfrontLogDeliveryCanonicalUserId_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23551,7 +27073,7 @@ func DataAwsCloudfrontLogDeliveryCanonicalUserId_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
 		"tfResourceType",
 		&returns,
 	)
@@ -23721,6 +27243,7 @@ func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) ToTerraform() in
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23983,7 +27506,7 @@ func NewDataAwsCloudfrontOriginRequestPolicy(scope constructs.Construct, id *str
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23996,7 +27519,7 @@ func NewDataAwsCloudfrontOriginRequestPolicy_Override(d DataAwsCloudfrontOriginR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -24060,7 +27583,7 @@ func DataAwsCloudfrontOriginRequestPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24073,7 +27596,7 @@ func DataAwsCloudfrontOriginRequestPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -24290,6 +27813,7 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) ToTerraform() interface
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontOriginRequestPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24384,7 +27908,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig(terraformResource cdkt
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -24397,7 +27921,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig_Override(d DataAwsClou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -24565,7 +28089,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies(terraformResour
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -24578,7 +28102,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies_Override(d Data
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -24757,7 +28281,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig(terraformResource cdkt
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -24770,7 +28294,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig_Override(d DataAwsClou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -24938,7 +28462,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders(terraformResour
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -24951,7 +28475,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders_Override(d Data
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -25130,7 +28654,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig(terraformResource
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -25143,7 +28667,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig_Override(d DataAw
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -25311,7 +28835,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings(terra
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -25324,7 +28848,7 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -25660,7 +29184,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *s
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -25673,7 +29197,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicy_Override(d DataAwsCloudfrontRespo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -25729,7 +29253,7 @@ func DataAwsCloudfrontResponseHeadersPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25742,7 +29266,7 @@ func DataAwsCloudfrontResponseHeadersPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -25951,6 +29475,7 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) ToTerraform() interfa
 	return returns
 }
 
+// AWS CloudFront.
 type DataAwsCloudfrontResponseHeadersPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26098,7 +29623,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig(terraformResource cdktf
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26111,7 +29636,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig_Override(d DataAwsCloud
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26279,7 +29804,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeader
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26292,7 +29817,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeader
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26460,7 +29985,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethod
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26473,7 +29998,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethod
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26641,7 +30166,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigin
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26654,7 +30179,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26822,7 +30347,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeade
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26835,7 +30360,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeade
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26939,13 +30464,11 @@ type DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Header() *string
-	Override() interface{}
+	Items() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
 	TerraformResource() cdktf.ITerraformResource
 	SetTerraformResource(val cdktf.ITerraformResource)
-	Value() *string
 	GetBooleanAttribute(terraformAttribute *string) interface{}
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
@@ -26968,21 +30491,11 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Co
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Header() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"header",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Override() interface{} {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Items() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"override",
+		"items",
 		&returns,
 	)
 	return returns
@@ -27008,16 +30521,6 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Te
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Value() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"value",
-		&returns,
-	)
-	return returns
-}
-
 // Experimental.
 func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig {
 	_init_.Initialize()
@@ -27025,7 +30528,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig(terraformResou
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27038,7 +30541,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig_Override(d Dat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27126,6 +30629,209 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Ge
 
 // Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	Header() *string
+	Override() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Value() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems
+type jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) Header() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"header",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) Override() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"override",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) Value() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems_Override(d DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) InterpolationForAttribute(property *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
@@ -27261,7 +30967,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig(terraformRes
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27274,7 +30980,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig_Override(d D
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27453,7 +31159,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecuri
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27466,7 +31172,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecuri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27634,7 +31340,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOp
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27647,7 +31353,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27826,7 +31532,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions(
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27839,7 +31545,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -28018,7 +31724,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolic
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -28031,7 +31737,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -28232,7 +31938,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTranspo
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -28245,7 +31951,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTranspo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -28446,7 +32152,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -28459,7 +32165,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)

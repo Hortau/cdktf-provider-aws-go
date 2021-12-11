@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchComputeEnvironment",
+		"hashicorp_aws.batch.BatchComputeEnvironment",
 		reflect.TypeOf((*BatchComputeEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -73,15 +73,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResources",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResources",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResources)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesEc2Configuration",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesEc2Configuration",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResourcesEc2Configuration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -92,6 +92,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "imageIdOverrideInput", GoGetter: "ImageIdOverrideInput"},
 			_jsii_.MemberProperty{JsiiProperty: "imageType", GoGetter: "ImageType"},
 			_jsii_.MemberProperty{JsiiProperty: "imageTypeInput", GoGetter: "ImageTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -107,17 +108,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesLaunchTemplate",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesLaunchTemplate",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResourcesLaunchTemplate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -140,7 +142,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentComputeResourcesOutputReference",
+		"hashicorp_aws.batch.BatchComputeEnvironmentComputeResourcesOutputReference",
 		reflect.TypeOf((*BatchComputeEnvironmentComputeResourcesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allocationStrategy", GoGetter: "AllocationStrategy"},
@@ -163,6 +165,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "instanceRoleInput", GoGetter: "InstanceRoleInput"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -206,11 +209,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchComputeEnvironmentConfig",
+		"hashicorp_aws.batch.BatchComputeEnvironmentConfig",
 		reflect.TypeOf((*BatchComputeEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchJobDefinition",
+		"hashicorp_aws.batch.BatchJobDefinition",
 		reflect.TypeOf((*BatchJobDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -279,19 +282,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchJobDefinitionConfig",
+		"hashicorp_aws.batch.BatchJobDefinitionConfig",
 		reflect.TypeOf((*BatchJobDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchJobDefinitionRetryStrategy",
+		"hashicorp_aws.batch.BatchJobDefinitionRetryStrategy",
 		reflect.TypeOf((*BatchJobDefinitionRetryStrategy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchJobDefinitionRetryStrategyEvaluateOnExit",
+		"hashicorp_aws.batch.BatchJobDefinitionRetryStrategyEvaluateOnExit",
 		reflect.TypeOf((*BatchJobDefinitionRetryStrategyEvaluateOnExit)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchJobDefinitionRetryStrategyOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionRetryStrategyOutputReference",
 		reflect.TypeOf((*BatchJobDefinitionRetryStrategyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attempts", GoGetter: "Attempts"},
@@ -302,6 +305,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -317,11 +321,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchJobDefinitionTimeout",
+		"hashicorp_aws.batch.BatchJobDefinitionTimeout",
 		reflect.TypeOf((*BatchJobDefinitionTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchJobDefinitionTimeoutOutputReference",
+		"hashicorp_aws.batch.BatchJobDefinitionTimeoutOutputReference",
 		reflect.TypeOf((*BatchJobDefinitionTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attemptDurationSeconds", GoGetter: "AttemptDurationSeconds"},
@@ -330,6 +334,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -344,7 +349,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.BatchJobQueue",
+		"hashicorp_aws.batch.BatchJobQueue",
 		reflect.TypeOf((*BatchJobQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -396,11 +401,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.BatchJobQueueConfig",
+		"hashicorp_aws.batch.BatchJobQueueConfig",
 		reflect.TypeOf((*BatchJobQueueConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironment",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironment",
 		reflect.TypeOf((*DataAwsBatchComputeEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -449,11 +454,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.DataAwsBatchComputeEnvironmentConfig",
+		"hashicorp_aws.batch.DataAwsBatchComputeEnvironmentConfig",
 		reflect.TypeOf((*DataAwsBatchComputeEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueue",
+		"hashicorp_aws.batch.DataAwsBatchJobQueue",
 		reflect.TypeOf((*DataAwsBatchJobQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -501,7 +506,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
+		"hashicorp_aws.batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
 		reflect.TypeOf((*DataAwsBatchJobQueueComputeEnvironmentOrder)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -522,7 +527,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Batch.DataAwsBatchJobQueueConfig",
+		"hashicorp_aws.batch.DataAwsBatchJobQueueConfig",
 		reflect.TypeOf((*DataAwsBatchJobQueueConfig)(nil)).Elem(),
 	)
 }

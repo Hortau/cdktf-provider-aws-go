@@ -274,7 +274,7 @@ func NewDataAwsArn(scope constructs.Construct, id *string, config *DataAwsArnCon
 	j := jsiiProxy_DataAwsArn{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsArn",
+		"hashicorp_aws.datasources.DataAwsArn",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -287,7 +287,7 @@ func NewDataAwsArn_Override(d DataAwsArn, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsArn",
+		"hashicorp_aws.datasources.DataAwsArn",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -343,7 +343,7 @@ func DataAwsArn_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsArn",
+		"hashicorp_aws.datasources.DataAwsArn",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -356,7 +356,7 @@ func DataAwsArn_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsArn",
+		"hashicorp_aws.datasources.DataAwsArn",
 		"tfResourceType",
 		&returns,
 	)
@@ -518,6 +518,7 @@ func (d *jsiiProxy_DataAwsArn) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsArnConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -926,7 +927,7 @@ func NewDataAwsAvailabilityZone(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsAvailabilityZone{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZone",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZone",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -939,7 +940,7 @@ func NewDataAwsAvailabilityZone_Override(d DataAwsAvailabilityZone, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZone",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZone",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1027,7 +1028,7 @@ func DataAwsAvailabilityZone_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZone",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZone",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1040,7 +1041,7 @@ func DataAwsAvailabilityZone_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZone",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZone",
 		"tfResourceType",
 		&returns,
 	)
@@ -1242,6 +1243,7 @@ func (d *jsiiProxy_DataAwsAvailabilityZone) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsAvailabilityZoneConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1612,7 +1614,7 @@ func NewDataAwsAvailabilityZones(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsAvailabilityZones{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZones",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZones",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1625,7 +1627,7 @@ func NewDataAwsAvailabilityZones_Override(d DataAwsAvailabilityZones, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZones",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZones",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1713,7 +1715,7 @@ func DataAwsAvailabilityZones_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZones",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZones",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1726,7 +1728,7 @@ func DataAwsAvailabilityZones_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsAvailabilityZones",
+		"hashicorp_aws.datasources.DataAwsAvailabilityZones",
 		"tfResourceType",
 		&returns,
 	)
@@ -1928,6 +1930,7 @@ func (d *jsiiProxy_DataAwsAvailabilityZones) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsAvailabilityZonesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2156,7 +2159,7 @@ func NewDataAwsBillingServiceAccount(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsBillingServiceAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccount",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2169,7 +2172,7 @@ func NewDataAwsBillingServiceAccount_Override(d DataAwsBillingServiceAccount, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccount",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccount",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2217,7 +2220,7 @@ func DataAwsBillingServiceAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccount",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2230,7 +2233,7 @@ func DataAwsBillingServiceAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsBillingServiceAccount",
+		"hashicorp_aws.datasources.DataAwsBillingServiceAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -2392,6 +2395,7 @@ func (d *jsiiProxy_DataAwsBillingServiceAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsBillingServiceAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2623,7 +2627,7 @@ func NewDataAwsCallerIdentity(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsCallerIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentity",
+		"hashicorp_aws.datasources.DataAwsCallerIdentity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2636,7 +2640,7 @@ func NewDataAwsCallerIdentity_Override(d DataAwsCallerIdentity, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentity",
+		"hashicorp_aws.datasources.DataAwsCallerIdentity",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2684,7 +2688,7 @@ func DataAwsCallerIdentity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentity",
+		"hashicorp_aws.datasources.DataAwsCallerIdentity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2697,7 +2701,7 @@ func DataAwsCallerIdentity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsCallerIdentity",
+		"hashicorp_aws.datasources.DataAwsCallerIdentity",
 		"tfResourceType",
 		&returns,
 	)
@@ -2859,6 +2863,7 @@ func (d *jsiiProxy_DataAwsCallerIdentity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsCallerIdentityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3068,7 +3073,7 @@ func NewDataAwsCanonicalUserId(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsCanonicalUserId{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserId",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserId",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3081,7 +3086,7 @@ func NewDataAwsCanonicalUserId_Override(d DataAwsCanonicalUserId, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserId",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserId",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3129,7 +3134,7 @@ func DataAwsCanonicalUserId_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserId",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserId",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3142,7 +3147,7 @@ func DataAwsCanonicalUserId_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsCanonicalUserId",
+		"hashicorp_aws.datasources.DataAwsCanonicalUserId",
 		"tfResourceType",
 		&returns,
 	)
@@ -3304,6 +3309,7 @@ func (d *jsiiProxy_DataAwsCanonicalUserId) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsCanonicalUserIdConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3329,6 +3335,7 @@ type DataAwsElb interface {
 	CrossZoneLoadBalancing() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
 	DnsName() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
@@ -3464,6 +3471,16 @@ func (j *jsiiProxy_DataAwsElb) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
 		&returns,
 	)
 	return returns
@@ -3706,7 +3723,7 @@ func NewDataAwsElb(scope constructs.Construct, id *string, config *DataAwsElbCon
 	j := jsiiProxy_DataAwsElb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElb",
+		"hashicorp_aws.datasources.DataAwsElb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3719,7 +3736,7 @@ func NewDataAwsElb_Override(d DataAwsElb, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElb",
+		"hashicorp_aws.datasources.DataAwsElb",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3783,7 +3800,7 @@ func DataAwsElb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsElb",
+		"hashicorp_aws.datasources.DataAwsElb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3796,7 +3813,7 @@ func DataAwsElb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsElb",
+		"hashicorp_aws.datasources.DataAwsElb",
 		"tfResourceType",
 		&returns,
 	)
@@ -4106,7 +4123,7 @@ func NewDataAwsElbAccessLogs(terraformResource cdktf.ITerraformResource, terrafo
 	j := jsiiProxy_DataAwsElbAccessLogs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbAccessLogs",
+		"hashicorp_aws.datasources.DataAwsElbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4119,7 +4136,7 @@ func NewDataAwsElbAccessLogs_Override(d DataAwsElbAccessLogs, terraformResource 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbAccessLogs",
+		"hashicorp_aws.datasources.DataAwsElbAccessLogs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4219,6 +4236,7 @@ func (d *jsiiProxy_DataAwsElbAccessLogs) InterpolationForAttribute(property *str
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsElbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4346,7 +4364,7 @@ func NewDataAwsElbHealthCheck(terraformResource cdktf.ITerraformResource, terraf
 	j := jsiiProxy_DataAwsElbHealthCheck{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbHealthCheck",
+		"hashicorp_aws.datasources.DataAwsElbHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4359,7 +4377,7 @@ func NewDataAwsElbHealthCheck_Override(d DataAwsElbHealthCheck, terraformResourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbHealthCheck",
+		"hashicorp_aws.datasources.DataAwsElbHealthCheck",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4670,7 +4688,7 @@ func NewDataAwsElbHostedZoneId(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsElbHostedZoneId{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneId",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneId",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4683,7 +4701,7 @@ func NewDataAwsElbHostedZoneId_Override(d DataAwsElbHostedZoneId, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneId",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneId",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4739,7 +4757,7 @@ func DataAwsElbHostedZoneId_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneId",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneId",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4752,7 +4770,7 @@ func DataAwsElbHostedZoneId_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsElbHostedZoneId",
+		"hashicorp_aws.datasources.DataAwsElbHostedZoneId",
 		"tfResourceType",
 		&returns,
 	)
@@ -4922,6 +4940,7 @@ func (d *jsiiProxy_DataAwsElbHostedZoneId) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsElbHostedZoneIdConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5047,7 +5066,7 @@ func NewDataAwsElbListener(terraformResource cdktf.ITerraformResource, terraform
 	j := jsiiProxy_DataAwsElbListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbListener",
+		"hashicorp_aws.datasources.DataAwsElbListener",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5060,7 +5079,7 @@ func NewDataAwsElbListener_Override(d DataAwsElbListener, terraformResource cdkt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbListener",
+		"hashicorp_aws.datasources.DataAwsElbListener",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5382,7 +5401,7 @@ func NewDataAwsElbServiceAccount(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsElbServiceAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccount",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5395,7 +5414,7 @@ func NewDataAwsElbServiceAccount_Override(d DataAwsElbServiceAccount, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccount",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccount",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5451,7 +5470,7 @@ func DataAwsElbServiceAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccount",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5464,7 +5483,7 @@ func DataAwsElbServiceAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsElbServiceAccount",
+		"hashicorp_aws.datasources.DataAwsElbServiceAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -5634,6 +5653,7 @@ func (d *jsiiProxy_DataAwsElbServiceAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsElbServiceAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5949,7 +5969,7 @@ func NewDataAwsIpRanges(scope constructs.Construct, id *string, config *DataAwsI
 	j := jsiiProxy_DataAwsIpRanges{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsIpRanges",
+		"hashicorp_aws.datasources.DataAwsIpRanges",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5962,7 +5982,7 @@ func NewDataAwsIpRanges_Override(d DataAwsIpRanges, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsIpRanges",
+		"hashicorp_aws.datasources.DataAwsIpRanges",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6034,7 +6054,7 @@ func DataAwsIpRanges_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsIpRanges",
+		"hashicorp_aws.datasources.DataAwsIpRanges",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6047,7 +6067,7 @@ func DataAwsIpRanges_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsIpRanges",
+		"hashicorp_aws.datasources.DataAwsIpRanges",
 		"tfResourceType",
 		&returns,
 	)
@@ -6225,6 +6245,7 @@ func (d *jsiiProxy_DataAwsIpRanges) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsIpRangesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6610,7 +6631,7 @@ func NewDataAwsLaunchConfiguration(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsLaunchConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfiguration",
+		"hashicorp_aws.datasources.DataAwsLaunchConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6623,7 +6644,7 @@ func NewDataAwsLaunchConfiguration_Override(d DataAwsLaunchConfiguration, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfiguration",
+		"hashicorp_aws.datasources.DataAwsLaunchConfiguration",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6679,7 +6700,7 @@ func DataAwsLaunchConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfiguration",
+		"hashicorp_aws.datasources.DataAwsLaunchConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6692,7 +6713,7 @@ func DataAwsLaunchConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfiguration",
+		"hashicorp_aws.datasources.DataAwsLaunchConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -6906,6 +6927,7 @@ func (d *jsiiProxy_DataAwsLaunchConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsLaunchConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7075,7 +7097,7 @@ func NewDataAwsLaunchConfigurationEbsBlockDevice(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEbsBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEbsBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7088,7 +7110,7 @@ func NewDataAwsLaunchConfigurationEbsBlockDevice_Override(d DataAwsLaunchConfigu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEbsBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEbsBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -7267,7 +7289,7 @@ func NewDataAwsLaunchConfigurationEphemeralBlockDevice(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEphemeralBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEphemeralBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7280,7 +7302,7 @@ func NewDataAwsLaunchConfigurationEphemeralBlockDevice_Override(d DataAwsLaunchC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationEphemeralBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEphemeralBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -7470,7 +7492,7 @@ func NewDataAwsLaunchConfigurationMetadataOptions(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsLaunchConfigurationMetadataOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationMetadataOptions",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7483,7 +7505,7 @@ func NewDataAwsLaunchConfigurationMetadataOptions_Override(d DataAwsLaunchConfig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationMetadataOptions",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -7706,7 +7728,7 @@ func NewDataAwsLaunchConfigurationRootBlockDevice(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationRootBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationRootBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7719,7 +7741,7 @@ func NewDataAwsLaunchConfigurationRootBlockDevice_Override(d DataAwsLaunchConfig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsLaunchConfigurationRootBlockDevice",
+		"hashicorp_aws.datasources.DataAwsLaunchConfigurationRootBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -8039,7 +8061,7 @@ func NewDataAwsPartition(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsPartition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsPartition",
+		"hashicorp_aws.datasources.DataAwsPartition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8052,7 +8074,7 @@ func NewDataAwsPartition_Override(d DataAwsPartition, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsPartition",
+		"hashicorp_aws.datasources.DataAwsPartition",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8100,7 +8122,7 @@ func DataAwsPartition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsPartition",
+		"hashicorp_aws.datasources.DataAwsPartition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8113,7 +8135,7 @@ func DataAwsPartition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsPartition",
+		"hashicorp_aws.datasources.DataAwsPartition",
 		"tfResourceType",
 		&returns,
 	)
@@ -8275,6 +8297,7 @@ func (d *jsiiProxy_DataAwsPartition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsPartitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8556,7 +8579,7 @@ func NewDataAwsPrefixList(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsPrefixList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsPrefixList",
+		"hashicorp_aws.datasources.DataAwsPrefixList",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8569,7 +8592,7 @@ func NewDataAwsPrefixList_Override(d DataAwsPrefixList, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsPrefixList",
+		"hashicorp_aws.datasources.DataAwsPrefixList",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8641,7 +8664,7 @@ func DataAwsPrefixList_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsPrefixList",
+		"hashicorp_aws.datasources.DataAwsPrefixList",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8654,7 +8677,7 @@ func DataAwsPrefixList_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsPrefixList",
+		"hashicorp_aws.datasources.DataAwsPrefixList",
 		"tfResourceType",
 		&returns,
 	)
@@ -8840,6 +8863,7 @@ func (d *jsiiProxy_DataAwsPrefixList) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsPrefixListConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9112,7 +9136,7 @@ func NewDataAwsRegion(scope constructs.Construct, id *string, config *DataAwsReg
 	j := jsiiProxy_DataAwsRegion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsRegion",
+		"hashicorp_aws.datasources.DataAwsRegion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9125,7 +9149,7 @@ func NewDataAwsRegion_Override(d DataAwsRegion, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsRegion",
+		"hashicorp_aws.datasources.DataAwsRegion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9189,7 +9213,7 @@ func DataAwsRegion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsRegion",
+		"hashicorp_aws.datasources.DataAwsRegion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9202,7 +9226,7 @@ func DataAwsRegion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsRegion",
+		"hashicorp_aws.datasources.DataAwsRegion",
 		"tfResourceType",
 		&returns,
 	)
@@ -9380,6 +9404,7 @@ func (d *jsiiProxy_DataAwsRegion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsRegionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9641,7 +9666,7 @@ func NewDataAwsRegions(scope constructs.Construct, id *string, config *DataAwsRe
 	j := jsiiProxy_DataAwsRegions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsRegions",
+		"hashicorp_aws.datasources.DataAwsRegions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9654,7 +9679,7 @@ func NewDataAwsRegions_Override(d DataAwsRegions, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.DataAwsRegions",
+		"hashicorp_aws.datasources.DataAwsRegions",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9718,7 +9743,7 @@ func DataAwsRegions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.DataAwsRegions",
+		"hashicorp_aws.datasources.DataAwsRegions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9731,7 +9756,7 @@ func DataAwsRegions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.DataAwsRegions",
+		"hashicorp_aws.datasources.DataAwsRegions",
 		"tfResourceType",
 		&returns,
 	)
@@ -9909,6 +9934,7 @@ func (d *jsiiProxy_DataAwsRegions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type DataAwsRegionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9957,6 +9983,9 @@ type Elb interface {
 	CrossZoneLoadBalancingInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DesyncMitigationMode() *string
+	SetDesyncMitigationMode(val *string)
+	DesyncMitigationModeInput() *string
 	DnsName() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
@@ -10021,6 +10050,7 @@ type Elb interface {
 	ResetConnectionDraining()
 	ResetConnectionDrainingTimeout()
 	ResetCrossZoneLoadBalancing()
+	ResetDesyncMitigationMode()
 	ResetHealthCheck()
 	ResetIdleTimeout()
 	ResetInstances()
@@ -10189,6 +10219,26 @@ func (j *jsiiProxy_Elb) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Elb) DesyncMitigationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Elb) DesyncMitigationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desyncMitigationModeInput",
 		&returns,
 	)
 	return returns
@@ -10571,7 +10621,7 @@ func NewElb(scope constructs.Construct, id *string, config *ElbConfig) Elb {
 	j := jsiiProxy_Elb{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.Elb",
+		"hashicorp_aws.datasources.Elb",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10584,7 +10634,7 @@ func NewElb_Override(e Elb, scope constructs.Construct, id *string, config *ElbC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.Elb",
+		"hashicorp_aws.datasources.Elb",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -10634,6 +10684,14 @@ func (j *jsiiProxy_Elb) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Elb) SetDesyncMitigationMode(val *string) {
+	_jsii_.Set(
+		j,
+		"desyncMitigationMode",
 		val,
 	)
 }
@@ -10752,7 +10810,7 @@ func Elb_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.Elb",
+		"hashicorp_aws.datasources.Elb",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10765,7 +10823,7 @@ func Elb_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.Elb",
+		"hashicorp_aws.datasources.Elb",
 		"tfResourceType",
 		&returns,
 	)
@@ -10913,6 +10971,14 @@ func (e *jsiiProxy_Elb) ResetCrossZoneLoadBalancing() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetCrossZoneLoadBalancing",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_Elb) ResetDesyncMitigationMode() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetDesyncMitigationMode",
 		nil, // no parameters
 	)
 }
@@ -11093,6 +11159,8 @@ type ElbAccessLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *ElbAccessLogs
+	SetInternalValue(val *ElbAccessLogs)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -11178,6 +11246,16 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) EnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ElbAccessLogsOutputReference) InternalValue() *ElbAccessLogs {
+	var returns *ElbAccessLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElbAccessLogsOutputReference) Interval() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -11234,7 +11312,7 @@ func NewElbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_ElbAccessLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbAccessLogsOutputReference",
+		"hashicorp_aws.datasources.ElbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11246,7 +11324,7 @@ func NewElbAccessLogsOutputReference_Override(e ElbAccessLogsOutputReference, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbAccessLogsOutputReference",
+		"hashicorp_aws.datasources.ElbAccessLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -11272,6 +11350,14 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) SetEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElbAccessLogsOutputReference) SetInternalValue(val *ElbAccessLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11649,7 +11735,7 @@ func NewElbAttachment(scope constructs.Construct, id *string, config *ElbAttachm
 	j := jsiiProxy_ElbAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbAttachment",
+		"hashicorp_aws.datasources.ElbAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11662,7 +11748,7 @@ func NewElbAttachment_Override(e ElbAttachment, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbAttachment",
+		"hashicorp_aws.datasources.ElbAttachment",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -11726,7 +11812,7 @@ func ElbAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.ElbAttachment",
+		"hashicorp_aws.datasources.ElbAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11739,7 +11825,7 @@ func ElbAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.ElbAttachment",
+		"hashicorp_aws.datasources.ElbAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -11901,6 +11987,7 @@ func (e *jsiiProxy_ElbAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type ElbAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11916,6 +12003,7 @@ type ElbAttachmentConfig struct {
 	Instance *string `json:"instance"`
 }
 
+// AWS Data Sources.
 type ElbConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11941,6 +12029,8 @@ type ElbConfig struct {
 	ConnectionDrainingTimeout *float64 `json:"connectionDrainingTimeout"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#cross_zone_load_balancing Elb#cross_zone_load_balancing}.
 	CrossZoneLoadBalancing interface{} `json:"crossZoneLoadBalancing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#desync_mitigation_mode Elb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode"`
 	// health_check block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#health_check Elb#health_check}
@@ -11985,6 +12075,8 @@ type ElbHealthCheckOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *ElbHealthCheck
+	SetInternalValue(val *ElbHealthCheck)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -12031,6 +12123,16 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) HealthyThresholdInput() *float
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElbHealthCheckOutputReference) InternalValue() *ElbHealthCheck {
+	var returns *ElbHealthCheck
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12152,7 +12254,7 @@ func NewElbHealthCheckOutputReference(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_ElbHealthCheckOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbHealthCheckOutputReference",
+		"hashicorp_aws.datasources.ElbHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12164,7 +12266,7 @@ func NewElbHealthCheckOutputReference_Override(e ElbHealthCheckOutputReference, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.ElbHealthCheckOutputReference",
+		"hashicorp_aws.datasources.ElbHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -12174,6 +12276,14 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) SetHealthyThreshold(val *float
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElbHealthCheckOutputReference) SetInternalValue(val *ElbHealthCheck) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13007,7 +13117,7 @@ func NewLaunchConfiguration(scope constructs.Construct, id *string, config *Laun
 	j := jsiiProxy_LaunchConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfiguration",
+		"hashicorp_aws.datasources.LaunchConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13020,7 +13130,7 @@ func NewLaunchConfiguration_Override(l LaunchConfiguration, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfiguration",
+		"hashicorp_aws.datasources.LaunchConfiguration",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -13212,7 +13322,7 @@ func LaunchConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataSources.LaunchConfiguration",
+		"hashicorp_aws.datasources.LaunchConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13225,7 +13335,7 @@ func LaunchConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataSources.LaunchConfiguration",
+		"hashicorp_aws.datasources.LaunchConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -13547,6 +13657,7 @@ func (l *jsiiProxy_LaunchConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Sources.
 type LaunchConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13654,6 +13765,8 @@ type LaunchConfigurationMetadataOptionsOutputReference interface {
 	HttpTokens() *string
 	SetHttpTokens(val *string)
 	HttpTokensInput() *string
+	InternalValue() *LaunchConfigurationMetadataOptions
+	SetInternalValue(val *LaunchConfigurationMetadataOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13736,6 +13849,16 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) HttpTokens
 	return returns
 }
 
+func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) InternalValue() *LaunchConfigurationMetadataOptions {
+	var returns *LaunchConfigurationMetadataOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13772,7 +13895,7 @@ func NewLaunchConfigurationMetadataOptionsOutputReference(terraformResource cdkt
 	j := jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfigurationMetadataOptionsOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13784,7 +13907,7 @@ func NewLaunchConfigurationMetadataOptionsOutputReference_Override(l LaunchConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfigurationMetadataOptionsOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -13810,6 +13933,14 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetHttpTok
 	_jsii_.Set(
 		j,
 		"httpTokens",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetInternalValue(val *LaunchConfigurationMetadataOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13969,6 +14100,8 @@ type LaunchConfigurationRootBlockDeviceOutputReference interface {
 	Encrypted() interface{}
 	SetEncrypted(val interface{})
 	EncryptedInput() interface{}
+	InternalValue() *LaunchConfigurationRootBlockDevice
+	SetInternalValue(val *LaunchConfigurationRootBlockDevice)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -14041,6 +14174,16 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) EncryptedI
 	_jsii_.Get(
 		j,
 		"encryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) InternalValue() *LaunchConfigurationRootBlockDevice {
+	var returns *LaunchConfigurationRootBlockDevice
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14162,7 +14305,7 @@ func NewLaunchConfigurationRootBlockDeviceOutputReference(terraformResource cdkt
 	j := jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfigurationRootBlockDeviceOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14174,7 +14317,7 @@ func NewLaunchConfigurationRootBlockDeviceOutputReference_Override(l LaunchConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataSources.LaunchConfigurationRootBlockDeviceOutputReference",
+		"hashicorp_aws.datasources.LaunchConfigurationRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -14192,6 +14335,14 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetEncrypt
 	_jsii_.Set(
 		j,
 		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetInternalValue(val *LaunchConfigurationRootBlockDevice) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

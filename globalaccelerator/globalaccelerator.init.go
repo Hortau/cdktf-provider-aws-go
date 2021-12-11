@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAccelerator",
 		reflect.TypeOf((*DataAwsGlobalacceleratorAccelerator)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,7 +58,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
 		reflect.TypeOf((*DataAwsGlobalacceleratorAcceleratorAttributes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -80,11 +80,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorConfig",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorConfig",
 		reflect.TypeOf((*DataAwsGlobalacceleratorAcceleratorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
 		reflect.TypeOf((*DataAwsGlobalacceleratorAcceleratorIpSets)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -105,7 +105,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAccelerator",
 		reflect.TypeOf((*GlobalacceleratorAccelerator)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -167,11 +167,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorAttributes",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorAttributes",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorAttributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorAttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "flowLogsEnabled", GoGetter: "FlowLogsEnabled"},
@@ -184,6 +184,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -200,11 +201,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorConfig",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorConfig",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorIpSets",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorIpSets)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -225,11 +226,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorTimeouts",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorTimeouts",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
 		reflect.TypeOf((*GlobalacceleratorAcceleratorTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -238,6 +239,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -255,7 +257,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroup",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroup",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -326,23 +328,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupConfig",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupConfig",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupEndpointConfiguration",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupEndpointConfiguration",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroupEndpointConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupPortOverride",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupPortOverride",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroupPortOverride)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupTimeouts",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupTimeouts",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
 		reflect.TypeOf((*GlobalacceleratorEndpointGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -353,6 +355,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -371,7 +374,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListener",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListener",
 		reflect.TypeOf((*GlobalacceleratorListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceleratorArn", GoGetter: "AcceleratorArn"},
@@ -421,19 +424,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerConfig",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerConfig",
 		reflect.TypeOf((*GlobalacceleratorListenerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerPortRange",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerPortRange",
 		reflect.TypeOf((*GlobalacceleratorListenerPortRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerTimeouts",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerTimeouts",
 		reflect.TypeOf((*GlobalacceleratorListenerTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
 		reflect.TypeOf((*GlobalacceleratorListenerTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -444,6 +447,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

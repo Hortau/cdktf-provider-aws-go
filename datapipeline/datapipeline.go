@@ -291,7 +291,7 @@ func NewDatapipelinePipeline(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DatapipelinePipeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DataPipeline.DatapipelinePipeline",
+		"hashicorp_aws.datapipeline.DatapipelinePipeline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -304,7 +304,7 @@ func NewDatapipelinePipeline_Override(d DatapipelinePipeline, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DataPipeline.DatapipelinePipeline",
+		"hashicorp_aws.datapipeline.DatapipelinePipeline",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -384,7 +384,7 @@ func DatapipelinePipeline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DataPipeline.DatapipelinePipeline",
+		"hashicorp_aws.datapipeline.DatapipelinePipeline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -397,7 +397,7 @@ func DatapipelinePipeline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DataPipeline.DatapipelinePipeline",
+		"hashicorp_aws.datapipeline.DatapipelinePipeline",
 		"tfResourceType",
 		&returns,
 	)
@@ -583,6 +583,7 @@ func (d *jsiiProxy_DatapipelinePipeline) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Pipeline.
 type DatapipelinePipelineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

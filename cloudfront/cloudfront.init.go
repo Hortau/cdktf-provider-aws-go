@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicy",
 		reflect.TypeOf((*CloudfrontCachePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -21,7 +21,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "defaultTtlInput", GoGetter: "DefaultTtlInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
 			_jsii_.MemberProperty{JsiiProperty: "etag", GoGetter: "Etag"},
-			_jsii_.MemberProperty{JsiiProperty: "etagInput", GoGetter: "EtagInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -46,11 +45,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetComment", GoMethod: "ResetComment"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDefaultTtl", GoMethod: "ResetDefaultTtl"},
-			_jsii_.MemberMethod{JsiiMethod: "resetEtag", GoMethod: "ResetEtag"},
 			_jsii_.MemberMethod{JsiiMethod: "resetMaxTtl", GoMethod: "ResetMaxTtl"},
 			_jsii_.MemberMethod{JsiiMethod: "resetMinTtl", GoMethod: "ResetMinTtl"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
-			_jsii_.MemberMethod{JsiiMethod: "resetParametersInCacheKeyAndForwardedToOrigin", GoMethod: "ResetParametersInCacheKeyAndForwardedToOrigin"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
@@ -66,29 +63,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyConfig",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyConfig",
 		reflect.TypeOf((*CloudfrontCachePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -105,7 +103,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookieBehavior", GoGetter: "CookieBehavior"},
@@ -116,6 +114,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -131,21 +130,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -162,7 +162,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -173,6 +173,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "headerBehaviorInput", GoGetter: "HeaderBehaviorInput"},
 			_jsii_.MemberProperty{JsiiProperty: "headers", GoGetter: "Headers"},
 			_jsii_.MemberProperty{JsiiProperty: "headersInput", GoGetter: "HeadersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -189,7 +190,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookiesConfig", GoGetter: "CookiesConfig"},
@@ -204,6 +205,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "headersConfig", GoGetter: "HeadersConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "headersConfigInput", GoGetter: "HeadersConfigInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -224,17 +226,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -254,17 +257,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference",
 		reflect.TypeOf((*CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -281,7 +285,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistribution",
+		"hashicorp_aws.cloudfront.CloudfrontDistribution",
 		reflect.TypeOf((*CloudfrontDistribution)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -387,27 +391,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionConfig",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionConfig",
 		reflect.TypeOf((*CloudfrontDistributionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionCustomErrorResponse",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionCustomErrorResponse",
 		reflect.TypeOf((*CloudfrontDistributionCustomErrorResponse)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehavior",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehavior",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehavior)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValues",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValues",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorForwardedValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "forward", GoGetter: "Forward"},
@@ -416,6 +420,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -432,7 +437,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookies", GoGetter: "Cookies"},
@@ -443,6 +448,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "headers", GoGetter: "Headers"},
 			_jsii_.MemberProperty{JsiiProperty: "headersInput", GoGetter: "HeadersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -463,15 +469,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionDefaultCacheBehaviorOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionDefaultCacheBehaviorOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowedMethods", GoGetter: "AllowedMethods"},
@@ -494,6 +500,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -545,11 +552,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionLoggingConfig",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionLoggingConfig",
 		reflect.TypeOf((*CloudfrontDistributionLoggingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionLoggingConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionLoggingConfigOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionLoggingConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -560,6 +567,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "includeCookies", GoGetter: "IncludeCookies"},
 			_jsii_.MemberProperty{JsiiProperty: "includeCookiesInput", GoGetter: "IncludeCookiesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -577,19 +585,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehavior",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehavior",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehavior)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValues",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValues",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorForwardedValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "forward", GoGetter: "Forward"},
@@ -598,6 +606,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -614,7 +623,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookies", GoGetter: "Cookies"},
@@ -625,6 +634,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "headers", GoGetter: "Headers"},
 			_jsii_.MemberProperty{JsiiProperty: "headersInput", GoGetter: "HeadersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -645,27 +655,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorFunctionAssociation",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorFunctionAssociation",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorFunctionAssociation)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation",
 		reflect.TypeOf((*CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOrigin",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOrigin",
 		reflect.TypeOf((*CloudfrontDistributionOrigin)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginCustomHeader",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginCustomHeader",
 		reflect.TypeOf((*CloudfrontDistributionOriginCustomHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginCustomOriginConfig",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginCustomOriginConfig",
 		reflect.TypeOf((*CloudfrontDistributionOriginCustomOriginConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginCustomOriginConfigOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOriginCustomOriginConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -676,6 +686,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "httpPortInput", GoGetter: "HttpPortInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpsPort", GoGetter: "HttpsPort"},
 			_jsii_.MemberProperty{JsiiProperty: "httpsPortInput", GoGetter: "HttpsPortInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -699,21 +710,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroup",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroup",
 		reflect.TypeOf((*CloudfrontDistributionOriginGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroupFailoverCriteria",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroupFailoverCriteria",
 		reflect.TypeOf((*CloudfrontDistributionOriginGroupFailoverCriteria)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -729,15 +741,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginGroupMember",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginGroupMember",
 		reflect.TypeOf((*CloudfrontDistributionOriginGroupMember)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginOriginShield",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginOriginShield",
 		reflect.TypeOf((*CloudfrontDistributionOriginOriginShield)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginOriginShieldOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginOriginShieldOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOriginOriginShieldOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -746,6 +758,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -761,17 +774,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginS3OriginConfig",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginS3OriginConfig",
 		reflect.TypeOf((*CloudfrontDistributionOriginS3OriginConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionOriginS3OriginConfigOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionOriginS3OriginConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -787,21 +801,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictions",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictions",
 		reflect.TypeOf((*CloudfrontDistributionRestrictions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsGeoRestriction",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsGeoRestriction",
 		reflect.TypeOf((*CloudfrontDistributionRestrictionsGeoRestriction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsGeoRestrictionOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionRestrictionsGeoRestrictionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -820,7 +835,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionRestrictionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionRestrictionsOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionRestrictionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "geoRestriction", GoGetter: "GeoRestriction"},
@@ -829,6 +844,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -843,7 +859,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroups",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroups",
 		reflect.TypeOf((*CloudfrontDistributionTrustedKeyGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -864,7 +880,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedKeyGroupsItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroupsItems",
 		reflect.TypeOf((*CloudfrontDistributionTrustedKeyGroupsItems)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -885,7 +901,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSigners",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSigners",
 		reflect.TypeOf((*CloudfrontDistributionTrustedSigners)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -906,7 +922,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionTrustedSignersItems",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSignersItems",
 		reflect.TypeOf((*CloudfrontDistributionTrustedSignersItems)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsAccountNumber", GoGetter: "AwsAccountNumber"},
@@ -927,11 +943,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionViewerCertificate",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionViewerCertificate",
 		reflect.TypeOf((*CloudfrontDistributionViewerCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontDistributionViewerCertificateOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontDistributionViewerCertificateOutputReference",
 		reflect.TypeOf((*CloudfrontDistributionViewerCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acmCertificateArn", GoGetter: "AcmCertificateArn"},
@@ -944,6 +960,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iamCertificateId", GoGetter: "IamCertificateId"},
 			_jsii_.MemberProperty{JsiiProperty: "iamCertificateIdInput", GoGetter: "IamCertificateIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -966,7 +983,294 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontFunction",
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfig",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfig)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "callerReference", GoGetter: "CallerReference"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "comment", GoGetter: "Comment"},
+			_jsii_.MemberProperty{JsiiProperty: "commentInput", GoGetter: "CommentInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "contentTypeProfileConfig", GoGetter: "ContentTypeProfileConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "contentTypeProfileConfigInput", GoGetter: "ContentTypeProfileConfigInput"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "etag", GoGetter: "Etag"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putContentTypeProfileConfig", GoMethod: "PutContentTypeProfileConfig"},
+			_jsii_.MemberMethod{JsiiMethod: "putQueryArgProfileConfig", GoMethod: "PutQueryArgProfileConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "queryArgProfileConfig", GoGetter: "QueryArgProfileConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "queryArgProfileConfigInput", GoGetter: "QueryArgProfileConfigInput"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetComment", GoMethod: "ResetComment"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionConfig{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigConfig",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "items", GoGetter: "Items"},
+			_jsii_.MemberProperty{JsiiProperty: "itemsInput", GoGetter: "ItemsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "contentTypeProfiles", GoGetter: "ContentTypeProfiles"},
+			_jsii_.MemberProperty{JsiiProperty: "contentTypeProfilesInput", GoGetter: "ContentTypeProfilesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "forwardWhenContentTypeIsUnknown", GoGetter: "ForwardWhenContentTypeIsUnknown"},
+			_jsii_.MemberProperty{JsiiProperty: "forwardWhenContentTypeIsUnknownInput", GoGetter: "ForwardWhenContentTypeIsUnknownInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putContentTypeProfiles", GoMethod: "PutContentTypeProfiles"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "forwardWhenQueryArgProfileIsUnknown", GoGetter: "ForwardWhenQueryArgProfileIsUnknown"},
+			_jsii_.MemberProperty{JsiiProperty: "forwardWhenQueryArgProfileIsUnknownInput", GoGetter: "ForwardWhenQueryArgProfileIsUnknownInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putQueryArgProfiles", GoMethod: "PutQueryArgProfiles"},
+			_jsii_.MemberProperty{JsiiProperty: "queryArgProfiles", GoGetter: "QueryArgProfiles"},
+			_jsii_.MemberProperty{JsiiProperty: "queryArgProfilesInput", GoGetter: "QueryArgProfilesInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetQueryArgProfiles", GoMethod: "ResetQueryArgProfiles"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "items", GoGetter: "Items"},
+			_jsii_.MemberProperty{JsiiProperty: "itemsInput", GoGetter: "ItemsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetItems", GoMethod: "ResetItems"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfile",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfile)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "callerReference", GoGetter: "CallerReference"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "comment", GoGetter: "Comment"},
+			_jsii_.MemberProperty{JsiiProperty: "commentInput", GoGetter: "CommentInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "encryptionEntities", GoGetter: "EncryptionEntities"},
+			_jsii_.MemberProperty{JsiiProperty: "encryptionEntitiesInput", GoGetter: "EncryptionEntitiesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "etag", GoGetter: "Etag"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putEncryptionEntities", GoMethod: "PutEncryptionEntities"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetComment", GoMethod: "ResetComment"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionProfile{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileConfig",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntities",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileEncryptionEntities)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "items", GoGetter: "Items"},
+			_jsii_.MemberProperty{JsiiProperty: "itemsInput", GoGetter: "ItemsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetItems", GoMethod: "ResetItems"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference",
+		reflect.TypeOf((*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "items", GoGetter: "Items"},
+			_jsii_.MemberProperty{JsiiProperty: "itemsInput", GoGetter: "ItemsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetItems", GoMethod: "ResetItems"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.CloudfrontFunction",
 		reflect.TypeOf((*CloudfrontFunction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -989,6 +1293,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "liveStageEtag", GoGetter: "LiveStageEtag"},
 			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -1018,11 +1323,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontFunctionConfig",
+		"hashicorp_aws.cloudfront.CloudfrontFunctionConfig",
 		reflect.TypeOf((*CloudfrontFunctionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroup",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroup",
 		reflect.TypeOf((*CloudfrontKeyGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1067,11 +1372,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontKeyGroupConfig",
+		"hashicorp_aws.cloudfront.CloudfrontKeyGroupConfig",
 		reflect.TypeOf((*CloudfrontKeyGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscription",
 		reflect.TypeOf((*CloudfrontMonitoringSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1113,21 +1418,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionConfig",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionConfig",
 		reflect.TypeOf((*CloudfrontMonitoringSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscription",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscription",
 		reflect.TypeOf((*CloudfrontMonitoringSubscriptionMonitoringSubscription)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference",
 		reflect.TypeOf((*CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1144,17 +1450,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig",
 		reflect.TypeOf((*CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference",
 		reflect.TypeOf((*CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1170,7 +1477,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentity",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentity",
 		reflect.TypeOf((*CloudfrontOriginAccessIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1215,11 +1522,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginAccessIdentityConfig",
+		"hashicorp_aws.cloudfront.CloudfrontOriginAccessIdentityConfig",
 		reflect.TypeOf((*CloudfrontOriginAccessIdentityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicy",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1232,7 +1539,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
 			_jsii_.MemberProperty{JsiiProperty: "etag", GoGetter: "Etag"},
-			_jsii_.MemberProperty{JsiiProperty: "etagInput", GoGetter: "EtagInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1256,7 +1562,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "queryStringsConfigInput", GoGetter: "QueryStringsConfigInput"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetComment", GoMethod: "ResetComment"},
-			_jsii_.MemberMethod{JsiiMethod: "resetEtag", GoMethod: "ResetEtag"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
@@ -1273,25 +1578,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyConfig",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyConfig",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfig",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfig",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyCookiesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigCookies",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyCookiesConfigCookies)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1308,7 +1614,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyCookiesConfigOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyCookiesConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookieBehavior", GoGetter: "CookieBehavior"},
@@ -1319,6 +1625,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1334,21 +1641,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfig",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfig",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyHeadersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigHeaders",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyHeadersConfigHeaders)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1365,7 +1673,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyHeadersConfigOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyHeadersConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1376,6 +1684,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "headerBehaviorInput", GoGetter: "HeaderBehaviorInput"},
 			_jsii_.MemberProperty{JsiiProperty: "headers", GoGetter: "Headers"},
 			_jsii_.MemberProperty{JsiiProperty: "headersInput", GoGetter: "HeadersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1392,17 +1701,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfig",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfig",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyQueryStringsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1422,17 +1732,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference",
 		reflect.TypeOf((*CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1449,7 +1760,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKey",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKey",
 		reflect.TypeOf((*CloudfrontPublicKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1499,11 +1810,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontPublicKeyConfig",
+		"hashicorp_aws.cloudfront.CloudfrontPublicKeyConfig",
 		reflect.TypeOf((*CloudfrontPublicKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfig",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1550,25 +1861,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigConfig",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpoint",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpoint",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfigEndpoint)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1586,13 +1898,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontRealtimeLogConfigEndpointOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontRealtimeLogConfigEndpointOutputReference",
 		reflect.TypeOf((*CloudfrontRealtimeLogConfigEndpointOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1611,7 +1924,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicy",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1668,25 +1981,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyConfig",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyConfig",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfig",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfig",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1703,17 +2017,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1730,17 +2045,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1757,17 +2073,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1784,7 +2101,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCorsConfigOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCorsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessControlAllowCredentials", GoGetter: "AccessControlAllowCredentials"},
@@ -1803,6 +2120,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1824,21 +2142,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCustomHeadersConfig",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCustomHeadersConfig",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCustomHeadersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1855,15 +2174,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfig",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfig",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentSecurityPolicy", GoGetter: "ContentSecurityPolicy"},
@@ -1872,6 +2191,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1887,17 +2207,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1913,11 +2234,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "frameOption", GoGetter: "FrameOption"},
@@ -1926,6 +2247,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1941,7 +2263,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentSecurityPolicy", GoGetter: "ContentSecurityPolicy"},
@@ -1954,6 +2276,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1985,17 +2308,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2013,11 +2337,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessControlMaxAgeSec", GoGetter: "AccessControlMaxAgeSec"},
@@ -2028,6 +2352,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "includeSubdomains", GoGetter: "IncludeSubdomains"},
 			_jsii_.MemberProperty{JsiiProperty: "includeSubdomainsInput", GoGetter: "IncludeSubdomainsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2047,17 +2372,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
+		"hashicorp_aws.cloudfront.CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference",
 		reflect.TypeOf((*CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2081,7 +2407,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicy",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2129,11 +2455,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyConfig",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2157,7 +2483,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2178,7 +2504,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2198,7 +2524,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2219,7 +2545,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2239,7 +2565,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2260,7 +2586,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
 		reflect.TypeOf((*DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2280,7 +2606,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistribution",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistribution",
 		reflect.TypeOf((*DataAwsCloudfrontDistribution)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2329,11 +2655,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontDistributionConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontDistributionConfig",
 		reflect.TypeOf((*DataAwsCloudfrontDistributionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunction",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunction",
 		reflect.TypeOf((*DataAwsCloudfrontFunction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2381,11 +2707,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontFunctionConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontFunctionConfig",
 		reflect.TypeOf((*DataAwsCloudfrontFunctionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserId",
 		reflect.TypeOf((*DataAwsCloudfrontLogDeliveryCanonicalUserId)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2425,11 +2751,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig",
 		reflect.TypeOf((*DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicy",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2476,11 +2802,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyConfig",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyCookiesConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2501,7 +2827,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2521,7 +2847,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyHeadersConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2542,7 +2868,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2562,7 +2888,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2583,7 +2909,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
 		reflect.TypeOf((*DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2603,7 +2929,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicy",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2648,11 +2974,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyConfig",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCorsConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessControlAllowCredentials", GoGetter: "AccessControlAllowCredentials"},
@@ -2678,7 +3004,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2698,7 +3024,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2718,7 +3044,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2738,7 +3064,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2758,8 +3084,28 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "items", GoGetter: "Items"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
+		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2774,13 +3120,13 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
 		},
 		func() interface{} {
-			j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig{}
+			j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems{}
 			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
 			return &j
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2805,7 +3151,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2826,7 +3172,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2846,7 +3192,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2867,7 +3213,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2888,7 +3234,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessControlMaxAgeSec", GoGetter: "AccessControlMaxAgeSec"},
@@ -2911,7 +3257,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
 		reflect.TypeOf((*DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

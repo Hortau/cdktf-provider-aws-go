@@ -317,7 +317,7 @@ func NewDataAwsResourcegroupstaggingapiResources(scope constructs.Construct, id 
 	j := jsiiProxy_DataAwsResourcegroupstaggingapiResources{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResources",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResources",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -330,7 +330,7 @@ func NewDataAwsResourcegroupstaggingapiResources_Override(d DataAwsResourcegroup
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResources",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResources",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -418,7 +418,7 @@ func DataAwsResourcegroupstaggingapiResources_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResources",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResources",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -431,7 +431,7 @@ func DataAwsResourcegroupstaggingapiResources_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResources",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResources",
 		"tfResourceType",
 		&returns,
 	)
@@ -646,6 +646,7 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) ToTerraform() inter
 	return returns
 }
 
+// AWS Resource Groups.
 type DataAwsResourcegroupstaggingapiResourcesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -759,7 +760,7 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList(terraform
 	j := jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -772,7 +773,7 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -962,7 +963,7 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListCompliance
 	j := jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -975,7 +976,7 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListCompliance
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
+		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1398,7 +1399,7 @@ func NewResourcegroupsGroup(scope constructs.Construct, id *string, config *Reso
 	j := jsiiProxy_ResourcegroupsGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroup",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1411,7 +1412,7 @@ func NewResourcegroupsGroup_Override(r ResourcegroupsGroup, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroup",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -1491,7 +1492,7 @@ func ResourcegroupsGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroup",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1504,7 +1505,7 @@ func ResourcegroupsGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroup",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -1698,6 +1699,7 @@ func (r *jsiiProxy_ResourcegroupsGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Resource Groups.
 type ResourcegroupsGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1730,6 +1732,8 @@ type ResourcegroupsGroupResourceQuery struct {
 
 type ResourcegroupsGroupResourceQueryOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ResourcegroupsGroupResourceQuery
+	SetInternalValue(val *ResourcegroupsGroupResourceQuery)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Query() *string
@@ -1754,6 +1758,16 @@ type ResourcegroupsGroupResourceQueryOutputReference interface {
 // The jsii proxy struct for ResourcegroupsGroupResourceQueryOutputReference
 type jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) InternalValue() *ResourcegroupsGroupResourceQuery {
+	var returns *ResourcegroupsGroupResourceQuery
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) IsSingleItem() *bool {
@@ -1832,7 +1846,7 @@ func NewResourcegroupsGroupResourceQueryOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroupResourceQueryOutputReference",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroupResourceQueryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1844,9 +1858,17 @@ func NewResourcegroupsGroupResourceQueryOutputReference_Override(r Resourcegroup
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ResourceGroups.ResourcegroupsGroupResourceQueryOutputReference",
+		"hashicorp_aws.resourcegroups.ResourcegroupsGroupResourceQueryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
+	)
+}
+
+func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) SetInternalValue(val *ResourcegroupsGroupResourceQuery) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

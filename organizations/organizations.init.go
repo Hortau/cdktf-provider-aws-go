@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministrators",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedAdministrators)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -49,11 +49,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministratorsConfig",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsConfig",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedAdministratorsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -80,7 +80,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServices",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedServices)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -120,11 +120,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServicesConfig",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesConfig",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedServicesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
 		reflect.TypeOf((*DataAwsOrganizationsDelegatedServicesDelegatedServices)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -145,7 +145,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganization",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganization",
 		reflect.TypeOf((*DataAwsOrganizationsOrganization)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accounts", GoMethod: "Accounts"},
@@ -192,7 +192,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationAccounts",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationAccounts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -216,11 +216,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationConfig",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationConfig",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationNonMasterAccounts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -244,7 +244,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRoots",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationRoots)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -267,7 +267,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationRootsPolicyTypes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -288,7 +288,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnits",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnits",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationalUnits)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -328,7 +328,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationalUnitsChildren)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -350,11 +350,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnitsConfig",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsConfig",
 		reflect.TypeOf((*DataAwsOrganizationsOrganizationalUnitsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsAccount",
+		"hashicorp_aws.organizations.OrganizationsAccount",
 		reflect.TypeOf((*OrganizationsAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -414,11 +414,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsAccountConfig",
+		"hashicorp_aws.organizations.OrganizationsAccountConfig",
 		reflect.TypeOf((*OrganizationsAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministrator",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministrator",
 		reflect.TypeOf((*OrganizationsDelegatedAdministrator)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -466,11 +466,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministratorConfig",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministratorConfig",
 		reflect.TypeOf((*OrganizationsDelegatedAdministratorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganization",
+		"hashicorp_aws.organizations.OrganizationsOrganization",
 		reflect.TypeOf((*OrganizationsOrganization)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accounts", GoMethod: "Accounts"},
@@ -523,7 +523,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationAccounts",
 		reflect.TypeOf((*OrganizationsOrganizationAccounts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -547,11 +547,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationConfig",
+		"hashicorp_aws.organizations.OrganizationsOrganizationConfig",
 		reflect.TypeOf((*OrganizationsOrganizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationNonMasterAccounts",
 		reflect.TypeOf((*OrganizationsOrganizationNonMasterAccounts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -575,7 +575,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRoots",
 		reflect.TypeOf((*OrganizationsOrganizationRoots)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -598,7 +598,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRootsPolicyTypes",
 		reflect.TypeOf((*OrganizationsOrganizationRootsPolicyTypes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -619,7 +619,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnit",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnit",
 		reflect.TypeOf((*OrganizationsOrganizationalUnit)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accounts", GoMethod: "Accounts"},
@@ -668,7 +668,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnitAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitAccounts",
 		reflect.TypeOf((*OrganizationsOrganizationalUnitAccounts)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -691,11 +691,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnitConfig",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitConfig",
 		reflect.TypeOf((*OrganizationsOrganizationalUnitConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsPolicy",
+		"hashicorp_aws.organizations.OrganizationsPolicy",
 		reflect.TypeOf((*OrganizationsPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -749,7 +749,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachment",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachment",
 		reflect.TypeOf((*OrganizationsPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -790,11 +790,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachmentConfig",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachmentConfig",
 		reflect.TypeOf((*OrganizationsPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Organizations.OrganizationsPolicyConfig",
+		"hashicorp_aws.organizations.OrganizationsPolicyConfig",
 		reflect.TypeOf((*OrganizationsPolicyConfig)(nil)).Elem(),
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociation",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociation",
 		reflect.TypeOf((*LicensemanagerAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -49,11 +49,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociationConfig",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociationConfig",
 		reflect.TypeOf((*LicensemanagerAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfiguration",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfiguration",
 		reflect.TypeOf((*LicensemanagerLicenseConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -114,7 +114,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfigurationConfig",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfigurationConfig",
 		reflect.TypeOf((*LicensemanagerLicenseConfigurationConfig)(nil)).Elem(),
 	)
 }

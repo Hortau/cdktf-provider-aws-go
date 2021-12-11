@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabase",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabase",
 		reflect.TypeOf((*TimestreamwriteDatabase)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,11 +58,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabaseConfig",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabaseConfig",
 		reflect.TypeOf((*TimestreamwriteDatabaseConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTable",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTable",
 		reflect.TypeOf((*TimestreamwriteTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -114,21 +114,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTableConfig",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTableConfig",
 		reflect.TypeOf((*TimestreamwriteTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTableRetentionProperties",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTableRetentionProperties",
 		reflect.TypeOf((*TimestreamwriteTableRetentionProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTableRetentionPropertiesOutputReference",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTableRetentionPropertiesOutputReference",
 		reflect.TypeOf((*TimestreamwriteTableRetentionPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJob",
+		"hashicorp_aws.signer.DataAwsSignerSigningJob",
 		reflect.TypeOf((*DataAwsSignerSigningJob)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -62,11 +62,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobConfig",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobConfig",
 		reflect.TypeOf((*DataAwsSignerSigningJobConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobRevocationRecord",
 		reflect.TypeOf((*DataAwsSignerSigningJobRevocationRecord)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -88,7 +88,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObject",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObject",
 		reflect.TypeOf((*DataAwsSignerSigningJobSignedObject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -108,7 +108,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObjectS3",
 		reflect.TypeOf((*DataAwsSignerSigningJobSignedObjectS3)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -129,7 +129,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSource",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSource",
 		reflect.TypeOf((*DataAwsSignerSigningJobSource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -149,7 +149,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSourceS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSourceS3",
 		reflect.TypeOf((*DataAwsSignerSigningJobSourceS3)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -171,7 +171,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfile",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfile",
 		reflect.TypeOf((*DataAwsSignerSigningProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -221,11 +221,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileConfig",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileConfig",
 		reflect.TypeOf((*DataAwsSignerSigningProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileRevocationRecord",
 		reflect.TypeOf((*DataAwsSignerSigningProfileRevocationRecord)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -247,7 +247,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
 		reflect.TypeOf((*DataAwsSignerSigningProfileSignatureValidityPeriod)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -268,7 +268,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJob",
+		"hashicorp_aws.signer.SignerSigningJob",
 		reflect.TypeOf((*SignerSigningJob)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -330,21 +330,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningJobConfig",
+		"hashicorp_aws.signer.SignerSigningJobConfig",
 		reflect.TypeOf((*SignerSigningJobConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningJobDestination",
+		"hashicorp_aws.signer.SignerSigningJobDestination",
 		reflect.TypeOf((*SignerSigningJobDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationOutputReference",
 		reflect.TypeOf((*SignerSigningJobDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -361,11 +362,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationS3",
+		"hashicorp_aws.signer.SignerSigningJobDestinationS3",
 		reflect.TypeOf((*SignerSigningJobDestinationS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationS3OutputReference",
 		reflect.TypeOf((*SignerSigningJobDestinationS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -374,6 +375,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -390,7 +392,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningJobRevocationRecord",
 		reflect.TypeOf((*SignerSigningJobRevocationRecord)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -412,7 +414,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObject",
+		"hashicorp_aws.signer.SignerSigningJobSignedObject",
 		reflect.TypeOf((*SignerSigningJobSignedObject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -432,7 +434,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.SignerSigningJobSignedObjectS3",
 		reflect.TypeOf((*SignerSigningJobSignedObjectS3)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -453,17 +455,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningJobSource",
+		"hashicorp_aws.signer.SignerSigningJobSource",
 		reflect.TypeOf((*SignerSigningJobSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobSourceOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceOutputReference",
 		reflect.TypeOf((*SignerSigningJobSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -480,11 +483,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningJobSourceS3",
+		"hashicorp_aws.signer.SignerSigningJobSourceS3",
 		reflect.TypeOf((*SignerSigningJobSourceS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningJobSourceS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceS3OutputReference",
 		reflect.TypeOf((*SignerSigningJobSourceS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -493,6 +496,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -510,7 +514,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningProfile",
+		"hashicorp_aws.signer.SignerSigningProfile",
 		reflect.TypeOf((*SignerSigningProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -571,11 +575,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningProfileConfig",
+		"hashicorp_aws.signer.SignerSigningProfileConfig",
 		reflect.TypeOf((*SignerSigningProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningProfilePermission",
+		"hashicorp_aws.signer.SignerSigningProfilePermission",
 		reflect.TypeOf((*SignerSigningProfilePermission)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -627,11 +631,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningProfilePermissionConfig",
+		"hashicorp_aws.signer.SignerSigningProfilePermissionConfig",
 		reflect.TypeOf((*SignerSigningProfilePermissionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningProfileRevocationRecord",
 		reflect.TypeOf((*SignerSigningProfileRevocationRecord)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -653,17 +657,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Signer.SignerSigningProfileSignatureValidityPeriod",
+		"hashicorp_aws.signer.SignerSigningProfileSignatureValidityPeriod",
 		reflect.TypeOf((*SignerSigningProfileSignatureValidityPeriod)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
+		"hashicorp_aws.signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
 		reflect.TypeOf((*SignerSigningProfileSignatureValidityPeriodOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

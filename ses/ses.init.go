@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSet",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSet",
 		reflect.TypeOf((*SesActiveReceiptRuleSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSetConfig",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSetConfig",
 		reflect.TypeOf((*SesActiveReceiptRuleSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesConfigurationSet",
+		"hashicorp_aws.ses.SesConfigurationSet",
 		reflect.TypeOf((*SesConfigurationSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -103,21 +103,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesConfigurationSetConfig",
+		"hashicorp_aws.ses.SesConfigurationSetConfig",
 		reflect.TypeOf((*SesConfigurationSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesConfigurationSetDeliveryOptions",
+		"hashicorp_aws.ses.SesConfigurationSetDeliveryOptions",
 		reflect.TypeOf((*SesConfigurationSetDeliveryOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesConfigurationSetDeliveryOptionsOutputReference",
+		"hashicorp_aws.ses.SesConfigurationSetDeliveryOptionsOutputReference",
 		reflect.TypeOf((*SesConfigurationSetDeliveryOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -134,7 +135,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesDomainDkim",
+		"hashicorp_aws.ses.SesDomainDkim",
 		reflect.TypeOf((*SesDomainDkim)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -174,11 +175,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesDomainDkimConfig",
+		"hashicorp_aws.ses.SesDomainDkimConfig",
 		reflect.TypeOf((*SesDomainDkimConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesDomainIdentity",
+		"hashicorp_aws.ses.SesDomainIdentity",
 		reflect.TypeOf((*SesDomainIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -219,11 +220,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesDomainIdentityConfig",
+		"hashicorp_aws.ses.SesDomainIdentityConfig",
 		reflect.TypeOf((*SesDomainIdentityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesDomainIdentityVerification",
+		"hashicorp_aws.ses.SesDomainIdentityVerification",
 		reflect.TypeOf((*SesDomainIdentityVerification)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -267,15 +268,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesDomainIdentityVerificationConfig",
+		"hashicorp_aws.ses.SesDomainIdentityVerificationConfig",
 		reflect.TypeOf((*SesDomainIdentityVerificationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesDomainIdentityVerificationTimeouts",
+		"hashicorp_aws.ses.SesDomainIdentityVerificationTimeouts",
 		reflect.TypeOf((*SesDomainIdentityVerificationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesDomainIdentityVerificationTimeoutsOutputReference",
+		"hashicorp_aws.ses.SesDomainIdentityVerificationTimeoutsOutputReference",
 		reflect.TypeOf((*SesDomainIdentityVerificationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -284,6 +285,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -298,7 +300,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesDomainMailFrom",
+		"hashicorp_aws.ses.SesDomainMailFrom",
 		reflect.TypeOf((*SesDomainMailFrom)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -342,11 +344,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesDomainMailFromConfig",
+		"hashicorp_aws.ses.SesDomainMailFromConfig",
 		reflect.TypeOf((*SesDomainMailFromConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesEmailIdentity",
+		"hashicorp_aws.ses.SesEmailIdentity",
 		reflect.TypeOf((*SesEmailIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -386,11 +388,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesEmailIdentityConfig",
+		"hashicorp_aws.ses.SesEmailIdentityConfig",
 		reflect.TypeOf((*SesEmailIdentityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesEventDestination",
+		"hashicorp_aws.ses.SesEventDestination",
 		reflect.TypeOf((*SesEventDestination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -448,25 +450,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesEventDestinationCloudwatchDestination",
+		"hashicorp_aws.ses.SesEventDestinationCloudwatchDestination",
 		reflect.TypeOf((*SesEventDestinationCloudwatchDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesEventDestinationConfig",
+		"hashicorp_aws.ses.SesEventDestinationConfig",
 		reflect.TypeOf((*SesEventDestinationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesEventDestinationKinesisDestination",
+		"hashicorp_aws.ses.SesEventDestinationKinesisDestination",
 		reflect.TypeOf((*SesEventDestinationKinesisDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesEventDestinationKinesisDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationKinesisDestinationOutputReference",
 		reflect.TypeOf((*SesEventDestinationKinesisDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -484,17 +487,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesEventDestinationSnsDestination",
+		"hashicorp_aws.ses.SesEventDestinationSnsDestination",
 		reflect.TypeOf((*SesEventDestinationSnsDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesEventDestinationSnsDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationSnsDestinationOutputReference",
 		reflect.TypeOf((*SesEventDestinationSnsDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -510,7 +514,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesIdentityNotificationTopic",
+		"hashicorp_aws.ses.SesIdentityNotificationTopic",
 		reflect.TypeOf((*SesIdentityNotificationTopic)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -557,11 +561,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesIdentityNotificationTopicConfig",
+		"hashicorp_aws.ses.SesIdentityNotificationTopicConfig",
 		reflect.TypeOf((*SesIdentityNotificationTopicConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesIdentityPolicy",
+		"hashicorp_aws.ses.SesIdentityPolicy",
 		reflect.TypeOf((*SesIdentityPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -604,11 +608,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesIdentityPolicyConfig",
+		"hashicorp_aws.ses.SesIdentityPolicyConfig",
 		reflect.TypeOf((*SesIdentityPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesReceiptFilter",
+		"hashicorp_aws.ses.SesReceiptFilter",
 		reflect.TypeOf((*SesReceiptFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -652,11 +656,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptFilterConfig",
+		"hashicorp_aws.ses.SesReceiptFilterConfig",
 		reflect.TypeOf((*SesReceiptFilterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesReceiptRule",
+		"hashicorp_aws.ses.SesReceiptRule",
 		reflect.TypeOf((*SesReceiptRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "addHeaderAction", GoGetter: "AddHeaderAction"},
@@ -734,27 +738,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleAddHeaderAction",
+		"hashicorp_aws.ses.SesReceiptRuleAddHeaderAction",
 		reflect.TypeOf((*SesReceiptRuleAddHeaderAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleBounceAction",
+		"hashicorp_aws.ses.SesReceiptRuleBounceAction",
 		reflect.TypeOf((*SesReceiptRuleBounceAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleConfig",
+		"hashicorp_aws.ses.SesReceiptRuleConfig",
 		reflect.TypeOf((*SesReceiptRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleLambdaAction",
+		"hashicorp_aws.ses.SesReceiptRuleLambdaAction",
 		reflect.TypeOf((*SesReceiptRuleLambdaAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleS3Action",
+		"hashicorp_aws.ses.SesReceiptRuleS3Action",
 		reflect.TypeOf((*SesReceiptRuleS3Action)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesReceiptRuleSet",
+		"hashicorp_aws.ses.SesReceiptRuleSet",
 		reflect.TypeOf((*SesReceiptRuleSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -794,23 +798,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleSetConfig",
+		"hashicorp_aws.ses.SesReceiptRuleSetConfig",
 		reflect.TypeOf((*SesReceiptRuleSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleSnsAction",
+		"hashicorp_aws.ses.SesReceiptRuleSnsAction",
 		reflect.TypeOf((*SesReceiptRuleSnsAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleStopAction",
+		"hashicorp_aws.ses.SesReceiptRuleStopAction",
 		reflect.TypeOf((*SesReceiptRuleStopAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesReceiptRuleWorkmailAction",
+		"hashicorp_aws.ses.SesReceiptRuleWorkmailAction",
 		reflect.TypeOf((*SesReceiptRuleWorkmailAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SES.SesTemplate",
+		"hashicorp_aws.ses.SesTemplate",
 		reflect.TypeOf((*SesTemplate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -859,7 +863,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SES.SesTemplateConfig",
+		"hashicorp_aws.ses.SesTemplateConfig",
 		reflect.TypeOf((*SesTemplateConfig)(nil)).Elem(),
 	)
 }

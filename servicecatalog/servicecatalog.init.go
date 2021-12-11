@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraint",
 		reflect.TypeOf((*DataAwsServicecatalogConstraint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -58,11 +58,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraintConfig",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraintConfig",
 		reflect.TypeOf((*DataAwsServicecatalogConstraintConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPaths",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPaths",
 		reflect.TypeOf((*DataAwsServicecatalogLaunchPaths)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -105,11 +105,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsConfig",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsConfig",
 		reflect.TypeOf((*DataAwsServicecatalogLaunchPathsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummaries",
 		reflect.TypeOf((*DataAwsServicecatalogLaunchPathsSummaries)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -132,7 +132,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
 		reflect.TypeOf((*DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -153,7 +153,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolio",
 		reflect.TypeOf((*DataAwsServicecatalogPortfolio)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -202,11 +202,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConfig",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConfig",
 		reflect.TypeOf((*DataAwsServicecatalogPortfolioConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraints",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraints",
 		reflect.TypeOf((*DataAwsServicecatalogPortfolioConstraints)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -252,11 +252,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraintsConfig",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsConfig",
 		reflect.TypeOf((*DataAwsServicecatalogPortfolioConstraintsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
 		reflect.TypeOf((*DataAwsServicecatalogPortfolioConstraintsDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -281,7 +281,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProduct",
 		reflect.TypeOf((*DataAwsServicecatalogProduct)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -337,11 +337,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProductConfig",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProductConfig",
 		reflect.TypeOf((*DataAwsServicecatalogProductConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociation",
 		reflect.TypeOf((*ServicecatalogBudgetResourceAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -382,11 +382,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociationConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociationConfig",
 		reflect.TypeOf((*ServicecatalogBudgetResourceAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraint",
 		reflect.TypeOf((*ServicecatalogConstraint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -439,11 +439,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraintConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraintConfig",
 		reflect.TypeOf((*ServicecatalogConstraintConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccess",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccess",
 		reflect.TypeOf((*ServicecatalogOrganizationsAccess)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -482,11 +482,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccessConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccessConfig",
 		reflect.TypeOf((*ServicecatalogOrganizationsAccessConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolio",
 		reflect.TypeOf((*ServicecatalogPortfolio)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -542,11 +542,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioConfig",
 		reflect.TypeOf((*ServicecatalogPortfolioConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShare",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShare",
 		reflect.TypeOf((*ServicecatalogPortfolioShare)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accepted", GoGetter: "Accepted"},
@@ -599,15 +599,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShareConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShareConfig",
 		reflect.TypeOf((*ServicecatalogPortfolioShareConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioTimeouts",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioTimeouts",
 		reflect.TypeOf((*ServicecatalogPortfolioTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioTimeoutsOutputReference",
 		reflect.TypeOf((*ServicecatalogPortfolioTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -618,6 +618,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -636,7 +637,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociation",
 		reflect.TypeOf((*ServicecatalogPrincipalPortfolioAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -683,11 +684,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociationConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociationConfig",
 		reflect.TypeOf((*ServicecatalogPrincipalPortfolioAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProduct",
 		reflect.TypeOf((*ServicecatalogProduct)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -761,11 +762,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductConfig",
 		reflect.TypeOf((*ServicecatalogProductConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociation",
 		reflect.TypeOf((*ServicecatalogProductPortfolioAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -812,15 +813,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociationConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociationConfig",
 		reflect.TypeOf((*ServicecatalogProductPortfolioAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductProvisioningArtifactParameters",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductProvisioningArtifactParameters",
 		reflect.TypeOf((*ServicecatalogProductProvisioningArtifactParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
 		reflect.TypeOf((*ServicecatalogProductProvisioningArtifactParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
@@ -831,6 +832,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -858,7 +860,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProduct",
 		reflect.TypeOf((*ServicecatalogProvisionedProduct)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -954,19 +956,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductConfig",
 		reflect.TypeOf((*ServicecatalogProvisionedProductConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductProvisioningParameters",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductProvisioningParameters",
 		reflect.TypeOf((*ServicecatalogProvisionedProductProvisioningParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferences",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferences",
 		reflect.TypeOf((*ServicecatalogProvisionedProductStackSetProvisioningPreferences)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
 		reflect.TypeOf((*ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accounts", GoGetter: "Accounts"},
@@ -979,6 +981,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1004,11 +1007,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductTimeouts",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductTimeouts",
 		reflect.TypeOf((*ServicecatalogProvisionedProductTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
 		reflect.TypeOf((*ServicecatalogProvisionedProductTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1019,6 +1022,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1037,7 +1041,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifact",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifact",
 		reflect.TypeOf((*ServicecatalogProvisioningArtifact)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -1104,11 +1108,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifactConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifactConfig",
 		reflect.TypeOf((*ServicecatalogProvisioningArtifactConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceAction",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceAction",
 		reflect.TypeOf((*ServicecatalogServiceAction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptLanguage", GoGetter: "AcceptLanguage"},
@@ -1156,15 +1160,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceActionConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceActionConfig",
 		reflect.TypeOf((*ServicecatalogServiceActionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceActionDefinition",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceActionDefinition",
 		reflect.TypeOf((*ServicecatalogServiceActionDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceActionDefinitionOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceActionDefinitionOutputReference",
 		reflect.TypeOf((*ServicecatalogServiceActionDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "assumeRole", GoGetter: "AssumeRole"},
@@ -1173,6 +1177,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1197,7 +1202,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOption",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOption",
 		reflect.TypeOf((*ServicecatalogTagOption)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "active", GoGetter: "Active"},
@@ -1242,11 +1247,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionConfig",
 		reflect.TypeOf((*ServicecatalogTagOptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociation",
 		reflect.TypeOf((*ServicecatalogTagOptionResourceAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1291,7 +1296,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociationConfig",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociationConfig",
 		reflect.TypeOf((*ServicecatalogTagOptionResourceAssociationConfig)(nil)).Elem(),
 	)
 }

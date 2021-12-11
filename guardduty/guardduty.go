@@ -229,7 +229,7 @@ func NewDataAwsGuarddutyDetector(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsGuarddutyDetector{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetector",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetector",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -242,7 +242,7 @@ func NewDataAwsGuarddutyDetector_Override(d DataAwsGuarddutyDetector, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetector",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetector",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -290,7 +290,7 @@ func DataAwsGuarddutyDetector_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetector",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetector",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -303,7 +303,7 @@ func DataAwsGuarddutyDetector_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetector",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetector",
 		"tfResourceType",
 		&returns,
 	)
@@ -465,6 +465,7 @@ func (d *jsiiProxy_DataAwsGuarddutyDetector) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type DataAwsGuarddutyDetectorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -805,7 +806,7 @@ func NewGuarddutyDetector(scope constructs.Construct, id *string, config *Guardd
 	j := jsiiProxy_GuarddutyDetector{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetector",
+		"hashicorp_aws.guardduty.GuarddutyDetector",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -818,7 +819,7 @@ func NewGuarddutyDetector_Override(g GuarddutyDetector, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetector",
+		"hashicorp_aws.guardduty.GuarddutyDetector",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -898,7 +899,7 @@ func GuarddutyDetector_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyDetector",
+		"hashicorp_aws.guardduty.GuarddutyDetector",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -911,7 +912,7 @@ func GuarddutyDetector_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyDetector",
+		"hashicorp_aws.guardduty.GuarddutyDetector",
 		"tfResourceType",
 		&returns,
 	)
@@ -1121,6 +1122,7 @@ func (g *jsiiProxy_GuarddutyDetector) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyDetectorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1153,6 +1155,8 @@ type GuarddutyDetectorDatasources struct {
 
 type GuarddutyDetectorDatasourcesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GuarddutyDetectorDatasources
+	SetInternalValue(val *GuarddutyDetectorDatasources)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Logs() GuarddutyDetectorDatasourcesS3LogsOutputReference
@@ -1174,6 +1178,16 @@ type GuarddutyDetectorDatasourcesOutputReference interface {
 // The jsii proxy struct for GuarddutyDetectorDatasourcesOutputReference
 type jsiiProxy_GuarddutyDetectorDatasourcesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) InternalValue() *GuarddutyDetectorDatasources {
+	var returns *GuarddutyDetectorDatasources
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) IsSingleItem() *bool {
@@ -1232,7 +1246,7 @@ func NewGuarddutyDetectorDatasourcesOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_GuarddutyDetectorDatasourcesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1244,9 +1258,17 @@ func NewGuarddutyDetectorDatasourcesOutputReference_Override(g GuarddutyDetector
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) SetInternalValue(val *GuarddutyDetectorDatasources) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1384,6 +1406,8 @@ type GuarddutyDetectorDatasourcesS3LogsOutputReference interface {
 	Enable() interface{}
 	SetEnable(val interface{})
 	EnableInput() interface{}
+	InternalValue() *GuarddutyDetectorDatasourcesS3Logs
+	SetInternalValue(val *GuarddutyDetectorDatasourcesS3Logs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1418,6 +1442,16 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) EnableInpu
 	_jsii_.Get(
 		j,
 		"enableInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) InternalValue() *GuarddutyDetectorDatasourcesS3Logs {
+	var returns *GuarddutyDetectorDatasourcesS3Logs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1459,7 +1493,7 @@ func NewGuarddutyDetectorDatasourcesS3LogsOutputReference(terraformResource cdkt
 	j := jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1471,7 +1505,7 @@ func NewGuarddutyDetectorDatasourcesS3LogsOutputReference_Override(g GuarddutyDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -1481,6 +1515,14 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetEnable(
 	_jsii_.Set(
 		j,
 		"enable",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetInternalValue(val *GuarddutyDetectorDatasourcesS3Logs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1978,7 +2020,7 @@ func NewGuarddutyFilter(scope constructs.Construct, id *string, config *Guarddut
 	j := jsiiProxy_GuarddutyFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyFilter",
+		"hashicorp_aws.guardduty.GuarddutyFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1991,7 +2033,7 @@ func NewGuarddutyFilter_Override(g GuarddutyFilter, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyFilter",
+		"hashicorp_aws.guardduty.GuarddutyFilter",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -2095,7 +2137,7 @@ func GuarddutyFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyFilter",
+		"hashicorp_aws.guardduty.GuarddutyFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2108,7 +2150,7 @@ func GuarddutyFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyFilter",
+		"hashicorp_aws.guardduty.GuarddutyFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -2302,6 +2344,7 @@ func (g *jsiiProxy_GuarddutyFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2360,6 +2403,8 @@ type GuarddutyFilterFindingCriteriaOutputReference interface {
 	Criterion() *[]*GuarddutyFilterFindingCriteriaCriterion
 	SetCriterion(val *[]*GuarddutyFilterFindingCriteriaCriterion)
 	CriterionInput() *[]*GuarddutyFilterFindingCriteriaCriterion
+	InternalValue() *GuarddutyFilterFindingCriteria
+	SetInternalValue(val *GuarddutyFilterFindingCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2394,6 +2439,16 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) CriterionInput
 	_jsii_.Get(
 		j,
 		"criterionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) InternalValue() *GuarddutyFilterFindingCriteria {
+	var returns *GuarddutyFilterFindingCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2435,7 +2490,7 @@ func NewGuarddutyFilterFindingCriteriaOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyFilterFindingCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2447,7 +2502,7 @@ func NewGuarddutyFilterFindingCriteriaOutputReference_Override(g GuarddutyFilter
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyFilterFindingCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -2457,6 +2512,14 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetCriterion(v
 	_jsii_.Set(
 		j,
 		"criterion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetInternalValue(val *GuarddutyFilterFindingCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2826,7 +2889,7 @@ func NewGuarddutyInviteAccepter(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_GuarddutyInviteAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepter",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2839,7 +2902,7 @@ func NewGuarddutyInviteAccepter_Override(g GuarddutyInviteAccepter, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepter",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepter",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -2903,7 +2966,7 @@ func GuarddutyInviteAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepter",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2916,7 +2979,7 @@ func GuarddutyInviteAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepter",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -3094,6 +3157,7 @@ func (g *jsiiProxy_GuarddutyInviteAccepter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyInviteAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3123,6 +3187,8 @@ type GuarddutyInviteAccepterTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *GuarddutyInviteAccepterTimeouts
+	SetInternalValue(val *GuarddutyInviteAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3158,6 +3224,16 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) CreateInput()
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) InternalValue() *GuarddutyInviteAccepterTimeouts {
+	var returns *GuarddutyInviteAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3199,7 +3275,7 @@ func NewGuarddutyInviteAccepterTimeoutsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepterTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3211,7 +3287,7 @@ func NewGuarddutyInviteAccepterTimeoutsOutputReference_Override(g GuarddutyInvit
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepterTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -3221,6 +3297,14 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetCreate(val
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetInternalValue(val *GuarddutyInviteAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3702,7 +3786,7 @@ func NewGuarddutyIpset(scope constructs.Construct, id *string, config *Guardduty
 	j := jsiiProxy_GuarddutyIpset{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyIpset",
+		"hashicorp_aws.guardduty.GuarddutyIpset",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3715,7 +3799,7 @@ func NewGuarddutyIpset_Override(g GuarddutyIpset, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyIpset",
+		"hashicorp_aws.guardduty.GuarddutyIpset",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -3819,7 +3903,7 @@ func GuarddutyIpset_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyIpset",
+		"hashicorp_aws.guardduty.GuarddutyIpset",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3832,7 +3916,7 @@ func GuarddutyIpset_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyIpset",
+		"hashicorp_aws.guardduty.GuarddutyIpset",
 		"tfResourceType",
 		&returns,
 	)
@@ -4010,6 +4094,7 @@ func (g *jsiiProxy_GuarddutyIpset) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyIpsetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4398,7 +4483,7 @@ func NewGuarddutyMember(scope constructs.Construct, id *string, config *Guarddut
 	j := jsiiProxy_GuarddutyMember{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyMember",
+		"hashicorp_aws.guardduty.GuarddutyMember",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4411,7 +4496,7 @@ func NewGuarddutyMember_Override(g GuarddutyMember, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyMember",
+		"hashicorp_aws.guardduty.GuarddutyMember",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -4507,7 +4592,7 @@ func GuarddutyMember_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyMember",
+		"hashicorp_aws.guardduty.GuarddutyMember",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4520,7 +4605,7 @@ func GuarddutyMember_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyMember",
+		"hashicorp_aws.guardduty.GuarddutyMember",
 		"tfResourceType",
 		&returns,
 	)
@@ -4722,6 +4807,7 @@ func (g *jsiiProxy_GuarddutyMember) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyMemberConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4761,6 +4847,8 @@ type GuarddutyMemberTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *GuarddutyMemberTimeouts
+	SetInternalValue(val *GuarddutyMemberTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4800,6 +4888,16 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) CreateInput() *string
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) InternalValue() *GuarddutyMemberTimeouts {
+	var returns *GuarddutyMemberTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4861,7 +4959,7 @@ func NewGuarddutyMemberTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_GuarddutyMemberTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyMemberTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyMemberTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4873,7 +4971,7 @@ func NewGuarddutyMemberTimeoutsOutputReference_Override(g GuarddutyMemberTimeout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyMemberTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyMemberTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -4883,6 +4981,14 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetCreate(val *string
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetInternalValue(val *GuarddutyMemberTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5229,7 +5335,7 @@ func NewGuarddutyOrganizationAdminAccount(scope constructs.Construct, id *string
 	j := jsiiProxy_GuarddutyOrganizationAdminAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccount",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5242,7 +5348,7 @@ func NewGuarddutyOrganizationAdminAccount_Override(g GuarddutyOrganizationAdminA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccount",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -5298,7 +5404,7 @@ func GuarddutyOrganizationAdminAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccount",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5311,7 +5417,7 @@ func GuarddutyOrganizationAdminAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccount",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -5473,6 +5579,7 @@ func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyOrganizationAdminAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5743,7 +5850,7 @@ func NewGuarddutyOrganizationConfiguration(scope constructs.Construct, id *strin
 	j := jsiiProxy_GuarddutyOrganizationConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfiguration",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5756,7 +5863,7 @@ func NewGuarddutyOrganizationConfiguration_Override(g GuarddutyOrganizationConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfiguration",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfiguration",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -5820,7 +5927,7 @@ func GuarddutyOrganizationConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfiguration",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5833,7 +5940,7 @@ func GuarddutyOrganizationConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfiguration",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -6011,6 +6118,7 @@ func (g *jsiiProxy_GuarddutyOrganizationConfiguration) ToTerraform() interface{}
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyOrganizationConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6039,6 +6147,8 @@ type GuarddutyOrganizationConfigurationDatasources struct {
 
 type GuarddutyOrganizationConfigurationDatasourcesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *GuarddutyOrganizationConfigurationDatasources
+	SetInternalValue(val *GuarddutyOrganizationConfigurationDatasources)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Logs() GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference
@@ -6060,6 +6170,16 @@ type GuarddutyOrganizationConfigurationDatasourcesOutputReference interface {
 // The jsii proxy struct for GuarddutyOrganizationConfigurationDatasourcesOutputReference
 type jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) InternalValue() *GuarddutyOrganizationConfigurationDatasources {
+	var returns *GuarddutyOrganizationConfigurationDatasources
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) IsSingleItem() *bool {
@@ -6118,7 +6238,7 @@ func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference(terraformRe
 	j := jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6130,9 +6250,17 @@ func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference_Override(g 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) SetInternalValue(val *GuarddutyOrganizationConfigurationDatasources) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6270,6 +6398,8 @@ type GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference interfac
 	AutoEnable() interface{}
 	SetAutoEnable(val interface{})
 	AutoEnableInput() interface{}
+	InternalValue() *GuarddutyOrganizationConfigurationDatasourcesS3Logs
+	SetInternalValue(val *GuarddutyOrganizationConfigurationDatasourcesS3Logs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6304,6 +6434,16 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	_jsii_.Get(
 		j,
 		"autoEnableInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) InternalValue() *GuarddutyOrganizationConfigurationDatasourcesS3Logs {
+	var returns *GuarddutyOrganizationConfigurationDatasourcesS3Logs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6345,7 +6485,7 @@ func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference(terra
 	j := jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6357,7 +6497,7 @@ func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -6367,6 +6507,14 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	_jsii_.Set(
 		j,
 		"autoEnable",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) SetInternalValue(val *GuarddutyOrganizationConfigurationDatasourcesS3Logs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6759,7 +6907,7 @@ func NewGuarddutyPublishingDestination(scope constructs.Construct, id *string, c
 	j := jsiiProxy_GuarddutyPublishingDestination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestination",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6772,7 +6920,7 @@ func NewGuarddutyPublishingDestination_Override(g GuarddutyPublishingDestination
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestination",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestination",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -6852,7 +7000,7 @@ func GuarddutyPublishingDestination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestination",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6865,7 +7013,7 @@ func GuarddutyPublishingDestination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestination",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestination",
 		"tfResourceType",
 		&returns,
 	)
@@ -7035,6 +7183,7 @@ func (g *jsiiProxy_GuarddutyPublishingDestination) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyPublishingDestinationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7415,7 +7564,7 @@ func NewGuarddutyThreatintelset(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_GuarddutyThreatintelset{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelset",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelset",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7428,7 +7577,7 @@ func NewGuarddutyThreatintelset_Override(g GuarddutyThreatintelset, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelset",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelset",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -7532,7 +7681,7 @@ func GuarddutyThreatintelset_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelset",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelset",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7545,7 +7694,7 @@ func GuarddutyThreatintelset_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelset",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelset",
 		"tfResourceType",
 		&returns,
 	)
@@ -7723,6 +7872,7 @@ func (g *jsiiProxy_GuarddutyThreatintelset) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS GuardDuty.
 type GuarddutyThreatintelsetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

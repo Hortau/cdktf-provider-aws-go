@@ -13,6 +13,8 @@ import (
 type SyntheticsCanary interface {
 	cdktf.TerraformResource
 	Arn() *string
+	ArtifactConfig() SyntheticsCanaryArtifactConfigOutputReference
+	ArtifactConfigInput() *SyntheticsCanaryArtifactConfig
 	ArtifactS3Location() *string
 	SetArtifactS3Location(val *string)
 	ArtifactS3LocationInput() *string
@@ -89,9 +91,11 @@ type SyntheticsCanary interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutArtifactConfig(value *SyntheticsCanaryArtifactConfig)
 	PutRunConfig(value *SyntheticsCanaryRunConfig)
 	PutSchedule(value *SyntheticsCanarySchedule)
 	PutVpcConfig(value *SyntheticsCanaryVpcConfig)
+	ResetArtifactConfig()
 	ResetFailureRetentionPeriod()
 	ResetOverrideLogicalId()
 	ResetRunConfig()
@@ -121,6 +125,26 @@ func (j *jsiiProxy_SyntheticsCanary) Arn() *string {
 	_jsii_.Get(
 		j,
 		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanary) ArtifactConfig() SyntheticsCanaryArtifactConfigOutputReference {
+	var returns SyntheticsCanaryArtifactConfigOutputReference
+	_jsii_.Get(
+		j,
+		"artifactConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanary) ArtifactConfigInput() *SyntheticsCanaryArtifactConfig {
+	var returns *SyntheticsCanaryArtifactConfig
+	_jsii_.Get(
+		j,
+		"artifactConfigInput",
 		&returns,
 	)
 	return returns
@@ -643,7 +667,7 @@ func NewSyntheticsCanary(scope constructs.Construct, id *string, config *Synthet
 	j := jsiiProxy_SyntheticsCanary{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanary",
+		"hashicorp_aws.synthetics.SyntheticsCanary",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -656,7 +680,7 @@ func NewSyntheticsCanary_Override(s SyntheticsCanary, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanary",
+		"hashicorp_aws.synthetics.SyntheticsCanary",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -816,7 +840,7 @@ func SyntheticsCanary_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Synthetics.SyntheticsCanary",
+		"hashicorp_aws.synthetics.SyntheticsCanary",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -829,7 +853,7 @@ func SyntheticsCanary_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Synthetics.SyntheticsCanary",
+		"hashicorp_aws.synthetics.SyntheticsCanary",
 		"tfResourceType",
 		&returns,
 	)
@@ -925,6 +949,14 @@ func (s *jsiiProxy_SyntheticsCanary) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (s *jsiiProxy_SyntheticsCanary) PutArtifactConfig(value *SyntheticsCanaryArtifactConfig) {
+	_jsii_.InvokeVoid(
+		s,
+		"putArtifactConfig",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SyntheticsCanary) PutRunConfig(value *SyntheticsCanaryRunConfig) {
 	_jsii_.InvokeVoid(
 		s,
@@ -946,6 +978,14 @@ func (s *jsiiProxy_SyntheticsCanary) PutVpcConfig(value *SyntheticsCanaryVpcConf
 		s,
 		"putVpcConfig",
 		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SyntheticsCanary) ResetArtifactConfig() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetArtifactConfig",
+		nil, // no parameters
 	)
 }
 
@@ -1116,6 +1156,547 @@ func (s *jsiiProxy_SyntheticsCanary) ToTerraform() interface{} {
 	return returns
 }
 
+type SyntheticsCanaryArtifactConfig struct {
+	// s3_encryption block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#s3_encryption SyntheticsCanary#s3_encryption}
+	S3Encryption *SyntheticsCanaryArtifactConfigS3Encryption `json:"s3Encryption"`
+}
+
+type SyntheticsCanaryArtifactConfigOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *SyntheticsCanaryArtifactConfig
+	SetInternalValue(val *SyntheticsCanaryArtifactConfig)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	S3Encryption() SyntheticsCanaryArtifactConfigS3EncryptionOutputReference
+	S3EncryptionInput() *SyntheticsCanaryArtifactConfigS3Encryption
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutS3Encryption(value *SyntheticsCanaryArtifactConfigS3Encryption)
+	ResetS3Encryption()
+}
+
+// The jsii proxy struct for SyntheticsCanaryArtifactConfigOutputReference
+type jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) InternalValue() *SyntheticsCanaryArtifactConfig {
+	var returns *SyntheticsCanaryArtifactConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) S3Encryption() SyntheticsCanaryArtifactConfigS3EncryptionOutputReference {
+	var returns SyntheticsCanaryArtifactConfigS3EncryptionOutputReference
+	_jsii_.Get(
+		j,
+		"s3Encryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) S3EncryptionInput() *SyntheticsCanaryArtifactConfigS3Encryption {
+	var returns *SyntheticsCanaryArtifactConfigS3Encryption
+	_jsii_.Get(
+		j,
+		"s3EncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSyntheticsCanaryArtifactConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSyntheticsCanaryArtifactConfigOutputReference_Override(s SyntheticsCanaryArtifactConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetInternalValue(val *SyntheticsCanaryArtifactConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) PutS3Encryption(value *SyntheticsCanaryArtifactConfigS3Encryption) {
+	_jsii_.InvokeVoid(
+		s,
+		"putS3Encryption",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) ResetS3Encryption() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetS3Encryption",
+		nil, // no parameters
+	)
+}
+
+type SyntheticsCanaryArtifactConfigS3Encryption struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#encryption_mode SyntheticsCanary#encryption_mode}.
+	EncryptionMode *string `json:"encryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#kms_key_arn SyntheticsCanary#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn"`
+}
+
+type SyntheticsCanaryArtifactConfigS3EncryptionOutputReference interface {
+	cdktf.ComplexObject
+	EncryptionMode() *string
+	SetEncryptionMode(val *string)
+	EncryptionModeInput() *string
+	InternalValue() *SyntheticsCanaryArtifactConfigS3Encryption
+	SetInternalValue(val *SyntheticsCanaryArtifactConfigS3Encryption)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	KmsKeyArn() *string
+	SetKmsKeyArn(val *string)
+	KmsKeyArnInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEncryptionMode()
+	ResetKmsKeyArn()
+}
+
+// The jsii proxy struct for SyntheticsCanaryArtifactConfigS3EncryptionOutputReference
+type jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) EncryptionMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"encryptionMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) EncryptionModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"encryptionModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) InternalValue() *SyntheticsCanaryArtifactConfigS3Encryption {
+	var returns *SyntheticsCanaryArtifactConfigS3Encryption
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) KmsKeyArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) KmsKeyArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigS3EncryptionOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigS3EncryptionOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference_Override(s SyntheticsCanaryArtifactConfigS3EncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigS3EncryptionOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetEncryptionMode(val *string) {
+	_jsii_.Set(
+		j,
+		"encryptionMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetInternalValue(val *SyntheticsCanaryArtifactConfigS3Encryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetKmsKeyArn(val *string) {
+	_jsii_.Set(
+		j,
+		"kmsKeyArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) ResetEncryptionMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEncryptionMode",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) ResetKmsKeyArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetKmsKeyArn",
+		nil, // no parameters
+	)
+}
+
+// AWS Synthetics.
 type SyntheticsCanaryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1139,6 +1720,10 @@ type SyntheticsCanaryConfig struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#schedule SyntheticsCanary#schedule}
 	Schedule *SyntheticsCanarySchedule `json:"schedule"`
+	// artifact_config block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#artifact_config SyntheticsCanary#artifact_config}
+	ArtifactConfig *SyntheticsCanaryArtifactConfig `json:"artifactConfig"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#failure_retention_period SyntheticsCanary#failure_retention_period}.
 	FailureRetentionPeriod *float64 `json:"failureRetentionPeriod"`
 	// run_config block.
@@ -1181,6 +1766,8 @@ type SyntheticsCanaryRunConfigOutputReference interface {
 	ActiveTracing() interface{}
 	SetActiveTracing(val interface{})
 	ActiveTracingInput() interface{}
+	InternalValue() *SyntheticsCanaryRunConfig
+	SetInternalValue(val *SyntheticsCanaryRunConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MemoryInMb() *float64
@@ -1224,6 +1811,16 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) ActiveTracingInput(
 	_jsii_.Get(
 		j,
 		"activeTracingInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) InternalValue() *SyntheticsCanaryRunConfig {
+	var returns *SyntheticsCanaryRunConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1305,7 +1902,7 @@ func NewSyntheticsCanaryRunConfigOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_SyntheticsCanaryRunConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryRunConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryRunConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1317,7 +1914,7 @@ func NewSyntheticsCanaryRunConfigOutputReference_Override(s SyntheticsCanaryRunC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryRunConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryRunConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -1327,6 +1924,14 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetActiveTracing(va
 	_jsii_.Set(
 		j,
 		"activeTracing",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetInternalValue(val *SyntheticsCanaryRunConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1494,6 +2099,8 @@ type SyntheticsCanaryScheduleOutputReference interface {
 	Expression() *string
 	SetExpression(val *string)
 	ExpressionInput() *string
+	InternalValue() *SyntheticsCanarySchedule
+	SetInternalValue(val *SyntheticsCanarySchedule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1554,6 +2161,16 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) ExpressionInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) InternalValue() *SyntheticsCanarySchedule {
+	var returns *SyntheticsCanarySchedule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1590,7 +2207,7 @@ func NewSyntheticsCanaryScheduleOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_SyntheticsCanaryScheduleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryScheduleOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1602,7 +2219,7 @@ func NewSyntheticsCanaryScheduleOutputReference_Override(s SyntheticsCanarySched
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryScheduleOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -1620,6 +2237,14 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetExpression(val *s
 	_jsii_.Set(
 		j,
 		"expression",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetInternalValue(val *SyntheticsCanarySchedule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1841,7 +2466,7 @@ func NewSyntheticsCanaryTimeline(terraformResource cdktf.ITerraformResource, ter
 	j := jsiiProxy_SyntheticsCanaryTimeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryTimeline",
+		"hashicorp_aws.synthetics.SyntheticsCanaryTimeline",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1854,7 +2479,7 @@ func NewSyntheticsCanaryTimeline_Override(s SyntheticsCanaryTimeline, terraformR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryTimeline",
+		"hashicorp_aws.synthetics.SyntheticsCanaryTimeline",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -1963,6 +2588,8 @@ type SyntheticsCanaryVpcConfig struct {
 
 type SyntheticsCanaryVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SyntheticsCanaryVpcConfig
+	SetInternalValue(val *SyntheticsCanaryVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -1988,6 +2615,16 @@ type SyntheticsCanaryVpcConfigOutputReference interface {
 // The jsii proxy struct for SyntheticsCanaryVpcConfigOutputReference
 type jsiiProxy_SyntheticsCanaryVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) InternalValue() *SyntheticsCanaryVpcConfig {
+	var returns *SyntheticsCanaryVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) IsSingleItem() *bool {
@@ -2066,7 +2703,7 @@ func NewSyntheticsCanaryVpcConfigOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_SyntheticsCanaryVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryVpcConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2078,9 +2715,17 @@ func NewSyntheticsCanaryVpcConfigOutputReference_Override(s SyntheticsCanaryVpcC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryVpcConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) SetInternalValue(val *SyntheticsCanaryVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

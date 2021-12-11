@@ -241,7 +241,7 @@ func NewDataAwsRoute53DelegationSet(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsRoute53DelegationSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSet",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -254,7 +254,7 @@ func NewDataAwsRoute53DelegationSet_Override(d DataAwsRoute53DelegationSet, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSet",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSet",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -310,7 +310,7 @@ func DataAwsRoute53DelegationSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSet",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -323,7 +323,7 @@ func DataAwsRoute53DelegationSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.DataAwsRoute53DelegationSet",
+		"hashicorp_aws.route53.DataAwsRoute53DelegationSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -485,6 +485,7 @@ func (d *jsiiProxy_DataAwsRoute53DelegationSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type DataAwsRoute53DelegationSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -799,7 +800,7 @@ func NewDataAwsRoute53ResolverEndpoint(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsRoute53ResolverEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpoint",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -812,7 +813,7 @@ func NewDataAwsRoute53ResolverEndpoint_Override(d DataAwsRoute53ResolverEndpoint
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpoint",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -876,7 +877,7 @@ func DataAwsRoute53ResolverEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpoint",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -889,7 +890,7 @@ func DataAwsRoute53ResolverEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverEndpoint",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -1067,6 +1068,7 @@ func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type DataAwsRoute53ResolverEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1455,7 +1457,7 @@ func NewDataAwsRoute53ResolverRule(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsRoute53ResolverRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRule",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1468,7 +1470,7 @@ func NewDataAwsRoute53ResolverRule_Override(d DataAwsRoute53ResolverRule, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRule",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRule",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1564,7 +1566,7 @@ func DataAwsRoute53ResolverRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRule",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1577,7 +1579,7 @@ func DataAwsRoute53ResolverRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRule",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -1787,6 +1789,7 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type DataAwsRoute53ResolverRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2104,7 +2107,7 @@ func NewDataAwsRoute53ResolverRules(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsRoute53ResolverRules{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRules",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRules",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2117,7 +2120,7 @@ func NewDataAwsRoute53ResolverRules_Override(d DataAwsRoute53ResolverRules, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRules",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRules",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2197,7 +2200,7 @@ func DataAwsRoute53ResolverRules_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRules",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRules",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2210,7 +2213,7 @@ func DataAwsRoute53ResolverRules_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.DataAwsRoute53ResolverRules",
+		"hashicorp_aws.route53.DataAwsRoute53ResolverRules",
 		"tfResourceType",
 		&returns,
 	)
@@ -2404,6 +2407,7 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRules) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type DataAwsRoute53ResolverRulesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2820,7 +2824,7 @@ func NewDataAwsRoute53Zone(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsRoute53Zone{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53Zone",
+		"hashicorp_aws.route53.DataAwsRoute53Zone",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2833,7 +2837,7 @@ func NewDataAwsRoute53Zone_Override(d DataAwsRoute53Zone, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.DataAwsRoute53Zone",
+		"hashicorp_aws.route53.DataAwsRoute53Zone",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2929,7 +2933,7 @@ func DataAwsRoute53Zone_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.DataAwsRoute53Zone",
+		"hashicorp_aws.route53.DataAwsRoute53Zone",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2942,7 +2946,7 @@ func DataAwsRoute53Zone_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.DataAwsRoute53Zone",
+		"hashicorp_aws.route53.DataAwsRoute53Zone",
 		"tfResourceType",
 		&returns,
 	)
@@ -3152,6 +3156,7 @@ func (d *jsiiProxy_DataAwsRoute53Zone) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type DataAwsRoute53ZoneConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3408,7 +3413,7 @@ func NewRoute53DelegationSet(scope constructs.Construct, id *string, config *Rou
 	j := jsiiProxy_Route53DelegationSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53DelegationSet",
+		"hashicorp_aws.route53.Route53DelegationSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3421,7 +3426,7 @@ func NewRoute53DelegationSet_Override(r Route53DelegationSet, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53DelegationSet",
+		"hashicorp_aws.route53.Route53DelegationSet",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -3477,7 +3482,7 @@ func Route53DelegationSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53DelegationSet",
+		"hashicorp_aws.route53.Route53DelegationSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3490,7 +3495,7 @@ func Route53DelegationSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53DelegationSet",
+		"hashicorp_aws.route53.Route53DelegationSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -3660,6 +3665,7 @@ func (r *jsiiProxy_Route53DelegationSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53DelegationSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4398,7 +4404,7 @@ func NewRoute53HealthCheck(scope constructs.Construct, id *string, config *Route
 	j := jsiiProxy_Route53HealthCheck{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53HealthCheck",
+		"hashicorp_aws.route53.Route53HealthCheck",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4411,7 +4417,7 @@ func NewRoute53HealthCheck_Override(r Route53HealthCheck, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53HealthCheck",
+		"hashicorp_aws.route53.Route53HealthCheck",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -4635,7 +4641,7 @@ func Route53HealthCheck_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53HealthCheck",
+		"hashicorp_aws.route53.Route53HealthCheck",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4648,7 +4654,7 @@ func Route53HealthCheck_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53HealthCheck",
+		"hashicorp_aws.route53.Route53HealthCheck",
 		"tfResourceType",
 		&returns,
 	)
@@ -4978,6 +4984,7 @@ func (r *jsiiProxy_Route53HealthCheck) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53HealthCheckConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5267,7 +5274,7 @@ func NewRoute53HostedZoneDnssec(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_Route53HostedZoneDnssec{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssec",
+		"hashicorp_aws.route53.Route53HostedZoneDnssec",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5280,7 +5287,7 @@ func NewRoute53HostedZoneDnssec_Override(r Route53HostedZoneDnssec, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssec",
+		"hashicorp_aws.route53.Route53HostedZoneDnssec",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -5344,7 +5351,7 @@ func Route53HostedZoneDnssec_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssec",
+		"hashicorp_aws.route53.Route53HostedZoneDnssec",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5357,7 +5364,7 @@ func Route53HostedZoneDnssec_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53HostedZoneDnssec",
+		"hashicorp_aws.route53.Route53HostedZoneDnssec",
 		"tfResourceType",
 		&returns,
 	)
@@ -5527,6 +5534,7 @@ func (r *jsiiProxy_Route53HostedZoneDnssec) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53HostedZoneDnssecConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5932,7 +5940,7 @@ func NewRoute53KeySigningKey(scope constructs.Construct, id *string, config *Rou
 	j := jsiiProxy_Route53KeySigningKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53KeySigningKey",
+		"hashicorp_aws.route53.Route53KeySigningKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5945,7 +5953,7 @@ func NewRoute53KeySigningKey_Override(r Route53KeySigningKey, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53KeySigningKey",
+		"hashicorp_aws.route53.Route53KeySigningKey",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -6025,7 +6033,7 @@ func Route53KeySigningKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53KeySigningKey",
+		"hashicorp_aws.route53.Route53KeySigningKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6038,7 +6046,7 @@ func Route53KeySigningKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53KeySigningKey",
+		"hashicorp_aws.route53.Route53KeySigningKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -6208,6 +6216,7 @@ func (r *jsiiProxy_Route53KeySigningKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53KeySigningKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6471,7 +6480,7 @@ func NewRoute53QueryLog(scope constructs.Construct, id *string, config *Route53Q
 	j := jsiiProxy_Route53QueryLog{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53QueryLog",
+		"hashicorp_aws.route53.Route53QueryLog",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6484,7 +6493,7 @@ func NewRoute53QueryLog_Override(r Route53QueryLog, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53QueryLog",
+		"hashicorp_aws.route53.Route53QueryLog",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -6548,7 +6557,7 @@ func Route53QueryLog_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53QueryLog",
+		"hashicorp_aws.route53.Route53QueryLog",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6561,7 +6570,7 @@ func Route53QueryLog_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53QueryLog",
+		"hashicorp_aws.route53.Route53QueryLog",
 		"tfResourceType",
 		&returns,
 	)
@@ -6723,6 +6732,7 @@ func (r *jsiiProxy_Route53QueryLog) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53QueryLogConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7269,7 +7279,7 @@ func NewRoute53Record(scope constructs.Construct, id *string, config *Route53Rec
 	j := jsiiProxy_Route53Record{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53Record",
+		"hashicorp_aws.route53.Route53Record",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7282,7 +7292,7 @@ func NewRoute53Record_Override(r Route53Record, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53Record",
+		"hashicorp_aws.route53.Route53Record",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -7442,7 +7452,7 @@ func Route53Record_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53Record",
+		"hashicorp_aws.route53.Route53Record",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7455,7 +7465,7 @@ func Route53Record_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53Record",
+		"hashicorp_aws.route53.Route53Record",
 		"tfResourceType",
 		&returns,
 	)
@@ -7714,6 +7724,7 @@ type Route53RecordAlias struct {
 	ZoneId *string `json:"zoneId"`
 }
 
+// AWS Route 53.
 type Route53RecordConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8020,7 +8031,7 @@ func NewRoute53RecoverycontrolconfigCluster(scope constructs.Construct, id *stri
 	j := jsiiProxy_Route53RecoverycontrolconfigCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigCluster",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8033,7 +8044,7 @@ func NewRoute53RecoverycontrolconfigCluster_Override(r Route53Recoverycontrolcon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigCluster",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigCluster",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -8089,7 +8100,7 @@ func Route53RecoverycontrolconfigCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigCluster",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8102,7 +8113,7 @@ func Route53RecoverycontrolconfigCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigCluster",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -8356,7 +8367,7 @@ func NewRoute53RecoverycontrolconfigClusterClusterEndpoints(terraformResource cd
 	j := jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -8369,7 +8380,7 @@ func NewRoute53RecoverycontrolconfigClusterClusterEndpoints_Override(r Route53Re
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		r,
 	)
@@ -8469,6 +8480,7 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) Interpol
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoverycontrolconfigClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8759,7 +8771,7 @@ func NewRoute53RecoverycontrolconfigControlPanel(scope constructs.Construct, id 
 	j := jsiiProxy_Route53RecoverycontrolconfigControlPanel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanel",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8772,7 +8784,7 @@ func NewRoute53RecoverycontrolconfigControlPanel_Override(r Route53Recoverycontr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanel",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanel",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -8836,7 +8848,7 @@ func Route53RecoverycontrolconfigControlPanel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanel",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8849,7 +8861,7 @@ func Route53RecoverycontrolconfigControlPanel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigControlPanel",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigControlPanel",
 		"tfResourceType",
 		&returns,
 	)
@@ -9011,6 +9023,7 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) ToTerraform() inter
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoverycontrolconfigControlPanelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9305,7 +9318,7 @@ func NewRoute53RecoverycontrolconfigRoutingControl(scope constructs.Construct, i
 	j := jsiiProxy_Route53RecoverycontrolconfigRoutingControl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControl",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9318,7 +9331,7 @@ func NewRoute53RecoverycontrolconfigRoutingControl_Override(r Route53Recoverycon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControl",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControl",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -9390,7 +9403,7 @@ func Route53RecoverycontrolconfigRoutingControl_IsConstruct(x interface{}) *bool
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControl",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9403,7 +9416,7 @@ func Route53RecoverycontrolconfigRoutingControl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigRoutingControl",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigRoutingControl",
 		"tfResourceType",
 		&returns,
 	)
@@ -9573,6 +9586,7 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) ToTerraform() int
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoverycontrolconfigRoutingControlConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9963,7 +9977,7 @@ func NewRoute53RecoverycontrolconfigSafetyRule(scope constructs.Construct, id *s
 	j := jsiiProxy_Route53RecoverycontrolconfigSafetyRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRule",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9976,7 +9990,7 @@ func NewRoute53RecoverycontrolconfigSafetyRule_Override(r Route53Recoverycontrol
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRule",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRule",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -10072,7 +10086,7 @@ func Route53RecoverycontrolconfigSafetyRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRule",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10085,7 +10099,7 @@ func Route53RecoverycontrolconfigSafetyRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRule",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -10279,6 +10293,7 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) ToTerraform() interfa
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoverycontrolconfigSafetyRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10317,6 +10332,8 @@ type Route53RecoverycontrolconfigSafetyRuleRuleConfig struct {
 
 type Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Route53RecoverycontrolconfigSafetyRuleRuleConfig
+	SetInternalValue(val *Route53RecoverycontrolconfigSafetyRuleRuleConfig)
 	Inverted() interface{}
 	SetInverted(val interface{})
 	InvertedInput() interface{}
@@ -10343,6 +10360,16 @@ type Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference interface {
 // The jsii proxy struct for Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference
 type jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) InternalValue() *Route53RecoverycontrolconfigSafetyRuleRuleConfig {
+	var returns *Route53RecoverycontrolconfigSafetyRuleRuleConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) Inverted() interface{} {
@@ -10441,7 +10468,7 @@ func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference(terrafor
 	j := jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10453,9 +10480,17 @@ func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
+		"hashicorp_aws.route53.Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) SetInternalValue(val *Route53RecoverycontrolconfigSafetyRuleRuleConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10919,7 +10954,7 @@ func NewRoute53RecoveryreadinessCell(scope constructs.Construct, id *string, con
 	j := jsiiProxy_Route53RecoveryreadinessCell{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCell",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCell",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10932,7 +10967,7 @@ func NewRoute53RecoveryreadinessCell_Override(r Route53RecoveryreadinessCell, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCell",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCell",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -11012,7 +11047,7 @@ func Route53RecoveryreadinessCell_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCell",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCell",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11025,7 +11060,7 @@ func Route53RecoveryreadinessCell_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCell",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCell",
 		"tfResourceType",
 		&returns,
 	)
@@ -11227,6 +11262,7 @@ func (r *jsiiProxy_Route53RecoveryreadinessCell) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoveryreadinessCellConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11260,6 +11296,8 @@ type Route53RecoveryreadinessCellTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53RecoveryreadinessCellTimeouts
+	SetInternalValue(val *Route53RecoveryreadinessCellTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11295,6 +11333,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) DeleteIn
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) InternalValue() *Route53RecoveryreadinessCellTimeouts {
+	var returns *Route53RecoveryreadinessCellTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11336,7 +11384,7 @@ func NewRoute53RecoveryreadinessCellTimeoutsOutputReference(terraformResource cd
 	j := jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11348,7 +11396,7 @@ func NewRoute53RecoveryreadinessCellTimeoutsOutputReference_Override(r Route53Re
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessCellTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -11358,6 +11406,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetDelet
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetInternalValue(val *Route53RecoveryreadinessCellTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11794,7 +11850,7 @@ func NewRoute53RecoveryreadinessReadinessCheck(scope constructs.Construct, id *s
 	j := jsiiProxy_Route53RecoveryreadinessReadinessCheck{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheck",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheck",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11807,7 +11863,7 @@ func NewRoute53RecoveryreadinessReadinessCheck_Override(r Route53Recoveryreadine
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheck",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheck",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -11887,7 +11943,7 @@ func Route53RecoveryreadinessReadinessCheck_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheck",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheck",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11900,7 +11956,7 @@ func Route53RecoveryreadinessReadinessCheck_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheck",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheck",
 		"tfResourceType",
 		&returns,
 	)
@@ -12094,6 +12150,7 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) ToTerraform() interfa
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoveryreadinessReadinessCheckConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12127,6 +12184,8 @@ type Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53RecoveryreadinessReadinessCheckTimeouts
+	SetInternalValue(val *Route53RecoveryreadinessReadinessCheckTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12162,6 +12221,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) InternalValue() *Route53RecoveryreadinessReadinessCheckTimeouts {
+	var returns *Route53RecoveryreadinessReadinessCheckTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12203,7 +12272,7 @@ func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference(terraformR
 	j := jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12215,7 +12284,7 @@ func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference_Override(r
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -12225,6 +12294,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) SetInternalValue(val *Route53RecoveryreadinessReadinessCheckTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12662,7 +12739,7 @@ func NewRoute53RecoveryreadinessRecoveryGroup(scope constructs.Construct, id *st
 	j := jsiiProxy_Route53RecoveryreadinessRecoveryGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroup",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12675,7 +12752,7 @@ func NewRoute53RecoveryreadinessRecoveryGroup_Override(r Route53Recoveryreadines
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroup",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -12755,7 +12832,7 @@ func Route53RecoveryreadinessRecoveryGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroup",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12768,7 +12845,7 @@ func Route53RecoveryreadinessRecoveryGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroup",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -12970,6 +13047,7 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) ToTerraform() interfac
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoveryreadinessRecoveryGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13003,6 +13081,8 @@ type Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53RecoveryreadinessRecoveryGroupTimeouts
+	SetInternalValue(val *Route53RecoveryreadinessRecoveryGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13038,6 +13118,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) InternalValue() *Route53RecoveryreadinessRecoveryGroupTimeouts {
+	var returns *Route53RecoveryreadinessRecoveryGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13079,7 +13169,7 @@ func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference(terraformRe
 	j := jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13091,7 +13181,7 @@ func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference_Override(r 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -13101,6 +13191,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) SetInternalValue(val *Route53RecoveryreadinessRecoveryGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13560,7 +13658,7 @@ func NewRoute53RecoveryreadinessResourceSet(scope constructs.Construct, id *stri
 	j := jsiiProxy_Route53RecoveryreadinessResourceSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSet",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13573,7 +13671,7 @@ func NewRoute53RecoveryreadinessResourceSet_Override(r Route53RecoveryreadinessR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSet",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSet",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -13661,7 +13759,7 @@ func Route53RecoveryreadinessResourceSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSet",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13674,7 +13772,7 @@ func Route53RecoveryreadinessResourceSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSet",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -13868,6 +13966,7 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) ToTerraform() interface{
 	return returns
 }
 
+// AWS Route 53.
 type Route53RecoveryreadinessResourceSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13929,6 +14028,8 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReferenc
 	HostedZoneArn() *string
 	SetHostedZoneArn(val *string)
 	HostedZoneArnInput() *string
+	InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
+	SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordSetId() *string
@@ -13996,6 +14097,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Get(
 		j,
 		"hostedZoneArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource {
+	var returns *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14097,7 +14208,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputRefer
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14109,7 +14220,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -14127,6 +14238,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Set(
 		j,
 		"hostedZoneArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14316,6 +14435,8 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	Arn() *string
 	SetArn(val *string)
 	ArnInput() *string
+	InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource
+	SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14351,6 +14472,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Get(
 		j,
 		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource {
+	var returns *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14392,7 +14523,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14404,7 +14535,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -14414,6 +14545,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Set(
 		j,
 		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14536,6 +14675,8 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
+	SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NlbResource() Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference
@@ -14561,6 +14702,16 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 // The jsii proxy struct for Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference
 type jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource {
+	var returns *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) IsSingleItem() *bool {
@@ -14639,7 +14790,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14651,9 +14802,17 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14809,6 +14968,8 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	DomainName() *string
 	SetDomainName(val *string)
 	DomainNameInput() *string
+	InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource
+	SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecordSetId() *string
@@ -14848,6 +15009,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Get(
 		j,
 		"domainNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) InternalValue() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource {
+	var returns *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14909,7 +15080,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14921,7 +15092,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -14931,6 +15102,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	_jsii_.Set(
 		j,
 		"domainName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) SetInternalValue(val *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15077,6 +15256,8 @@ type Route53RecoveryreadinessResourceSetTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53RecoveryreadinessResourceSetTimeouts
+	SetInternalValue(val *Route53RecoveryreadinessResourceSetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15112,6 +15293,16 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) D
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) InternalValue() *Route53RecoveryreadinessResourceSetTimeouts {
+	var returns *Route53RecoveryreadinessResourceSetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15153,7 +15344,7 @@ func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference(terraformReso
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15165,7 +15356,7 @@ func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference_Override(r Ro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53RecoveryreadinessResourceSetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -15175,6 +15366,14 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) S
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) SetInternalValue(val *Route53RecoveryreadinessResourceSetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15538,7 +15737,7 @@ func NewRoute53ResolverDnssecConfig(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_Route53ResolverDnssecConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15551,7 +15750,7 @@ func NewRoute53ResolverDnssecConfig_Override(r Route53ResolverDnssecConfig, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfig",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -15607,7 +15806,7 @@ func Route53ResolverDnssecConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15620,7 +15819,7 @@ func Route53ResolverDnssecConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverDnssecConfig",
+		"hashicorp_aws.route53.Route53ResolverDnssecConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -15782,6 +15981,7 @@ func (r *jsiiProxy_Route53ResolverDnssecConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverDnssecConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16169,7 +16369,7 @@ func NewRoute53ResolverEndpoint(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_Route53ResolverEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverEndpoint",
+		"hashicorp_aws.route53.Route53ResolverEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16182,7 +16382,7 @@ func NewRoute53ResolverEndpoint_Override(r Route53ResolverEndpoint, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverEndpoint",
+		"hashicorp_aws.route53.Route53ResolverEndpoint",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -16278,7 +16478,7 @@ func Route53ResolverEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverEndpoint",
+		"hashicorp_aws.route53.Route53ResolverEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16291,7 +16491,7 @@ func Route53ResolverEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverEndpoint",
+		"hashicorp_aws.route53.Route53ResolverEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -16493,6 +16693,7 @@ func (r *jsiiProxy_Route53ResolverEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16546,6 +16747,8 @@ type Route53ResolverEndpointTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53ResolverEndpointTimeouts
+	SetInternalValue(val *Route53ResolverEndpointTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -16611,6 +16814,16 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) DeleteInput()
 	return returns
 }
 
+func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) InternalValue() *Route53ResolverEndpointTimeouts {
+	var returns *Route53ResolverEndpointTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -16667,7 +16880,7 @@ func NewRoute53ResolverEndpointTimeoutsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverEndpointTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16679,7 +16892,7 @@ func NewRoute53ResolverEndpointTimeoutsOutputReference_Override(r Route53Resolve
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverEndpointTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -16697,6 +16910,14 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetDelete(val
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetInternalValue(val *Route53ResolverEndpointTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17086,7 +17307,7 @@ func NewRoute53ResolverFirewallConfig(scope constructs.Construct, id *string, co
 	j := jsiiProxy_Route53ResolverFirewallConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17099,7 +17320,7 @@ func NewRoute53ResolverFirewallConfig_Override(r Route53ResolverFirewallConfig, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfig",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -17163,7 +17384,7 @@ func Route53ResolverFirewallConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17176,7 +17397,7 @@ func Route53ResolverFirewallConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverFirewallConfig",
+		"hashicorp_aws.route53.Route53ResolverFirewallConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -17346,6 +17567,7 @@ func (r *jsiiProxy_Route53ResolverFirewallConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverFirewallConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17654,7 +17876,7 @@ func NewRoute53ResolverFirewallDomainList(scope constructs.Construct, id *string
 	j := jsiiProxy_Route53ResolverFirewallDomainList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainList",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainList",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17667,7 +17889,7 @@ func NewRoute53ResolverFirewallDomainList_Override(r Route53ResolverFirewallDoma
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainList",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainList",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -17747,7 +17969,7 @@ func Route53ResolverFirewallDomainList_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainList",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainList",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17760,7 +17982,7 @@ func Route53ResolverFirewallDomainList_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverFirewallDomainList",
+		"hashicorp_aws.route53.Route53ResolverFirewallDomainList",
 		"tfResourceType",
 		&returns,
 	)
@@ -17946,6 +18168,7 @@ func (r *jsiiProxy_Route53ResolverFirewallDomainList) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverFirewallDomainListConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18363,7 +18586,7 @@ func NewRoute53ResolverFirewallRule(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_Route53ResolverFirewallRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRule",
+		"hashicorp_aws.route53.Route53ResolverFirewallRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18376,7 +18599,7 @@ func NewRoute53ResolverFirewallRule_Override(r Route53ResolverFirewallRule, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRule",
+		"hashicorp_aws.route53.Route53ResolverFirewallRule",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -18496,7 +18719,7 @@ func Route53ResolverFirewallRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRule",
+		"hashicorp_aws.route53.Route53ResolverFirewallRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18509,7 +18732,7 @@ func Route53ResolverFirewallRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRule",
+		"hashicorp_aws.route53.Route53ResolverFirewallRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -18703,6 +18926,7 @@ func (r *jsiiProxy_Route53ResolverFirewallRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverFirewallRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19023,7 +19247,7 @@ func NewRoute53ResolverFirewallRuleGroup(scope constructs.Construct, id *string,
 	j := jsiiProxy_Route53ResolverFirewallRuleGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroup",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19036,7 +19260,7 @@ func NewRoute53ResolverFirewallRuleGroup_Override(r Route53ResolverFirewallRuleG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroup",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -19108,7 +19332,7 @@ func Route53ResolverFirewallRuleGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroup",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19121,7 +19345,7 @@ func Route53ResolverFirewallRuleGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroup",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -19661,7 +19885,7 @@ func NewRoute53ResolverFirewallRuleGroupAssociation(scope constructs.Construct, 
 	j := jsiiProxy_Route53ResolverFirewallRuleGroupAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociation",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19674,7 +19898,7 @@ func NewRoute53ResolverFirewallRuleGroupAssociation_Override(r Route53ResolverFi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociation",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -19778,7 +20002,7 @@ func Route53ResolverFirewallRuleGroupAssociation_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociation",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19791,7 +20015,7 @@ func Route53ResolverFirewallRuleGroupAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverFirewallRuleGroupAssociation",
+		"hashicorp_aws.route53.Route53ResolverFirewallRuleGroupAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -19977,6 +20201,7 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) ToTerraform() in
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverFirewallRuleGroupAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20002,6 +20227,7 @@ type Route53ResolverFirewallRuleGroupAssociationConfig struct {
 	TagsAll interface{} `json:"tagsAll"`
 }
 
+// AWS Route 53.
 type Route53ResolverFirewallRuleGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20333,7 +20559,7 @@ func NewRoute53ResolverQueryLogConfig(scope constructs.Construct, id *string, co
 	j := jsiiProxy_Route53ResolverQueryLogConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20346,7 +20572,7 @@ func NewRoute53ResolverQueryLogConfig_Override(r Route53ResolverQueryLogConfig, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfig",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -20426,7 +20652,7 @@ func Route53ResolverQueryLogConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20439,7 +20665,7 @@ func Route53ResolverQueryLogConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfig",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -20850,7 +21076,7 @@ func NewRoute53ResolverQueryLogConfigAssociation(scope constructs.Construct, id 
 	j := jsiiProxy_Route53ResolverQueryLogConfigAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociation",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20863,7 +21089,7 @@ func NewRoute53ResolverQueryLogConfigAssociation_Override(r Route53ResolverQuery
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociation",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -20927,7 +21153,7 @@ func Route53ResolverQueryLogConfigAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociation",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20940,7 +21166,7 @@ func Route53ResolverQueryLogConfigAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverQueryLogConfigAssociation",
+		"hashicorp_aws.route53.Route53ResolverQueryLogConfigAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -21102,6 +21328,7 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) ToTerraform() inter
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverQueryLogConfigAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21117,6 +21344,7 @@ type Route53ResolverQueryLogConfigAssociationConfig struct {
 	ResourceId *string `json:"resourceId"`
 }
 
+// AWS Route 53.
 type Route53ResolverQueryLogConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21546,7 +21774,7 @@ func NewRoute53ResolverRule(scope constructs.Construct, id *string, config *Rout
 	j := jsiiProxy_Route53ResolverRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRule",
+		"hashicorp_aws.route53.Route53ResolverRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21559,7 +21787,7 @@ func NewRoute53ResolverRule_Override(r Route53ResolverRule, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRule",
+		"hashicorp_aws.route53.Route53ResolverRule",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -21663,7 +21891,7 @@ func Route53ResolverRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverRule",
+		"hashicorp_aws.route53.Route53ResolverRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21676,7 +21904,7 @@ func Route53ResolverRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverRule",
+		"hashicorp_aws.route53.Route53ResolverRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -22175,7 +22403,7 @@ func NewRoute53ResolverRuleAssociation(scope constructs.Construct, id *string, c
 	j := jsiiProxy_Route53ResolverRuleAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociation",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22188,7 +22416,7 @@ func NewRoute53ResolverRuleAssociation_Override(r Route53ResolverRuleAssociation
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociation",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -22260,7 +22488,7 @@ func Route53ResolverRuleAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociation",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22273,7 +22501,7 @@ func Route53ResolverRuleAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociation",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -22459,6 +22687,7 @@ func (r *jsiiProxy_Route53ResolverRuleAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ResolverRuleAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22495,6 +22724,8 @@ type Route53ResolverRuleAssociationTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53ResolverRuleAssociationTimeouts
+	SetInternalValue(val *Route53ResolverRuleAssociationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -22556,6 +22787,16 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) Delete
 	return returns
 }
 
+func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) InternalValue() *Route53ResolverRuleAssociationTimeouts {
+	var returns *Route53ResolverRuleAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -22592,7 +22833,7 @@ func NewRoute53ResolverRuleAssociationTimeoutsOutputReference(terraformResource 
 	j := jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22604,7 +22845,7 @@ func NewRoute53ResolverRuleAssociationTimeoutsOutputReference_Override(r Route53
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -22622,6 +22863,14 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetDel
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetInternalValue(val *Route53ResolverRuleAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22750,6 +22999,7 @@ func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) ResetD
 	)
 }
 
+// AWS Route 53.
 type Route53ResolverRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22805,6 +23055,8 @@ type Route53ResolverRuleTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Route53ResolverRuleTimeouts
+	SetInternalValue(val *Route53ResolverRuleTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -22870,6 +23122,16 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) InternalValue() *Route53ResolverRuleTimeouts {
+	var returns *Route53ResolverRuleTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -22926,7 +23188,7 @@ func NewRoute53ResolverRuleTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_Route53ResolverRuleTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22938,7 +23200,7 @@ func NewRoute53ResolverRuleTimeoutsOutputReference_Override(r Route53ResolverRul
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ResolverRuleTimeoutsOutputReference",
+		"hashicorp_aws.route53.Route53ResolverRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -22956,6 +23218,14 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetInternalValue(val *Route53ResolverRuleTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -23357,7 +23627,7 @@ func NewRoute53VpcAssociationAuthorization(scope constructs.Construct, id *strin
 	j := jsiiProxy_Route53VpcAssociationAuthorization{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorization",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorization",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23370,7 +23640,7 @@ func NewRoute53VpcAssociationAuthorization_Override(r Route53VpcAssociationAutho
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorization",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorization",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -23442,7 +23712,7 @@ func Route53VpcAssociationAuthorization_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorization",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorization",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23455,7 +23725,7 @@ func Route53VpcAssociationAuthorization_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53VpcAssociationAuthorization",
+		"hashicorp_aws.route53.Route53VpcAssociationAuthorization",
 		"tfResourceType",
 		&returns,
 	)
@@ -23625,6 +23895,7 @@ func (r *jsiiProxy_Route53VpcAssociationAuthorization) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Route 53.
 type Route53VpcAssociationAuthorizationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24029,7 +24300,7 @@ func NewRoute53Zone(scope constructs.Construct, id *string, config *Route53ZoneC
 	j := jsiiProxy_Route53Zone{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53Zone",
+		"hashicorp_aws.route53.Route53Zone",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24042,7 +24313,7 @@ func NewRoute53Zone_Override(r Route53Zone, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53Zone",
+		"hashicorp_aws.route53.Route53Zone",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -24146,7 +24417,7 @@ func Route53Zone_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53Zone",
+		"hashicorp_aws.route53.Route53Zone",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24159,7 +24430,7 @@ func Route53Zone_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53Zone",
+		"hashicorp_aws.route53.Route53Zone",
 		"tfResourceType",
 		&returns,
 	)
@@ -24637,7 +24908,7 @@ func NewRoute53ZoneAssociation(scope constructs.Construct, id *string, config *R
 	j := jsiiProxy_Route53ZoneAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ZoneAssociation",
+		"hashicorp_aws.route53.Route53ZoneAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24650,7 +24921,7 @@ func NewRoute53ZoneAssociation_Override(r Route53ZoneAssociation, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Route53.Route53ZoneAssociation",
+		"hashicorp_aws.route53.Route53ZoneAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -24722,7 +24993,7 @@ func Route53ZoneAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Route53.Route53ZoneAssociation",
+		"hashicorp_aws.route53.Route53ZoneAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24735,7 +25006,7 @@ func Route53ZoneAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Route53.Route53ZoneAssociation",
+		"hashicorp_aws.route53.Route53ZoneAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -24905,6 +25176,7 @@ func (r *jsiiProxy_Route53ZoneAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Route 53.
 type Route53ZoneAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24922,6 +25194,7 @@ type Route53ZoneAssociationConfig struct {
 	VpcRegion *string `json:"vpcRegion"`
 }
 
+// AWS Route 53.
 type Route53ZoneConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalIpset",
+		"hashicorp_aws.wafregional.DataAwsWafregionalIpset",
 		reflect.TypeOf((*DataAwsWafregionalIpset)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -47,11 +47,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalIpsetConfig",
+		"hashicorp_aws.wafregional.DataAwsWafregionalIpsetConfig",
 		reflect.TypeOf((*DataAwsWafregionalIpsetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalRateBasedRule",
+		"hashicorp_aws.wafregional.DataAwsWafregionalRateBasedRule",
 		reflect.TypeOf((*DataAwsWafregionalRateBasedRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -90,11 +90,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalRateBasedRuleConfig",
+		"hashicorp_aws.wafregional.DataAwsWafregionalRateBasedRuleConfig",
 		reflect.TypeOf((*DataAwsWafregionalRateBasedRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalRule",
+		"hashicorp_aws.wafregional.DataAwsWafregionalRule",
 		reflect.TypeOf((*DataAwsWafregionalRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -133,11 +133,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalRuleConfig",
+		"hashicorp_aws.wafregional.DataAwsWafregionalRuleConfig",
 		reflect.TypeOf((*DataAwsWafregionalRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalWebAcl",
+		"hashicorp_aws.wafregional.DataAwsWafregionalWebAcl",
 		reflect.TypeOf((*DataAwsWafregionalWebAcl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -176,11 +176,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.DataAwsWafregionalWebAclConfig",
+		"hashicorp_aws.wafregional.DataAwsWafregionalWebAclConfig",
 		reflect.TypeOf((*DataAwsWafregionalWebAclConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalByteMatchSet",
+		"hashicorp_aws.wafregional.WafregionalByteMatchSet",
 		reflect.TypeOf((*WafregionalByteMatchSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -222,15 +222,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalByteMatchSetByteMatchTuples",
+		"hashicorp_aws.wafregional.WafregionalByteMatchSetByteMatchTuples",
 		reflect.TypeOf((*WafregionalByteMatchSetByteMatchTuples)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalByteMatchSetByteMatchTuplesFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalByteMatchSetByteMatchTuplesFieldToMatch",
 		reflect.TypeOf((*WafregionalByteMatchSetByteMatchTuplesFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.wafregional.WafregionalByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
 		reflect.TypeOf((*WafregionalByteMatchSetByteMatchTuplesFieldToMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "data", GoGetter: "Data"},
@@ -239,6 +239,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -255,11 +256,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalByteMatchSetConfig",
+		"hashicorp_aws.wafregional.WafregionalByteMatchSetConfig",
 		reflect.TypeOf((*WafregionalByteMatchSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalGeoMatchSet",
+		"hashicorp_aws.wafregional.WafregionalGeoMatchSet",
 		reflect.TypeOf((*WafregionalGeoMatchSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -301,15 +302,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalGeoMatchSetConfig",
+		"hashicorp_aws.wafregional.WafregionalGeoMatchSetConfig",
 		reflect.TypeOf((*WafregionalGeoMatchSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalGeoMatchSetGeoMatchConstraint",
+		"hashicorp_aws.wafregional.WafregionalGeoMatchSetGeoMatchConstraint",
 		reflect.TypeOf((*WafregionalGeoMatchSetGeoMatchConstraint)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalIpset",
+		"hashicorp_aws.wafregional.WafregionalIpset",
 		reflect.TypeOf((*WafregionalIpset)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -352,15 +353,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalIpsetConfig",
+		"hashicorp_aws.wafregional.WafregionalIpsetConfig",
 		reflect.TypeOf((*WafregionalIpsetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalIpsetIpSetDescriptor",
+		"hashicorp_aws.wafregional.WafregionalIpsetIpSetDescriptor",
 		reflect.TypeOf((*WafregionalIpsetIpSetDescriptor)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRateBasedRule",
+		"hashicorp_aws.wafregional.WafregionalRateBasedRule",
 		reflect.TypeOf((*WafregionalRateBasedRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -415,15 +416,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRateBasedRuleConfig",
+		"hashicorp_aws.wafregional.WafregionalRateBasedRuleConfig",
 		reflect.TypeOf((*WafregionalRateBasedRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRateBasedRulePredicate",
+		"hashicorp_aws.wafregional.WafregionalRateBasedRulePredicate",
 		reflect.TypeOf((*WafregionalRateBasedRulePredicate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRegexMatchSet",
+		"hashicorp_aws.wafregional.WafregionalRegexMatchSet",
 		reflect.TypeOf((*WafregionalRegexMatchSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -465,19 +466,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRegexMatchSetConfig",
+		"hashicorp_aws.wafregional.WafregionalRegexMatchSetConfig",
 		reflect.TypeOf((*WafregionalRegexMatchSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRegexMatchSetRegexMatchTuple",
+		"hashicorp_aws.wafregional.WafregionalRegexMatchSetRegexMatchTuple",
 		reflect.TypeOf((*WafregionalRegexMatchSetRegexMatchTuple)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRegexMatchSetRegexMatchTupleFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalRegexMatchSetRegexMatchTupleFieldToMatch",
 		reflect.TypeOf((*WafregionalRegexMatchSetRegexMatchTupleFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
+		"hashicorp_aws.wafregional.WafregionalRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
 		reflect.TypeOf((*WafregionalRegexMatchSetRegexMatchTupleFieldToMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "data", GoGetter: "Data"},
@@ -486,6 +487,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -502,7 +504,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRegexPatternSet",
+		"hashicorp_aws.wafregional.WafregionalRegexPatternSet",
 		reflect.TypeOf((*WafregionalRegexPatternSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -544,11 +546,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRegexPatternSetConfig",
+		"hashicorp_aws.wafregional.WafregionalRegexPatternSetConfig",
 		reflect.TypeOf((*WafregionalRegexPatternSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRule",
+		"hashicorp_aws.wafregional.WafregionalRule",
 		reflect.TypeOf((*WafregionalRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -599,11 +601,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRuleConfig",
+		"hashicorp_aws.wafregional.WafregionalRuleConfig",
 		reflect.TypeOf((*WafregionalRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRuleGroup",
+		"hashicorp_aws.wafregional.WafregionalRuleGroup",
 		reflect.TypeOf((*WafregionalRuleGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activatedRule", GoGetter: "ActivatedRule"},
@@ -654,21 +656,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRuleGroupActivatedRule",
+		"hashicorp_aws.wafregional.WafregionalRuleGroupActivatedRule",
 		reflect.TypeOf((*WafregionalRuleGroupActivatedRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRuleGroupActivatedRuleAction",
+		"hashicorp_aws.wafregional.WafregionalRuleGroupActivatedRuleAction",
 		reflect.TypeOf((*WafregionalRuleGroupActivatedRuleAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalRuleGroupActivatedRuleActionOutputReference",
+		"hashicorp_aws.wafregional.WafregionalRuleGroupActivatedRuleActionOutputReference",
 		reflect.TypeOf((*WafregionalRuleGroupActivatedRuleActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -684,15 +687,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRuleGroupConfig",
+		"hashicorp_aws.wafregional.WafregionalRuleGroupConfig",
 		reflect.TypeOf((*WafregionalRuleGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalRulePredicate",
+		"hashicorp_aws.wafregional.WafregionalRulePredicate",
 		reflect.TypeOf((*WafregionalRulePredicate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalSizeConstraintSet",
+		"hashicorp_aws.wafregional.WafregionalSizeConstraintSet",
 		reflect.TypeOf((*WafregionalSizeConstraintSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -735,19 +738,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSizeConstraintSetConfig",
+		"hashicorp_aws.wafregional.WafregionalSizeConstraintSetConfig",
 		reflect.TypeOf((*WafregionalSizeConstraintSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSizeConstraintSetSizeConstraints",
+		"hashicorp_aws.wafregional.WafregionalSizeConstraintSetSizeConstraints",
 		reflect.TypeOf((*WafregionalSizeConstraintSetSizeConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSizeConstraintSetSizeConstraintsFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalSizeConstraintSetSizeConstraintsFieldToMatch",
 		reflect.TypeOf((*WafregionalSizeConstraintSetSizeConstraintsFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
+		"hashicorp_aws.wafregional.WafregionalSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
 		reflect.TypeOf((*WafregionalSizeConstraintSetSizeConstraintsFieldToMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "data", GoGetter: "Data"},
@@ -756,6 +759,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -772,7 +776,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalSqlInjectionMatchSet",
+		"hashicorp_aws.wafregional.WafregionalSqlInjectionMatchSet",
 		reflect.TypeOf((*WafregionalSqlInjectionMatchSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -814,19 +818,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSqlInjectionMatchSetConfig",
+		"hashicorp_aws.wafregional.WafregionalSqlInjectionMatchSetConfig",
 		reflect.TypeOf((*WafregionalSqlInjectionMatchSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTuple",
+		"hashicorp_aws.wafregional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTuple",
 		reflect.TypeOf((*WafregionalSqlInjectionMatchSetSqlInjectionMatchTuple)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatch",
 		reflect.TypeOf((*WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatchOutputReference",
+		"hashicorp_aws.wafregional.WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatchOutputReference",
 		reflect.TypeOf((*WafregionalSqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "data", GoGetter: "Data"},
@@ -835,6 +839,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -851,7 +856,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAcl",
+		"hashicorp_aws.wafregional.WafregionalWebAcl",
 		reflect.TypeOf((*WafregionalWebAcl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -909,7 +914,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclAssociation",
+		"hashicorp_aws.wafregional.WafregionalWebAclAssociation",
 		reflect.TypeOf((*WafregionalWebAclAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -950,25 +955,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclAssociationConfig",
+		"hashicorp_aws.wafregional.WafregionalWebAclAssociationConfig",
 		reflect.TypeOf((*WafregionalWebAclAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclConfig",
+		"hashicorp_aws.wafregional.WafregionalWebAclConfig",
 		reflect.TypeOf((*WafregionalWebAclConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclDefaultAction",
+		"hashicorp_aws.wafregional.WafregionalWebAclDefaultAction",
 		reflect.TypeOf((*WafregionalWebAclDefaultAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclDefaultActionOutputReference",
+		"hashicorp_aws.wafregional.WafregionalWebAclDefaultActionOutputReference",
 		reflect.TypeOf((*WafregionalWebAclDefaultActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -984,17 +990,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclLoggingConfiguration",
+		"hashicorp_aws.wafregional.WafregionalWebAclLoggingConfiguration",
 		reflect.TypeOf((*WafregionalWebAclLoggingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclLoggingConfigurationOutputReference",
+		"hashicorp_aws.wafregional.WafregionalWebAclLoggingConfigurationOutputReference",
 		reflect.TypeOf((*WafregionalWebAclLoggingConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1014,15 +1021,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclLoggingConfigurationRedactedFields",
+		"hashicorp_aws.wafregional.WafregionalWebAclLoggingConfigurationRedactedFields",
 		reflect.TypeOf((*WafregionalWebAclLoggingConfigurationRedactedFields)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclLoggingConfigurationRedactedFieldsFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalWebAclLoggingConfigurationRedactedFieldsFieldToMatch",
 		reflect.TypeOf((*WafregionalWebAclLoggingConfigurationRedactedFieldsFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclLoggingConfigurationRedactedFieldsOutputReference",
+		"hashicorp_aws.wafregional.WafregionalWebAclLoggingConfigurationRedactedFieldsOutputReference",
 		reflect.TypeOf((*WafregionalWebAclLoggingConfigurationRedactedFieldsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fieldToMatch", GoGetter: "FieldToMatch"},
@@ -1031,6 +1038,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1044,21 +1052,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclRule",
+		"hashicorp_aws.wafregional.WafregionalWebAclRule",
 		reflect.TypeOf((*WafregionalWebAclRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclRuleAction",
+		"hashicorp_aws.wafregional.WafregionalWebAclRuleAction",
 		reflect.TypeOf((*WafregionalWebAclRuleAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclRuleActionOutputReference",
+		"hashicorp_aws.wafregional.WafregionalWebAclRuleActionOutputReference",
 		reflect.TypeOf((*WafregionalWebAclRuleActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1074,17 +1083,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclRuleOverrideAction",
+		"hashicorp_aws.wafregional.WafregionalWebAclRuleOverrideAction",
 		reflect.TypeOf((*WafregionalWebAclRuleOverrideAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalWebAclRuleOverrideActionOutputReference",
+		"hashicorp_aws.wafregional.WafregionalWebAclRuleOverrideActionOutputReference",
 		reflect.TypeOf((*WafregionalWebAclRuleOverrideActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1100,7 +1110,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalXssMatchSet",
+		"hashicorp_aws.wafregional.WafregionalXssMatchSet",
 		reflect.TypeOf((*WafregionalXssMatchSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1142,19 +1152,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalXssMatchSetConfig",
+		"hashicorp_aws.wafregional.WafregionalXssMatchSetConfig",
 		reflect.TypeOf((*WafregionalXssMatchSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalXssMatchSetXssMatchTuple",
+		"hashicorp_aws.wafregional.WafregionalXssMatchSetXssMatchTuple",
 		reflect.TypeOf((*WafregionalXssMatchSetXssMatchTuple)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WAFRegional.WafregionalXssMatchSetXssMatchTupleFieldToMatch",
+		"hashicorp_aws.wafregional.WafregionalXssMatchSetXssMatchTupleFieldToMatch",
 		reflect.TypeOf((*WafregionalXssMatchSetXssMatchTupleFieldToMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WAFRegional.WafregionalXssMatchSetXssMatchTupleFieldToMatchOutputReference",
+		"hashicorp_aws.wafregional.WafregionalXssMatchSetXssMatchTupleFieldToMatchOutputReference",
 		reflect.TypeOf((*WafregionalXssMatchSetXssMatchTupleFieldToMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "data", GoGetter: "Data"},
@@ -1163,6 +1173,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

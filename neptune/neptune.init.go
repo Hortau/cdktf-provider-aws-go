@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersion",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersion",
 		reflect.TypeOf((*DataAwsNeptuneEngineVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -64,11 +64,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.DataAwsNeptuneEngineVersionConfig",
+		"hashicorp_aws.neptune.DataAwsNeptuneEngineVersionConfig",
 		reflect.TypeOf((*DataAwsNeptuneEngineVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstance",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstance",
 		reflect.TypeOf((*DataAwsNeptuneOrderableDbInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -138,11 +138,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.DataAwsNeptuneOrderableDbInstanceConfig",
+		"hashicorp_aws.neptune.DataAwsNeptuneOrderableDbInstanceConfig",
 		reflect.TypeOf((*DataAwsNeptuneOrderableDbInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneCluster",
+		"hashicorp_aws.neptune.NeptuneCluster",
 		reflect.TypeOf((*NeptuneCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -267,11 +267,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterConfig",
+		"hashicorp_aws.neptune.NeptuneClusterConfig",
 		reflect.TypeOf((*NeptuneClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpoint",
+		"hashicorp_aws.neptune.NeptuneClusterEndpoint",
 		reflect.TypeOf((*NeptuneClusterEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -328,11 +328,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterEndpointConfig",
+		"hashicorp_aws.neptune.NeptuneClusterEndpointConfig",
 		reflect.TypeOf((*NeptuneClusterEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterInstance",
+		"hashicorp_aws.neptune.NeptuneClusterInstance",
 		reflect.TypeOf((*NeptuneClusterInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -432,15 +432,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterInstanceConfig",
+		"hashicorp_aws.neptune.NeptuneClusterInstanceConfig",
 		reflect.TypeOf((*NeptuneClusterInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterInstanceTimeouts",
+		"hashicorp_aws.neptune.NeptuneClusterInstanceTimeouts",
 		reflect.TypeOf((*NeptuneClusterInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*NeptuneClusterInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -451,6 +451,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -469,7 +470,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroup",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroup",
 		reflect.TypeOf((*NeptuneClusterParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -527,15 +528,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroupConfig",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroupConfig",
 		reflect.TypeOf((*NeptuneClusterParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterParameterGroupParameter",
+		"hashicorp_aws.neptune.NeptuneClusterParameterGroupParameter",
 		reflect.TypeOf((*NeptuneClusterParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshot",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshot",
 		reflect.TypeOf((*NeptuneClusterSnapshot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -593,15 +594,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshotConfig",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshotConfig",
 		reflect.TypeOf((*NeptuneClusterSnapshotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshotTimeouts",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshotTimeouts",
 		reflect.TypeOf((*NeptuneClusterSnapshotTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterSnapshotTimeoutsOutputReference",
 		reflect.TypeOf((*NeptuneClusterSnapshotTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -610,6 +611,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -624,11 +626,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneClusterTimeouts",
+		"hashicorp_aws.neptune.NeptuneClusterTimeouts",
 		reflect.TypeOf((*NeptuneClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneClusterTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneClusterTimeoutsOutputReference",
 		reflect.TypeOf((*NeptuneClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -639,6 +641,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -657,7 +660,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneEventSubscription",
+		"hashicorp_aws.neptune.NeptuneEventSubscription",
 		reflect.TypeOf((*NeptuneEventSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -726,15 +729,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneEventSubscriptionConfig",
+		"hashicorp_aws.neptune.NeptuneEventSubscriptionConfig",
 		reflect.TypeOf((*NeptuneEventSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneEventSubscriptionTimeouts",
+		"hashicorp_aws.neptune.NeptuneEventSubscriptionTimeouts",
 		reflect.TypeOf((*NeptuneEventSubscriptionTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.neptune.NeptuneEventSubscriptionTimeoutsOutputReference",
 		reflect.TypeOf((*NeptuneEventSubscriptionTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -745,6 +748,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -763,7 +767,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneParameterGroup",
+		"hashicorp_aws.neptune.NeptuneParameterGroup",
 		reflect.TypeOf((*NeptuneParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -817,15 +821,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneParameterGroupConfig",
+		"hashicorp_aws.neptune.NeptuneParameterGroupConfig",
 		reflect.TypeOf((*NeptuneParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneParameterGroupParameter",
+		"hashicorp_aws.neptune.NeptuneParameterGroupParameter",
 		reflect.TypeOf((*NeptuneParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroup",
+		"hashicorp_aws.neptune.NeptuneSubnetGroup",
 		reflect.TypeOf((*NeptuneSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -880,7 +884,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Neptune.NeptuneSubnetGroupConfig",
+		"hashicorp_aws.neptune.NeptuneSubnetGroupConfig",
 		reflect.TypeOf((*NeptuneSubnetGroupConfig)(nil)).Elem(),
 	)
 }

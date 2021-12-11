@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStack",
+		"hashicorp_aws.cloudformation.CloudformationStack",
 		reflect.TypeOf((*CloudformationStack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -91,11 +91,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackConfig",
+		"hashicorp_aws.cloudformation.CloudformationStackConfig",
 		reflect.TypeOf((*CloudformationStackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSet",
+		"hashicorp_aws.cloudformation.CloudformationStackSet",
 		reflect.TypeOf((*CloudformationStackSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -174,11 +174,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetAutoDeployment",
+		"hashicorp_aws.cloudformation.CloudformationStackSetAutoDeployment",
 		reflect.TypeOf((*CloudformationStackSetAutoDeployment)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetAutoDeploymentOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetAutoDeploymentOutputReference",
 		reflect.TypeOf((*CloudformationStackSetAutoDeploymentOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -187,6 +187,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -204,11 +205,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetConfig",
+		"hashicorp_aws.cloudformation.CloudformationStackSetConfig",
 		reflect.TypeOf((*CloudformationStackSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstance",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstance",
 		reflect.TypeOf((*CloudformationStackSetInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -269,21 +270,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceConfig",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceConfig",
 		reflect.TypeOf((*CloudformationStackSetInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceDeploymentTargets",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceDeploymentTargets",
 		reflect.TypeOf((*CloudformationStackSetInstanceDeploymentTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceDeploymentTargetsOutputReference",
 		reflect.TypeOf((*CloudformationStackSetInstanceDeploymentTargetsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -300,11 +302,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceTimeouts",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceTimeouts",
 		reflect.TypeOf((*CloudformationStackSetInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetInstanceTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*CloudformationStackSetInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -315,6 +317,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -333,17 +336,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetTimeouts",
+		"hashicorp_aws.cloudformation.CloudformationStackSetTimeouts",
 		reflect.TypeOf((*CloudformationStackSetTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackSetTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackSetTimeoutsOutputReference",
 		reflect.TypeOf((*CloudformationStackSetTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -360,11 +364,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationStackTimeouts",
+		"hashicorp_aws.cloudformation.CloudformationStackTimeouts",
 		reflect.TypeOf((*CloudformationStackTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationStackTimeoutsOutputReference",
 		reflect.TypeOf((*CloudformationStackTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -375,6 +379,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -393,7 +398,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationType",
+		"hashicorp_aws.cloudformation.CloudformationType",
 		reflect.TypeOf((*CloudformationType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -456,21 +461,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationTypeConfig",
+		"hashicorp_aws.cloudformation.CloudformationTypeConfig",
 		reflect.TypeOf((*CloudformationTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.CloudformationTypeLoggingConfig",
+		"hashicorp_aws.cloudformation.CloudformationTypeLoggingConfig",
 		reflect.TypeOf((*CloudformationTypeLoggingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.CloudformationTypeLoggingConfigOutputReference",
+		"hashicorp_aws.cloudformation.CloudformationTypeLoggingConfigOutputReference",
 		reflect.TypeOf((*CloudformationTypeLoggingConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -488,7 +494,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExport",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExport",
 		reflect.TypeOf((*DataAwsCloudformationExport)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -529,11 +535,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationExportConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationExportConfig",
 		reflect.TypeOf((*DataAwsCloudformationExportConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStack",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStack",
 		reflect.TypeOf((*DataAwsCloudformationStack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -584,11 +590,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationStackConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationStackConfig",
 		reflect.TypeOf((*DataAwsCloudformationStackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationType",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationType",
 		reflect.TypeOf((*DataAwsCloudformationType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -647,11 +653,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationTypeConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeConfig",
 		reflect.TypeOf((*DataAwsCloudformationTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudFormation.DataAwsCloudformationTypeLoggingConfig",
+		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeLoggingConfig",
 		reflect.TypeOf((*DataAwsCloudformationTypeLoggingConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

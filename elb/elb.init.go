@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.Alb",
+		"hashicorp_aws.elb.Alb",
 		reflect.TypeOf((*Alb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLogs", GoGetter: "AccessLogs"},
@@ -22,6 +22,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4Pool", GoGetter: "CustomerOwnedIpv4Pool"},
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4PoolInput", GoGetter: "CustomerOwnedIpv4PoolInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationModeInput", GoGetter: "DesyncMitigationModeInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFields", GoGetter: "DropInvalidHeaderFields"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFieldsInput", GoGetter: "DropInvalidHeaderFieldsInput"},
@@ -31,6 +33,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "enableDeletionProtectionInput", GoGetter: "EnableDeletionProtectionInput"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2", GoGetter: "EnableHttp2"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2Input", GoGetter: "EnableHttp2Input"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpen", GoGetter: "EnableWafFailOpen"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpenInput", GoGetter: "EnableWafFailOpenInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -60,10 +64,12 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAccessLogs", GoMethod: "ResetAccessLogs"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCustomerOwnedIpv4Pool", GoMethod: "ResetCustomerOwnedIpv4Pool"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDesyncMitigationMode", GoMethod: "ResetDesyncMitigationMode"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDropInvalidHeaderFields", GoMethod: "ResetDropInvalidHeaderFields"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableCrossZoneLoadBalancing", GoMethod: "ResetEnableCrossZoneLoadBalancing"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDeletionProtection", GoMethod: "ResetEnableDeletionProtection"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableHttp2", GoMethod: "ResetEnableHttp2"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEnableWafFailOpen", GoMethod: "ResetEnableWafFailOpen"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIdleTimeout", GoMethod: "ResetIdleTimeout"},
 			_jsii_.MemberMethod{JsiiMethod: "resetInternal", GoMethod: "ResetInternal"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIpAddressType", GoMethod: "ResetIpAddressType"},
@@ -106,11 +112,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbAccessLogs",
+		"hashicorp_aws.elb.AlbAccessLogs",
 		reflect.TypeOf((*AlbAccessLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbAccessLogsOutputReference",
+		"hashicorp_aws.elb.AlbAccessLogsOutputReference",
 		reflect.TypeOf((*AlbAccessLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -121,6 +127,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -138,11 +145,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbConfig",
+		"hashicorp_aws.elb.AlbConfig",
 		reflect.TypeOf((*AlbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListener",
+		"hashicorp_aws.elb.AlbListener",
 		reflect.TypeOf((*AlbListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -209,7 +216,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerCertificate",
+		"hashicorp_aws.elb.AlbListenerCertificate",
 		reflect.TypeOf((*AlbListenerCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -250,23 +257,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerCertificateConfig",
+		"hashicorp_aws.elb.AlbListenerCertificateConfig",
 		reflect.TypeOf((*AlbListenerCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerConfig",
+		"hashicorp_aws.elb.AlbListenerConfig",
 		reflect.TypeOf((*AlbListenerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultAction",
+		"hashicorp_aws.elb.AlbListenerDefaultAction",
 		reflect.TypeOf((*AlbListenerDefaultAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateCognito",
 		reflect.TypeOf((*AlbListenerDefaultActionAuthenticateCognito)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateCognitoOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionAuthenticateCognitoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -275,6 +282,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -307,11 +315,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateOidc",
 		reflect.TypeOf((*AlbListenerDefaultActionAuthenticateOidc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionAuthenticateOidcOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionAuthenticateOidcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -326,6 +334,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -358,11 +367,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.AlbListenerDefaultActionFixedResponse",
 		reflect.TypeOf((*AlbListenerDefaultActionFixedResponse)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionFixedResponseOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionFixedResponseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentType", GoGetter: "ContentType"},
@@ -371,6 +380,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -390,17 +400,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForward",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForward",
 		reflect.TypeOf((*AlbListenerDefaultActionForward)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionForwardOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -420,11 +431,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardStickiness",
 		reflect.TypeOf((*AlbListenerDefaultActionForwardStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardStickinessOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionForwardStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
@@ -435,6 +446,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -449,15 +461,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.AlbListenerDefaultActionForwardTargetGroup",
 		reflect.TypeOf((*AlbListenerDefaultActionForwardTargetGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.AlbListenerDefaultActionRedirect",
 		reflect.TypeOf((*AlbListenerDefaultActionRedirect)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerDefaultActionRedirectOutputReference",
 		reflect.TypeOf((*AlbListenerDefaultActionRedirectOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -466,6 +478,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -494,7 +507,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRule",
+		"hashicorp_aws.elb.AlbListenerRule",
 		reflect.TypeOf((*AlbListenerRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -547,15 +560,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleAction",
+		"hashicorp_aws.elb.AlbListenerRuleAction",
 		reflect.TypeOf((*AlbListenerRuleAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateCognito",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateCognito",
 		reflect.TypeOf((*AlbListenerRuleActionAuthenticateCognito)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateCognitoOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionAuthenticateCognitoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -564,6 +577,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -596,11 +610,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateOidc",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateOidc",
 		reflect.TypeOf((*AlbListenerRuleActionAuthenticateOidc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionAuthenticateOidcOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionAuthenticateOidcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -615,6 +629,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -647,11 +662,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionFixedResponse",
+		"hashicorp_aws.elb.AlbListenerRuleActionFixedResponse",
 		reflect.TypeOf((*AlbListenerRuleActionFixedResponse)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionFixedResponseOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionFixedResponseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentType", GoGetter: "ContentType"},
@@ -660,6 +675,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -679,17 +695,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForward",
+		"hashicorp_aws.elb.AlbListenerRuleActionForward",
 		reflect.TypeOf((*AlbListenerRuleActionForward)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionForwardOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -709,11 +726,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardStickiness",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardStickiness",
 		reflect.TypeOf((*AlbListenerRuleActionForwardStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardStickinessOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionForwardStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
@@ -724,6 +741,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -738,15 +756,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionForwardTargetGroup",
+		"hashicorp_aws.elb.AlbListenerRuleActionForwardTargetGroup",
 		reflect.TypeOf((*AlbListenerRuleActionForwardTargetGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleActionRedirect",
+		"hashicorp_aws.elb.AlbListenerRuleActionRedirect",
 		reflect.TypeOf((*AlbListenerRuleActionRedirect)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleActionRedirectOutputReference",
 		reflect.TypeOf((*AlbListenerRuleActionRedirectOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -755,6 +773,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -783,21 +802,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleCondition",
+		"hashicorp_aws.elb.AlbListenerRuleCondition",
 		reflect.TypeOf((*AlbListenerRuleCondition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHostHeader",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHostHeader",
 		reflect.TypeOf((*AlbListenerRuleConditionHostHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHostHeaderOutputReference",
 		reflect.TypeOf((*AlbListenerRuleConditionHostHeaderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -813,11 +833,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpHeader",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpHeader",
 		reflect.TypeOf((*AlbListenerRuleConditionHttpHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpHeaderOutputReference",
 		reflect.TypeOf((*AlbListenerRuleConditionHttpHeaderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -826,6 +846,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpHeaderName", GoGetter: "HttpHeaderName"},
 			_jsii_.MemberProperty{JsiiProperty: "httpHeaderNameInput", GoGetter: "HttpHeaderNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -841,17 +862,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpRequestMethod",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpRequestMethod",
 		reflect.TypeOf((*AlbListenerRuleConditionHttpRequestMethod)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionHttpRequestMethodOutputReference",
 		reflect.TypeOf((*AlbListenerRuleConditionHttpRequestMethodOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -867,17 +889,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionPathPattern",
+		"hashicorp_aws.elb.AlbListenerRuleConditionPathPattern",
 		reflect.TypeOf((*AlbListenerRuleConditionPathPattern)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionPathPatternOutputReference",
 		reflect.TypeOf((*AlbListenerRuleConditionPathPatternOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -893,21 +916,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionQueryString",
+		"hashicorp_aws.elb.AlbListenerRuleConditionQueryString",
 		reflect.TypeOf((*AlbListenerRuleConditionQueryString)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionSourceIp",
+		"hashicorp_aws.elb.AlbListenerRuleConditionSourceIp",
 		reflect.TypeOf((*AlbListenerRuleConditionSourceIp)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.AlbListenerRuleConditionSourceIpOutputReference",
 		reflect.TypeOf((*AlbListenerRuleConditionSourceIpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -923,21 +947,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerRuleConfig",
+		"hashicorp_aws.elb.AlbListenerRuleConfig",
 		reflect.TypeOf((*AlbListenerRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbListenerTimeouts",
+		"hashicorp_aws.elb.AlbListenerTimeouts",
 		reflect.TypeOf((*AlbListenerTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbListenerTimeoutsOutputReference",
 		reflect.TypeOf((*AlbListenerTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -954,17 +979,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbSubnetMapping",
+		"hashicorp_aws.elb.AlbSubnetMapping",
 		reflect.TypeOf((*AlbSubnetMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbTargetGroup",
+		"hashicorp_aws.elb.AlbTargetGroup",
 		reflect.TypeOf((*AlbTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "arnSuffix", GoGetter: "ArnSuffix"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTermination", GoGetter: "ConnectionTermination"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTerminationInput", GoGetter: "ConnectionTerminationInput"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
@@ -1005,6 +1032,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putHealthCheck", GoMethod: "PutHealthCheck"},
 			_jsii_.MemberMethod{JsiiMethod: "putStickiness", GoMethod: "PutStickiness"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetConnectionTermination", GoMethod: "ResetConnectionTermination"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDeregistrationDelay", GoMethod: "ResetDeregistrationDelay"},
 			_jsii_.MemberMethod{JsiiMethod: "resetHealthCheck", GoMethod: "ResetHealthCheck"},
 			_jsii_.MemberMethod{JsiiMethod: "resetLambdaMultiValueHeadersEnabled", GoMethod: "ResetLambdaMultiValueHeadersEnabled"},
@@ -1050,7 +1078,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachment",
+		"hashicorp_aws.elb.AlbTargetGroupAttachment",
 		reflect.TypeOf((*AlbTargetGroupAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1097,19 +1125,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbTargetGroupAttachmentConfig",
+		"hashicorp_aws.elb.AlbTargetGroupAttachmentConfig",
 		reflect.TypeOf((*AlbTargetGroupAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbTargetGroupConfig",
+		"hashicorp_aws.elb.AlbTargetGroupConfig",
 		reflect.TypeOf((*AlbTargetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.AlbTargetGroupHealthCheck",
 		reflect.TypeOf((*AlbTargetGroupHealthCheck)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupHealthCheckOutputReference",
 		reflect.TypeOf((*AlbTargetGroupHealthCheckOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -1120,6 +1148,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -1156,11 +1185,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbTargetGroupStickiness",
+		"hashicorp_aws.elb.AlbTargetGroupStickiness",
 		reflect.TypeOf((*AlbTargetGroupStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.AlbTargetGroupStickinessOutputReference",
 		reflect.TypeOf((*AlbTargetGroupStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookieDuration", GoGetter: "CookieDuration"},
@@ -1173,6 +1202,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1191,11 +1221,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AlbTimeouts",
+		"hashicorp_aws.elb.AlbTimeouts",
 		reflect.TypeOf((*AlbTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AlbTimeoutsOutputReference",
+		"hashicorp_aws.elb.AlbTimeoutsOutputReference",
 		reflect.TypeOf((*AlbTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1206,6 +1236,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1224,7 +1255,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicy",
+		"hashicorp_aws.elb.AppCookieStickinessPolicy",
 		reflect.TypeOf((*AppCookieStickinessPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1269,11 +1300,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.AppCookieStickinessPolicyConfig",
+		"hashicorp_aws.elb.AppCookieStickinessPolicyConfig",
 		reflect.TypeOf((*AppCookieStickinessPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlb",
+		"hashicorp_aws.elb.DataAwsAlb",
 		reflect.TypeOf((*DataAwsAlb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accessLogs", GoMethod: "AccessLogs"},
@@ -1285,10 +1316,12 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4Pool", GoGetter: "CustomerOwnedIpv4Pool"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFields", GoGetter: "DropInvalidHeaderFields"},
 			_jsii_.MemberProperty{JsiiProperty: "enableDeletionProtection", GoGetter: "EnableDeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2", GoGetter: "EnableHttp2"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpen", GoGetter: "EnableWafFailOpen"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1333,7 +1366,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbAccessLogs",
+		"hashicorp_aws.elb.DataAwsAlbAccessLogs",
 		reflect.TypeOf((*DataAwsAlbAccessLogs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -1355,11 +1388,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsAlbConfig",
+		"hashicorp_aws.elb.DataAwsAlbConfig",
 		reflect.TypeOf((*DataAwsAlbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListener",
+		"hashicorp_aws.elb.DataAwsAlbListener",
 		reflect.TypeOf((*DataAwsAlbListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1411,11 +1444,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsAlbListenerConfig",
+		"hashicorp_aws.elb.DataAwsAlbListenerConfig",
 		reflect.TypeOf((*DataAwsAlbListenerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultAction",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultAction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticateCognito", GoGetter: "AuthenticateCognito"},
@@ -1442,7 +1475,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateCognito",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionAuthenticateCognito)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -1469,7 +1502,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateOidc",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionAuthenticateOidc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -1499,7 +1532,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionFixedResponse",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionFixedResponse)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1521,7 +1554,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForward",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionForward)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1542,7 +1575,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardStickiness",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionForwardStickiness)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1563,7 +1596,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardTargetGroup",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionForwardTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -1584,7 +1617,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionRedirect",
 		reflect.TypeOf((*DataAwsAlbListenerDefaultActionRedirect)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1609,7 +1642,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsAlbSubnetMapping",
 		reflect.TypeOf((*DataAwsAlbSubnetMapping)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allocationId", GoGetter: "AllocationId"},
@@ -1633,13 +1666,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroup",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroup",
 		reflect.TypeOf((*DataAwsAlbTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "arnSuffix", GoGetter: "ArnSuffix"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTermination", GoGetter: "ConnectionTermination"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
@@ -1691,11 +1725,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupConfig",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupConfig",
 		reflect.TypeOf((*DataAwsAlbTargetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupHealthCheck",
 		reflect.TypeOf((*DataAwsAlbTargetGroupHealthCheck)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1723,7 +1757,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsAlbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsAlbTargetGroupStickiness",
 		reflect.TypeOf((*DataAwsAlbTargetGroupStickiness)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1746,7 +1780,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLb",
+		"hashicorp_aws.elb.DataAwsLb",
 		reflect.TypeOf((*DataAwsLb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accessLogs", GoMethod: "AccessLogs"},
@@ -1758,10 +1792,12 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4Pool", GoGetter: "CustomerOwnedIpv4Pool"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFields", GoGetter: "DropInvalidHeaderFields"},
 			_jsii_.MemberProperty{JsiiProperty: "enableDeletionProtection", GoGetter: "EnableDeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2", GoGetter: "EnableHttp2"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpen", GoGetter: "EnableWafFailOpen"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1806,7 +1842,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbAccessLogs",
+		"hashicorp_aws.elb.DataAwsLbAccessLogs",
 		reflect.TypeOf((*DataAwsLbAccessLogs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -1828,11 +1864,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsLbConfig",
+		"hashicorp_aws.elb.DataAwsLbConfig",
 		reflect.TypeOf((*DataAwsLbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListener",
+		"hashicorp_aws.elb.DataAwsLbListener",
 		reflect.TypeOf((*DataAwsLbListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1884,11 +1920,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsLbListenerConfig",
+		"hashicorp_aws.elb.DataAwsLbListenerConfig",
 		reflect.TypeOf((*DataAwsLbListenerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultAction",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultAction",
 		reflect.TypeOf((*DataAwsLbListenerDefaultAction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticateCognito", GoGetter: "AuthenticateCognito"},
@@ -1915,7 +1951,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateCognito",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionAuthenticateCognito)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -1942,7 +1978,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateOidc",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionAuthenticateOidc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -1972,7 +2008,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionFixedResponse",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionFixedResponse)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1994,7 +2030,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForward",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForward",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionForward)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2015,7 +2051,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardStickiness",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionForwardStickiness)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2036,7 +2072,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardTargetGroup",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionForwardTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -2057,7 +2093,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionRedirect",
 		reflect.TypeOf((*DataAwsLbListenerDefaultActionRedirect)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2082,7 +2118,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbSubnetMapping",
+		"hashicorp_aws.elb.DataAwsLbSubnetMapping",
 		reflect.TypeOf((*DataAwsLbSubnetMapping)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allocationId", GoGetter: "AllocationId"},
@@ -2106,13 +2142,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroup",
+		"hashicorp_aws.elb.DataAwsLbTargetGroup",
 		reflect.TypeOf((*DataAwsLbTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "arnSuffix", GoGetter: "ArnSuffix"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTermination", GoGetter: "ConnectionTermination"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
@@ -2164,11 +2201,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupConfig",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupConfig",
 		reflect.TypeOf((*DataAwsLbTargetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupHealthCheck",
 		reflect.TypeOf((*DataAwsLbTargetGroupHealthCheck)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2196,7 +2233,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.DataAwsLbTargetGroupStickiness",
+		"hashicorp_aws.elb.DataAwsLbTargetGroupStickiness",
 		reflect.TypeOf((*DataAwsLbTargetGroupStickiness)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -2219,7 +2256,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.Lb",
+		"hashicorp_aws.elb.Lb",
 		reflect.TypeOf((*Lb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLogs", GoGetter: "AccessLogs"},
@@ -2233,6 +2270,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4Pool", GoGetter: "CustomerOwnedIpv4Pool"},
 			_jsii_.MemberProperty{JsiiProperty: "customerOwnedIpv4PoolInput", GoGetter: "CustomerOwnedIpv4PoolInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationMode", GoGetter: "DesyncMitigationMode"},
+			_jsii_.MemberProperty{JsiiProperty: "desyncMitigationModeInput", GoGetter: "DesyncMitigationModeInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dnsName", GoGetter: "DnsName"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFields", GoGetter: "DropInvalidHeaderFields"},
 			_jsii_.MemberProperty{JsiiProperty: "dropInvalidHeaderFieldsInput", GoGetter: "DropInvalidHeaderFieldsInput"},
@@ -2242,6 +2281,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "enableDeletionProtectionInput", GoGetter: "EnableDeletionProtectionInput"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2", GoGetter: "EnableHttp2"},
 			_jsii_.MemberProperty{JsiiProperty: "enableHttp2Input", GoGetter: "EnableHttp2Input"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpen", GoGetter: "EnableWafFailOpen"},
+			_jsii_.MemberProperty{JsiiProperty: "enableWafFailOpenInput", GoGetter: "EnableWafFailOpenInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2271,10 +2312,12 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAccessLogs", GoMethod: "ResetAccessLogs"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCustomerOwnedIpv4Pool", GoMethod: "ResetCustomerOwnedIpv4Pool"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDesyncMitigationMode", GoMethod: "ResetDesyncMitigationMode"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDropInvalidHeaderFields", GoMethod: "ResetDropInvalidHeaderFields"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableCrossZoneLoadBalancing", GoMethod: "ResetEnableCrossZoneLoadBalancing"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDeletionProtection", GoMethod: "ResetEnableDeletionProtection"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableHttp2", GoMethod: "ResetEnableHttp2"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEnableWafFailOpen", GoMethod: "ResetEnableWafFailOpen"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIdleTimeout", GoMethod: "ResetIdleTimeout"},
 			_jsii_.MemberMethod{JsiiMethod: "resetInternal", GoMethod: "ResetInternal"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIpAddressType", GoMethod: "ResetIpAddressType"},
@@ -2317,11 +2360,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbAccessLogs",
+		"hashicorp_aws.elb.LbAccessLogs",
 		reflect.TypeOf((*LbAccessLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbAccessLogsOutputReference",
+		"hashicorp_aws.elb.LbAccessLogsOutputReference",
 		reflect.TypeOf((*LbAccessLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -2332,6 +2375,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2349,11 +2393,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbConfig",
+		"hashicorp_aws.elb.LbConfig",
 		reflect.TypeOf((*LbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicy",
+		"hashicorp_aws.elb.LbCookieStickinessPolicy",
 		reflect.TypeOf((*LbCookieStickinessPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2399,11 +2443,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbCookieStickinessPolicyConfig",
+		"hashicorp_aws.elb.LbCookieStickinessPolicyConfig",
 		reflect.TypeOf((*LbCookieStickinessPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListener",
+		"hashicorp_aws.elb.LbListener",
 		reflect.TypeOf((*LbListener)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2470,7 +2514,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerCertificate",
+		"hashicorp_aws.elb.LbListenerCertificate",
 		reflect.TypeOf((*LbListenerCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2511,23 +2555,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerCertificateConfig",
+		"hashicorp_aws.elb.LbListenerCertificateConfig",
 		reflect.TypeOf((*LbListenerCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerConfig",
+		"hashicorp_aws.elb.LbListenerConfig",
 		reflect.TypeOf((*LbListenerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultAction",
+		"hashicorp_aws.elb.LbListenerDefaultAction",
 		reflect.TypeOf((*LbListenerDefaultAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateCognito",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateCognito",
 		reflect.TypeOf((*LbListenerDefaultActionAuthenticateCognito)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateCognitoOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionAuthenticateCognitoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -2536,6 +2580,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2568,11 +2613,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateOidc",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateOidc",
 		reflect.TypeOf((*LbListenerDefaultActionAuthenticateOidc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionAuthenticateOidcOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionAuthenticateOidcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -2587,6 +2632,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2619,11 +2665,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionFixedResponse",
+		"hashicorp_aws.elb.LbListenerDefaultActionFixedResponse",
 		reflect.TypeOf((*LbListenerDefaultActionFixedResponse)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionFixedResponseOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionFixedResponseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentType", GoGetter: "ContentType"},
@@ -2632,6 +2678,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2651,17 +2698,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForward",
+		"hashicorp_aws.elb.LbListenerDefaultActionForward",
 		reflect.TypeOf((*LbListenerDefaultActionForward)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionForwardOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2681,11 +2729,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardStickiness",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardStickiness",
 		reflect.TypeOf((*LbListenerDefaultActionForwardStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardStickinessOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionForwardStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
@@ -2696,6 +2744,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2710,15 +2759,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionForwardTargetGroup",
+		"hashicorp_aws.elb.LbListenerDefaultActionForwardTargetGroup",
 		reflect.TypeOf((*LbListenerDefaultActionForwardTargetGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerDefaultActionRedirect",
+		"hashicorp_aws.elb.LbListenerDefaultActionRedirect",
 		reflect.TypeOf((*LbListenerDefaultActionRedirect)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerDefaultActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerDefaultActionRedirectOutputReference",
 		reflect.TypeOf((*LbListenerDefaultActionRedirectOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2727,6 +2776,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2755,7 +2805,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRule",
+		"hashicorp_aws.elb.LbListenerRule",
 		reflect.TypeOf((*LbListenerRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -2808,15 +2858,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleAction",
+		"hashicorp_aws.elb.LbListenerRuleAction",
 		reflect.TypeOf((*LbListenerRuleAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateCognito",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateCognito",
 		reflect.TypeOf((*LbListenerRuleActionAuthenticateCognito)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateCognitoOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateCognitoOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionAuthenticateCognitoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -2825,6 +2875,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2857,11 +2908,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateOidc",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateOidc",
 		reflect.TypeOf((*LbListenerRuleActionAuthenticateOidc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionAuthenticateOidcOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionAuthenticateOidcOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionAuthenticateOidcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationRequestExtraParams", GoGetter: "AuthenticationRequestExtraParams"},
@@ -2876,6 +2927,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2908,11 +2960,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionFixedResponse",
+		"hashicorp_aws.elb.LbListenerRuleActionFixedResponse",
 		reflect.TypeOf((*LbListenerRuleActionFixedResponse)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionFixedResponseOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionFixedResponseOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionFixedResponseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "contentType", GoGetter: "ContentType"},
@@ -2921,6 +2973,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2940,17 +2993,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionForward",
+		"hashicorp_aws.elb.LbListenerRuleActionForward",
 		reflect.TypeOf((*LbListenerRuleActionForward)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionForwardOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2970,11 +3024,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardStickiness",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardStickiness",
 		reflect.TypeOf((*LbListenerRuleActionForwardStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardStickinessOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardStickinessOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionForwardStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
@@ -2985,6 +3039,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2999,15 +3054,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionForwardTargetGroup",
+		"hashicorp_aws.elb.LbListenerRuleActionForwardTargetGroup",
 		reflect.TypeOf((*LbListenerRuleActionForwardTargetGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleActionRedirect",
+		"hashicorp_aws.elb.LbListenerRuleActionRedirect",
 		reflect.TypeOf((*LbListenerRuleActionRedirect)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleActionRedirectOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleActionRedirectOutputReference",
 		reflect.TypeOf((*LbListenerRuleActionRedirectOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -3016,6 +3071,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3044,21 +3100,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleCondition",
+		"hashicorp_aws.elb.LbListenerRuleCondition",
 		reflect.TypeOf((*LbListenerRuleCondition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHostHeader",
+		"hashicorp_aws.elb.LbListenerRuleConditionHostHeader",
 		reflect.TypeOf((*LbListenerRuleConditionHostHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHostHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHostHeaderOutputReference",
 		reflect.TypeOf((*LbListenerRuleConditionHostHeaderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3074,11 +3131,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpHeader",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpHeader",
 		reflect.TypeOf((*LbListenerRuleConditionHttpHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpHeaderOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpHeaderOutputReference",
 		reflect.TypeOf((*LbListenerRuleConditionHttpHeaderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -3087,6 +3144,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpHeaderName", GoGetter: "HttpHeaderName"},
 			_jsii_.MemberProperty{JsiiProperty: "httpHeaderNameInput", GoGetter: "HttpHeaderNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3102,17 +3160,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpRequestMethod",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpRequestMethod",
 		reflect.TypeOf((*LbListenerRuleConditionHttpRequestMethod)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleConditionHttpRequestMethodOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionHttpRequestMethodOutputReference",
 		reflect.TypeOf((*LbListenerRuleConditionHttpRequestMethodOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3128,17 +3187,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionPathPattern",
+		"hashicorp_aws.elb.LbListenerRuleConditionPathPattern",
 		reflect.TypeOf((*LbListenerRuleConditionPathPattern)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleConditionPathPatternOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionPathPatternOutputReference",
 		reflect.TypeOf((*LbListenerRuleConditionPathPatternOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3154,21 +3214,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionQueryString",
+		"hashicorp_aws.elb.LbListenerRuleConditionQueryString",
 		reflect.TypeOf((*LbListenerRuleConditionQueryString)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConditionSourceIp",
+		"hashicorp_aws.elb.LbListenerRuleConditionSourceIp",
 		reflect.TypeOf((*LbListenerRuleConditionSourceIp)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerRuleConditionSourceIpOutputReference",
+		"hashicorp_aws.elb.LbListenerRuleConditionSourceIpOutputReference",
 		reflect.TypeOf((*LbListenerRuleConditionSourceIpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3184,21 +3245,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerRuleConfig",
+		"hashicorp_aws.elb.LbListenerRuleConfig",
 		reflect.TypeOf((*LbListenerRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbListenerTimeouts",
+		"hashicorp_aws.elb.LbListenerTimeouts",
 		reflect.TypeOf((*LbListenerTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbListenerTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbListenerTimeoutsOutputReference",
 		reflect.TypeOf((*LbListenerTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3215,7 +3277,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicy",
+		"hashicorp_aws.elb.LbSslNegotiationPolicy",
 		reflect.TypeOf((*LbSslNegotiationPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3261,25 +3323,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicyAttribute",
+		"hashicorp_aws.elb.LbSslNegotiationPolicyAttribute",
 		reflect.TypeOf((*LbSslNegotiationPolicyAttribute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbSslNegotiationPolicyConfig",
+		"hashicorp_aws.elb.LbSslNegotiationPolicyConfig",
 		reflect.TypeOf((*LbSslNegotiationPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbSubnetMapping",
+		"hashicorp_aws.elb.LbSubnetMapping",
 		reflect.TypeOf((*LbSubnetMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbTargetGroup",
+		"hashicorp_aws.elb.LbTargetGroup",
 		reflect.TypeOf((*LbTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "arnSuffix", GoGetter: "ArnSuffix"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTermination", GoGetter: "ConnectionTermination"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionTerminationInput", GoGetter: "ConnectionTerminationInput"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
@@ -3320,6 +3384,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putHealthCheck", GoMethod: "PutHealthCheck"},
 			_jsii_.MemberMethod{JsiiMethod: "putStickiness", GoMethod: "PutStickiness"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetConnectionTermination", GoMethod: "ResetConnectionTermination"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDeregistrationDelay", GoMethod: "ResetDeregistrationDelay"},
 			_jsii_.MemberMethod{JsiiMethod: "resetHealthCheck", GoMethod: "ResetHealthCheck"},
 			_jsii_.MemberMethod{JsiiMethod: "resetLambdaMultiValueHeadersEnabled", GoMethod: "ResetLambdaMultiValueHeadersEnabled"},
@@ -3365,7 +3430,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbTargetGroupAttachment",
+		"hashicorp_aws.elb.LbTargetGroupAttachment",
 		reflect.TypeOf((*LbTargetGroupAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3412,19 +3477,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbTargetGroupAttachmentConfig",
+		"hashicorp_aws.elb.LbTargetGroupAttachmentConfig",
 		reflect.TypeOf((*LbTargetGroupAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbTargetGroupConfig",
+		"hashicorp_aws.elb.LbTargetGroupConfig",
 		reflect.TypeOf((*LbTargetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbTargetGroupHealthCheck",
+		"hashicorp_aws.elb.LbTargetGroupHealthCheck",
 		reflect.TypeOf((*LbTargetGroupHealthCheck)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbTargetGroupHealthCheckOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupHealthCheckOutputReference",
 		reflect.TypeOf((*LbTargetGroupHealthCheckOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -3435,6 +3500,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -3471,11 +3537,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbTargetGroupStickiness",
+		"hashicorp_aws.elb.LbTargetGroupStickiness",
 		reflect.TypeOf((*LbTargetGroupStickiness)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbTargetGroupStickinessOutputReference",
+		"hashicorp_aws.elb.LbTargetGroupStickinessOutputReference",
 		reflect.TypeOf((*LbTargetGroupStickinessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cookieDuration", GoGetter: "CookieDuration"},
@@ -3488,6 +3554,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3506,11 +3573,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LbTimeouts",
+		"hashicorp_aws.elb.LbTimeouts",
 		reflect.TypeOf((*LbTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LbTimeoutsOutputReference",
+		"hashicorp_aws.elb.LbTimeoutsOutputReference",
 		reflect.TypeOf((*LbTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3521,6 +3588,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3539,7 +3607,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicy",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicy",
 		reflect.TypeOf((*LoadBalancerBackendServerPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3583,11 +3651,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LoadBalancerBackendServerPolicyConfig",
+		"hashicorp_aws.elb.LoadBalancerBackendServerPolicyConfig",
 		reflect.TypeOf((*LoadBalancerBackendServerPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicy",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicy",
 		reflect.TypeOf((*LoadBalancerListenerPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3631,11 +3699,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LoadBalancerListenerPolicyConfig",
+		"hashicorp_aws.elb.LoadBalancerListenerPolicyConfig",
 		reflect.TypeOf((*LoadBalancerListenerPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.LoadBalancerPolicy",
+		"hashicorp_aws.elb.LoadBalancerPolicy",
 		reflect.TypeOf((*LoadBalancerPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3681,15 +3749,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LoadBalancerPolicyConfig",
+		"hashicorp_aws.elb.LoadBalancerPolicyConfig",
 		reflect.TypeOf((*LoadBalancerPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.LoadBalancerPolicyPolicyAttribute",
+		"hashicorp_aws.elb.LoadBalancerPolicyPolicyAttribute",
 		reflect.TypeOf((*LoadBalancerPolicyPolicyAttribute)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ELB.ProxyProtocolPolicy",
+		"hashicorp_aws.elb.ProxyProtocolPolicy",
 		reflect.TypeOf((*ProxyProtocolPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3730,7 +3798,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ELB.ProxyProtocolPolicyConfig",
+		"hashicorp_aws.elb.ProxyProtocolPolicyConfig",
 		reflect.TypeOf((*ProxyProtocolPolicyConfig)(nil)).Elem(),
 	)
 }

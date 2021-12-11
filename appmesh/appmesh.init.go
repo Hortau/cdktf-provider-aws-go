@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRoute",
 		reflect.TypeOf((*AppmeshGatewayRoute)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -67,29 +67,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteConfig",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteConfig",
 		reflect.TypeOf((*AppmeshGatewayRouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpec",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpec",
 		reflect.TypeOf((*AppmeshGatewayRouteSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRoute",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteAction",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteAction",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -106,17 +107,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTarget",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTarget",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteActionTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -133,17 +135,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -159,17 +162,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteMatch",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteMatch",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -185,7 +189,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecGrpcRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -194,6 +198,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -211,21 +216,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2Route",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2Route",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2Route)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteAction",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteAction",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -242,17 +248,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTarget",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTarget",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteActionTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -269,17 +276,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -295,17 +303,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteMatch",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteMatch",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -321,7 +330,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttp2RouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -330,6 +339,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -347,21 +357,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRoute",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteAction",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteAction",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -378,17 +389,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTarget",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTarget",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteActionTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -405,17 +417,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -431,17 +444,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteMatch",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteMatch",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -457,7 +471,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecHttpRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -466,6 +480,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -483,7 +498,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecOutputReference",
 		reflect.TypeOf((*AppmeshGatewayRouteSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -496,6 +511,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "http2RouteInput", GoGetter: "Http2RouteInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRoute", GoGetter: "HttpRoute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRouteInput", GoGetter: "HttpRouteInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -515,7 +531,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshMesh",
+		"hashicorp_aws.appmesh.AppmeshMesh",
 		reflect.TypeOf((*AppmeshMesh)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -569,25 +585,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshMeshConfig",
+		"hashicorp_aws.appmesh.AppmeshMeshConfig",
 		reflect.TypeOf((*AppmeshMeshConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpec",
+		"hashicorp_aws.appmesh.AppmeshMeshSpec",
 		reflect.TypeOf((*AppmeshMeshSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecEgressFilter",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecEgressFilter",
 		reflect.TypeOf((*AppmeshMeshSpecEgressFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecEgressFilterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecEgressFilterOutputReference",
 		reflect.TypeOf((*AppmeshMeshSpecEgressFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -604,7 +621,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecOutputReference",
 		reflect.TypeOf((*AppmeshMeshSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "egressFilter", GoGetter: "EgressFilter"},
@@ -613,6 +630,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -628,7 +646,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRoute",
+		"hashicorp_aws.appmesh.AppmeshRoute",
 		reflect.TypeOf((*AppmeshRoute)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -687,29 +705,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteConfig",
+		"hashicorp_aws.appmesh.AppmeshRouteConfig",
 		reflect.TypeOf((*AppmeshRouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpec",
+		"hashicorp_aws.appmesh.AppmeshRouteSpec",
 		reflect.TypeOf((*AppmeshRouteSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRoute",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRoute",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteAction",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteAction",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -725,23 +744,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteActionWeightedTarget",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteActionWeightedTarget",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteActionWeightedTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatch",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadata",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadata",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchMetadata)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatch",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchMetadataMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -750,6 +769,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -777,11 +797,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "end", GoGetter: "End"},
@@ -790,6 +810,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -805,13 +826,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -837,7 +859,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -846,6 +868,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -872,11 +895,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicy",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicy",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteRetryPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -887,6 +910,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "grpcRetryEventsInput", GoGetter: "GrpcRetryEventsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEvents", GoGetter: "HttpRetryEvents"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEventsInput", GoGetter: "HttpRetryEventsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -910,17 +934,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -938,21 +963,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutIdle",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutIdle",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeoutIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -970,7 +996,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -979,6 +1005,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -998,17 +1025,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequest",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequest",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeoutPerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1026,21 +1054,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2Route",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2Route",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2Route)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteAction",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteAction",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1056,23 +1085,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteActionWeightedTarget",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteActionWeightedTarget",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteActionWeightedTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatch",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeader",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeader",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatch",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchHeaderMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -1081,6 +1110,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1108,11 +1138,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "end", GoGetter: "End"},
@@ -1121,6 +1151,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1136,7 +1167,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1145,6 +1176,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "header", GoGetter: "Header"},
 			_jsii_.MemberProperty{JsiiProperty: "headerInput", GoGetter: "HeaderInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1167,7 +1199,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -1176,6 +1208,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1201,11 +1234,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicy",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicy",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteRetryPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1214,6 +1247,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEvents", GoGetter: "HttpRetryEvents"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEventsInput", GoGetter: "HttpRetryEventsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1236,17 +1270,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1264,21 +1299,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutIdle",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutIdle",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeoutIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1296,7 +1332,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1305,6 +1341,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1324,17 +1361,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequest",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequest",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeoutPerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1352,21 +1390,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRoute",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRoute",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteAction",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteAction",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteActionOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1382,23 +1421,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteActionWeightedTarget",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteActionWeightedTarget",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteActionWeightedTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatch",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeader",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeader",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatch",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatch",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchHeaderMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -1407,6 +1446,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1434,11 +1474,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRange",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRange",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchHeaderMatchRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "end", GoGetter: "End"},
@@ -1447,6 +1487,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1462,7 +1503,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1471,6 +1512,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "header", GoGetter: "Header"},
 			_jsii_.MemberProperty{JsiiProperty: "headerInput", GoGetter: "HeaderInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1493,7 +1535,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -1502,6 +1544,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1527,11 +1570,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicy",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicy",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteRetryPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteRetryPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1540,6 +1583,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEvents", GoGetter: "HttpRetryEvents"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRetryEventsInput", GoGetter: "HttpRetryEventsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1562,17 +1606,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1590,21 +1635,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutIdle",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutIdle",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeoutIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1622,7 +1668,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1631,6 +1677,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1650,17 +1697,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutPerRequest",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutPerRequest",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeoutPerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1678,7 +1726,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1691,6 +1739,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "http2RouteInput", GoGetter: "Http2RouteInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRoute", GoGetter: "HttpRoute"},
 			_jsii_.MemberProperty{JsiiProperty: "httpRouteInput", GoGetter: "HttpRouteInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1717,21 +1766,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRoute",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRoute",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteAction",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteAction",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteActionOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1747,11 +1797,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteActionWeightedTarget",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteActionWeightedTarget",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteActionWeightedTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -1760,6 +1810,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1778,21 +1829,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeout",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeout",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutIdle",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutIdle",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteTimeoutIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1810,7 +1862,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshRouteSpecTcpRouteTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1819,6 +1871,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1834,7 +1887,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGateway",
+		"hashicorp_aws.appmesh.AppmeshVirtualGateway",
 		reflect.TypeOf((*AppmeshVirtualGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1891,29 +1944,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewayConfig",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewayConfig",
 		reflect.TypeOf((*AppmeshVirtualGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpec",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpec",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaults",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaults",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaults)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1931,19 +1985,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -1952,6 +2006,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1967,7 +2022,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -1976,6 +2031,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1995,17 +2051,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2021,7 +2078,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -2032,6 +2089,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2054,17 +2112,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2085,15 +2144,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -2102,6 +2161,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2115,13 +2175,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2138,15 +2199,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateAuthorityArns", GoGetter: "CertificateAuthorityArns"},
@@ -2155,6 +2216,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2168,11 +2230,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -2181,6 +2243,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2194,7 +2257,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acm", GoGetter: "Acm"},
@@ -2205,6 +2268,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2226,17 +2290,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2252,7 +2317,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecBackendDefaultsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientPolicy", GoGetter: "ClientPolicy"},
@@ -2261,6 +2326,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2276,25 +2342,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListener",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListener",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListener)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPool",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPool",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPool)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2310,21 +2377,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolHttp)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2340,13 +2408,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2365,7 +2434,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2378,6 +2447,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "http2", GoGetter: "Http2"},
 			_jsii_.MemberProperty{JsiiProperty: "http2Input", GoGetter: "Http2Input"},
 			_jsii_.MemberProperty{JsiiProperty: "httpInput", GoGetter: "HttpInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2397,11 +2467,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerHealthCheck",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerHealthCheck",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerHealthCheck)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2410,6 +2480,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "intervalMillis", GoGetter: "IntervalMillis"},
@@ -2437,7 +2508,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "connectionPool", GoGetter: "ConnectionPool"},
@@ -2448,6 +2519,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthCheck", GoGetter: "HealthCheck"},
 			_jsii_.MemberProperty{JsiiProperty: "healthCheckInput", GoGetter: "HealthCheckInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2472,17 +2544,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerPortMapping",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerPortMapping",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerPortMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerPortMappingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2500,19 +2573,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTls",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTls",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificate",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificate",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcm",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcm",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateAcm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateArn", GoGetter: "CertificateArn"},
@@ -2521,6 +2594,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2534,11 +2608,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFile",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -2547,6 +2621,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2562,7 +2637,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acm", GoGetter: "Acm"},
@@ -2573,6 +2648,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2594,17 +2670,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSds",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2620,7 +2697,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -2629,6 +2706,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2649,17 +2727,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidation",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidation",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2680,15 +2759,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -2697,6 +2776,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2710,13 +2790,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2733,15 +2814,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrust",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrust",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrust)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -2750,6 +2831,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2763,7 +2845,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -2772,6 +2854,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2791,17 +2874,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2817,25 +2901,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLogging",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLogging",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLogging)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLog",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLog",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLoggingAccessLog)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogFile",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLoggingAccessLogFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2851,7 +2936,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -2860,6 +2945,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2875,7 +2961,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecLoggingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLog", GoGetter: "AccessLog"},
@@ -2884,6 +2970,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2899,7 +2986,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecOutputReference",
 		reflect.TypeOf((*AppmeshVirtualGatewaySpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "backendDefaults", GoGetter: "BackendDefaults"},
@@ -2908,6 +2995,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2930,7 +3018,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualNode",
 		reflect.TypeOf((*AppmeshVirtualNode)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2987,33 +3075,34 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeConfig",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeConfig",
 		reflect.TypeOf((*AppmeshVirtualNodeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpec",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpec",
 		reflect.TypeOf((*AppmeshVirtualNodeSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackend",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackend",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackend)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaults",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaults",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaults)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicy",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicy",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3031,19 +3120,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -3052,6 +3141,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3067,7 +3157,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -3076,6 +3166,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3095,17 +3186,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3121,7 +3213,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -3132,6 +3224,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3154,17 +3247,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3185,15 +3279,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -3202,6 +3296,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3215,13 +3310,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3238,15 +3334,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateAuthorityArns", GoGetter: "CertificateAuthorityArns"},
@@ -3255,6 +3351,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3268,11 +3365,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -3281,6 +3378,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3294,7 +3392,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acm", GoGetter: "Acm"},
@@ -3305,6 +3403,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3326,17 +3425,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3352,7 +3452,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendDefaultsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientPolicy", GoGetter: "ClientPolicy"},
@@ -3361,6 +3461,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3376,21 +3477,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualService",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualService)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3408,19 +3510,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -3429,6 +3531,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3444,7 +3547,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -3453,6 +3556,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3472,17 +3576,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3498,7 +3603,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -3509,6 +3614,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3531,17 +3637,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3562,15 +3669,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -3579,6 +3686,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3592,13 +3700,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3615,15 +3724,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateAuthorityArns", GoGetter: "CertificateAuthorityArns"},
@@ -3632,6 +3741,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3645,11 +3755,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -3658,6 +3768,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3671,7 +3782,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acm", GoGetter: "Acm"},
@@ -3682,6 +3793,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3703,17 +3815,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3729,7 +3842,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientPolicy", GoGetter: "ClientPolicy"},
@@ -3738,6 +3851,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3755,25 +3869,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListener",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListener",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListener)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPool",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPool",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPool)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpc",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpc",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolGrpc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3789,21 +3904,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolHttp)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolHttp2)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3819,13 +3935,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3844,7 +3961,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -3857,6 +3974,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "http2", GoGetter: "Http2"},
 			_jsii_.MemberProperty{JsiiProperty: "http2Input", GoGetter: "Http2Input"},
 			_jsii_.MemberProperty{JsiiProperty: "httpInput", GoGetter: "HttpInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3880,17 +3998,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcp",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcp",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolTcp)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3906,11 +4025,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerHealthCheck",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerHealthCheck",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerHealthCheck)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerHealthCheckOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -3919,6 +4038,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "intervalMillis", GoGetter: "IntervalMillis"},
@@ -3946,21 +4066,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetection",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetection",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetection)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3978,17 +4099,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionInterval",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionInterval",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetectionInterval)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4006,7 +4128,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "baseEjectionDuration", GoGetter: "BaseEjectionDuration"},
@@ -4015,6 +4137,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -4036,7 +4159,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "connectionPool", GoGetter: "ConnectionPool"},
@@ -4047,6 +4170,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthCheck", GoGetter: "HealthCheck"},
 			_jsii_.MemberProperty{JsiiProperty: "healthCheckInput", GoGetter: "HealthCheckInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4079,17 +4203,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerPortMapping",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerPortMapping",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerPortMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerPortMappingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4107,25 +4232,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeout",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeout",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeout)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpc",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpc",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpc)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4143,7 +4269,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4152,6 +4278,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4171,17 +4298,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4199,25 +4327,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4235,7 +4364,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4244,6 +4373,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4263,17 +4393,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4291,17 +4422,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdle",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdle",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttpIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4319,7 +4451,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4328,6 +4460,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4347,17 +4480,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4375,7 +4509,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4388,6 +4522,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "http2", GoGetter: "Http2"},
 			_jsii_.MemberProperty{JsiiProperty: "http2Input", GoGetter: "Http2Input"},
 			_jsii_.MemberProperty{JsiiProperty: "httpInput", GoGetter: "HttpInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4411,21 +4546,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcp",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcp",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutTcp)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdle",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdle",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutTcpIdle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4443,7 +4579,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4452,6 +4588,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idle", GoGetter: "Idle"},
 			_jsii_.MemberProperty{JsiiProperty: "idleInput", GoGetter: "IdleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4467,19 +4604,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTls",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTls",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificate",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificate",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificate)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcm",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcm",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateAcm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateArn", GoGetter: "CertificateArn"},
@@ -4488,6 +4625,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4501,11 +4639,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -4514,6 +4652,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4529,7 +4668,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acm", GoGetter: "Acm"},
@@ -4540,6 +4679,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4561,17 +4701,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4587,7 +4728,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificate", GoGetter: "Certificate"},
@@ -4596,6 +4737,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4616,17 +4758,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidation",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidation",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4647,15 +4790,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "exact", GoGetter: "Exact"},
@@ -4664,6 +4807,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4677,13 +4821,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4700,15 +4845,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrust",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrust",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrust)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrustFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateChain", GoGetter: "CertificateChain"},
@@ -4717,6 +4862,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4730,7 +4876,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -4739,6 +4885,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4758,17 +4905,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSds",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSds",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrustSds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4784,25 +4932,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLogging",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLogging",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLogging)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLog",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLog",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLoggingAccessLog)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogFile",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogFile",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLoggingAccessLogFile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4818,7 +4967,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLoggingAccessLogOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "file", GoGetter: "File"},
@@ -4827,6 +4976,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4842,7 +4992,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecLoggingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLog", GoGetter: "AccessLog"},
@@ -4851,6 +5001,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4866,7 +5017,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "backend", GoGetter: "Backend"},
@@ -4877,6 +5028,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4905,15 +5057,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscovery",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscovery",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscovery)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attributes", GoGetter: "Attributes"},
@@ -4922,6 +5074,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4940,11 +5093,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryDns",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryDns",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscoveryDns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -4953,6 +5106,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "hostname", GoGetter: "Hostname"},
 			_jsii_.MemberProperty{JsiiProperty: "hostnameInput", GoGetter: "HostnameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4966,7 +5120,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
 		reflect.TypeOf((*AppmeshVirtualNodeSpecServiceDiscoveryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsCloudMap", GoGetter: "AwsCloudMap"},
@@ -4977,6 +5131,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4994,7 +5149,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouter",
 		reflect.TypeOf((*AppmeshVirtualRouter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -5051,25 +5206,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterConfig",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterConfig",
 		reflect.TypeOf((*AppmeshVirtualRouterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpec",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpec",
 		reflect.TypeOf((*AppmeshVirtualRouterSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListener",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListener",
 		reflect.TypeOf((*AppmeshVirtualRouterSpecListener)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerOutputReference",
 		reflect.TypeOf((*AppmeshVirtualRouterSpecListenerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5086,17 +5242,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerPortMapping",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerPortMapping",
 		reflect.TypeOf((*AppmeshVirtualRouterSpecListenerPortMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
 		reflect.TypeOf((*AppmeshVirtualRouterSpecListenerPortMappingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5114,13 +5271,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecOutputReference",
 		reflect.TypeOf((*AppmeshVirtualRouterSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5137,7 +5295,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualService",
 		reflect.TypeOf((*AppmeshVirtualService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -5194,21 +5352,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceConfig",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceConfig",
 		reflect.TypeOf((*AppmeshVirtualServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpec",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpec",
 		reflect.TypeOf((*AppmeshVirtualServiceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecOutputReference",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5226,17 +5385,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProvider",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProvider",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProvider)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderOutputReference",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProviderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5258,17 +5418,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualNode",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProviderVirtualNode)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5284,17 +5445,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualRouter",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProviderVirtualRouter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
 		reflect.TypeOf((*AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -5310,7 +5472,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMesh",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMesh",
 		reflect.TypeOf((*DataAwsAppmeshMesh)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -5360,11 +5522,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshConfig",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshConfig",
 		reflect.TypeOf((*DataAwsAppmeshMeshConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpec",
 		reflect.TypeOf((*DataAwsAppmeshMeshSpec)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -5384,7 +5546,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpecEgressFilter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpecEgressFilter",
 		reflect.TypeOf((*DataAwsAppmeshMeshSpecEgressFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -5404,7 +5566,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualService",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualService",
 		reflect.TypeOf((*DataAwsAppmeshVirtualService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -5456,11 +5618,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceConfig",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceConfig",
 		reflect.TypeOf((*DataAwsAppmeshVirtualServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpec",
 		reflect.TypeOf((*DataAwsAppmeshVirtualServiceSpec)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -5480,7 +5642,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProvider",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProvider",
 		reflect.TypeOf((*DataAwsAppmeshVirtualServiceSpecProvider)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -5501,7 +5663,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
 		reflect.TypeOf((*DataAwsAppmeshVirtualServiceSpecProviderVirtualNode)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -5521,7 +5683,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
 		reflect.TypeOf((*DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

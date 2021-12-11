@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigAggregateAuthorization",
+		"hashicorp_aws.config.ConfigAggregateAuthorization",
 		reflect.TypeOf((*ConfigAggregateAuthorization)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigAggregateAuthorizationConfig",
+		"hashicorp_aws.config.ConfigAggregateAuthorizationConfig",
 		reflect.TypeOf((*ConfigAggregateAuthorizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigRule",
+		"hashicorp_aws.config.ConfigConfigRule",
 		reflect.TypeOf((*ConfigConfigRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -123,15 +123,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigRuleConfig",
+		"hashicorp_aws.config.ConfigConfigRuleConfig",
 		reflect.TypeOf((*ConfigConfigRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigRuleScope",
+		"hashicorp_aws.config.ConfigConfigRuleScope",
 		reflect.TypeOf((*ConfigConfigRuleScope)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigRuleScopeOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleScopeOutputReference",
 		reflect.TypeOf((*ConfigConfigRuleScopeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complianceResourceId", GoGetter: "ComplianceResourceId"},
@@ -142,6 +142,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -163,17 +164,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigRuleSource",
+		"hashicorp_aws.config.ConfigConfigRuleSource",
 		reflect.TypeOf((*ConfigConfigRuleSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigRuleSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleSourceOutputReference",
 		reflect.TypeOf((*ConfigConfigRuleSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -194,11 +196,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigRuleSourceSourceDetail",
+		"hashicorp_aws.config.ConfigConfigRuleSourceSourceDetail",
 		reflect.TypeOf((*ConfigConfigRuleSourceSourceDetail)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationAggregator",
+		"hashicorp_aws.config.ConfigConfigurationAggregator",
 		reflect.TypeOf((*ConfigConfigurationAggregator)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountAggregationSource", GoGetter: "AccountAggregationSource"},
@@ -252,11 +254,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorAccountAggregationSource",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorAccountAggregationSource",
 		reflect.TypeOf((*ConfigConfigurationAggregatorAccountAggregationSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
 		reflect.TypeOf((*ConfigConfigurationAggregatorAccountAggregationSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountIds", GoGetter: "AccountIds"},
@@ -267,6 +269,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -284,15 +287,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorConfig",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorConfig",
 		reflect.TypeOf((*ConfigConfigurationAggregatorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorOrganizationAggregationSource",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorOrganizationAggregationSource",
 		reflect.TypeOf((*ConfigConfigurationAggregatorOrganizationAggregationSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
 		reflect.TypeOf((*ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allRegions", GoGetter: "AllRegions"},
@@ -301,6 +304,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -320,7 +324,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationRecorder",
+		"hashicorp_aws.config.ConfigConfigurationRecorder",
 		reflect.TypeOf((*ConfigConfigurationRecorder)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -366,15 +370,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderConfig",
+		"hashicorp_aws.config.ConfigConfigurationRecorderConfig",
 		reflect.TypeOf((*ConfigConfigurationRecorderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderRecordingGroup",
+		"hashicorp_aws.config.ConfigConfigurationRecorderRecordingGroup",
 		reflect.TypeOf((*ConfigConfigurationRecorderRecordingGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderRecordingGroupOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationRecorderRecordingGroupOutputReference",
 		reflect.TypeOf((*ConfigConfigurationRecorderRecordingGroupOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allSupported", GoGetter: "AllSupported"},
@@ -385,6 +389,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "includeGlobalResourceTypes", GoGetter: "IncludeGlobalResourceTypes"},
 			_jsii_.MemberProperty{JsiiProperty: "includeGlobalResourceTypesInput", GoGetter: "IncludeGlobalResourceTypesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -403,7 +408,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatus",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatus",
 		reflect.TypeOf((*ConfigConfigurationRecorderStatus)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -444,11 +449,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatusConfig",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatusConfig",
 		reflect.TypeOf((*ConfigConfigurationRecorderStatusConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigConformancePack",
+		"hashicorp_aws.config.ConfigConformancePack",
 		reflect.TypeOf((*ConfigConformancePack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -503,15 +508,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConformancePackConfig",
+		"hashicorp_aws.config.ConfigConformancePackConfig",
 		reflect.TypeOf((*ConfigConformancePackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigConformancePackInputParameter",
+		"hashicorp_aws.config.ConfigConformancePackInputParameter",
 		reflect.TypeOf((*ConfigConformancePackInputParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigDeliveryChannel",
+		"hashicorp_aws.config.ConfigDeliveryChannel",
 		reflect.TypeOf((*ConfigDeliveryChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -566,15 +571,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigDeliveryChannelConfig",
+		"hashicorp_aws.config.ConfigDeliveryChannelConfig",
 		reflect.TypeOf((*ConfigDeliveryChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigDeliveryChannelSnapshotDeliveryProperties",
+		"hashicorp_aws.config.ConfigDeliveryChannelSnapshotDeliveryProperties",
 		reflect.TypeOf((*ConfigDeliveryChannelSnapshotDeliveryProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
+		"hashicorp_aws.config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
 		reflect.TypeOf((*ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deliveryFrequency", GoGetter: "DeliveryFrequency"},
@@ -583,6 +588,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -597,7 +603,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePack",
+		"hashicorp_aws.config.ConfigOrganizationConformancePack",
 		reflect.TypeOf((*ConfigOrganizationConformancePack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -659,19 +665,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackConfig",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackConfig",
 		reflect.TypeOf((*ConfigOrganizationConformancePackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackInputParameter",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackInputParameter",
 		reflect.TypeOf((*ConfigOrganizationConformancePackInputParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackTimeouts",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackTimeouts",
 		reflect.TypeOf((*ConfigOrganizationConformancePackTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackTimeoutsOutputReference",
 		reflect.TypeOf((*ConfigOrganizationConformancePackTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -682,6 +688,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -700,7 +707,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRule",
+		"hashicorp_aws.config.ConfigOrganizationCustomRule",
 		reflect.TypeOf((*ConfigOrganizationCustomRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -772,15 +779,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRuleConfig",
+		"hashicorp_aws.config.ConfigOrganizationCustomRuleConfig",
 		reflect.TypeOf((*ConfigOrganizationCustomRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRuleTimeouts",
+		"hashicorp_aws.config.ConfigOrganizationCustomRuleTimeouts",
 		reflect.TypeOf((*ConfigOrganizationCustomRuleTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
 		reflect.TypeOf((*ConfigOrganizationCustomRuleTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -791,6 +798,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -809,7 +817,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRule",
+		"hashicorp_aws.config.ConfigOrganizationManagedRule",
 		reflect.TypeOf((*ConfigOrganizationManagedRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -879,15 +887,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRuleConfig",
+		"hashicorp_aws.config.ConfigOrganizationManagedRuleConfig",
 		reflect.TypeOf((*ConfigOrganizationManagedRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRuleTimeouts",
+		"hashicorp_aws.config.ConfigOrganizationManagedRuleTimeouts",
 		reflect.TypeOf((*ConfigOrganizationManagedRuleTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
 		reflect.TypeOf((*ConfigOrganizationManagedRuleTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -898,6 +906,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -916,17 +925,21 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Config.ConfigRemediationConfiguration",
+		"hashicorp_aws.config.ConfigRemediationConfiguration",
 		reflect.TypeOf((*ConfigRemediationConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "automatic", GoGetter: "Automatic"},
+			_jsii_.MemberProperty{JsiiProperty: "automaticInput", GoGetter: "AutomaticInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
 			_jsii_.MemberProperty{JsiiProperty: "configRuleName", GoGetter: "ConfigRuleName"},
 			_jsii_.MemberProperty{JsiiProperty: "configRuleNameInput", GoGetter: "ConfigRuleNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "executionControls", GoGetter: "ExecutionControls"},
+			_jsii_.MemberProperty{JsiiProperty: "executionControlsInput", GoGetter: "ExecutionControlsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -936,18 +949,27 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "maximumAutomaticAttempts", GoGetter: "MaximumAutomaticAttempts"},
+			_jsii_.MemberProperty{JsiiProperty: "maximumAutomaticAttemptsInput", GoGetter: "MaximumAutomaticAttemptsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "parameter", GoGetter: "Parameter"},
 			_jsii_.MemberProperty{JsiiProperty: "parameterInput", GoGetter: "ParameterInput"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putExecutionControls", GoMethod: "PutExecutionControls"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAutomatic", GoMethod: "ResetAutomatic"},
+			_jsii_.MemberMethod{JsiiMethod: "resetExecutionControls", GoMethod: "ResetExecutionControls"},
+			_jsii_.MemberMethod{JsiiMethod: "resetMaximumAutomaticAttempts", GoMethod: "ResetMaximumAutomaticAttempts"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetParameter", GoMethod: "ResetParameter"},
 			_jsii_.MemberMethod{JsiiMethod: "resetResourceType", GoMethod: "ResetResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "resetRetryAttemptSeconds", GoMethod: "ResetRetryAttemptSeconds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTargetVersion", GoMethod: "ResetTargetVersion"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceType", GoGetter: "ResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceTypeInput", GoGetter: "ResourceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "retryAttemptSeconds", GoGetter: "RetryAttemptSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "retryAttemptSecondsInput", GoGetter: "RetryAttemptSecondsInput"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
 			_jsii_.MemberProperty{JsiiProperty: "targetId", GoGetter: "TargetId"},
 			_jsii_.MemberProperty{JsiiProperty: "targetIdInput", GoGetter: "TargetIdInput"},
@@ -969,11 +991,71 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigRemediationConfigurationConfig",
+		"hashicorp_aws.config.ConfigRemediationConfigurationConfig",
 		reflect.TypeOf((*ConfigRemediationConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Config.ConfigRemediationConfigurationParameter",
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControls",
+		reflect.TypeOf((*ConfigRemediationConfigurationExecutionControls)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsOutputReference",
+		reflect.TypeOf((*ConfigRemediationConfigurationExecutionControlsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putSsmControls", GoMethod: "PutSsmControls"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSsmControls", GoMethod: "ResetSsmControls"},
+			_jsii_.MemberProperty{JsiiProperty: "ssmControls", GoGetter: "SsmControls"},
+			_jsii_.MemberProperty{JsiiProperty: "ssmControlsInput", GoGetter: "SsmControlsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsSsmControls",
+		reflect.TypeOf((*ConfigRemediationConfigurationExecutionControlsSsmControls)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference",
+		reflect.TypeOf((*ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "concurrentExecutionRatePercentage", GoGetter: "ConcurrentExecutionRatePercentage"},
+			_jsii_.MemberProperty{JsiiProperty: "concurrentExecutionRatePercentageInput", GoGetter: "ConcurrentExecutionRatePercentageInput"},
+			_jsii_.MemberProperty{JsiiProperty: "errorPercentage", GoGetter: "ErrorPercentage"},
+			_jsii_.MemberProperty{JsiiProperty: "errorPercentageInput", GoGetter: "ErrorPercentageInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetConcurrentExecutionRatePercentage", GoMethod: "ResetConcurrentExecutionRatePercentage"},
+			_jsii_.MemberMethod{JsiiMethod: "resetErrorPercentage", GoMethod: "ResetErrorPercentage"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.config.ConfigRemediationConfigurationParameter",
 		reflect.TypeOf((*ConfigRemediationConfigurationParameter)(nil)).Elem(),
 	)
 }

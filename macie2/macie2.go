@@ -277,7 +277,7 @@ func NewMacie2Account(scope constructs.Construct, id *string, config *Macie2Acco
 	j := jsiiProxy_Macie2Account{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2Account",
+		"hashicorp_aws.macie2.Macie2Account",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -290,7 +290,7 @@ func NewMacie2Account_Override(m Macie2Account, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2Account",
+		"hashicorp_aws.macie2.Macie2Account",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -354,7 +354,7 @@ func Macie2Account_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2Account",
+		"hashicorp_aws.macie2.Macie2Account",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -367,7 +367,7 @@ func Macie2Account_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2Account",
+		"hashicorp_aws.macie2.Macie2Account",
 		"tfResourceType",
 		&returns,
 	)
@@ -545,6 +545,7 @@ func (m *jsiiProxy_Macie2Account) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2AccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1067,7 +1068,7 @@ func NewMacie2ClassificationJob(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_Macie2ClassificationJob{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJob",
+		"hashicorp_aws.macie2.Macie2ClassificationJob",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1080,7 +1081,7 @@ func NewMacie2ClassificationJob_Override(m Macie2ClassificationJob, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJob",
+		"hashicorp_aws.macie2.Macie2ClassificationJob",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -1208,7 +1209,7 @@ func Macie2ClassificationJob_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2ClassificationJob",
+		"hashicorp_aws.macie2.Macie2ClassificationJob",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1221,7 +1222,7 @@ func Macie2ClassificationJob_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2ClassificationJob",
+		"hashicorp_aws.macie2.Macie2ClassificationJob",
 		"tfResourceType",
 		&returns,
 	)
@@ -1492,6 +1493,7 @@ func (m *jsiiProxy_Macie2ClassificationJob) UserPausedDetails(index *string) Mac
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2ClassificationJobConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1554,6 +1556,8 @@ type Macie2ClassificationJobS3JobDefinitionOutputReference interface {
 	BucketDefinitions() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
 	SetBucketDefinitions(val *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions)
 	BucketDefinitionsInput() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
+	InternalValue() *Macie2ClassificationJobS3JobDefinition
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Scoping() Macie2ClassificationJobS3JobDefinitionScopingOutputReference
@@ -1593,6 +1597,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) Bucket
 	_jsii_.Get(
 		j,
 		"bucketDefinitionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinition {
+	var returns *Macie2ClassificationJobS3JobDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1654,7 +1668,7 @@ func NewMacie2ClassificationJobS3JobDefinitionOutputReference(terraformResource 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1666,7 +1680,7 @@ func NewMacie2ClassificationJobS3JobDefinitionOutputReference_Override(m Macie2C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -1676,6 +1690,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetBuc
 	_jsii_.Set(
 		j,
 		"bucketDefinitions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1855,6 +1877,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutp
 	Comparator() *string
 	SetComparator(val *string)
 	ComparatorInput() *string
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -1898,6 +1922,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 	_jsii_.Get(
 		j,
 		"comparatorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1979,7 +2013,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermO
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1991,7 +2025,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2001,6 +2035,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 	_jsii_.Set(
 		j,
 		"comparator",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2171,6 +2213,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputR
 	Comparator() *string
 	SetComparator(val *string)
 	ComparatorInput() *string
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -2218,6 +2262,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	_jsii_.Get(
 		j,
 		"comparatorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2319,7 +2373,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutp
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2331,7 +2385,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2341,6 +2395,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	_jsii_.Set(
 		j,
 		"comparator",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2521,6 +2583,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference interf
 	And() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
 	SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd)
 	AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludes
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2556,6 +2620,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	_jsii_.Get(
 		j,
 		"andInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludes {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingExcludes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2597,7 +2671,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference(ter
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2609,7 +2683,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2619,6 +2693,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	_jsii_.Set(
 		j,
 		"and",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2771,6 +2853,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutp
 	Comparator() *string
 	SetComparator(val *string)
 	ComparatorInput() *string
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -2814,6 +2898,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 	_jsii_.Get(
 		j,
 		"comparatorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2895,7 +2989,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermO
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2907,7 +3001,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2917,6 +3011,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 	_jsii_.Set(
 		j,
 		"comparator",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3087,6 +3189,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputR
 	Comparator() *string
 	SetComparator(val *string)
 	ComparatorInput() *string
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -3134,6 +3238,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	_jsii_.Get(
 		j,
 		"comparatorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3235,7 +3349,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutp
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3247,7 +3361,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -3257,6 +3371,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	_jsii_.Set(
 		j,
 		"comparator",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3437,6 +3559,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference interf
 	And() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
 	SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd)
 	AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludes
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3472,6 +3596,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	_jsii_.Get(
 		j,
 		"andInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludes {
+	var returns *Macie2ClassificationJobS3JobDefinitionScopingIncludes
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3513,7 +3647,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference(ter
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3525,7 +3659,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -3535,6 +3669,14 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	_jsii_.Set(
 		j,
 		"and",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3661,6 +3803,8 @@ type Macie2ClassificationJobS3JobDefinitionScopingOutputReference interface {
 	ExcludesInput() *Macie2ClassificationJobS3JobDefinitionScopingExcludes
 	Includes() Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference
 	IncludesInput() *Macie2ClassificationJobS3JobDefinitionScopingIncludes
+	InternalValue() *Macie2ClassificationJobS3JobDefinitionScoping
+	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScoping)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3724,6 +3868,16 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 	return returns
 }
 
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) InternalValue() *Macie2ClassificationJobS3JobDefinitionScoping {
+	var returns *Macie2ClassificationJobS3JobDefinitionScoping
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3760,7 +3914,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference(terraformRe
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3772,9 +3926,17 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference_Override(m 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScoping) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3932,6 +4094,8 @@ type Macie2ClassificationJobScheduleFrequencyOutputReference interface {
 	DailySchedule() interface{}
 	SetDailySchedule(val interface{})
 	DailyScheduleInput() interface{}
+	InternalValue() *Macie2ClassificationJobScheduleFrequency
+	SetInternalValue(val *Macie2ClassificationJobScheduleFrequency)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MonthlySchedule() *float64
@@ -3975,6 +4139,16 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) Dail
 	_jsii_.Get(
 		j,
 		"dailyScheduleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) InternalValue() *Macie2ClassificationJobScheduleFrequency {
+	var returns *Macie2ClassificationJobScheduleFrequency
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4056,7 +4230,7 @@ func NewMacie2ClassificationJobScheduleFrequencyOutputReference(terraformResourc
 	j := jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4068,7 +4242,7 @@ func NewMacie2ClassificationJobScheduleFrequencyOutputReference_Override(m Macie
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4078,6 +4252,14 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetD
 	_jsii_.Set(
 		j,
 		"dailySchedule",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetInternalValue(val *Macie2ClassificationJobScheduleFrequency) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4320,7 +4502,7 @@ func NewMacie2ClassificationJobUserPausedDetails(terraformResource cdktf.ITerraf
 	j := jsiiProxy_Macie2ClassificationJobUserPausedDetails{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobUserPausedDetails",
+		"hashicorp_aws.macie2.Macie2ClassificationJobUserPausedDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4333,7 +4515,7 @@ func NewMacie2ClassificationJobUserPausedDetails_Override(m Macie2Classification
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobUserPausedDetails",
+		"hashicorp_aws.macie2.Macie2ClassificationJobUserPausedDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)
@@ -4858,7 +5040,7 @@ func NewMacie2CustomDataIdentifier(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_Macie2CustomDataIdentifier{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifier",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifier",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4871,7 +5053,7 @@ func NewMacie2CustomDataIdentifier_Override(m Macie2CustomDataIdentifier, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifier",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifier",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -4991,7 +5173,7 @@ func Macie2CustomDataIdentifier_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifier",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifier",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5004,7 +5186,7 @@ func Macie2CustomDataIdentifier_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifier",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifier",
 		"tfResourceType",
 		&returns,
 	)
@@ -5238,6 +5420,7 @@ func (m *jsiiProxy_Macie2CustomDataIdentifier) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2CustomDataIdentifierConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5655,7 +5838,7 @@ func NewMacie2FindingsFilter(scope constructs.Construct, id *string, config *Mac
 	j := jsiiProxy_Macie2FindingsFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2FindingsFilter",
+		"hashicorp_aws.macie2.Macie2FindingsFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5668,7 +5851,7 @@ func NewMacie2FindingsFilter_Override(m Macie2FindingsFilter, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2FindingsFilter",
+		"hashicorp_aws.macie2.Macie2FindingsFilter",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -5772,7 +5955,7 @@ func Macie2FindingsFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2FindingsFilter",
+		"hashicorp_aws.macie2.Macie2FindingsFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5785,7 +5968,7 @@ func Macie2FindingsFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2FindingsFilter",
+		"hashicorp_aws.macie2.Macie2FindingsFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -6003,6 +6186,7 @@ func (m *jsiiProxy_Macie2FindingsFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2FindingsFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6063,6 +6247,8 @@ type Macie2FindingsFilterFindingCriteriaOutputReference interface {
 	Criterion() *[]*Macie2FindingsFilterFindingCriteriaCriterion
 	SetCriterion(val *[]*Macie2FindingsFilterFindingCriteriaCriterion)
 	CriterionInput() *[]*Macie2FindingsFilterFindingCriteriaCriterion
+	InternalValue() *Macie2FindingsFilterFindingCriteria
+	SetInternalValue(val *Macie2FindingsFilterFindingCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6098,6 +6284,16 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Criterion
 	_jsii_.Get(
 		j,
 		"criterionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) InternalValue() *Macie2FindingsFilterFindingCriteria {
+	var returns *Macie2FindingsFilterFindingCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6139,7 +6335,7 @@ func NewMacie2FindingsFilterFindingCriteriaOutputReference(terraformResource cdk
 	j := jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6151,7 +6347,7 @@ func NewMacie2FindingsFilterFindingCriteriaOutputReference_Override(m Macie2Find
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -6161,6 +6357,14 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetCriter
 	_jsii_.Set(
 		j,
 		"criterion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetInternalValue(val *Macie2FindingsFilterFindingCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6526,7 +6730,7 @@ func NewMacie2InvitationAccepter(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_Macie2InvitationAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepter",
+		"hashicorp_aws.macie2.Macie2InvitationAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6539,7 +6743,7 @@ func NewMacie2InvitationAccepter_Override(m Macie2InvitationAccepter, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepter",
+		"hashicorp_aws.macie2.Macie2InvitationAccepter",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -6595,7 +6799,7 @@ func Macie2InvitationAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepter",
+		"hashicorp_aws.macie2.Macie2InvitationAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6608,7 +6812,7 @@ func Macie2InvitationAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepter",
+		"hashicorp_aws.macie2.Macie2InvitationAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -6786,6 +6990,7 @@ func (m *jsiiProxy_Macie2InvitationAccepter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2InvitationAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6813,6 +7018,8 @@ type Macie2InvitationAccepterTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *Macie2InvitationAccepterTimeouts
+	SetInternalValue(val *Macie2InvitationAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6848,6 +7055,16 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) CreateInput(
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) InternalValue() *Macie2InvitationAccepterTimeouts {
+	var returns *Macie2InvitationAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6889,7 +7106,7 @@ func NewMacie2InvitationAccepterTimeoutsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepterTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2InvitationAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6901,7 +7118,7 @@ func NewMacie2InvitationAccepterTimeoutsOutputReference_Override(m Macie2Invitat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepterTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2InvitationAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -6911,6 +7128,14 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetCreate(va
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetInternalValue(val *Macie2InvitationAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7498,7 +7723,7 @@ func NewMacie2Member(scope constructs.Construct, id *string, config *Macie2Membe
 	j := jsiiProxy_Macie2Member{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2Member",
+		"hashicorp_aws.macie2.Macie2Member",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7511,7 +7736,7 @@ func NewMacie2Member_Override(m Macie2Member, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2Member",
+		"hashicorp_aws.macie2.Macie2Member",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -7623,7 +7848,7 @@ func Macie2Member_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2Member",
+		"hashicorp_aws.macie2.Macie2Member",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7636,7 +7861,7 @@ func Macie2Member_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2Member",
+		"hashicorp_aws.macie2.Macie2Member",
 		"tfResourceType",
 		&returns,
 	)
@@ -7862,6 +8087,7 @@ func (m *jsiiProxy_Macie2Member) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2MemberConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7905,6 +8131,8 @@ type Macie2MemberTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *Macie2MemberTimeouts
+	SetInternalValue(val *Macie2MemberTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7944,6 +8172,16 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) CreateInput() *string {
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) InternalValue() *Macie2MemberTimeouts {
+	var returns *Macie2MemberTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8005,7 +8243,7 @@ func NewMacie2MemberTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_Macie2MemberTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2MemberTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2MemberTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8017,7 +8255,7 @@ func NewMacie2MemberTimeoutsOutputReference_Override(m Macie2MemberTimeoutsOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2MemberTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2MemberTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -8027,6 +8265,14 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetCreate(val *string) {
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetInternalValue(val *Macie2MemberTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8373,7 +8619,7 @@ func NewMacie2OrganizationAdminAccount(scope constructs.Construct, id *string, c
 	j := jsiiProxy_Macie2OrganizationAdminAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccount",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8386,7 +8632,7 @@ func NewMacie2OrganizationAdminAccount_Override(m Macie2OrganizationAdminAccount
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccount",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -8442,7 +8688,7 @@ func Macie2OrganizationAdminAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccount",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8455,7 +8701,7 @@ func Macie2OrganizationAdminAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccount",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -8617,6 +8863,7 @@ func (m *jsiiProxy_Macie2OrganizationAdminAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Macie 2.
 type Macie2OrganizationAdminAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

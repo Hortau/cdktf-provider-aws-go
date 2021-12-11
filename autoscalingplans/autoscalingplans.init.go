@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlan",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlan",
 		reflect.TypeOf((*AutoscalingplansScalingPlan)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -53,11 +53,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanApplicationSource",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanApplicationSource",
 		reflect.TypeOf((*AutoscalingplansScalingPlanApplicationSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanApplicationSourceOutputReference",
 		reflect.TypeOf((*AutoscalingplansScalingPlanApplicationSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudformationStackArn", GoGetter: "CloudformationStackArn"},
@@ -66,6 +66,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -83,23 +84,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanApplicationSourceTagFilter",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanApplicationSourceTagFilter",
 		reflect.TypeOf((*AutoscalingplansScalingPlanApplicationSourceTagFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanConfig",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanConfig",
 		reflect.TypeOf((*AutoscalingplansScalingPlanConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstruction",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstruction",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstruction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionCustomizedLoadMetricSpecificationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dimensions", GoGetter: "Dimensions"},
@@ -108,6 +109,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -131,17 +133,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionPredefinedLoadMetricSpecificationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -160,15 +163,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dimensions", GoGetter: "Dimensions"},
@@ -177,6 +180,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -200,17 +204,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AutoScalingPlans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscalingplans.AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference",
 		reflect.TypeOf((*AutoscalingplansScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -8,11 +8,13 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Synthetics.SyntheticsCanary",
+		"hashicorp_aws.synthetics.SyntheticsCanary",
 		reflect.TypeOf((*SyntheticsCanary)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "artifactConfig", GoGetter: "ArtifactConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "artifactConfigInput", GoGetter: "ArtifactConfigInput"},
 			_jsii_.MemberProperty{JsiiProperty: "artifactS3Location", GoGetter: "ArtifactS3Location"},
 			_jsii_.MemberProperty{JsiiProperty: "artifactS3LocationInput", GoGetter: "ArtifactS3LocationInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
@@ -40,10 +42,12 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putArtifactConfig", GoMethod: "PutArtifactConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "putRunConfig", GoMethod: "PutRunConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "putSchedule", GoMethod: "PutSchedule"},
 			_jsii_.MemberMethod{JsiiMethod: "putVpcConfig", GoMethod: "PutVpcConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetArtifactConfig", GoMethod: "ResetArtifactConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "resetFailureRetentionPeriod", GoMethod: "ResetFailureRetentionPeriod"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetRunConfig", GoMethod: "ResetRunConfig"},
@@ -98,15 +102,75 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryConfig",
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfig",
+		reflect.TypeOf((*SyntheticsCanaryArtifactConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigOutputReference",
+		reflect.TypeOf((*SyntheticsCanaryArtifactConfigOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putS3Encryption", GoMethod: "PutS3Encryption"},
+			_jsii_.MemberMethod{JsiiMethod: "resetS3Encryption", GoMethod: "ResetS3Encryption"},
+			_jsii_.MemberProperty{JsiiProperty: "s3Encryption", GoGetter: "S3Encryption"},
+			_jsii_.MemberProperty{JsiiProperty: "s3EncryptionInput", GoGetter: "S3EncryptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigS3Encryption",
+		reflect.TypeOf((*SyntheticsCanaryArtifactConfigS3Encryption)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.synthetics.SyntheticsCanaryArtifactConfigS3EncryptionOutputReference",
+		reflect.TypeOf((*SyntheticsCanaryArtifactConfigS3EncryptionOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "encryptionMode", GoGetter: "EncryptionMode"},
+			_jsii_.MemberProperty{JsiiProperty: "encryptionModeInput", GoGetter: "EncryptionModeInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "kmsKeyArn", GoGetter: "KmsKeyArn"},
+			_jsii_.MemberProperty{JsiiProperty: "kmsKeyArnInput", GoGetter: "KmsKeyArnInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEncryptionMode", GoMethod: "ResetEncryptionMode"},
+			_jsii_.MemberMethod{JsiiMethod: "resetKmsKeyArn", GoMethod: "ResetKmsKeyArn"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.synthetics.SyntheticsCanaryConfig",
 		reflect.TypeOf((*SyntheticsCanaryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryRunConfig",
+		"hashicorp_aws.synthetics.SyntheticsCanaryRunConfig",
 		reflect.TypeOf((*SyntheticsCanaryRunConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryRunConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryRunConfigOutputReference",
 		reflect.TypeOf((*SyntheticsCanaryRunConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activeTracing", GoGetter: "ActiveTracing"},
@@ -115,6 +179,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -135,11 +200,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Synthetics.SyntheticsCanarySchedule",
+		"hashicorp_aws.synthetics.SyntheticsCanarySchedule",
 		reflect.TypeOf((*SyntheticsCanarySchedule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryScheduleOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryScheduleOutputReference",
 		reflect.TypeOf((*SyntheticsCanaryScheduleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "durationInSeconds", GoGetter: "DurationInSeconds"},
@@ -150,6 +215,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -164,7 +230,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryTimeline",
+		"hashicorp_aws.synthetics.SyntheticsCanaryTimeline",
 		reflect.TypeOf((*SyntheticsCanaryTimeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -187,17 +253,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryVpcConfig",
+		"hashicorp_aws.synthetics.SyntheticsCanaryVpcConfig",
 		reflect.TypeOf((*SyntheticsCanaryVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Synthetics.SyntheticsCanaryVpcConfigOutputReference",
+		"hashicorp_aws.synthetics.SyntheticsCanaryVpcConfigOutputReference",
 		reflect.TypeOf((*SyntheticsCanaryVpcConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

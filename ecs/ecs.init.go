@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.DataAwsEcsCluster",
+		"hashicorp_aws.ecs.DataAwsEcsCluster",
 		reflect.TypeOf((*DataAwsEcsCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -53,11 +53,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.DataAwsEcsClusterConfig",
+		"hashicorp_aws.ecs.DataAwsEcsClusterConfig",
 		reflect.TypeOf((*DataAwsEcsClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.DataAwsEcsClusterSetting",
+		"hashicorp_aws.ecs.DataAwsEcsClusterSetting",
 		reflect.TypeOf((*DataAwsEcsClusterSetting)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -78,7 +78,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.DataAwsEcsContainerDefinition",
+		"hashicorp_aws.ecs.DataAwsEcsContainerDefinition",
 		reflect.TypeOf((*DataAwsEcsContainerDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -127,11 +127,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.DataAwsEcsContainerDefinitionConfig",
+		"hashicorp_aws.ecs.DataAwsEcsContainerDefinitionConfig",
 		reflect.TypeOf((*DataAwsEcsContainerDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.DataAwsEcsService",
+		"hashicorp_aws.ecs.DataAwsEcsService",
 		reflect.TypeOf((*DataAwsEcsService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -177,11 +177,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.DataAwsEcsServiceConfig",
+		"hashicorp_aws.ecs.DataAwsEcsServiceConfig",
 		reflect.TypeOf((*DataAwsEcsServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.DataAwsEcsTaskDefinition",
+		"hashicorp_aws.ecs.DataAwsEcsTaskDefinition",
 		reflect.TypeOf((*DataAwsEcsTaskDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -225,11 +225,57 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.DataAwsEcsTaskDefinitionConfig",
+		"hashicorp_aws.ecs.DataAwsEcsTaskDefinitionConfig",
 		reflect.TypeOf((*DataAwsEcsTaskDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsCapacityProvider",
+		"hashicorp_aws.ecs.EcsAccountSettingDefault",
+		reflect.TypeOf((*EcsAccountSettingDefault)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "principalArn", GoGetter: "PrincipalArn"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsAccountSettingDefault{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsAccountSettingDefaultConfig",
+		reflect.TypeOf((*EcsAccountSettingDefaultConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsCapacityProvider",
 		reflect.TypeOf((*EcsCapacityProvider)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -278,15 +324,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsCapacityProviderAutoScalingGroupProvider",
+		"hashicorp_aws.ecs.EcsCapacityProviderAutoScalingGroupProvider",
 		reflect.TypeOf((*EcsCapacityProviderAutoScalingGroupProvider)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsCapacityProviderAutoScalingGroupProviderManagedScaling",
+		"hashicorp_aws.ecs.EcsCapacityProviderAutoScalingGroupProviderManagedScaling",
 		reflect.TypeOf((*EcsCapacityProviderAutoScalingGroupProviderManagedScaling)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference",
+		"hashicorp_aws.ecs.EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference",
 		reflect.TypeOf((*EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -295,6 +341,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceWarmupPeriod", GoGetter: "InstanceWarmupPeriod"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceWarmupPeriodInput", GoGetter: "InstanceWarmupPeriodInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -321,7 +368,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsCapacityProviderAutoScalingGroupProviderOutputReference",
+		"hashicorp_aws.ecs.EcsCapacityProviderAutoScalingGroupProviderOutputReference",
 		reflect.TypeOf((*EcsCapacityProviderAutoScalingGroupProviderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoScalingGroupArn", GoGetter: "AutoScalingGroupArn"},
@@ -330,6 +377,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -350,11 +398,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsCapacityProviderConfig",
+		"hashicorp_aws.ecs.EcsCapacityProviderConfig",
 		reflect.TypeOf((*EcsCapacityProviderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsCluster",
+		"hashicorp_aws.ecs.EcsCluster",
 		reflect.TypeOf((*EcsCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -413,23 +461,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterConfig",
+		"hashicorp_aws.ecs.EcsClusterConfig",
 		reflect.TypeOf((*EcsClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterConfiguration",
+		"hashicorp_aws.ecs.EcsClusterConfiguration",
 		reflect.TypeOf((*EcsClusterConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterConfigurationExecuteCommandConfiguration",
+		"hashicorp_aws.ecs.EcsClusterConfigurationExecuteCommandConfiguration",
 		reflect.TypeOf((*EcsClusterConfigurationExecuteCommandConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration",
+		"hashicorp_aws.ecs.EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration",
 		reflect.TypeOf((*EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference",
 		reflect.TypeOf((*EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudWatchEncryptionEnabled", GoGetter: "CloudWatchEncryptionEnabled"},
@@ -440,6 +488,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -464,13 +513,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsClusterConfigurationExecuteCommandConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsClusterConfigurationExecuteCommandConfigurationOutputReference",
 		reflect.TypeOf((*EcsClusterConfigurationExecuteCommandConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -494,7 +544,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsClusterConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsClusterConfigurationOutputReference",
 		reflect.TypeOf((*EcsClusterConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "executeCommandConfiguration", GoGetter: "ExecuteCommandConfiguration"},
@@ -503,6 +553,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -518,15 +569,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterDefaultCapacityProviderStrategy",
+		"hashicorp_aws.ecs.EcsClusterDefaultCapacityProviderStrategy",
 		reflect.TypeOf((*EcsClusterDefaultCapacityProviderStrategy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsClusterSetting",
+		"hashicorp_aws.ecs.EcsClusterSetting",
 		reflect.TypeOf((*EcsClusterSetting)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsService",
+		"hashicorp_aws.ecs.EcsService",
 		reflect.TypeOf((*EcsService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -648,19 +699,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceCapacityProviderStrategy",
+		"hashicorp_aws.ecs.EcsServiceCapacityProviderStrategy",
 		reflect.TypeOf((*EcsServiceCapacityProviderStrategy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceConfig",
+		"hashicorp_aws.ecs.EcsServiceConfig",
 		reflect.TypeOf((*EcsServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceDeploymentCircuitBreaker",
+		"hashicorp_aws.ecs.EcsServiceDeploymentCircuitBreaker",
 		reflect.TypeOf((*EcsServiceDeploymentCircuitBreaker)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsServiceDeploymentCircuitBreakerOutputReference",
+		"hashicorp_aws.ecs.EcsServiceDeploymentCircuitBreakerOutputReference",
 		reflect.TypeOf((*EcsServiceDeploymentCircuitBreakerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enable", GoGetter: "Enable"},
@@ -669,6 +720,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -684,17 +736,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceDeploymentController",
+		"hashicorp_aws.ecs.EcsServiceDeploymentController",
 		reflect.TypeOf((*EcsServiceDeploymentController)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsServiceDeploymentControllerOutputReference",
+		"hashicorp_aws.ecs.EcsServiceDeploymentControllerOutputReference",
 		reflect.TypeOf((*EcsServiceDeploymentControllerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -711,15 +764,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceLoadBalancer",
+		"hashicorp_aws.ecs.EcsServiceLoadBalancer",
 		reflect.TypeOf((*EcsServiceLoadBalancer)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceNetworkConfiguration",
+		"hashicorp_aws.ecs.EcsServiceNetworkConfiguration",
 		reflect.TypeOf((*EcsServiceNetworkConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsServiceNetworkConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsServiceNetworkConfigurationOutputReference",
 		reflect.TypeOf((*EcsServiceNetworkConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "assignPublicIp", GoGetter: "AssignPublicIp"},
@@ -728,6 +781,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -747,19 +801,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceOrderedPlacementStrategy",
+		"hashicorp_aws.ecs.EcsServiceOrderedPlacementStrategy",
 		reflect.TypeOf((*EcsServiceOrderedPlacementStrategy)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServicePlacementConstraints",
+		"hashicorp_aws.ecs.EcsServicePlacementConstraints",
 		reflect.TypeOf((*EcsServicePlacementConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceServiceRegistries",
+		"hashicorp_aws.ecs.EcsServiceServiceRegistries",
 		reflect.TypeOf((*EcsServiceServiceRegistries)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsServiceServiceRegistriesOutputReference",
+		"hashicorp_aws.ecs.EcsServiceServiceRegistriesOutputReference",
 		reflect.TypeOf((*EcsServiceServiceRegistriesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "containerName", GoGetter: "ContainerName"},
@@ -770,6 +824,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -790,11 +845,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsServiceTimeouts",
+		"hashicorp_aws.ecs.EcsServiceTimeouts",
 		reflect.TypeOf((*EcsServiceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsServiceTimeoutsOutputReference",
+		"hashicorp_aws.ecs.EcsServiceTimeoutsOutputReference",
 		reflect.TypeOf((*EcsServiceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -803,6 +858,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -817,7 +873,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTag",
+		"hashicorp_aws.ecs.EcsTag",
 		reflect.TypeOf((*EcsTag)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -860,11 +916,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTagConfig",
+		"hashicorp_aws.ecs.EcsTagConfig",
 		reflect.TypeOf((*EcsTagConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinition",
+		"hashicorp_aws.ecs.EcsTaskDefinition",
 		reflect.TypeOf((*EcsTaskDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -911,6 +967,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "proxyConfigurationInput", GoGetter: "ProxyConfigurationInput"},
 			_jsii_.MemberMethod{JsiiMethod: "putEphemeralStorage", GoMethod: "PutEphemeralStorage"},
 			_jsii_.MemberMethod{JsiiMethod: "putProxyConfiguration", GoMethod: "PutProxyConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "putRuntimePlatform", GoMethod: "PutRuntimePlatform"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberProperty{JsiiProperty: "requiresCompatibilities", GoGetter: "RequiresCompatibilities"},
 			_jsii_.MemberProperty{JsiiProperty: "requiresCompatibilitiesInput", GoGetter: "RequiresCompatibilitiesInput"},
@@ -926,11 +983,14 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetPlacementConstraints", GoMethod: "ResetPlacementConstraints"},
 			_jsii_.MemberMethod{JsiiMethod: "resetProxyConfiguration", GoMethod: "ResetProxyConfiguration"},
 			_jsii_.MemberMethod{JsiiMethod: "resetRequiresCompatibilities", GoMethod: "ResetRequiresCompatibilities"},
+			_jsii_.MemberMethod{JsiiMethod: "resetRuntimePlatform", GoMethod: "ResetRuntimePlatform"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTaskRoleArn", GoMethod: "ResetTaskRoleArn"},
 			_jsii_.MemberMethod{JsiiMethod: "resetVolume", GoMethod: "ResetVolume"},
 			_jsii_.MemberProperty{JsiiProperty: "revision", GoGetter: "Revision"},
+			_jsii_.MemberProperty{JsiiProperty: "runtimePlatform", GoGetter: "RuntimePlatform"},
+			_jsii_.MemberProperty{JsiiProperty: "runtimePlatformInput", GoGetter: "RuntimePlatformInput"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
@@ -954,21 +1014,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionConfig",
+		"hashicorp_aws.ecs.EcsTaskDefinitionConfig",
 		reflect.TypeOf((*EcsTaskDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionEphemeralStorage",
+		"hashicorp_aws.ecs.EcsTaskDefinitionEphemeralStorage",
 		reflect.TypeOf((*EcsTaskDefinitionEphemeralStorage)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionEphemeralStorageOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionEphemeralStorageOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionEphemeralStorageOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -984,19 +1045,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionInferenceAccelerator",
+		"hashicorp_aws.ecs.EcsTaskDefinitionInferenceAccelerator",
 		reflect.TypeOf((*EcsTaskDefinitionInferenceAccelerator)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionPlacementConstraints",
+		"hashicorp_aws.ecs.EcsTaskDefinitionPlacementConstraints",
 		reflect.TypeOf((*EcsTaskDefinitionPlacementConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionProxyConfiguration",
+		"hashicorp_aws.ecs.EcsTaskDefinitionProxyConfiguration",
 		reflect.TypeOf((*EcsTaskDefinitionProxyConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionProxyConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionProxyConfigurationOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionProxyConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "containerName", GoGetter: "ContainerName"},
@@ -1005,6 +1066,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1024,15 +1086,46 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolume",
+		"hashicorp_aws.ecs.EcsTaskDefinitionRuntimePlatform",
+		reflect.TypeOf((*EcsTaskDefinitionRuntimePlatform)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsTaskDefinitionRuntimePlatformOutputReference",
+		reflect.TypeOf((*EcsTaskDefinitionRuntimePlatformOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "cpuArchitecture", GoGetter: "CpuArchitecture"},
+			_jsii_.MemberProperty{JsiiProperty: "cpuArchitectureInput", GoGetter: "CpuArchitectureInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "operatingSystemFamily", GoGetter: "OperatingSystemFamily"},
+			_jsii_.MemberProperty{JsiiProperty: "operatingSystemFamilyInput", GoGetter: "OperatingSystemFamilyInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCpuArchitecture", GoMethod: "ResetCpuArchitecture"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOperatingSystemFamily", GoMethod: "ResetOperatingSystemFamily"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolume",
 		reflect.TypeOf((*EcsTaskDefinitionVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeDockerVolumeConfiguration",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeDockerVolumeConfiguration",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeDockerVolumeConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoprovision", GoGetter: "Autoprovision"},
@@ -1045,6 +1138,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1067,15 +1161,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeEfsVolumeConfiguration",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeEfsVolumeConfiguration",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeEfsVolumeConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPointId", GoGetter: "AccessPointId"},
@@ -1086,6 +1180,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iam", GoGetter: "Iam"},
 			_jsii_.MemberProperty{JsiiProperty: "iamInput", GoGetter: "IamInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1101,7 +1196,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authorizationConfig", GoGetter: "AuthorizationConfig"},
@@ -1112,6 +1207,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1136,15 +1232,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "credentialsParameter", GoGetter: "CredentialsParameter"},
@@ -1155,6 +1251,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1168,7 +1265,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECS.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference",
+		"hashicorp_aws.ecs.EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference",
 		reflect.TypeOf((*EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authorizationConfig", GoGetter: "AuthorizationConfig"},
@@ -1179,6 +1276,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1190,6 +1288,207 @@ func init() {
 		},
 		func() interface{} {
 			j := jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsTaskSet",
+		reflect.TypeOf((*EcsTaskSet)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "capacityProviderStrategy", GoGetter: "CapacityProviderStrategy"},
+			_jsii_.MemberProperty{JsiiProperty: "capacityProviderStrategyInput", GoGetter: "CapacityProviderStrategyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "cluster", GoGetter: "Cluster"},
+			_jsii_.MemberProperty{JsiiProperty: "clusterInput", GoGetter: "ClusterInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "externalId", GoGetter: "ExternalId"},
+			_jsii_.MemberProperty{JsiiProperty: "externalIdInput", GoGetter: "ExternalIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "forceDelete", GoGetter: "ForceDelete"},
+			_jsii_.MemberProperty{JsiiProperty: "forceDeleteInput", GoGetter: "ForceDeleteInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "launchType", GoGetter: "LaunchType"},
+			_jsii_.MemberProperty{JsiiProperty: "launchTypeInput", GoGetter: "LaunchTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "loadBalancer", GoGetter: "LoadBalancer"},
+			_jsii_.MemberProperty{JsiiProperty: "loadBalancerInput", GoGetter: "LoadBalancerInput"},
+			_jsii_.MemberProperty{JsiiProperty: "networkConfiguration", GoGetter: "NetworkConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "networkConfigurationInput", GoGetter: "NetworkConfigurationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "platformVersion", GoGetter: "PlatformVersion"},
+			_jsii_.MemberProperty{JsiiProperty: "platformVersionInput", GoGetter: "PlatformVersionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putNetworkConfiguration", GoMethod: "PutNetworkConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "putScale", GoMethod: "PutScale"},
+			_jsii_.MemberMethod{JsiiMethod: "putServiceRegistries", GoMethod: "PutServiceRegistries"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCapacityProviderStrategy", GoMethod: "ResetCapacityProviderStrategy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetExternalId", GoMethod: "ResetExternalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetForceDelete", GoMethod: "ResetForceDelete"},
+			_jsii_.MemberMethod{JsiiMethod: "resetLaunchType", GoMethod: "ResetLaunchType"},
+			_jsii_.MemberMethod{JsiiMethod: "resetLoadBalancer", GoMethod: "ResetLoadBalancer"},
+			_jsii_.MemberMethod{JsiiMethod: "resetNetworkConfiguration", GoMethod: "ResetNetworkConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPlatformVersion", GoMethod: "ResetPlatformVersion"},
+			_jsii_.MemberMethod{JsiiMethod: "resetScale", GoMethod: "ResetScale"},
+			_jsii_.MemberMethod{JsiiMethod: "resetServiceRegistries", GoMethod: "ResetServiceRegistries"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberMethod{JsiiMethod: "resetWaitUntilStable", GoMethod: "ResetWaitUntilStable"},
+			_jsii_.MemberMethod{JsiiMethod: "resetWaitUntilStableTimeout", GoMethod: "ResetWaitUntilStableTimeout"},
+			_jsii_.MemberProperty{JsiiProperty: "scale", GoGetter: "Scale"},
+			_jsii_.MemberProperty{JsiiProperty: "scaleInput", GoGetter: "ScaleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "service", GoGetter: "Service"},
+			_jsii_.MemberProperty{JsiiProperty: "serviceInput", GoGetter: "ServiceInput"},
+			_jsii_.MemberProperty{JsiiProperty: "serviceRegistries", GoGetter: "ServiceRegistries"},
+			_jsii_.MemberProperty{JsiiProperty: "serviceRegistriesInput", GoGetter: "ServiceRegistriesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "stabilityStatus", GoGetter: "StabilityStatus"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "taskDefinition", GoGetter: "TaskDefinition"},
+			_jsii_.MemberProperty{JsiiProperty: "taskDefinitionInput", GoGetter: "TaskDefinitionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "taskSetId", GoGetter: "TaskSetId"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+			_jsii_.MemberProperty{JsiiProperty: "waitUntilStable", GoGetter: "WaitUntilStable"},
+			_jsii_.MemberProperty{JsiiProperty: "waitUntilStableInput", GoGetter: "WaitUntilStableInput"},
+			_jsii_.MemberProperty{JsiiProperty: "waitUntilStableTimeout", GoGetter: "WaitUntilStableTimeout"},
+			_jsii_.MemberProperty{JsiiProperty: "waitUntilStableTimeoutInput", GoGetter: "WaitUntilStableTimeoutInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsTaskSet{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetCapacityProviderStrategy",
+		reflect.TypeOf((*EcsTaskSetCapacityProviderStrategy)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetConfig",
+		reflect.TypeOf((*EcsTaskSetConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetLoadBalancer",
+		reflect.TypeOf((*EcsTaskSetLoadBalancer)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetNetworkConfiguration",
+		reflect.TypeOf((*EcsTaskSetNetworkConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsTaskSetNetworkConfigurationOutputReference",
+		reflect.TypeOf((*EcsTaskSetNetworkConfigurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "assignPublicIp", GoGetter: "AssignPublicIp"},
+			_jsii_.MemberProperty{JsiiProperty: "assignPublicIpInput", GoGetter: "AssignPublicIpInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAssignPublicIp", GoMethod: "ResetAssignPublicIp"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSecurityGroups", GoMethod: "ResetSecurityGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "securityGroups", GoGetter: "SecurityGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "securityGroupsInput", GoGetter: "SecurityGroupsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "subnets", GoGetter: "Subnets"},
+			_jsii_.MemberProperty{JsiiProperty: "subnetsInput", GoGetter: "SubnetsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetScale",
+		reflect.TypeOf((*EcsTaskSetScale)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsTaskSetScaleOutputReference",
+		reflect.TypeOf((*EcsTaskSetScaleOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetUnit", GoMethod: "ResetUnit"},
+			_jsii_.MemberMethod{JsiiMethod: "resetValue", GoMethod: "ResetValue"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+			_jsii_.MemberProperty{JsiiProperty: "unitInput", GoGetter: "UnitInput"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsTaskSetScaleOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.ecs.EcsTaskSetServiceRegistries",
+		reflect.TypeOf((*EcsTaskSetServiceRegistries)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.ecs.EcsTaskSetServiceRegistriesOutputReference",
+		reflect.TypeOf((*EcsTaskSetServiceRegistriesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "containerName", GoGetter: "ContainerName"},
+			_jsii_.MemberProperty{JsiiProperty: "containerNameInput", GoGetter: "ContainerNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "containerPort", GoGetter: "ContainerPort"},
+			_jsii_.MemberProperty{JsiiProperty: "containerPortInput", GoGetter: "ContainerPortInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "port", GoGetter: "Port"},
+			_jsii_.MemberProperty{JsiiProperty: "portInput", GoGetter: "PortInput"},
+			_jsii_.MemberProperty{JsiiProperty: "registryArn", GoGetter: "RegistryArn"},
+			_jsii_.MemberProperty{JsiiProperty: "registryArnInput", GoGetter: "RegistryArnInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetContainerName", GoMethod: "ResetContainerName"},
+			_jsii_.MemberMethod{JsiiMethod: "resetContainerPort", GoMethod: "ResetContainerPort"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPort", GoMethod: "ResetPort"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EcsTaskSetServiceRegistriesOutputReference{}
 			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
 			return &j
 		},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaConvert.MediaConvertQueue",
+		"hashicorp_aws.mediaconvert.MediaConvertQueue",
 		reflect.TypeOf((*MediaConvertQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -67,15 +67,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MediaConvert.MediaConvertQueueConfig",
+		"hashicorp_aws.mediaconvert.MediaConvertQueueConfig",
 		reflect.TypeOf((*MediaConvertQueueConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MediaConvert.MediaConvertQueueReservationPlanSettings",
+		"hashicorp_aws.mediaconvert.MediaConvertQueueReservationPlanSettings",
 		reflect.TypeOf((*MediaConvertQueueReservationPlanSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaConvert.MediaConvertQueueReservationPlanSettingsOutputReference",
+		"hashicorp_aws.mediaconvert.MediaConvertQueueReservationPlanSettingsOutputReference",
 		reflect.TypeOf((*MediaConvertQueueReservationPlanSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "commitment", GoGetter: "Commitment"},
@@ -84,6 +84,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

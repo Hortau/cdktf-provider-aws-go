@@ -446,7 +446,7 @@ func NewCognitoIdentityPool(scope constructs.Construct, id *string, config *Cogn
 	j := jsiiProxy_CognitoIdentityPool{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityPool",
+		"hashicorp_aws.cognito.CognitoIdentityPool",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -459,7 +459,7 @@ func NewCognitoIdentityPool_Override(c CognitoIdentityPool, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityPool",
+		"hashicorp_aws.cognito.CognitoIdentityPool",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -587,7 +587,7 @@ func CognitoIdentityPool_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoIdentityPool",
+		"hashicorp_aws.cognito.CognitoIdentityPool",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -600,7 +600,7 @@ func CognitoIdentityPool_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoIdentityPool",
+		"hashicorp_aws.cognito.CognitoIdentityPool",
 		"tfResourceType",
 		&returns,
 	)
@@ -843,6 +843,7 @@ type CognitoIdentityPoolCognitoIdentityProviders struct {
 	ServerSideTokenCheck interface{} `json:"serverSideTokenCheck"`
 }
 
+// AWS Cognito.
 type CognitoIdentityPoolConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1133,7 +1134,7 @@ func NewCognitoIdentityPoolRolesAttachment(scope constructs.Construct, id *strin
 	j := jsiiProxy_CognitoIdentityPoolRolesAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachment",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1146,7 +1147,7 @@ func NewCognitoIdentityPoolRolesAttachment_Override(c CognitoIdentityPoolRolesAt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachment",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachment",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1218,7 +1219,7 @@ func CognitoIdentityPoolRolesAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachment",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1231,7 +1232,7 @@ func CognitoIdentityPoolRolesAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoIdentityPoolRolesAttachment",
+		"hashicorp_aws.cognito.CognitoIdentityPoolRolesAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -1401,6 +1402,7 @@ func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Cognito.
 type CognitoIdentityPoolRolesAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1771,7 +1773,7 @@ func NewCognitoIdentityProvider(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_CognitoIdentityProvider{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityProvider",
+		"hashicorp_aws.cognito.CognitoIdentityProvider",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1784,7 +1786,7 @@ func NewCognitoIdentityProvider_Override(c CognitoIdentityProvider, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoIdentityProvider",
+		"hashicorp_aws.cognito.CognitoIdentityProvider",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1880,7 +1882,7 @@ func CognitoIdentityProvider_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoIdentityProvider",
+		"hashicorp_aws.cognito.CognitoIdentityProvider",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1893,7 +1895,7 @@ func CognitoIdentityProvider_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoIdentityProvider",
+		"hashicorp_aws.cognito.CognitoIdentityProvider",
 		"tfResourceType",
 		&returns,
 	)
@@ -2071,6 +2073,7 @@ func (c *jsiiProxy_CognitoIdentityProvider) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type CognitoIdentityProviderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2385,7 +2388,7 @@ func NewCognitoResourceServer(scope constructs.Construct, id *string, config *Co
 	j := jsiiProxy_CognitoResourceServer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoResourceServer",
+		"hashicorp_aws.cognito.CognitoResourceServer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2398,7 +2401,7 @@ func NewCognitoResourceServer_Override(c CognitoResourceServer, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoResourceServer",
+		"hashicorp_aws.cognito.CognitoResourceServer",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2478,7 +2481,7 @@ func CognitoResourceServer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoResourceServer",
+		"hashicorp_aws.cognito.CognitoResourceServer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2491,7 +2494,7 @@ func CognitoResourceServer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoResourceServer",
+		"hashicorp_aws.cognito.CognitoResourceServer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2661,6 +2664,7 @@ func (c *jsiiProxy_CognitoResourceServer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type CognitoResourceServerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2994,7 +2998,7 @@ func NewCognitoUserGroup(scope constructs.Construct, id *string, config *Cognito
 	j := jsiiProxy_CognitoUserGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserGroup",
+		"hashicorp_aws.cognito.CognitoUserGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3007,7 +3011,7 @@ func NewCognitoUserGroup_Override(c CognitoUserGroup, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserGroup",
+		"hashicorp_aws.cognito.CognitoUserGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3095,7 +3099,7 @@ func CognitoUserGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoUserGroup",
+		"hashicorp_aws.cognito.CognitoUserGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3108,7 +3112,7 @@ func CognitoUserGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoUserGroup",
+		"hashicorp_aws.cognito.CognitoUserGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -3294,6 +3298,7 @@ func (c *jsiiProxy_CognitoUserGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type CognitoUserGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4130,7 +4135,7 @@ func NewCognitoUserPool(scope constructs.Construct, id *string, config *CognitoU
 	j := jsiiProxy_CognitoUserPool{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPool",
+		"hashicorp_aws.cognito.CognitoUserPool",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4143,7 +4148,7 @@ func NewCognitoUserPool_Override(c CognitoUserPool, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPool",
+		"hashicorp_aws.cognito.CognitoUserPool",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -4287,7 +4292,7 @@ func CognitoUserPool_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoUserPool",
+		"hashicorp_aws.cognito.CognitoUserPool",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4300,7 +4305,7 @@ func CognitoUserPool_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoUserPool",
+		"hashicorp_aws.cognito.CognitoUserPool",
 		"tfResourceType",
 		&returns,
 	)
@@ -4735,6 +4740,8 @@ type CognitoUserPoolAccountRecoverySetting struct {
 
 type CognitoUserPoolAccountRecoverySettingOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolAccountRecoverySetting
+	SetInternalValue(val *CognitoUserPoolAccountRecoverySetting)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RecoveryMechanism() *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism
@@ -4755,6 +4762,16 @@ type CognitoUserPoolAccountRecoverySettingOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolAccountRecoverySettingOutputReference
 type jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) InternalValue() *CognitoUserPoolAccountRecoverySetting {
+	var returns *CognitoUserPoolAccountRecoverySetting
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) IsSingleItem() *bool {
@@ -4813,7 +4830,7 @@ func NewCognitoUserPoolAccountRecoverySettingOutputReference(terraformResource c
 	j := jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4825,9 +4842,17 @@ func NewCognitoUserPoolAccountRecoverySettingOutputReference_Override(c CognitoU
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAccountRecoverySettingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetInternalValue(val *CognitoUserPoolAccountRecoverySetting) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4980,6 +5005,8 @@ type CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference in
 	EmailSubject() *string
 	SetEmailSubject(val *string)
 	EmailSubjectInput() *string
+	InternalValue() *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate
+	SetInternalValue(val *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SmsMessage() *string
@@ -5045,6 +5072,16 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) InternalValue() *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate {
+	var returns *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5101,7 +5138,7 @@ func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference
 	j := jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5113,7 +5150,7 @@ func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5131,6 +5168,14 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 	_jsii_.Set(
 		j,
 		"emailSubject",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) SetInternalValue(val *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5280,6 +5325,8 @@ type CognitoUserPoolAdminCreateUserConfigOutputReference interface {
 	AllowAdminCreateUserOnly() interface{}
 	SetAllowAdminCreateUserOnly(val interface{})
 	AllowAdminCreateUserOnlyInput() interface{}
+	InternalValue() *CognitoUserPoolAdminCreateUserConfig
+	SetInternalValue(val *CognitoUserPoolAdminCreateUserConfig)
 	InviteMessageTemplate() CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference
 	InviteMessageTemplateInput() *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate
 	IsSingleItem() *bool
@@ -5319,6 +5366,16 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) AllowAdm
 	_jsii_.Get(
 		j,
 		"allowAdminCreateUserOnlyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) InternalValue() *CognitoUserPoolAdminCreateUserConfig {
+	var returns *CognitoUserPoolAdminCreateUserConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5380,7 +5437,7 @@ func NewCognitoUserPoolAdminCreateUserConfigOutputReference(terraformResource cd
 	j := jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5392,7 +5449,7 @@ func NewCognitoUserPoolAdminCreateUserConfigOutputReference_Override(c CognitoUs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolAdminCreateUserConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5402,6 +5459,14 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetAllow
 	_jsii_.Set(
 		j,
 		"allowAdminCreateUserOnly",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetInternalValue(val *CognitoUserPoolAdminCreateUserConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6214,7 +6279,7 @@ func NewCognitoUserPoolClient(scope constructs.Construct, id *string, config *Co
 	j := jsiiProxy_CognitoUserPoolClient{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClient",
+		"hashicorp_aws.cognito.CognitoUserPoolClient",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6227,7 +6292,7 @@ func NewCognitoUserPoolClient_Override(c CognitoUserPoolClient, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClient",
+		"hashicorp_aws.cognito.CognitoUserPoolClient",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -6419,7 +6484,7 @@ func CognitoUserPoolClient_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoUserPoolClient",
+		"hashicorp_aws.cognito.CognitoUserPoolClient",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6432,7 +6497,7 @@ func CognitoUserPoolClient_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoUserPoolClient",
+		"hashicorp_aws.cognito.CognitoUserPoolClient",
 		"tfResourceType",
 		&returns,
 	)
@@ -6778,6 +6843,8 @@ type CognitoUserPoolClientAnalyticsConfigurationOutputReference interface {
 	ExternalId() *string
 	SetExternalId(val *string)
 	ExternalIdInput() *string
+	InternalValue() *CognitoUserPoolClientAnalyticsConfiguration
+	SetInternalValue(val *CognitoUserPoolClientAnalyticsConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -6868,6 +6935,16 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) E
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) InternalValue() *CognitoUserPoolClientAnalyticsConfiguration {
+	var returns *CognitoUserPoolClientAnalyticsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6944,7 +7021,7 @@ func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference(terraformReso
 	j := jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6956,7 +7033,7 @@ func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference_Override(c Co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientAnalyticsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6982,6 +7059,14 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) S
 	_jsii_.Set(
 		j,
 		"externalId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolClientAnalyticsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7150,6 +7235,7 @@ func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) R
 	)
 }
 
+// AWS Cognito.
 type CognitoUserPoolClientConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7222,6 +7308,8 @@ type CognitoUserPoolClientTokenValidityUnitsOutputReference interface {
 	IdToken() *string
 	SetIdToken(val *string)
 	IdTokenInput() *string
+	InternalValue() *CognitoUserPoolClientTokenValidityUnits
+	SetInternalValue(val *CognitoUserPoolClientTokenValidityUnits)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RefreshToken() *string
@@ -7287,6 +7375,16 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) IdTok
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) InternalValue() *CognitoUserPoolClientTokenValidityUnits {
+	var returns *CognitoUserPoolClientTokenValidityUnits
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7343,7 +7441,7 @@ func NewCognitoUserPoolClientTokenValidityUnitsOutputReference(terraformResource
 	j := jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7355,7 +7453,7 @@ func NewCognitoUserPoolClientTokenValidityUnitsOutputReference_Override(c Cognit
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolClientTokenValidityUnitsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -7373,6 +7471,14 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetId
 	_jsii_.Set(
 		j,
 		"idToken",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetInternalValue(val *CognitoUserPoolClientTokenValidityUnits) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7517,6 +7623,7 @@ func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) Reset
 	)
 }
 
+// AWS Cognito.
 type CognitoUserPoolConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7613,6 +7720,8 @@ type CognitoUserPoolDeviceConfigurationOutputReference interface {
 	DeviceOnlyRememberedOnUserPrompt() interface{}
 	SetDeviceOnlyRememberedOnUserPrompt(val interface{})
 	DeviceOnlyRememberedOnUserPromptInput() interface{}
+	InternalValue() *CognitoUserPoolDeviceConfiguration
+	SetInternalValue(val *CognitoUserPoolDeviceConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7674,6 +7783,16 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) DeviceOnly
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) InternalValue() *CognitoUserPoolDeviceConfiguration {
+	var returns *CognitoUserPoolDeviceConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7710,7 +7829,7 @@ func NewCognitoUserPoolDeviceConfigurationOutputReference(terraformResource cdkt
 	j := jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolDeviceConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolDeviceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7722,7 +7841,7 @@ func NewCognitoUserPoolDeviceConfigurationOutputReference_Override(c CognitoUser
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolDeviceConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolDeviceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -7740,6 +7859,14 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetDeviceO
 	_jsii_.Set(
 		j,
 		"deviceOnlyRememberedOnUserPrompt",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolDeviceConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8169,7 +8296,7 @@ func NewCognitoUserPoolDomain(scope constructs.Construct, id *string, config *Co
 	j := jsiiProxy_CognitoUserPoolDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomain",
+		"hashicorp_aws.cognito.CognitoUserPoolDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8182,7 +8309,7 @@ func NewCognitoUserPoolDomain_Override(c CognitoUserPoolDomain, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomain",
+		"hashicorp_aws.cognito.CognitoUserPoolDomain",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -8254,7 +8381,7 @@ func CognitoUserPoolDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomain",
+		"hashicorp_aws.cognito.CognitoUserPoolDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8267,7 +8394,7 @@ func CognitoUserPoolDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoUserPoolDomain",
+		"hashicorp_aws.cognito.CognitoUserPoolDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -8437,6 +8564,7 @@ func (c *jsiiProxy_CognitoUserPoolDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type CognitoUserPoolDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8478,6 +8606,8 @@ type CognitoUserPoolEmailConfigurationOutputReference interface {
 	FromEmailAddress() *string
 	SetFromEmailAddress(val *string)
 	FromEmailAddressInput() *string
+	InternalValue() *CognitoUserPoolEmailConfiguration
+	SetInternalValue(val *CognitoUserPoolEmailConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReplyToEmailAddress() *string
@@ -8568,6 +8698,16 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) FromEmailAd
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) InternalValue() *CognitoUserPoolEmailConfiguration {
+	var returns *CognitoUserPoolEmailConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8644,7 +8784,7 @@ func NewCognitoUserPoolEmailConfigurationOutputReference(terraformResource cdktf
 	j := jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolEmailConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolEmailConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8656,7 +8796,7 @@ func NewCognitoUserPoolEmailConfigurationOutputReference_Override(c CognitoUserP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolEmailConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolEmailConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8682,6 +8822,14 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetFromEmai
 	_jsii_.Set(
 		j,
 		"fromEmailAddress",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolEmailConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8892,6 +9040,8 @@ type CognitoUserPoolLambdaConfigCustomEmailSender struct {
 
 type CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolLambdaConfigCustomEmailSender
+	SetInternalValue(val *CognitoUserPoolLambdaConfigCustomEmailSender)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LambdaArn() *string
@@ -8915,6 +9065,16 @@ type CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference
 type jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) InternalValue() *CognitoUserPoolLambdaConfigCustomEmailSender {
+	var returns *CognitoUserPoolLambdaConfigCustomEmailSender
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) IsSingleItem() *bool {
@@ -8993,7 +9153,7 @@ func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference(terraformRes
 	j := jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9005,9 +9165,17 @@ func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference_Override(c C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) SetInternalValue(val *CognitoUserPoolLambdaConfigCustomEmailSender) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9144,6 +9312,8 @@ type CognitoUserPoolLambdaConfigCustomSmsSender struct {
 
 type CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolLambdaConfigCustomSmsSender
+	SetInternalValue(val *CognitoUserPoolLambdaConfigCustomSmsSender)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LambdaArn() *string
@@ -9167,6 +9337,16 @@ type CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference
 type jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) InternalValue() *CognitoUserPoolLambdaConfigCustomSmsSender {
+	var returns *CognitoUserPoolLambdaConfigCustomSmsSender
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) IsSingleItem() *bool {
@@ -9245,7 +9425,7 @@ func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference(terraformResou
 	j := jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9257,9 +9437,17 @@ func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference_Override(c Cog
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) SetInternalValue(val *CognitoUserPoolLambdaConfigCustomSmsSender) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9402,6 +9590,8 @@ type CognitoUserPoolLambdaConfigOutputReference interface {
 	DefineAuthChallenge() *string
 	SetDefineAuthChallenge(val *string)
 	DefineAuthChallengeInput() *string
+	InternalValue() *CognitoUserPoolLambdaConfig
+	SetInternalValue(val *CognitoUserPoolLambdaConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -9555,6 +9745,16 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) DefineAuthChallen
 	_jsii_.Get(
 		j,
 		"defineAuthChallengeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) InternalValue() *CognitoUserPoolLambdaConfig {
+	var returns *CognitoUserPoolLambdaConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9756,7 +9956,7 @@ func NewCognitoUserPoolLambdaConfigOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_CognitoUserPoolLambdaConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9768,7 +9968,7 @@ func NewCognitoUserPoolLambdaConfigOutputReference_Override(c CognitoUserPoolLam
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolLambdaConfigOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolLambdaConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -9794,6 +9994,14 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetDefineAuthChal
 	_jsii_.Set(
 		j,
 		"defineAuthChallenge",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetInternalValue(val *CognitoUserPoolLambdaConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10107,6 +10315,8 @@ type CognitoUserPoolPasswordPolicy struct {
 
 type CognitoUserPoolPasswordPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolPasswordPolicy
+	SetInternalValue(val *CognitoUserPoolPasswordPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MinimumLength() *float64
@@ -10148,6 +10358,16 @@ type CognitoUserPoolPasswordPolicyOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolPasswordPolicyOutputReference
 type jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) InternalValue() *CognitoUserPoolPasswordPolicy {
+	var returns *CognitoUserPoolPasswordPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) IsSingleItem() *bool {
@@ -10306,7 +10526,7 @@ func NewCognitoUserPoolPasswordPolicyOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolPasswordPolicyOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolPasswordPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10318,9 +10538,17 @@ func NewCognitoUserPoolPasswordPolicyOutputReference_Override(c CognitoUserPoolP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolPasswordPolicyOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolPasswordPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) SetInternalValue(val *CognitoUserPoolPasswordPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10558,6 +10786,8 @@ type CognitoUserPoolSchemaNumberAttributeConstraints struct {
 
 type CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolSchemaNumberAttributeConstraints
+	SetInternalValue(val *CognitoUserPoolSchemaNumberAttributeConstraints)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxValue() *string
@@ -10583,6 +10813,16 @@ type CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference
 type jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) InternalValue() *CognitoUserPoolSchemaNumberAttributeConstraints {
+	var returns *CognitoUserPoolSchemaNumberAttributeConstraints
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) IsSingleItem() *bool {
@@ -10661,7 +10901,7 @@ func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference(terraform
 	j := jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10673,9 +10913,17 @@ func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) SetInternalValue(val *CognitoUserPoolSchemaNumberAttributeConstraints) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10828,6 +11076,8 @@ type CognitoUserPoolSchemaStringAttributeConstraints struct {
 
 type CognitoUserPoolSchemaStringAttributeConstraintsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CognitoUserPoolSchemaStringAttributeConstraints
+	SetInternalValue(val *CognitoUserPoolSchemaStringAttributeConstraints)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxLength() *string
@@ -10853,6 +11103,16 @@ type CognitoUserPoolSchemaStringAttributeConstraintsOutputReference interface {
 // The jsii proxy struct for CognitoUserPoolSchemaStringAttributeConstraintsOutputReference
 type jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) InternalValue() *CognitoUserPoolSchemaStringAttributeConstraints {
+	var returns *CognitoUserPoolSchemaStringAttributeConstraints
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) IsSingleItem() *bool {
@@ -10931,7 +11191,7 @@ func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference(terraform
 	j := jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10943,9 +11203,17 @@ func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSchemaStringAttributeConstraintsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) SetInternalValue(val *CognitoUserPoolSchemaStringAttributeConstraints) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11101,6 +11369,8 @@ type CognitoUserPoolSmsConfigurationOutputReference interface {
 	ExternalId() *string
 	SetExternalId(val *string)
 	ExternalIdInput() *string
+	InternalValue() *CognitoUserPoolSmsConfiguration
+	SetInternalValue(val *CognitoUserPoolSmsConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SnsCallerArn() *string
@@ -11138,6 +11408,16 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) ExternalIdInp
 	_jsii_.Get(
 		j,
 		"externalIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) InternalValue() *CognitoUserPoolSmsConfiguration {
+	var returns *CognitoUserPoolSmsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11199,7 +11479,7 @@ func NewCognitoUserPoolSmsConfigurationOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSmsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSmsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11211,7 +11491,7 @@ func NewCognitoUserPoolSmsConfigurationOutputReference_Override(c CognitoUserPoo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSmsConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSmsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -11221,6 +11501,14 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetExternalId
 	_jsii_.Set(
 		j,
 		"externalId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolSmsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11351,6 +11639,8 @@ type CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *CognitoUserPoolSoftwareTokenMfaConfiguration
+	SetInternalValue(val *CognitoUserPoolSoftwareTokenMfaConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11385,6 +11675,16 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) InternalValue() *CognitoUserPoolSoftwareTokenMfaConfiguration {
+	var returns *CognitoUserPoolSoftwareTokenMfaConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11426,7 +11726,7 @@ func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference(terraformRes
 	j := jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11438,7 +11738,7 @@ func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference_Override(c C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -11448,6 +11748,14 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolSoftwareTokenMfaConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11886,7 +12194,7 @@ func NewCognitoUserPoolUiCustomization(scope constructs.Construct, id *string, c
 	j := jsiiProxy_CognitoUserPoolUiCustomization{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomization",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomization",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11899,7 +12207,7 @@ func NewCognitoUserPoolUiCustomization_Override(c CognitoUserPoolUiCustomization
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomization",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomization",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -11979,7 +12287,7 @@ func CognitoUserPoolUiCustomization_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomization",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomization",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11992,7 +12300,7 @@ func CognitoUserPoolUiCustomization_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.CognitoUserPoolUiCustomization",
+		"hashicorp_aws.cognito.CognitoUserPoolUiCustomization",
 		"tfResourceType",
 		&returns,
 	)
@@ -12178,6 +12486,7 @@ func (c *jsiiProxy_CognitoUserPoolUiCustomization) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type CognitoUserPoolUiCustomizationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12207,6 +12516,8 @@ type CognitoUserPoolUserPoolAddOnsOutputReference interface {
 	AdvancedSecurityMode() *string
 	SetAdvancedSecurityMode(val *string)
 	AdvancedSecurityModeInput() *string
+	InternalValue() *CognitoUserPoolUserPoolAddOns
+	SetInternalValue(val *CognitoUserPoolUserPoolAddOns)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12241,6 +12552,16 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) AdvancedSecurit
 	_jsii_.Get(
 		j,
 		"advancedSecurityModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) InternalValue() *CognitoUserPoolUserPoolAddOns {
+	var returns *CognitoUserPoolUserPoolAddOns
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12282,7 +12603,7 @@ func NewCognitoUserPoolUserPoolAddOnsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12294,7 +12615,7 @@ func NewCognitoUserPoolUserPoolAddOnsOutputReference_Override(c CognitoUserPoolU
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUserPoolAddOnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -12304,6 +12625,14 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetAdvancedSecu
 	_jsii_.Set(
 		j,
 		"advancedSecurityMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetInternalValue(val *CognitoUserPoolUserPoolAddOns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12426,6 +12755,8 @@ type CognitoUserPoolUsernameConfigurationOutputReference interface {
 	CaseSensitive() interface{}
 	SetCaseSensitive(val interface{})
 	CaseSensitiveInput() interface{}
+	InternalValue() *CognitoUserPoolUsernameConfiguration
+	SetInternalValue(val *CognitoUserPoolUsernameConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12460,6 +12791,16 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) CaseSens
 	_jsii_.Get(
 		j,
 		"caseSensitiveInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) InternalValue() *CognitoUserPoolUsernameConfiguration {
+	var returns *CognitoUserPoolUsernameConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12501,7 +12842,7 @@ func NewCognitoUserPoolUsernameConfigurationOutputReference(terraformResource cd
 	j := jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUsernameConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUsernameConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12513,7 +12854,7 @@ func NewCognitoUserPoolUsernameConfigurationOutputReference_Override(c CognitoUs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolUsernameConfigurationOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolUsernameConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -12523,6 +12864,14 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetCaseS
 	_jsii_.Set(
 		j,
 		"caseSensitive",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetInternalValue(val *CognitoUserPoolUsernameConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12667,6 +13016,8 @@ type CognitoUserPoolVerificationMessageTemplateOutputReference interface {
 	SetEmailSubjectByLink(val *string)
 	EmailSubjectByLinkInput() *string
 	EmailSubjectInput() *string
+	InternalValue() *CognitoUserPoolVerificationMessageTemplate
+	SetInternalValue(val *CognitoUserPoolVerificationMessageTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SmsMessage() *string
@@ -12795,6 +13146,16 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Em
 	return returns
 }
 
+func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) InternalValue() *CognitoUserPoolVerificationMessageTemplate {
+	var returns *CognitoUserPoolVerificationMessageTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12851,7 +13212,7 @@ func NewCognitoUserPoolVerificationMessageTemplateOutputReference(terraformResou
 	j := jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12863,7 +13224,7 @@ func NewCognitoUserPoolVerificationMessageTemplateOutputReference_Override(c Cog
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
+		"hashicorp_aws.cognito.CognitoUserPoolVerificationMessageTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -12905,6 +13266,14 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Se
 	_jsii_.Set(
 		j,
 		"emailSubjectByLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) SetInternalValue(val *CognitoUserPoolVerificationMessageTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13305,7 +13674,7 @@ func NewDataAwsCognitoUserPools(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsCognitoUserPools{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPools",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPools",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13318,7 +13687,7 @@ func NewDataAwsCognitoUserPools_Override(d DataAwsCognitoUserPools, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPools",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPools",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13374,7 +13743,7 @@ func DataAwsCognitoUserPools_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPools",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPools",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13387,7 +13756,7 @@ func DataAwsCognitoUserPools_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cognito.DataAwsCognitoUserPools",
+		"hashicorp_aws.cognito.DataAwsCognitoUserPools",
 		"tfResourceType",
 		&returns,
 	)
@@ -13549,6 +13918,7 @@ func (d *jsiiProxy_DataAwsCognitoUserPools) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cognito.
 type DataAwsCognitoUserPoolsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

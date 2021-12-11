@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.DataAwsRedshiftCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftCluster",
 		reflect.TypeOf((*DataAwsRedshiftCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -78,11 +78,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.DataAwsRedshiftClusterConfig",
+		"hashicorp_aws.redshift.DataAwsRedshiftClusterConfig",
 		reflect.TypeOf((*DataAwsRedshiftClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableCluster",
 		reflect.TypeOf((*DataAwsRedshiftOrderableCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -132,11 +132,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableClusterConfig",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableClusterConfig",
 		reflect.TypeOf((*DataAwsRedshiftOrderableClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccount",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccount",
 		reflect.TypeOf((*DataAwsRedshiftServiceAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -177,11 +177,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccountConfig",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccountConfig",
 		reflect.TypeOf((*DataAwsRedshiftServiceAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftCluster",
+		"hashicorp_aws.redshift.RedshiftCluster",
 		reflect.TypeOf((*RedshiftCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -330,7 +330,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftClusterClusterNodes",
+		"hashicorp_aws.redshift.RedshiftClusterClusterNodes",
 		reflect.TypeOf((*RedshiftClusterClusterNodes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -352,15 +352,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftClusterConfig",
+		"hashicorp_aws.redshift.RedshiftClusterConfig",
 		reflect.TypeOf((*RedshiftClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftClusterLogging",
+		"hashicorp_aws.redshift.RedshiftClusterLogging",
 		reflect.TypeOf((*RedshiftClusterLogging)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftClusterLoggingOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterLoggingOutputReference",
 		reflect.TypeOf((*RedshiftClusterLoggingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketName", GoGetter: "BucketName"},
@@ -371,6 +371,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -388,11 +389,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftClusterSnapshotCopy",
+		"hashicorp_aws.redshift.RedshiftClusterSnapshotCopy",
 		reflect.TypeOf((*RedshiftClusterSnapshotCopy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftClusterSnapshotCopyOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterSnapshotCopyOutputReference",
 		reflect.TypeOf((*RedshiftClusterSnapshotCopyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "destinationRegion", GoGetter: "DestinationRegion"},
@@ -403,6 +404,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "grantName", GoGetter: "GrantName"},
 			_jsii_.MemberProperty{JsiiProperty: "grantNameInput", GoGetter: "GrantNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -420,11 +422,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftClusterTimeouts",
+		"hashicorp_aws.redshift.RedshiftClusterTimeouts",
 		reflect.TypeOf((*RedshiftClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftClusterTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterTimeoutsOutputReference",
 		reflect.TypeOf((*RedshiftClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -435,6 +437,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -453,7 +456,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftEventSubscription",
+		"hashicorp_aws.redshift.RedshiftEventSubscription",
 		reflect.TypeOf((*RedshiftEventSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -522,15 +525,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftEventSubscriptionConfig",
+		"hashicorp_aws.redshift.RedshiftEventSubscriptionConfig",
 		reflect.TypeOf((*RedshiftEventSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftEventSubscriptionTimeouts",
+		"hashicorp_aws.redshift.RedshiftEventSubscriptionTimeouts",
 		reflect.TypeOf((*RedshiftEventSubscriptionTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
 		reflect.TypeOf((*RedshiftEventSubscriptionTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -541,6 +544,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -559,7 +563,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftParameterGroup",
+		"hashicorp_aws.redshift.RedshiftParameterGroup",
 		reflect.TypeOf((*RedshiftParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -613,15 +617,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftParameterGroupConfig",
+		"hashicorp_aws.redshift.RedshiftParameterGroupConfig",
 		reflect.TypeOf((*RedshiftParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftParameterGroupParameter",
+		"hashicorp_aws.redshift.RedshiftParameterGroupParameter",
 		reflect.TypeOf((*RedshiftParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftScheduledAction",
+		"hashicorp_aws.redshift.RedshiftScheduledAction",
 		reflect.TypeOf((*RedshiftScheduledAction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -679,21 +683,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionConfig",
+		"hashicorp_aws.redshift.RedshiftScheduledActionConfig",
 		reflect.TypeOf((*RedshiftScheduledActionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetAction",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetAction",
 		reflect.TypeOf((*RedshiftScheduledActionTargetAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionOutputReference",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -719,11 +724,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionPauseCluster",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionPauseCluster",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionPauseCluster)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionPauseClusterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clusterIdentifier", GoGetter: "ClusterIdentifier"},
@@ -732,6 +737,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -745,11 +751,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResizeCluster",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResizeCluster",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionResizeCluster)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionResizeClusterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "classic", GoGetter: "Classic"},
@@ -762,6 +768,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -783,11 +790,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResumeCluster",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResumeCluster",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionResumeCluster)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
 		reflect.TypeOf((*RedshiftScheduledActionTargetActionResumeClusterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clusterIdentifier", GoGetter: "ClusterIdentifier"},
@@ -796,6 +803,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -809,7 +817,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroup",
+		"hashicorp_aws.redshift.RedshiftSecurityGroup",
 		reflect.TypeOf((*RedshiftSecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -853,15 +861,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroupConfig",
+		"hashicorp_aws.redshift.RedshiftSecurityGroupConfig",
 		reflect.TypeOf((*RedshiftSecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroupIngress",
+		"hashicorp_aws.redshift.RedshiftSecurityGroupIngress",
 		reflect.TypeOf((*RedshiftSecurityGroupIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrant",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrant",
 		reflect.TypeOf((*RedshiftSnapshotCopyGrant)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -910,11 +918,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrantConfig",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrantConfig",
 		reflect.TypeOf((*RedshiftSnapshotCopyGrantConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftSnapshotSchedule",
+		"hashicorp_aws.redshift.RedshiftSnapshotSchedule",
 		reflect.TypeOf((*RedshiftSnapshotSchedule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -972,7 +980,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociation",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociation",
 		reflect.TypeOf((*RedshiftSnapshotScheduleAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1013,15 +1021,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociationConfig",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociationConfig",
 		reflect.TypeOf((*RedshiftSnapshotScheduleAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleConfig",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleConfig",
 		reflect.TypeOf((*RedshiftSnapshotScheduleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroup",
+		"hashicorp_aws.redshift.RedshiftSubnetGroup",
 		reflect.TypeOf((*RedshiftSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1072,7 +1080,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroupConfig",
+		"hashicorp_aws.redshift.RedshiftSubnetGroupConfig",
 		reflect.TypeOf((*RedshiftSubnetGroupConfig)(nil)).Elem(),
 	)
 }

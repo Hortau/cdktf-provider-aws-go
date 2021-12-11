@@ -275,7 +275,7 @@ func NewDataAwsEcrAuthorizationToken(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsEcrAuthorizationToken{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationToken",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationToken",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -288,7 +288,7 @@ func NewDataAwsEcrAuthorizationToken_Override(d DataAwsEcrAuthorizationToken, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationToken",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationToken",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -344,7 +344,7 @@ func DataAwsEcrAuthorizationToken_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationToken",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationToken",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -357,7 +357,7 @@ func DataAwsEcrAuthorizationToken_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationToken",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationToken",
 		"tfResourceType",
 		&returns,
 	)
@@ -527,6 +527,7 @@ func (d *jsiiProxy_DataAwsEcrAuthorizationToken) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type DataAwsEcrAuthorizationTokenConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -855,7 +856,7 @@ func NewDataAwsEcrImage(scope constructs.Construct, id *string, config *DataAwsE
 	j := jsiiProxy_DataAwsEcrImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrImage",
+		"hashicorp_aws.ecr.DataAwsEcrImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -868,7 +869,7 @@ func NewDataAwsEcrImage_Override(d DataAwsEcrImage, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrImage",
+		"hashicorp_aws.ecr.DataAwsEcrImage",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -948,7 +949,7 @@ func DataAwsEcrImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.DataAwsEcrImage",
+		"hashicorp_aws.ecr.DataAwsEcrImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -961,7 +962,7 @@ func DataAwsEcrImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.DataAwsEcrImage",
+		"hashicorp_aws.ecr.DataAwsEcrImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -1147,6 +1148,7 @@ func (d *jsiiProxy_DataAwsEcrImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type DataAwsEcrImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1459,7 +1461,7 @@ func NewDataAwsEcrRepository(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsEcrRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepository",
+		"hashicorp_aws.ecr.DataAwsEcrRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1472,7 +1474,7 @@ func NewDataAwsEcrRepository_Override(d DataAwsEcrRepository, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepository",
+		"hashicorp_aws.ecr.DataAwsEcrRepository",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1544,7 +1546,7 @@ func DataAwsEcrRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.DataAwsEcrRepository",
+		"hashicorp_aws.ecr.DataAwsEcrRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1557,7 +1559,7 @@ func DataAwsEcrRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.DataAwsEcrRepository",
+		"hashicorp_aws.ecr.DataAwsEcrRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -1761,6 +1763,7 @@ func (d *jsiiProxy_DataAwsEcrRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type DataAwsEcrRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1857,7 +1860,7 @@ func NewDataAwsEcrRepositoryEncryptionConfiguration(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryEncryptionConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryEncryptionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1870,7 +1873,7 @@ func NewDataAwsEcrRepositoryEncryptionConfiguration_Override(d DataAwsEcrReposit
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryEncryptionConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryEncryptionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2038,7 +2041,7 @@ func NewDataAwsEcrRepositoryImageScanningConfiguration(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryImageScanningConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryImageScanningConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2051,7 +2054,7 @@ func NewDataAwsEcrRepositoryImageScanningConfiguration_Override(d DataAwsEcrRepo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryImageScanningConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryImageScanningConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2395,7 +2398,7 @@ func NewEcrLifecyclePolicy(scope constructs.Construct, id *string, config *EcrLi
 	j := jsiiProxy_EcrLifecyclePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrLifecyclePolicy",
+		"hashicorp_aws.ecr.EcrLifecyclePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2408,7 +2411,7 @@ func NewEcrLifecyclePolicy_Override(e EcrLifecyclePolicy, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrLifecyclePolicy",
+		"hashicorp_aws.ecr.EcrLifecyclePolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -2472,7 +2475,7 @@ func EcrLifecyclePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrLifecyclePolicy",
+		"hashicorp_aws.ecr.EcrLifecyclePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2485,7 +2488,7 @@ func EcrLifecyclePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrLifecyclePolicy",
+		"hashicorp_aws.ecr.EcrLifecyclePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2647,6 +2650,7 @@ func (e *jsiiProxy_EcrLifecyclePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type EcrLifecyclePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2883,7 +2887,7 @@ func NewEcrRegistryPolicy(scope constructs.Construct, id *string, config *EcrReg
 	j := jsiiProxy_EcrRegistryPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRegistryPolicy",
+		"hashicorp_aws.ecr.EcrRegistryPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2896,7 +2900,7 @@ func NewEcrRegistryPolicy_Override(e EcrRegistryPolicy, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRegistryPolicy",
+		"hashicorp_aws.ecr.EcrRegistryPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -2952,7 +2956,7 @@ func EcrRegistryPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrRegistryPolicy",
+		"hashicorp_aws.ecr.EcrRegistryPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2965,7 +2969,7 @@ func EcrRegistryPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrRegistryPolicy",
+		"hashicorp_aws.ecr.EcrRegistryPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -3127,6 +3131,7 @@ func (e *jsiiProxy_EcrRegistryPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type EcrRegistryPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3362,7 +3367,7 @@ func NewEcrReplicationConfiguration(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_EcrReplicationConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3375,7 +3380,7 @@ func NewEcrReplicationConfiguration_Override(e EcrReplicationConfiguration, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfiguration",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3423,7 +3428,7 @@ func EcrReplicationConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3436,7 +3441,7 @@ func EcrReplicationConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -3614,6 +3619,7 @@ func (e *jsiiProxy_EcrReplicationConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type EcrReplicationConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3638,6 +3644,8 @@ type EcrReplicationConfigurationReplicationConfiguration struct {
 
 type EcrReplicationConfigurationReplicationConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EcrReplicationConfigurationReplicationConfiguration
+	SetInternalValue(val *EcrReplicationConfigurationReplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Rule() EcrReplicationConfigurationReplicationConfigurationRuleOutputReference
@@ -3658,6 +3666,16 @@ type EcrReplicationConfigurationReplicationConfigurationOutputReference interfac
 // The jsii proxy struct for EcrReplicationConfigurationReplicationConfigurationOutputReference
 type jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) InternalValue() *EcrReplicationConfigurationReplicationConfiguration {
+	var returns *EcrReplicationConfigurationReplicationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) IsSingleItem() *bool {
@@ -3716,7 +3734,7 @@ func NewEcrReplicationConfigurationReplicationConfigurationOutputReference(terra
 	j := jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3728,9 +3746,17 @@ func NewEcrReplicationConfigurationReplicationConfigurationOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) SetInternalValue(val *EcrReplicationConfigurationReplicationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3869,6 +3895,8 @@ type EcrReplicationConfigurationReplicationConfigurationRuleOutputReference inte
 	Destination() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
 	SetDestination(val *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination)
 	DestinationInput() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
+	InternalValue() *EcrReplicationConfigurationReplicationConfigurationRule
+	SetInternalValue(val *EcrReplicationConfigurationReplicationConfigurationRule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3903,6 +3931,16 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutput
 	_jsii_.Get(
 		j,
 		"destinationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) InternalValue() *EcrReplicationConfigurationReplicationConfigurationRule {
+	var returns *EcrReplicationConfigurationReplicationConfigurationRule
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3944,7 +3982,7 @@ func NewEcrReplicationConfigurationReplicationConfigurationRuleOutputReference(t
 	j := jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3956,7 +3994,7 @@ func NewEcrReplicationConfigurationReplicationConfigurationRuleOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -3966,6 +4004,14 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutput
 	_jsii_.Set(
 		j,
 		"destination",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetInternalValue(val *EcrReplicationConfigurationReplicationConfigurationRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4465,7 +4511,7 @@ func NewEcrRepository(scope constructs.Construct, id *string, config *EcrReposit
 	j := jsiiProxy_EcrRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepository",
+		"hashicorp_aws.ecr.EcrRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4478,7 +4524,7 @@ func NewEcrRepository_Override(e EcrRepository, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepository",
+		"hashicorp_aws.ecr.EcrRepository",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -4566,7 +4612,7 @@ func EcrRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrRepository",
+		"hashicorp_aws.ecr.EcrRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4579,7 +4625,7 @@ func EcrRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrRepository",
+		"hashicorp_aws.ecr.EcrRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -4805,6 +4851,7 @@ func (e *jsiiProxy_EcrRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type EcrRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4850,6 +4897,8 @@ type EcrRepositoryImageScanningConfiguration struct {
 
 type EcrRepositoryImageScanningConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EcrRepositoryImageScanningConfiguration
+	SetInternalValue(val *EcrRepositoryImageScanningConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ScanOnPush() interface{}
@@ -4870,6 +4919,16 @@ type EcrRepositoryImageScanningConfigurationOutputReference interface {
 // The jsii proxy struct for EcrRepositoryImageScanningConfigurationOutputReference
 type jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) InternalValue() *EcrRepositoryImageScanningConfiguration {
+	var returns *EcrRepositoryImageScanningConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) IsSingleItem() *bool {
@@ -4928,7 +4987,7 @@ func NewEcrRepositoryImageScanningConfigurationOutputReference(terraformResource
 	j := jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryImageScanningConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryImageScanningConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4940,9 +4999,17 @@ func NewEcrRepositoryImageScanningConfigurationOutputReference_Override(e EcrRep
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryImageScanningConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryImageScanningConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) SetInternalValue(val *EcrRepositoryImageScanningConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5306,7 +5373,7 @@ func NewEcrRepositoryPolicy(scope constructs.Construct, id *string, config *EcrR
 	j := jsiiProxy_EcrRepositoryPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryPolicy",
+		"hashicorp_aws.ecr.EcrRepositoryPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5319,7 +5386,7 @@ func NewEcrRepositoryPolicy_Override(e EcrRepositoryPolicy, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryPolicy",
+		"hashicorp_aws.ecr.EcrRepositoryPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -5383,7 +5450,7 @@ func EcrRepositoryPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrRepositoryPolicy",
+		"hashicorp_aws.ecr.EcrRepositoryPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5396,7 +5463,7 @@ func EcrRepositoryPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrRepositoryPolicy",
+		"hashicorp_aws.ecr.EcrRepositoryPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -5558,6 +5625,7 @@ func (e *jsiiProxy_EcrRepositoryPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2 Container Registry.
 type EcrRepositoryPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5583,6 +5651,8 @@ type EcrRepositoryTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EcrRepositoryTimeouts
+	SetInternalValue(val *EcrRepositoryTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5618,6 +5688,16 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) DeleteInput() *string {
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) InternalValue() *EcrRepositoryTimeouts {
+	var returns *EcrRepositoryTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5659,7 +5739,7 @@ func NewEcrRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_EcrRepositoryTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5671,7 +5751,7 @@ func NewEcrRepositoryTimeoutsOutputReference_Override(e EcrRepositoryTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -5681,6 +5761,14 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetInternalValue(val *EcrRepositoryTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6116,7 +6204,7 @@ func NewEcrpublicRepository(scope constructs.Construct, id *string, config *Ecrp
 	j := jsiiProxy_EcrpublicRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepository",
+		"hashicorp_aws.ecr.EcrpublicRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6129,7 +6217,7 @@ func NewEcrpublicRepository_Override(e EcrpublicRepository, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepository",
+		"hashicorp_aws.ecr.EcrpublicRepository",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6193,7 +6281,7 @@ func EcrpublicRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ECR.EcrpublicRepository",
+		"hashicorp_aws.ecr.EcrpublicRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6206,7 +6294,7 @@ func EcrpublicRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ECR.EcrpublicRepository",
+		"hashicorp_aws.ecr.EcrpublicRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -6434,6 +6522,8 @@ type EcrpublicRepositoryCatalogDataOutputReference interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	InternalValue() *EcrpublicRepositoryCatalogData
+	SetInternalValue(val *EcrpublicRepositoryCatalogData)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogoImageBlob() *string
@@ -6523,6 +6613,16 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) DescriptionInp
 	_jsii_.Get(
 		j,
 		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) InternalValue() *EcrpublicRepositoryCatalogData {
+	var returns *EcrpublicRepositoryCatalogData
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6624,7 +6724,7 @@ func NewEcrpublicRepositoryCatalogDataOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepositoryCatalogDataOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryCatalogDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6636,7 +6736,7 @@ func NewEcrpublicRepositoryCatalogDataOutputReference_Override(e EcrpublicReposi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepositoryCatalogDataOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryCatalogDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6662,6 +6762,14 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetDescription
 	_jsii_.Set(
 		j,
 		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetInternalValue(val *EcrpublicRepositoryCatalogData) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6846,6 +6954,7 @@ func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) ResetUsageText
 	)
 }
 
+// AWS EC2 Container Registry.
 type EcrpublicRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6879,6 +6988,8 @@ type EcrpublicRepositoryTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EcrpublicRepositoryTimeouts
+	SetInternalValue(val *EcrpublicRepositoryTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6914,6 +7025,16 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) DeleteInput() *st
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) InternalValue() *EcrpublicRepositoryTimeouts {
+	var returns *EcrpublicRepositoryTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6955,7 +7076,7 @@ func NewEcrpublicRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6967,7 +7088,7 @@ func NewEcrpublicRepositoryTimeoutsOutputReference_Override(e EcrpublicRepositor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ECR.EcrpublicRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6977,6 +7098,14 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetInternalValue(val *EcrpublicRepositoryTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

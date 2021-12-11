@@ -374,7 +374,7 @@ func NewMediaConvertQueue(scope constructs.Construct, id *string, config *MediaC
 	j := jsiiProxy_MediaConvertQueue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaConvert.MediaConvertQueue",
+		"hashicorp_aws.mediaconvert.MediaConvertQueue",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -387,7 +387,7 @@ func NewMediaConvertQueue_Override(m MediaConvertQueue, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaConvert.MediaConvertQueue",
+		"hashicorp_aws.mediaconvert.MediaConvertQueue",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -483,7 +483,7 @@ func MediaConvertQueue_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MediaConvert.MediaConvertQueue",
+		"hashicorp_aws.mediaconvert.MediaConvertQueue",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -496,7 +496,7 @@ func MediaConvertQueue_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MediaConvert.MediaConvertQueue",
+		"hashicorp_aws.mediaconvert.MediaConvertQueue",
 		"tfResourceType",
 		&returns,
 	)
@@ -714,6 +714,7 @@ func (m *jsiiProxy_MediaConvertQueue) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS MediaConvert.
 type MediaConvertQueueConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -755,6 +756,8 @@ type MediaConvertQueueReservationPlanSettingsOutputReference interface {
 	Commitment() *string
 	SetCommitment(val *string)
 	CommitmentInput() *string
+	InternalValue() *MediaConvertQueueReservationPlanSettings
+	SetInternalValue(val *MediaConvertQueueReservationPlanSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RenewalType() *string
@@ -795,6 +798,16 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) Comm
 	_jsii_.Get(
 		j,
 		"commitmentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) InternalValue() *MediaConvertQueueReservationPlanSettings {
+	var returns *MediaConvertQueueReservationPlanSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -876,7 +889,7 @@ func NewMediaConvertQueueReservationPlanSettingsOutputReference(terraformResourc
 	j := jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaConvert.MediaConvertQueueReservationPlanSettingsOutputReference",
+		"hashicorp_aws.mediaconvert.MediaConvertQueueReservationPlanSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -888,7 +901,7 @@ func NewMediaConvertQueueReservationPlanSettingsOutputReference_Override(m Media
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MediaConvert.MediaConvertQueueReservationPlanSettingsOutputReference",
+		"hashicorp_aws.mediaconvert.MediaConvertQueueReservationPlanSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -898,6 +911,14 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetC
 	_jsii_.Set(
 		j,
 		"commitment",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetInternalValue(val *MediaConvertQueueReservationPlanSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -242,7 +242,7 @@ func NewLicensemanagerAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_LicensemanagerAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociation",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -255,7 +255,7 @@ func NewLicensemanagerAssociation_Override(l LicensemanagerAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociation",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociation",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -319,7 +319,7 @@ func LicensemanagerAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociation",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -332,7 +332,7 @@ func LicensemanagerAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LicenseManager.LicensemanagerAssociation",
+		"hashicorp_aws.licensemanager.LicensemanagerAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -494,6 +494,7 @@ func (l *jsiiProxy_LicensemanagerAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS License Manager.
 type LicensemanagerAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -908,7 +909,7 @@ func NewLicensemanagerLicenseConfiguration(scope constructs.Construct, id *strin
 	j := jsiiProxy_LicensemanagerLicenseConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfiguration",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -921,7 +922,7 @@ func NewLicensemanagerLicenseConfiguration_Override(l LicensemanagerLicenseConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfiguration",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfiguration",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -1033,7 +1034,7 @@ func LicensemanagerLicenseConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfiguration",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1046,7 +1047,7 @@ func LicensemanagerLicenseConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LicenseManager.LicensemanagerLicenseConfiguration",
+		"hashicorp_aws.licensemanager.LicensemanagerLicenseConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -1256,6 +1257,7 @@ func (l *jsiiProxy_LicensemanagerLicenseConfiguration) ToTerraform() interface{}
 	return returns
 }
 
+// AWS License Manager.
 type LicensemanagerLicenseConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

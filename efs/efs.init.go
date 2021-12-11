@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoint",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoint",
 		reflect.TypeOf((*DataAwsEfsAccessPoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPointId", GoGetter: "AccessPointId"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointConfig",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointConfig",
 		reflect.TypeOf((*DataAwsEfsAccessPointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointPosixUser",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointPosixUser",
 		reflect.TypeOf((*DataAwsEfsAccessPointPosixUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -82,7 +82,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectory",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectory",
 		reflect.TypeOf((*DataAwsEfsAccessPointRootDirectory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -103,7 +103,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectoryCreationInfo",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectoryCreationInfo",
 		reflect.TypeOf((*DataAwsEfsAccessPointRootDirectoryCreationInfo)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -125,7 +125,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoints",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoints",
 		reflect.TypeOf((*DataAwsEfsAccessPoints)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -166,11 +166,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointsConfig",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointsConfig",
 		reflect.TypeOf((*DataAwsEfsAccessPointsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystem",
+		"hashicorp_aws.efs.DataAwsEfsFileSystem",
 		reflect.TypeOf((*DataAwsEfsFileSystem)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -227,11 +227,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystemConfig",
+		"hashicorp_aws.efs.DataAwsEfsFileSystemConfig",
 		reflect.TypeOf((*DataAwsEfsFileSystemConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystemLifecyclePolicy",
+		"hashicorp_aws.efs.DataAwsEfsFileSystemLifecyclePolicy",
 		reflect.TypeOf((*DataAwsEfsFileSystemLifecyclePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -252,7 +252,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.DataAwsEfsMountTarget",
+		"hashicorp_aws.efs.DataAwsEfsMountTarget",
 		reflect.TypeOf((*DataAwsEfsMountTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPointId", GoGetter: "AccessPointId"},
@@ -308,11 +308,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.DataAwsEfsMountTargetConfig",
+		"hashicorp_aws.efs.DataAwsEfsMountTargetConfig",
 		reflect.TypeOf((*DataAwsEfsMountTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsAccessPoint",
+		"hashicorp_aws.efs.EfsAccessPoint",
 		reflect.TypeOf((*EfsAccessPoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -368,15 +368,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsAccessPointConfig",
+		"hashicorp_aws.efs.EfsAccessPointConfig",
 		reflect.TypeOf((*EfsAccessPointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsAccessPointPosixUser",
+		"hashicorp_aws.efs.EfsAccessPointPosixUser",
 		reflect.TypeOf((*EfsAccessPointPosixUser)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsAccessPointPosixUserOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointPosixUserOutputReference",
 		reflect.TypeOf((*EfsAccessPointPosixUserOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -385,6 +385,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "gid", GoGetter: "Gid"},
 			_jsii_.MemberProperty{JsiiProperty: "gidInput", GoGetter: "GidInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -403,21 +404,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectory",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectory",
 		reflect.TypeOf((*EfsAccessPointRootDirectory)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryCreationInfo",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryCreationInfo",
 		reflect.TypeOf((*EfsAccessPointRootDirectoryCreationInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryCreationInfoOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryCreationInfoOutputReference",
 		reflect.TypeOf((*EfsAccessPointRootDirectoryCreationInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -437,7 +439,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryOutputReference",
 		reflect.TypeOf((*EfsAccessPointRootDirectoryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "creationInfo", GoGetter: "CreationInfo"},
@@ -446,6 +448,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -464,7 +467,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicy",
 		reflect.TypeOf((*EfsBackupPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -506,17 +509,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsBackupPolicyBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicyBackupPolicy",
 		reflect.TypeOf((*EfsBackupPolicyBackupPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsBackupPolicyBackupPolicyOutputReference",
+		"hashicorp_aws.efs.EfsBackupPolicyBackupPolicyOutputReference",
 		reflect.TypeOf((*EfsBackupPolicyBackupPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -532,11 +536,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsBackupPolicyConfig",
+		"hashicorp_aws.efs.EfsBackupPolicyConfig",
 		reflect.TypeOf((*EfsBackupPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsFileSystem",
+		"hashicorp_aws.efs.EfsFileSystem",
 		reflect.TypeOf((*EfsFileSystem)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -609,15 +613,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsFileSystemConfig",
+		"hashicorp_aws.efs.EfsFileSystemConfig",
 		reflect.TypeOf((*EfsFileSystemConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsFileSystemLifecyclePolicy",
+		"hashicorp_aws.efs.EfsFileSystemLifecyclePolicy",
 		reflect.TypeOf((*EfsFileSystemLifecyclePolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsFileSystemPolicy",
+		"hashicorp_aws.efs.EfsFileSystemPolicy",
 		reflect.TypeOf((*EfsFileSystemPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -661,11 +665,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsFileSystemPolicyConfig",
+		"hashicorp_aws.efs.EfsFileSystemPolicyConfig",
 		reflect.TypeOf((*EfsFileSystemPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsFileSystemSizeInBytes",
+		"hashicorp_aws.efs.EfsFileSystemSizeInBytes",
 		reflect.TypeOf((*EfsFileSystemSizeInBytes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -687,7 +691,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EFS.EfsMountTarget",
+		"hashicorp_aws.efs.EfsMountTarget",
 		reflect.TypeOf((*EfsMountTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -741,7 +745,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EFS.EfsMountTargetConfig",
+		"hashicorp_aws.efs.EfsMountTargetConfig",
 		reflect.TypeOf((*EfsMountTargetConfig)(nil)).Elem(),
 	)
 }

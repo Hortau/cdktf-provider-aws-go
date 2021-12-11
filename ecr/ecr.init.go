@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationToken",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationToken",
 		reflect.TypeOf((*DataAwsEcrAuthorizationToken)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -53,11 +53,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.DataAwsEcrAuthorizationTokenConfig",
+		"hashicorp_aws.ecr.DataAwsEcrAuthorizationTokenConfig",
 		reflect.TypeOf((*DataAwsEcrAuthorizationTokenConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.DataAwsEcrImage",
+		"hashicorp_aws.ecr.DataAwsEcrImage",
 		reflect.TypeOf((*DataAwsEcrImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -108,11 +108,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.DataAwsEcrImageConfig",
+		"hashicorp_aws.ecr.DataAwsEcrImageConfig",
 		reflect.TypeOf((*DataAwsEcrImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.DataAwsEcrRepository",
+		"hashicorp_aws.ecr.DataAwsEcrRepository",
 		reflect.TypeOf((*DataAwsEcrRepository)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -162,11 +162,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryConfig",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryConfig",
 		reflect.TypeOf((*DataAwsEcrRepositoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryEncryptionConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryEncryptionConfiguration",
 		reflect.TypeOf((*DataAwsEcrRepositoryEncryptionConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -187,7 +187,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.DataAwsEcrRepositoryImageScanningConfiguration",
+		"hashicorp_aws.ecr.DataAwsEcrRepositoryImageScanningConfiguration",
 		reflect.TypeOf((*DataAwsEcrRepositoryImageScanningConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -207,7 +207,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrLifecyclePolicy",
+		"hashicorp_aws.ecr.EcrLifecyclePolicy",
 		reflect.TypeOf((*EcrLifecyclePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -249,11 +249,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrLifecyclePolicyConfig",
+		"hashicorp_aws.ecr.EcrLifecyclePolicyConfig",
 		reflect.TypeOf((*EcrLifecyclePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrRegistryPolicy",
+		"hashicorp_aws.ecr.EcrRegistryPolicy",
 		reflect.TypeOf((*EcrRegistryPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -293,11 +293,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRegistryPolicyConfig",
+		"hashicorp_aws.ecr.EcrRegistryPolicyConfig",
 		reflect.TypeOf((*EcrRegistryPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfiguration",
 		reflect.TypeOf((*EcrReplicationConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -339,21 +339,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationConfig",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationConfig",
 		reflect.TypeOf((*EcrReplicationConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfiguration",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfiguration",
 		reflect.TypeOf((*EcrReplicationConfigurationReplicationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationOutputReference",
 		reflect.TypeOf((*EcrReplicationConfigurationReplicationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -370,15 +371,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationRule",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRule",
 		reflect.TypeOf((*EcrReplicationConfigurationReplicationConfigurationRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationRuleDestination",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleDestination",
 		reflect.TypeOf((*EcrReplicationConfigurationReplicationConfigurationRuleDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
+		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
 		reflect.TypeOf((*EcrReplicationConfigurationReplicationConfigurationRuleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "destination", GoGetter: "Destination"},
@@ -387,6 +388,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -400,7 +402,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrRepository",
+		"hashicorp_aws.ecr.EcrRepository",
 		reflect.TypeOf((*EcrRepository)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -462,25 +464,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRepositoryConfig",
+		"hashicorp_aws.ecr.EcrRepositoryConfig",
 		reflect.TypeOf((*EcrRepositoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRepositoryEncryptionConfiguration",
+		"hashicorp_aws.ecr.EcrRepositoryEncryptionConfiguration",
 		reflect.TypeOf((*EcrRepositoryEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRepositoryImageScanningConfiguration",
+		"hashicorp_aws.ecr.EcrRepositoryImageScanningConfiguration",
 		reflect.TypeOf((*EcrRepositoryImageScanningConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrRepositoryImageScanningConfigurationOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryImageScanningConfigurationOutputReference",
 		reflect.TypeOf((*EcrRepositoryImageScanningConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -496,7 +499,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrRepositoryPolicy",
+		"hashicorp_aws.ecr.EcrRepositoryPolicy",
 		reflect.TypeOf((*EcrRepositoryPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -538,15 +541,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRepositoryPolicyConfig",
+		"hashicorp_aws.ecr.EcrRepositoryPolicyConfig",
 		reflect.TypeOf((*EcrRepositoryPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrRepositoryTimeouts",
+		"hashicorp_aws.ecr.EcrRepositoryTimeouts",
 		reflect.TypeOf((*EcrRepositoryTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrRepositoryTimeoutsOutputReference",
 		reflect.TypeOf((*EcrRepositoryTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -555,6 +558,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -569,7 +573,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrpublicRepository",
+		"hashicorp_aws.ecr.EcrpublicRepository",
 		reflect.TypeOf((*EcrpublicRepository)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -622,11 +626,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrpublicRepositoryCatalogData",
+		"hashicorp_aws.ecr.EcrpublicRepositoryCatalogData",
 		reflect.TypeOf((*EcrpublicRepositoryCatalogData)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrpublicRepositoryCatalogDataOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryCatalogDataOutputReference",
 		reflect.TypeOf((*EcrpublicRepositoryCatalogDataOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "aboutText", GoGetter: "AboutText"},
@@ -639,6 +643,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -664,15 +669,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrpublicRepositoryConfig",
+		"hashicorp_aws.ecr.EcrpublicRepositoryConfig",
 		reflect.TypeOf((*EcrpublicRepositoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ECR.EcrpublicRepositoryTimeouts",
+		"hashicorp_aws.ecr.EcrpublicRepositoryTimeouts",
 		reflect.TypeOf((*EcrpublicRepositoryTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ECR.EcrpublicRepositoryTimeoutsOutputReference",
+		"hashicorp_aws.ecr.EcrpublicRepositoryTimeoutsOutputReference",
 		reflect.TypeOf((*EcrpublicRepositoryTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -681,6 +686,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

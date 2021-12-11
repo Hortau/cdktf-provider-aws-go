@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.DataAwsS3Bucket",
+		"hashicorp_aws.s3.DataAwsS3Bucket",
 		reflect.TypeOf((*DataAwsS3Bucket)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.DataAwsS3BucketConfig",
+		"hashicorp_aws.s3.DataAwsS3BucketConfig",
 		reflect.TypeOf((*DataAwsS3BucketConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.DataAwsS3BucketObject",
+		"hashicorp_aws.s3.DataAwsS3BucketObject",
 		reflect.TypeOf((*DataAwsS3BucketObject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -128,11 +128,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.DataAwsS3BucketObjectConfig",
+		"hashicorp_aws.s3.DataAwsS3BucketObjectConfig",
 		reflect.TypeOf((*DataAwsS3BucketObjectConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.DataAwsS3BucketObjects",
+		"hashicorp_aws.s3.DataAwsS3BucketObjects",
 		reflect.TypeOf((*DataAwsS3BucketObjects)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -192,16 +192,17 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.DataAwsS3BucketObjectsConfig",
+		"hashicorp_aws.s3.DataAwsS3BucketObjectsConfig",
 		reflect.TypeOf((*DataAwsS3BucketObjectsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3AccessPoint",
+		"hashicorp_aws.s3.S3AccessPoint",
 		reflect.TypeOf((*S3AccessPoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
 			_jsii_.MemberProperty{JsiiProperty: "accountIdInput", GoGetter: "AccountIdInput"},
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "alias", GoGetter: "Alias"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
 			_jsii_.MemberProperty{JsiiProperty: "bucketInput", GoGetter: "BucketInput"},
@@ -210,6 +211,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
 			_jsii_.MemberProperty{JsiiProperty: "domainName", GoGetter: "DomainName"},
+			_jsii_.MemberMethod{JsiiMethod: "endpoints", GoMethod: "Endpoints"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -255,15 +257,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3AccessPointConfig",
+		"hashicorp_aws.s3.S3AccessPointConfig",
 		reflect.TypeOf((*S3AccessPointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3AccessPointPublicAccessBlockConfiguration",
+		"hashicorp_aws.s3.S3AccessPointPublicAccessBlockConfiguration",
 		reflect.TypeOf((*S3AccessPointPublicAccessBlockConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointPublicAccessBlockConfigurationOutputReference",
 		reflect.TypeOf((*S3AccessPointPublicAccessBlockConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "blockPublicAcls", GoGetter: "BlockPublicAcls"},
@@ -276,6 +278,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "ignorePublicAcls", GoGetter: "IgnorePublicAcls"},
 			_jsii_.MemberProperty{JsiiProperty: "ignorePublicAclsInput", GoGetter: "IgnorePublicAclsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -295,17 +298,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3AccessPointVpcConfiguration",
+		"hashicorp_aws.s3.S3AccessPointVpcConfiguration",
 		reflect.TypeOf((*S3AccessPointVpcConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3AccessPointVpcConfigurationOutputReference",
+		"hashicorp_aws.s3.S3AccessPointVpcConfigurationOutputReference",
 		reflect.TypeOf((*S3AccessPointVpcConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -321,7 +325,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlock",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlock",
 		reflect.TypeOf((*S3AccountPublicAccessBlock)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -373,11 +377,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3AccountPublicAccessBlockConfig",
+		"hashicorp_aws.s3.S3AccountPublicAccessBlockConfig",
 		reflect.TypeOf((*S3AccountPublicAccessBlockConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3Bucket",
+		"hashicorp_aws.s3.S3Bucket",
 		reflect.TypeOf((*S3Bucket)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accelerationStatus", GoGetter: "AccelerationStatus"},
@@ -486,7 +490,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfiguration",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfiguration",
 		reflect.TypeOf((*S3BucketAnalyticsConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -535,21 +539,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationConfig",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationConfig",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationFilter",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationFilter",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationFilterOutputReference",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -569,25 +574,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysis",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysis",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysis)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -604,11 +610,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketAccountId", GoGetter: "BucketAccountId"},
@@ -621,6 +627,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -639,7 +646,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "destination", GoGetter: "Destination"},
@@ -648,6 +655,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -665,7 +673,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
+		"hashicorp_aws.s3.S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference",
 		reflect.TypeOf((*S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataExport", GoGetter: "DataExport"},
@@ -674,6 +682,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -688,19 +697,108 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketConfig",
+		"hashicorp_aws.s3.S3BucketConfig",
 		reflect.TypeOf((*S3BucketConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketCorsRule",
+		"hashicorp_aws.s3.S3BucketCorsRule",
 		reflect.TypeOf((*S3BucketCorsRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketGrant",
+		"hashicorp_aws.s3.S3BucketGrant",
 		reflect.TypeOf((*S3BucketGrant)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventory",
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfiguration",
+		reflect.TypeOf((*S3BucketIntelligentTieringConfiguration)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
+			_jsii_.MemberProperty{JsiiProperty: "bucketInput", GoGetter: "BucketInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "filter", GoGetter: "Filter"},
+			_jsii_.MemberProperty{JsiiProperty: "filterInput", GoGetter: "FilterInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putFilter", GoMethod: "PutFilter"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFilter", GoMethod: "ResetFilter"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetStatus", GoMethod: "ResetStatus"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "tiering", GoGetter: "Tiering"},
+			_jsii_.MemberProperty{JsiiProperty: "tieringInput", GoGetter: "TieringInput"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketIntelligentTieringConfiguration{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationConfig",
+		reflect.TypeOf((*S3BucketIntelligentTieringConfigurationConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationFilter",
+		reflect.TypeOf((*S3BucketIntelligentTieringConfigurationFilter)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationFilterOutputReference",
+		reflect.TypeOf((*S3BucketIntelligentTieringConfigurationFilterOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "prefix", GoGetter: "Prefix"},
+			_jsii_.MemberProperty{JsiiProperty: "prefixInput", GoGetter: "PrefixInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPrefix", GoMethod: "ResetPrefix"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketIntelligentTieringConfigurationTiering",
+		reflect.TypeOf((*S3BucketIntelligentTieringConfigurationTiering)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketInventory",
 		reflect.TypeOf((*S3BucketInventory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -759,29 +857,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryConfig",
+		"hashicorp_aws.s3.S3BucketInventoryConfig",
 		reflect.TypeOf((*S3BucketInventoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryDestination",
+		"hashicorp_aws.s3.S3BucketInventoryDestination",
 		reflect.TypeOf((*S3BucketInventoryDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucket",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucket",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucket)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryption",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryption",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionOutputReference",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -803,17 +902,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseKms",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseKms",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryptionSseKms)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -829,17 +929,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseS3",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseS3",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryptionSseS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -853,7 +954,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationBucketOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationBucketOutputReference",
 		reflect.TypeOf((*S3BucketInventoryDestinationBucketOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -868,6 +969,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -887,7 +989,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryDestinationOutputReference",
 		reflect.TypeOf((*S3BucketInventoryDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -896,6 +998,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -910,17 +1013,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventoryFilter",
+		"hashicorp_aws.s3.S3BucketInventoryFilter",
 		reflect.TypeOf((*S3BucketInventoryFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryFilterOutputReference",
 		reflect.TypeOf((*S3BucketInventoryFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -937,11 +1041,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketInventorySchedule",
+		"hashicorp_aws.s3.S3BucketInventorySchedule",
 		reflect.TypeOf((*S3BucketInventorySchedule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketInventoryScheduleOutputReference",
+		"hashicorp_aws.s3.S3BucketInventoryScheduleOutputReference",
 		reflect.TypeOf((*S3BucketInventoryScheduleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "frequency", GoGetter: "Frequency"},
@@ -950,6 +1054,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -963,15 +1068,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLifecycleRule",
+		"hashicorp_aws.s3.S3BucketLifecycleRule",
 		reflect.TypeOf((*S3BucketLifecycleRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleExpiration",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleExpiration",
 		reflect.TypeOf((*S3BucketLifecycleRuleExpiration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleExpirationOutputReference",
 		reflect.TypeOf((*S3BucketLifecycleRuleExpirationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "date", GoGetter: "Date"},
@@ -984,6 +1089,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1000,11 +1106,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleNoncurrentVersionExpiration",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleNoncurrentVersionExpiration",
 		reflect.TypeOf((*S3BucketLifecycleRuleNoncurrentVersionExpiration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference",
 		reflect.TypeOf((*S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "days", GoGetter: "Days"},
@@ -1013,6 +1119,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1027,19 +1134,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleNoncurrentVersionTransition",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleNoncurrentVersionTransition",
 		reflect.TypeOf((*S3BucketLifecycleRuleNoncurrentVersionTransition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLifecycleRuleTransition",
+		"hashicorp_aws.s3.S3BucketLifecycleRuleTransition",
 		reflect.TypeOf((*S3BucketLifecycleRuleTransition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketLogging",
+		"hashicorp_aws.s3.S3BucketLogging",
 		reflect.TypeOf((*S3BucketLogging)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketMetric",
+		"hashicorp_aws.s3.S3BucketMetric",
 		reflect.TypeOf((*S3BucketMetric)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1084,21 +1191,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketMetricConfig",
+		"hashicorp_aws.s3.S3BucketMetricConfig",
 		reflect.TypeOf((*S3BucketMetricConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketMetricFilter",
+		"hashicorp_aws.s3.S3BucketMetricFilter",
 		reflect.TypeOf((*S3BucketMetricFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketMetricFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketMetricFilterOutputReference",
 		reflect.TypeOf((*S3BucketMetricFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1118,7 +1226,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketNotification",
+		"hashicorp_aws.s3.S3BucketNotification",
 		reflect.TypeOf((*S3BucketNotification)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1166,23 +1274,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketNotificationConfig",
+		"hashicorp_aws.s3.S3BucketNotificationConfig",
 		reflect.TypeOf((*S3BucketNotificationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketNotificationLambdaFunction",
+		"hashicorp_aws.s3.S3BucketNotificationLambdaFunction",
 		reflect.TypeOf((*S3BucketNotificationLambdaFunction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketNotificationQueue",
+		"hashicorp_aws.s3.S3BucketNotificationQueue",
 		reflect.TypeOf((*S3BucketNotificationQueue)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketNotificationTopic",
+		"hashicorp_aws.s3.S3BucketNotificationTopic",
 		reflect.TypeOf((*S3BucketNotificationTopic)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketObject",
+		"hashicorp_aws.s3.S3BucketObject",
 		reflect.TypeOf((*S3BucketObject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acl", GoGetter: "Acl"},
@@ -1293,21 +1401,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketObjectConfig",
+		"hashicorp_aws.s3.S3BucketObjectConfig",
 		reflect.TypeOf((*S3BucketObjectConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketObjectLockConfiguration",
+		"hashicorp_aws.s3.S3BucketObjectLockConfiguration",
 		reflect.TypeOf((*S3BucketObjectLockConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationOutputReference",
 		reflect.TypeOf((*S3BucketObjectLockConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1327,15 +1436,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRule",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRule",
 		reflect.TypeOf((*S3BucketObjectLockConfigurationRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleDefaultRetention",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleDefaultRetention",
 		reflect.TypeOf((*S3BucketObjectLockConfigurationRuleDefaultRetention)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference",
 		reflect.TypeOf((*S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "days", GoGetter: "Days"},
@@ -1344,6 +1453,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1363,7 +1473,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketObjectLockConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketObjectLockConfigurationRuleOutputReference",
 		reflect.TypeOf((*S3BucketObjectLockConfigurationRuleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultRetention", GoGetter: "DefaultRetention"},
@@ -1372,6 +1482,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1386,7 +1497,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketOwnershipControls",
+		"hashicorp_aws.s3.S3BucketOwnershipControls",
 		reflect.TypeOf((*S3BucketOwnershipControls)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1428,21 +1539,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketOwnershipControlsConfig",
+		"hashicorp_aws.s3.S3BucketOwnershipControlsConfig",
 		reflect.TypeOf((*S3BucketOwnershipControlsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketOwnershipControlsRule",
+		"hashicorp_aws.s3.S3BucketOwnershipControlsRule",
 		reflect.TypeOf((*S3BucketOwnershipControlsRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketOwnershipControlsRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketOwnershipControlsRuleOutputReference",
 		reflect.TypeOf((*S3BucketOwnershipControlsRuleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1458,7 +1570,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketPolicy",
+		"hashicorp_aws.s3.S3BucketPolicy",
 		reflect.TypeOf((*S3BucketPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1499,11 +1611,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketPolicyConfig",
+		"hashicorp_aws.s3.S3BucketPolicyConfig",
 		reflect.TypeOf((*S3BucketPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlock",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlock",
 		reflect.TypeOf((*S3BucketPublicAccessBlock)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1554,21 +1666,69 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketPublicAccessBlockConfig",
+		"hashicorp_aws.s3.S3BucketPublicAccessBlockConfig",
 		reflect.TypeOf((*S3BucketPublicAccessBlockConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfiguration",
+		"hashicorp_aws.s3.S3BucketReplicationConfiguration",
 		reflect.TypeOf((*S3BucketReplicationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationA",
+		reflect.TypeOf((*S3BucketReplicationConfigurationA)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
+			_jsii_.MemberProperty{JsiiProperty: "bucketInput", GoGetter: "BucketInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "role", GoGetter: "Role"},
+			_jsii_.MemberProperty{JsiiProperty: "roleInput", GoGetter: "RoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "rule", GoGetter: "Rule"},
+			_jsii_.MemberProperty{JsiiProperty: "ruleInput", GoGetter: "RuleInput"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationA{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationAConfig",
+		reflect.TypeOf((*S3BucketReplicationConfigurationAConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1586,25 +1746,485 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRules",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRule",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRule)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDeleteMarkerReplication",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDeleteMarkerReplication)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestination",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestination)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "owner", GoGetter: "Owner"},
+			_jsii_.MemberProperty{JsiiProperty: "ownerInput", GoGetter: "OwnerInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "replicaKmsKeyId", GoGetter: "ReplicaKmsKeyId"},
+			_jsii_.MemberProperty{JsiiProperty: "replicaKmsKeyIdInput", GoGetter: "ReplicaKmsKeyIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetrics",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationMetrics)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "minutes", GoGetter: "Minutes"},
+			_jsii_.MemberProperty{JsiiProperty: "minutesInput", GoGetter: "MinutesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "eventThreshold", GoGetter: "EventThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "eventThresholdInput", GoGetter: "EventThresholdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putEventThreshold", GoMethod: "PutEventThreshold"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEventThreshold", GoMethod: "ResetEventThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accessControlTranslation", GoGetter: "AccessControlTranslation"},
+			_jsii_.MemberProperty{JsiiProperty: "accessControlTranslationInput", GoGetter: "AccessControlTranslationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
+			_jsii_.MemberProperty{JsiiProperty: "accountInput", GoGetter: "AccountInput"},
+			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
+			_jsii_.MemberProperty{JsiiProperty: "bucketInput", GoGetter: "BucketInput"},
+			_jsii_.MemberProperty{JsiiProperty: "encryptionConfiguration", GoGetter: "EncryptionConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "encryptionConfigurationInput", GoGetter: "EncryptionConfigurationInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "metrics", GoGetter: "Metrics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricsInput", GoGetter: "MetricsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putAccessControlTranslation", GoMethod: "PutAccessControlTranslation"},
+			_jsii_.MemberMethod{JsiiMethod: "putEncryptionConfiguration", GoMethod: "PutEncryptionConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "putMetrics", GoMethod: "PutMetrics"},
+			_jsii_.MemberMethod{JsiiMethod: "putReplicationTime", GoMethod: "PutReplicationTime"},
+			_jsii_.MemberProperty{JsiiProperty: "replicationTime", GoGetter: "ReplicationTime"},
+			_jsii_.MemberProperty{JsiiProperty: "replicationTimeInput", GoGetter: "ReplicationTimeInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccessControlTranslation", GoMethod: "ResetAccessControlTranslation"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccount", GoMethod: "ResetAccount"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEncryptionConfiguration", GoMethod: "ResetEncryptionConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "resetMetrics", GoMethod: "ResetMetrics"},
+			_jsii_.MemberMethod{JsiiMethod: "resetReplicationTime", GoMethod: "ResetReplicationTime"},
+			_jsii_.MemberMethod{JsiiMethod: "resetStorageClass", GoMethod: "ResetStorageClass"},
+			_jsii_.MemberProperty{JsiiProperty: "storageClass", GoGetter: "StorageClass"},
+			_jsii_.MemberProperty{JsiiProperty: "storageClassInput", GoGetter: "StorageClassInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTime",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationReplicationTime)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putTime", GoMethod: "PutTime"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "time", GoGetter: "Time"},
+			_jsii_.MemberProperty{JsiiProperty: "timeInput", GoGetter: "TimeInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "minutes", GoGetter: "Minutes"},
+			_jsii_.MemberProperty{JsiiProperty: "minutesInput", GoGetter: "MinutesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleExistingObjectReplication",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleExistingObjectReplication)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilter",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilter)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterAnd",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilterAnd)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterAndOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilterAndOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "prefix", GoGetter: "Prefix"},
+			_jsii_.MemberProperty{JsiiProperty: "prefixInput", GoGetter: "PrefixInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPrefix", GoMethod: "ResetPrefix"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilterOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "and", GoGetter: "And"},
+			_jsii_.MemberProperty{JsiiProperty: "andInput", GoGetter: "AndInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "prefix", GoGetter: "Prefix"},
+			_jsii_.MemberProperty{JsiiProperty: "prefixInput", GoGetter: "PrefixInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putAnd", GoMethod: "PutAnd"},
+			_jsii_.MemberMethod{JsiiMethod: "putTag", GoMethod: "PutTag"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAnd", GoMethod: "ResetAnd"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPrefix", GoMethod: "ResetPrefix"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTag", GoMethod: "ResetTag"},
+			_jsii_.MemberProperty{JsiiProperty: "tag", GoGetter: "Tag"},
+			_jsii_.MemberProperty{JsiiProperty: "tagInput", GoGetter: "TagInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterTag",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilterTag)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleFilterTagOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleFilterTagOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "key", GoGetter: "Key"},
+			_jsii_.MemberProperty{JsiiProperty: "keyInput", GoGetter: "KeyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteria",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteria)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putReplicaModifications", GoMethod: "PutReplicaModifications"},
+			_jsii_.MemberMethod{JsiiMethod: "putSseKmsEncryptedObjects", GoMethod: "PutSseKmsEncryptedObjects"},
+			_jsii_.MemberProperty{JsiiProperty: "replicaModifications", GoGetter: "ReplicaModifications"},
+			_jsii_.MemberProperty{JsiiProperty: "replicaModificationsInput", GoGetter: "ReplicaModificationsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetReplicaModifications", GoMethod: "ResetReplicaModifications"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSseKmsEncryptedObjects", GoMethod: "ResetSseKmsEncryptedObjects"},
+			_jsii_.MemberProperty{JsiiProperty: "sseKmsEncryptedObjects", GoGetter: "SseKmsEncryptedObjects"},
+			_jsii_.MemberProperty{JsiiProperty: "sseKmsEncryptedObjectsInput", GoGetter: "SseKmsEncryptedObjectsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		reflect.TypeOf((*S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberProperty{JsiiProperty: "statusInput", GoGetter: "StatusInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRules",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRules)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestination",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestination",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestination)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1620,17 +2240,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationMetrics",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationMetrics",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationMetrics)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1650,7 +2271,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessControlTranslation", GoGetter: "AccessControlTranslation"},
@@ -1663,6 +2284,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1693,17 +2315,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationReplicationTime",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationReplicationTime",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationReplicationTime)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1723,17 +2346,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesFilter",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesFilter",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesFilterOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesFilterOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1753,17 +2377,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteria",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteria",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesSourceSelectionCriteria)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1781,11 +2406,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
+		"hashicorp_aws.s3.S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference",
 		reflect.TypeOf((*S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -1794,6 +2419,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1807,17 +2433,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfiguration",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfiguration",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationOutputReference",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1834,21 +2461,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRule",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRule",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfigurationRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1867,7 +2495,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
+		"hashicorp_aws.s3.S3BucketServerSideEncryptionConfigurationRuleOutputReference",
 		reflect.TypeOf((*S3BucketServerSideEncryptionConfigurationRuleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "applyServerSideEncryptionByDefault", GoGetter: "ApplyServerSideEncryptionByDefault"},
@@ -1878,6 +2506,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1893,11 +2522,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketVersioning",
+		"hashicorp_aws.s3.S3BucketVersioning",
 		reflect.TypeOf((*S3BucketVersioning)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketVersioningOutputReference",
+		"hashicorp_aws.s3.S3BucketVersioningOutputReference",
 		reflect.TypeOf((*S3BucketVersioningOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -1906,6 +2535,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1923,11 +2553,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3BucketWebsite",
+		"hashicorp_aws.s3.S3BucketWebsite",
 		reflect.TypeOf((*S3BucketWebsite)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3BucketWebsiteOutputReference",
+		"hashicorp_aws.s3.S3BucketWebsiteOutputReference",
 		reflect.TypeOf((*S3BucketWebsiteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "errorDocument", GoGetter: "ErrorDocument"},
@@ -1938,6 +2568,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "indexDocument", GoGetter: "IndexDocument"},
 			_jsii_.MemberProperty{JsiiProperty: "indexDocumentInput", GoGetter: "IndexDocumentInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1959,7 +2590,53 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucket",
+		"hashicorp_aws.s3.S3ControlAccessPointPolicy",
+		reflect.TypeOf((*S3ControlAccessPointPolicy)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accessPointArn", GoGetter: "AccessPointArn"},
+			_jsii_.MemberProperty{JsiiProperty: "accessPointArnInput", GoGetter: "AccessPointArnInput"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "hasPublicAccessPolicy", GoGetter: "HasPublicAccessPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "policy", GoGetter: "Policy"},
+			_jsii_.MemberProperty{JsiiProperty: "policyInput", GoGetter: "PolicyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlAccessPointPolicy{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlAccessPointPolicyConfig",
+		reflect.TypeOf((*S3ControlAccessPointPolicyConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlBucket",
 		reflect.TypeOf((*S3ControlBucket)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2009,11 +2686,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketConfig",
+		"hashicorp_aws.s3.S3ControlBucketConfig",
 		reflect.TypeOf((*S3ControlBucketConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfiguration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfiguration",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2054,19 +2731,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationConfig",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationConfig",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRule",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRule",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "daysAfterInitiation", GoGetter: "DaysAfterInitiation"},
@@ -2075,6 +2752,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2088,11 +2766,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleExpiration",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleExpiration",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleExpiration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "date", GoGetter: "Date"},
@@ -2105,6 +2783,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2121,17 +2800,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleFilter",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleFilter",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
+		"hashicorp_aws.s3.S3ControlBucketLifecycleConfigurationRuleFilterOutputReference",
 		reflect.TypeOf((*S3ControlBucketLifecycleConfigurationRuleFilterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2151,7 +2831,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ControlBucketPolicy",
+		"hashicorp_aws.s3.S3ControlBucketPolicy",
 		reflect.TypeOf((*S3ControlBucketPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2192,11 +2872,480 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ControlBucketPolicyConfig",
+		"hashicorp_aws.s3.S3ControlBucketPolicyConfig",
 		reflect.TypeOf((*S3ControlBucketPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3ObjectCopy",
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPoint",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPoint)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
+			_jsii_.MemberProperty{JsiiProperty: "accountIdInput", GoGetter: "AccountIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "alias", GoGetter: "Alias"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "details", GoGetter: "Details"},
+			_jsii_.MemberProperty{JsiiProperty: "detailsInput", GoGetter: "DetailsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "domainName", GoGetter: "DomainName"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putDetails", GoMethod: "PutDetails"},
+			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccountId", GoMethod: "ResetAccountId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "status", GoGetter: "Status"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "timeouts", GoGetter: "Timeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "timeoutsInput", GoGetter: "TimeoutsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPoint{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointConfig",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetails",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointDetails)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsOutputReference",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointDetailsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "publicAccessBlock", GoGetter: "PublicAccessBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "publicAccessBlockInput", GoGetter: "PublicAccessBlockInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putPublicAccessBlock", GoMethod: "PutPublicAccessBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "region", GoGetter: "Region"},
+			_jsii_.MemberProperty{JsiiProperty: "regionInput", GoGetter: "RegionInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPublicAccessBlock", GoMethod: "ResetPublicAccessBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsPublicAccessBlock",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointDetailsPublicAccessBlock)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "blockPublicAcls", GoGetter: "BlockPublicAcls"},
+			_jsii_.MemberProperty{JsiiProperty: "blockPublicAclsInput", GoGetter: "BlockPublicAclsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "blockPublicPolicy", GoGetter: "BlockPublicPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "blockPublicPolicyInput", GoGetter: "BlockPublicPolicyInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ignorePublicAcls", GoGetter: "IgnorePublicAcls"},
+			_jsii_.MemberProperty{JsiiProperty: "ignorePublicAclsInput", GoGetter: "IgnorePublicAclsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetBlockPublicAcls", GoMethod: "ResetBlockPublicAcls"},
+			_jsii_.MemberMethod{JsiiMethod: "resetBlockPublicPolicy", GoMethod: "ResetBlockPublicPolicy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIgnorePublicAcls", GoMethod: "ResetIgnorePublicAcls"},
+			_jsii_.MemberMethod{JsiiMethod: "resetRestrictPublicBuckets", GoMethod: "ResetRestrictPublicBuckets"},
+			_jsii_.MemberProperty{JsiiProperty: "restrictPublicBuckets", GoGetter: "RestrictPublicBuckets"},
+			_jsii_.MemberProperty{JsiiProperty: "restrictPublicBucketsInput", GoGetter: "RestrictPublicBucketsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointDetailsRegion",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointDetailsRegion)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicy",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicy)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
+			_jsii_.MemberProperty{JsiiProperty: "accountIdInput", GoGetter: "AccountIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "details", GoGetter: "Details"},
+			_jsii_.MemberProperty{JsiiProperty: "detailsInput", GoGetter: "DetailsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "established", GoGetter: "Established"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "proposed", GoGetter: "Proposed"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putDetails", GoMethod: "PutDetails"},
+			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccountId", GoMethod: "ResetAccountId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "timeouts", GoGetter: "Timeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "timeoutsInput", GoGetter: "TimeoutsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointPolicy{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyConfig",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicyConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyDetails",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicyDetails)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyDetailsOutputReference",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicyDetailsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "policy", GoGetter: "Policy"},
+			_jsii_.MemberProperty{JsiiProperty: "policyInput", GoGetter: "PolicyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyTimeouts",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicyTimeouts)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
+			_jsii_.MemberProperty{JsiiProperty: "createInput", GoGetter: "CreateInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCreate", GoMethod: "ResetCreate"},
+			_jsii_.MemberMethod{JsiiMethod: "resetUpdate", GoMethod: "ResetUpdate"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "update", GoGetter: "Update"},
+			_jsii_.MemberProperty{JsiiProperty: "updateInput", GoGetter: "UpdateInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointTimeouts",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointTimeouts)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlMultiRegionAccessPointTimeoutsOutputReference",
+		reflect.TypeOf((*S3ControlMultiRegionAccessPointTimeoutsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
+			_jsii_.MemberProperty{JsiiProperty: "createInput", GoGetter: "CreateInput"},
+			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
+			_jsii_.MemberProperty{JsiiProperty: "deleteInput", GoGetter: "DeleteInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCreate", GoMethod: "ResetCreate"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDelete", GoMethod: "ResetDelete"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPoint",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPoint)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
+			_jsii_.MemberProperty{JsiiProperty: "accountIdInput", GoGetter: "AccountIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "configuration", GoGetter: "Configuration"},
+			_jsii_.MemberProperty{JsiiProperty: "configurationInput", GoGetter: "ConfigurationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putConfiguration", GoMethod: "PutConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccountId", GoMethod: "ResetAccountId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlObjectLambdaAccessPoint{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfig",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfiguration",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationOutputReference",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "allowedFeatures", GoGetter: "AllowedFeatures"},
+			_jsii_.MemberProperty{JsiiProperty: "allowedFeaturesInput", GoGetter: "AllowedFeaturesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cloudWatchMetricsEnabled", GoGetter: "CloudWatchMetricsEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "cloudWatchMetricsEnabledInput", GoGetter: "CloudWatchMetricsEnabledInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllowedFeatures", GoMethod: "ResetAllowedFeatures"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCloudWatchMetricsEnabled", GoMethod: "ResetCloudWatchMetricsEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "supportingAccessPoint", GoGetter: "SupportingAccessPoint"},
+			_jsii_.MemberProperty{JsiiProperty: "supportingAccessPointInput", GoGetter: "SupportingAccessPointInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "transformationConfiguration", GoGetter: "TransformationConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "transformationConfigurationInput", GoGetter: "TransformationConfigurationInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "functionArn", GoGetter: "FunctionArn"},
+			_jsii_.MemberProperty{JsiiProperty: "functionArnInput", GoGetter: "FunctionArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "functionPayload", GoGetter: "FunctionPayload"},
+			_jsii_.MemberProperty{JsiiProperty: "functionPayloadInput", GoGetter: "FunctionPayloadInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFunctionPayload", GoMethod: "ResetFunctionPayload"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "awsLambda", GoGetter: "AwsLambda"},
+			_jsii_.MemberProperty{JsiiProperty: "awsLambdaInput", GoGetter: "AwsLambdaInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putAwsLambda", GoMethod: "PutAwsLambda"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicy",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointPolicy)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
+			_jsii_.MemberProperty{JsiiProperty: "accountIdInput", GoGetter: "AccountIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "hasPublicAccessPolicy", GoGetter: "HasPublicAccessPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "policy", GoGetter: "Policy"},
+			_jsii_.MemberProperty{JsiiProperty: "policyInput", GoGetter: "PolicyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccountId", GoMethod: "ResetAccountId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_S3ControlObjectLambdaAccessPointPolicy{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.s3.S3ControlObjectLambdaAccessPointPolicyConfig",
+		reflect.TypeOf((*S3ControlObjectLambdaAccessPointPolicyConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.s3.S3ObjectCopy",
 		reflect.TypeOf((*S3ObjectCopy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acl", GoGetter: "Acl"},
@@ -2353,15 +3502,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ObjectCopyConfig",
+		"hashicorp_aws.s3.S3ObjectCopyConfig",
 		reflect.TypeOf((*S3ObjectCopyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3ObjectCopyGrant",
+		"hashicorp_aws.s3.S3ObjectCopyGrant",
 		reflect.TypeOf((*S3ObjectCopyGrant)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3OutpostsEndpoint",
+		"hashicorp_aws.s3.S3OutpostsEndpoint",
 		reflect.TypeOf((*S3OutpostsEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2408,11 +3557,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.S3.S3OutpostsEndpointConfig",
+		"hashicorp_aws.s3.S3OutpostsEndpointConfig",
 		reflect.TypeOf((*S3OutpostsEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.S3.S3OutpostsEndpointNetworkInterfaces",
+		"hashicorp_aws.s3.S3OutpostsEndpointNetworkInterfaces",
 		reflect.TypeOf((*S3OutpostsEndpointNetworkInterfaces)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

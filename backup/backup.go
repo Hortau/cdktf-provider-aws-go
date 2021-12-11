@@ -219,7 +219,7 @@ func NewBackupGlobalSettings(scope constructs.Construct, id *string, config *Bac
 	j := jsiiProxy_BackupGlobalSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupGlobalSettings",
+		"hashicorp_aws.backup.BackupGlobalSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -232,7 +232,7 @@ func NewBackupGlobalSettings_Override(b BackupGlobalSettings, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupGlobalSettings",
+		"hashicorp_aws.backup.BackupGlobalSettings",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -288,7 +288,7 @@ func BackupGlobalSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupGlobalSettings",
+		"hashicorp_aws.backup.BackupGlobalSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -301,7 +301,7 @@ func BackupGlobalSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupGlobalSettings",
+		"hashicorp_aws.backup.BackupGlobalSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -463,6 +463,7 @@ func (b *jsiiProxy_BackupGlobalSettings) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupGlobalSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -803,7 +804,7 @@ func NewBackupPlan(scope constructs.Construct, id *string, config *BackupPlanCon
 	j := jsiiProxy_BackupPlan{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlan",
+		"hashicorp_aws.backup.BackupPlan",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -816,7 +817,7 @@ func NewBackupPlan_Override(b BackupPlan, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlan",
+		"hashicorp_aws.backup.BackupPlan",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -904,7 +905,7 @@ func BackupPlan_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupPlan",
+		"hashicorp_aws.backup.BackupPlan",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -917,7 +918,7 @@ func BackupPlan_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupPlan",
+		"hashicorp_aws.backup.BackupPlan",
 		"tfResourceType",
 		&returns,
 	)
@@ -1110,6 +1111,7 @@ type BackupPlanAdvancedBackupSetting struct {
 	ResourceType *string `json:"resourceType"`
 }
 
+// AWS Backup.
 type BackupPlanConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1184,6 +1186,8 @@ type BackupPlanRuleCopyActionLifecycleOutputReference interface {
 	DeleteAfter() *float64
 	SetDeleteAfter(val *float64)
 	DeleteAfterInput() *float64
+	InternalValue() *BackupPlanRuleCopyActionLifecycle
+	SetInternalValue(val *BackupPlanRuleCopyActionLifecycle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1245,6 +1249,16 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) DeleteAfter
 	return returns
 }
 
+func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) InternalValue() *BackupPlanRuleCopyActionLifecycle {
+	var returns *BackupPlanRuleCopyActionLifecycle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1281,7 +1295,7 @@ func NewBackupPlanRuleCopyActionLifecycleOutputReference(terraformResource cdktf
 	j := jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlanRuleCopyActionLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleCopyActionLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1293,7 +1307,7 @@ func NewBackupPlanRuleCopyActionLifecycleOutputReference_Override(b BackupPlanRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlanRuleCopyActionLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleCopyActionLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -1311,6 +1325,14 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetDeleteAf
 	_jsii_.Set(
 		j,
 		"deleteAfter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetInternalValue(val *BackupPlanRuleCopyActionLifecycle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1454,6 +1476,8 @@ type BackupPlanRuleLifecycleOutputReference interface {
 	DeleteAfter() *float64
 	SetDeleteAfter(val *float64)
 	DeleteAfterInput() *float64
+	InternalValue() *BackupPlanRuleLifecycle
+	SetInternalValue(val *BackupPlanRuleLifecycle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1515,6 +1539,16 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) DeleteAfterInput() *f
 	return returns
 }
 
+func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) InternalValue() *BackupPlanRuleLifecycle {
+	var returns *BackupPlanRuleLifecycle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1551,7 +1585,7 @@ func NewBackupPlanRuleLifecycleOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_BackupPlanRuleLifecycleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlanRuleLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1563,7 +1597,7 @@ func NewBackupPlanRuleLifecycleOutputReference_Override(b BackupPlanRuleLifecycl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupPlanRuleLifecycleOutputReference",
+		"hashicorp_aws.backup.BackupPlanRuleLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -1581,6 +1615,14 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetDeleteAfter(val *f
 	_jsii_.Set(
 		j,
 		"deleteAfter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetInternalValue(val *BackupPlanRuleLifecycle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1727,6 +1769,9 @@ type BackupRegionSettings interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
+	ResourceTypeManagementPreference() interface{}
+	SetResourceTypeManagementPreference(val interface{})
+	ResourceTypeManagementPreferenceInput() interface{}
 	ResourceTypeOptInPreference() interface{}
 	SetResourceTypeOptInPreference(val interface{})
 	ResourceTypeOptInPreferenceInput() interface{}
@@ -1741,6 +1786,7 @@ type BackupRegionSettings interface {
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
+	ResetResourceTypeManagementPreference()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -1862,6 +1908,26 @@ func (j *jsiiProxy_BackupRegionSettings) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreference() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceTypeManagementPreference",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreferenceInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceTypeManagementPreferenceInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreference() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1919,7 +1985,7 @@ func NewBackupRegionSettings(scope constructs.Construct, id *string, config *Bac
 	j := jsiiProxy_BackupRegionSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupRegionSettings",
+		"hashicorp_aws.backup.BackupRegionSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1932,7 +1998,7 @@ func NewBackupRegionSettings_Override(b BackupRegionSettings, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupRegionSettings",
+		"hashicorp_aws.backup.BackupRegionSettings",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -1970,6 +2036,14 @@ func (j *jsiiProxy_BackupRegionSettings) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
+func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeManagementPreference(val interface{}) {
+	_jsii_.Set(
+		j,
+		"resourceTypeManagementPreference",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeOptInPreference(val interface{}) {
 	_jsii_.Set(
 		j,
@@ -1988,7 +2062,7 @@ func BackupRegionSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupRegionSettings",
+		"hashicorp_aws.backup.BackupRegionSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2001,7 +2075,7 @@ func BackupRegionSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupRegionSettings",
+		"hashicorp_aws.backup.BackupRegionSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -2107,6 +2181,14 @@ func (b *jsiiProxy_BackupRegionSettings) ResetOverrideLogicalId() {
 	)
 }
 
+func (b *jsiiProxy_BackupRegionSettings) ResetResourceTypeManagementPreference() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetResourceTypeManagementPreference",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BackupRegionSettings) SynthesizeAttributes() *map[string]interface{} {
 	var returns *map[string]interface{}
 
@@ -2163,6 +2245,7 @@ func (b *jsiiProxy_BackupRegionSettings) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupRegionSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2174,6 +2257,8 @@ type BackupRegionSettingsConfig struct {
 	Provider cdktf.TerraformProvider `json:"provider"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html#resource_type_opt_in_preference BackupRegionSettings#resource_type_opt_in_preference}.
 	ResourceTypeOptInPreference interface{} `json:"resourceTypeOptInPreference"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html#resource_type_management_preference BackupRegionSettings#resource_type_management_preference}.
+	ResourceTypeManagementPreference interface{} `json:"resourceTypeManagementPreference"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html aws_backup_selection}.
@@ -2480,7 +2565,7 @@ func NewBackupSelection(scope constructs.Construct, id *string, config *BackupSe
 	j := jsiiProxy_BackupSelection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupSelection",
+		"hashicorp_aws.backup.BackupSelection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2493,7 +2578,7 @@ func NewBackupSelection_Override(b BackupSelection, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupSelection",
+		"hashicorp_aws.backup.BackupSelection",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -2581,7 +2666,7 @@ func BackupSelection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupSelection",
+		"hashicorp_aws.backup.BackupSelection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2594,7 +2679,7 @@ func BackupSelection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupSelection",
+		"hashicorp_aws.backup.BackupSelection",
 		"tfResourceType",
 		&returns,
 	)
@@ -2772,6 +2857,7 @@ func (b *jsiiProxy_BackupSelection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupSelectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3108,7 +3194,7 @@ func NewBackupVault(scope constructs.Construct, id *string, config *BackupVaultC
 	j := jsiiProxy_BackupVault{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVault",
+		"hashicorp_aws.backup.BackupVault",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3121,7 +3207,7 @@ func NewBackupVault_Override(b BackupVault, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVault",
+		"hashicorp_aws.backup.BackupVault",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -3201,7 +3287,7 @@ func BackupVault_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupVault",
+		"hashicorp_aws.backup.BackupVault",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3214,7 +3300,7 @@ func BackupVault_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupVault",
+		"hashicorp_aws.backup.BackupVault",
 		"tfResourceType",
 		&returns,
 	)
@@ -3400,6 +3486,7 @@ func (b *jsiiProxy_BackupVault) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupVaultConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3712,7 +3799,7 @@ func NewBackupVaultLockConfiguration(scope constructs.Construct, id *string, con
 	j := jsiiProxy_BackupVaultLockConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultLockConfiguration",
+		"hashicorp_aws.backup.BackupVaultLockConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3725,7 +3812,7 @@ func NewBackupVaultLockConfiguration_Override(b BackupVaultLockConfiguration, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultLockConfiguration",
+		"hashicorp_aws.backup.BackupVaultLockConfiguration",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -3805,7 +3892,7 @@ func BackupVaultLockConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupVaultLockConfiguration",
+		"hashicorp_aws.backup.BackupVaultLockConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3818,7 +3905,7 @@ func BackupVaultLockConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupVaultLockConfiguration",
+		"hashicorp_aws.backup.BackupVaultLockConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -4004,6 +4091,7 @@ func (b *jsiiProxy_BackupVaultLockConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupVaultLockConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4290,7 +4378,7 @@ func NewBackupVaultNotifications(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_BackupVaultNotifications{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultNotifications",
+		"hashicorp_aws.backup.BackupVaultNotifications",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4303,7 +4391,7 @@ func NewBackupVaultNotifications_Override(b BackupVaultNotifications, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultNotifications",
+		"hashicorp_aws.backup.BackupVaultNotifications",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -4375,7 +4463,7 @@ func BackupVaultNotifications_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupVaultNotifications",
+		"hashicorp_aws.backup.BackupVaultNotifications",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4388,7 +4476,7 @@ func BackupVaultNotifications_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupVaultNotifications",
+		"hashicorp_aws.backup.BackupVaultNotifications",
 		"tfResourceType",
 		&returns,
 	)
@@ -4550,6 +4638,7 @@ func (b *jsiiProxy_BackupVaultNotifications) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupVaultNotificationsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4811,7 +4900,7 @@ func NewBackupVaultPolicy(scope constructs.Construct, id *string, config *Backup
 	j := jsiiProxy_BackupVaultPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultPolicy",
+		"hashicorp_aws.backup.BackupVaultPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4824,7 +4913,7 @@ func NewBackupVaultPolicy_Override(b BackupVaultPolicy, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.BackupVaultPolicy",
+		"hashicorp_aws.backup.BackupVaultPolicy",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -4888,7 +4977,7 @@ func BackupVaultPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.BackupVaultPolicy",
+		"hashicorp_aws.backup.BackupVaultPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4901,7 +4990,7 @@ func BackupVaultPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.BackupVaultPolicy",
+		"hashicorp_aws.backup.BackupVaultPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -5063,6 +5152,7 @@ func (b *jsiiProxy_BackupVaultPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type BackupVaultPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5345,7 +5435,7 @@ func NewDataAwsBackupPlan(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsBackupPlan{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupPlan",
+		"hashicorp_aws.backup.DataAwsBackupPlan",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5358,7 +5448,7 @@ func NewDataAwsBackupPlan_Override(d DataAwsBackupPlan, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupPlan",
+		"hashicorp_aws.backup.DataAwsBackupPlan",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5422,7 +5512,7 @@ func DataAwsBackupPlan_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.DataAwsBackupPlan",
+		"hashicorp_aws.backup.DataAwsBackupPlan",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5435,7 +5525,7 @@ func DataAwsBackupPlan_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.DataAwsBackupPlan",
+		"hashicorp_aws.backup.DataAwsBackupPlan",
 		"tfResourceType",
 		&returns,
 	)
@@ -5605,6 +5695,7 @@ func (d *jsiiProxy_DataAwsBackupPlan) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type DataAwsBackupPlanConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5886,7 +5977,7 @@ func NewDataAwsBackupSelection(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsBackupSelection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupSelection",
+		"hashicorp_aws.backup.DataAwsBackupSelection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5899,7 +5990,7 @@ func NewDataAwsBackupSelection_Override(d DataAwsBackupSelection, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupSelection",
+		"hashicorp_aws.backup.DataAwsBackupSelection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5963,7 +6054,7 @@ func DataAwsBackupSelection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.DataAwsBackupSelection",
+		"hashicorp_aws.backup.DataAwsBackupSelection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5976,7 +6067,7 @@ func DataAwsBackupSelection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.DataAwsBackupSelection",
+		"hashicorp_aws.backup.DataAwsBackupSelection",
 		"tfResourceType",
 		&returns,
 	)
@@ -6138,6 +6229,7 @@ func (d *jsiiProxy_DataAwsBackupSelection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type DataAwsBackupSelectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6420,7 +6512,7 @@ func NewDataAwsBackupVault(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsBackupVault{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupVault",
+		"hashicorp_aws.backup.DataAwsBackupVault",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6433,7 +6525,7 @@ func NewDataAwsBackupVault_Override(d DataAwsBackupVault, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Backup.DataAwsBackupVault",
+		"hashicorp_aws.backup.DataAwsBackupVault",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6497,7 +6589,7 @@ func DataAwsBackupVault_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Backup.DataAwsBackupVault",
+		"hashicorp_aws.backup.DataAwsBackupVault",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6510,7 +6602,7 @@ func DataAwsBackupVault_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Backup.DataAwsBackupVault",
+		"hashicorp_aws.backup.DataAwsBackupVault",
 		"tfResourceType",
 		&returns,
 	)
@@ -6680,6 +6772,7 @@ func (d *jsiiProxy_DataAwsBackupVault) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Backup.
 type DataAwsBackupVaultConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

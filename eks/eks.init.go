@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksAddon",
+		"hashicorp_aws.eks.DataAwsEksAddon",
 		reflect.TypeOf((*DataAwsEksAddon)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "addonName", GoGetter: "AddonName"},
@@ -57,11 +57,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksAddonConfig",
+		"hashicorp_aws.eks.DataAwsEksAddonConfig",
 		reflect.TypeOf((*DataAwsEksAddonConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksCluster",
+		"hashicorp_aws.eks.DataAwsEksCluster",
 		reflect.TypeOf((*DataAwsEksCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -115,7 +115,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuth",
+		"hashicorp_aws.eks.DataAwsEksClusterAuth",
 		reflect.TypeOf((*DataAwsEksClusterAuth)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -155,11 +155,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuthConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterAuthConfig",
 		reflect.TypeOf((*DataAwsEksClusterAuthConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterCertificateAuthority",
+		"hashicorp_aws.eks.DataAwsEksClusterCertificateAuthority",
 		reflect.TypeOf((*DataAwsEksClusterCertificateAuthority)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -179,11 +179,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksClusterConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterConfig",
 		reflect.TypeOf((*DataAwsEksClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentity",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentity",
 		reflect.TypeOf((*DataAwsEksClusterIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -203,7 +203,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentityOidc",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentityOidc",
 		reflect.TypeOf((*DataAwsEksClusterIdentityOidc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -223,7 +223,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterKubernetesNetworkConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterKubernetesNetworkConfig",
 		reflect.TypeOf((*DataAwsEksClusterKubernetesNetworkConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -243,7 +243,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusterVpcConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterVpcConfig",
 		reflect.TypeOf((*DataAwsEksClusterVpcConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clusterSecurityGroupId", GoGetter: "ClusterSecurityGroupId"},
@@ -269,7 +269,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksClusters",
+		"hashicorp_aws.eks.DataAwsEksClusters",
 		reflect.TypeOf((*DataAwsEksClusters)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -307,11 +307,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksClustersConfig",
+		"hashicorp_aws.eks.DataAwsEksClustersConfig",
 		reflect.TypeOf((*DataAwsEksClustersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroup",
+		"hashicorp_aws.eks.DataAwsEksNodeGroup",
 		reflect.TypeOf((*DataAwsEksNodeGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -368,11 +368,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupConfig",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupConfig",
 		reflect.TypeOf((*DataAwsEksNodeGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupRemoteAccess",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupRemoteAccess",
 		reflect.TypeOf((*DataAwsEksNodeGroupRemoteAccess)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -393,7 +393,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResources",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResources",
 		reflect.TypeOf((*DataAwsEksNodeGroupResources)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoscalingGroups", GoGetter: "AutoscalingGroups"},
@@ -414,7 +414,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResourcesAutoscalingGroups",
 		reflect.TypeOf((*DataAwsEksNodeGroupResourcesAutoscalingGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -434,7 +434,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupScalingConfig",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupScalingConfig",
 		reflect.TypeOf((*DataAwsEksNodeGroupScalingConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -456,7 +456,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroups",
 		reflect.TypeOf((*DataAwsEksNodeGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -496,11 +496,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupsConfig",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupsConfig",
 		reflect.TypeOf((*DataAwsEksNodeGroupsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksAddon",
+		"hashicorp_aws.eks.EksAddon",
 		reflect.TypeOf((*EksAddon)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "addonName", GoGetter: "AddonName"},
@@ -559,11 +559,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksAddonConfig",
+		"hashicorp_aws.eks.EksAddonConfig",
 		reflect.TypeOf((*EksAddonConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksCluster",
+		"hashicorp_aws.eks.EksCluster",
 		reflect.TypeOf((*EksCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -638,7 +638,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterCertificateAuthority",
+		"hashicorp_aws.eks.EksClusterCertificateAuthority",
 		reflect.TypeOf((*EksClusterCertificateAuthority)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -658,21 +658,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterConfig",
+		"hashicorp_aws.eks.EksClusterConfig",
 		reflect.TypeOf((*EksClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfig",
+		"hashicorp_aws.eks.EksClusterEncryptionConfig",
 		reflect.TypeOf((*EksClusterEncryptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigOutputReference",
 		reflect.TypeOf((*EksClusterEncryptionConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -691,17 +692,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigProvider",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigProvider",
 		reflect.TypeOf((*EksClusterEncryptionConfigProvider)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigProviderOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigProviderOutputReference",
 		reflect.TypeOf((*EksClusterEncryptionConfigProviderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -717,7 +719,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterIdentity",
+		"hashicorp_aws.eks.EksClusterIdentity",
 		reflect.TypeOf((*EksClusterIdentity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -737,7 +739,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterIdentityOidc",
+		"hashicorp_aws.eks.EksClusterIdentityOidc",
 		reflect.TypeOf((*EksClusterIdentityOidc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -757,17 +759,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterKubernetesNetworkConfig",
+		"hashicorp_aws.eks.EksClusterKubernetesNetworkConfig",
 		reflect.TypeOf((*EksClusterKubernetesNetworkConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterKubernetesNetworkConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterKubernetesNetworkConfigOutputReference",
 		reflect.TypeOf((*EksClusterKubernetesNetworkConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -784,11 +787,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterTimeouts",
+		"hashicorp_aws.eks.EksClusterTimeouts",
 		reflect.TypeOf((*EksClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksClusterTimeoutsOutputReference",
 		reflect.TypeOf((*EksClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -799,6 +802,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -817,11 +821,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksClusterVpcConfig",
+		"hashicorp_aws.eks.EksClusterVpcConfig",
 		reflect.TypeOf((*EksClusterVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksClusterVpcConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterVpcConfigOutputReference",
 		reflect.TypeOf((*EksClusterVpcConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "endpointPrivateAccess", GoGetter: "EndpointPrivateAccess"},
@@ -832,6 +836,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -855,7 +860,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksFargateProfile",
+		"hashicorp_aws.eks.EksFargateProfile",
 		reflect.TypeOf((*EksFargateProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -915,19 +920,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksFargateProfileConfig",
+		"hashicorp_aws.eks.EksFargateProfileConfig",
 		reflect.TypeOf((*EksFargateProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksFargateProfileSelector",
+		"hashicorp_aws.eks.EksFargateProfileSelector",
 		reflect.TypeOf((*EksFargateProfileSelector)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksFargateProfileTimeouts",
+		"hashicorp_aws.eks.EksFargateProfileTimeouts",
 		reflect.TypeOf((*EksFargateProfileTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksFargateProfileTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksFargateProfileTimeoutsOutputReference",
 		reflect.TypeOf((*EksFargateProfileTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -938,6 +943,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -953,7 +959,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksIdentityProviderConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfig",
 		reflect.TypeOf((*EksIdentityProviderConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1007,15 +1013,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfigConfig",
 		reflect.TypeOf((*EksIdentityProviderConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigOidc",
+		"hashicorp_aws.eks.EksIdentityProviderConfigOidc",
 		reflect.TypeOf((*EksIdentityProviderConfigOidc)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigOidcOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigOidcOutputReference",
 		reflect.TypeOf((*EksIdentityProviderConfigOidcOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientId", GoGetter: "ClientId"},
@@ -1030,6 +1036,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "groupsPrefixInput", GoGetter: "GroupsPrefixInput"},
 			_jsii_.MemberProperty{JsiiProperty: "identityProviderConfigName", GoGetter: "IdentityProviderConfigName"},
 			_jsii_.MemberProperty{JsiiProperty: "identityProviderConfigNameInput", GoGetter: "IdentityProviderConfigNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1056,11 +1063,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigTimeouts",
+		"hashicorp_aws.eks.EksIdentityProviderConfigTimeouts",
 		reflect.TypeOf((*EksIdentityProviderConfigTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigTimeoutsOutputReference",
 		reflect.TypeOf((*EksIdentityProviderConfigTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1071,6 +1078,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1086,7 +1094,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroup",
+		"hashicorp_aws.eks.EksNodeGroup",
 		reflect.TypeOf((*EksNodeGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1190,15 +1198,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupConfig",
+		"hashicorp_aws.eks.EksNodeGroupConfig",
 		reflect.TypeOf((*EksNodeGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupLaunchTemplate",
+		"hashicorp_aws.eks.EksNodeGroupLaunchTemplate",
 		reflect.TypeOf((*EksNodeGroupLaunchTemplate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupLaunchTemplateOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupLaunchTemplateOutputReference",
 		reflect.TypeOf((*EksNodeGroupLaunchTemplateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1206,6 +1214,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1224,11 +1233,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupRemoteAccess",
+		"hashicorp_aws.eks.EksNodeGroupRemoteAccess",
 		reflect.TypeOf((*EksNodeGroupRemoteAccess)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupRemoteAccessOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupRemoteAccessOutputReference",
 		reflect.TypeOf((*EksNodeGroupRemoteAccessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "ec2SshKey", GoGetter: "Ec2SshKey"},
@@ -1237,6 +1246,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1254,7 +1264,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupResources",
+		"hashicorp_aws.eks.EksNodeGroupResources",
 		reflect.TypeOf((*EksNodeGroupResources)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoscalingGroups", GoGetter: "AutoscalingGroups"},
@@ -1275,7 +1285,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.EksNodeGroupResourcesAutoscalingGroups",
 		reflect.TypeOf((*EksNodeGroupResourcesAutoscalingGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1295,11 +1305,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupScalingConfig",
+		"hashicorp_aws.eks.EksNodeGroupScalingConfig",
 		reflect.TypeOf((*EksNodeGroupScalingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupScalingConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupScalingConfigOutputReference",
 		reflect.TypeOf((*EksNodeGroupScalingConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "desiredSize", GoGetter: "DesiredSize"},
@@ -1308,6 +1318,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1325,15 +1336,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupTaint",
+		"hashicorp_aws.eks.EksNodeGroupTaint",
 		reflect.TypeOf((*EksNodeGroupTaint)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupTimeouts",
+		"hashicorp_aws.eks.EksNodeGroupTimeouts",
 		reflect.TypeOf((*EksNodeGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupTimeoutsOutputReference",
 		reflect.TypeOf((*EksNodeGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1344,6 +1355,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1362,17 +1374,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EKS.EksNodeGroupUpdateConfig",
+		"hashicorp_aws.eks.EksNodeGroupUpdateConfig",
 		reflect.TypeOf((*EksNodeGroupUpdateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EKS.EksNodeGroupUpdateConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupUpdateConfigOutputReference",
 		reflect.TypeOf((*EksNodeGroupUpdateConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

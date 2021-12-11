@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.DataAwsTransferServer",
+		"hashicorp_aws.transfer.DataAwsTransferServer",
 		reflect.TypeOf((*DataAwsTransferServer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,11 +58,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.DataAwsTransferServerConfig",
+		"hashicorp_aws.transfer.DataAwsTransferServerConfig",
 		reflect.TypeOf((*DataAwsTransferServerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferAccess",
+		"hashicorp_aws.transfer.TransferAccess",
 		reflect.TypeOf((*TransferAccess)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -122,19 +122,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferAccessConfig",
+		"hashicorp_aws.transfer.TransferAccessConfig",
 		reflect.TypeOf((*TransferAccessConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferAccessHomeDirectoryMappings",
+		"hashicorp_aws.transfer.TransferAccessHomeDirectoryMappings",
 		reflect.TypeOf((*TransferAccessHomeDirectoryMappings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferAccessPosixProfile",
+		"hashicorp_aws.transfer.TransferAccessPosixProfile",
 		reflect.TypeOf((*TransferAccessPosixProfile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferAccessPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferAccessPosixProfileOutputReference",
 		reflect.TypeOf((*TransferAccessPosixProfileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -143,6 +143,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "gid", GoGetter: "Gid"},
 			_jsii_.MemberProperty{JsiiProperty: "gidInput", GoGetter: "GidInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -161,7 +162,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferServer",
+		"hashicorp_aws.transfer.TransferServer",
 		reflect.TypeOf((*TransferServer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -185,6 +186,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "forceDestroyInput", GoGetter: "ForceDestroyInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberProperty{JsiiProperty: "function", GoGetter: "Function"},
+			_jsii_.MemberProperty{JsiiProperty: "functionInput", GoGetter: "FunctionInput"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
@@ -214,6 +217,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetEndpointDetails", GoMethod: "ResetEndpointDetails"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEndpointType", GoMethod: "ResetEndpointType"},
 			_jsii_.MemberMethod{JsiiMethod: "resetForceDestroy", GoMethod: "ResetForceDestroy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFunction", GoMethod: "ResetFunction"},
 			_jsii_.MemberMethod{JsiiMethod: "resetHostKey", GoMethod: "ResetHostKey"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIdentityProviderType", GoMethod: "ResetIdentityProviderType"},
 			_jsii_.MemberMethod{JsiiMethod: "resetInvocationRole", GoMethod: "ResetInvocationRole"},
@@ -247,15 +251,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferServerConfig",
+		"hashicorp_aws.transfer.TransferServerConfig",
 		reflect.TypeOf((*TransferServerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferServerEndpointDetails",
+		"hashicorp_aws.transfer.TransferServerEndpointDetails",
 		reflect.TypeOf((*TransferServerEndpointDetails)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferServerEndpointDetailsOutputReference",
+		"hashicorp_aws.transfer.TransferServerEndpointDetailsOutputReference",
 		reflect.TypeOf((*TransferServerEndpointDetailsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "addressAllocationIds", GoGetter: "AddressAllocationIds"},
@@ -264,6 +268,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -290,7 +295,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferSshKey",
+		"hashicorp_aws.transfer.TransferSshKey",
 		reflect.TypeOf((*TransferSshKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -333,11 +338,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferSshKeyConfig",
+		"hashicorp_aws.transfer.TransferSshKeyConfig",
 		reflect.TypeOf((*TransferSshKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferUser",
+		"hashicorp_aws.transfer.TransferUser",
 		reflect.TypeOf((*TransferUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -403,19 +408,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferUserConfig",
+		"hashicorp_aws.transfer.TransferUserConfig",
 		reflect.TypeOf((*TransferUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferUserHomeDirectoryMappings",
+		"hashicorp_aws.transfer.TransferUserHomeDirectoryMappings",
 		reflect.TypeOf((*TransferUserHomeDirectoryMappings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Transfer.TransferUserPosixProfile",
+		"hashicorp_aws.transfer.TransferUserPosixProfile",
 		reflect.TypeOf((*TransferUserPosixProfile)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Transfer.TransferUserPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferUserPosixProfileOutputReference",
 		reflect.TypeOf((*TransferUserPosixProfileOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -424,6 +429,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "gid", GoGetter: "Gid"},
 			_jsii_.MemberProperty{JsiiProperty: "gidInput", GoGetter: "GidInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

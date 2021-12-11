@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaStore.MediaStoreContainer",
+		"hashicorp_aws.mediastore.MediaStoreContainer",
 		reflect.TypeOf((*MediaStoreContainer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -55,11 +55,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MediaStore.MediaStoreContainerConfig",
+		"hashicorp_aws.mediastore.MediaStoreContainerConfig",
 		reflect.TypeOf((*MediaStoreContainerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicy",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicy",
 		reflect.TypeOf((*MediaStoreContainerPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -100,7 +100,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MediaStore.MediaStoreContainerPolicyConfig",
+		"hashicorp_aws.mediastore.MediaStoreContainerPolicyConfig",
 		reflect.TypeOf((*MediaStoreContainerPolicyConfig)(nil)).Elem(),
 	)
 }

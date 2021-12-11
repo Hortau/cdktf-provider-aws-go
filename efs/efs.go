@@ -289,7 +289,7 @@ func NewDataAwsEfsAccessPoint(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsEfsAccessPoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoint",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -302,7 +302,7 @@ func NewDataAwsEfsAccessPoint_Override(d DataAwsEfsAccessPoint, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoint",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -366,7 +366,7 @@ func DataAwsEfsAccessPoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoint",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -379,7 +379,7 @@ func DataAwsEfsAccessPoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoint",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -575,6 +575,7 @@ func (d *jsiiProxy_DataAwsEfsAccessPoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type DataAwsEfsAccessPointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -680,7 +681,7 @@ func NewDataAwsEfsAccessPointPosixUser(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsEfsAccessPointPosixUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointPosixUser",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointPosixUser",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -693,7 +694,7 @@ func NewDataAwsEfsAccessPointPosixUser_Override(d DataAwsEfsAccessPointPosixUser
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointPosixUser",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointPosixUser",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -872,7 +873,7 @@ func NewDataAwsEfsAccessPointRootDirectory(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsEfsAccessPointRootDirectory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectory",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectory",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -885,7 +886,7 @@ func NewDataAwsEfsAccessPointRootDirectory_Override(d DataAwsEfsAccessPointRootD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectory",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectory",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1075,7 +1076,7 @@ func NewDataAwsEfsAccessPointRootDirectoryCreationInfo(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectoryCreationInfo",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectoryCreationInfo",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1088,7 +1089,7 @@ func NewDataAwsEfsAccessPointRootDirectoryCreationInfo_Override(d DataAwsEfsAcce
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPointRootDirectoryCreationInfo",
+		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectoryCreationInfo",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1420,7 +1421,7 @@ func NewDataAwsEfsAccessPoints(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsEfsAccessPoints{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoints",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoints",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1433,7 +1434,7 @@ func NewDataAwsEfsAccessPoints_Override(d DataAwsEfsAccessPoints, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoints",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoints",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1489,7 +1490,7 @@ func DataAwsEfsAccessPoints_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoints",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoints",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1502,7 +1503,7 @@ func DataAwsEfsAccessPoints_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.DataAwsEfsAccessPoints",
+		"hashicorp_aws.efs.DataAwsEfsAccessPoints",
 		"tfResourceType",
 		&returns,
 	)
@@ -1664,6 +1665,7 @@ func (d *jsiiProxy_DataAwsEfsAccessPoints) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type DataAwsEfsAccessPointsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2047,7 +2049,7 @@ func NewDataAwsEfsFileSystem(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsEfsFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystem",
+		"hashicorp_aws.efs.DataAwsEfsFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2060,7 +2062,7 @@ func NewDataAwsEfsFileSystem_Override(d DataAwsEfsFileSystem, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystem",
+		"hashicorp_aws.efs.DataAwsEfsFileSystem",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2132,7 +2134,7 @@ func DataAwsEfsFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystem",
+		"hashicorp_aws.efs.DataAwsEfsFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2145,7 +2147,7 @@ func DataAwsEfsFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystem",
+		"hashicorp_aws.efs.DataAwsEfsFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -2344,6 +2346,7 @@ func (d *jsiiProxy_DataAwsEfsFileSystem) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type DataAwsEfsFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2440,7 +2443,7 @@ func NewDataAwsEfsFileSystemLifecyclePolicy(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystemLifecyclePolicy",
+		"hashicorp_aws.efs.DataAwsEfsFileSystemLifecyclePolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2453,7 +2456,7 @@ func NewDataAwsEfsFileSystemLifecyclePolicy_Override(d DataAwsEfsFileSystemLifec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsFileSystemLifecyclePolicy",
+		"hashicorp_aws.efs.DataAwsEfsFileSystemLifecyclePolicy",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2922,7 +2925,7 @@ func NewDataAwsEfsMountTarget(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsEfsMountTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsMountTarget",
+		"hashicorp_aws.efs.DataAwsEfsMountTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2935,7 +2938,7 @@ func NewDataAwsEfsMountTarget_Override(d DataAwsEfsMountTarget, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.DataAwsEfsMountTarget",
+		"hashicorp_aws.efs.DataAwsEfsMountTarget",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3007,7 +3010,7 @@ func DataAwsEfsMountTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.DataAwsEfsMountTarget",
+		"hashicorp_aws.efs.DataAwsEfsMountTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3020,7 +3023,7 @@ func DataAwsEfsMountTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.DataAwsEfsMountTarget",
+		"hashicorp_aws.efs.DataAwsEfsMountTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -3206,6 +3209,7 @@ func (d *jsiiProxy_DataAwsEfsMountTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type DataAwsEfsMountTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3562,7 +3566,7 @@ func NewEfsAccessPoint(scope constructs.Construct, id *string, config *EfsAccess
 	j := jsiiProxy_EfsAccessPoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPoint",
+		"hashicorp_aws.efs.EfsAccessPoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3575,7 +3579,7 @@ func NewEfsAccessPoint_Override(e EfsAccessPoint, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPoint",
+		"hashicorp_aws.efs.EfsAccessPoint",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3647,7 +3651,7 @@ func EfsAccessPoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.EfsAccessPoint",
+		"hashicorp_aws.efs.EfsAccessPoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3660,7 +3664,7 @@ func EfsAccessPoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.EfsAccessPoint",
+		"hashicorp_aws.efs.EfsAccessPoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -3870,6 +3874,7 @@ func (e *jsiiProxy_EfsAccessPoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type EfsAccessPointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3909,6 +3914,8 @@ type EfsAccessPointPosixUserOutputReference interface {
 	Gid() *float64
 	SetGid(val *float64)
 	GidInput() *float64
+	InternalValue() *EfsAccessPointPosixUser
+	SetInternalValue(val *EfsAccessPointPosixUser)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecondaryGids() *[]*float64
@@ -3950,6 +3957,16 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) GidInput() *float64 {
 	_jsii_.Get(
 		j,
 		"gidInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) InternalValue() *EfsAccessPointPosixUser {
+	var returns *EfsAccessPointPosixUser
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4031,7 +4048,7 @@ func NewEfsAccessPointPosixUserOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_EfsAccessPointPosixUserOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointPosixUserOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointPosixUserOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4043,7 +4060,7 @@ func NewEfsAccessPointPosixUserOutputReference_Override(e EfsAccessPointPosixUse
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointPosixUserOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointPosixUserOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4053,6 +4070,14 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetGid(val *float64) 
 	_jsii_.Set(
 		j,
 		"gid",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetInternalValue(val *EfsAccessPointPosixUser) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4209,6 +4234,8 @@ type EfsAccessPointRootDirectoryCreationInfo struct {
 
 type EfsAccessPointRootDirectoryCreationInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EfsAccessPointRootDirectoryCreationInfo
+	SetInternalValue(val *EfsAccessPointRootDirectoryCreationInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OwnerGid() *float64
@@ -4235,6 +4262,16 @@ type EfsAccessPointRootDirectoryCreationInfoOutputReference interface {
 // The jsii proxy struct for EfsAccessPointRootDirectoryCreationInfoOutputReference
 type jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) InternalValue() *EfsAccessPointRootDirectoryCreationInfo {
+	var returns *EfsAccessPointRootDirectoryCreationInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) IsSingleItem() *bool {
@@ -4333,7 +4370,7 @@ func NewEfsAccessPointRootDirectoryCreationInfoOutputReference(terraformResource
 	j := jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryCreationInfoOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryCreationInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4345,9 +4382,17 @@ func NewEfsAccessPointRootDirectoryCreationInfoOutputReference_Override(e EfsAcc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryCreationInfoOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryCreationInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) SetInternalValue(val *EfsAccessPointRootDirectoryCreationInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4487,6 +4532,8 @@ type EfsAccessPointRootDirectoryOutputReference interface {
 	cdktf.ComplexObject
 	CreationInfo() EfsAccessPointRootDirectoryCreationInfoOutputReference
 	CreationInfoInput() *EfsAccessPointRootDirectoryCreationInfo
+	InternalValue() *EfsAccessPointRootDirectory
+	SetInternalValue(val *EfsAccessPointRootDirectory)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -4527,6 +4574,16 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) CreationInfoInput
 	_jsii_.Get(
 		j,
 		"creationInfoInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) InternalValue() *EfsAccessPointRootDirectory {
+	var returns *EfsAccessPointRootDirectory
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4588,7 +4645,7 @@ func NewEfsAccessPointRootDirectoryOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EfsAccessPointRootDirectoryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4600,9 +4657,17 @@ func NewEfsAccessPointRootDirectoryOutputReference_Override(e EfsAccessPointRoot
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsAccessPointRootDirectoryOutputReference",
+		"hashicorp_aws.efs.EfsAccessPointRootDirectoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) SetInternalValue(val *EfsAccessPointRootDirectory) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4979,7 +5044,7 @@ func NewEfsBackupPolicy(scope constructs.Construct, id *string, config *EfsBacku
 	j := jsiiProxy_EfsBackupPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4992,7 +5057,7 @@ func NewEfsBackupPolicy_Override(e EfsBackupPolicy, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -5048,7 +5113,7 @@ func EfsBackupPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.EfsBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5061,7 +5126,7 @@ func EfsBackupPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.EfsBackupPolicy",
+		"hashicorp_aws.efs.EfsBackupPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -5238,6 +5303,8 @@ type EfsBackupPolicyBackupPolicy struct {
 
 type EfsBackupPolicyBackupPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EfsBackupPolicyBackupPolicy
+	SetInternalValue(val *EfsBackupPolicyBackupPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Status() *string
@@ -5258,6 +5325,16 @@ type EfsBackupPolicyBackupPolicyOutputReference interface {
 // The jsii proxy struct for EfsBackupPolicyBackupPolicyOutputReference
 type jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) InternalValue() *EfsBackupPolicyBackupPolicy {
+	var returns *EfsBackupPolicyBackupPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) IsSingleItem() *bool {
@@ -5316,7 +5393,7 @@ func NewEfsBackupPolicyBackupPolicyOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsBackupPolicyBackupPolicyOutputReference",
+		"hashicorp_aws.efs.EfsBackupPolicyBackupPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5328,9 +5405,17 @@ func NewEfsBackupPolicyBackupPolicyOutputReference_Override(e EfsBackupPolicyBac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsBackupPolicyBackupPolicyOutputReference",
+		"hashicorp_aws.efs.EfsBackupPolicyBackupPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) SetInternalValue(val *EfsBackupPolicyBackupPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5450,6 +5535,7 @@ func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) InterpolationForA
 	return returns
 }
 
+// AWS EFS.
 type EfsBackupPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5950,7 +6036,7 @@ func NewEfsFileSystem(scope constructs.Construct, id *string, config *EfsFileSys
 	j := jsiiProxy_EfsFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystem",
+		"hashicorp_aws.efs.EfsFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5963,7 +6049,7 @@ func NewEfsFileSystem_Override(e EfsFileSystem, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystem",
+		"hashicorp_aws.efs.EfsFileSystem",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6091,7 +6177,7 @@ func EfsFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.EfsFileSystem",
+		"hashicorp_aws.efs.EfsFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6104,7 +6190,7 @@ func EfsFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.EfsFileSystem",
+		"hashicorp_aws.efs.EfsFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -6359,6 +6445,7 @@ func (e *jsiiProxy_EfsFileSystem) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type EfsFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6656,7 +6743,7 @@ func NewEfsFileSystemPolicy(scope constructs.Construct, id *string, config *EfsF
 	j := jsiiProxy_EfsFileSystemPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystemPolicy",
+		"hashicorp_aws.efs.EfsFileSystemPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6669,7 +6756,7 @@ func NewEfsFileSystemPolicy_Override(e EfsFileSystemPolicy, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystemPolicy",
+		"hashicorp_aws.efs.EfsFileSystemPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6741,7 +6828,7 @@ func EfsFileSystemPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.EfsFileSystemPolicy",
+		"hashicorp_aws.efs.EfsFileSystemPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6754,7 +6841,7 @@ func EfsFileSystemPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.EfsFileSystemPolicy",
+		"hashicorp_aws.efs.EfsFileSystemPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -6924,6 +7011,7 @@ func (e *jsiiProxy_EfsFileSystemPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type EfsFileSystemPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7031,7 +7119,7 @@ func NewEfsFileSystemSizeInBytes(terraformResource cdktf.ITerraformResource, ter
 	j := jsiiProxy_EfsFileSystemSizeInBytes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystemSizeInBytes",
+		"hashicorp_aws.efs.EfsFileSystemSizeInBytes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7044,7 +7132,7 @@ func NewEfsFileSystemSizeInBytes_Override(e EfsFileSystemSizeInBytes, terraformR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsFileSystemSizeInBytes",
+		"hashicorp_aws.efs.EfsFileSystemSizeInBytes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -7502,7 +7590,7 @@ func NewEfsMountTarget(scope constructs.Construct, id *string, config *EfsMountT
 	j := jsiiProxy_EfsMountTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsMountTarget",
+		"hashicorp_aws.efs.EfsMountTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7515,7 +7603,7 @@ func NewEfsMountTarget_Override(e EfsMountTarget, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EFS.EfsMountTarget",
+		"hashicorp_aws.efs.EfsMountTarget",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -7595,7 +7683,7 @@ func EfsMountTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EFS.EfsMountTarget",
+		"hashicorp_aws.efs.EfsMountTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7608,7 +7696,7 @@ func EfsMountTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EFS.EfsMountTarget",
+		"hashicorp_aws.efs.EfsMountTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -7786,6 +7874,7 @@ func (e *jsiiProxy_EfsMountTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EFS.
 type EfsMountTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

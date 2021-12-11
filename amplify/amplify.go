@@ -674,7 +674,7 @@ func NewAmplifyApp(scope constructs.Construct, id *string, config *AmplifyAppCon
 	j := jsiiProxy_AmplifyApp{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyApp",
+		"hashicorp_aws.amplify.AmplifyApp",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -687,7 +687,7 @@ func NewAmplifyApp_Override(a AmplifyApp, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyApp",
+		"hashicorp_aws.amplify.AmplifyApp",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -879,7 +879,7 @@ func AmplifyApp_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Amplify.AmplifyApp",
+		"hashicorp_aws.amplify.AmplifyApp",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -892,7 +892,7 @@ func AmplifyApp_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Amplify.AmplifyApp",
+		"hashicorp_aws.amplify.AmplifyApp",
 		"tfResourceType",
 		&returns,
 	)
@@ -1268,6 +1268,8 @@ type AmplifyAppAutoBranchCreationConfigOutputReference interface {
 	Framework() *string
 	SetFramework(val *string)
 	FrameworkInput() *string
+	InternalValue() *AmplifyAppAutoBranchCreationConfig
+	SetInternalValue(val *AmplifyAppAutoBranchCreationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PullRequestEnvironmentName() *string
@@ -1463,6 +1465,16 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) FrameworkI
 	return returns
 }
 
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) InternalValue() *AmplifyAppAutoBranchCreationConfig {
+	var returns *AmplifyAppAutoBranchCreationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1539,7 +1551,7 @@ func NewAmplifyAppAutoBranchCreationConfigOutputReference(terraformResource cdkt
 	j := jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
+		"hashicorp_aws.amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1551,7 +1563,7 @@ func NewAmplifyAppAutoBranchCreationConfigOutputReference_Override(a AmplifyAppA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
+		"hashicorp_aws.amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1617,6 +1629,14 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetFramewo
 	_jsii_.Set(
 		j,
 		"framework",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetInternalValue(val *AmplifyAppAutoBranchCreationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1825,6 +1845,7 @@ func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) ResetStage
 	)
 }
 
+// AWS Amplify.
 type AmplifyAppConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1990,7 +2011,7 @@ func NewAmplifyAppProductionBranch(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_AmplifyAppProductionBranch{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyAppProductionBranch",
+		"hashicorp_aws.amplify.AmplifyAppProductionBranch",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2003,7 +2024,7 @@ func NewAmplifyAppProductionBranch_Override(a AmplifyAppProductionBranch, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyAppProductionBranch",
+		"hashicorp_aws.amplify.AmplifyAppProductionBranch",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		a,
 	)
@@ -2395,7 +2416,7 @@ func NewAmplifyBackendEnvironment(scope constructs.Construct, id *string, config
 	j := jsiiProxy_AmplifyBackendEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironment",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2408,7 +2429,7 @@ func NewAmplifyBackendEnvironment_Override(a AmplifyBackendEnvironment, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironment",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2488,7 +2509,7 @@ func AmplifyBackendEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironment",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2501,7 +2522,7 @@ func AmplifyBackendEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironment",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -2679,6 +2700,7 @@ func (a *jsiiProxy_AmplifyBackendEnvironment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Amplify.
 type AmplifyBackendEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3370,7 +3392,7 @@ func NewAmplifyBranch(scope constructs.Construct, id *string, config *AmplifyBra
 	j := jsiiProxy_AmplifyBranch{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyBranch",
+		"hashicorp_aws.amplify.AmplifyBranch",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3383,7 +3405,7 @@ func NewAmplifyBranch_Override(a AmplifyBranch, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyBranch",
+		"hashicorp_aws.amplify.AmplifyBranch",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3575,7 +3597,7 @@ func AmplifyBranch_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Amplify.AmplifyBranch",
+		"hashicorp_aws.amplify.AmplifyBranch",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3588,7 +3610,7 @@ func AmplifyBranch_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Amplify.AmplifyBranch",
+		"hashicorp_aws.amplify.AmplifyBranch",
 		"tfResourceType",
 		&returns,
 	)
@@ -3878,6 +3900,7 @@ func (a *jsiiProxy_AmplifyBranch) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Amplify.
 type AmplifyBranchConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4227,7 +4250,7 @@ func NewAmplifyDomainAssociation(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_AmplifyDomainAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociation",
+		"hashicorp_aws.amplify.AmplifyDomainAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4240,7 +4263,7 @@ func NewAmplifyDomainAssociation_Override(a AmplifyDomainAssociation, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociation",
+		"hashicorp_aws.amplify.AmplifyDomainAssociation",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4320,7 +4343,7 @@ func AmplifyDomainAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociation",
+		"hashicorp_aws.amplify.AmplifyDomainAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4333,7 +4356,7 @@ func AmplifyDomainAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociation",
+		"hashicorp_aws.amplify.AmplifyDomainAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4503,6 +4526,7 @@ func (a *jsiiProxy_AmplifyDomainAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Amplify.
 type AmplifyDomainAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4810,7 +4834,7 @@ func NewAmplifyWebhook(scope constructs.Construct, id *string, config *AmplifyWe
 	j := jsiiProxy_AmplifyWebhook{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyWebhook",
+		"hashicorp_aws.amplify.AmplifyWebhook",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4823,7 +4847,7 @@ func NewAmplifyWebhook_Override(a AmplifyWebhook, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Amplify.AmplifyWebhook",
+		"hashicorp_aws.amplify.AmplifyWebhook",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4895,7 +4919,7 @@ func AmplifyWebhook_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Amplify.AmplifyWebhook",
+		"hashicorp_aws.amplify.AmplifyWebhook",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4908,7 +4932,7 @@ func AmplifyWebhook_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Amplify.AmplifyWebhook",
+		"hashicorp_aws.amplify.AmplifyWebhook",
 		"tfResourceType",
 		&returns,
 	)
@@ -5078,6 +5102,7 @@ func (a *jsiiProxy_AmplifyWebhook) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Amplify.
 type AmplifyWebhookConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

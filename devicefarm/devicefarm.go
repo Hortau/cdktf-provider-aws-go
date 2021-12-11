@@ -302,7 +302,7 @@ func NewDevicefarmProject(scope constructs.Construct, id *string, config *Device
 	j := jsiiProxy_DevicefarmProject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DeviceFarm.DevicefarmProject",
+		"hashicorp_aws.devicefarm.DevicefarmProject",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -315,7 +315,7 @@ func NewDevicefarmProject_Override(d DevicefarmProject, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DeviceFarm.DevicefarmProject",
+		"hashicorp_aws.devicefarm.DevicefarmProject",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -395,7 +395,7 @@ func DevicefarmProject_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DeviceFarm.DevicefarmProject",
+		"hashicorp_aws.devicefarm.DevicefarmProject",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -408,7 +408,7 @@ func DevicefarmProject_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DeviceFarm.DevicefarmProject",
+		"hashicorp_aws.devicefarm.DevicefarmProject",
 		"tfResourceType",
 		&returns,
 	)
@@ -594,6 +594,7 @@ func (d *jsiiProxy_DevicefarmProject) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Device Farm.
 type DevicefarmProjectConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

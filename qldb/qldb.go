@@ -252,7 +252,7 @@ func NewDataAwsQldbLedger(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsQldbLedger{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QLDB.DataAwsQldbLedger",
+		"hashicorp_aws.qldb.DataAwsQldbLedger",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -265,7 +265,7 @@ func NewDataAwsQldbLedger_Override(d DataAwsQldbLedger, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QLDB.DataAwsQldbLedger",
+		"hashicorp_aws.qldb.DataAwsQldbLedger",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -321,7 +321,7 @@ func DataAwsQldbLedger_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QLDB.DataAwsQldbLedger",
+		"hashicorp_aws.qldb.DataAwsQldbLedger",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -334,7 +334,7 @@ func DataAwsQldbLedger_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QLDB.DataAwsQldbLedger",
+		"hashicorp_aws.qldb.DataAwsQldbLedger",
 		"tfResourceType",
 		&returns,
 	)
@@ -496,6 +496,7 @@ func (d *jsiiProxy_DataAwsQldbLedger) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Quantum Ledger Database.
 type DataAwsQldbLedgerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -826,7 +827,7 @@ func NewQldbLedger(scope constructs.Construct, id *string, config *QldbLedgerCon
 	j := jsiiProxy_QldbLedger{}
 
 	_jsii_.Create(
-		"hashicorp_aws.QLDB.QldbLedger",
+		"hashicorp_aws.qldb.QldbLedger",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -839,7 +840,7 @@ func NewQldbLedger_Override(q QldbLedger, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.QLDB.QldbLedger",
+		"hashicorp_aws.qldb.QldbLedger",
 		[]interface{}{scope, id, config},
 		q,
 	)
@@ -927,7 +928,7 @@ func QldbLedger_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.QLDB.QldbLedger",
+		"hashicorp_aws.qldb.QldbLedger",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -940,7 +941,7 @@ func QldbLedger_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.QLDB.QldbLedger",
+		"hashicorp_aws.qldb.QldbLedger",
 		"tfResourceType",
 		&returns,
 	)
@@ -1134,6 +1135,7 @@ func (q *jsiiProxy_QldbLedger) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Quantum Ledger Database.
 type QldbLedgerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

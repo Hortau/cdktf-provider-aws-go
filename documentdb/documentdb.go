@@ -347,7 +347,7 @@ func NewDataAwsDocdbEngineVersion(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsDocdbEngineVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbEngineVersion",
+		"hashicorp_aws.documentdb.DataAwsDocdbEngineVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -360,7 +360,7 @@ func NewDataAwsDocdbEngineVersion_Override(d DataAwsDocdbEngineVersion, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbEngineVersion",
+		"hashicorp_aws.documentdb.DataAwsDocdbEngineVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -440,7 +440,7 @@ func DataAwsDocdbEngineVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbEngineVersion",
+		"hashicorp_aws.documentdb.DataAwsDocdbEngineVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -453,7 +453,7 @@ func DataAwsDocdbEngineVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbEngineVersion",
+		"hashicorp_aws.documentdb.DataAwsDocdbEngineVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -647,6 +647,7 @@ func (d *jsiiProxy_DataAwsDocdbEngineVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DataAwsDocdbEngineVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1008,7 +1009,7 @@ func NewDataAwsDocdbOrderableDbInstance(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsDocdbOrderableDbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbOrderableDbInstance",
+		"hashicorp_aws.documentdb.DataAwsDocdbOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1021,7 +1022,7 @@ func NewDataAwsDocdbOrderableDbInstance_Override(d DataAwsDocdbOrderableDbInstan
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbOrderableDbInstance",
+		"hashicorp_aws.documentdb.DataAwsDocdbOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1117,7 +1118,7 @@ func DataAwsDocdbOrderableDbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbOrderableDbInstance",
+		"hashicorp_aws.documentdb.DataAwsDocdbOrderableDbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1130,7 +1131,7 @@ func DataAwsDocdbOrderableDbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DataAwsDocdbOrderableDbInstance",
+		"hashicorp_aws.documentdb.DataAwsDocdbOrderableDbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -1340,6 +1341,7 @@ func (d *jsiiProxy_DataAwsDocdbOrderableDbInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DataAwsDocdbOrderableDbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1416,6 +1418,9 @@ type DocdbCluster interface {
 	FinalSnapshotIdentifierInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
+	GlobalClusterIdentifier() *string
+	SetGlobalClusterIdentifier(val *string)
+	GlobalClusterIdentifierInput() *string
 	HostedZoneId() *string
 	Id() *string
 	KmsKeyId() *string
@@ -1487,6 +1492,7 @@ type DocdbCluster interface {
 	ResetEngine()
 	ResetEngineVersion()
 	ResetFinalSnapshotIdentifier()
+	ResetGlobalClusterIdentifier()
 	ResetKmsKeyId()
 	ResetMasterPassword()
 	ResetMasterUsername()
@@ -1862,6 +1868,26 @@ func (j *jsiiProxy_DocdbCluster) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DocdbCluster) GlobalClusterIdentifier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"globalClusterIdentifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbCluster) GlobalClusterIdentifierInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"globalClusterIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DocdbCluster) HostedZoneId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -2229,7 +2255,7 @@ func NewDocdbCluster(scope constructs.Construct, id *string, config *DocdbCluste
 	j := jsiiProxy_DocdbCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbCluster",
+		"hashicorp_aws.documentdb.DocdbCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2242,7 +2268,7 @@ func NewDocdbCluster_Override(d DocdbCluster, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbCluster",
+		"hashicorp_aws.documentdb.DocdbCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2364,6 +2390,14 @@ func (j *jsiiProxy_DocdbCluster) SetFinalSnapshotIdentifier(val *string) {
 	_jsii_.Set(
 		j,
 		"finalSnapshotIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbCluster) SetGlobalClusterIdentifier(val *string) {
+	_jsii_.Set(
+		j,
+		"globalClusterIdentifier",
 		val,
 	)
 }
@@ -2490,7 +2524,7 @@ func DocdbCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DocdbCluster",
+		"hashicorp_aws.documentdb.DocdbCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2503,7 +2537,7 @@ func DocdbCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DocdbCluster",
+		"hashicorp_aws.documentdb.DocdbCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -2711,6 +2745,14 @@ func (d *jsiiProxy_DocdbCluster) ResetFinalSnapshotIdentifier() {
 	)
 }
 
+func (d *jsiiProxy_DocdbCluster) ResetGlobalClusterIdentifier() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetGlobalClusterIdentifier",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DocdbCluster) ResetKmsKeyId() {
 	_jsii_.InvokeVoid(
 		d,
@@ -2881,6 +2923,7 @@ func (d *jsiiProxy_DocdbCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DocdbClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2916,6 +2959,8 @@ type DocdbClusterConfig struct {
 	EngineVersion *string `json:"engineVersion"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_cluster.html#final_snapshot_identifier DocdbCluster#final_snapshot_identifier}.
 	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_cluster.html#global_cluster_identifier DocdbCluster#global_cluster_identifier}.
+	GlobalClusterIdentifier *string `json:"globalClusterIdentifier"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_cluster.html#kms_key_id DocdbCluster#kms_key_id}.
 	KmsKeyId *string `json:"kmsKeyId"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_cluster.html#master_password DocdbCluster#master_password}.
@@ -3588,7 +3633,7 @@ func NewDocdbClusterInstance(scope constructs.Construct, id *string, config *Doc
 	j := jsiiProxy_DocdbClusterInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstance",
+		"hashicorp_aws.documentdb.DocdbClusterInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3601,7 +3646,7 @@ func NewDocdbClusterInstance_Override(d DocdbClusterInstance, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstance",
+		"hashicorp_aws.documentdb.DocdbClusterInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3753,7 +3798,7 @@ func DocdbClusterInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstance",
+		"hashicorp_aws.documentdb.DocdbClusterInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3766,7 +3811,7 @@ func DocdbClusterInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstance",
+		"hashicorp_aws.documentdb.DocdbClusterInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -4032,6 +4077,7 @@ func (d *jsiiProxy_DocdbClusterInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DocdbClusterInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4090,6 +4136,8 @@ type DocdbClusterInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DocdbClusterInstanceTimeouts
+	SetInternalValue(val *DocdbClusterInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4155,6 +4203,16 @@ func (j *jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference) DeleteInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference) InternalValue() *DocdbClusterInstanceTimeouts {
+	var returns *DocdbClusterInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4211,7 +4269,7 @@ func NewDocdbClusterInstanceTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4223,7 +4281,7 @@ func NewDocdbClusterInstanceTimeoutsOutputReference_Override(d DocdbClusterInsta
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -4241,6 +4299,14 @@ func (j *jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference) SetDelete(val *s
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbClusterInstanceTimeoutsOutputReference) SetInternalValue(val *DocdbClusterInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4750,7 +4816,7 @@ func NewDocdbClusterParameterGroup(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DocdbClusterParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterParameterGroup",
+		"hashicorp_aws.documentdb.DocdbClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4763,7 +4829,7 @@ func NewDocdbClusterParameterGroup_Override(d DocdbClusterParameterGroup, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterParameterGroup",
+		"hashicorp_aws.documentdb.DocdbClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4867,7 +4933,7 @@ func DocdbClusterParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DocdbClusterParameterGroup",
+		"hashicorp_aws.documentdb.DocdbClusterParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4880,7 +4946,7 @@ func DocdbClusterParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DocdbClusterParameterGroup",
+		"hashicorp_aws.documentdb.DocdbClusterParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -5090,6 +5156,7 @@ func (d *jsiiProxy_DocdbClusterParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DocdbClusterParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5504,7 +5571,7 @@ func NewDocdbClusterSnapshot(scope constructs.Construct, id *string, config *Doc
 	j := jsiiProxy_DocdbClusterSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshot",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5517,7 +5584,7 @@ func NewDocdbClusterSnapshot_Override(d DocdbClusterSnapshot, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshot",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5581,7 +5648,7 @@ func DocdbClusterSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshot",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5594,7 +5661,7 @@ func DocdbClusterSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshot",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -5772,6 +5839,7 @@ func (d *jsiiProxy_DocdbClusterSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DocdbClusterSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5801,6 +5869,8 @@ type DocdbClusterSnapshotTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DocdbClusterSnapshotTimeouts
+	SetInternalValue(val *DocdbClusterSnapshotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5836,6 +5906,16 @@ func (j *jsiiProxy_DocdbClusterSnapshotTimeoutsOutputReference) CreateInput() *s
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbClusterSnapshotTimeoutsOutputReference) InternalValue() *DocdbClusterSnapshotTimeouts {
+	var returns *DocdbClusterSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5877,7 +5957,7 @@ func NewDocdbClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_DocdbClusterSnapshotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5889,7 +5969,7 @@ func NewDocdbClusterSnapshotTimeoutsOutputReference_Override(d DocdbClusterSnaps
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -5899,6 +5979,14 @@ func (j *jsiiProxy_DocdbClusterSnapshotTimeoutsOutputReference) SetCreate(val *s
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbClusterSnapshotTimeoutsOutputReference) SetInternalValue(val *DocdbClusterSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6036,6 +6124,8 @@ type DocdbClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DocdbClusterTimeouts
+	SetInternalValue(val *DocdbClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6101,6 +6191,16 @@ func (j *jsiiProxy_DocdbClusterTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DocdbClusterTimeoutsOutputReference) InternalValue() *DocdbClusterTimeouts {
+	var returns *DocdbClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DocdbClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6157,7 +6257,7 @@ func NewDocdbClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DocdbClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6169,7 +6269,7 @@ func NewDocdbClusterTimeoutsOutputReference_Override(d DocdbClusterTimeoutsOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbClusterTimeoutsOutputReference",
+		"hashicorp_aws.documentdb.DocdbClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -6187,6 +6287,14 @@ func (j *jsiiProxy_DocdbClusterTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbClusterTimeoutsOutputReference) SetInternalValue(val *DocdbClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6324,6 +6432,1341 @@ func (d *jsiiProxy_DocdbClusterTimeoutsOutputReference) ResetDelete() {
 }
 
 func (d *jsiiProxy_DocdbClusterTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html aws_docdb_global_cluster}.
+type DocdbGlobalCluster interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DatabaseName() *string
+	SetDatabaseName(val *string)
+	DatabaseNameInput() *string
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
+	DeletionProtectionInput() interface{}
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Engine() *string
+	SetEngine(val *string)
+	EngineInput() *string
+	EngineVersion() *string
+	SetEngineVersion(val *string)
+	EngineVersionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	GlobalClusterIdentifier() *string
+	SetGlobalClusterIdentifier(val *string)
+	GlobalClusterIdentifierInput() *string
+	GlobalClusterResourceId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SourceDbClusterIdentifier() *string
+	SetSourceDbClusterIdentifier(val *string)
+	SourceDbClusterIdentifierInput() *string
+	Status() *string
+	StorageEncrypted() interface{}
+	SetStorageEncrypted(val interface{})
+	StorageEncryptedInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() DocdbGlobalClusterTimeoutsOutputReference
+	TimeoutsInput() *DocdbGlobalClusterTimeouts
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GlobalClusterMembers(index *string) DocdbGlobalClusterGlobalClusterMembers
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutTimeouts(value *DocdbGlobalClusterTimeouts)
+	ResetDatabaseName()
+	ResetDeletionProtection()
+	ResetEngine()
+	ResetEngineVersion()
+	ResetOverrideLogicalId()
+	ResetSourceDbClusterIdentifier()
+	ResetStorageEncrypted()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DocdbGlobalCluster
+type jsiiProxy_DocdbGlobalCluster struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) DatabaseName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) DatabaseNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) DeletionProtectionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtectionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Engine() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engine",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) EngineInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engineInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) EngineVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engineVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) EngineVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engineVersionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) GlobalClusterIdentifier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"globalClusterIdentifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) GlobalClusterIdentifierInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"globalClusterIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) GlobalClusterResourceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"globalClusterResourceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SourceDbClusterIdentifier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sourceDbClusterIdentifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SourceDbClusterIdentifierInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sourceDbClusterIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) StorageEncrypted() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"storageEncrypted",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) StorageEncryptedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"storageEncryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) Timeouts() DocdbGlobalClusterTimeoutsOutputReference {
+	var returns DocdbGlobalClusterTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) TimeoutsInput() *DocdbGlobalClusterTimeouts {
+	var returns *DocdbGlobalClusterTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html aws_docdb_global_cluster} Resource.
+func NewDocdbGlobalCluster(scope constructs.Construct, id *string, config *DocdbGlobalClusterConfig) DocdbGlobalCluster {
+	_init_.Initialize()
+
+	j := jsiiProxy_DocdbGlobalCluster{}
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalCluster",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html aws_docdb_global_cluster} Resource.
+func NewDocdbGlobalCluster_Override(d DocdbGlobalCluster, scope constructs.Construct, id *string, config *DocdbGlobalClusterConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalCluster",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetDatabaseName(val *string) {
+	_jsii_.Set(
+		j,
+		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetDeletionProtection(val interface{}) {
+	_jsii_.Set(
+		j,
+		"deletionProtection",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetEngine(val *string) {
+	_jsii_.Set(
+		j,
+		"engine",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetEngineVersion(val *string) {
+	_jsii_.Set(
+		j,
+		"engineVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetGlobalClusterIdentifier(val *string) {
+	_jsii_.Set(
+		j,
+		"globalClusterIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetSourceDbClusterIdentifier(val *string) {
+	_jsii_.Set(
+		j,
+		"sourceDbClusterIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalCluster) SetStorageEncrypted(val interface{}) {
+	_jsii_.Set(
+		j,
+		"storageEncrypted",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DocdbGlobalCluster_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.documentdb.DocdbGlobalCluster",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DocdbGlobalCluster_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.documentdb.DocdbGlobalCluster",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) GlobalClusterMembers(index *string) DocdbGlobalClusterGlobalClusterMembers {
+	var returns DocdbGlobalClusterGlobalClusterMembers
+
+	_jsii_.Invoke(
+		d,
+		"globalClusterMembers",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) PutTimeouts(value *DocdbGlobalClusterTimeouts) {
+	_jsii_.InvokeVoid(
+		d,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetDatabaseName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDatabaseName",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetDeletionProtection() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDeletionProtection",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetEngine() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetEngine",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetEngineVersion() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetEngineVersion",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetSourceDbClusterIdentifier() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSourceDbClusterIdentifier",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetStorageEncrypted() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetStorageEncrypted",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalCluster) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DocdbGlobalCluster) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalCluster) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS DocumentDB.
+type DocdbGlobalClusterConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#global_cluster_identifier DocdbGlobalCluster#global_cluster_identifier}.
+	GlobalClusterIdentifier *string `json:"globalClusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#database_name DocdbGlobalCluster#database_name}.
+	DatabaseName *string `json:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#deletion_protection DocdbGlobalCluster#deletion_protection}.
+	DeletionProtection interface{} `json:"deletionProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#engine DocdbGlobalCluster#engine}.
+	Engine *string `json:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#engine_version DocdbGlobalCluster#engine_version}.
+	EngineVersion *string `json:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#source_db_cluster_identifier DocdbGlobalCluster#source_db_cluster_identifier}.
+	SourceDbClusterIdentifier *string `json:"sourceDbClusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#storage_encrypted DocdbGlobalCluster#storage_encrypted}.
+	StorageEncrypted interface{} `json:"storageEncrypted"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#timeouts DocdbGlobalCluster#timeouts}
+	Timeouts *DocdbGlobalClusterTimeouts `json:"timeouts"`
+}
+
+type DocdbGlobalClusterGlobalClusterMembers interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DbClusterArn() *string
+	IsWriter() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DocdbGlobalClusterGlobalClusterMembers
+type jsiiProxy_DocdbGlobalClusterGlobalClusterMembers struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) DbClusterArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dbClusterArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) IsWriter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isWriter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDocdbGlobalClusterGlobalClusterMembers(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DocdbGlobalClusterGlobalClusterMembers {
+	_init_.Initialize()
+
+	j := jsiiProxy_DocdbGlobalClusterGlobalClusterMembers{}
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalClusterGlobalClusterMembers",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDocdbGlobalClusterGlobalClusterMembers_Override(d DocdbGlobalClusterGlobalClusterMembers, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalClusterGlobalClusterMembers",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterGlobalClusterMembers) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DocdbGlobalClusterTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#create DocdbGlobalCluster#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#delete DocdbGlobalCluster#delete}.
+	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/docdb_global_cluster.html#update DocdbGlobalCluster#update}.
+	Update *string `json:"update"`
+}
+
+type DocdbGlobalClusterTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *DocdbGlobalClusterTimeouts
+	SetInternalValue(val *DocdbGlobalClusterTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for DocdbGlobalClusterTimeoutsOutputReference
+type jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) InternalValue() *DocdbGlobalClusterTimeouts {
+	var returns *DocdbGlobalClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewDocdbGlobalClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DocdbGlobalClusterTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalClusterTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewDocdbGlobalClusterTimeoutsOutputReference_Override(d DocdbGlobalClusterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.documentdb.DocdbGlobalClusterTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetInternalValue(val *DocdbGlobalClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DocdbGlobalClusterTimeoutsOutputReference) ResetUpdate() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetUpdate",
@@ -6672,7 +8115,7 @@ func NewDocdbSubnetGroup(scope constructs.Construct, id *string, config *DocdbSu
 	j := jsiiProxy_DocdbSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbSubnetGroup",
+		"hashicorp_aws.documentdb.DocdbSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6685,7 +8128,7 @@ func NewDocdbSubnetGroup_Override(d DocdbSubnetGroup, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DocumentDB.DocdbSubnetGroup",
+		"hashicorp_aws.documentdb.DocdbSubnetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6781,7 +8224,7 @@ func DocdbSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DocumentDB.DocdbSubnetGroup",
+		"hashicorp_aws.documentdb.DocdbSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6794,7 +8237,7 @@ func DocdbSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DocumentDB.DocdbSubnetGroup",
+		"hashicorp_aws.documentdb.DocdbSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6996,6 +8439,7 @@ func (d *jsiiProxy_DocdbSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DocumentDB.
 type DocdbSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

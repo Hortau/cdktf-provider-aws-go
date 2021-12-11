@@ -300,7 +300,7 @@ func NewDataAwsSsmDocument(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsSsmDocument{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmDocument",
+		"hashicorp_aws.ssm.DataAwsSsmDocument",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -313,7 +313,7 @@ func NewDataAwsSsmDocument_Override(d DataAwsSsmDocument, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmDocument",
+		"hashicorp_aws.ssm.DataAwsSsmDocument",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -385,7 +385,7 @@ func DataAwsSsmDocument_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.DataAwsSsmDocument",
+		"hashicorp_aws.ssm.DataAwsSsmDocument",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -398,7 +398,7 @@ func DataAwsSsmDocument_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.DataAwsSsmDocument",
+		"hashicorp_aws.ssm.DataAwsSsmDocument",
 		"tfResourceType",
 		&returns,
 	)
@@ -576,6 +576,7 @@ func (d *jsiiProxy_DataAwsSsmDocument) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type DataAwsSsmDocumentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -871,7 +872,7 @@ func NewDataAwsSsmParameter(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsSsmParameter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmParameter",
+		"hashicorp_aws.ssm.DataAwsSsmParameter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -884,7 +885,7 @@ func NewDataAwsSsmParameter_Override(d DataAwsSsmParameter, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmParameter",
+		"hashicorp_aws.ssm.DataAwsSsmParameter",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -948,7 +949,7 @@ func DataAwsSsmParameter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.DataAwsSsmParameter",
+		"hashicorp_aws.ssm.DataAwsSsmParameter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -961,7 +962,7 @@ func DataAwsSsmParameter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.DataAwsSsmParameter",
+		"hashicorp_aws.ssm.DataAwsSsmParameter",
 		"tfResourceType",
 		&returns,
 	)
@@ -1131,6 +1132,7 @@ func (d *jsiiProxy_DataAwsSsmParameter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type DataAwsSsmParameterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1424,7 +1426,7 @@ func NewDataAwsSsmParametersByPath(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsSsmParametersByPath{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPath",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPath",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1437,7 +1439,7 @@ func NewDataAwsSsmParametersByPath_Override(d DataAwsSsmParametersByPath, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPath",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPath",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1501,7 +1503,7 @@ func DataAwsSsmParametersByPath_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPath",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPath",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1514,7 +1516,7 @@ func DataAwsSsmParametersByPath_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.DataAwsSsmParametersByPath",
+		"hashicorp_aws.ssm.DataAwsSsmParametersByPath",
 		"tfResourceType",
 		&returns,
 	)
@@ -1684,6 +1686,7 @@ func (d *jsiiProxy_DataAwsSsmParametersByPath) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type DataAwsSsmParametersByPathConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2003,7 +2006,7 @@ func NewDataAwsSsmPatchBaseline(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsSsmPatchBaseline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaseline",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaseline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2016,7 +2019,7 @@ func NewDataAwsSsmPatchBaseline_Override(d DataAwsSsmPatchBaseline, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaseline",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaseline",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2096,7 +2099,7 @@ func DataAwsSsmPatchBaseline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaseline",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaseline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2109,7 +2112,7 @@ func DataAwsSsmPatchBaseline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.DataAwsSsmPatchBaseline",
+		"hashicorp_aws.ssm.DataAwsSsmPatchBaseline",
 		"tfResourceType",
 		&returns,
 	)
@@ -2295,6 +2298,7 @@ func (d *jsiiProxy_DataAwsSsmPatchBaseline) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type DataAwsSsmPatchBaselineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2701,7 +2705,7 @@ func NewSsmActivation(scope constructs.Construct, id *string, config *SsmActivat
 	j := jsiiProxy_SsmActivation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmActivation",
+		"hashicorp_aws.ssm.SsmActivation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2714,7 +2718,7 @@ func NewSsmActivation_Override(s SsmActivation, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmActivation",
+		"hashicorp_aws.ssm.SsmActivation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2818,7 +2822,7 @@ func SsmActivation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmActivation",
+		"hashicorp_aws.ssm.SsmActivation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2831,7 +2835,7 @@ func SsmActivation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmActivation",
+		"hashicorp_aws.ssm.SsmActivation",
 		"tfResourceType",
 		&returns,
 	)
@@ -3041,6 +3045,7 @@ func (s *jsiiProxy_SsmActivation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmActivationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3575,7 +3580,7 @@ func NewSsmAssociation(scope constructs.Construct, id *string, config *SsmAssoci
 	j := jsiiProxy_SsmAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmAssociation",
+		"hashicorp_aws.ssm.SsmAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3588,7 +3593,7 @@ func NewSsmAssociation_Override(s SsmAssociation, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmAssociation",
+		"hashicorp_aws.ssm.SsmAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3732,7 +3737,7 @@ func SsmAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmAssociation",
+		"hashicorp_aws.ssm.SsmAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3745,7 +3750,7 @@ func SsmAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmAssociation",
+		"hashicorp_aws.ssm.SsmAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4011,6 +4016,7 @@ func (s *jsiiProxy_SsmAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4057,10 +4063,14 @@ type SsmAssociationOutputLocation struct {
 	S3BucketName *string `json:"s3BucketName"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssm_association.html#s3_key_prefix SsmAssociation#s3_key_prefix}.
 	S3KeyPrefix *string `json:"s3KeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssm_association.html#s3_region SsmAssociation#s3_region}.
+	S3Region *string `json:"s3Region"`
 }
 
 type SsmAssociationOutputLocationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SsmAssociationOutputLocation
+	SetInternalValue(val *SsmAssociationOutputLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3BucketName() *string
@@ -4069,6 +4079,9 @@ type SsmAssociationOutputLocationOutputReference interface {
 	S3KeyPrefix() *string
 	SetS3KeyPrefix(val *string)
 	S3KeyPrefixInput() *string
+	S3Region() *string
+	SetS3Region(val *string)
+	S3RegionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
 	TerraformResource() cdktf.ITerraformResource
@@ -4080,11 +4093,22 @@ type SsmAssociationOutputLocationOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetS3KeyPrefix()
+	ResetS3Region()
 }
 
 // The jsii proxy struct for SsmAssociationOutputLocationOutputReference
 type jsiiProxy_SsmAssociationOutputLocationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) InternalValue() *SsmAssociationOutputLocation {
+	var returns *SsmAssociationOutputLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) IsSingleItem() *bool {
@@ -4137,6 +4161,26 @@ func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) S3KeyPrefixInput
 	return returns
 }
 
+func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) S3Region() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"s3Region",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) S3RegionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"s3RegionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -4163,7 +4207,7 @@ func NewSsmAssociationOutputLocationOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_SsmAssociationOutputLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmAssociationOutputLocationOutputReference",
+		"hashicorp_aws.ssm.SsmAssociationOutputLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4175,9 +4219,17 @@ func NewSsmAssociationOutputLocationOutputReference_Override(s SsmAssociationOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmAssociationOutputLocationOutputReference",
+		"hashicorp_aws.ssm.SsmAssociationOutputLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) SetInternalValue(val *SsmAssociationOutputLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4201,6 +4253,14 @@ func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) SetS3KeyPrefix(v
 	_jsii_.Set(
 		j,
 		"s3KeyPrefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmAssociationOutputLocationOutputReference) SetS3Region(val *string) {
+	_jsii_.Set(
+		j,
+		"s3Region",
 		val,
 	)
 }
@@ -4309,6 +4369,14 @@ func (s *jsiiProxy_SsmAssociationOutputLocationOutputReference) ResetS3KeyPrefix
 	_jsii_.InvokeVoid(
 		s,
 		"resetS3KeyPrefix",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SsmAssociationOutputLocationOutputReference) ResetS3Region() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetS3Region",
 		nil, // no parameters
 	)
 }
@@ -4877,7 +4945,7 @@ func NewSsmDocument(scope constructs.Construct, id *string, config *SsmDocumentC
 	j := jsiiProxy_SsmDocument{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmDocument",
+		"hashicorp_aws.ssm.SsmDocument",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4890,7 +4958,7 @@ func NewSsmDocument_Override(s SsmDocument, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmDocument",
+		"hashicorp_aws.ssm.SsmDocument",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5018,7 +5086,7 @@ func SsmDocument_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmDocument",
+		"hashicorp_aws.ssm.SsmDocument",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5031,7 +5099,7 @@ func SsmDocument_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmDocument",
+		"hashicorp_aws.ssm.SsmDocument",
 		"tfResourceType",
 		&returns,
 	)
@@ -5271,6 +5339,7 @@ type SsmDocumentAttachmentsSource struct {
 	Name *string `json:"name"`
 }
 
+// AWS Systems Manager.
 type SsmDocumentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5405,7 +5474,7 @@ func NewSsmDocumentParameter(terraformResource cdktf.ITerraformResource, terrafo
 	j := jsiiProxy_SsmDocumentParameter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmDocumentParameter",
+		"hashicorp_aws.ssm.SsmDocumentParameter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5418,7 +5487,7 @@ func NewSsmDocumentParameter_Override(s SsmDocumentParameter, terraformResource 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmDocumentParameter",
+		"hashicorp_aws.ssm.SsmDocumentParameter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -6013,7 +6082,7 @@ func NewSsmMaintenanceWindow(scope constructs.Construct, id *string, config *Ssm
 	j := jsiiProxy_SsmMaintenanceWindow{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindow",
+		"hashicorp_aws.ssm.SsmMaintenanceWindow",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6026,7 +6095,7 @@ func NewSsmMaintenanceWindow_Override(s SsmMaintenanceWindow, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindow",
+		"hashicorp_aws.ssm.SsmMaintenanceWindow",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6178,7 +6247,7 @@ func SsmMaintenanceWindow_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmMaintenanceWindow",
+		"hashicorp_aws.ssm.SsmMaintenanceWindow",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6191,7 +6260,7 @@ func SsmMaintenanceWindow_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmMaintenanceWindow",
+		"hashicorp_aws.ssm.SsmMaintenanceWindow",
 		"tfResourceType",
 		&returns,
 	)
@@ -6425,6 +6494,7 @@ func (s *jsiiProxy_SsmMaintenanceWindow) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmMaintenanceWindowConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6790,7 +6860,7 @@ func NewSsmMaintenanceWindowTarget(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_SsmMaintenanceWindowTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTarget",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6803,7 +6873,7 @@ func NewSsmMaintenanceWindowTarget_Override(s SsmMaintenanceWindowTarget, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTarget",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTarget",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6899,7 +6969,7 @@ func SsmMaintenanceWindowTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTarget",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6912,7 +6982,7 @@ func SsmMaintenanceWindowTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTarget",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -7098,6 +7168,7 @@ func (s *jsiiProxy_SsmMaintenanceWindowTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmMaintenanceWindowTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7576,7 +7647,7 @@ func NewSsmMaintenanceWindowTask(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_SsmMaintenanceWindowTask{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTask",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTask",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7589,7 +7660,7 @@ func NewSsmMaintenanceWindowTask_Override(s SsmMaintenanceWindowTask, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTask",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTask",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -7717,7 +7788,7 @@ func SsmMaintenanceWindowTask_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTask",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTask",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7730,7 +7801,7 @@ func SsmMaintenanceWindowTask_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTask",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTask",
 		"tfResourceType",
 		&returns,
 	)
@@ -7948,6 +8019,7 @@ func (s *jsiiProxy_SsmMaintenanceWindowTask) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmMaintenanceWindowTaskConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8025,6 +8097,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputR
 	DocumentVersion() *string
 	SetDocumentVersion(val *string)
 	DocumentVersionInput() *string
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Parameter() *[]*SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter
@@ -8064,6 +8138,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersAutomationPar
 	_jsii_.Get(
 		j,
 		"documentVersionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8125,7 +8209,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutp
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8137,7 +8221,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -8147,6 +8231,14 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersAutomationPar
 	_jsii_.Set(
 		j,
 		"documentVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8304,6 +8396,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputRefer
 	ClientContext() *string
 	SetClientContext(val *string)
 	ClientContextInput() *string
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Payload() *string
@@ -8347,6 +8441,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParamet
 	_jsii_.Get(
 		j,
 		"clientContextInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8428,7 +8532,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputRe
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8440,7 +8544,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -8450,6 +8554,14 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParamet
 	_jsii_.Set(
 		j,
 		"clientContext",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8606,6 +8718,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference interface {
 	cdktf.ComplexObject
 	AutomationParameters() SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParametersOutputReference
 	AutomationParametersInput() *SsmMaintenanceWindowTaskTaskInvocationParametersAutomationParameters
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParameters
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LambdaParameters() SsmMaintenanceWindowTaskTaskInvocationParametersLambdaParametersOutputReference
@@ -8654,6 +8768,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersOutputReferen
 	_jsii_.Get(
 		j,
 		"automationParametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParameters {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8755,7 +8879,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersOutputReference(terrafor
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8767,9 +8891,17 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8991,6 +9123,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwa
 	CloudwatchOutputEnabled() interface{}
 	SetCloudwatchOutputEnabled(val interface{})
 	CloudwatchOutputEnabledInput() interface{}
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9052,6 +9186,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandPar
 	return returns
 }
 
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9088,7 +9232,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersClou
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9100,7 +9244,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersClou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9118,6 +9262,14 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandPar
 	_jsii_.Set(
 		j,
 		"cloudwatchOutputEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9257,6 +9409,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotific
 
 type SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotificationArn() *string
@@ -9286,6 +9440,16 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotific
 // The jsii proxy struct for SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference
 type jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference) IsSingleItem() *bool {
@@ -9384,7 +9548,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNoti
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9396,9 +9560,17 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNoti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9574,6 +9746,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputR
 	DocumentVersion() *string
 	SetDocumentVersion(val *string)
 	DocumentVersionInput() *string
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotificationConfig() SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigOutputReference
@@ -9718,6 +9892,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandPar
 	_jsii_.Get(
 		j,
 		"documentVersionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9879,7 +10063,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutp
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9891,7 +10075,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9925,6 +10109,14 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandPar
 	_jsii_.Set(
 		j,
 		"documentVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParametersOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersRunCommandParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10200,6 +10392,8 @@ type SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutp
 	Input() *string
 	SetInput(val *string)
 	InputInput() *string
+	InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters
+	SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -10239,6 +10433,16 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctions
 	_jsii_.Get(
 		j,
 		"inputInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference) InternalValue() *SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters {
+	var returns *SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10300,7 +10504,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersO
 	j := jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10312,7 +10516,7 @@ func NewSsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
+		"hashicorp_aws.ssm.SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10322,6 +10526,14 @@ func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctions
 	_jsii_.Set(
 		j,
 		"input",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersOutputReference) SetInternalValue(val *SsmMaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10928,7 +11140,7 @@ func NewSsmParameter(scope constructs.Construct, id *string, config *SsmParamete
 	j := jsiiProxy_SsmParameter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmParameter",
+		"hashicorp_aws.ssm.SsmParameter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10941,7 +11153,7 @@ func NewSsmParameter_Override(s SsmParameter, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmParameter",
+		"hashicorp_aws.ssm.SsmParameter",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11077,7 +11289,7 @@ func SsmParameter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmParameter",
+		"hashicorp_aws.ssm.SsmParameter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11090,7 +11302,7 @@ func SsmParameter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmParameter",
+		"hashicorp_aws.ssm.SsmParameter",
 		"tfResourceType",
 		&returns,
 	)
@@ -11316,6 +11528,7 @@ func (s *jsiiProxy_SsmParameter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmParameterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11858,7 +12071,7 @@ func NewSsmPatchBaseline(scope constructs.Construct, id *string, config *SsmPatc
 	j := jsiiProxy_SsmPatchBaseline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmPatchBaseline",
+		"hashicorp_aws.ssm.SsmPatchBaseline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11871,7 +12084,7 @@ func NewSsmPatchBaseline_Override(s SsmPatchBaseline, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmPatchBaseline",
+		"hashicorp_aws.ssm.SsmPatchBaseline",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12023,7 +12236,7 @@ func SsmPatchBaseline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmPatchBaseline",
+		"hashicorp_aws.ssm.SsmPatchBaseline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12036,7 +12249,7 @@ func SsmPatchBaseline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmPatchBaseline",
+		"hashicorp_aws.ssm.SsmPatchBaseline",
 		"tfResourceType",
 		&returns,
 	)
@@ -12316,6 +12529,7 @@ type SsmPatchBaselineApprovalRulePatchFilter struct {
 	Values *[]*string `json:"values"`
 }
 
+// AWS Systems Manager.
 type SsmPatchBaselineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12608,7 +12822,7 @@ func NewSsmPatchGroup(scope constructs.Construct, id *string, config *SsmPatchGr
 	j := jsiiProxy_SsmPatchGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmPatchGroup",
+		"hashicorp_aws.ssm.SsmPatchGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12621,7 +12835,7 @@ func NewSsmPatchGroup_Override(s SsmPatchGroup, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmPatchGroup",
+		"hashicorp_aws.ssm.SsmPatchGroup",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12685,7 +12899,7 @@ func SsmPatchGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmPatchGroup",
+		"hashicorp_aws.ssm.SsmPatchGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12698,7 +12912,7 @@ func SsmPatchGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmPatchGroup",
+		"hashicorp_aws.ssm.SsmPatchGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -12860,6 +13074,7 @@ func (s *jsiiProxy_SsmPatchGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmPatchGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13108,7 +13323,7 @@ func NewSsmResourceDataSync(scope constructs.Construct, id *string, config *SsmR
 	j := jsiiProxy_SsmResourceDataSync{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmResourceDataSync",
+		"hashicorp_aws.ssm.SsmResourceDataSync",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13121,7 +13336,7 @@ func NewSsmResourceDataSync_Override(s SsmResourceDataSync, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmResourceDataSync",
+		"hashicorp_aws.ssm.SsmResourceDataSync",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -13177,7 +13392,7 @@ func SsmResourceDataSync_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSM.SsmResourceDataSync",
+		"hashicorp_aws.ssm.SsmResourceDataSync",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13190,7 +13405,7 @@ func SsmResourceDataSync_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSM.SsmResourceDataSync",
+		"hashicorp_aws.ssm.SsmResourceDataSync",
 		"tfResourceType",
 		&returns,
 	)
@@ -13360,6 +13575,7 @@ func (s *jsiiProxy_SsmResourceDataSync) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Systems Manager.
 type SsmResourceDataSyncConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13395,6 +13611,8 @@ type SsmResourceDataSyncS3DestinationOutputReference interface {
 	BucketName() *string
 	SetBucketName(val *string)
 	BucketNameInput() *string
+	InternalValue() *SsmResourceDataSyncS3Destination
+	SetInternalValue(val *SsmResourceDataSyncS3Destination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -13444,6 +13662,16 @@ func (j *jsiiProxy_SsmResourceDataSyncS3DestinationOutputReference) BucketNameIn
 	_jsii_.Get(
 		j,
 		"bucketNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SsmResourceDataSyncS3DestinationOutputReference) InternalValue() *SsmResourceDataSyncS3Destination {
+	var returns *SsmResourceDataSyncS3Destination
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13565,7 +13793,7 @@ func NewSsmResourceDataSyncS3DestinationOutputReference(terraformResource cdktf.
 	j := jsiiProxy_SsmResourceDataSyncS3DestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmResourceDataSyncS3DestinationOutputReference",
+		"hashicorp_aws.ssm.SsmResourceDataSyncS3DestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13577,7 +13805,7 @@ func NewSsmResourceDataSyncS3DestinationOutputReference_Override(s SsmResourceDa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSM.SsmResourceDataSyncS3DestinationOutputReference",
+		"hashicorp_aws.ssm.SsmResourceDataSyncS3DestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -13587,6 +13815,14 @@ func (j *jsiiProxy_SsmResourceDataSyncS3DestinationOutputReference) SetBucketNam
 	_jsii_.Set(
 		j,
 		"bucketName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SsmResourceDataSyncS3DestinationOutputReference) SetInternalValue(val *SsmResourceDataSyncS3Destination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImage",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImage",
 		reflect.TypeOf((*DataAwsSagemakerPrebuiltEcrImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,11 +58,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImageConfig",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImageConfig",
 		reflect.TypeOf((*DataAwsSagemakerPrebuiltEcrImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerApp",
+		"hashicorp_aws.sagemaker.SagemakerApp",
 		reflect.TypeOf((*SagemakerApp)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -118,11 +118,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppConfig",
 		reflect.TypeOf((*SagemakerAppConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfig",
 		reflect.TypeOf((*SagemakerAppImageConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -172,19 +172,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigConfig",
 		reflect.TypeOf((*SagemakerAppImageConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfig",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultGid", GoGetter: "DefaultGid"},
@@ -195,6 +195,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -213,11 +214,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "displayName", GoGetter: "DisplayName"},
@@ -226,6 +227,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -242,7 +244,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
 		reflect.TypeOf((*SagemakerAppImageConfigKernelGatewayImageConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fileSystemConfig", GoGetter: "FileSystemConfig"},
@@ -251,6 +253,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -269,11 +272,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerAppResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerAppResourceSpec",
 		reflect.TypeOf((*SagemakerAppResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerAppResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerAppResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -282,6 +285,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -299,7 +303,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepository",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepository",
 		reflect.TypeOf((*SagemakerCodeRepository)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -348,15 +352,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepositoryConfig",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepositoryConfig",
 		reflect.TypeOf((*SagemakerCodeRepositoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepositoryGitConfig",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepositoryGitConfig",
 		reflect.TypeOf((*SagemakerCodeRepositoryGitConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepositoryGitConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepositoryGitConfigOutputReference",
 		reflect.TypeOf((*SagemakerCodeRepositoryGitConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "branch", GoGetter: "Branch"},
@@ -365,6 +369,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -384,7 +389,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleet",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleet",
 		reflect.TypeOf((*SagemakerDeviceFleet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -442,21 +447,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleetConfig",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleetConfig",
 		reflect.TypeOf((*SagemakerDeviceFleetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleetOutputConfig",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleetOutputConfig",
 		reflect.TypeOf((*SagemakerDeviceFleetOutputConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleetOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleetOutputConfigOutputReference",
 		reflect.TypeOf((*SagemakerDeviceFleetOutputConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -475,7 +481,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomain",
+		"hashicorp_aws.sagemaker.SagemakerDomain",
 		reflect.TypeOf((*SagemakerDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -543,23 +549,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainConfig",
+		"hashicorp_aws.sagemaker.SagemakerDomainConfig",
 		reflect.TypeOf((*SagemakerDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettings",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettings",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettings",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsJupyterServerAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -568,6 +574,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -585,7 +592,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultResourceSpec", GoGetter: "DefaultResourceSpec"},
@@ -594,6 +601,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -612,19 +620,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -633,6 +641,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -650,7 +659,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customImage", GoGetter: "CustomImage"},
@@ -661,6 +670,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -680,7 +690,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "executionRole", GoGetter: "ExecutionRole"},
@@ -689,6 +699,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -721,17 +732,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsSharingSettings",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsSharingSettings",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsSharingSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -754,15 +766,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettings",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsTensorBoardAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -771,6 +783,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -788,7 +801,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultResourceSpec", GoGetter: "DefaultResourceSpec"},
@@ -797,6 +810,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -812,11 +826,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerDomainRetentionPolicy",
+		"hashicorp_aws.sagemaker.SagemakerDomainRetentionPolicy",
 		reflect.TypeOf((*SagemakerDomainRetentionPolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerDomainRetentionPolicyOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainRetentionPolicyOutputReference",
 		reflect.TypeOf((*SagemakerDomainRetentionPolicyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -825,6 +839,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "homeEfsFileSystem", GoGetter: "HomeEfsFileSystem"},
 			_jsii_.MemberProperty{JsiiProperty: "homeEfsFileSystemInput", GoGetter: "HomeEfsFileSystemInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -839,7 +854,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpoint",
+		"hashicorp_aws.sagemaker.SagemakerEndpoint",
 		reflect.TypeOf((*SagemakerEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -848,6 +863,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "deploymentConfig", GoGetter: "DeploymentConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "deploymentConfigInput", GoGetter: "DeploymentConfigInput"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointConfigName", GoGetter: "EndpointConfigName"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointConfigNameInput", GoGetter: "EndpointConfigNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
@@ -864,7 +881,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putDeploymentConfig", GoMethod: "PutDeploymentConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDeploymentConfig", GoMethod: "ResetDeploymentConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "resetName", GoMethod: "ResetName"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
@@ -888,11 +907,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfig",
 		reflect.TypeOf((*SagemakerEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfiguration",
 		reflect.TypeOf((*SagemakerEndpointConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -952,21 +971,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -983,15 +1003,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "errorTopic", GoGetter: "ErrorTopic"},
@@ -1000,6 +1020,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1017,13 +1038,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1046,7 +1068,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientConfig", GoGetter: "ClientConfig"},
@@ -1055,6 +1077,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1073,19 +1096,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfig",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfig",
 		reflect.TypeOf((*SagemakerEndpointConfigurationDataCaptureConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader",
 		reflect.TypeOf((*SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "csvContentTypes", GoGetter: "CsvContentTypes"},
@@ -1094,6 +1117,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1111,11 +1135,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions",
 		reflect.TypeOf((*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
 		reflect.TypeOf((*SagemakerEndpointConfigurationDataCaptureConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "captureContentTypeHeader", GoGetter: "CaptureContentTypeHeader"},
@@ -1132,6 +1156,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "initialSamplingPercentage", GoGetter: "InitialSamplingPercentage"},
 			_jsii_.MemberProperty{JsiiProperty: "initialSamplingPercentageInput", GoGetter: "InitialSamplingPercentageInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1151,11 +1176,204 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationProductionVariants",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationProductionVariants",
 		reflect.TypeOf((*SagemakerEndpointConfigurationProductionVariants)(nil)).Elem(),
 	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfig",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigAutoRollbackConfiguration",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigAutoRollbackConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms)(nil)).Elem(),
+	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroup",
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarms", GoGetter: "Alarms"},
+			_jsii_.MemberProperty{JsiiProperty: "alarmsInput", GoGetter: "AlarmsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAlarms", GoMethod: "ResetAlarms"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "maximumExecutionTimeoutInSeconds", GoGetter: "MaximumExecutionTimeoutInSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "maximumExecutionTimeoutInSecondsInput", GoGetter: "MaximumExecutionTimeoutInSecondsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putTrafficRoutingConfiguration", GoMethod: "PutTrafficRoutingConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "resetMaximumExecutionTimeoutInSeconds", GoMethod: "ResetMaximumExecutionTimeoutInSeconds"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTerminationWaitInSeconds", GoMethod: "ResetTerminationWaitInSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "terminationWaitInSeconds", GoGetter: "TerminationWaitInSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "terminationWaitInSecondsInput", GoGetter: "TerminationWaitInSecondsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "trafficRoutingConfiguration", GoGetter: "TrafficRoutingConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "trafficRoutingConfigurationInput", GoGetter: "TrafficRoutingConfigurationInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "type", GoGetter: "Type"},
+			_jsii_.MemberProperty{JsiiProperty: "typeInput", GoGetter: "TypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "type", GoGetter: "Type"},
+			_jsii_.MemberProperty{JsiiProperty: "typeInput", GoGetter: "TypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "canarySize", GoGetter: "CanarySize"},
+			_jsii_.MemberProperty{JsiiProperty: "canarySizeInput", GoGetter: "CanarySizeInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "linearStepSize", GoGetter: "LinearStepSize"},
+			_jsii_.MemberProperty{JsiiProperty: "linearStepSizeInput", GoGetter: "LinearStepSizeInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putCanarySize", GoMethod: "PutCanarySize"},
+			_jsii_.MemberMethod{JsiiMethod: "putLinearStepSize", GoMethod: "PutLinearStepSize"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCanarySize", GoMethod: "ResetCanarySize"},
+			_jsii_.MemberMethod{JsiiMethod: "resetLinearStepSize", GoMethod: "ResetLinearStepSize"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "type", GoGetter: "Type"},
+			_jsii_.MemberProperty{JsiiProperty: "typeInput", GoGetter: "TypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "waitIntervalInSeconds", GoGetter: "WaitIntervalInSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "waitIntervalInSecondsInput", GoGetter: "WaitIntervalInSecondsInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigOutputReference",
+		reflect.TypeOf((*SagemakerEndpointDeploymentConfigOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "autoRollbackConfiguration", GoGetter: "AutoRollbackConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "autoRollbackConfigurationInput", GoGetter: "AutoRollbackConfigurationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "blueGreenUpdatePolicy", GoGetter: "BlueGreenUpdatePolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "blueGreenUpdatePolicyInput", GoGetter: "BlueGreenUpdatePolicyInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putAutoRollbackConfiguration", GoMethod: "PutAutoRollbackConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "putBlueGreenUpdatePolicy", GoMethod: "PutBlueGreenUpdatePolicy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAutoRollbackConfiguration", GoMethod: "ResetAutoRollbackConfiguration"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroup",
 		reflect.TypeOf((*SagemakerFeatureGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1220,23 +1438,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupFeatureDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupFeatureDefinition",
 		reflect.TypeOf((*SagemakerFeatureGroupFeatureDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalog", GoGetter: "Catalog"},
@@ -1247,6 +1465,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1265,7 +1484,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataCatalogConfig", GoGetter: "DataCatalogConfig"},
@@ -1276,6 +1495,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1295,17 +1515,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
 		reflect.TypeOf((*SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1324,11 +1545,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupOnlineStoreConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
 		reflect.TypeOf((*SagemakerFeatureGroupOnlineStoreConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enableOnlineStore", GoGetter: "EnableOnlineStore"},
@@ -1337,6 +1558,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1355,17 +1577,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfig",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfig",
 		reflect.TypeOf((*SagemakerFeatureGroupOnlineStoreConfigSecurityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
 		reflect.TypeOf((*SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1382,7 +1605,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinition",
 		reflect.TypeOf((*SagemakerFlowDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1444,19 +1667,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionConfig",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionConfig",
 		reflect.TypeOf((*SagemakerFlowDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfig",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfig",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopActivationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1465,6 +1688,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "humanLoopActivationConditions", GoGetter: "HumanLoopActivationConditions"},
 			_jsii_.MemberProperty{JsiiProperty: "humanLoopActivationConditionsInput", GoGetter: "HumanLoopActivationConditionsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1478,7 +1702,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1487,6 +1711,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "humanLoopActivationConditionsConfig", GoGetter: "HumanLoopActivationConditionsConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "humanLoopActivationConditionsConfigInput", GoGetter: "HumanLoopActivationConditionsConfigInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1502,11 +1727,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfig",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfig",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1515,6 +1740,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "humanTaskUiArn", GoGetter: "HumanTaskUiArn"},
 			_jsii_.MemberProperty{JsiiProperty: "humanTaskUiArnInput", GoGetter: "HumanTaskUiArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1549,15 +1775,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cents", GoGetter: "Cents"},
@@ -1568,6 +1794,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1586,7 +1813,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amountInUsd", GoGetter: "AmountInUsd"},
@@ -1595,6 +1822,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1610,11 +1838,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopRequestSource",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopRequestSource",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopRequestSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsManagedHumanLoopRequestSource", GoGetter: "AwsManagedHumanLoopRequestSource"},
@@ -1623,6 +1851,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1636,17 +1865,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionOutputConfig",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionOutputConfig",
 		reflect.TypeOf((*SagemakerFlowDefinitionOutputConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionOutputConfigOutputReference",
 		reflect.TypeOf((*SagemakerFlowDefinitionOutputConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1665,7 +1895,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUi",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUi",
 		reflect.TypeOf((*SagemakerHumanTaskUi)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1714,15 +1944,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUiConfig",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUiConfig",
 		reflect.TypeOf((*SagemakerHumanTaskUiConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUiUiTemplate",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUiUiTemplate",
 		reflect.TypeOf((*SagemakerHumanTaskUiUiTemplate)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUiUiTemplateOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUiUiTemplateOutputReference",
 		reflect.TypeOf((*SagemakerHumanTaskUiUiTemplateOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "content", GoGetter: "Content"},
@@ -1731,6 +1961,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1745,7 +1976,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerImage",
+		"hashicorp_aws.sagemaker.SagemakerImage",
 		reflect.TypeOf((*SagemakerImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1799,11 +2030,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerImageConfig",
 		reflect.TypeOf((*SagemakerImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerImageVersion",
+		"hashicorp_aws.sagemaker.SagemakerImageVersion",
 		reflect.TypeOf((*SagemakerImageVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1848,11 +2079,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerImageVersionConfig",
+		"hashicorp_aws.sagemaker.SagemakerImageVersionConfig",
 		reflect.TypeOf((*SagemakerImageVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModel",
+		"hashicorp_aws.sagemaker.SagemakerModel",
 		reflect.TypeOf((*SagemakerModel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1919,25 +2150,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelConfig",
 		reflect.TypeOf((*SagemakerModelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelContainer",
+		"hashicorp_aws.sagemaker.SagemakerModelContainer",
 		reflect.TypeOf((*SagemakerModelContainer)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelContainerImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelContainerImageConfig",
 		reflect.TypeOf((*SagemakerModelContainerImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelContainerImageConfigOutputReference",
 		reflect.TypeOf((*SagemakerModelContainerImageConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1953,17 +2185,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelInferenceExecutionConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelInferenceExecutionConfig",
 		reflect.TypeOf((*SagemakerModelInferenceExecutionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelInferenceExecutionConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelInferenceExecutionConfigOutputReference",
 		reflect.TypeOf((*SagemakerModelInferenceExecutionConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1979,7 +2212,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroup",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroup",
 		reflect.TypeOf((*SagemakerModelPackageGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2028,11 +2261,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupConfig",
 		reflect.TypeOf((*SagemakerModelPackageGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicy",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicy",
 		reflect.TypeOf((*SagemakerModelPackageGroupPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2073,25 +2306,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicyConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicyConfig",
 		reflect.TypeOf((*SagemakerModelPackageGroupPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainer",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainer",
 		reflect.TypeOf((*SagemakerModelPrimaryContainer)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerImageConfig",
 		reflect.TypeOf((*SagemakerModelPrimaryContainerImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
 		reflect.TypeOf((*SagemakerModelPrimaryContainerImageConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2107,7 +2341,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerOutputReference",
 		reflect.TypeOf((*SagemakerModelPrimaryContainerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "containerHostname", GoGetter: "ContainerHostname"},
@@ -2122,6 +2356,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "imageConfig", GoGetter: "ImageConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "imageConfigInput", GoGetter: "ImageConfigInput"},
 			_jsii_.MemberProperty{JsiiProperty: "imageInput", GoGetter: "ImageInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2145,17 +2380,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerModelVpcConfig",
+		"hashicorp_aws.sagemaker.SagemakerModelVpcConfig",
 		reflect.TypeOf((*SagemakerModelVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerModelVpcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelVpcConfigOutputReference",
 		reflect.TypeOf((*SagemakerModelVpcConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2173,7 +2409,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstance",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstance",
 		reflect.TypeOf((*SagemakerNotebookInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalCodeRepositories", GoGetter: "AdditionalCodeRepositories"},
@@ -2255,11 +2491,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceConfig",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceConfig",
 		reflect.TypeOf((*SagemakerNotebookInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfiguration",
 		reflect.TypeOf((*SagemakerNotebookInstanceLifecycleConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2306,11 +2542,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfigurationConfig",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfigurationConfig",
 		reflect.TypeOf((*SagemakerNotebookInstanceLifecycleConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfig",
 		reflect.TypeOf((*SagemakerStudioLifecycleConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2360,11 +2596,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfigConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfigConfig",
 		reflect.TypeOf((*SagemakerStudioLifecycleConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfile",
+		"hashicorp_aws.sagemaker.SagemakerUserProfile",
 		reflect.TypeOf((*SagemakerUserProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2423,23 +2659,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileConfig",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileConfig",
 		reflect.TypeOf((*SagemakerUserProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettings",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettings",
 		reflect.TypeOf((*SagemakerUserProfileUserSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettings",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsJupyterServerAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2448,6 +2684,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2465,7 +2702,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultResourceSpec", GoGetter: "DefaultResourceSpec"},
@@ -2474,6 +2711,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2491,19 +2729,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettings",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsKernelGatewayAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2512,6 +2750,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2529,7 +2768,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customImage", GoGetter: "CustomImage"},
@@ -2540,6 +2779,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2558,7 +2798,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "executionRole", GoGetter: "ExecutionRole"},
@@ -2567,6 +2807,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2599,17 +2840,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsSharingSettings",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsSharingSettings",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsSharingSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsSharingSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2632,15 +2874,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettings",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettings",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsTensorBoardAppSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2649,6 +2891,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2666,7 +2909,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
 		reflect.TypeOf((*SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultResourceSpec", GoGetter: "DefaultResourceSpec"},
@@ -2675,6 +2918,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2689,7 +2933,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkforce",
+		"hashicorp_aws.sagemaker.SagemakerWorkforce",
 		reflect.TypeOf((*SagemakerWorkforce)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2742,11 +2986,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceCognitoConfig",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceCognitoConfig",
 		reflect.TypeOf((*SagemakerWorkforceCognitoConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceCognitoConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceCognitoConfigOutputReference",
 		reflect.TypeOf((*SagemakerWorkforceCognitoConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientId", GoGetter: "ClientId"},
@@ -2755,6 +2999,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2770,15 +3015,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceConfig",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceConfig",
 		reflect.TypeOf((*SagemakerWorkforceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceOidcConfig",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceOidcConfig",
 		reflect.TypeOf((*SagemakerWorkforceOidcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceOidcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceOidcConfigOutputReference",
 		reflect.TypeOf((*SagemakerWorkforceOidcConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authorizationEndpoint", GoGetter: "AuthorizationEndpoint"},
@@ -2791,6 +3036,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2814,11 +3060,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceSourceIpConfig",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceSourceIpConfig",
 		reflect.TypeOf((*SagemakerWorkforceSourceIpConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceSourceIpConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceSourceIpConfigOutputReference",
 		reflect.TypeOf((*SagemakerWorkforceSourceIpConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cidrs", GoGetter: "Cidrs"},
@@ -2827,6 +3073,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2840,7 +3087,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkteam",
+		"hashicorp_aws.sagemaker.SagemakerWorkteam",
 		reflect.TypeOf((*SagemakerWorkteam)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2897,19 +3144,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamConfig",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamConfig",
 		reflect.TypeOf((*SagemakerWorkteamConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinition",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinition",
 		reflect.TypeOf((*SagemakerWorkteamMemberDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinition",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinition",
 		reflect.TypeOf((*SagemakerWorkteamMemberDefinitionCognitoMemberDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
 		reflect.TypeOf((*SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientId", GoGetter: "ClientId"},
@@ -2918,6 +3165,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2935,11 +3183,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinition",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinition",
 		reflect.TypeOf((*SagemakerWorkteamMemberDefinitionOidcMemberDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
 		reflect.TypeOf((*SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -2948,6 +3196,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "groups", GoGetter: "Groups"},
 			_jsii_.MemberProperty{JsiiProperty: "groupsInput", GoGetter: "GroupsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2961,17 +3210,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamNotificationConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamNotificationConfiguration",
 		reflect.TypeOf((*SagemakerWorkteamNotificationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamNotificationConfigurationOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamNotificationConfigurationOutputReference",
 		reflect.TypeOf((*SagemakerWorkteamNotificationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

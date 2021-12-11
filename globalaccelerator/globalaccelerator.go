@@ -301,7 +301,7 @@ func NewDataAwsGlobalacceleratorAccelerator(scope constructs.Construct, id *stri
 	j := jsiiProxy_DataAwsGlobalacceleratorAccelerator{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAccelerator",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -314,7 +314,7 @@ func NewDataAwsGlobalacceleratorAccelerator_Override(d DataAwsGlobalacceleratorA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAccelerator",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -378,7 +378,7 @@ func DataAwsGlobalacceleratorAccelerator_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAccelerator",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -391,7 +391,7 @@ func DataAwsGlobalacceleratorAccelerator_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAccelerator",
 		"tfResourceType",
 		&returns,
 	)
@@ -685,7 +685,7 @@ func NewDataAwsGlobalacceleratorAcceleratorAttributes(terraformResource cdktf.IT
 	j := jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -698,7 +698,7 @@ func NewDataAwsGlobalacceleratorAcceleratorAttributes_Override(d DataAwsGlobalac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -798,6 +798,7 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) InterpolationF
 	return returns
 }
 
+// AWS Global Accelerator.
 type DataAwsGlobalacceleratorAcceleratorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -892,7 +893,7 @@ func NewDataAwsGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -905,7 +906,7 @@ func NewDataAwsGlobalacceleratorAcceleratorIpSets_Override(d DataAwsGlobalaccele
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1382,7 +1383,7 @@ func NewGlobalacceleratorAccelerator(scope constructs.Construct, id *string, con
 	j := jsiiProxy_GlobalacceleratorAccelerator{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAccelerator",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1395,7 +1396,7 @@ func NewGlobalacceleratorAccelerator_Override(g GlobalacceleratorAccelerator, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAccelerator",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -1483,7 +1484,7 @@ func GlobalacceleratorAccelerator_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAccelerator",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1496,7 +1497,7 @@ func GlobalacceleratorAccelerator_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAccelerator",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAccelerator",
 		"tfResourceType",
 		&returns,
 	)
@@ -1755,6 +1756,8 @@ type GlobalacceleratorAcceleratorAttributesOutputReference interface {
 	FlowLogsS3Prefix() *string
 	SetFlowLogsS3Prefix(val *string)
 	FlowLogsS3PrefixInput() *string
+	InternalValue() *GlobalacceleratorAcceleratorAttributes
+	SetInternalValue(val *GlobalacceleratorAcceleratorAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1837,6 +1840,16 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) FlowLo
 	return returns
 }
 
+func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) InternalValue() *GlobalacceleratorAcceleratorAttributes {
+	var returns *GlobalacceleratorAcceleratorAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1873,7 +1886,7 @@ func NewGlobalacceleratorAcceleratorAttributesOutputReference(terraformResource 
 	j := jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1885,7 +1898,7 @@ func NewGlobalacceleratorAcceleratorAttributesOutputReference_Override(g Globala
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -1911,6 +1924,14 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetFlo
 	_jsii_.Set(
 		j,
 		"flowLogsS3Prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetInternalValue(val *GlobalacceleratorAcceleratorAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2047,6 +2068,7 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) ResetF
 	)
 }
 
+// AWS Global Accelerator.
 type GlobalacceleratorAcceleratorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2155,7 +2177,7 @@ func NewGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_GlobalacceleratorAcceleratorIpSets{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorIpSets",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2168,7 +2190,7 @@ func NewGlobalacceleratorAcceleratorIpSets_Override(g GlobalacceleratorAccelerat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorIpSets",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorIpSets",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		g,
 	)
@@ -2280,6 +2302,8 @@ type GlobalacceleratorAcceleratorTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *GlobalacceleratorAcceleratorTimeouts
+	SetInternalValue(val *GlobalacceleratorAcceleratorTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2319,6 +2343,16 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) CreateIn
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) InternalValue() *GlobalacceleratorAcceleratorTimeouts {
+	var returns *GlobalacceleratorAcceleratorTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2380,7 +2414,7 @@ func NewGlobalacceleratorAcceleratorTimeoutsOutputReference(terraformResource cd
 	j := jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2392,7 +2426,7 @@ func NewGlobalacceleratorAcceleratorTimeoutsOutputReference_Override(g Globalacc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -2402,6 +2436,14 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetCreat
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetInternalValue(val *GlobalacceleratorAcceleratorTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2999,7 +3041,7 @@ func NewGlobalacceleratorEndpointGroup(scope constructs.Construct, id *string, c
 	j := jsiiProxy_GlobalacceleratorEndpointGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroup",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3012,7 +3054,7 @@ func NewGlobalacceleratorEndpointGroup_Override(g GlobalacceleratorEndpointGroup
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroup",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroup",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -3140,7 +3182,7 @@ func GlobalacceleratorEndpointGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroup",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3153,7 +3195,7 @@ func GlobalacceleratorEndpointGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroup",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -3403,6 +3445,7 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Global Accelerator.
 type GlobalacceleratorEndpointGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3475,6 +3518,8 @@ type GlobalacceleratorEndpointGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *GlobalacceleratorEndpointGroupTimeouts
+	SetInternalValue(val *GlobalacceleratorEndpointGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3540,6 +3585,16 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) Delete
 	return returns
 }
 
+func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) InternalValue() *GlobalacceleratorEndpointGroupTimeouts {
+	var returns *GlobalacceleratorEndpointGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3596,7 +3651,7 @@ func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference(terraformResource 
 	j := jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3608,7 +3663,7 @@ func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference_Override(g Globala
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorEndpointGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -3626,6 +3681,14 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetDel
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetInternalValue(val *GlobalacceleratorEndpointGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4074,7 +4137,7 @@ func NewGlobalacceleratorListener(scope constructs.Construct, id *string, config
 	j := jsiiProxy_GlobalacceleratorListener{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListener",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListener",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4087,7 +4150,7 @@ func NewGlobalacceleratorListener_Override(g GlobalacceleratorListener, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListener",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListener",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -4167,7 +4230,7 @@ func GlobalacceleratorListener_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListener",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListener",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4180,7 +4243,7 @@ func GlobalacceleratorListener_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListener",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListener",
 		"tfResourceType",
 		&returns,
 	)
@@ -4366,6 +4429,7 @@ func (g *jsiiProxy_GlobalacceleratorListener) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Global Accelerator.
 type GlobalacceleratorListenerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4415,6 +4479,8 @@ type GlobalacceleratorListenerTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *GlobalacceleratorListenerTimeouts
+	SetInternalValue(val *GlobalacceleratorListenerTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4480,6 +4546,16 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) DeleteInput
 	return returns
 }
 
+func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) InternalValue() *GlobalacceleratorListenerTimeouts {
+	var returns *GlobalacceleratorListenerTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4536,7 +4612,7 @@ func NewGlobalacceleratorListenerTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4548,7 +4624,7 @@ func NewGlobalacceleratorListenerTimeoutsOutputReference_Override(g Globalaccele
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.GlobalAccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
+		"hashicorp_aws.globalaccelerator.GlobalacceleratorListenerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -4566,6 +4642,14 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetDelete(v
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetInternalValue(val *GlobalacceleratorListenerTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplication",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplication",
 		reflect.TypeOf((*DataAwsServerlessapplicationrepositoryApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServerlessApplicationRepository.DataAwsServerlessapplicationrepositoryApplicationConfig",
+		"hashicorp_aws.serverlessapplicationrepository.DataAwsServerlessapplicationrepositoryApplicationConfig",
 		reflect.TypeOf((*DataAwsServerlessapplicationrepositoryApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStack",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStack",
 		reflect.TypeOf((*ServerlessapplicationrepositoryCloudformationStack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -118,15 +118,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStackConfig",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStackConfig",
 		reflect.TypeOf((*ServerlessapplicationrepositoryCloudformationStackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStackTimeouts",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStackTimeouts",
 		reflect.TypeOf((*ServerlessapplicationrepositoryCloudformationStackTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServerlessApplicationRepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
+		"hashicorp_aws.serverlessapplicationrepository.ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference",
 		reflect.TypeOf((*ServerlessapplicationrepositoryCloudformationStackTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -137,6 +137,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

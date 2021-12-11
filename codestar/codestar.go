@@ -337,7 +337,7 @@ func NewCodestarconnectionsConnection(scope constructs.Construct, id *string, co
 	j := jsiiProxy_CodestarconnectionsConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnection",
+		"hashicorp_aws.codestar.CodestarconnectionsConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -350,7 +350,7 @@ func NewCodestarconnectionsConnection_Override(c CodestarconnectionsConnection, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnection",
+		"hashicorp_aws.codestar.CodestarconnectionsConnection",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -438,7 +438,7 @@ func CodestarconnectionsConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnection",
+		"hashicorp_aws.codestar.CodestarconnectionsConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -451,7 +451,7 @@ func CodestarconnectionsConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnection",
+		"hashicorp_aws.codestar.CodestarconnectionsConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -645,6 +645,7 @@ func (c *jsiiProxy_CodestarconnectionsConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeStar.
 type CodestarconnectionsConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -968,7 +969,7 @@ func NewCodestarconnectionsHost(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_CodestarconnectionsHost{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHost",
+		"hashicorp_aws.codestar.CodestarconnectionsHost",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -981,7 +982,7 @@ func NewCodestarconnectionsHost_Override(c CodestarconnectionsHost, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHost",
+		"hashicorp_aws.codestar.CodestarconnectionsHost",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1053,7 +1054,7 @@ func CodestarconnectionsHost_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHost",
+		"hashicorp_aws.codestar.CodestarconnectionsHost",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1066,7 +1067,7 @@ func CodestarconnectionsHost_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHost",
+		"hashicorp_aws.codestar.CodestarconnectionsHost",
 		"tfResourceType",
 		&returns,
 	)
@@ -1244,6 +1245,7 @@ func (c *jsiiProxy_CodestarconnectionsHost) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeStar.
 type CodestarconnectionsHostConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1278,6 +1280,8 @@ type CodestarconnectionsHostVpcConfiguration struct {
 
 type CodestarconnectionsHostVpcConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodestarconnectionsHostVpcConfiguration
+	SetInternalValue(val *CodestarconnectionsHostVpcConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -1308,6 +1312,16 @@ type CodestarconnectionsHostVpcConfigurationOutputReference interface {
 // The jsii proxy struct for CodestarconnectionsHostVpcConfigurationOutputReference
 type jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) InternalValue() *CodestarconnectionsHostVpcConfiguration {
+	var returns *CodestarconnectionsHostVpcConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) IsSingleItem() *bool {
@@ -1426,7 +1440,7 @@ func NewCodestarconnectionsHostVpcConfigurationOutputReference(terraformResource
 	j := jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHostVpcConfigurationOutputReference",
+		"hashicorp_aws.codestar.CodestarconnectionsHostVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1438,9 +1452,17 @@ func NewCodestarconnectionsHostVpcConfigurationOutputReference_Override(c Codest
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHostVpcConfigurationOutputReference",
+		"hashicorp_aws.codestar.CodestarconnectionsHostVpcConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) SetInternalValue(val *CodestarconnectionsHostVpcConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1978,7 +2000,7 @@ func NewCodestarnotificationsNotificationRule(scope constructs.Construct, id *st
 	j := jsiiProxy_CodestarnotificationsNotificationRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRule",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1991,7 +2013,7 @@ func NewCodestarnotificationsNotificationRule_Override(c CodestarnotificationsNo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRule",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRule",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2103,7 +2125,7 @@ func CodestarnotificationsNotificationRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRule",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2116,7 +2138,7 @@ func CodestarnotificationsNotificationRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRule",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -2310,6 +2332,7 @@ func (c *jsiiProxy_CodestarnotificationsNotificationRule) ToTerraform() interfac
 	return returns
 }
 
+// AWS CodeStar.
 type CodestarnotificationsNotificationRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2624,7 +2647,7 @@ func NewDataAwsCodestarconnectionsConnection(scope constructs.Construct, id *str
 	j := jsiiProxy_DataAwsCodestarconnectionsConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnection",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2637,7 +2660,7 @@ func NewDataAwsCodestarconnectionsConnection_Override(d DataAwsCodestarconnectio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnection",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2701,7 +2724,7 @@ func DataAwsCodestarconnectionsConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnection",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2714,7 +2737,7 @@ func DataAwsCodestarconnectionsConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnection",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -2884,6 +2907,7 @@ func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) ToTerraform() interface
 	return returns
 }
 
+// AWS CodeStar.
 type DataAwsCodestarconnectionsConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

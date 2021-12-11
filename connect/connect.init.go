@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.ConnectContactFlow",
+		"hashicorp_aws.connect.ConnectContactFlow",
 		reflect.TypeOf((*ConnectContactFlow)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -76,15 +76,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.ConnectContactFlowConfig",
+		"hashicorp_aws.connect.ConnectContactFlowConfig",
 		reflect.TypeOf((*ConnectContactFlowConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.ConnectContactFlowTimeouts",
+		"hashicorp_aws.connect.ConnectContactFlowTimeouts",
 		reflect.TypeOf((*ConnectContactFlowTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.ConnectContactFlowTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectContactFlowTimeoutsOutputReference",
 		reflect.TypeOf((*ConnectContactFlowTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -93,6 +93,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -110,7 +111,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.ConnectInstance",
+		"hashicorp_aws.connect.ConnectInstance",
 		reflect.TypeOf((*ConnectInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -179,15 +180,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.ConnectInstanceConfig",
+		"hashicorp_aws.connect.ConnectInstanceConfig",
 		reflect.TypeOf((*ConnectInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.ConnectInstanceTimeouts",
+		"hashicorp_aws.connect.ConnectInstanceTimeouts",
 		reflect.TypeOf((*ConnectInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.ConnectInstanceTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*ConnectInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -198,6 +199,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -213,7 +215,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlow",
+		"hashicorp_aws.connect.DataAwsConnectContactFlow",
 		reflect.TypeOf((*DataAwsConnectContactFlow)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -267,11 +269,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlowConfig",
+		"hashicorp_aws.connect.DataAwsConnectContactFlowConfig",
 		reflect.TypeOf((*DataAwsConnectContactFlowConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Connect.DataAwsConnectInstance",
+		"hashicorp_aws.connect.DataAwsConnectInstance",
 		reflect.TypeOf((*DataAwsConnectInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -325,7 +327,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Connect.DataAwsConnectInstanceConfig",
+		"hashicorp_aws.connect.DataAwsConnectInstanceConfig",
 		reflect.TypeOf((*DataAwsConnectInstanceConfig)(nil)).Elem(),
 	)
 }

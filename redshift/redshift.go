@@ -551,7 +551,7 @@ func NewDataAwsRedshiftCluster(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsRedshiftCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -564,7 +564,7 @@ func NewDataAwsRedshiftCluster_Override(d DataAwsRedshiftCluster, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -628,7 +628,7 @@ func DataAwsRedshiftCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.DataAwsRedshiftCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -641,7 +641,7 @@ func DataAwsRedshiftCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.DataAwsRedshiftCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -811,6 +811,7 @@ func (d *jsiiProxy_DataAwsRedshiftCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type DataAwsRedshiftClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1120,7 +1121,7 @@ func NewDataAwsRedshiftOrderableCluster(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsRedshiftOrderableCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1133,7 +1134,7 @@ func NewDataAwsRedshiftOrderableCluster_Override(d DataAwsRedshiftOrderableClust
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1213,7 +1214,7 @@ func DataAwsRedshiftOrderableCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1226,7 +1227,7 @@ func DataAwsRedshiftOrderableCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.DataAwsRedshiftOrderableCluster",
+		"hashicorp_aws.redshift.DataAwsRedshiftOrderableCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -1420,6 +1421,7 @@ func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type DataAwsRedshiftOrderableClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1661,7 +1663,7 @@ func NewDataAwsRedshiftServiceAccount(scope constructs.Construct, id *string, co
 	j := jsiiProxy_DataAwsRedshiftServiceAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccount",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1674,7 +1676,7 @@ func NewDataAwsRedshiftServiceAccount_Override(d DataAwsRedshiftServiceAccount, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccount",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccount",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1730,7 +1732,7 @@ func DataAwsRedshiftServiceAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccount",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1743,7 +1745,7 @@ func DataAwsRedshiftServiceAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.DataAwsRedshiftServiceAccount",
+		"hashicorp_aws.redshift.DataAwsRedshiftServiceAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -1913,6 +1915,7 @@ func (d *jsiiProxy_DataAwsRedshiftServiceAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type DataAwsRedshiftServiceAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2998,7 +3001,7 @@ func NewRedshiftCluster(scope constructs.Construct, id *string, config *Redshift
 	j := jsiiProxy_RedshiftCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftCluster",
+		"hashicorp_aws.redshift.RedshiftCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3011,7 +3014,7 @@ func NewRedshiftCluster_Override(r RedshiftCluster, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftCluster",
+		"hashicorp_aws.redshift.RedshiftCluster",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -3323,7 +3326,7 @@ func RedshiftCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftCluster",
+		"hashicorp_aws.redshift.RedshiftCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3336,7 +3339,7 @@ func RedshiftCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftCluster",
+		"hashicorp_aws.redshift.RedshiftCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -3897,7 +3900,7 @@ func NewRedshiftClusterClusterNodes(terraformResource cdktf.ITerraformResource, 
 	j := jsiiProxy_RedshiftClusterClusterNodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterClusterNodes",
+		"hashicorp_aws.redshift.RedshiftClusterClusterNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3910,7 +3913,7 @@ func NewRedshiftClusterClusterNodes_Override(r RedshiftClusterClusterNodes, terr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterClusterNodes",
+		"hashicorp_aws.redshift.RedshiftClusterClusterNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		r,
 	)
@@ -4010,6 +4013,7 @@ func (r *jsiiProxy_RedshiftClusterClusterNodes) InterpolationForAttribute(proper
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4116,6 +4120,8 @@ type RedshiftClusterLoggingOutputReference interface {
 	Enable() interface{}
 	SetEnable(val interface{})
 	EnableInput() interface{}
+	InternalValue() *RedshiftClusterLogging
+	SetInternalValue(val *RedshiftClusterLogging)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3KeyPrefix() *string
@@ -4180,6 +4186,16 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) EnableInput() interfac
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) InternalValue() *RedshiftClusterLogging {
+	var returns *RedshiftClusterLogging
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4236,7 +4252,7 @@ func NewRedshiftClusterLoggingOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_RedshiftClusterLoggingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterLoggingOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4248,7 +4264,7 @@ func NewRedshiftClusterLoggingOutputReference_Override(r RedshiftClusterLoggingO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterLoggingOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -4266,6 +4282,14 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetEnable(val interfac
 	_jsii_.Set(
 		j,
 		"enable",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetInternalValue(val *RedshiftClusterLogging) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4419,6 +4443,8 @@ type RedshiftClusterSnapshotCopyOutputReference interface {
 	GrantName() *string
 	SetGrantName(val *string)
 	GrantNameInput() *string
+	InternalValue() *RedshiftClusterSnapshotCopy
+	SetInternalValue(val *RedshiftClusterSnapshotCopy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RetentionPeriod() *float64
@@ -4483,6 +4509,16 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GrantNameInput() 
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) InternalValue() *RedshiftClusterSnapshotCopy {
+	var returns *RedshiftClusterSnapshotCopy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4539,7 +4575,7 @@ func NewRedshiftClusterSnapshotCopyOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_RedshiftClusterSnapshotCopyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterSnapshotCopyOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterSnapshotCopyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4551,7 +4587,7 @@ func NewRedshiftClusterSnapshotCopyOutputReference_Override(r RedshiftClusterSna
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterSnapshotCopyOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterSnapshotCopyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -4569,6 +4605,14 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetGrantName(val 
 	_jsii_.Set(
 		j,
 		"grantName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetInternalValue(val *RedshiftClusterSnapshotCopy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4722,6 +4766,8 @@ type RedshiftClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RedshiftClusterTimeouts
+	SetInternalValue(val *RedshiftClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4787,6 +4833,16 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) DeleteInput() *string
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) InternalValue() *RedshiftClusterTimeouts {
+	var returns *RedshiftClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4843,7 +4899,7 @@ func NewRedshiftClusterTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_RedshiftClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4855,7 +4911,7 @@ func NewRedshiftClusterTimeoutsOutputReference_Override(r RedshiftClusterTimeout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftClusterTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -4873,6 +4929,14 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetDelete(val *string
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetInternalValue(val *RedshiftClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5475,7 +5539,7 @@ func NewRedshiftEventSubscription(scope constructs.Construct, id *string, config
 	j := jsiiProxy_RedshiftEventSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftEventSubscription",
+		"hashicorp_aws.redshift.RedshiftEventSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5488,7 +5552,7 @@ func NewRedshiftEventSubscription_Override(r RedshiftEventSubscription, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftEventSubscription",
+		"hashicorp_aws.redshift.RedshiftEventSubscription",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -5608,7 +5672,7 @@ func RedshiftEventSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftEventSubscription",
+		"hashicorp_aws.redshift.RedshiftEventSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5621,7 +5685,7 @@ func RedshiftEventSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftEventSubscription",
+		"hashicorp_aws.redshift.RedshiftEventSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -5855,6 +5919,7 @@ func (r *jsiiProxy_RedshiftEventSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftEventSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5905,6 +5970,8 @@ type RedshiftEventSubscriptionTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RedshiftEventSubscriptionTimeouts
+	SetInternalValue(val *RedshiftEventSubscriptionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5970,6 +6037,16 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) DeleteInput
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) InternalValue() *RedshiftEventSubscriptionTimeouts {
+	var returns *RedshiftEventSubscriptionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6026,7 +6103,7 @@ func NewRedshiftEventSubscriptionTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6038,7 +6115,7 @@ func NewRedshiftEventSubscriptionTimeoutsOutputReference_Override(r RedshiftEven
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.redshift.RedshiftEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -6056,6 +6133,14 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetDelete(v
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetInternalValue(val *RedshiftEventSubscriptionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6540,7 +6625,7 @@ func NewRedshiftParameterGroup(scope constructs.Construct, id *string, config *R
 	j := jsiiProxy_RedshiftParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftParameterGroup",
+		"hashicorp_aws.redshift.RedshiftParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6553,7 +6638,7 @@ func NewRedshiftParameterGroup_Override(r RedshiftParameterGroup, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftParameterGroup",
+		"hashicorp_aws.redshift.RedshiftParameterGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -6649,7 +6734,7 @@ func RedshiftParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftParameterGroup",
+		"hashicorp_aws.redshift.RedshiftParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6662,7 +6747,7 @@ func RedshiftParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftParameterGroup",
+		"hashicorp_aws.redshift.RedshiftParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6856,6 +6941,7 @@ func (r *jsiiProxy_RedshiftParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7263,7 +7349,7 @@ func NewRedshiftScheduledAction(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_RedshiftScheduledAction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledAction",
+		"hashicorp_aws.redshift.RedshiftScheduledAction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7276,7 +7362,7 @@ func NewRedshiftScheduledAction_Override(r RedshiftScheduledAction, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledAction",
+		"hashicorp_aws.redshift.RedshiftScheduledAction",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -7380,7 +7466,7 @@ func RedshiftScheduledAction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftScheduledAction",
+		"hashicorp_aws.redshift.RedshiftScheduledAction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7393,7 +7479,7 @@ func RedshiftScheduledAction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftScheduledAction",
+		"hashicorp_aws.redshift.RedshiftScheduledAction",
 		"tfResourceType",
 		&returns,
 	)
@@ -7595,6 +7681,7 @@ func (r *jsiiProxy_RedshiftScheduledAction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftScheduledActionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7641,6 +7728,8 @@ type RedshiftScheduledActionTargetAction struct {
 
 type RedshiftScheduledActionTargetActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *RedshiftScheduledActionTargetAction
+	SetInternalValue(val *RedshiftScheduledActionTargetAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PauseCluster() RedshiftScheduledActionTargetActionPauseClusterOutputReference
@@ -7670,6 +7759,16 @@ type RedshiftScheduledActionTargetActionOutputReference interface {
 // The jsii proxy struct for RedshiftScheduledActionTargetActionOutputReference
 type jsiiProxy_RedshiftScheduledActionTargetActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) InternalValue() *RedshiftScheduledActionTargetAction {
+	var returns *RedshiftScheduledActionTargetAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) IsSingleItem() *bool {
@@ -7768,7 +7867,7 @@ func NewRedshiftScheduledActionTargetActionOutputReference(terraformResource cdk
 	j := jsiiProxy_RedshiftScheduledActionTargetActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7780,9 +7879,17 @@ func NewRedshiftScheduledActionTargetActionOutputReference_Override(r RedshiftSc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) SetInternalValue(val *RedshiftScheduledActionTargetAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7952,6 +8059,8 @@ type RedshiftScheduledActionTargetActionPauseClusterOutputReference interface {
 	ClusterIdentifier() *string
 	SetClusterIdentifier(val *string)
 	ClusterIdentifierInput() *string
+	InternalValue() *RedshiftScheduledActionTargetActionPauseCluster
+	SetInternalValue(val *RedshiftScheduledActionTargetActionPauseCluster)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7986,6 +8095,16 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 	_jsii_.Get(
 		j,
 		"clusterIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) InternalValue() *RedshiftScheduledActionTargetActionPauseCluster {
+	var returns *RedshiftScheduledActionTargetActionPauseCluster
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8027,7 +8146,7 @@ func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference(terraform
 	j := jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8039,7 +8158,7 @@ func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionPauseClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -8049,6 +8168,14 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 	_jsii_.Set(
 		j,
 		"clusterIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) SetInternalValue(val *RedshiftScheduledActionTargetActionPauseCluster) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8185,6 +8312,8 @@ type RedshiftScheduledActionTargetActionResizeClusterOutputReference interface {
 	ClusterType() *string
 	SetClusterType(val *string)
 	ClusterTypeInput() *string
+	InternalValue() *RedshiftScheduledActionTargetActionResizeCluster
+	SetInternalValue(val *RedshiftScheduledActionTargetActionResizeCluster)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NodeType() *string
@@ -8274,6 +8403,16 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) InternalValue() *RedshiftScheduledActionTargetActionResizeCluster {
+	var returns *RedshiftScheduledActionTargetActionResizeCluster
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8350,7 +8489,7 @@ func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference(terrafor
 	j := jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8362,7 +8501,7 @@ func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResizeClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -8388,6 +8527,14 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 	_jsii_.Set(
 		j,
 		"clusterType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) SetInternalValue(val *RedshiftScheduledActionTargetActionResizeCluster) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8558,6 +8705,8 @@ type RedshiftScheduledActionTargetActionResumeClusterOutputReference interface {
 	ClusterIdentifier() *string
 	SetClusterIdentifier(val *string)
 	ClusterIdentifierInput() *string
+	InternalValue() *RedshiftScheduledActionTargetActionResumeCluster
+	SetInternalValue(val *RedshiftScheduledActionTargetActionResumeCluster)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8592,6 +8741,16 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	_jsii_.Get(
 		j,
 		"clusterIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) InternalValue() *RedshiftScheduledActionTargetActionResumeCluster {
+	var returns *RedshiftScheduledActionTargetActionResumeCluster
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8633,7 +8792,7 @@ func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference(terrafor
 	j := jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8645,7 +8804,7 @@ func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
+		"hashicorp_aws.redshift.RedshiftScheduledActionTargetActionResumeClusterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -8655,6 +8814,14 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	_jsii_.Set(
 		j,
 		"clusterIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) SetInternalValue(val *RedshiftScheduledActionTargetActionResumeCluster) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9024,7 +9191,7 @@ func NewRedshiftSecurityGroup(scope constructs.Construct, id *string, config *Re
 	j := jsiiProxy_RedshiftSecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroup",
+		"hashicorp_aws.redshift.RedshiftSecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9037,7 +9204,7 @@ func NewRedshiftSecurityGroup_Override(r RedshiftSecurityGroup, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroup",
+		"hashicorp_aws.redshift.RedshiftSecurityGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -9109,7 +9276,7 @@ func RedshiftSecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroup",
+		"hashicorp_aws.redshift.RedshiftSecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9122,7 +9289,7 @@ func RedshiftSecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftSecurityGroup",
+		"hashicorp_aws.redshift.RedshiftSecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -9292,6 +9459,7 @@ func (r *jsiiProxy_RedshiftSecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftSecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9613,7 +9781,7 @@ func NewRedshiftSnapshotCopyGrant(scope constructs.Construct, id *string, config
 	j := jsiiProxy_RedshiftSnapshotCopyGrant{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrant",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrant",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9626,7 +9794,7 @@ func NewRedshiftSnapshotCopyGrant_Override(r RedshiftSnapshotCopyGrant, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrant",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrant",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -9706,7 +9874,7 @@ func RedshiftSnapshotCopyGrant_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrant",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrant",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9719,7 +9887,7 @@ func RedshiftSnapshotCopyGrant_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftSnapshotCopyGrant",
+		"hashicorp_aws.redshift.RedshiftSnapshotCopyGrant",
 		"tfResourceType",
 		&returns,
 	)
@@ -9905,6 +10073,7 @@ func (r *jsiiProxy_RedshiftSnapshotCopyGrant) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftSnapshotCopyGrantConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10289,7 +10458,7 @@ func NewRedshiftSnapshotSchedule(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_RedshiftSnapshotSchedule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotSchedule",
+		"hashicorp_aws.redshift.RedshiftSnapshotSchedule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10302,7 +10471,7 @@ func NewRedshiftSnapshotSchedule_Override(r RedshiftSnapshotSchedule, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotSchedule",
+		"hashicorp_aws.redshift.RedshiftSnapshotSchedule",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -10406,7 +10575,7 @@ func RedshiftSnapshotSchedule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftSnapshotSchedule",
+		"hashicorp_aws.redshift.RedshiftSnapshotSchedule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10419,7 +10588,7 @@ func RedshiftSnapshotSchedule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftSnapshotSchedule",
+		"hashicorp_aws.redshift.RedshiftSnapshotSchedule",
 		"tfResourceType",
 		&returns,
 	)
@@ -10862,7 +11031,7 @@ func NewRedshiftSnapshotScheduleAssociation(scope constructs.Construct, id *stri
 	j := jsiiProxy_RedshiftSnapshotScheduleAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociation",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10875,7 +11044,7 @@ func NewRedshiftSnapshotScheduleAssociation_Override(r RedshiftSnapshotScheduleA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociation",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -10939,7 +11108,7 @@ func RedshiftSnapshotScheduleAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociation",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10952,7 +11121,7 @@ func RedshiftSnapshotScheduleAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftSnapshotScheduleAssociation",
+		"hashicorp_aws.redshift.RedshiftSnapshotScheduleAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -11114,6 +11283,7 @@ func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) ToTerraform() interface{
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftSnapshotScheduleAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11129,6 +11299,7 @@ type RedshiftSnapshotScheduleAssociationConfig struct {
 	ScheduleIdentifier *string `json:"scheduleIdentifier"`
 }
 
+// AWS Redshift.
 type RedshiftSnapshotScheduleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11470,7 +11641,7 @@ func NewRedshiftSubnetGroup(scope constructs.Construct, id *string, config *Reds
 	j := jsiiProxy_RedshiftSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroup",
+		"hashicorp_aws.redshift.RedshiftSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11483,7 +11654,7 @@ func NewRedshiftSubnetGroup_Override(r RedshiftSubnetGroup, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroup",
+		"hashicorp_aws.redshift.RedshiftSubnetGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -11571,7 +11742,7 @@ func RedshiftSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroup",
+		"hashicorp_aws.redshift.RedshiftSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11584,7 +11755,7 @@ func RedshiftSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Redshift.RedshiftSubnetGroup",
+		"hashicorp_aws.redshift.RedshiftSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -11770,6 +11941,7 @@ func (r *jsiiProxy_RedshiftSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Redshift.
 type RedshiftSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

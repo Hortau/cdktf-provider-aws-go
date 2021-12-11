@@ -9,6 +9,1105 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codecommit/internal"
 )
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template}.
+type CodecommitApprovalRuleTemplate interface {
+	cdktf.TerraformResource
+	ApprovalRuleTemplateId() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Content() *string
+	SetContent(val *string)
+	ContentInput() *string
+	Count() interface{}
+	SetCount(val interface{})
+	CreationDate() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	LastModifiedDate() *string
+	LastModifiedUser() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RuleContentSha256() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetDescription()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CodecommitApprovalRuleTemplate
+type jsiiProxy_CodecommitApprovalRuleTemplate struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) ApprovalRuleTemplateId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"approvalRuleTemplateId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Content() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"content",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) ContentInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) CreationDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"creationDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) LastModifiedDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastModifiedDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) LastModifiedUser() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastModifiedUser",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) RuleContentSha256() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ruleContentSha256",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Resource.
+func NewCodecommitApprovalRuleTemplate(scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateConfig) CodecommitApprovalRuleTemplate {
+	_init_.Initialize()
+
+	j := jsiiProxy_CodecommitApprovalRuleTemplate{}
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplate",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Resource.
+func NewCodecommitApprovalRuleTemplate_Override(c CodecommitApprovalRuleTemplate, scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplate",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetContent(val *string) {
+	_jsii_.Set(
+		j,
+		"content",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CodecommitApprovalRuleTemplate_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplate",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CodecommitApprovalRuleTemplate_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplate",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ResetDescription() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association}.
+type CodecommitApprovalRuleTemplateAssociation interface {
+	cdktf.TerraformResource
+	ApprovalRuleTemplateName() *string
+	SetApprovalRuleTemplateName(val *string)
+	ApprovalRuleTemplateNameInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RepositoryName() *string
+	SetRepositoryName(val *string)
+	RepositoryNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CodecommitApprovalRuleTemplateAssociation
+type jsiiProxy_CodecommitApprovalRuleTemplateAssociation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ApprovalRuleTemplateName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"approvalRuleTemplateName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ApprovalRuleTemplateNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"approvalRuleTemplateNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) RepositoryName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) RepositoryNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association} Resource.
+func NewCodecommitApprovalRuleTemplateAssociation(scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateAssociationConfig) CodecommitApprovalRuleTemplateAssociation {
+	_init_.Initialize()
+
+	j := jsiiProxy_CodecommitApprovalRuleTemplateAssociation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplateAssociation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association} Resource.
+func NewCodecommitApprovalRuleTemplateAssociation_Override(c CodecommitApprovalRuleTemplateAssociation, scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateAssociationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplateAssociation",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetApprovalRuleTemplateName(val *string) {
+	_jsii_.Set(
+		j,
+		"approvalRuleTemplateName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetRepositoryName(val *string) {
+	_jsii_.Set(
+		j,
+		"repositoryName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CodecommitApprovalRuleTemplateAssociation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplateAssociation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CodecommitApprovalRuleTemplateAssociation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.codecommit.CodecommitApprovalRuleTemplateAssociation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CodeCommit.
+type CodecommitApprovalRuleTemplateAssociationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html#approval_rule_template_name CodecommitApprovalRuleTemplateAssociation#approval_rule_template_name}.
+	ApprovalRuleTemplateName *string `json:"approvalRuleTemplateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html#repository_name CodecommitApprovalRuleTemplateAssociation#repository_name}.
+	RepositoryName *string `json:"repositoryName"`
+}
+
+// AWS CodeCommit.
+type CodecommitApprovalRuleTemplateConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#content CodecommitApprovalRuleTemplate#content}.
+	Content *string `json:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#name CodecommitApprovalRuleTemplate#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#description CodecommitApprovalRuleTemplate#description}.
+	Description *string `json:"description"`
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html aws_codecommit_repository}.
 type CodecommitRepository interface {
 	cdktf.TerraformResource
@@ -359,7 +1458,7 @@ func NewCodecommitRepository(scope constructs.Construct, id *string, config *Cod
 	j := jsiiProxy_CodecommitRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.CodecommitRepository",
+		"hashicorp_aws.codecommit.CodecommitRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -372,7 +1471,7 @@ func NewCodecommitRepository_Override(c CodecommitRepository, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.CodecommitRepository",
+		"hashicorp_aws.codecommit.CodecommitRepository",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -460,7 +1559,7 @@ func CodecommitRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeCommit.CodecommitRepository",
+		"hashicorp_aws.codecommit.CodecommitRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -473,7 +1572,7 @@ func CodecommitRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeCommit.CodecommitRepository",
+		"hashicorp_aws.codecommit.CodecommitRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -667,6 +1766,7 @@ func (c *jsiiProxy_CodecommitRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeCommit.
 type CodecommitRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -932,7 +2032,7 @@ func NewCodecommitTrigger(scope constructs.Construct, id *string, config *Codeco
 	j := jsiiProxy_CodecommitTrigger{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.CodecommitTrigger",
+		"hashicorp_aws.codecommit.CodecommitTrigger",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -945,7 +2045,7 @@ func NewCodecommitTrigger_Override(c CodecommitTrigger, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.CodecommitTrigger",
+		"hashicorp_aws.codecommit.CodecommitTrigger",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1009,7 +2109,7 @@ func CodecommitTrigger_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeCommit.CodecommitTrigger",
+		"hashicorp_aws.codecommit.CodecommitTrigger",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1022,7 +2122,7 @@ func CodecommitTrigger_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeCommit.CodecommitTrigger",
+		"hashicorp_aws.codecommit.CodecommitTrigger",
 		"tfResourceType",
 		&returns,
 	)
@@ -1184,6 +2284,7 @@ func (c *jsiiProxy_CodecommitTrigger) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeCommit.
 type CodecommitTriggerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1212,6 +2313,551 @@ type CodecommitTriggerTrigger struct {
 	Branches *[]*string `json:"branches"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#custom_data CodecommitTrigger#custom_data}.
 	CustomData *string `json:"customData"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template}.
+type DataAwsCodecommitApprovalRuleTemplate interface {
+	cdktf.TerraformDataSource
+	ApprovalRuleTemplateId() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Content() *string
+	Count() interface{}
+	SetCount(val interface{})
+	CreationDate() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	LastModifiedDate() *string
+	LastModifiedUser() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RuleContentSha256() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsCodecommitApprovalRuleTemplate
+type jsiiProxy_DataAwsCodecommitApprovalRuleTemplate struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ApprovalRuleTemplateId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"approvalRuleTemplateId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Content() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"content",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) CreationDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"creationDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) LastModifiedDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastModifiedDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) LastModifiedUser() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastModifiedUser",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) RuleContentSha256() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ruleContentSha256",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Data Source.
+func NewDataAwsCodecommitApprovalRuleTemplate(scope constructs.Construct, id *string, config *DataAwsCodecommitApprovalRuleTemplateConfig) DataAwsCodecommitApprovalRuleTemplate {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCodecommitApprovalRuleTemplate{}
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.DataAwsCodecommitApprovalRuleTemplate",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Data Source.
+func NewDataAwsCodecommitApprovalRuleTemplate_Override(d DataAwsCodecommitApprovalRuleTemplate, scope constructs.Construct, id *string, config *DataAwsCodecommitApprovalRuleTemplateConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.codecommit.DataAwsCodecommitApprovalRuleTemplate",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsCodecommitApprovalRuleTemplate_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.codecommit.DataAwsCodecommitApprovalRuleTemplate",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsCodecommitApprovalRuleTemplate_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.codecommit.DataAwsCodecommitApprovalRuleTemplate",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CodeCommit.
+type DataAwsCodecommitApprovalRuleTemplateConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html#name DataAwsCodecommitApprovalRuleTemplate#name}.
+	Name *string `json:"name"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository.html aws_codecommit_repository}.
@@ -1468,7 +3114,7 @@ func NewDataAwsCodecommitRepository(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsCodecommitRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.DataAwsCodecommitRepository",
+		"hashicorp_aws.codecommit.DataAwsCodecommitRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1481,7 +3127,7 @@ func NewDataAwsCodecommitRepository_Override(d DataAwsCodecommitRepository, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeCommit.DataAwsCodecommitRepository",
+		"hashicorp_aws.codecommit.DataAwsCodecommitRepository",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1537,7 +3183,7 @@ func DataAwsCodecommitRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeCommit.DataAwsCodecommitRepository",
+		"hashicorp_aws.codecommit.DataAwsCodecommitRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1550,7 +3196,7 @@ func DataAwsCodecommitRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeCommit.DataAwsCodecommitRepository",
+		"hashicorp_aws.codecommit.DataAwsCodecommitRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -1712,6 +3358,7 @@ func (d *jsiiProxy_DataAwsCodecommitRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeCommit.
 type DataAwsCodecommitRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

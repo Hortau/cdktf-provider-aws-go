@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.DataAwsSfnActivity",
+		"hashicorp_aws.sfn.DataAwsSfnActivity",
 		reflect.TypeOf((*DataAwsSfnActivity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,11 +50,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.DataAwsSfnActivityConfig",
+		"hashicorp_aws.sfn.DataAwsSfnActivityConfig",
 		reflect.TypeOf((*DataAwsSfnActivityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachine",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachine",
 		reflect.TypeOf((*DataAwsSfnStateMachine)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -98,11 +98,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachineConfig",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachineConfig",
 		reflect.TypeOf((*DataAwsSfnStateMachineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.SfnActivity",
+		"hashicorp_aws.sfn.SfnActivity",
 		reflect.TypeOf((*SfnActivity)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -148,11 +148,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.SfnActivityConfig",
+		"hashicorp_aws.sfn.SfnActivityConfig",
 		reflect.TypeOf((*SfnActivityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.SfnStateMachine",
+		"hashicorp_aws.sfn.SfnStateMachine",
 		reflect.TypeOf((*SfnStateMachine)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -215,15 +215,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.SfnStateMachineConfig",
+		"hashicorp_aws.sfn.SfnStateMachineConfig",
 		reflect.TypeOf((*SfnStateMachineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.SfnStateMachineLoggingConfiguration",
+		"hashicorp_aws.sfn.SfnStateMachineLoggingConfiguration",
 		reflect.TypeOf((*SfnStateMachineLoggingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.SfnStateMachineLoggingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineLoggingConfigurationOutputReference",
 		reflect.TypeOf((*SfnStateMachineLoggingConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -232,6 +232,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "includeExecutionData", GoGetter: "IncludeExecutionData"},
 			_jsii_.MemberProperty{JsiiProperty: "includeExecutionDataInput", GoGetter: "IncludeExecutionDataInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -252,11 +253,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SFN.SfnStateMachineTracingConfiguration",
+		"hashicorp_aws.sfn.SfnStateMachineTracingConfiguration",
 		reflect.TypeOf((*SfnStateMachineTracingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SFN.SfnStateMachineTracingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineTracingConfigurationOutputReference",
 		reflect.TypeOf((*SfnStateMachineTracingConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -265,6 +266,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

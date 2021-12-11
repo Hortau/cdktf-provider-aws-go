@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SQS.DataAwsSqsQueue",
+		"hashicorp_aws.sqs.DataAwsSqsQueue",
 		reflect.TypeOf((*DataAwsSqsQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -52,11 +52,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SQS.DataAwsSqsQueueConfig",
+		"hashicorp_aws.sqs.DataAwsSqsQueueConfig",
 		reflect.TypeOf((*DataAwsSqsQueueConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SQS.SqsQueue",
+		"hashicorp_aws.sqs.SqsQueue",
 		reflect.TypeOf((*SqsQueue)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -121,9 +121,12 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetPolicy", GoMethod: "ResetPolicy"},
 			_jsii_.MemberMethod{JsiiMethod: "resetReceiveWaitTimeSeconds", GoMethod: "ResetReceiveWaitTimeSeconds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetRedrivePolicy", GoMethod: "ResetRedrivePolicy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSqsManagedSseEnabled", GoMethod: "ResetSqsManagedSseEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
 			_jsii_.MemberMethod{JsiiMethod: "resetVisibilityTimeoutSeconds", GoMethod: "ResetVisibilityTimeoutSeconds"},
+			_jsii_.MemberProperty{JsiiProperty: "sqsManagedSseEnabled", GoGetter: "SqsManagedSseEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "sqsManagedSseEnabledInput", GoGetter: "SqsManagedSseEnabledInput"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
@@ -146,11 +149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SQS.SqsQueueConfig",
+		"hashicorp_aws.sqs.SqsQueueConfig",
 		reflect.TypeOf((*SqsQueueConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SQS.SqsQueuePolicy",
+		"hashicorp_aws.sqs.SqsQueuePolicy",
 		reflect.TypeOf((*SqsQueuePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -191,7 +194,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SQS.SqsQueuePolicyConfig",
+		"hashicorp_aws.sqs.SqsQueuePolicyConfig",
 		reflect.TypeOf((*SqsQueuePolicyConfig)(nil)).Elem(),
 	)
 }

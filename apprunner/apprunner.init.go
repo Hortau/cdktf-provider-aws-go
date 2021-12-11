@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersion",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersion",
 		reflect.TypeOf((*ApprunnerAutoScalingConfigurationVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -66,11 +66,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersionConfig",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersionConfig",
 		reflect.TypeOf((*ApprunnerAutoScalingConfigurationVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerConnection",
+		"hashicorp_aws.apprunner.ApprunnerConnection",
 		reflect.TypeOf((*ApprunnerConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -119,11 +119,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerConnectionConfig",
+		"hashicorp_aws.apprunner.ApprunnerConnectionConfig",
 		reflect.TypeOf((*ApprunnerConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociation",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociation",
 		reflect.TypeOf((*ApprunnerCustomDomainAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -170,7 +170,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
 		reflect.TypeOf((*ApprunnerCustomDomainAssociationCertificateValidationRecords)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -193,11 +193,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociationConfig",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationConfig",
 		reflect.TypeOf((*ApprunnerCustomDomainAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerService",
+		"hashicorp_aws.apprunner.ApprunnerService",
 		reflect.TypeOf((*ApprunnerService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -264,21 +264,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceConfig",
+		"hashicorp_aws.apprunner.ApprunnerServiceConfig",
 		reflect.TypeOf((*ApprunnerServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceEncryptionConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceEncryptionConfiguration",
 		reflect.TypeOf((*ApprunnerServiceEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceEncryptionConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceEncryptionConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceEncryptionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -294,11 +295,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceHealthCheckConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceHealthCheckConfiguration",
 		reflect.TypeOf((*ApprunnerServiceHealthCheckConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceHealthCheckConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -307,6 +308,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThreshold", GoGetter: "HealthyThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "healthyThresholdInput", GoGetter: "HealthyThresholdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -336,11 +338,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceInstanceConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceInstanceConfiguration",
 		reflect.TypeOf((*ApprunnerServiceInstanceConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceInstanceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceInstanceConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceInstanceConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cpu", GoGetter: "Cpu"},
@@ -351,12 +353,14 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceRoleArn", GoGetter: "InstanceRoleArn"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceRoleArnInput", GoGetter: "InstanceRoleArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
 			_jsii_.MemberProperty{JsiiProperty: "memory", GoGetter: "Memory"},
 			_jsii_.MemberProperty{JsiiProperty: "memoryInput", GoGetter: "MemoryInput"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCpu", GoMethod: "ResetCpu"},
+			_jsii_.MemberMethod{JsiiMethod: "resetInstanceRoleArn", GoMethod: "ResetInstanceRoleArn"},
 			_jsii_.MemberMethod{JsiiMethod: "resetMemory", GoMethod: "ResetMemory"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
@@ -368,15 +372,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfiguration",
 		reflect.TypeOf((*ApprunnerServiceSourceConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationAuthenticationConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationAuthenticationConfiguration",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationAuthenticationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessRoleArn", GoGetter: "AccessRoleArn"},
@@ -387,6 +391,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -402,19 +407,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepository",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepository",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepository)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "buildCommand", GoGetter: "BuildCommand"},
@@ -423,6 +428,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -448,7 +454,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "codeConfigurationValues", GoGetter: "CodeConfigurationValues"},
@@ -459,6 +465,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -474,7 +481,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "codeConfiguration", GoGetter: "CodeConfiguration"},
@@ -483,6 +490,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -503,17 +511,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -531,21 +540,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepository",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepository",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationImageRepository)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -568,7 +578,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationImageRepositoryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -581,6 +591,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "imageIdentifierInput", GoGetter: "ImageIdentifierInput"},
 			_jsii_.MemberProperty{JsiiProperty: "imageRepositoryType", GoGetter: "ImageRepositoryType"},
 			_jsii_.MemberProperty{JsiiProperty: "imageRepositoryTypeInput", GoGetter: "ImageRepositoryTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -596,7 +607,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationOutputReference",
 		reflect.TypeOf((*ApprunnerServiceSourceConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authenticationConfiguration", GoGetter: "AuthenticationConfiguration"},
@@ -611,6 +622,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "imageRepository", GoGetter: "ImageRepository"},
 			_jsii_.MemberProperty{JsiiProperty: "imageRepositoryInput", GoGetter: "ImageRepositoryInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

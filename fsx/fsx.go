@@ -335,7 +335,7 @@ func NewFsxBackup(scope constructs.Construct, id *string, config *FsxBackupConfi
 	j := jsiiProxy_FsxBackup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxBackup",
+		"hashicorp_aws.fsx.FsxBackup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -348,7 +348,7 @@ func NewFsxBackup_Override(f FsxBackup, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxBackup",
+		"hashicorp_aws.fsx.FsxBackup",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -420,7 +420,7 @@ func FsxBackup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FSx.FsxBackup",
+		"hashicorp_aws.fsx.FsxBackup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -433,7 +433,7 @@ func FsxBackup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FSx.FsxBackup",
+		"hashicorp_aws.fsx.FsxBackup",
 		"tfResourceType",
 		&returns,
 	)
@@ -627,6 +627,7 @@ func (f *jsiiProxy_FsxBackup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS File System FSx.
 type FsxBackupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -663,6 +664,8 @@ type FsxBackupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *FsxBackupTimeouts
+	SetInternalValue(val *FsxBackupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -724,6 +727,16 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) InternalValue() *FsxBackupTimeouts {
+	var returns *FsxBackupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -760,7 +773,7 @@ func NewFsxBackupTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_FsxBackupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxBackupTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxBackupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -772,7 +785,7 @@ func NewFsxBackupTimeoutsOutputReference_Override(f FsxBackupTimeoutsOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxBackupTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxBackupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -790,6 +803,14 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetInternalValue(val *FsxBackupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1674,7 +1695,7 @@ func NewFsxLustreFileSystem(scope constructs.Construct, id *string, config *FsxL
 	j := jsiiProxy_FsxLustreFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxLustreFileSystem",
+		"hashicorp_aws.fsx.FsxLustreFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1687,7 +1708,7 @@ func NewFsxLustreFileSystem_Override(f FsxLustreFileSystem, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxLustreFileSystem",
+		"hashicorp_aws.fsx.FsxLustreFileSystem",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -1895,7 +1916,7 @@ func FsxLustreFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FSx.FsxLustreFileSystem",
+		"hashicorp_aws.fsx.FsxLustreFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1908,7 +1929,7 @@ func FsxLustreFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FSx.FsxLustreFileSystem",
+		"hashicorp_aws.fsx.FsxLustreFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -2238,6 +2259,7 @@ func (f *jsiiProxy_FsxLustreFileSystem) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS File System FSx.
 type FsxLustreFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2310,6 +2332,8 @@ type FsxLustreFileSystemTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *FsxLustreFileSystemTimeouts
+	SetInternalValue(val *FsxLustreFileSystemTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2375,6 +2399,16 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) InternalValue() *FsxLustreFileSystemTimeouts {
+	var returns *FsxLustreFileSystemTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2431,7 +2465,7 @@ func NewFsxLustreFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxLustreFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxLustreFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2443,7 +2477,7 @@ func NewFsxLustreFileSystemTimeoutsOutputReference_Override(f FsxLustreFileSyste
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxLustreFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxLustreFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -2461,6 +2495,14 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetInternalValue(val *FsxLustreFileSystemTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3276,7 +3318,7 @@ func NewFsxOntapFileSystem(scope constructs.Construct, id *string, config *FsxOn
 	j := jsiiProxy_FsxOntapFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystem",
+		"hashicorp_aws.fsx.FsxOntapFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3289,7 +3331,7 @@ func NewFsxOntapFileSystem_Override(f FsxOntapFileSystem, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystem",
+		"hashicorp_aws.fsx.FsxOntapFileSystem",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -3465,7 +3507,7 @@ func FsxOntapFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FSx.FsxOntapFileSystem",
+		"hashicorp_aws.fsx.FsxOntapFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3478,7 +3520,7 @@ func FsxOntapFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FSx.FsxOntapFileSystem",
+		"hashicorp_aws.fsx.FsxOntapFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -3781,6 +3823,7 @@ func (f *jsiiProxy_FsxOntapFileSystem) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS File System FSx.
 type FsxOntapFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3841,6 +3884,8 @@ type FsxOntapFileSystemDiskIopsConfiguration struct {
 
 type FsxOntapFileSystemDiskIopsConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *FsxOntapFileSystemDiskIopsConfiguration
+	SetInternalValue(val *FsxOntapFileSystemDiskIopsConfiguration)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -3866,6 +3911,16 @@ type FsxOntapFileSystemDiskIopsConfigurationOutputReference interface {
 // The jsii proxy struct for FsxOntapFileSystemDiskIopsConfigurationOutputReference
 type jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) InternalValue() *FsxOntapFileSystemDiskIopsConfiguration {
+	var returns *FsxOntapFileSystemDiskIopsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) Iops() *float64 {
@@ -3944,7 +3999,7 @@ func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference(terraformResource
 	j := jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemDiskIopsConfigurationOutputReference",
+		"hashicorp_aws.fsx.FsxOntapFileSystemDiskIopsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3956,9 +4011,17 @@ func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference_Override(f FsxOnt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemDiskIopsConfigurationOutputReference",
+		"hashicorp_aws.fsx.FsxOntapFileSystemDiskIopsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) SetInternalValue(val *FsxOntapFileSystemDiskIopsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4181,7 +4244,7 @@ func NewFsxOntapFileSystemEndpoints(terraformResource cdktf.ITerraformResource, 
 	j := jsiiProxy_FsxOntapFileSystemEndpoints{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpoints",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4194,7 +4257,7 @@ func NewFsxOntapFileSystemEndpoints_Override(f FsxOntapFileSystemEndpoints, terr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpoints",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpoints",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		f,
 	)
@@ -4373,7 +4436,7 @@ func NewFsxOntapFileSystemEndpointsIntercluster(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_FsxOntapFileSystemEndpointsIntercluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpointsIntercluster",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsIntercluster",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4386,7 +4449,7 @@ func NewFsxOntapFileSystemEndpointsIntercluster_Override(f FsxOntapFileSystemEnd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpointsIntercluster",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsIntercluster",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		f,
 	)
@@ -4565,7 +4628,7 @@ func NewFsxOntapFileSystemEndpointsManagement(terraformResource cdktf.ITerraform
 	j := jsiiProxy_FsxOntapFileSystemEndpointsManagement{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpointsManagement",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsManagement",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4578,7 +4641,7 @@ func NewFsxOntapFileSystemEndpointsManagement_Override(f FsxOntapFileSystemEndpo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemEndpointsManagement",
+		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsManagement",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		f,
 	)
@@ -4695,6 +4758,8 @@ type FsxOntapFileSystemTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *FsxOntapFileSystemTimeouts
+	SetInternalValue(val *FsxOntapFileSystemTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4760,6 +4825,16 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) DeleteInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) InternalValue() *FsxOntapFileSystemTimeouts {
+	var returns *FsxOntapFileSystemTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4816,7 +4891,7 @@ func NewFsxOntapFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxOntapFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4828,7 +4903,7 @@ func NewFsxOntapFileSystemTimeoutsOutputReference_Override(f FsxOntapFileSystemT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxOntapFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxOntapFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -4846,6 +4921,14 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetDelete(val *str
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetInternalValue(val *FsxOntapFileSystemTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4983,6 +5066,4371 @@ func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) ResetDelete() {
 }
 
 func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine}.
+type FsxOntapStorageVirtualMachine interface {
+	cdktf.TerraformResource
+	ActiveDirectoryConfiguration() FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference
+	ActiveDirectoryConfigurationInput() *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	FileSystemId() *string
+	SetFileSystemId(val *string)
+	FileSystemIdInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RootVolumeSecurityStyle() *string
+	SetRootVolumeSecurityStyle(val *string)
+	RootVolumeSecurityStyleInput() *string
+	Subtype() *string
+	SvmAdminPassword() *string
+	SetSvmAdminPassword(val *string)
+	SvmAdminPasswordInput() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() FsxOntapStorageVirtualMachineTimeoutsOutputReference
+	TimeoutsInput() *FsxOntapStorageVirtualMachineTimeouts
+	Uuid() *string
+	AddOverride(path *string, value interface{})
+	Endpoints(index *string) FsxOntapStorageVirtualMachineEndpoints
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration)
+	PutTimeouts(value *FsxOntapStorageVirtualMachineTimeouts)
+	ResetActiveDirectoryConfiguration()
+	ResetOverrideLogicalId()
+	ResetRootVolumeSecurityStyle()
+	ResetSvmAdminPassword()
+	ResetTags()
+	ResetTagsAll()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachine
+type jsiiProxy_FsxOntapStorageVirtualMachine struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) ActiveDirectoryConfiguration() FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference {
+	var returns FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"activeDirectoryConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) ActiveDirectoryConfigurationInput() *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration {
+	var returns *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration
+	_jsii_.Get(
+		j,
+		"activeDirectoryConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) FileSystemId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) FileSystemIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) RootVolumeSecurityStyle() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rootVolumeSecurityStyle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) RootVolumeSecurityStyleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rootVolumeSecurityStyleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Subtype() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subtype",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SvmAdminPassword() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"svmAdminPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SvmAdminPasswordInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"svmAdminPasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Timeouts() FsxOntapStorageVirtualMachineTimeoutsOutputReference {
+	var returns FsxOntapStorageVirtualMachineTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TimeoutsInput() *FsxOntapStorageVirtualMachineTimeouts {
+	var returns *FsxOntapStorageVirtualMachineTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Uuid() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"uuid",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine} Resource.
+func NewFsxOntapStorageVirtualMachine(scope constructs.Construct, id *string, config *FsxOntapStorageVirtualMachineConfig) FsxOntapStorageVirtualMachine {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachine{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachine",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine} Resource.
+func NewFsxOntapStorageVirtualMachine_Override(f FsxOntapStorageVirtualMachine, scope constructs.Construct, id *string, config *FsxOntapStorageVirtualMachineConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachine",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetFileSystemId(val *string) {
+	_jsii_.Set(
+		j,
+		"fileSystemId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetRootVolumeSecurityStyle(val *string) {
+	_jsii_.Set(
+		j,
+		"rootVolumeSecurityStyle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetSvmAdminPassword(val *string) {
+	_jsii_.Set(
+		j,
+		"svmAdminPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxOntapStorageVirtualMachine_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachine",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxOntapStorageVirtualMachine_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachine",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) Endpoints(index *string) FsxOntapStorageVirtualMachineEndpoints {
+	var returns FsxOntapStorageVirtualMachineEndpoints
+
+	_jsii_.Invoke(
+		f,
+		"endpoints",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) PutActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration) {
+	_jsii_.InvokeVoid(
+		f,
+		"putActiveDirectoryConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) PutTimeouts(value *FsxOntapStorageVirtualMachineTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetActiveDirectoryConfiguration() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetActiveDirectoryConfiguration",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetRootVolumeSecurityStyle() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetRootVolumeSecurityStyle",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetSvmAdminPassword() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetSvmAdminPassword",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineActiveDirectoryConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#netbios_name FsxOntapStorageVirtualMachine#netbios_name}.
+	NetbiosName *string `json:"netbiosName"`
+	// self_managed_active_directory_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#self_managed_active_directory_configuration FsxOntapStorageVirtualMachine#self_managed_active_directory_configuration}
+	SelfManagedActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration `json:"selfManagedActiveDirectoryConfiguration"`
+}
+
+type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration
+	SetInternalValue(val *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	NetbiosName() *string
+	SetNetbiosName(val *string)
+	NetbiosNameInput() *string
+	SelfManagedActiveDirectoryConfiguration() FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference
+	SelfManagedActiveDirectoryConfigurationInput() *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutSelfManagedActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration)
+	ResetNetbiosName()
+	ResetSelfManagedActiveDirectoryConfiguration()
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference
+type jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) InternalValue() *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration {
+	var returns *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) NetbiosName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"netbiosName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) NetbiosNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"netbiosNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SelfManagedActiveDirectoryConfiguration() FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference {
+	var returns FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"selfManagedActiveDirectoryConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SelfManagedActiveDirectoryConfigurationInput() *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration {
+	var returns *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration
+	_jsii_.Get(
+		j,
+		"selfManagedActiveDirectoryConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetInternalValue(val *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetNetbiosName(val *string) {
+	_jsii_.Set(
+		j,
+		"netbiosName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) PutSelfManagedActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration) {
+	_jsii_.InvokeVoid(
+		f,
+		"putSelfManagedActiveDirectoryConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) ResetNetbiosName() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetNetbiosName",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) ResetSelfManagedActiveDirectoryConfiguration() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetSelfManagedActiveDirectoryConfiguration",
+		nil, // no parameters
+	)
+}
+
+type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#dns_ips FsxOntapStorageVirtualMachine#dns_ips}.
+	DnsIps *[]*string `json:"dnsIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#domain_name FsxOntapStorageVirtualMachine#domain_name}.
+	DomainName *string `json:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#password FsxOntapStorageVirtualMachine#password}.
+	Password *string `json:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#username FsxOntapStorageVirtualMachine#username}.
+	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#file_system_administrators_group FsxOntapStorageVirtualMachine#file_system_administrators_group}.
+	FileSystemAdministratorsGroup *string `json:"fileSystemAdministratorsGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#organizational_unit_distinguidshed_name FsxOntapStorageVirtualMachine#organizational_unit_distinguidshed_name}.
+	OrganizationalUnitDistinguidshedName *string `json:"organizationalUnitDistinguidshedName"`
+}
+
+type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	DnsIps() *[]*string
+	SetDnsIps(val *[]*string)
+	DnsIpsInput() *[]*string
+	DomainName() *string
+	SetDomainName(val *string)
+	DomainNameInput() *string
+	FileSystemAdministratorsGroup() *string
+	SetFileSystemAdministratorsGroup(val *string)
+	FileSystemAdministratorsGroupInput() *string
+	InternalValue() *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration
+	SetInternalValue(val *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	OrganizationalUnitDistinguidshedName() *string
+	SetOrganizationalUnitDistinguidshedName(val *string)
+	OrganizationalUnitDistinguidshedNameInput() *string
+	Password() *string
+	SetPassword(val *string)
+	PasswordInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Username() *string
+	SetUsername(val *string)
+	UsernameInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetFileSystemAdministratorsGroup()
+	ResetOrganizationalUnitDistinguidshedName()
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference
+type jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) DnsIps() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dnsIps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) DnsIpsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dnsIpsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) DomainName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) DomainNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) FileSystemAdministratorsGroup() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemAdministratorsGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) FileSystemAdministratorsGroupInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemAdministratorsGroupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) InternalValue() *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration {
+	var returns *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) OrganizationalUnitDistinguidshedName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguidshedName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) OrganizationalUnitDistinguidshedNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguidshedNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) Password() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"password",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) PasswordInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"passwordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) Username() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"username",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) UsernameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"usernameInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetDnsIps(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dnsIps",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetDomainName(val *string) {
+	_jsii_.Set(
+		j,
+		"domainName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetFileSystemAdministratorsGroup(val *string) {
+	_jsii_.Set(
+		j,
+		"fileSystemAdministratorsGroup",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetInternalValue(val *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetOrganizationalUnitDistinguidshedName(val *string) {
+	_jsii_.Set(
+		j,
+		"organizationalUnitDistinguidshedName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetPassword(val *string) {
+	_jsii_.Set(
+		j,
+		"password",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetUsername(val *string) {
+	_jsii_.Set(
+		j,
+		"username",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) ResetFileSystemAdministratorsGroup() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetFileSystemAdministratorsGroup",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) ResetOrganizationalUnitDistinguidshedName() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOrganizationalUnitDistinguidshedName",
+		nil, // no parameters
+	)
+}
+
+// AWS File System FSx.
+type FsxOntapStorageVirtualMachineConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#file_system_id FsxOntapStorageVirtualMachine#file_system_id}.
+	FileSystemId *string `json:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#name FsxOntapStorageVirtualMachine#name}.
+	Name *string `json:"name"`
+	// active_directory_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#active_directory_configuration FsxOntapStorageVirtualMachine#active_directory_configuration}
+	ActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration `json:"activeDirectoryConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#root_volume_security_style FsxOntapStorageVirtualMachine#root_volume_security_style}.
+	RootVolumeSecurityStyle *string `json:"rootVolumeSecurityStyle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#svm_admin_password FsxOntapStorageVirtualMachine#svm_admin_password}.
+	SvmAdminPassword *string `json:"svmAdminPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#tags FsxOntapStorageVirtualMachine#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#tags_all FsxOntapStorageVirtualMachine#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#timeouts FsxOntapStorageVirtualMachine#timeouts}
+	Timeouts *FsxOntapStorageVirtualMachineTimeouts `json:"timeouts"`
+}
+
+type FsxOntapStorageVirtualMachineEndpoints interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	Iscsi() interface{}
+	Management() interface{}
+	Nfs() interface{}
+	Smb() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineEndpoints
+type jsiiProxy_FsxOntapStorageVirtualMachineEndpoints struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Iscsi() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"iscsi",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Management() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"management",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Nfs() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"nfs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Smb() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"smb",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpoints(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpoints {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpoints{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpoints",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpoints_Override(f FsxOntapStorageVirtualMachineEndpoints, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpoints",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineEndpointsIscsi interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DnsName() *string
+	IpAddresses() *[]*string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineEndpointsIscsi
+type jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) DnsName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) IpAddresses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsIscsi(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsIscsi {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsIscsi",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsIscsi_Override(f FsxOntapStorageVirtualMachineEndpointsIscsi, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsIscsi",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineEndpointsManagement interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DnsName() *string
+	IpAddresses() *[]*string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineEndpointsManagement
+type jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) DnsName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) IpAddresses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsManagement(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsManagement {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsManagement",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsManagement_Override(f FsxOntapStorageVirtualMachineEndpointsManagement, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsManagement",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineEndpointsNfs interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DnsName() *string
+	IpAddresses() *[]*string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineEndpointsNfs
+type jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) DnsName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) IpAddresses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsNfs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsNfs {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsNfs",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsNfs_Override(f FsxOntapStorageVirtualMachineEndpointsNfs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsNfs",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineEndpointsSmb interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DnsName() *string
+	IpAddresses() *[]*string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineEndpointsSmb
+type jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) DnsName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) IpAddresses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsSmb(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsSmb {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsSmb",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewFsxOntapStorageVirtualMachineEndpointsSmb_Override(f FsxOntapStorageVirtualMachineEndpointsSmb, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsSmb",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOntapStorageVirtualMachineTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#create FsxOntapStorageVirtualMachine#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#delete FsxOntapStorageVirtualMachine#delete}.
+	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#update FsxOntapStorageVirtualMachine#update}.
+	Update *string `json:"update"`
+}
+
+type FsxOntapStorageVirtualMachineTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxOntapStorageVirtualMachineTimeouts
+	SetInternalValue(val *FsxOntapStorageVirtualMachineTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxOntapStorageVirtualMachineTimeoutsOutputReference
+type jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) InternalValue() *FsxOntapStorageVirtualMachineTimeouts {
+	var returns *FsxOntapStorageVirtualMachineTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference_Override(f FsxOntapStorageVirtualMachineTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetInternalValue(val *FsxOntapStorageVirtualMachineTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume}.
+type FsxOntapVolume interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	FileSystemId() *string
+	FlexcacheEndpointType() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	JunctionPath() *string
+	SetJunctionPath(val *string)
+	JunctionPathInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	OntapVolumeType() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SecurityStyle() *string
+	SetSecurityStyle(val *string)
+	SecurityStyleInput() *string
+	SizeInMegabytes() *float64
+	SetSizeInMegabytes(val *float64)
+	SizeInMegabytesInput() *float64
+	StorageEfficiencyEnabled() interface{}
+	SetStorageEfficiencyEnabled(val interface{})
+	StorageEfficiencyEnabledInput() interface{}
+	StorageVirtualMachineId() *string
+	SetStorageVirtualMachineId(val *string)
+	StorageVirtualMachineIdInput() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	TieringPolicy() FsxOntapVolumeTieringPolicyOutputReference
+	TieringPolicyInput() *FsxOntapVolumeTieringPolicy
+	Timeouts() FsxOntapVolumeTimeoutsOutputReference
+	TimeoutsInput() *FsxOntapVolumeTimeouts
+	Uuid() *string
+	VolumeType() *string
+	SetVolumeType(val *string)
+	VolumeTypeInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutTieringPolicy(value *FsxOntapVolumeTieringPolicy)
+	PutTimeouts(value *FsxOntapVolumeTimeouts)
+	ResetOverrideLogicalId()
+	ResetSecurityStyle()
+	ResetTags()
+	ResetTagsAll()
+	ResetTieringPolicy()
+	ResetTimeouts()
+	ResetVolumeType()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxOntapVolume
+type jsiiProxy_FsxOntapVolume struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) FileSystemId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) FlexcacheEndpointType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"flexcacheEndpointType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) JunctionPath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"junctionPath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) JunctionPathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"junctionPathInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) OntapVolumeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ontapVolumeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SecurityStyle() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityStyle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SecurityStyleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityStyleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SizeInMegabytes() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"sizeInMegabytes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SizeInMegabytesInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"sizeInMegabytesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) StorageEfficiencyEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"storageEfficiencyEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) StorageEfficiencyEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"storageEfficiencyEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) StorageVirtualMachineId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageVirtualMachineId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) StorageVirtualMachineIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageVirtualMachineIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TieringPolicy() FsxOntapVolumeTieringPolicyOutputReference {
+	var returns FsxOntapVolumeTieringPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"tieringPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TieringPolicyInput() *FsxOntapVolumeTieringPolicy {
+	var returns *FsxOntapVolumeTieringPolicy
+	_jsii_.Get(
+		j,
+		"tieringPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Timeouts() FsxOntapVolumeTimeoutsOutputReference {
+	var returns FsxOntapVolumeTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) TimeoutsInput() *FsxOntapVolumeTimeouts {
+	var returns *FsxOntapVolumeTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) Uuid() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"uuid",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) VolumeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolume) VolumeTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume} Resource.
+func NewFsxOntapVolume(scope constructs.Construct, id *string, config *FsxOntapVolumeConfig) FsxOntapVolume {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapVolume{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolume",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume} Resource.
+func NewFsxOntapVolume_Override(f FsxOntapVolume, scope constructs.Construct, id *string, config *FsxOntapVolumeConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolume",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetJunctionPath(val *string) {
+	_jsii_.Set(
+		j,
+		"junctionPath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetSecurityStyle(val *string) {
+	_jsii_.Set(
+		j,
+		"securityStyle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetSizeInMegabytes(val *float64) {
+	_jsii_.Set(
+		j,
+		"sizeInMegabytes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetStorageEfficiencyEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"storageEfficiencyEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetStorageVirtualMachineId(val *string) {
+	_jsii_.Set(
+		j,
+		"storageVirtualMachineId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolume) SetVolumeType(val *string) {
+	_jsii_.Set(
+		j,
+		"volumeType",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxOntapVolume_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxOntapVolume",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxOntapVolume_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxOntapVolume",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) PutTieringPolicy(value *FsxOntapVolumeTieringPolicy) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTieringPolicy",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) PutTimeouts(value *FsxOntapVolumeTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetSecurityStyle() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetSecurityStyle",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetTieringPolicy() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTieringPolicy",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) ResetVolumeType() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetVolumeType",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolume) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxOntapVolume) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS File System FSx.
+type FsxOntapVolumeConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#junction_path FsxOntapVolume#junction_path}.
+	JunctionPath *string `json:"junctionPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#name FsxOntapVolume#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#size_in_megabytes FsxOntapVolume#size_in_megabytes}.
+	SizeInMegabytes *float64 `json:"sizeInMegabytes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#storage_efficiency_enabled FsxOntapVolume#storage_efficiency_enabled}.
+	StorageEfficiencyEnabled interface{} `json:"storageEfficiencyEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#storage_virtual_machine_id FsxOntapVolume#storage_virtual_machine_id}.
+	StorageVirtualMachineId *string `json:"storageVirtualMachineId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#security_style FsxOntapVolume#security_style}.
+	SecurityStyle *string `json:"securityStyle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tags FsxOntapVolume#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tags_all FsxOntapVolume#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+	// tiering_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tiering_policy FsxOntapVolume#tiering_policy}
+	TieringPolicy *FsxOntapVolumeTieringPolicy `json:"tieringPolicy"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#timeouts FsxOntapVolume#timeouts}
+	Timeouts *FsxOntapVolumeTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#volume_type FsxOntapVolume#volume_type}.
+	VolumeType *string `json:"volumeType"`
+}
+
+type FsxOntapVolumeTieringPolicy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#cooling_period FsxOntapVolume#cooling_period}.
+	CoolingPeriod *float64 `json:"coolingPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#name FsxOntapVolume#name}.
+	Name *string `json:"name"`
+}
+
+type FsxOntapVolumeTieringPolicyOutputReference interface {
+	cdktf.ComplexObject
+	CoolingPeriod() *float64
+	SetCoolingPeriod(val *float64)
+	CoolingPeriodInput() *float64
+	InternalValue() *FsxOntapVolumeTieringPolicy
+	SetInternalValue(val *FsxOntapVolumeTieringPolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCoolingPeriod()
+	ResetName()
+}
+
+// The jsii proxy struct for FsxOntapVolumeTieringPolicyOutputReference
+type jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) CoolingPeriod() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"coolingPeriod",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) CoolingPeriodInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"coolingPeriodInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) InternalValue() *FsxOntapVolumeTieringPolicy {
+	var returns *FsxOntapVolumeTieringPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOntapVolumeTieringPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTieringPolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolumeTieringPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOntapVolumeTieringPolicyOutputReference_Override(f FsxOntapVolumeTieringPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolumeTieringPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetCoolingPeriod(val *float64) {
+	_jsii_.Set(
+		j,
+		"coolingPeriod",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetInternalValue(val *FsxOntapVolumeTieringPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) ResetCoolingPeriod() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCoolingPeriod",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) ResetName() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetName",
+		nil, // no parameters
+	)
+}
+
+type FsxOntapVolumeTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#create FsxOntapVolume#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#delete FsxOntapVolume#delete}.
+	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#update FsxOntapVolume#update}.
+	Update *string `json:"update"`
+}
+
+type FsxOntapVolumeTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxOntapVolumeTimeouts
+	SetInternalValue(val *FsxOntapVolumeTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxOntapVolumeTimeoutsOutputReference
+type jsiiProxy_FsxOntapVolumeTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) InternalValue() *FsxOntapVolumeTimeouts {
+	var returns *FsxOntapVolumeTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOntapVolumeTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOntapVolumeTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolumeTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOntapVolumeTimeoutsOutputReference_Override(f FsxOntapVolumeTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOntapVolumeTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetInternalValue(val *FsxOntapVolumeTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) ResetUpdate() {
 	_jsii_.InvokeVoid(
 		f,
 		"resetUpdate",
@@ -5756,7 +10204,7 @@ func NewFsxWindowsFileSystem(scope constructs.Construct, id *string, config *Fsx
 	j := jsiiProxy_FsxWindowsFileSystem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystem",
+		"hashicorp_aws.fsx.FsxWindowsFileSystem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5769,7 +10217,7 @@ func NewFsxWindowsFileSystem_Override(f FsxWindowsFileSystem, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystem",
+		"hashicorp_aws.fsx.FsxWindowsFileSystem",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -5961,7 +10409,7 @@ func FsxWindowsFileSystem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.FSx.FsxWindowsFileSystem",
+		"hashicorp_aws.fsx.FsxWindowsFileSystem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5974,7 +10422,7 @@ func FsxWindowsFileSystem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.FSx.FsxWindowsFileSystem",
+		"hashicorp_aws.fsx.FsxWindowsFileSystem",
 		"tfResourceType",
 		&returns,
 	)
@@ -6332,6 +10780,8 @@ type FsxWindowsFileSystemAuditLogConfigurationOutputReference interface {
 	FileShareAccessAuditLogLevel() *string
 	SetFileShareAccessAuditLogLevel(val *string)
 	FileShareAccessAuditLogLevelInput() *string
+	InternalValue() *FsxWindowsFileSystemAuditLogConfiguration
+	SetInternalValue(val *FsxWindowsFileSystemAuditLogConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6414,6 +10864,16 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Fil
 	return returns
 }
 
+func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) InternalValue() *FsxWindowsFileSystemAuditLogConfiguration {
+	var returns *FsxWindowsFileSystemAuditLogConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6450,7 +10910,7 @@ func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference(terraformResour
 	j := jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemAuditLogConfigurationOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemAuditLogConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6462,7 +10922,7 @@ func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference_Override(f FsxW
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemAuditLogConfigurationOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemAuditLogConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -6488,6 +10948,14 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Set
 	_jsii_.Set(
 		j,
 		"fileShareAccessAuditLogLevel",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) SetInternalValue(val *FsxWindowsFileSystemAuditLogConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6624,6 +11092,7 @@ func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Res
 	)
 }
 
+// AWS File System FSx.
 type FsxWindowsFileSystemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6709,6 +11178,8 @@ type FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference interface {
 	FileSystemAdministratorsGroup() *string
 	SetFileSystemAdministratorsGroup(val *string)
 	FileSystemAdministratorsGroupInput() *string
+	InternalValue() *FsxWindowsFileSystemSelfManagedActiveDirectory
+	SetInternalValue(val *FsxWindowsFileSystemSelfManagedActiveDirectory)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrganizationalUnitDistinguishedName() *string
@@ -6794,6 +11265,16 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 	_jsii_.Get(
 		j,
 		"fileSystemAdministratorsGroupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) InternalValue() *FsxWindowsFileSystemSelfManagedActiveDirectory {
+	var returns *FsxWindowsFileSystemSelfManagedActiveDirectory
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6895,7 +11376,7 @@ func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference(terraformR
 	j := jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6907,7 +11388,7 @@ func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference_Override(f
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -6933,6 +11414,14 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 	_jsii_.Set(
 		j,
 		"fileSystemAdministratorsGroup",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) SetInternalValue(val *FsxWindowsFileSystemSelfManagedActiveDirectory) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7102,6 +11591,8 @@ type FsxWindowsFileSystemTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *FsxWindowsFileSystemTimeouts
+	SetInternalValue(val *FsxWindowsFileSystemTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7167,6 +11658,16 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) DeleteInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) InternalValue() *FsxWindowsFileSystemTimeouts {
+	var returns *FsxWindowsFileSystemTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7223,7 +11724,7 @@ func NewFsxWindowsFileSystemTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7235,7 +11736,7 @@ func NewFsxWindowsFileSystemTimeoutsOutputReference_Override(f FsxWindowsFileSys
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.FSx.FsxWindowsFileSystemTimeoutsOutputReference",
+		"hashicorp_aws.fsx.FsxWindowsFileSystemTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -7253,6 +11754,14 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetDelete(val *s
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetInternalValue(val *FsxWindowsFileSystemTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

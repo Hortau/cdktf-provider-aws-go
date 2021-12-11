@@ -1,12 +1,12 @@
 package acm
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/acm/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/acm/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html aws_acm_certificate}.
@@ -463,7 +463,6 @@ func (j *jsiiProxy_AcmCertificate) ValidationMethodInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html aws_acm_certificate} Resource.
 func NewAcmCertificate(scope constructs.Construct, id *string, config *AcmCertificateConfig) AcmCertificate {
 	_init_.Initialize()
@@ -471,7 +470,7 @@ func NewAcmCertificate(scope constructs.Construct, id *string, config *AcmCertif
 	j := jsiiProxy_AcmCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificate",
+		"hashicorp_aws.acm.AcmCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -484,7 +483,7 @@ func NewAcmCertificate_Override(a AcmCertificate, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificate",
+		"hashicorp_aws.acm.AcmCertificate",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -604,7 +603,7 @@ func AcmCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.AcmCertificate",
+		"hashicorp_aws.acm.AcmCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -617,7 +616,7 @@ func AcmCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.AcmCertificate",
+		"hashicorp_aws.acm.AcmCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -880,6 +879,7 @@ func (a *jsiiProxy_AcmCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Certificate Manager.
 type AcmCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1007,7 +1007,6 @@ func (j *jsiiProxy_AcmCertificateDomainValidationOptions) TerraformResource() cd
 	return returns
 }
 
-
 // Experimental.
 func NewAcmCertificateDomainValidationOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) AcmCertificateDomainValidationOptions {
 	_init_.Initialize()
@@ -1015,7 +1014,7 @@ func NewAcmCertificateDomainValidationOptions(terraformResource cdktf.ITerraform
 	j := jsiiProxy_AcmCertificateDomainValidationOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateDomainValidationOptions",
+		"hashicorp_aws.acm.AcmCertificateDomainValidationOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1028,7 +1027,7 @@ func NewAcmCertificateDomainValidationOptions_Override(a AcmCertificateDomainVal
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateDomainValidationOptions",
+		"hashicorp_aws.acm.AcmCertificateDomainValidationOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		a,
 	)
@@ -1138,6 +1137,8 @@ type AcmCertificateOptionsOutputReference interface {
 	CertificateTransparencyLoggingPreference() *string
 	SetCertificateTransparencyLoggingPreference(val *string)
 	CertificateTransparencyLoggingPreferenceInput() *string
+	InternalValue() *AcmCertificateOptions
+	SetInternalValue(val *AcmCertificateOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1178,6 +1179,16 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) CertificateTransparency
 	return returns
 }
 
+func (j *jsiiProxy_AcmCertificateOptionsOutputReference) InternalValue() *AcmCertificateOptions {
+	var returns *AcmCertificateOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AcmCertificateOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1208,14 +1219,13 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-
 func NewAcmCertificateOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmCertificateOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmCertificateOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateOptionsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1227,7 +1237,7 @@ func NewAcmCertificateOptionsOutputReference_Override(a AcmCertificateOptionsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateOptionsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1237,6 +1247,14 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetCertificateTranspare
 	_jsii_.Set(
 		j,
 		"certificateTransparencyLoggingPreference",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetInternalValue(val *AcmCertificateOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1608,7 +1626,6 @@ func (j *jsiiProxy_AcmCertificateValidation) ValidationRecordFqdnsInput() *[]*st
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html aws_acm_certificate_validation} Resource.
 func NewAcmCertificateValidation(scope constructs.Construct, id *string, config *AcmCertificateValidationConfig) AcmCertificateValidation {
 	_init_.Initialize()
@@ -1616,7 +1633,7 @@ func NewAcmCertificateValidation(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_AcmCertificateValidation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateValidation",
+		"hashicorp_aws.acm.AcmCertificateValidation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1629,7 +1646,7 @@ func NewAcmCertificateValidation_Override(a AcmCertificateValidation, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateValidation",
+		"hashicorp_aws.acm.AcmCertificateValidation",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1693,7 +1710,7 @@ func AcmCertificateValidation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.AcmCertificateValidation",
+		"hashicorp_aws.acm.AcmCertificateValidation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1706,7 +1723,7 @@ func AcmCertificateValidation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.AcmCertificateValidation",
+		"hashicorp_aws.acm.AcmCertificateValidation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1892,6 +1909,7 @@ func (a *jsiiProxy_AcmCertificateValidation) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Certificate Manager.
 type AcmCertificateValidationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1921,6 +1939,8 @@ type AcmCertificateValidationTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *AcmCertificateValidationTimeouts
+	SetInternalValue(val *AcmCertificateValidationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1961,6 +1981,16 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) CreateInput(
 	return returns
 }
 
+func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) InternalValue() *AcmCertificateValidationTimeouts {
+	var returns *AcmCertificateValidationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1991,14 +2021,13 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-
 func NewAcmCertificateValidationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmCertificateValidationTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmCertificateValidationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateValidationTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateValidationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2010,7 +2039,7 @@ func NewAcmCertificateValidationTimeoutsOutputReference_Override(a AcmCertificat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmCertificateValidationTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateValidationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2020,6 +2049,14 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetCreate(va
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetInternalValue(val *AcmCertificateValidationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2469,7 +2506,6 @@ func (j *jsiiProxy_AcmpcaCertificate) ValidityInput() *AcmpcaCertificateValidity
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html aws_acmpca_certificate} Resource.
 func NewAcmpcaCertificate(scope constructs.Construct, id *string, config *AcmpcaCertificateConfig) AcmpcaCertificate {
 	_init_.Initialize()
@@ -2477,7 +2513,7 @@ func NewAcmpcaCertificate(scope constructs.Construct, id *string, config *Acmpca
 	j := jsiiProxy_AcmpcaCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2490,7 +2526,7 @@ func NewAcmpcaCertificate_Override(a AcmpcaCertificate, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificate",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2570,7 +2606,7 @@ func AcmpcaCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.AcmpcaCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2583,7 +2619,7 @@ func AcmpcaCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.AcmpcaCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -3220,7 +3256,6 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) TypeInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Resource.
 func NewAcmpcaCertificateAuthority(scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityConfig) AcmpcaCertificateAuthority {
 	_init_.Initialize()
@@ -3228,7 +3263,7 @@ func NewAcmpcaCertificateAuthority(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_AcmpcaCertificateAuthority{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthority",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3241,7 +3276,7 @@ func NewAcmpcaCertificateAuthority_Override(a AcmpcaCertificateAuthority, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthority",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3329,7 +3364,7 @@ func AcmpcaCertificateAuthority_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthority",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3342,7 +3377,7 @@ func AcmpcaCertificateAuthority_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthority",
 		"tfResourceType",
 		&returns,
 	)
@@ -3834,7 +3869,6 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) TerraformResourceType(
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html aws_acmpca_certificate_authority_certificate} Resource.
 func NewAcmpcaCertificateAuthorityCertificate(scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityCertificateConfig) AcmpcaCertificateAuthorityCertificate {
 	_init_.Initialize()
@@ -3842,7 +3876,7 @@ func NewAcmpcaCertificateAuthorityCertificate(scope constructs.Construct, id *st
 	j := jsiiProxy_AcmpcaCertificateAuthorityCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3855,7 +3889,7 @@ func NewAcmpcaCertificateAuthorityCertificate_Override(a AcmpcaCertificateAuthor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificate",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3927,7 +3961,7 @@ func AcmpcaCertificateAuthorityCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3940,7 +3974,7 @@ func AcmpcaCertificateAuthorityCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -4123,6 +4157,8 @@ type AcmpcaCertificateAuthorityCertificateAuthorityConfiguration struct {
 
 type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration
+	SetInternalValue(val *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyAlgorithm() *string
@@ -4149,6 +4185,16 @@ type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference 
 // The jsii proxy struct for AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference
 type jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) InternalValue() *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration {
+	var returns *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) IsSingleItem() *bool {
@@ -4241,14 +4287,13 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 	return returns
 }
 
-
 func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4260,9 +4305,17 @@ func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) SetInternalValue(val *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4447,6 +4500,8 @@ type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputRef
 	Initials() *string
 	SetInitials(val *string)
 	InitialsInput() *string
+	InternalValue() *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject
+	SetInternalValue(val *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Locality() *string
@@ -4615,6 +4670,16 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	_jsii_.Get(
 		j,
 		"initialsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) InternalValue() *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject {
+	var returns *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4790,14 +4855,13 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	return returns
 }
 
-
 func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4809,7 +4873,7 @@ func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4859,6 +4923,14 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	_jsii_.Set(
 		j,
 		"initials",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) SetInternalValue(val *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5131,6 +5203,7 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	)
 }
 
+// Amazon Certificate Manager.
 type AcmpcaCertificateAuthorityCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5148,6 +5221,7 @@ type AcmpcaCertificateAuthorityCertificateConfig struct {
 	CertificateChain *string `json:"certificateChain"`
 }
 
+// Amazon Certificate Manager.
 type AcmpcaCertificateAuthorityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5212,6 +5286,8 @@ type AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputRefe
 	ExpirationInDays() *float64
 	SetExpirationInDays(val *float64)
 	ExpirationInDaysInput() *float64
+	InternalValue() *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration
+	SetInternalValue(val *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3BucketName() *string
@@ -5301,6 +5377,16 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	return returns
 }
 
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) InternalValue() *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration {
+	var returns *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5371,14 +5457,13 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	return returns
 }
 
-
 func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5390,7 +5475,7 @@ func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5416,6 +5501,14 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	_jsii_.Set(
 		j,
 		"expirationInDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) SetInternalValue(val *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5580,6 +5673,8 @@ type AcmpcaCertificateAuthorityRevocationConfigurationOutputReference interface 
 	cdktf.ComplexObject
 	CrlConfiguration() AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference
 	CrlConfigurationInput() *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration
+	InternalValue() *AcmpcaCertificateAuthorityRevocationConfiguration
+	SetInternalValue(val *AcmpcaCertificateAuthorityRevocationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5621,6 +5716,16 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 	return returns
 }
 
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) InternalValue() *AcmpcaCertificateAuthorityRevocationConfiguration {
+	var returns *AcmpcaCertificateAuthorityRevocationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5651,14 +5756,13 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 	return returns
 }
 
-
 func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5670,9 +5774,17 @@ func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) SetInternalValue(val *AcmpcaCertificateAuthorityRevocationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5810,6 +5922,8 @@ type AcmpcaCertificateAuthorityTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *AcmpcaCertificateAuthorityTimeouts
+	SetInternalValue(val *AcmpcaCertificateAuthorityTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5850,6 +5964,16 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) CreateInpu
 	return returns
 }
 
+func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) InternalValue() *AcmpcaCertificateAuthorityTimeouts {
+	var returns *AcmpcaCertificateAuthorityTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5880,14 +6004,13 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) TerraformR
 	return returns
 }
 
-
 func NewAcmpcaCertificateAuthorityTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5899,7 +6022,7 @@ func NewAcmpcaCertificateAuthorityTimeoutsOutputReference_Override(a AcmpcaCerti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5909,6 +6032,14 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetCreate(
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetInternalValue(val *AcmpcaCertificateAuthorityTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6029,6 +6160,7 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) ResetCreat
 	)
 }
 
+// Amazon Certificate Manager.
 type AcmpcaCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6061,6 +6193,8 @@ type AcmpcaCertificateValidity struct {
 
 type AcmpcaCertificateValidityOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AcmpcaCertificateValidity
+	SetInternalValue(val *AcmpcaCertificateValidity)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6084,6 +6218,16 @@ type AcmpcaCertificateValidityOutputReference interface {
 // The jsii proxy struct for AcmpcaCertificateValidityOutputReference
 type jsiiProxy_AcmpcaCertificateValidityOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) InternalValue() *AcmpcaCertificateValidity {
+	var returns *AcmpcaCertificateValidity
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) IsSingleItem() *bool {
@@ -6156,14 +6300,13 @@ func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) ValueInput() *strin
 	return returns
 }
 
-
 func NewAcmpcaCertificateValidityOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateValidityOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateValidityOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateValidityOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateValidityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6175,9 +6318,17 @@ func NewAcmpcaCertificateValidityOutputReference_Override(a AcmpcaCertificateVal
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.AcmpcaCertificateValidityOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateValidityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) SetInternalValue(val *AcmpcaCertificateValidity) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6650,7 +6801,6 @@ func (j *jsiiProxy_DataAwsAcmCertificate) TypesInput() *[]*string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html aws_acm_certificate} Data Source.
 func NewDataAwsAcmCertificate(scope constructs.Construct, id *string, config *DataAwsAcmCertificateConfig) DataAwsAcmCertificate {
 	_init_.Initialize()
@@ -6658,7 +6808,7 @@ func NewDataAwsAcmCertificate(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsAcmCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmCertificate",
+		"hashicorp_aws.acm.DataAwsAcmCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6671,7 +6821,7 @@ func NewDataAwsAcmCertificate_Override(d DataAwsAcmCertificate, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmCertificate",
+		"hashicorp_aws.acm.DataAwsAcmCertificate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6767,7 +6917,7 @@ func DataAwsAcmCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.DataAwsAcmCertificate",
+		"hashicorp_aws.acm.DataAwsAcmCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6780,7 +6930,7 @@ func DataAwsAcmCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.DataAwsAcmCertificate",
+		"hashicorp_aws.acm.DataAwsAcmCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -6982,6 +7132,7 @@ func (d *jsiiProxy_DataAwsAcmCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Certificate Manager.
 type DataAwsAcmCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7253,7 +7404,6 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificate) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html aws_acmpca_certificate} Data Source.
 func NewDataAwsAcmpcaCertificate(scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateConfig) DataAwsAcmpcaCertificate {
 	_init_.Initialize()
@@ -7261,7 +7411,7 @@ func NewDataAwsAcmpcaCertificate(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsAcmpcaCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificate",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7274,7 +7424,7 @@ func NewDataAwsAcmpcaCertificate_Override(d DataAwsAcmpcaCertificate, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificate",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7338,7 +7488,7 @@ func DataAwsAcmpcaCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificate",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7351,7 +7501,7 @@ func DataAwsAcmpcaCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificate",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -7852,7 +8002,6 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Type() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Data Source.
 func NewDataAwsAcmpcaCertificateAuthority(scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateAuthorityConfig) DataAwsAcmpcaCertificateAuthority {
 	_init_.Initialize()
@@ -7860,7 +8009,7 @@ func NewDataAwsAcmpcaCertificateAuthority(scope constructs.Construct, id *string
 	j := jsiiProxy_DataAwsAcmpcaCertificateAuthority{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthority",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7873,7 +8022,7 @@ func NewDataAwsAcmpcaCertificateAuthority_Override(d DataAwsAcmpcaCertificateAut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthority",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7945,7 +8094,7 @@ func DataAwsAcmpcaCertificateAuthority_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthority",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7958,7 +8107,7 @@ func DataAwsAcmpcaCertificateAuthority_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthority",
 		"tfResourceType",
 		&returns,
 	)
@@ -8136,6 +8285,7 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) ToTerraform() interface{} 
 	return returns
 }
 
+// Amazon Certificate Manager.
 type DataAwsAcmpcaCertificateAuthorityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8165,6 +8315,7 @@ type DataAwsAcmpcaCertificateAuthorityRevocationConfiguration struct {
 type DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration struct {
 }
 
+// Amazon Certificate Manager.
 type DataAwsAcmpcaCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8179,4 +8330,3 @@ type DataAwsAcmpcaCertificateConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html#certificate_authority_arn DataAwsAcmpcaCertificate#certificate_authority_arn}.
 	CertificateAuthorityArn *string `json:"certificateAuthorityArn"`
 }
-

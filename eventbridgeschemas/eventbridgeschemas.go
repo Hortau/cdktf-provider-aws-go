@@ -302,7 +302,7 @@ func NewSchemasDiscoverer(scope constructs.Construct, id *string, config *Schema
 	j := jsiiProxy_SchemasDiscoverer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscoverer",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscoverer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -315,7 +315,7 @@ func NewSchemasDiscoverer_Override(s SchemasDiscoverer, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscoverer",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscoverer",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -395,7 +395,7 @@ func SchemasDiscoverer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscoverer",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscoverer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -408,7 +408,7 @@ func SchemasDiscoverer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EventBridgeSchemas.SchemasDiscoverer",
+		"hashicorp_aws.eventbridgeschemas.SchemasDiscoverer",
 		"tfResourceType",
 		&returns,
 	)
@@ -594,6 +594,7 @@ func (s *jsiiProxy_SchemasDiscoverer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EventBridge Schemas.
 type SchemasDiscovererConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -906,7 +907,7 @@ func NewSchemasRegistry(scope constructs.Construct, id *string, config *SchemasR
 	j := jsiiProxy_SchemasRegistry{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistry",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistry",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -919,7 +920,7 @@ func NewSchemasRegistry_Override(s SchemasRegistry, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistry",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistry",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -999,7 +1000,7 @@ func SchemasRegistry_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistry",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistry",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1012,7 +1013,7 @@ func SchemasRegistry_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EventBridgeSchemas.SchemasRegistry",
+		"hashicorp_aws.eventbridgeschemas.SchemasRegistry",
 		"tfResourceType",
 		&returns,
 	)
@@ -1198,6 +1199,7 @@ func (s *jsiiProxy_SchemasRegistry) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EventBridge Schemas.
 type SchemasRegistryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1612,7 +1614,7 @@ func NewSchemasSchema(scope constructs.Construct, id *string, config *SchemasSch
 	j := jsiiProxy_SchemasSchema{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchema",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchema",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1625,7 +1627,7 @@ func NewSchemasSchema_Override(s SchemasSchema, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchema",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchema",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1729,7 +1731,7 @@ func SchemasSchema_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchema",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchema",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1742,7 +1744,7 @@ func SchemasSchema_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EventBridgeSchemas.SchemasSchema",
+		"hashicorp_aws.eventbridgeschemas.SchemasSchema",
 		"tfResourceType",
 		&returns,
 	)
@@ -1928,6 +1930,7 @@ func (s *jsiiProxy_SchemasSchema) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EventBridge Schemas.
 type SchemasSchemaConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigApplication",
+		"hashicorp_aws.appconfig.AppconfigApplication",
 		reflect.TypeOf((*AppconfigApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -57,11 +57,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigApplicationConfig",
+		"hashicorp_aws.appconfig.AppconfigApplicationConfig",
 		reflect.TypeOf((*AppconfigApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfile",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfile",
 		reflect.TypeOf((*AppconfigConfigurationProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -121,15 +121,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfileConfig",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfileConfig",
 		reflect.TypeOf((*AppconfigConfigurationProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigConfigurationProfileValidator",
+		"hashicorp_aws.appconfig.AppconfigConfigurationProfileValidator",
 		reflect.TypeOf((*AppconfigConfigurationProfileValidator)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigDeployment",
+		"hashicorp_aws.appconfig.AppconfigDeployment",
 		reflect.TypeOf((*AppconfigDeployment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -188,11 +188,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentConfig",
+		"hashicorp_aws.appconfig.AppconfigDeploymentConfig",
 		reflect.TypeOf((*AppconfigDeploymentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategy",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategy",
 		reflect.TypeOf((*AppconfigDeploymentStrategy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -253,11 +253,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigDeploymentStrategyConfig",
+		"hashicorp_aws.appconfig.AppconfigDeploymentStrategyConfig",
 		reflect.TypeOf((*AppconfigDeploymentStrategyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigEnvironment",
+		"hashicorp_aws.appconfig.AppconfigEnvironment",
 		reflect.TypeOf((*AppconfigEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -313,15 +313,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigEnvironmentConfig",
+		"hashicorp_aws.appconfig.AppconfigEnvironmentConfig",
 		reflect.TypeOf((*AppconfigEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigEnvironmentMonitor",
+		"hashicorp_aws.appconfig.AppconfigEnvironmentMonitor",
 		reflect.TypeOf((*AppconfigEnvironmentMonitor)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersion",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersion",
 		reflect.TypeOf((*AppconfigHostedConfigurationVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -371,7 +371,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppConfig.AppconfigHostedConfigurationVersionConfig",
+		"hashicorp_aws.appconfig.AppconfigHostedConfigurationVersionConfig",
 		reflect.TypeOf((*AppconfigHostedConfigurationVersionConfig)(nil)).Elem(),
 	)
 }

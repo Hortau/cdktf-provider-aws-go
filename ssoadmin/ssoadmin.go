@@ -218,7 +218,7 @@ func NewDataAwsSsoadminInstances(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsSsoadminInstances{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstances",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstances",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -231,7 +231,7 @@ func NewDataAwsSsoadminInstances_Override(d DataAwsSsoadminInstances, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstances",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstances",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -279,7 +279,7 @@ func DataAwsSsoadminInstances_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstances",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstances",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -292,7 +292,7 @@ func DataAwsSsoadminInstances_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstances",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstances",
 		"tfResourceType",
 		&returns,
 	)
@@ -454,6 +454,7 @@ func (d *jsiiProxy_DataAwsSsoadminInstances) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SSO Admin.
 type DataAwsSsoadminInstancesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -778,7 +779,7 @@ func NewDataAwsSsoadminPermissionSet(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsSsoadminPermissionSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -791,7 +792,7 @@ func NewDataAwsSsoadminPermissionSet_Override(d DataAwsSsoadminPermissionSet, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSet",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -863,7 +864,7 @@ func DataAwsSsoadminPermissionSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -876,7 +877,7 @@ func DataAwsSsoadminPermissionSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -1054,6 +1055,7 @@ func (d *jsiiProxy_DataAwsSsoadminPermissionSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SSO Admin.
 type DataAwsSsoadminPermissionSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1397,7 +1399,7 @@ func NewSsoadminAccountAssignment(scope constructs.Construct, id *string, config
 	j := jsiiProxy_SsoadminAccountAssignment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignment",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1410,7 +1412,7 @@ func NewSsoadminAccountAssignment_Override(s SsoadminAccountAssignment, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignment",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignment",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1506,7 +1508,7 @@ func SsoadminAccountAssignment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignment",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1519,7 +1521,7 @@ func SsoadminAccountAssignment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignment",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignment",
 		"tfResourceType",
 		&returns,
 	)
@@ -1689,6 +1691,7 @@ func (s *jsiiProxy_SsoadminAccountAssignment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SSO Admin.
 type SsoadminAccountAssignmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1979,7 +1982,7 @@ func NewSsoadminManagedPolicyAttachment(scope constructs.Construct, id *string, 
 	j := jsiiProxy_SsoadminManagedPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachment",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1992,7 +1995,7 @@ func NewSsoadminManagedPolicyAttachment_Override(s SsoadminManagedPolicyAttachme
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachment",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachment",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2064,7 +2067,7 @@ func SsoadminManagedPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachment",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2077,7 +2080,7 @@ func SsoadminManagedPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachment",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -2239,6 +2242,7 @@ func (s *jsiiProxy_SsoadminManagedPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SSO Admin.
 type SsoadminManagedPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2631,7 +2635,7 @@ func NewSsoadminPermissionSet(scope constructs.Construct, id *string, config *Ss
 	j := jsiiProxy_SsoadminPermissionSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2644,7 +2648,7 @@ func NewSsoadminPermissionSet_Override(s SsoadminPermissionSet, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2748,7 +2752,7 @@ func SsoadminPermissionSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2761,7 +2765,7 @@ func SsoadminPermissionSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -2963,6 +2967,7 @@ func (s *jsiiProxy_SsoadminPermissionSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SSO Admin.
 type SsoadminPermissionSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3244,7 +3249,7 @@ func NewSsoadminPermissionSetInlinePolicy(scope constructs.Construct, id *string
 	j := jsiiProxy_SsoadminPermissionSetInlinePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicy",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3257,7 +3262,7 @@ func NewSsoadminPermissionSetInlinePolicy_Override(s SsoadminPermissionSetInline
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicy",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3329,7 +3334,7 @@ func SsoadminPermissionSetInlinePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicy",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3342,7 +3347,7 @@ func SsoadminPermissionSetInlinePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicy",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -3504,6 +3509,7 @@ func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS SSO Admin.
 type SsoadminPermissionSetInlinePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

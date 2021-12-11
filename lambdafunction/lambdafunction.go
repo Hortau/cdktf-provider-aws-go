@@ -286,7 +286,7 @@ func NewDataAwsLambdaAlias(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsLambdaAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaAlias",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -299,7 +299,7 @@ func NewDataAwsLambdaAlias_Override(d DataAwsLambdaAlias, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaAlias",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaAlias",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -363,7 +363,7 @@ func DataAwsLambdaAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaAlias",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -376,7 +376,7 @@ func DataAwsLambdaAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaAlias",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -538,6 +538,7 @@ func (d *jsiiProxy_DataAwsLambdaAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type DataAwsLambdaAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -798,7 +799,7 @@ func NewDataAwsLambdaCodeSigningConfig(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsLambdaCodeSigningConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -811,7 +812,7 @@ func NewDataAwsLambdaCodeSigningConfig_Override(d DataAwsLambdaCodeSigningConfig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfig",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -867,7 +868,7 @@ func DataAwsLambdaCodeSigningConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -880,7 +881,7 @@ func DataAwsLambdaCodeSigningConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -1136,7 +1137,7 @@ func NewDataAwsLambdaCodeSigningConfigAllowedPublishers(terraformResource cdktf.
 	j := jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1149,7 +1150,7 @@ func NewDataAwsLambdaCodeSigningConfigAllowedPublishers_Override(d DataAwsLambda
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1249,6 +1250,7 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) Interpolatio
 	return returns
 }
 
+// AWS Lambda.
 type DataAwsLambdaCodeSigningConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1330,7 +1332,7 @@ func NewDataAwsLambdaCodeSigningConfigPolicies(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfigPolicies",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigPolicies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1343,7 +1345,7 @@ func NewDataAwsLambdaCodeSigningConfigPolicies_Override(d DataAwsLambdaCodeSigni
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaCodeSigningConfigPolicies",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigPolicies",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1463,6 +1465,7 @@ type DataAwsLambdaFunction interface {
 	FunctionNameInput() *string
 	Handler() *string
 	Id() *string
+	ImageUri() *string
 	InvokeArn() *string
 	KmsKeyArn() *string
 	LastModified() *string
@@ -1654,6 +1657,16 @@ func (j *jsiiProxy_DataAwsLambdaFunction) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsLambdaFunction) ImageUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"imageUri",
 		&returns,
 	)
 	return returns
@@ -1926,7 +1939,7 @@ func NewDataAwsLambdaFunction(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsLambdaFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunction",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1939,7 +1952,7 @@ func NewDataAwsLambdaFunction_Override(d DataAwsLambdaFunction, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunction",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunction",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2011,7 +2024,7 @@ func DataAwsLambdaFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunction",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2024,7 +2037,7 @@ func DataAwsLambdaFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunction",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -2267,6 +2280,7 @@ func (d *jsiiProxy_DataAwsLambdaFunction) VpcConfig(index *string) DataAwsLambda
 	return returns
 }
 
+// AWS Lambda.
 type DataAwsLambdaFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2352,7 +2366,7 @@ func NewDataAwsLambdaFunctionDeadLetterConfig(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionDeadLetterConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionDeadLetterConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2365,7 +2379,7 @@ func NewDataAwsLambdaFunctionDeadLetterConfig_Override(d DataAwsLambdaFunctionDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionDeadLetterConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionDeadLetterConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2533,7 +2547,7 @@ func NewDataAwsLambdaFunctionEnvironment(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DataAwsLambdaFunctionEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionEnvironment",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionEnvironment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2546,7 +2560,7 @@ func NewDataAwsLambdaFunctionEnvironment_Override(d DataAwsLambdaFunctionEnviron
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionEnvironment",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionEnvironment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2725,7 +2739,7 @@ func NewDataAwsLambdaFunctionFileSystemConfig(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsLambdaFunctionFileSystemConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionFileSystemConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionFileSystemConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2738,7 +2752,7 @@ func NewDataAwsLambdaFunctionFileSystemConfig_Override(d DataAwsLambdaFunctionFi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionFileSystemConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionFileSystemConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2906,7 +2920,7 @@ func NewDataAwsLambdaFunctionTracingConfig(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsLambdaFunctionTracingConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionTracingConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionTracingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2919,7 +2933,7 @@ func NewDataAwsLambdaFunctionTracingConfig_Override(d DataAwsLambdaFunctionTraci
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionTracingConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionTracingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3109,7 +3123,7 @@ func NewDataAwsLambdaFunctionVpcConfig(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsLambdaFunctionVpcConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionVpcConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionVpcConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3122,7 +3136,7 @@ func NewDataAwsLambdaFunctionVpcConfig_Override(d DataAwsLambdaFunctionVpcConfig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaFunctionVpcConfig",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionVpcConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3490,7 +3504,7 @@ func NewDataAwsLambdaInvocation(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsLambdaInvocation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaInvocation",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaInvocation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3503,7 +3517,7 @@ func NewDataAwsLambdaInvocation_Override(d DataAwsLambdaInvocation, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaInvocation",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaInvocation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3575,7 +3589,7 @@ func DataAwsLambdaInvocation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaInvocation",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaInvocation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3588,7 +3602,7 @@ func DataAwsLambdaInvocation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaInvocation",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaInvocation",
 		"tfResourceType",
 		&returns,
 	)
@@ -3758,6 +3772,7 @@ func (d *jsiiProxy_DataAwsLambdaInvocation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type DataAwsLambdaInvocationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4178,7 +4193,7 @@ func NewDataAwsLambdaLayerVersion(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsLambdaLayerVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaLayerVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4191,7 +4206,7 @@ func NewDataAwsLambdaLayerVersion_Override(d DataAwsLambdaLayerVersion, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaLayerVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4271,7 +4286,7 @@ func DataAwsLambdaLayerVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaLayerVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4284,7 +4299,7 @@ func DataAwsLambdaLayerVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.DataAwsLambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.DataAwsLambdaLayerVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -4470,6 +4485,7 @@ func (d *jsiiProxy_DataAwsLambdaLayerVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type DataAwsLambdaLayerVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4815,7 +4831,7 @@ func NewLambdaAlias(scope constructs.Construct, id *string, config *LambdaAliasC
 	j := jsiiProxy_LambdaAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaAlias",
+		"hashicorp_aws.lambdafunction.LambdaAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4828,7 +4844,7 @@ func NewLambdaAlias_Override(l LambdaAlias, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaAlias",
+		"hashicorp_aws.lambdafunction.LambdaAlias",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -4908,7 +4924,7 @@ func LambdaAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaAlias",
+		"hashicorp_aws.lambdafunction.LambdaAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4921,7 +4937,7 @@ func LambdaAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaAlias",
+		"hashicorp_aws.lambdafunction.LambdaAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -5107,6 +5123,7 @@ func (l *jsiiProxy_LambdaAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5140,6 +5157,8 @@ type LambdaAliasRoutingConfigOutputReference interface {
 	AdditionalVersionWeights() interface{}
 	SetAdditionalVersionWeights(val interface{})
 	AdditionalVersionWeightsInput() interface{}
+	InternalValue() *LambdaAliasRoutingConfig
+	SetInternalValue(val *LambdaAliasRoutingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5175,6 +5194,16 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWei
 	_jsii_.Get(
 		j,
 		"additionalVersionWeightsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) InternalValue() *LambdaAliasRoutingConfig {
+	var returns *LambdaAliasRoutingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5216,7 +5245,7 @@ func NewLambdaAliasRoutingConfigOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_LambdaAliasRoutingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaAliasRoutingConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaAliasRoutingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5228,7 +5257,7 @@ func NewLambdaAliasRoutingConfigOutputReference_Override(l LambdaAliasRoutingCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaAliasRoutingConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaAliasRoutingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5238,6 +5267,14 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetAdditionalVersion
 	_jsii_.Set(
 		j,
 		"additionalVersionWeights",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetInternalValue(val *LambdaAliasRoutingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5649,7 +5686,7 @@ func NewLambdaCodeSigningConfig(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_LambdaCodeSigningConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5662,7 +5699,7 @@ func NewLambdaCodeSigningConfig_Override(l LambdaCodeSigningConfig, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfig",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -5718,7 +5755,7 @@ func LambdaCodeSigningConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5731,7 +5768,7 @@ func LambdaCodeSigningConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfig",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -5932,6 +5969,8 @@ type LambdaCodeSigningConfigAllowedPublishers struct {
 
 type LambdaCodeSigningConfigAllowedPublishersOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaCodeSigningConfigAllowedPublishers
+	SetInternalValue(val *LambdaCodeSigningConfigAllowedPublishers)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SigningProfileVersionArns() *[]*string
@@ -5952,6 +5991,16 @@ type LambdaCodeSigningConfigAllowedPublishersOutputReference interface {
 // The jsii proxy struct for LambdaCodeSigningConfigAllowedPublishersOutputReference
 type jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) InternalValue() *LambdaCodeSigningConfigAllowedPublishers {
+	var returns *LambdaCodeSigningConfigAllowedPublishers
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) IsSingleItem() *bool {
@@ -6010,7 +6059,7 @@ func NewLambdaCodeSigningConfigAllowedPublishersOutputReference(terraformResourc
 	j := jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfigAllowedPublishersOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfigAllowedPublishersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6022,9 +6071,17 @@ func NewLambdaCodeSigningConfigAllowedPublishersOutputReference_Override(l Lambd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfigAllowedPublishersOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfigAllowedPublishersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) SetInternalValue(val *LambdaCodeSigningConfigAllowedPublishers) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6144,6 +6201,7 @@ func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) Inte
 	return returns
 }
 
+// AWS Lambda.
 type LambdaCodeSigningConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6172,6 +6230,8 @@ type LambdaCodeSigningConfigPolicies struct {
 
 type LambdaCodeSigningConfigPoliciesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaCodeSigningConfigPolicies
+	SetInternalValue(val *LambdaCodeSigningConfigPolicies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6192,6 +6252,16 @@ type LambdaCodeSigningConfigPoliciesOutputReference interface {
 // The jsii proxy struct for LambdaCodeSigningConfigPoliciesOutputReference
 type jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) InternalValue() *LambdaCodeSigningConfigPolicies {
+	var returns *LambdaCodeSigningConfigPolicies
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) IsSingleItem() *bool {
@@ -6250,7 +6320,7 @@ func NewLambdaCodeSigningConfigPoliciesOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfigPoliciesOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfigPoliciesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6262,9 +6332,17 @@ func NewLambdaCodeSigningConfigPoliciesOutputReference_Override(l LambdaCodeSign
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaCodeSigningConfigPoliciesOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaCodeSigningConfigPoliciesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) SetInternalValue(val *LambdaCodeSigningConfigPolicies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6407,6 +6485,8 @@ type LambdaEventSourceMapping interface {
 	EventSourceArn() *string
 	SetEventSourceArn(val *string)
 	EventSourceArnInput() *string
+	FilterCriteria() LambdaEventSourceMappingFilterCriteriaOutputReference
+	FilterCriteriaInput() *LambdaEventSourceMappingFilterCriteria
 	Fqn() *string
 	FriendlyUniqueId() *string
 	FunctionArn() *string
@@ -6471,12 +6551,14 @@ type LambdaEventSourceMapping interface {
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDestinationConfig(value *LambdaEventSourceMappingDestinationConfig)
+	PutFilterCriteria(value *LambdaEventSourceMappingFilterCriteria)
 	PutSelfManagedEventSource(value *LambdaEventSourceMappingSelfManagedEventSource)
 	ResetBatchSize()
 	ResetBisectBatchOnFunctionError()
 	ResetDestinationConfig()
 	ResetEnabled()
 	ResetEventSourceArn()
+	ResetFilterCriteria()
 	ResetFunctionResponseTypes()
 	ResetMaximumBatchingWindowInSeconds()
 	ResetMaximumRecordAgeInSeconds()
@@ -6636,6 +6718,26 @@ func (j *jsiiProxy_LambdaEventSourceMapping) EventSourceArnInput() *string {
 	_jsii_.Get(
 		j,
 		"eventSourceArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMapping) FilterCriteria() LambdaEventSourceMappingFilterCriteriaOutputReference {
+	var returns LambdaEventSourceMappingFilterCriteriaOutputReference
+	_jsii_.Get(
+		j,
+		"filterCriteria",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMapping) FilterCriteriaInput() *LambdaEventSourceMappingFilterCriteria {
+	var returns *LambdaEventSourceMappingFilterCriteria
+	_jsii_.Get(
+		j,
+		"filterCriteriaInput",
 		&returns,
 	)
 	return returns
@@ -7068,7 +7170,7 @@ func NewLambdaEventSourceMapping(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_LambdaEventSourceMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMapping",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMapping",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7081,7 +7183,7 @@ func NewLambdaEventSourceMapping_Override(l LambdaEventSourceMapping, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMapping",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMapping",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -7257,7 +7359,7 @@ func LambdaEventSourceMapping_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMapping",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMapping",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7270,7 +7372,7 @@ func LambdaEventSourceMapping_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMapping",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMapping",
 		"tfResourceType",
 		&returns,
 	)
@@ -7374,6 +7476,14 @@ func (l *jsiiProxy_LambdaEventSourceMapping) PutDestinationConfig(value *LambdaE
 	)
 }
 
+func (l *jsiiProxy_LambdaEventSourceMapping) PutFilterCriteria(value *LambdaEventSourceMappingFilterCriteria) {
+	_jsii_.InvokeVoid(
+		l,
+		"putFilterCriteria",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LambdaEventSourceMapping) PutSelfManagedEventSource(value *LambdaEventSourceMappingSelfManagedEventSource) {
 	_jsii_.InvokeVoid(
 		l,
@@ -7418,6 +7528,14 @@ func (l *jsiiProxy_LambdaEventSourceMapping) ResetEventSourceArn() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetEventSourceArn",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LambdaEventSourceMapping) ResetFilterCriteria() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetFilterCriteria",
 		nil, // no parameters
 	)
 }
@@ -7584,6 +7702,7 @@ func (l *jsiiProxy_LambdaEventSourceMapping) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaEventSourceMappingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7607,6 +7726,10 @@ type LambdaEventSourceMappingConfig struct {
 	Enabled interface{} `json:"enabled"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#event_source_arn LambdaEventSourceMapping#event_source_arn}.
 	EventSourceArn *string `json:"eventSourceArn"`
+	// filter_criteria block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#filter_criteria LambdaEventSourceMapping#filter_criteria}
+	FilterCriteria *LambdaEventSourceMappingFilterCriteria `json:"filterCriteria"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#function_response_types LambdaEventSourceMapping#function_response_types}.
 	FunctionResponseTypes *[]*string `json:"functionResponseTypes"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#maximum_batching_window_in_seconds LambdaEventSourceMapping#maximum_batching_window_in_seconds}.
@@ -7654,6 +7777,8 @@ type LambdaEventSourceMappingDestinationConfigOnFailureOutputReference interface
 	DestinationArn() *string
 	SetDestinationArn(val *string)
 	DestinationArnInput() *string
+	InternalValue() *LambdaEventSourceMappingDestinationConfigOnFailure
+	SetInternalValue(val *LambdaEventSourceMappingDestinationConfigOnFailure)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7688,6 +7813,16 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 	_jsii_.Get(
 		j,
 		"destinationArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) InternalValue() *LambdaEventSourceMappingDestinationConfigOnFailure {
+	var returns *LambdaEventSourceMappingDestinationConfigOnFailure
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7729,7 +7864,7 @@ func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference(terraf
 	j := jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingDestinationConfigOnFailureOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingDestinationConfigOnFailureOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7741,7 +7876,7 @@ func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingDestinationConfigOnFailureOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingDestinationConfigOnFailureOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -7751,6 +7886,14 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 	_jsii_.Set(
 		j,
 		"destinationArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) SetInternalValue(val *LambdaEventSourceMappingDestinationConfigOnFailure) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7865,6 +8008,8 @@ func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 
 type LambdaEventSourceMappingDestinationConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaEventSourceMappingDestinationConfig
+	SetInternalValue(val *LambdaEventSourceMappingDestinationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnFailure() LambdaEventSourceMappingDestinationConfigOnFailureOutputReference
@@ -7886,6 +8031,16 @@ type LambdaEventSourceMappingDestinationConfigOutputReference interface {
 // The jsii proxy struct for LambdaEventSourceMappingDestinationConfigOutputReference
 type jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) InternalValue() *LambdaEventSourceMappingDestinationConfig {
+	var returns *LambdaEventSourceMappingDestinationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) IsSingleItem() *bool {
@@ -7944,7 +8099,7 @@ func NewLambdaEventSourceMappingDestinationConfigOutputReference(terraformResour
 	j := jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingDestinationConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingDestinationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7956,9 +8111,17 @@ func NewLambdaEventSourceMappingDestinationConfigOutputReference_Override(l Lamb
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingDestinationConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingDestinationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) SetInternalValue(val *LambdaEventSourceMappingDestinationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8086,6 +8249,261 @@ func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Res
 	)
 }
 
+type LambdaEventSourceMappingFilterCriteria struct {
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#filter LambdaEventSourceMapping#filter}
+	Filter *[]*LambdaEventSourceMappingFilterCriteriaFilter `json:"filter"`
+}
+
+type LambdaEventSourceMappingFilterCriteriaFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#pattern LambdaEventSourceMapping#pattern}.
+	Pattern *string `json:"pattern"`
+}
+
+type LambdaEventSourceMappingFilterCriteriaOutputReference interface {
+	cdktf.ComplexObject
+	Filter() *[]*LambdaEventSourceMappingFilterCriteriaFilter
+	SetFilter(val *[]*LambdaEventSourceMappingFilterCriteriaFilter)
+	FilterInput() *[]*LambdaEventSourceMappingFilterCriteriaFilter
+	InternalValue() *LambdaEventSourceMappingFilterCriteria
+	SetInternalValue(val *LambdaEventSourceMappingFilterCriteria)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetFilter()
+}
+
+// The jsii proxy struct for LambdaEventSourceMappingFilterCriteriaOutputReference
+type jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Filter() *[]*LambdaEventSourceMappingFilterCriteriaFilter {
+	var returns *[]*LambdaEventSourceMappingFilterCriteriaFilter
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) FilterInput() *[]*LambdaEventSourceMappingFilterCriteriaFilter {
+	var returns *[]*LambdaEventSourceMappingFilterCriteriaFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) InternalValue() *LambdaEventSourceMappingFilterCriteria {
+	var returns *LambdaEventSourceMappingFilterCriteria
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewLambdaEventSourceMappingFilterCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingFilterCriteriaOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingFilterCriteriaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewLambdaEventSourceMappingFilterCriteriaOutputReference_Override(l LambdaEventSourceMappingFilterCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingFilterCriteriaOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetFilter(val *[]*LambdaEventSourceMappingFilterCriteriaFilter) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetInternalValue(val *LambdaEventSourceMappingFilterCriteria) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) ResetFilter() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
 type LambdaEventSourceMappingSelfManagedEventSource struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#endpoints LambdaEventSourceMapping#endpoints}.
 	Endpoints interface{} `json:"endpoints"`
@@ -8096,6 +8514,8 @@ type LambdaEventSourceMappingSelfManagedEventSourceOutputReference interface {
 	Endpoints() interface{}
 	SetEndpoints(val interface{})
 	EndpointsInput() interface{}
+	InternalValue() *LambdaEventSourceMappingSelfManagedEventSource
+	SetInternalValue(val *LambdaEventSourceMappingSelfManagedEventSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8130,6 +8550,16 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	_jsii_.Get(
 		j,
 		"endpointsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) InternalValue() *LambdaEventSourceMappingSelfManagedEventSource {
+	var returns *LambdaEventSourceMappingSelfManagedEventSource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8171,7 +8601,7 @@ func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference(terraformR
 	j := jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingSelfManagedEventSourceOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingSelfManagedEventSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8183,7 +8613,7 @@ func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference_Override(l
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaEventSourceMappingSelfManagedEventSourceOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaEventSourceMappingSelfManagedEventSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -8193,6 +8623,14 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	_jsii_.Set(
 		j,
 		"endpoints",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) SetInternalValue(val *LambdaEventSourceMappingSelfManagedEventSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9281,7 +9719,7 @@ func NewLambdaFunction(scope constructs.Construct, id *string, config *LambdaFun
 	j := jsiiProxy_LambdaFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunction",
+		"hashicorp_aws.lambdafunction.LambdaFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9294,7 +9732,7 @@ func NewLambdaFunction_Override(l LambdaFunction, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunction",
+		"hashicorp_aws.lambdafunction.LambdaFunction",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -9518,7 +9956,7 @@ func LambdaFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaFunction",
+		"hashicorp_aws.lambdafunction.LambdaFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9531,7 +9969,7 @@ func LambdaFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaFunction",
+		"hashicorp_aws.lambdafunction.LambdaFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -9965,6 +10403,7 @@ func (l *jsiiProxy_LambdaFunction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10055,6 +10494,8 @@ type LambdaFunctionDeadLetterConfig struct {
 
 type LambdaFunctionDeadLetterConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaFunctionDeadLetterConfig
+	SetInternalValue(val *LambdaFunctionDeadLetterConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TargetArn() *string
@@ -10075,6 +10516,16 @@ type LambdaFunctionDeadLetterConfigOutputReference interface {
 // The jsii proxy struct for LambdaFunctionDeadLetterConfigOutputReference
 type jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) InternalValue() *LambdaFunctionDeadLetterConfig {
+	var returns *LambdaFunctionDeadLetterConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) IsSingleItem() *bool {
@@ -10133,7 +10584,7 @@ func NewLambdaFunctionDeadLetterConfigOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionDeadLetterConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionDeadLetterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10145,9 +10596,17 @@ func NewLambdaFunctionDeadLetterConfigOutputReference_Override(l LambdaFunctionD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionDeadLetterConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionDeadLetterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) SetInternalValue(val *LambdaFunctionDeadLetterConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10274,6 +10733,8 @@ type LambdaFunctionEnvironment struct {
 
 type LambdaFunctionEnvironmentOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaFunctionEnvironment
+	SetInternalValue(val *LambdaFunctionEnvironment)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10295,6 +10756,16 @@ type LambdaFunctionEnvironmentOutputReference interface {
 // The jsii proxy struct for LambdaFunctionEnvironmentOutputReference
 type jsiiProxy_LambdaFunctionEnvironmentOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) InternalValue() *LambdaFunctionEnvironment {
+	var returns *LambdaFunctionEnvironment
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) IsSingleItem() *bool {
@@ -10353,7 +10824,7 @@ func NewLambdaFunctionEnvironmentOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_LambdaFunctionEnvironmentOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEnvironmentOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEnvironmentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10365,9 +10836,17 @@ func NewLambdaFunctionEnvironmentOutputReference_Override(l LambdaFunctionEnviro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEnvironmentOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEnvironmentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetInternalValue(val *LambdaFunctionEnvironment) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10801,7 +11280,7 @@ func NewLambdaFunctionEventInvokeConfig(scope constructs.Construct, id *string, 
 	j := jsiiProxy_LambdaFunctionEventInvokeConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfig",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10814,7 +11293,7 @@ func NewLambdaFunctionEventInvokeConfig_Override(l LambdaFunctionEventInvokeConf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfig",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfig",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -10894,7 +11373,7 @@ func LambdaFunctionEventInvokeConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfig",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10907,7 +11386,7 @@ func LambdaFunctionEventInvokeConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfig",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -11109,6 +11588,7 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaFunctionEventInvokeConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11153,6 +11633,8 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference in
 	Destination() *string
 	SetDestination(val *string)
 	DestinationInput() *string
+	InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure
+	SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11187,6 +11669,16 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 	_jsii_.Get(
 		j,
 		"destinationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure {
+	var returns *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11228,7 +11720,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11240,7 +11732,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -11250,6 +11742,14 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 	_jsii_.Set(
 		j,
 		"destination",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11372,6 +11872,8 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference in
 	Destination() *string
 	SetDestination(val *string)
 	DestinationInput() *string
+	InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess
+	SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11406,6 +11908,16 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 	_jsii_.Get(
 		j,
 		"destinationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess {
+	var returns *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11447,7 +11959,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11459,7 +11971,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -11469,6 +11981,14 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 	_jsii_.Set(
 		j,
 		"destination",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11583,6 +12103,8 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 
 type LambdaFunctionEventInvokeConfigDestinationConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfig
+	SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnFailure() LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference
@@ -11608,6 +12130,16 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOutputReference interface {
 // The jsii proxy struct for LambdaFunctionEventInvokeConfigDestinationConfigOutputReference
 type jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) InternalValue() *LambdaFunctionEventInvokeConfigDestinationConfig {
+	var returns *LambdaFunctionEventInvokeConfigDestinationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) IsSingleItem() *bool {
@@ -11686,7 +12218,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference(terrafor
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11698,9 +12230,17 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionEventInvokeConfigDestinationConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionEventInvokeConfigDestinationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) SetInternalValue(val *LambdaFunctionEventInvokeConfigDestinationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11856,6 +12396,8 @@ type LambdaFunctionFileSystemConfigOutputReference interface {
 	Arn() *string
 	SetArn(val *string)
 	ArnInput() *string
+	InternalValue() *LambdaFunctionFileSystemConfig
+	SetInternalValue(val *LambdaFunctionFileSystemConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LocalMountPath() *string
@@ -11893,6 +12435,16 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) ArnInput() *st
 	_jsii_.Get(
 		j,
 		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) InternalValue() *LambdaFunctionFileSystemConfig {
+	var returns *LambdaFunctionFileSystemConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11954,7 +12506,7 @@ func NewLambdaFunctionFileSystemConfigOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_LambdaFunctionFileSystemConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionFileSystemConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionFileSystemConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11966,7 +12518,7 @@ func NewLambdaFunctionFileSystemConfigOutputReference_Override(l LambdaFunctionF
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionFileSystemConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionFileSystemConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -11976,6 +12528,14 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetArn(val *st
 	_jsii_.Set(
 		j,
 		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetInternalValue(val *LambdaFunctionFileSystemConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12113,6 +12673,8 @@ type LambdaFunctionImageConfigOutputReference interface {
 	EntryPoint() *[]*string
 	SetEntryPoint(val *[]*string)
 	EntryPointInput() *[]*string
+	InternalValue() *LambdaFunctionImageConfig
+	SetInternalValue(val *LambdaFunctionImageConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12178,6 +12740,16 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) EntryPointInput() *
 	return returns
 }
 
+func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) InternalValue() *LambdaFunctionImageConfig {
+	var returns *LambdaFunctionImageConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12234,7 +12806,7 @@ func NewLambdaFunctionImageConfigOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_LambdaFunctionImageConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionImageConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12246,7 +12818,7 @@ func NewLambdaFunctionImageConfigOutputReference_Override(l LambdaFunctionImageC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionImageConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -12264,6 +12836,14 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetEntryPoint(val *
 	_jsii_.Set(
 		j,
 		"entryPoint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetInternalValue(val *LambdaFunctionImageConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12418,6 +12998,8 @@ type LambdaFunctionTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *LambdaFunctionTimeouts
+	SetInternalValue(val *LambdaFunctionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12453,6 +13035,16 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) CreateInput() *string 
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) InternalValue() *LambdaFunctionTimeouts {
+	var returns *LambdaFunctionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12494,7 +13086,7 @@ func NewLambdaFunctionTimeoutsOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_LambdaFunctionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionTimeoutsOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12506,7 +13098,7 @@ func NewLambdaFunctionTimeoutsOutputReference_Override(l LambdaFunctionTimeoutsO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionTimeoutsOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -12516,6 +13108,14 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetCreate(val *string)
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetInternalValue(val *LambdaFunctionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12643,6 +13243,8 @@ type LambdaFunctionTracingConfig struct {
 
 type LambdaFunctionTracingConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaFunctionTracingConfig
+	SetInternalValue(val *LambdaFunctionTracingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -12663,6 +13265,16 @@ type LambdaFunctionTracingConfigOutputReference interface {
 // The jsii proxy struct for LambdaFunctionTracingConfigOutputReference
 type jsiiProxy_LambdaFunctionTracingConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) InternalValue() *LambdaFunctionTracingConfig {
+	var returns *LambdaFunctionTracingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) IsSingleItem() *bool {
@@ -12721,7 +13333,7 @@ func NewLambdaFunctionTracingConfigOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_LambdaFunctionTracingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionTracingConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionTracingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12733,9 +13345,17 @@ func NewLambdaFunctionTracingConfigOutputReference_Override(l LambdaFunctionTrac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionTracingConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionTracingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) SetInternalValue(val *LambdaFunctionTracingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12864,6 +13484,8 @@ type LambdaFunctionVpcConfig struct {
 
 type LambdaFunctionVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LambdaFunctionVpcConfig
+	SetInternalValue(val *LambdaFunctionVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -12887,6 +13509,16 @@ type LambdaFunctionVpcConfigOutputReference interface {
 // The jsii proxy struct for LambdaFunctionVpcConfigOutputReference
 type jsiiProxy_LambdaFunctionVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) InternalValue() *LambdaFunctionVpcConfig {
+	var returns *LambdaFunctionVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) IsSingleItem() *bool {
@@ -12965,7 +13597,7 @@ func NewLambdaFunctionVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_LambdaFunctionVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionVpcConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12977,9 +13609,17 @@ func NewLambdaFunctionVpcConfigOutputReference_Override(l LambdaFunctionVpcConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaFunctionVpcConfigOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaFunctionVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) SetInternalValue(val *LambdaFunctionVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13157,6 +13797,9 @@ type LambdaLayerVersion interface {
 	S3ObjectVersionInput() *string
 	SigningJobArn() *string
 	SigningProfileVersionArn() *string
+	SkipDestroy() interface{}
+	SetSkipDestroy(val interface{})
+	SkipDestroyInput() interface{}
 	SourceCodeHash() *string
 	SetSourceCodeHash(val *string)
 	SourceCodeHashInput() *string
@@ -13181,6 +13824,7 @@ type LambdaLayerVersion interface {
 	ResetS3Bucket()
 	ResetS3Key()
 	ResetS3ObjectVersion()
+	ResetSkipDestroy()
 	ResetSourceCodeHash()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -13533,6 +14177,26 @@ func (j *jsiiProxy_LambdaLayerVersion) SigningProfileVersionArn() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LambdaLayerVersion) SkipDestroy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"skipDestroy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersion) SkipDestroyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"skipDestroyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LambdaLayerVersion) SourceCodeHash() *string {
 	var returns *string
 	_jsii_.Get(
@@ -13610,7 +14274,7 @@ func NewLambdaLayerVersion(scope constructs.Construct, id *string, config *Lambd
 	j := jsiiProxy_LambdaLayerVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.LambdaLayerVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13623,7 +14287,7 @@ func NewLambdaLayerVersion_Override(l LambdaLayerVersion, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.LambdaLayerVersion",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -13733,6 +14397,14 @@ func (j *jsiiProxy_LambdaLayerVersion) SetS3ObjectVersion(val *string) {
 	)
 }
 
+func (j *jsiiProxy_LambdaLayerVersion) SetSkipDestroy(val interface{}) {
+	_jsii_.Set(
+		j,
+		"skipDestroy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LambdaLayerVersion) SetSourceCodeHash(val *string) {
 	_jsii_.Set(
 		j,
@@ -13751,7 +14423,7 @@ func LambdaLayerVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.LambdaLayerVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13764,7 +14436,7 @@ func LambdaLayerVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaLayerVersion",
+		"hashicorp_aws.lambdafunction.LambdaLayerVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -13934,6 +14606,14 @@ func (l *jsiiProxy_LambdaLayerVersion) ResetS3ObjectVersion() {
 	)
 }
 
+func (l *jsiiProxy_LambdaLayerVersion) ResetSkipDestroy() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetSkipDestroy",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LambdaLayerVersion) ResetSourceCodeHash() {
 	_jsii_.InvokeVoid(
 		l,
@@ -13998,6 +14678,7 @@ func (l *jsiiProxy_LambdaLayerVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaLayerVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14025,8 +14706,674 @@ type LambdaLayerVersionConfig struct {
 	S3Key *string `json:"s3Key"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#s3_object_version LambdaLayerVersion#s3_object_version}.
 	S3ObjectVersion *string `json:"s3ObjectVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#skip_destroy LambdaLayerVersion#skip_destroy}.
+	SkipDestroy interface{} `json:"skipDestroy"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#source_code_hash LambdaLayerVersion#source_code_hash}.
 	SourceCodeHash *string `json:"sourceCodeHash"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission}.
+type LambdaLayerVersionPermission interface {
+	cdktf.TerraformResource
+	Action() *string
+	SetAction(val *string)
+	ActionInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	LayerName() *string
+	SetLayerName(val *string)
+	LayerNameInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	OrganizationId() *string
+	SetOrganizationId(val *string)
+	OrganizationIdInput() *string
+	Policy() *string
+	Principal() *string
+	SetPrincipal(val *string)
+	PrincipalInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RevisionId() *string
+	StatementId() *string
+	SetStatementId(val *string)
+	StatementIdInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	VersionNumber() *float64
+	SetVersionNumber(val *float64)
+	VersionNumberInput() *float64
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOrganizationId()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for LambdaLayerVersionPermission
+type jsiiProxy_LambdaLayerVersionPermission struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Action() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"action",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) ActionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) LayerName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"layerName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) LayerNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"layerNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) OrganizationId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) OrganizationIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Principal() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"principal",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) PrincipalInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"principalInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) RevisionId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"revisionId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) StatementId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statementId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) StatementIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"statementIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) VersionNumber() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"versionNumber",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) VersionNumberInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"versionNumberInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission} Resource.
+func NewLambdaLayerVersionPermission(scope constructs.Construct, id *string, config *LambdaLayerVersionPermissionConfig) LambdaLayerVersionPermission {
+	_init_.Initialize()
+
+	j := jsiiProxy_LambdaLayerVersionPermission{}
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaLayerVersionPermission",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission} Resource.
+func NewLambdaLayerVersionPermission_Override(l LambdaLayerVersionPermission, scope constructs.Construct, id *string, config *LambdaLayerVersionPermissionConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaLayerVersionPermission",
+		[]interface{}{scope, id, config},
+		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetAction(val *string) {
+	_jsii_.Set(
+		j,
+		"action",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetLayerName(val *string) {
+	_jsii_.Set(
+		j,
+		"layerName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetOrganizationId(val *string) {
+	_jsii_.Set(
+		j,
+		"organizationId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetPrincipal(val *string) {
+	_jsii_.Set(
+		j,
+		"principal",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetStatementId(val *string) {
+	_jsii_.Set(
+		j,
+		"statementId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetVersionNumber(val *float64) {
+	_jsii_.Set(
+		j,
+		"versionNumber",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func LambdaLayerVersionPermission_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.lambdafunction.LambdaLayerVersionPermission",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func LambdaLayerVersionPermission_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.lambdafunction.LambdaLayerVersionPermission",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		l,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		l,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (l *jsiiProxy_LambdaLayerVersionPermission) ResetOrganizationId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetOrganizationId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LambdaLayerVersionPermission) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		l,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (l *jsiiProxy_LambdaLayerVersionPermission) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		l,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Lambda.
+type LambdaLayerVersionPermissionConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#action LambdaLayerVersionPermission#action}.
+	Action *string `json:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#layer_name LambdaLayerVersionPermission#layer_name}.
+	LayerName *string `json:"layerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#principal LambdaLayerVersionPermission#principal}.
+	Principal *string `json:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#statement_id LambdaLayerVersionPermission#statement_id}.
+	StatementId *string `json:"statementId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#version_number LambdaLayerVersionPermission#version_number}.
+	VersionNumber *float64 `json:"versionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#organization_id LambdaLayerVersionPermission#organization_id}.
+	OrganizationId *string `json:"organizationId"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html aws_lambda_permission}.
@@ -14429,7 +15776,7 @@ func NewLambdaPermission(scope constructs.Construct, id *string, config *LambdaP
 	j := jsiiProxy_LambdaPermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaPermission",
+		"hashicorp_aws.lambdafunction.LambdaPermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14442,7 +15789,7 @@ func NewLambdaPermission_Override(l LambdaPermission, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaPermission",
+		"hashicorp_aws.lambdafunction.LambdaPermission",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -14562,7 +15909,7 @@ func LambdaPermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaPermission",
+		"hashicorp_aws.lambdafunction.LambdaPermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14575,7 +15922,7 @@ func LambdaPermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaPermission",
+		"hashicorp_aws.lambdafunction.LambdaPermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -14785,6 +16132,7 @@ func (l *jsiiProxy_LambdaPermission) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lambda.
 type LambdaPermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15094,7 +16442,7 @@ func NewLambdaProvisionedConcurrencyConfig(scope constructs.Construct, id *strin
 	j := jsiiProxy_LambdaProvisionedConcurrencyConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfig",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15107,7 +16455,7 @@ func NewLambdaProvisionedConcurrencyConfig_Override(l LambdaProvisionedConcurren
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfig",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfig",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -15179,7 +16527,7 @@ func LambdaProvisionedConcurrencyConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfig",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15192,7 +16540,7 @@ func LambdaProvisionedConcurrencyConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfig",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -15370,6 +16718,7 @@ func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Lambda.
 type LambdaProvisionedConcurrencyConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15403,6 +16752,8 @@ type LambdaProvisionedConcurrencyConfigTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *LambdaProvisionedConcurrencyConfigTimeouts
+	SetInternalValue(val *LambdaProvisionedConcurrencyConfigTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15442,6 +16793,16 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Cr
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) InternalValue() *LambdaProvisionedConcurrencyConfigTimeouts {
+	var returns *LambdaProvisionedConcurrencyConfigTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15503,7 +16864,7 @@ func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference(terraformResou
 	j := jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfigTimeoutsOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfigTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15515,7 +16876,7 @@ func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference_Override(l Lam
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LambdaFunction.LambdaProvisionedConcurrencyConfigTimeoutsOutputReference",
+		"hashicorp_aws.lambdafunction.LambdaProvisionedConcurrencyConfigTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -15525,6 +16886,14 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Se
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) SetInternalValue(val *LambdaProvisionedConcurrencyConfigTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

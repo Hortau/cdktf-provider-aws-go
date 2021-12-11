@@ -445,7 +445,7 @@ func NewElastictranscoderPipeline(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ElastictranscoderPipeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipeline",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipeline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -458,7 +458,7 @@ func NewElastictranscoderPipeline_Override(e ElastictranscoderPipeline, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipeline",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipeline",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -562,7 +562,7 @@ func ElastictranscoderPipeline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipeline",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipeline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -575,7 +575,7 @@ func ElastictranscoderPipeline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipeline",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipeline",
 		"tfResourceType",
 		&returns,
 	)
@@ -825,6 +825,7 @@ func (e *jsiiProxy_ElastictranscoderPipeline) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Transcoder.
 type ElastictranscoderPipelineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -878,6 +879,8 @@ type ElastictranscoderPipelineContentConfigOutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *ElastictranscoderPipelineContentConfig
+	SetInternalValue(val *ElastictranscoderPipelineContentConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	StorageClass() *string
@@ -917,6 +920,16 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) Bucket
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) InternalValue() *ElastictranscoderPipelineContentConfig {
+	var returns *ElastictranscoderPipelineContentConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -978,7 +991,7 @@ func NewElastictranscoderPipelineContentConfigOutputReference(terraformResource 
 	j := jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineContentConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineContentConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -990,7 +1003,7 @@ func NewElastictranscoderPipelineContentConfigOutputReference_Override(e Elastic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineContentConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineContentConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -1000,6 +1013,14 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetBuc
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetInternalValue(val *ElastictranscoderPipelineContentConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1164,6 +1185,8 @@ type ElastictranscoderPipelineNotificationsOutputReference interface {
 	Error() *string
 	SetError(val *string)
 	ErrorInput() *string
+	InternalValue() *ElastictranscoderPipelineNotifications
+	SetInternalValue(val *ElastictranscoderPipelineNotifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Progressing() *string
@@ -1228,6 +1251,16 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) ErrorI
 	_jsii_.Get(
 		j,
 		"errorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) InternalValue() *ElastictranscoderPipelineNotifications {
+	var returns *ElastictranscoderPipelineNotifications
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1309,7 +1342,7 @@ func NewElastictranscoderPipelineNotificationsOutputReference(terraformResource 
 	j := jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineNotificationsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineNotificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1321,7 +1354,7 @@ func NewElastictranscoderPipelineNotificationsOutputReference_Override(e Elastic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineNotificationsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineNotificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -1339,6 +1372,14 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetErr
 	_jsii_.Set(
 		j,
 		"error",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetInternalValue(val *ElastictranscoderPipelineNotifications) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1511,6 +1552,8 @@ type ElastictranscoderPipelineThumbnailConfigOutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *ElastictranscoderPipelineThumbnailConfig
+	SetInternalValue(val *ElastictranscoderPipelineThumbnailConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	StorageClass() *string
@@ -1550,6 +1593,16 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) Buck
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) InternalValue() *ElastictranscoderPipelineThumbnailConfig {
+	var returns *ElastictranscoderPipelineThumbnailConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1611,7 +1664,7 @@ func NewElastictranscoderPipelineThumbnailConfigOutputReference(terraformResourc
 	j := jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1623,7 +1676,7 @@ func NewElastictranscoderPipelineThumbnailConfigOutputReference_Override(e Elast
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPipelineThumbnailConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -1633,6 +1686,14 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetB
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetInternalValue(val *ElastictranscoderPipelineThumbnailConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2215,7 +2276,7 @@ func NewElastictranscoderPreset(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ElastictranscoderPreset{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPreset",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPreset",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2228,7 +2289,7 @@ func NewElastictranscoderPreset_Override(e ElastictranscoderPreset, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPreset",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPreset",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -2324,7 +2385,7 @@ func ElastictranscoderPreset_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPreset",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPreset",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2337,7 +2398,7 @@ func ElastictranscoderPreset_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPreset",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPreset",
 		"tfResourceType",
 		&returns,
 	)
@@ -2635,6 +2696,8 @@ type ElastictranscoderPresetAudioCodecOptionsOutputReference interface {
 	BitOrder() *string
 	SetBitOrder(val *string)
 	BitOrderInput() *string
+	InternalValue() *ElastictranscoderPresetAudioCodecOptions
+	SetInternalValue(val *ElastictranscoderPresetAudioCodecOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Profile() *string
@@ -2699,6 +2762,16 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) BitO
 	_jsii_.Get(
 		j,
 		"bitOrderInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) InternalValue() *ElastictranscoderPresetAudioCodecOptions {
+	var returns *ElastictranscoderPresetAudioCodecOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2780,7 +2853,7 @@ func NewElastictranscoderPresetAudioCodecOptionsOutputReference(terraformResourc
 	j := jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2792,7 +2865,7 @@ func NewElastictranscoderPresetAudioCodecOptionsOutputReference_Override(e Elast
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioCodecOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -2810,6 +2883,14 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetB
 	_jsii_.Set(
 		j,
 		"bitOrder",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetInternalValue(val *ElastictranscoderPresetAudioCodecOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2984,6 +3065,8 @@ type ElastictranscoderPresetAudioOutputReference interface {
 	Codec() *string
 	SetCodec(val *string)
 	CodecInput() *string
+	InternalValue() *ElastictranscoderPresetAudio
+	SetInternalValue(val *ElastictranscoderPresetAudio)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SampleRate() *string
@@ -3091,6 +3174,16 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) CodecInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) InternalValue() *ElastictranscoderPresetAudio {
+	var returns *ElastictranscoderPresetAudio
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3147,7 +3240,7 @@ func NewElastictranscoderPresetAudioOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_ElastictranscoderPresetAudioOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3159,7 +3252,7 @@ func NewElastictranscoderPresetAudioOutputReference_Override(e Elastictranscoder
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetAudioOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetAudioOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -3193,6 +3286,14 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetCodec(val *st
 	_jsii_.Set(
 		j,
 		"codec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetInternalValue(val *ElastictranscoderPresetAudio) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3353,6 +3454,7 @@ func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) ResetSampleRate(
 	)
 }
 
+// AWS Elastic Transcoder.
 type ElastictranscoderPresetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3421,6 +3523,8 @@ type ElastictranscoderPresetThumbnailsOutputReference interface {
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *ElastictranscoderPresetThumbnails
+	SetInternalValue(val *ElastictranscoderPresetThumbnails)
 	Interval() *string
 	SetInterval(val *string)
 	IntervalInput() *string
@@ -3501,6 +3605,16 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) FormatInput
 	_jsii_.Get(
 		j,
 		"formatInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) InternalValue() *ElastictranscoderPresetThumbnails {
+	var returns *ElastictranscoderPresetThumbnails
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3662,7 +3776,7 @@ func NewElastictranscoderPresetThumbnailsOutputReference(terraformResource cdktf
 	j := jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetThumbnailsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetThumbnailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3674,7 +3788,7 @@ func NewElastictranscoderPresetThumbnailsOutputReference_Override(e Elastictrans
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetThumbnailsOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetThumbnailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -3692,6 +3806,14 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetFormat(v
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetInternalValue(val *ElastictranscoderPresetThumbnails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3965,6 +4087,8 @@ type ElastictranscoderPresetVideoOutputReference interface {
 	FrameRate() *string
 	SetFrameRate(val *string)
 	FrameRateInput() *string
+	InternalValue() *ElastictranscoderPresetVideo
+	SetInternalValue(val *ElastictranscoderPresetVideo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyframesMaxDist() *string
@@ -4133,6 +4257,16 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) FrameRateInput()
 	_jsii_.Get(
 		j,
 		"frameRateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) InternalValue() *ElastictranscoderPresetVideo {
+	var returns *ElastictranscoderPresetVideo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4314,7 +4448,7 @@ func NewElastictranscoderPresetVideoOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_ElastictranscoderPresetVideoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetVideoOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetVideoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4326,7 +4460,7 @@ func NewElastictranscoderPresetVideoOutputReference_Override(e Elastictranscoder
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticTranscoder.ElastictranscoderPresetVideoOutputReference",
+		"hashicorp_aws.elastictranscoder.ElastictranscoderPresetVideoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4376,6 +4510,14 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetFrameRate(val
 	_jsii_.Set(
 		j,
 		"frameRate",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetInternalValue(val *ElastictranscoderPresetVideo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

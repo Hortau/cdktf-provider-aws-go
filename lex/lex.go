@@ -397,7 +397,7 @@ func NewDataAwsLexBot(scope constructs.Construct, id *string, config *DataAwsLex
 	j := jsiiProxy_DataAwsLexBot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexBot",
+		"hashicorp_aws.lex.DataAwsLexBot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -410,7 +410,7 @@ func NewDataAwsLexBot_Override(d DataAwsLexBot, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexBot",
+		"hashicorp_aws.lex.DataAwsLexBot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -474,7 +474,7 @@ func DataAwsLexBot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.DataAwsLexBot",
+		"hashicorp_aws.lex.DataAwsLexBot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -487,7 +487,7 @@ func DataAwsLexBot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.DataAwsLexBot",
+		"hashicorp_aws.lex.DataAwsLexBot",
 		"tfResourceType",
 		&returns,
 	)
@@ -956,7 +956,7 @@ func NewDataAwsLexBotAlias(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsLexBotAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexBotAlias",
+		"hashicorp_aws.lex.DataAwsLexBotAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -969,7 +969,7 @@ func NewDataAwsLexBotAlias_Override(d DataAwsLexBotAlias, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexBotAlias",
+		"hashicorp_aws.lex.DataAwsLexBotAlias",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1033,7 +1033,7 @@ func DataAwsLexBotAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.DataAwsLexBotAlias",
+		"hashicorp_aws.lex.DataAwsLexBotAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1046,7 +1046,7 @@ func DataAwsLexBotAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.DataAwsLexBotAlias",
+		"hashicorp_aws.lex.DataAwsLexBotAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -1208,6 +1208,7 @@ func (d *jsiiProxy_DataAwsLexBotAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lex.
 type DataAwsLexBotAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1223,6 +1224,7 @@ type DataAwsLexBotAliasConfig struct {
 	Name *string `json:"name"`
 }
 
+// AWS Lex.
 type DataAwsLexBotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1538,7 +1540,7 @@ func NewDataAwsLexIntent(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsLexIntent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexIntent",
+		"hashicorp_aws.lex.DataAwsLexIntent",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1551,7 +1553,7 @@ func NewDataAwsLexIntent_Override(d DataAwsLexIntent, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexIntent",
+		"hashicorp_aws.lex.DataAwsLexIntent",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1615,7 +1617,7 @@ func DataAwsLexIntent_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.DataAwsLexIntent",
+		"hashicorp_aws.lex.DataAwsLexIntent",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1628,7 +1630,7 @@ func DataAwsLexIntent_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.DataAwsLexIntent",
+		"hashicorp_aws.lex.DataAwsLexIntent",
 		"tfResourceType",
 		&returns,
 	)
@@ -1798,6 +1800,7 @@ func (d *jsiiProxy_DataAwsLexIntent) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lex.
 type DataAwsLexIntentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2103,7 +2106,7 @@ func NewDataAwsLexSlotType(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsLexSlotType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexSlotType",
+		"hashicorp_aws.lex.DataAwsLexSlotType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2116,7 +2119,7 @@ func NewDataAwsLexSlotType_Override(d DataAwsLexSlotType, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexSlotType",
+		"hashicorp_aws.lex.DataAwsLexSlotType",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2180,7 +2183,7 @@ func DataAwsLexSlotType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.DataAwsLexSlotType",
+		"hashicorp_aws.lex.DataAwsLexSlotType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2193,7 +2196,7 @@ func DataAwsLexSlotType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.DataAwsLexSlotType",
+		"hashicorp_aws.lex.DataAwsLexSlotType",
 		"tfResourceType",
 		&returns,
 	)
@@ -2376,6 +2379,7 @@ func (d *jsiiProxy_DataAwsLexSlotType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lex.
 type DataAwsLexSlotTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2470,7 +2474,7 @@ func NewDataAwsLexSlotTypeEnumerationValue(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsLexSlotTypeEnumerationValue{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexSlotTypeEnumerationValue",
+		"hashicorp_aws.lex.DataAwsLexSlotTypeEnumerationValue",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2483,7 +2487,7 @@ func NewDataAwsLexSlotTypeEnumerationValue_Override(d DataAwsLexSlotTypeEnumerat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.DataAwsLexSlotTypeEnumerationValue",
+		"hashicorp_aws.lex.DataAwsLexSlotTypeEnumerationValue",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3203,7 +3207,7 @@ func NewLexBot(scope constructs.Construct, id *string, config *LexBotConfig) Lex
 	j := jsiiProxy_LexBot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBot",
+		"hashicorp_aws.lex.LexBot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3216,7 +3220,7 @@ func NewLexBot_Override(l LexBot, scope constructs.Construct, id *string, config
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBot",
+		"hashicorp_aws.lex.LexBot",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -3360,7 +3364,7 @@ func LexBot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.LexBot",
+		"hashicorp_aws.lex.LexBot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3373,7 +3377,7 @@ func LexBot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.LexBot",
+		"hashicorp_aws.lex.LexBot",
 		"tfResourceType",
 		&returns,
 	)
@@ -3667,6 +3671,8 @@ type LexBotAbortStatementMessage struct {
 
 type LexBotAbortStatementOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexBotAbortStatement
+	SetInternalValue(val *LexBotAbortStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Message() *[]*LexBotAbortStatementMessage
@@ -3691,6 +3697,16 @@ type LexBotAbortStatementOutputReference interface {
 // The jsii proxy struct for LexBotAbortStatementOutputReference
 type jsiiProxy_LexBotAbortStatementOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) InternalValue() *LexBotAbortStatement {
+	var returns *LexBotAbortStatement
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexBotAbortStatementOutputReference) IsSingleItem() *bool {
@@ -3769,7 +3785,7 @@ func NewLexBotAbortStatementOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_LexBotAbortStatementOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAbortStatementOutputReference",
+		"hashicorp_aws.lex.LexBotAbortStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3781,9 +3797,17 @@ func NewLexBotAbortStatementOutputReference_Override(l LexBotAbortStatementOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAbortStatementOutputReference",
+		"hashicorp_aws.lex.LexBotAbortStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetInternalValue(val *LexBotAbortStatement) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4291,7 +4315,7 @@ func NewLexBotAlias(scope constructs.Construct, id *string, config *LexBotAliasC
 	j := jsiiProxy_LexBotAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAlias",
+		"hashicorp_aws.lex.LexBotAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4304,7 +4328,7 @@ func NewLexBotAlias_Override(l LexBotAlias, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAlias",
+		"hashicorp_aws.lex.LexBotAlias",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -4384,7 +4408,7 @@ func LexBotAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.LexBotAlias",
+		"hashicorp_aws.lex.LexBotAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4397,7 +4421,7 @@ func LexBotAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.LexBotAlias",
+		"hashicorp_aws.lex.LexBotAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -4599,6 +4623,7 @@ func (l *jsiiProxy_LexBotAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lex.
 type LexBotAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4651,6 +4676,8 @@ type LexBotAliasConversationLogsOutputReference interface {
 	IamRoleArn() *string
 	SetIamRoleArn(val *string)
 	IamRoleArnInput() *string
+	InternalValue() *LexBotAliasConversationLogs
+	SetInternalValue(val *LexBotAliasConversationLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogSettings() *[]*LexBotAliasConversationLogsLogSettings
@@ -4689,6 +4716,16 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) IamRoleArnInput()
 	_jsii_.Get(
 		j,
 		"iamRoleArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) InternalValue() *LexBotAliasConversationLogs {
+	var returns *LexBotAliasConversationLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4750,7 +4787,7 @@ func NewLexBotAliasConversationLogsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_LexBotAliasConversationLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAliasConversationLogsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasConversationLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4762,7 +4799,7 @@ func NewLexBotAliasConversationLogsOutputReference_Override(l LexBotAliasConvers
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAliasConversationLogsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasConversationLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -4772,6 +4809,14 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetIamRoleArn(val
 	_jsii_.Set(
 		j,
 		"iamRoleArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetInternalValue(val *LexBotAliasConversationLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4917,6 +4962,8 @@ type LexBotAliasTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *LexBotAliasTimeouts
+	SetInternalValue(val *LexBotAliasTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4982,6 +5029,16 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) InternalValue() *LexBotAliasTimeouts {
+	var returns *LexBotAliasTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5038,7 +5095,7 @@ func NewLexBotAliasTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_LexBotAliasTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAliasTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5050,7 +5107,7 @@ func NewLexBotAliasTimeoutsOutputReference_Override(l LexBotAliasTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotAliasTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotAliasTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5068,6 +5125,14 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetInternalValue(val *LexBotAliasTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5234,6 +5299,8 @@ type LexBotClarificationPromptMessage struct {
 
 type LexBotClarificationPromptOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexBotClarificationPrompt
+	SetInternalValue(val *LexBotClarificationPrompt)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAttempts() *float64
@@ -5261,6 +5328,16 @@ type LexBotClarificationPromptOutputReference interface {
 // The jsii proxy struct for LexBotClarificationPromptOutputReference
 type jsiiProxy_LexBotClarificationPromptOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) InternalValue() *LexBotClarificationPrompt {
+	var returns *LexBotClarificationPrompt
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexBotClarificationPromptOutputReference) IsSingleItem() *bool {
@@ -5359,7 +5436,7 @@ func NewLexBotClarificationPromptOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_LexBotClarificationPromptOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotClarificationPromptOutputReference",
+		"hashicorp_aws.lex.LexBotClarificationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5371,9 +5448,17 @@ func NewLexBotClarificationPromptOutputReference_Override(l LexBotClarificationP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotClarificationPromptOutputReference",
+		"hashicorp_aws.lex.LexBotClarificationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetInternalValue(val *LexBotClarificationPrompt) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5517,6 +5602,7 @@ func (l *jsiiProxy_LexBotClarificationPromptOutputReference) ResetResponseCard()
 	)
 }
 
+// AWS Lex.
 type LexBotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5590,6 +5676,8 @@ type LexBotTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *LexBotTimeouts
+	SetInternalValue(val *LexBotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5655,6 +5743,16 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LexBotTimeoutsOutputReference) InternalValue() *LexBotTimeouts {
+	var returns *LexBotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LexBotTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5711,7 +5809,7 @@ func NewLexBotTimeoutsOutputReference(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_LexBotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5723,7 +5821,7 @@ func NewLexBotTimeoutsOutputReference_Override(l LexBotTimeoutsOutputReference, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexBotTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexBotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5741,6 +5839,14 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetInternalValue(val *LexBotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6437,7 +6543,7 @@ func NewLexIntent(scope constructs.Construct, id *string, config *LexIntentConfi
 	j := jsiiProxy_LexIntent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntent",
+		"hashicorp_aws.lex.LexIntent",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6450,7 +6556,7 @@ func NewLexIntent_Override(l LexIntent, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntent",
+		"hashicorp_aws.lex.LexIntent",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -6546,7 +6652,7 @@ func LexIntent_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.LexIntent",
+		"hashicorp_aws.lex.LexIntent",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6559,7 +6665,7 @@ func LexIntent_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.LexIntent",
+		"hashicorp_aws.lex.LexIntent",
 		"tfResourceType",
 		&returns,
 	)
@@ -6885,6 +6991,8 @@ type LexIntentConclusionStatementMessage struct {
 
 type LexIntentConclusionStatementOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentConclusionStatement
+	SetInternalValue(val *LexIntentConclusionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Message() *[]*LexIntentConclusionStatementMessage
@@ -6909,6 +7017,16 @@ type LexIntentConclusionStatementOutputReference interface {
 // The jsii proxy struct for LexIntentConclusionStatementOutputReference
 type jsiiProxy_LexIntentConclusionStatementOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) InternalValue() *LexIntentConclusionStatement {
+	var returns *LexIntentConclusionStatement
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) IsSingleItem() *bool {
@@ -6987,7 +7105,7 @@ func NewLexIntentConclusionStatementOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_LexIntentConclusionStatementOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentConclusionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentConclusionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6999,9 +7117,17 @@ func NewLexIntentConclusionStatementOutputReference_Override(l LexIntentConclusi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentConclusionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentConclusionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetInternalValue(val *LexIntentConclusionStatement) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7137,6 +7263,7 @@ func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) ResetResponseCar
 	)
 }
 
+// AWS Lex.
 type LexIntentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7212,6 +7339,8 @@ type LexIntentConfirmationPromptMessage struct {
 
 type LexIntentConfirmationPromptOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentConfirmationPrompt
+	SetInternalValue(val *LexIntentConfirmationPrompt)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAttempts() *float64
@@ -7239,6 +7368,16 @@ type LexIntentConfirmationPromptOutputReference interface {
 // The jsii proxy struct for LexIntentConfirmationPromptOutputReference
 type jsiiProxy_LexIntentConfirmationPromptOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) InternalValue() *LexIntentConfirmationPrompt {
+	var returns *LexIntentConfirmationPrompt
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) IsSingleItem() *bool {
@@ -7337,7 +7476,7 @@ func NewLexIntentConfirmationPromptOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_LexIntentConfirmationPromptOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentConfirmationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentConfirmationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7349,9 +7488,17 @@ func NewLexIntentConfirmationPromptOutputReference_Override(l LexIntentConfirmat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentConfirmationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentConfirmationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetInternalValue(val *LexIntentConfirmationPrompt) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7504,6 +7651,8 @@ type LexIntentDialogCodeHook struct {
 
 type LexIntentDialogCodeHookOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentDialogCodeHook
+	SetInternalValue(val *LexIntentDialogCodeHook)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageVersion() *string
@@ -7527,6 +7676,16 @@ type LexIntentDialogCodeHookOutputReference interface {
 // The jsii proxy struct for LexIntentDialogCodeHookOutputReference
 type jsiiProxy_LexIntentDialogCodeHookOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) InternalValue() *LexIntentDialogCodeHook {
+	var returns *LexIntentDialogCodeHook
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) IsSingleItem() *bool {
@@ -7605,7 +7764,7 @@ func NewLexIntentDialogCodeHookOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_LexIntentDialogCodeHookOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentDialogCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentDialogCodeHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7617,9 +7776,17 @@ func NewLexIntentDialogCodeHookOutputReference_Override(l LexIntentDialogCodeHoo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentDialogCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentDialogCodeHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) SetInternalValue(val *LexIntentDialogCodeHook) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7760,6 +7927,8 @@ type LexIntentFollowUpPrompt struct {
 
 type LexIntentFollowUpPromptOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentFollowUpPrompt
+	SetInternalValue(val *LexIntentFollowUpPrompt)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prompt() LexIntentFollowUpPromptPromptOutputReference
@@ -7783,6 +7952,16 @@ type LexIntentFollowUpPromptOutputReference interface {
 // The jsii proxy struct for LexIntentFollowUpPromptOutputReference
 type jsiiProxy_LexIntentFollowUpPromptOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) InternalValue() *LexIntentFollowUpPrompt {
+	var returns *LexIntentFollowUpPrompt
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) IsSingleItem() *bool {
@@ -7861,7 +8040,7 @@ func NewLexIntentFollowUpPromptOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_LexIntentFollowUpPromptOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7873,9 +8052,17 @@ func NewLexIntentFollowUpPromptOutputReference_Override(l LexIntentFollowUpPromp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) SetInternalValue(val *LexIntentFollowUpPrompt) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8025,6 +8212,8 @@ type LexIntentFollowUpPromptPromptMessage struct {
 
 type LexIntentFollowUpPromptPromptOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentFollowUpPromptPrompt
+	SetInternalValue(val *LexIntentFollowUpPromptPrompt)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAttempts() *float64
@@ -8052,6 +8241,16 @@ type LexIntentFollowUpPromptPromptOutputReference interface {
 // The jsii proxy struct for LexIntentFollowUpPromptPromptOutputReference
 type jsiiProxy_LexIntentFollowUpPromptPromptOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) InternalValue() *LexIntentFollowUpPromptPrompt {
+	var returns *LexIntentFollowUpPromptPrompt
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) IsSingleItem() *bool {
@@ -8150,7 +8349,7 @@ func NewLexIntentFollowUpPromptPromptOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_LexIntentFollowUpPromptPromptOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8162,9 +8361,17 @@ func NewLexIntentFollowUpPromptPromptOutputReference_Override(l LexIntentFollowU
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetInternalValue(val *LexIntentFollowUpPromptPrompt) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8328,6 +8535,8 @@ type LexIntentFollowUpPromptRejectionStatementMessage struct {
 
 type LexIntentFollowUpPromptRejectionStatementOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentFollowUpPromptRejectionStatement
+	SetInternalValue(val *LexIntentFollowUpPromptRejectionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Message() *[]*LexIntentFollowUpPromptRejectionStatementMessage
@@ -8352,6 +8561,16 @@ type LexIntentFollowUpPromptRejectionStatementOutputReference interface {
 // The jsii proxy struct for LexIntentFollowUpPromptRejectionStatementOutputReference
 type jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) InternalValue() *LexIntentFollowUpPromptRejectionStatement {
+	var returns *LexIntentFollowUpPromptRejectionStatement
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) IsSingleItem() *bool {
@@ -8430,7 +8649,7 @@ func NewLexIntentFollowUpPromptRejectionStatementOutputReference(terraformResour
 	j := jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8442,9 +8661,17 @@ func NewLexIntentFollowUpPromptRejectionStatementOutputReference_Override(l LexI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentFollowUpPromptRejectionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) SetInternalValue(val *LexIntentFollowUpPromptRejectionStatement) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8598,6 +8825,8 @@ type LexIntentFulfillmentActivityCodeHook struct {
 
 type LexIntentFulfillmentActivityCodeHookOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentFulfillmentActivityCodeHook
+	SetInternalValue(val *LexIntentFulfillmentActivityCodeHook)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageVersion() *string
@@ -8621,6 +8850,16 @@ type LexIntentFulfillmentActivityCodeHookOutputReference interface {
 // The jsii proxy struct for LexIntentFulfillmentActivityCodeHookOutputReference
 type jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) InternalValue() *LexIntentFulfillmentActivityCodeHook {
+	var returns *LexIntentFulfillmentActivityCodeHook
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) IsSingleItem() *bool {
@@ -8699,7 +8938,7 @@ func NewLexIntentFulfillmentActivityCodeHookOutputReference(terraformResource cd
 	j := jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityCodeHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8711,9 +8950,17 @@ func NewLexIntentFulfillmentActivityCodeHookOutputReference_Override(l LexIntent
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityCodeHookOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityCodeHookOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) SetInternalValue(val *LexIntentFulfillmentActivityCodeHook) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8845,6 +9092,8 @@ type LexIntentFulfillmentActivityOutputReference interface {
 	cdktf.ComplexObject
 	CodeHook() LexIntentFulfillmentActivityCodeHookOutputReference
 	CodeHookInput() *LexIntentFulfillmentActivityCodeHook
+	InternalValue() *LexIntentFulfillmentActivity
+	SetInternalValue(val *LexIntentFulfillmentActivity)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8884,6 +9133,16 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) CodeHookInput() 
 	_jsii_.Get(
 		j,
 		"codeHookInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) InternalValue() *LexIntentFulfillmentActivity {
+	var returns *LexIntentFulfillmentActivity
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8945,7 +9204,7 @@ func NewLexIntentFulfillmentActivityOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_LexIntentFulfillmentActivityOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8957,9 +9216,17 @@ func NewLexIntentFulfillmentActivityOutputReference_Override(l LexIntentFulfillm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentFulfillmentActivityOutputReference",
+		"hashicorp_aws.lex.LexIntentFulfillmentActivityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) SetInternalValue(val *LexIntentFulfillmentActivity) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9115,6 +9382,8 @@ type LexIntentRejectionStatementMessage struct {
 
 type LexIntentRejectionStatementOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentRejectionStatement
+	SetInternalValue(val *LexIntentRejectionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Message() *[]*LexIntentRejectionStatementMessage
@@ -9139,6 +9408,16 @@ type LexIntentRejectionStatementOutputReference interface {
 // The jsii proxy struct for LexIntentRejectionStatementOutputReference
 type jsiiProxy_LexIntentRejectionStatementOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) InternalValue() *LexIntentRejectionStatement {
+	var returns *LexIntentRejectionStatement
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) IsSingleItem() *bool {
@@ -9217,7 +9496,7 @@ func NewLexIntentRejectionStatementOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_LexIntentRejectionStatementOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentRejectionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9229,9 +9508,17 @@ func NewLexIntentRejectionStatementOutputReference_Override(l LexIntentRejection
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentRejectionStatementOutputReference",
+		"hashicorp_aws.lex.LexIntentRejectionStatementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetInternalValue(val *LexIntentRejectionStatement) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9412,6 +9699,8 @@ type LexIntentSlotValueElicitationPromptMessage struct {
 
 type LexIntentSlotValueElicitationPromptOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LexIntentSlotValueElicitationPrompt
+	SetInternalValue(val *LexIntentSlotValueElicitationPrompt)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAttempts() *float64
@@ -9439,6 +9728,16 @@ type LexIntentSlotValueElicitationPromptOutputReference interface {
 // The jsii proxy struct for LexIntentSlotValueElicitationPromptOutputReference
 type jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) InternalValue() *LexIntentSlotValueElicitationPrompt {
+	var returns *LexIntentSlotValueElicitationPrompt
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) IsSingleItem() *bool {
@@ -9537,7 +9836,7 @@ func NewLexIntentSlotValueElicitationPromptOutputReference(terraformResource cdk
 	j := jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentSlotValueElicitationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentSlotValueElicitationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9549,9 +9848,17 @@ func NewLexIntentSlotValueElicitationPromptOutputReference_Override(l LexIntentS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentSlotValueElicitationPromptOutputReference",
+		"hashicorp_aws.lex.LexIntentSlotValueElicitationPromptOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetInternalValue(val *LexIntentSlotValueElicitationPrompt) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9712,6 +10019,8 @@ type LexIntentTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *LexIntentTimeouts
+	SetInternalValue(val *LexIntentTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9777,6 +10086,16 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LexIntentTimeoutsOutputReference) InternalValue() *LexIntentTimeouts {
+	var returns *LexIntentTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LexIntentTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9833,7 +10152,7 @@ func NewLexIntentTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_LexIntentTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexIntentTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9845,7 +10164,7 @@ func NewLexIntentTimeoutsOutputReference_Override(l LexIntentTimeoutsOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexIntentTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexIntentTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -9863,6 +10182,14 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetInternalValue(val *LexIntentTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10380,7 +10707,7 @@ func NewLexSlotType(scope constructs.Construct, id *string, config *LexSlotTypeC
 	j := jsiiProxy_LexSlotType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexSlotType",
+		"hashicorp_aws.lex.LexSlotType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10393,7 +10720,7 @@ func NewLexSlotType_Override(l LexSlotType, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexSlotType",
+		"hashicorp_aws.lex.LexSlotType",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -10481,7 +10808,7 @@ func LexSlotType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lex.LexSlotType",
+		"hashicorp_aws.lex.LexSlotType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10494,7 +10821,7 @@ func LexSlotType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lex.LexSlotType",
+		"hashicorp_aws.lex.LexSlotType",
 		"tfResourceType",
 		&returns,
 	)
@@ -10696,6 +11023,7 @@ func (l *jsiiProxy_LexSlotType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lex.
 type LexSlotTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10747,6 +11075,8 @@ type LexSlotTypeTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *LexSlotTypeTimeouts
+	SetInternalValue(val *LexSlotTypeTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10812,6 +11142,16 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) InternalValue() *LexSlotTypeTimeouts {
+	var returns *LexSlotTypeTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10868,7 +11208,7 @@ func NewLexSlotTypeTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_LexSlotTypeTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexSlotTypeTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexSlotTypeTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10880,7 +11220,7 @@ func NewLexSlotTypeTimeoutsOutputReference_Override(l LexSlotTypeTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lex.LexSlotTypeTimeoutsOutputReference",
+		"hashicorp_aws.lex.LexSlotTypeTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -10898,6 +11238,14 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetInternalValue(val *LexSlotTypeTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

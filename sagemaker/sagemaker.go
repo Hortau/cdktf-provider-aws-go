@@ -313,7 +313,7 @@ func NewDataAwsSagemakerPrebuiltEcrImage(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsSagemakerPrebuiltEcrImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImage",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -326,7 +326,7 @@ func NewDataAwsSagemakerPrebuiltEcrImage_Override(d DataAwsSagemakerPrebuiltEcrI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImage",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImage",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -406,7 +406,7 @@ func DataAwsSagemakerPrebuiltEcrImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImage",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -419,7 +419,7 @@ func DataAwsSagemakerPrebuiltEcrImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.DataAwsSagemakerPrebuiltEcrImage",
+		"hashicorp_aws.sagemaker.DataAwsSagemakerPrebuiltEcrImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -605,6 +605,7 @@ func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type DataAwsSagemakerPrebuiltEcrImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -986,7 +987,7 @@ func NewSagemakerApp(scope constructs.Construct, id *string, config *SagemakerAp
 	j := jsiiProxy_SagemakerApp{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerApp",
+		"hashicorp_aws.sagemaker.SagemakerApp",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -999,7 +1000,7 @@ func NewSagemakerApp_Override(s SagemakerApp, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerApp",
+		"hashicorp_aws.sagemaker.SagemakerApp",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1095,7 +1096,7 @@ func SagemakerApp_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerApp",
+		"hashicorp_aws.sagemaker.SagemakerApp",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1108,7 +1109,7 @@ func SagemakerApp_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerApp",
+		"hashicorp_aws.sagemaker.SagemakerApp",
 		"tfResourceType",
 		&returns,
 	)
@@ -1302,6 +1303,7 @@ func (s *jsiiProxy_SagemakerApp) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerAppConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1622,7 +1624,7 @@ func NewSagemakerAppImageConfig(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_SagemakerAppImageConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1635,7 +1637,7 @@ func NewSagemakerAppImageConfig_Override(s SagemakerAppImageConfig, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfig",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1707,7 +1709,7 @@ func SagemakerAppImageConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1720,7 +1722,7 @@ func SagemakerAppImageConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfig",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -1914,6 +1916,7 @@ func (s *jsiiProxy_SagemakerAppImageConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerAppImageConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1963,6 +1966,8 @@ type SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputRefere
 	DefaultUid() *float64
 	SetDefaultUid(val *float64)
 	DefaultUidInput() *float64
+	InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig
+	SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MountPath() *string
@@ -2028,6 +2033,16 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig {
+	var returns *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2084,7 +2099,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputRef
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2096,7 +2111,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2114,6 +2129,14 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 	_jsii_.Set(
 		j,
 		"defaultUid",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2270,6 +2293,8 @@ type SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference in
 	DisplayName() *string
 	SetDisplayName(val *string)
 	DisplayNameInput() *string
+	InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec
+	SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -2308,6 +2333,16 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 	_jsii_.Get(
 		j,
 		"displayNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec {
+	var returns *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2369,7 +2404,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2381,7 +2416,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2391,6 +2426,14 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 	_jsii_.Set(
 		j,
 		"displayName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2523,6 +2566,8 @@ type SagemakerAppImageConfigKernelGatewayImageConfigOutputReference interface {
 	cdktf.ComplexObject
 	FileSystemConfig() SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference
 	FileSystemConfigInput() *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig
+	InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfig
+	SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KernelSpec() SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference
@@ -2562,6 +2607,16 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 	_jsii_.Get(
 		j,
 		"fileSystemConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) InternalValue() *SagemakerAppImageConfigKernelGatewayImageConfig {
+	var returns *SagemakerAppImageConfigKernelGatewayImageConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2623,7 +2678,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference(terraform
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2635,9 +2690,17 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppImageConfigKernelGatewayImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) SetInternalValue(val *SagemakerAppImageConfigKernelGatewayImageConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2785,6 +2848,8 @@ type SagemakerAppResourceSpecOutputReference interface {
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerAppResourceSpec
+	SetInternalValue(val *SagemakerAppResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -2824,6 +2889,16 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) InstanceTypeInput() 
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) InternalValue() *SagemakerAppResourceSpec {
+	var returns *SagemakerAppResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2885,7 +2960,7 @@ func NewSagemakerAppResourceSpecOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_SagemakerAppResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2897,7 +2972,7 @@ func NewSagemakerAppResourceSpecOutputReference_Override(s SagemakerAppResourceS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerAppResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerAppResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2907,6 +2982,14 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetInstanceType(val 
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetInternalValue(val *SagemakerAppResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3335,7 +3418,7 @@ func NewSagemakerCodeRepository(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_SagemakerCodeRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepository",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3348,7 +3431,7 @@ func NewSagemakerCodeRepository_Override(s SagemakerCodeRepository, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepository",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepository",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3420,7 +3503,7 @@ func SagemakerCodeRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepository",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3433,7 +3516,7 @@ func SagemakerCodeRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepository",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -3619,6 +3702,7 @@ func (s *jsiiProxy_SagemakerCodeRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerCodeRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3654,6 +3738,8 @@ type SagemakerCodeRepositoryGitConfigOutputReference interface {
 	Branch() *string
 	SetBranch(val *string)
 	BranchInput() *string
+	InternalValue() *SagemakerCodeRepositoryGitConfig
+	SetInternalValue(val *SagemakerCodeRepositoryGitConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RepositoryUrl() *string
@@ -3696,6 +3782,16 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) BranchInput(
 	_jsii_.Get(
 		j,
 		"branchInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) InternalValue() *SagemakerCodeRepositoryGitConfig {
+	var returns *SagemakerCodeRepositoryGitConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3777,7 +3873,7 @@ func NewSagemakerCodeRepositoryGitConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepositoryGitConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepositoryGitConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3789,7 +3885,7 @@ func NewSagemakerCodeRepositoryGitConfigOutputReference_Override(s SagemakerCode
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerCodeRepositoryGitConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerCodeRepositoryGitConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -3799,6 +3895,14 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetBranch(va
 	_jsii_.Set(
 		j,
 		"branch",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetInternalValue(val *SagemakerCodeRepositoryGitConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4317,7 +4421,7 @@ func NewSagemakerDeviceFleet(scope constructs.Construct, id *string, config *Sag
 	j := jsiiProxy_SagemakerDeviceFleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleet",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4330,7 +4434,7 @@ func NewSagemakerDeviceFleet_Override(s SagemakerDeviceFleet, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleet",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -4426,7 +4530,7 @@ func SagemakerDeviceFleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleet",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4439,7 +4543,7 @@ func SagemakerDeviceFleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleet",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -4641,6 +4745,7 @@ func (s *jsiiProxy_SagemakerDeviceFleet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerDeviceFleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4677,6 +4782,8 @@ type SagemakerDeviceFleetOutputConfig struct {
 
 type SagemakerDeviceFleetOutputConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerDeviceFleetOutputConfig
+	SetInternalValue(val *SagemakerDeviceFleetOutputConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -4701,6 +4808,16 @@ type SagemakerDeviceFleetOutputConfigOutputReference interface {
 // The jsii proxy struct for SagemakerDeviceFleetOutputConfigOutputReference
 type jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) InternalValue() *SagemakerDeviceFleetOutputConfig {
+	var returns *SagemakerDeviceFleetOutputConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) IsSingleItem() *bool {
@@ -4779,7 +4896,7 @@ func NewSagemakerDeviceFleetOutputConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleetOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleetOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4791,9 +4908,17 @@ func NewSagemakerDeviceFleetOutputConfigOutputReference_Override(s SagemakerDevi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDeviceFleetOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDeviceFleetOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) SetInternalValue(val *SagemakerDeviceFleetOutputConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5395,7 +5520,7 @@ func NewSagemakerDomain(scope constructs.Construct, id *string, config *Sagemake
 	j := jsiiProxy_SagemakerDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomain",
+		"hashicorp_aws.sagemaker.SagemakerDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5408,7 +5533,7 @@ func NewSagemakerDomain_Override(s SagemakerDomain, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomain",
+		"hashicorp_aws.sagemaker.SagemakerDomain",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5520,7 +5645,7 @@ func SagemakerDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerDomain",
+		"hashicorp_aws.sagemaker.SagemakerDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5533,7 +5658,7 @@ func SagemakerDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerDomain",
+		"hashicorp_aws.sagemaker.SagemakerDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -5751,6 +5876,7 @@ func (s *jsiiProxy_SagemakerDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5830,6 +5956,8 @@ type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSp
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -5869,6 +5997,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec {
+	var returns *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5930,7 +6068,7 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourc
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5942,7 +6080,7 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -5952,6 +6090,14 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6092,6 +6238,8 @@ type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference i
 	cdktf.ComplexObject
 	DefaultResourceSpec() SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LifecycleConfigArns() *[]*string
@@ -6132,6 +6280,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 	_jsii_.Get(
 		j,
 		"defaultResourceSpecInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings {
+	var returns *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6193,7 +6351,7 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReferenc
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6205,9 +6363,17 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6385,6 +6551,8 @@ type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSp
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -6424,6 +6592,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec {
+	var returns *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6485,7 +6663,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourc
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6497,7 +6675,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6507,6 +6685,14 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6650,6 +6836,8 @@ type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference i
 	CustomImageInput() *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage
 	DefaultResourceSpec() SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LifecycleConfigArns() *[]*string
@@ -6716,6 +6904,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings {
+	var returns *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6772,7 +6970,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReferenc
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6784,7 +6982,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6794,6 +6992,14 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	_jsii_.Set(
 		j,
 		"customImage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6951,6 +7157,8 @@ type SagemakerDomainDefaultUserSettingsOutputReference interface {
 	ExecutionRole() *string
 	SetExecutionRole(val *string)
 	ExecutionRoleInput() *string
+	InternalValue() *SagemakerDomainDefaultUserSettings
+	SetInternalValue(val *SagemakerDomainDefaultUserSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JupyterServerAppSettings() SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference
@@ -7005,6 +7213,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) ExecutionR
 	_jsii_.Get(
 		j,
 		"executionRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) InternalValue() *SagemakerDomainDefaultUserSettings {
+	var returns *SagemakerDomainDefaultUserSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7146,7 +7364,7 @@ func NewSagemakerDomainDefaultUserSettingsOutputReference(terraformResource cdkt
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7158,7 +7376,7 @@ func NewSagemakerDomainDefaultUserSettingsOutputReference_Override(s SagemakerDo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -7168,6 +7386,14 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetExecuti
 	_jsii_.Set(
 		j,
 		"executionRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7371,6 +7597,8 @@ type SagemakerDomainDefaultUserSettingsSharingSettings struct {
 
 type SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerDomainDefaultUserSettingsSharingSettings
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsSharingSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotebookOutputOption() *string
@@ -7400,6 +7628,16 @@ type SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference interface 
 // The jsii proxy struct for SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference
 type jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsSharingSettings {
+	var returns *SagemakerDomainDefaultUserSettingsSharingSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) IsSingleItem() *bool {
@@ -7498,7 +7736,7 @@ func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference(terrafo
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7510,9 +7748,17 @@ func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsSharingSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7691,6 +7937,8 @@ type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -7730,6 +7978,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec {
+	var returns *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7791,7 +8049,7 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceS
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7803,7 +8061,7 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -7813,6 +8071,14 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7953,6 +8219,8 @@ type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference int
 	cdktf.ComplexObject
 	DefaultResourceSpec() SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings
+	SetInternalValue(val *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7994,6 +8262,16 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) InternalValue() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings {
+	var returns *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8030,7 +8308,7 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference(
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8042,9 +8320,17 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) SetInternalValue(val *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8182,6 +8468,8 @@ type SagemakerDomainRetentionPolicyOutputReference interface {
 	HomeEfsFileSystem() *string
 	SetHomeEfsFileSystem(val *string)
 	HomeEfsFileSystemInput() *string
+	InternalValue() *SagemakerDomainRetentionPolicy
+	SetInternalValue(val *SagemakerDomainRetentionPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8217,6 +8505,16 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) HomeEfsFileSys
 	_jsii_.Get(
 		j,
 		"homeEfsFileSystemInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) InternalValue() *SagemakerDomainRetentionPolicy {
+	var returns *SagemakerDomainRetentionPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8258,7 +8556,7 @@ func NewSagemakerDomainRetentionPolicyOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_SagemakerDomainRetentionPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainRetentionPolicyOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainRetentionPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8270,7 +8568,7 @@ func NewSagemakerDomainRetentionPolicyOutputReference_Override(s SagemakerDomain
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerDomainRetentionPolicyOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerDomainRetentionPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -8280,6 +8578,14 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetHomeEfsFile
 	_jsii_.Set(
 		j,
 		"homeEfsFileSystem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetInternalValue(val *SagemakerDomainRetentionPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8410,6 +8716,8 @@ type SagemakerEndpoint interface {
 	SetCount(val interface{})
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	DeploymentConfig() SagemakerEndpointDeploymentConfigOutputReference
+	DeploymentConfigInput() *SagemakerEndpointDeploymentConfig
 	EndpointConfigName() *string
 	SetEndpointConfigName(val *string)
 	EndpointConfigNameInput() *string
@@ -8441,6 +8749,8 @@ type SagemakerEndpoint interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutDeploymentConfig(value *SagemakerEndpointDeploymentConfig)
+	ResetDeploymentConfig()
 	ResetName()
 	ResetOverrideLogicalId()
 	ResetTags()
@@ -8501,6 +8811,26 @@ func (j *jsiiProxy_SagemakerEndpoint) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpoint) DeploymentConfig() SagemakerEndpointDeploymentConfigOutputReference {
+	var returns SagemakerEndpointDeploymentConfigOutputReference
+	_jsii_.Get(
+		j,
+		"deploymentConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpoint) DeploymentConfigInput() *SagemakerEndpointDeploymentConfig {
+	var returns *SagemakerEndpointDeploymentConfig
+	_jsii_.Get(
+		j,
+		"deploymentConfigInput",
 		&returns,
 	)
 	return returns
@@ -8693,7 +9023,7 @@ func NewSagemakerEndpoint(scope constructs.Construct, id *string, config *Sagema
 	j := jsiiProxy_SagemakerEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpoint",
+		"hashicorp_aws.sagemaker.SagemakerEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8706,7 +9036,7 @@ func NewSagemakerEndpoint_Override(s SagemakerEndpoint, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpoint",
+		"hashicorp_aws.sagemaker.SagemakerEndpoint",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8786,7 +9116,7 @@ func SagemakerEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerEndpoint",
+		"hashicorp_aws.sagemaker.SagemakerEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8799,7 +9129,7 @@ func SagemakerEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerEndpoint",
+		"hashicorp_aws.sagemaker.SagemakerEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -8895,6 +9225,22 @@ func (s *jsiiProxy_SagemakerEndpoint) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (s *jsiiProxy_SagemakerEndpoint) PutDeploymentConfig(value *SagemakerEndpointDeploymentConfig) {
+	_jsii_.InvokeVoid(
+		s,
+		"putDeploymentConfig",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpoint) ResetDeploymentConfig() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDeploymentConfig",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerEndpoint) ResetName() {
 	_jsii_.InvokeVoid(
 		s,
@@ -8985,6 +9331,7 @@ func (s *jsiiProxy_SagemakerEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8996,6 +9343,10 @@ type SagemakerEndpointConfig struct {
 	Provider cdktf.TerraformProvider `json:"provider"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#endpoint_config_name SagemakerEndpoint#endpoint_config_name}.
 	EndpointConfigName *string `json:"endpointConfigName"`
+	// deployment_config block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#deployment_config SagemakerEndpoint#deployment_config}
+	DeploymentConfig *SagemakerEndpointDeploymentConfig `json:"deploymentConfig"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#name SagemakerEndpoint#name}.
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#tags SagemakerEndpoint#tags}.
@@ -9369,7 +9720,7 @@ func NewSagemakerEndpointConfiguration(scope constructs.Construct, id *string, c
 	j := jsiiProxy_SagemakerEndpointConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9382,7 +9733,7 @@ func NewSagemakerEndpointConfiguration_Override(s SagemakerEndpointConfiguration
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfiguration",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -9470,7 +9821,7 @@ func SagemakerEndpointConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9483,7 +9834,7 @@ func SagemakerEndpointConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -9727,6 +10078,8 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig struct {
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig
+	SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConcurrentInvocationsPerInstance() *float64
@@ -9748,6 +10101,16 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReferen
 // The jsii proxy struct for SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference
 type jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig {
+	var returns *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) IsSingleItem() *bool {
@@ -9806,7 +10169,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputRefe
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9818,9 +10181,17 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9971,6 +10342,8 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationC
 	ErrorTopic() *string
 	SetErrorTopic(val *string)
 	ErrorTopicInput() *string
+	InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig
+	SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SuccessTopic() *string
@@ -10010,6 +10383,16 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	_jsii_.Get(
 		j,
 		"errorTopicInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig {
+	var returns *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10071,7 +10454,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificati
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10083,7 +10466,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10093,6 +10476,14 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	_jsii_.Set(
 		j,
 		"errorTopic",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10231,6 +10622,8 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig
+	SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -10259,6 +10652,16 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReferen
 // The jsii proxy struct for SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference
 type jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig {
+	var returns *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) IsSingleItem() *bool {
@@ -10357,7 +10760,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputRefe
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10369,9 +10772,17 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10527,6 +10938,8 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference interface
 	cdktf.ComplexObject
 	ClientConfig() SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference
 	ClientConfigInput() *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig
+	InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfig
+	SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OutputConfig() SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference
@@ -10566,6 +10979,16 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 	_jsii_.Get(
 		j,
 		"clientConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) InternalValue() *SagemakerEndpointConfigurationAsyncInferenceConfig {
+	var returns *SagemakerEndpointConfigurationAsyncInferenceConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10627,7 +11050,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference(terraf
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10639,9 +11062,17 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationAsyncInferenceConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10777,6 +11208,7 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 	)
 }
 
+// AWS SageMaker.
 type SagemakerEndpointConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10839,6 +11271,8 @@ type SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutp
 	CsvContentTypes() *[]*string
 	SetCsvContentTypes(val *[]*string)
 	CsvContentTypesInput() *[]*string
+	InternalValue() *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader
+	SetInternalValue(val *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JsonContentTypes() *[]*string
@@ -10878,6 +11312,16 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 	_jsii_.Get(
 		j,
 		"csvContentTypesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) InternalValue() *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader {
+	var returns *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10939,7 +11383,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderO
 	j := jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10951,7 +11395,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10961,6 +11405,14 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 	_jsii_.Set(
 		j,
 		"csvContentTypes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11118,6 +11570,8 @@ type SagemakerEndpointConfigurationDataCaptureConfigOutputReference interface {
 	InitialSamplingPercentage() *float64
 	SetInitialSamplingPercentage(val *float64)
 	InitialSamplingPercentageInput() *float64
+	InternalValue() *SagemakerEndpointConfigurationDataCaptureConfig
+	SetInternalValue(val *SagemakerEndpointConfigurationDataCaptureConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -11244,6 +11698,16 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) InternalValue() *SagemakerEndpointConfigurationDataCaptureConfig {
+	var returns *SagemakerEndpointConfigurationDataCaptureConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -11300,7 +11764,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference(terraform
 	j := jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11312,7 +11776,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerEndpointConfigurationDataCaptureConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -11346,6 +11810,14 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	_jsii_.Set(
 		j,
 		"initialSamplingPercentage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) SetInternalValue(val *SagemakerEndpointConfigurationDataCaptureConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11511,6 +11983,1775 @@ type SagemakerEndpointConfigurationProductionVariants struct {
 	InitialVariantWeight *float64 `json:"initialVariantWeight"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#variant_name SagemakerEndpointConfiguration#variant_name}.
 	VariantName *string `json:"variantName"`
+}
+
+type SagemakerEndpointDeploymentConfig struct {
+	// blue_green_update_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#blue_green_update_policy SagemakerEndpoint#blue_green_update_policy}
+	BlueGreenUpdatePolicy *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy `json:"blueGreenUpdatePolicy"`
+	// auto_rollback_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#auto_rollback_configuration SagemakerEndpoint#auto_rollback_configuration}
+	AutoRollbackConfiguration *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration `json:"autoRollbackConfiguration"`
+}
+
+type SagemakerEndpointDeploymentConfigAutoRollbackConfiguration struct {
+	// alarms block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#alarms SagemakerEndpoint#alarms}
+	Alarms *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms `json:"alarms"`
+}
+
+type SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#alarm_name SagemakerEndpoint#alarm_name}.
+	AlarmName *string `json:"alarmName"`
+}
+
+type SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Alarms() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+	SetAlarms(val *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms)
+	AlarmsInput() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+	InternalValue() *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration
+	SetInternalValue(val *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetAlarms()
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) Alarms() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms {
+	var returns *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+	_jsii_.Get(
+		j,
+		"alarms",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) AlarmsInput() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms {
+	var returns *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+	_jsii_.Get(
+		j,
+		"alarmsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) InternalValue() *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration {
+	var returns *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetAlarms(val *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms) {
+	_jsii_.Set(
+		j,
+		"alarms",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) ResetAlarms() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAlarms",
+		nil, // no parameters
+	)
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy struct {
+	// traffic_routing_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#traffic_routing_configuration SagemakerEndpoint#traffic_routing_configuration}
+	TrafficRoutingConfiguration *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration `json:"trafficRoutingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#maximum_execution_timeout_in_seconds SagemakerEndpoint#maximum_execution_timeout_in_seconds}.
+	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#termination_wait_in_seconds SagemakerEndpoint#termination_wait_in_seconds}.
+	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds"`
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy
+	SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	MaximumExecutionTimeoutInSeconds() *float64
+	SetMaximumExecutionTimeoutInSeconds(val *float64)
+	MaximumExecutionTimeoutInSecondsInput() *float64
+	TerminationWaitInSeconds() *float64
+	SetTerminationWaitInSeconds(val *float64)
+	TerminationWaitInSecondsInput() *float64
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	TrafficRoutingConfiguration() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference
+	TrafficRoutingConfigurationInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutTrafficRoutingConfiguration(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration)
+	ResetMaximumExecutionTimeoutInSeconds()
+	ResetTerminationWaitInSeconds()
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) MaximumExecutionTimeoutInSeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maximumExecutionTimeoutInSeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) MaximumExecutionTimeoutInSecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maximumExecutionTimeoutInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerminationWaitInSeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"terminationWaitInSeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerminationWaitInSecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"terminationWaitInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TrafficRoutingConfiguration() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference {
+	var returns SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"trafficRoutingConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TrafficRoutingConfigurationInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration
+	_jsii_.Get(
+		j,
+		"trafficRoutingConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetMaximumExecutionTimeoutInSeconds(val *float64) {
+	_jsii_.Set(
+		j,
+		"maximumExecutionTimeoutInSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetTerminationWaitInSeconds(val *float64) {
+	_jsii_.Set(
+		j,
+		"terminationWaitInSeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) PutTrafficRoutingConfiguration(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration) {
+	_jsii_.InvokeVoid(
+		s,
+		"putTrafficRoutingConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) ResetMaximumExecutionTimeoutInSeconds() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaximumExecutionTimeoutInSeconds",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) ResetTerminationWaitInSeconds() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTerminationWaitInSeconds",
+		nil, // no parameters
+	)
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
+	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#wait_interval_in_seconds SagemakerEndpoint#wait_interval_in_seconds}.
+	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds"`
+	// canary_size block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#canary_size SagemakerEndpoint#canary_size}
+	CanarySize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize `json:"canarySize"`
+	// linear_step_size block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#linear_step_size SagemakerEndpoint#linear_step_size}
+	LinearStepSize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize `json:"linearStepSize"`
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
+	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#value SagemakerEndpoint#value}.
+	Value *float64 `json:"value"`
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize
+	SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Type() *string
+	SetType(val *string)
+	TypeInput() *string
+	Value() *float64
+	SetValue(val *float64)
+	ValueInput() *float64
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) Type() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"type",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) TypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) Value() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) ValueInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"valueInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetType(val *string) {
+	_jsii_.Set(
+		j,
+		"type",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetValue(val *float64) {
+	_jsii_.Set(
+		j,
+		"value",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
+	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#value SagemakerEndpoint#value}.
+	Value *float64 `json:"value"`
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize
+	SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Type() *string
+	SetType(val *string)
+	TypeInput() *string
+	Value() *float64
+	SetValue(val *float64)
+	ValueInput() *float64
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) Type() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"type",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) TypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) Value() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) ValueInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"valueInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetType(val *string) {
+	_jsii_.Set(
+		j,
+		"type",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetValue(val *float64) {
+	_jsii_.Set(
+		j,
+		"value",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	CanarySize() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference
+	CanarySizeInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize
+	InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration
+	SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LinearStepSize() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference
+	LinearStepSizeInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Type() *string
+	SetType(val *string)
+	TypeInput() *string
+	WaitIntervalInSeconds() *float64
+	SetWaitIntervalInSeconds(val *float64)
+	WaitIntervalInSecondsInput() *float64
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutCanarySize(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize)
+	PutLinearStepSize(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize)
+	ResetCanarySize()
+	ResetLinearStepSize()
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) CanarySize() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference {
+	var returns SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference
+	_jsii_.Get(
+		j,
+		"canarySize",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) CanarySizeInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize
+	_jsii_.Get(
+		j,
+		"canarySizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) InternalValue() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) LinearStepSize() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference {
+	var returns SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference
+	_jsii_.Get(
+		j,
+		"linearStepSize",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) LinearStepSizeInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize
+	_jsii_.Get(
+		j,
+		"linearStepSizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) Type() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"type",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) TypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) WaitIntervalInSeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"waitIntervalInSeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) WaitIntervalInSecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"waitIntervalInSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetType(val *string) {
+	_jsii_.Set(
+		j,
+		"type",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetWaitIntervalInSeconds(val *float64) {
+	_jsii_.Set(
+		j,
+		"waitIntervalInSeconds",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) PutCanarySize(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize) {
+	_jsii_.InvokeVoid(
+		s,
+		"putCanarySize",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) PutLinearStepSize(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize) {
+	_jsii_.InvokeVoid(
+		s,
+		"putLinearStepSize",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) ResetCanarySize() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCanarySize",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) ResetLinearStepSize() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLinearStepSize",
+		nil, // no parameters
+	)
+}
+
+type SagemakerEndpointDeploymentConfigOutputReference interface {
+	cdktf.ComplexObject
+	AutoRollbackConfiguration() SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference
+	AutoRollbackConfigurationInput() *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration
+	BlueGreenUpdatePolicy() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference
+	BlueGreenUpdatePolicyInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy
+	InternalValue() *SagemakerEndpointDeploymentConfig
+	SetInternalValue(val *SagemakerEndpointDeploymentConfig)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAutoRollbackConfiguration(value *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration)
+	PutBlueGreenUpdatePolicy(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy)
+	ResetAutoRollbackConfiguration()
+}
+
+// The jsii proxy struct for SagemakerEndpointDeploymentConfigOutputReference
+type jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) AutoRollbackConfiguration() SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference {
+	var returns SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"autoRollbackConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) AutoRollbackConfigurationInput() *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration {
+	var returns *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration
+	_jsii_.Get(
+		j,
+		"autoRollbackConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) BlueGreenUpdatePolicy() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference {
+	var returns SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference
+	_jsii_.Get(
+		j,
+		"blueGreenUpdatePolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) BlueGreenUpdatePolicyInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy {
+	var returns *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy
+	_jsii_.Get(
+		j,
+		"blueGreenUpdatePolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) InternalValue() *SagemakerEndpointDeploymentConfig {
+	var returns *SagemakerEndpointDeploymentConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerEndpointDeploymentConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerEndpointDeploymentConfigOutputReference_Override(s SagemakerEndpointDeploymentConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerEndpointDeploymentConfigOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetInternalValue(val *SagemakerEndpointDeploymentConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) PutAutoRollbackConfiguration(value *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration) {
+	_jsii_.InvokeVoid(
+		s,
+		"putAutoRollbackConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) PutBlueGreenUpdatePolicy(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy) {
+	_jsii_.InvokeVoid(
+		s,
+		"putBlueGreenUpdatePolicy",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) ResetAutoRollbackConfiguration() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAutoRollbackConfiguration",
+		nil, // no parameters
+	)
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html aws_sagemaker_feature_group}.
@@ -11946,7 +14187,7 @@ func NewSagemakerFeatureGroup(scope constructs.Construct, id *string, config *Sa
 	j := jsiiProxy_SagemakerFeatureGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroup",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11959,7 +14200,7 @@ func NewSagemakerFeatureGroup_Override(s SagemakerFeatureGroup, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroup",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroup",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12071,7 +14312,7 @@ func SagemakerFeatureGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroup",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12084,7 +14325,7 @@ func SagemakerFeatureGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroup",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -12302,6 +14543,7 @@ func (s *jsiiProxy_SagemakerFeatureGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerFeatureGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12376,6 +14618,8 @@ type SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference int
 	Database() *string
 	SetDatabase(val *string)
 	DatabaseInput() *string
+	InternalValue() *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig
+	SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TableName() *string
@@ -12441,6 +14685,16 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) InternalValue() *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig {
+	var returns *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12497,7 +14751,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference(
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12509,7 +14763,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -12527,6 +14781,14 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 	_jsii_.Set(
 		j,
 		"database",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12678,6 +14940,8 @@ type SagemakerFeatureGroupOfflineStoreConfigOutputReference interface {
 	DisableGlueTableCreation() interface{}
 	SetDisableGlueTableCreation(val interface{})
 	DisableGlueTableCreationInput() interface{}
+	InternalValue() *SagemakerFeatureGroupOfflineStoreConfig
+	SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3StorageConfig() SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference
@@ -12743,6 +15007,16 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) Disab
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) InternalValue() *SagemakerFeatureGroupOfflineStoreConfig {
+	var returns *SagemakerFeatureGroupOfflineStoreConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -12799,7 +15073,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference(terraformResource
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12811,7 +15085,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference_Override(s Sagema
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -12821,6 +15095,14 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetDi
 	_jsii_.Set(
 		j,
 		"disableGlueTableCreation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12974,6 +15256,8 @@ type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig struct {
 
 type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig
+	SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -12998,6 +15282,16 @@ type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference inter
 // The jsii proxy struct for SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference
 type jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) InternalValue() *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig {
+	var returns *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) IsSingleItem() *bool {
@@ -13076,7 +15370,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference(te
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13088,9 +15382,17 @@ func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) SetInternalValue(val *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13240,6 +15542,8 @@ type SagemakerFeatureGroupOnlineStoreConfigOutputReference interface {
 	EnableOnlineStore() interface{}
 	SetEnableOnlineStore(val interface{})
 	EnableOnlineStoreInput() interface{}
+	InternalValue() *SagemakerFeatureGroupOnlineStoreConfig
+	SetInternalValue(val *SagemakerFeatureGroupOnlineStoreConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityConfig() SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference
@@ -13279,6 +15583,16 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) Enable
 	_jsii_.Get(
 		j,
 		"enableOnlineStoreInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) InternalValue() *SagemakerFeatureGroupOnlineStoreConfig {
+	var returns *SagemakerFeatureGroupOnlineStoreConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13340,7 +15654,7 @@ func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference(terraformResource 
 	j := jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13352,7 +15666,7 @@ func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference_Override(s Sagemak
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -13362,6 +15676,14 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetEna
 	_jsii_.Set(
 		j,
 		"enableOnlineStore",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetInternalValue(val *SagemakerFeatureGroupOnlineStoreConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13505,6 +15827,8 @@ type SagemakerFeatureGroupOnlineStoreConfigSecurityConfig struct {
 
 type SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig
+	SetInternalValue(val *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -13526,6 +15850,16 @@ type SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference interfa
 // The jsii proxy struct for SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference
 type jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) InternalValue() *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig {
+	var returns *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) IsSingleItem() *bool {
@@ -13584,7 +15918,7 @@ func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference(terr
 	j := jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13596,9 +15930,17 @@ func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) SetInternalValue(val *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14112,7 +16454,7 @@ func NewSagemakerFlowDefinition(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_SagemakerFlowDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14125,7 +16467,7 @@ func NewSagemakerFlowDefinition_Override(s SagemakerFlowDefinition, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinition",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -14205,7 +16547,7 @@ func SagemakerFlowDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14218,7 +16560,7 @@ func SagemakerFlowDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinition",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -14444,6 +16786,7 @@ func (s *jsiiProxy_SagemakerFlowDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerFlowDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14496,6 +16839,8 @@ type SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditio
 	HumanLoopActivationConditions() *string
 	SetHumanLoopActivationConditions(val *string)
 	HumanLoopActivationConditionsInput() *string
+	InternalValue() *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14530,6 +16875,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 	_jsii_.Get(
 		j,
 		"humanLoopActivationConditionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig {
+	var returns *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14571,7 +16926,7 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationCondi
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14583,7 +16938,7 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationCondi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -14593,6 +16948,14 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 	_jsii_.Set(
 		j,
 		"humanLoopActivationConditions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14709,6 +17072,8 @@ type SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference interface {
 	cdktf.ComplexObject
 	HumanLoopActivationConditionsConfig() SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference
 	HumanLoopActivationConditionsConfigInput() *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig
+	InternalValue() *SagemakerFlowDefinitionHumanLoopActivationConfig
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopActivationConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14750,6 +17115,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopActivationConfig {
+	var returns *SagemakerFlowDefinitionHumanLoopActivationConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -14786,7 +17161,7 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference(terrafor
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14798,9 +17173,17 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopActivationConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14956,6 +17339,8 @@ type SagemakerFlowDefinitionHumanLoopConfigOutputReference interface {
 	HumanTaskUiArn() *string
 	SetHumanTaskUiArn(val *string)
 	HumanTaskUiArnInput() *string
+	InternalValue() *SagemakerFlowDefinitionHumanLoopConfig
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PublicWorkforceTaskPrice() SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference
@@ -15018,6 +17403,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) HumanT
 	_jsii_.Get(
 		j,
 		"humanTaskUiArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopConfig {
+	var returns *SagemakerFlowDefinitionHumanLoopConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15219,7 +17614,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference(terraformResource 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15231,7 +17626,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference_Override(s Sagemak
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -15241,6 +17636,14 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetHum
 	_jsii_.Set(
 		j,
 		"humanTaskUiArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15473,6 +17876,8 @@ type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOu
 	Dollars() *float64
 	SetDollars(val *float64)
 	DollarsInput() *float64
+	InternalValue() *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TenthFractionsOfACent() *float64
@@ -15538,6 +17943,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd {
+	var returns *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -15594,7 +18009,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUs
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15606,7 +18021,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -15624,6 +18039,14 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	_jsii_.Set(
 		j,
 		"dollars",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15772,6 +18195,8 @@ type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReferen
 	cdktf.ComplexObject
 	AmountInUsd() SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference
 	AmountInUsdInput() *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd
+	InternalValue() *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15813,6 +18238,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice {
+	var returns *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -15849,7 +18284,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputRefe
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15861,9 +18296,17 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16001,6 +18444,8 @@ type SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference interface {
 	AwsManagedHumanLoopRequestSource() *string
 	SetAwsManagedHumanLoopRequestSource(val *string)
 	AwsManagedHumanLoopRequestSourceInput() *string
+	InternalValue() *SagemakerFlowDefinitionHumanLoopRequestSource
+	SetInternalValue(val *SagemakerFlowDefinitionHumanLoopRequestSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -16035,6 +18480,16 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 	_jsii_.Get(
 		j,
 		"awsManagedHumanLoopRequestSourceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) InternalValue() *SagemakerFlowDefinitionHumanLoopRequestSource {
+	var returns *SagemakerFlowDefinitionHumanLoopRequestSource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -16076,7 +18531,7 @@ func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference(terraformRe
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16088,7 +18543,7 @@ func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference_Override(s 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -16098,6 +18553,14 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 	_jsii_.Set(
 		j,
 		"awsManagedHumanLoopRequestSource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) SetInternalValue(val *SagemakerFlowDefinitionHumanLoopRequestSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -16219,6 +18682,8 @@ type SagemakerFlowDefinitionOutputConfig struct {
 
 type SagemakerFlowDefinitionOutputConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerFlowDefinitionOutputConfig
+	SetInternalValue(val *SagemakerFlowDefinitionOutputConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -16243,6 +18708,16 @@ type SagemakerFlowDefinitionOutputConfigOutputReference interface {
 // The jsii proxy struct for SagemakerFlowDefinitionOutputConfigOutputReference
 type jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) InternalValue() *SagemakerFlowDefinitionOutputConfig {
+	var returns *SagemakerFlowDefinitionOutputConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) IsSingleItem() *bool {
@@ -16321,7 +18796,7 @@ func NewSagemakerFlowDefinitionOutputConfigOutputReference(terraformResource cdk
 	j := jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16333,9 +18808,17 @@ func NewSagemakerFlowDefinitionOutputConfigOutputReference_Override(s SagemakerF
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerFlowDefinitionOutputConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerFlowDefinitionOutputConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) SetInternalValue(val *SagemakerFlowDefinitionOutputConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16763,7 +19246,7 @@ func NewSagemakerHumanTaskUi(scope constructs.Construct, id *string, config *Sag
 	j := jsiiProxy_SagemakerHumanTaskUi{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUi",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUi",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16776,7 +19259,7 @@ func NewSagemakerHumanTaskUi_Override(s SagemakerHumanTaskUi, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUi",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUi",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -16848,7 +19331,7 @@ func SagemakerHumanTaskUi_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUi",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUi",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16861,7 +19344,7 @@ func SagemakerHumanTaskUi_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUi",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUi",
 		"tfResourceType",
 		&returns,
 	)
@@ -17047,6 +19530,7 @@ func (s *jsiiProxy_SagemakerHumanTaskUi) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerHumanTaskUiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17078,6 +19562,8 @@ type SagemakerHumanTaskUiUiTemplateOutputReference interface {
 	Content() *string
 	SetContent(val *string)
 	ContentInput() *string
+	InternalValue() *SagemakerHumanTaskUiUiTemplate
+	SetInternalValue(val *SagemakerHumanTaskUiUiTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -17113,6 +19599,16 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) ContentInput()
 	_jsii_.Get(
 		j,
 		"contentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) InternalValue() *SagemakerHumanTaskUiUiTemplate {
+	var returns *SagemakerHumanTaskUiUiTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17154,7 +19650,7 @@ func NewSagemakerHumanTaskUiUiTemplateOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUiUiTemplateOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUiUiTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17166,7 +19662,7 @@ func NewSagemakerHumanTaskUiUiTemplateOutputReference_Override(s SagemakerHumanT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerHumanTaskUiUiTemplateOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerHumanTaskUiUiTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -17176,6 +19672,14 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetContent(val
 	_jsii_.Set(
 		j,
 		"content",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetInternalValue(val *SagemakerHumanTaskUiUiTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17636,7 +20140,7 @@ func NewSagemakerImage(scope constructs.Construct, id *string, config *Sagemaker
 	j := jsiiProxy_SagemakerImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerImage",
+		"hashicorp_aws.sagemaker.SagemakerImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17649,7 +20153,7 @@ func NewSagemakerImage_Override(s SagemakerImage, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerImage",
+		"hashicorp_aws.sagemaker.SagemakerImage",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -17745,7 +20249,7 @@ func SagemakerImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerImage",
+		"hashicorp_aws.sagemaker.SagemakerImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17758,7 +20262,7 @@ func SagemakerImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerImage",
+		"hashicorp_aws.sagemaker.SagemakerImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -17952,6 +20456,7 @@ func (s *jsiiProxy_SagemakerImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18252,7 +20757,7 @@ func NewSagemakerImageVersion(scope constructs.Construct, id *string, config *Sa
 	j := jsiiProxy_SagemakerImageVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerImageVersion",
+		"hashicorp_aws.sagemaker.SagemakerImageVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18265,7 +20770,7 @@ func NewSagemakerImageVersion_Override(s SagemakerImageVersion, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerImageVersion",
+		"hashicorp_aws.sagemaker.SagemakerImageVersion",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -18329,7 +20834,7 @@ func SagemakerImageVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerImageVersion",
+		"hashicorp_aws.sagemaker.SagemakerImageVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18342,7 +20847,7 @@ func SagemakerImageVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerImageVersion",
+		"hashicorp_aws.sagemaker.SagemakerImageVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -18504,6 +21009,7 @@ func (s *jsiiProxy_SagemakerImageVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerImageVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18932,7 +21438,7 @@ func NewSagemakerModel(scope constructs.Construct, id *string, config *Sagemaker
 	j := jsiiProxy_SagemakerModel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModel",
+		"hashicorp_aws.sagemaker.SagemakerModel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18945,7 +21451,7 @@ func NewSagemakerModel_Override(s SagemakerModel, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModel",
+		"hashicorp_aws.sagemaker.SagemakerModel",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -19041,7 +21547,7 @@ func SagemakerModel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerModel",
+		"hashicorp_aws.sagemaker.SagemakerModel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19054,7 +21560,7 @@ func SagemakerModel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerModel",
+		"hashicorp_aws.sagemaker.SagemakerModel",
 		"tfResourceType",
 		&returns,
 	)
@@ -19304,6 +21810,7 @@ func (s *jsiiProxy_SagemakerModel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerModelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19365,6 +21872,8 @@ type SagemakerModelContainerImageConfig struct {
 
 type SagemakerModelContainerImageConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerModelContainerImageConfig
+	SetInternalValue(val *SagemakerModelContainerImageConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RepositoryAccessMode() *string
@@ -19385,6 +21894,16 @@ type SagemakerModelContainerImageConfigOutputReference interface {
 // The jsii proxy struct for SagemakerModelContainerImageConfigOutputReference
 type jsiiProxy_SagemakerModelContainerImageConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) InternalValue() *SagemakerModelContainerImageConfig {
+	var returns *SagemakerModelContainerImageConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) IsSingleItem() *bool {
@@ -19443,7 +21962,7 @@ func NewSagemakerModelContainerImageConfigOutputReference(terraformResource cdkt
 	j := jsiiProxy_SagemakerModelContainerImageConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelContainerImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19455,9 +21974,17 @@ func NewSagemakerModelContainerImageConfigOutputReference_Override(s SagemakerMo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelContainerImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) SetInternalValue(val *SagemakerModelContainerImageConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -19584,6 +22111,8 @@ type SagemakerModelInferenceExecutionConfig struct {
 
 type SagemakerModelInferenceExecutionConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerModelInferenceExecutionConfig
+	SetInternalValue(val *SagemakerModelInferenceExecutionConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -19604,6 +22133,16 @@ type SagemakerModelInferenceExecutionConfigOutputReference interface {
 // The jsii proxy struct for SagemakerModelInferenceExecutionConfigOutputReference
 type jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) InternalValue() *SagemakerModelInferenceExecutionConfig {
+	var returns *SagemakerModelInferenceExecutionConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) IsSingleItem() *bool {
@@ -19662,7 +22201,7 @@ func NewSagemakerModelInferenceExecutionConfigOutputReference(terraformResource 
 	j := jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelInferenceExecutionConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelInferenceExecutionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19674,9 +22213,17 @@ func NewSagemakerModelInferenceExecutionConfigOutputReference_Override(s Sagemak
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelInferenceExecutionConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelInferenceExecutionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) SetInternalValue(val *SagemakerModelInferenceExecutionConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20089,7 +22636,7 @@ func NewSagemakerModelPackageGroup(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_SagemakerModelPackageGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroup",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20102,7 +22649,7 @@ func NewSagemakerModelPackageGroup_Override(s SagemakerModelPackageGroup, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroup",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroup",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -20182,7 +22729,7 @@ func SagemakerModelPackageGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroup",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20195,7 +22742,7 @@ func SagemakerModelPackageGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroup",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -20381,6 +22928,7 @@ func (s *jsiiProxy_SagemakerModelPackageGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerModelPackageGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20633,7 +23181,7 @@ func NewSagemakerModelPackageGroupPolicy(scope constructs.Construct, id *string,
 	j := jsiiProxy_SagemakerModelPackageGroupPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicy",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20646,7 +23194,7 @@ func NewSagemakerModelPackageGroupPolicy_Override(s SagemakerModelPackageGroupPo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicy",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -20710,7 +23258,7 @@ func SagemakerModelPackageGroupPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicy",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20723,7 +23271,7 @@ func SagemakerModelPackageGroupPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerModelPackageGroupPolicy",
+		"hashicorp_aws.sagemaker.SagemakerModelPackageGroupPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -20885,6 +23433,7 @@ func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerModelPackageGroupPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20924,6 +23473,8 @@ type SagemakerModelPrimaryContainerImageConfig struct {
 
 type SagemakerModelPrimaryContainerImageConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerModelPrimaryContainerImageConfig
+	SetInternalValue(val *SagemakerModelPrimaryContainerImageConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RepositoryAccessMode() *string
@@ -20944,6 +23495,16 @@ type SagemakerModelPrimaryContainerImageConfigOutputReference interface {
 // The jsii proxy struct for SagemakerModelPrimaryContainerImageConfigOutputReference
 type jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) InternalValue() *SagemakerModelPrimaryContainerImageConfig {
+	var returns *SagemakerModelPrimaryContainerImageConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) IsSingleItem() *bool {
@@ -21002,7 +23563,7 @@ func NewSagemakerModelPrimaryContainerImageConfigOutputReference(terraformResour
 	j := jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21014,9 +23575,17 @@ func NewSagemakerModelPrimaryContainerImageConfigOutputReference_Override(s Sage
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerImageConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) SetInternalValue(val *SagemakerModelPrimaryContainerImageConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21149,6 +23718,8 @@ type SagemakerModelPrimaryContainerOutputReference interface {
 	ImageConfig() SagemakerModelPrimaryContainerImageConfigOutputReference
 	ImageConfigInput() *SagemakerModelPrimaryContainerImageConfig
 	ImageInput() *string
+	InternalValue() *SagemakerModelPrimaryContainer
+	SetInternalValue(val *SagemakerModelPrimaryContainer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -21260,6 +23831,16 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) ImageInput() *
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) InternalValue() *SagemakerModelPrimaryContainer {
+	var returns *SagemakerModelPrimaryContainer
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -21336,7 +23917,7 @@ func NewSagemakerModelPrimaryContainerOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_SagemakerModelPrimaryContainerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21348,7 +23929,7 @@ func NewSagemakerModelPrimaryContainerOutputReference_Override(s SagemakerModelP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelPrimaryContainerOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelPrimaryContainerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -21374,6 +23955,14 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetImage(val *
 	_jsii_.Set(
 		j,
 		"image",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetInternalValue(val *SagemakerModelPrimaryContainer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -21559,6 +24148,8 @@ type SagemakerModelVpcConfig struct {
 
 type SagemakerModelVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerModelVpcConfig
+	SetInternalValue(val *SagemakerModelVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -21582,6 +24173,16 @@ type SagemakerModelVpcConfigOutputReference interface {
 // The jsii proxy struct for SagemakerModelVpcConfigOutputReference
 type jsiiProxy_SagemakerModelVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) InternalValue() *SagemakerModelVpcConfig {
+	var returns *SagemakerModelVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) IsSingleItem() *bool {
@@ -21660,7 +24261,7 @@ func NewSagemakerModelVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_SagemakerModelVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelVpcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21672,9 +24273,17 @@ func NewSagemakerModelVpcConfigOutputReference_Override(s SagemakerModelVpcConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerModelVpcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerModelVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) SetInternalValue(val *SagemakerModelVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -22379,7 +24988,7 @@ func NewSagemakerNotebookInstance(scope constructs.Construct, id *string, config
 	j := jsiiProxy_SagemakerNotebookInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstance",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22392,7 +25001,7 @@ func NewSagemakerNotebookInstance_Override(s SagemakerNotebookInstance, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstance",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstance",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -22560,7 +25169,7 @@ func SagemakerNotebookInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstance",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22573,7 +25182,7 @@ func SagemakerNotebookInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstance",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -22831,6 +25440,7 @@ func (s *jsiiProxy_SagemakerNotebookInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerNotebookInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23142,7 +25752,7 @@ func NewSagemakerNotebookInstanceLifecycleConfiguration(scope constructs.Constru
 	j := jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23155,7 +25765,7 @@ func NewSagemakerNotebookInstanceLifecycleConfiguration_Override(s SagemakerNote
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfiguration",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -23227,7 +25837,7 @@ func SagemakerNotebookInstanceLifecycleConfiguration_IsConstruct(x interface{}) 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23240,7 +25850,7 @@ func SagemakerNotebookInstanceLifecycleConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerNotebookInstanceLifecycleConfiguration",
+		"hashicorp_aws.sagemaker.SagemakerNotebookInstanceLifecycleConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -23426,6 +26036,7 @@ func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) ToTerraform(
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerNotebookInstanceLifecycleConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23758,7 +26369,7 @@ func NewSagemakerStudioLifecycleConfig(scope constructs.Construct, id *string, c
 	j := jsiiProxy_SagemakerStudioLifecycleConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23771,7 +26382,7 @@ func NewSagemakerStudioLifecycleConfig_Override(s SagemakerStudioLifecycleConfig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfig",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -23859,7 +26470,7 @@ func SagemakerStudioLifecycleConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23872,7 +26483,7 @@ func SagemakerStudioLifecycleConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerStudioLifecycleConfig",
+		"hashicorp_aws.sagemaker.SagemakerStudioLifecycleConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -24050,6 +26661,7 @@ func (s *jsiiProxy_SagemakerStudioLifecycleConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerStudioLifecycleConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24446,7 +27058,7 @@ func NewSagemakerUserProfile(scope constructs.Construct, id *string, config *Sag
 	j := jsiiProxy_SagemakerUserProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfile",
+		"hashicorp_aws.sagemaker.SagemakerUserProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24459,7 +27071,7 @@ func NewSagemakerUserProfile_Override(s SagemakerUserProfile, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfile",
+		"hashicorp_aws.sagemaker.SagemakerUserProfile",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -24555,7 +27167,7 @@ func SagemakerUserProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerUserProfile",
+		"hashicorp_aws.sagemaker.SagemakerUserProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24568,7 +27180,7 @@ func SagemakerUserProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerUserProfile",
+		"hashicorp_aws.sagemaker.SagemakerUserProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -24778,6 +27390,7 @@ func (s *jsiiProxy_SagemakerUserProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerUserProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24849,6 +27462,8 @@ type SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -24888,6 +27503,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec {
+	var returns *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -24949,7 +27574,7 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceS
 	j := jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24961,7 +27586,7 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -24971,6 +27596,14 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -25111,6 +27744,8 @@ type SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference int
 	cdktf.ComplexObject
 	DefaultResourceSpec() SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerUserProfileUserSettingsJupyterServerAppSettings
+	SetInternalValue(val *SagemakerUserProfileUserSettingsJupyterServerAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LifecycleConfigArns() *[]*string
@@ -25150,6 +27785,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 	_jsii_.Get(
 		j,
 		"defaultResourceSpecInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) InternalValue() *SagemakerUserProfileUserSettingsJupyterServerAppSettings {
+	var returns *SagemakerUserProfileUserSettingsJupyterServerAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -25211,7 +27856,7 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference(
 	j := jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25223,9 +27868,17 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsJupyterServerAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25395,6 +28048,8 @@ type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -25434,6 +28089,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec {
+	var returns *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -25495,7 +28160,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceS
 	j := jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25507,7 +28172,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -25517,6 +28182,14 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -25660,6 +28333,8 @@ type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference int
 	CustomImageInput() *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage
 	DefaultResourceSpec() SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerUserProfileUserSettingsKernelGatewayAppSettings
+	SetInternalValue(val *SagemakerUserProfileUserSettingsKernelGatewayAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LifecycleConfigArns() *[]*string
@@ -25725,6 +28400,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) InternalValue() *SagemakerUserProfileUserSettingsKernelGatewayAppSettings {
+	var returns *SagemakerUserProfileUserSettingsKernelGatewayAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -25781,7 +28466,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference(
 	j := jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25793,7 +28478,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -25803,6 +28488,14 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	_jsii_.Set(
 		j,
 		"customImage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsKernelGatewayAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -25952,6 +28645,8 @@ type SagemakerUserProfileUserSettingsOutputReference interface {
 	ExecutionRole() *string
 	SetExecutionRole(val *string)
 	ExecutionRoleInput() *string
+	InternalValue() *SagemakerUserProfileUserSettings
+	SetInternalValue(val *SagemakerUserProfileUserSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JupyterServerAppSettings() SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference
@@ -26006,6 +28701,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) ExecutionRol
 	_jsii_.Get(
 		j,
 		"executionRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) InternalValue() *SagemakerUserProfileUserSettings {
+	var returns *SagemakerUserProfileUserSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -26147,7 +28852,7 @@ func NewSagemakerUserProfileUserSettingsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_SagemakerUserProfileUserSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26159,7 +28864,7 @@ func NewSagemakerUserProfileUserSettingsOutputReference_Override(s SagemakerUser
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -26169,6 +28874,14 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetExecution
 	_jsii_.Set(
 		j,
 		"executionRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -26372,6 +29085,8 @@ type SagemakerUserProfileUserSettingsSharingSettings struct {
 
 type SagemakerUserProfileUserSettingsSharingSettingsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerUserProfileUserSettingsSharingSettings
+	SetInternalValue(val *SagemakerUserProfileUserSettingsSharingSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotebookOutputOption() *string
@@ -26401,6 +29116,16 @@ type SagemakerUserProfileUserSettingsSharingSettingsOutputReference interface {
 // The jsii proxy struct for SagemakerUserProfileUserSettingsSharingSettingsOutputReference
 type jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) InternalValue() *SagemakerUserProfileUserSettingsSharingSettings {
+	var returns *SagemakerUserProfileUserSettingsSharingSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) IsSingleItem() *bool {
@@ -26499,7 +29224,7 @@ func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference(terraform
 	j := jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26511,9 +29236,17 @@ func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsSharingSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsSharingSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -26692,6 +29425,8 @@ type SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOu
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	SetInternalValue(val *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SagemakerImageArn() *string
@@ -26731,6 +29466,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	_jsii_.Get(
 		j,
 		"instanceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) InternalValue() *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec {
+	var returns *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -26792,7 +29537,7 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpe
 	j := jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26804,7 +29549,7 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -26814,6 +29559,14 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -26954,6 +29707,8 @@ type SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference inter
 	cdktf.ComplexObject
 	DefaultResourceSpec() SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec
+	InternalValue() *SagemakerUserProfileUserSettingsTensorBoardAppSettings
+	SetInternalValue(val *SagemakerUserProfileUserSettingsTensorBoardAppSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -26989,6 +29744,16 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 	_jsii_.Get(
 		j,
 		"defaultResourceSpecInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) InternalValue() *SagemakerUserProfileUserSettingsTensorBoardAppSettings {
+	var returns *SagemakerUserProfileUserSettingsTensorBoardAppSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27030,7 +29795,7 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference(te
 	j := jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27042,9 +29807,17 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) SetInternalValue(val *SagemakerUserProfileUserSettingsTensorBoardAppSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -27468,7 +30241,7 @@ func NewSagemakerWorkforce(scope constructs.Construct, id *string, config *Sagem
 	j := jsiiProxy_SagemakerWorkforce{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforce",
+		"hashicorp_aws.sagemaker.SagemakerWorkforce",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -27481,7 +30254,7 @@ func NewSagemakerWorkforce_Override(s SagemakerWorkforce, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforce",
+		"hashicorp_aws.sagemaker.SagemakerWorkforce",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -27537,7 +30310,7 @@ func SagemakerWorkforce_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerWorkforce",
+		"hashicorp_aws.sagemaker.SagemakerWorkforce",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -27550,7 +30323,7 @@ func SagemakerWorkforce_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerWorkforce",
+		"hashicorp_aws.sagemaker.SagemakerWorkforce",
 		"tfResourceType",
 		&returns,
 	)
@@ -27772,6 +30545,8 @@ type SagemakerWorkforceCognitoConfigOutputReference interface {
 	ClientId() *string
 	SetClientId(val *string)
 	ClientIdInput() *string
+	InternalValue() *SagemakerWorkforceCognitoConfig
+	SetInternalValue(val *SagemakerWorkforceCognitoConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -27809,6 +30584,16 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) ClientIdInput
 	_jsii_.Get(
 		j,
 		"clientIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) InternalValue() *SagemakerWorkforceCognitoConfig {
+	var returns *SagemakerWorkforceCognitoConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27870,7 +30655,7 @@ func NewSagemakerWorkforceCognitoConfigOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceCognitoConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceCognitoConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27882,7 +30667,7 @@ func NewSagemakerWorkforceCognitoConfigOutputReference_Override(s SagemakerWorkf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceCognitoConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceCognitoConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -27892,6 +30677,14 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetClientId(v
 	_jsii_.Set(
 		j,
 		"clientId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetInternalValue(val *SagemakerWorkforceCognitoConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28012,6 +30805,7 @@ func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) Interpolation
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerWorkforceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -28067,6 +30861,8 @@ type SagemakerWorkforceOidcConfigOutputReference interface {
 	ClientSecret() *string
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
+	InternalValue() *SagemakerWorkforceOidcConfig
+	SetInternalValue(val *SagemakerWorkforceOidcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -28156,6 +30952,16 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) ClientSecretInpu
 	_jsii_.Get(
 		j,
 		"clientSecretInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) InternalValue() *SagemakerWorkforceOidcConfig {
+	var returns *SagemakerWorkforceOidcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28297,7 +31103,7 @@ func NewSagemakerWorkforceOidcConfigOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_SagemakerWorkforceOidcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceOidcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceOidcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28309,7 +31115,7 @@ func NewSagemakerWorkforceOidcConfigOutputReference_Override(s SagemakerWorkforc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceOidcConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceOidcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -28335,6 +31141,14 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetClientSecret(
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetInternalValue(val *SagemakerWorkforceOidcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28497,6 +31311,8 @@ type SagemakerWorkforceSourceIpConfigOutputReference interface {
 	Cidrs() *[]*string
 	SetCidrs(val *[]*string)
 	CidrsInput() *[]*string
+	InternalValue() *SagemakerWorkforceSourceIpConfig
+	SetInternalValue(val *SagemakerWorkforceSourceIpConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -28531,6 +31347,16 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) CidrsInput()
 	_jsii_.Get(
 		j,
 		"cidrsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) InternalValue() *SagemakerWorkforceSourceIpConfig {
+	var returns *SagemakerWorkforceSourceIpConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28572,7 +31398,7 @@ func NewSagemakerWorkforceSourceIpConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceSourceIpConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceSourceIpConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28584,7 +31410,7 @@ func NewSagemakerWorkforceSourceIpConfigOutputReference_Override(s SagemakerWork
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkforceSourceIpConfigOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkforceSourceIpConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -28594,6 +31420,14 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetCidrs(val
 	_jsii_.Set(
 		j,
 		"cidrs",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetInternalValue(val *SagemakerWorkforceSourceIpConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29079,7 +31913,7 @@ func NewSagemakerWorkteam(scope constructs.Construct, id *string, config *Sagema
 	j := jsiiProxy_SagemakerWorkteam{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteam",
+		"hashicorp_aws.sagemaker.SagemakerWorkteam",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -29092,7 +31926,7 @@ func NewSagemakerWorkteam_Override(s SagemakerWorkteam, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteam",
+		"hashicorp_aws.sagemaker.SagemakerWorkteam",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -29188,7 +32022,7 @@ func SagemakerWorkteam_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SageMaker.SagemakerWorkteam",
+		"hashicorp_aws.sagemaker.SagemakerWorkteam",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -29201,7 +32035,7 @@ func SagemakerWorkteam_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SageMaker.SagemakerWorkteam",
+		"hashicorp_aws.sagemaker.SagemakerWorkteam",
 		"tfResourceType",
 		&returns,
 	)
@@ -29395,6 +32229,7 @@ func (s *jsiiProxy_SagemakerWorkteam) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SageMaker.
 type SagemakerWorkteamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -29449,6 +32284,8 @@ type SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference int
 	ClientId() *string
 	SetClientId(val *string)
 	ClientIdInput() *string
+	InternalValue() *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition
+	SetInternalValue(val *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -29489,6 +32326,16 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 	_jsii_.Get(
 		j,
 		"clientIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) InternalValue() *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition {
+	var returns *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29570,7 +32417,7 @@ func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference(
 	j := jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29582,7 +32429,7 @@ func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference_
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -29592,6 +32439,14 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 	_jsii_.Set(
 		j,
 		"clientId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) SetInternalValue(val *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29730,6 +32585,8 @@ type SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference interf
 	Groups() *[]*string
 	SetGroups(val *[]*string)
 	GroupsInput() *[]*string
+	InternalValue() *SagemakerWorkteamMemberDefinitionOidcMemberDefinition
+	SetInternalValue(val *SagemakerWorkteamMemberDefinitionOidcMemberDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -29764,6 +32621,16 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 	_jsii_.Get(
 		j,
 		"groupsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) InternalValue() *SagemakerWorkteamMemberDefinitionOidcMemberDefinition {
+	var returns *SagemakerWorkteamMemberDefinitionOidcMemberDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29805,7 +32672,7 @@ func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference(ter
 	j := jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29817,7 +32684,7 @@ func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -29827,6 +32694,14 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 	_jsii_.Set(
 		j,
 		"groups",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) SetInternalValue(val *SagemakerWorkteamMemberDefinitionOidcMemberDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29946,6 +32821,8 @@ type SagemakerWorkteamNotificationConfiguration struct {
 
 type SagemakerWorkteamNotificationConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SagemakerWorkteamNotificationConfiguration
+	SetInternalValue(val *SagemakerWorkteamNotificationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NotificationTopicArn() *string
@@ -29967,6 +32844,16 @@ type SagemakerWorkteamNotificationConfigurationOutputReference interface {
 // The jsii proxy struct for SagemakerWorkteamNotificationConfigurationOutputReference
 type jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) InternalValue() *SagemakerWorkteamNotificationConfiguration {
+	var returns *SagemakerWorkteamNotificationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) IsSingleItem() *bool {
@@ -30025,7 +32912,7 @@ func NewSagemakerWorkteamNotificationConfigurationOutputReference(terraformResou
 	j := jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamNotificationConfigurationOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamNotificationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30037,9 +32924,17 @@ func NewSagemakerWorkteamNotificationConfigurationOutputReference_Override(s Sag
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SageMaker.SagemakerWorkteamNotificationConfigurationOutputReference",
+		"hashicorp_aws.sagemaker.SagemakerWorkteamNotificationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) SetInternalValue(val *SagemakerWorkteamNotificationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinition",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinition",
 		reflect.TypeOf((*PrometheusAlertManagerDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -49,11 +49,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinitionConfig",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinitionConfig",
 		reflect.TypeOf((*PrometheusAlertManagerDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespace",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespace",
 		reflect.TypeOf((*PrometheusRuleGroupNamespace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -96,11 +96,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespaceConfig",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespaceConfig",
 		reflect.TypeOf((*PrometheusRuleGroupNamespaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Prometheus.PrometheusWorkspace",
+		"hashicorp_aws.prometheus.PrometheusWorkspace",
 		reflect.TypeOf((*PrometheusWorkspace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -142,7 +142,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Prometheus.PrometheusWorkspaceConfig",
+		"hashicorp_aws.prometheus.PrometheusWorkspaceConfig",
 		reflect.TypeOf((*PrometheusWorkspaceConfig)(nil)).Elem(),
 	)
 }

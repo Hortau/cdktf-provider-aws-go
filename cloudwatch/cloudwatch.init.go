@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarm",
 		reflect.TypeOf((*CloudwatchCompositeAlarm)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actionsEnabled", GoGetter: "ActionsEnabled"},
@@ -71,11 +71,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarmConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarmConfig",
 		reflect.TypeOf((*CloudwatchCompositeAlarmConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboard",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboard",
 		reflect.TypeOf((*CloudwatchDashboard)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -117,11 +117,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboardConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboardConfig",
 		reflect.TypeOf((*CloudwatchDashboardConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestination",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestination",
 		reflect.TypeOf((*CloudwatchLogDestination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -165,11 +165,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationConfig",
 		reflect.TypeOf((*CloudwatchLogDestinationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicy",
 		reflect.TypeOf((*CloudwatchLogDestinationPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPolicy", GoGetter: "AccessPolicy"},
@@ -210,11 +210,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicyConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicyConfig",
 		reflect.TypeOf((*CloudwatchLogDestinationPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroup",
 		reflect.TypeOf((*CloudwatchLogGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -270,11 +270,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroupConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroupConfig",
 		reflect.TypeOf((*CloudwatchLogGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilter",
 		reflect.TypeOf((*CloudwatchLogMetricFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -320,15 +320,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilterConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilterConfig",
 		reflect.TypeOf((*CloudwatchLogMetricFilterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilterMetricTransformation",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilterMetricTransformation",
 		reflect.TypeOf((*CloudwatchLogMetricFilterMetricTransformation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
 		reflect.TypeOf((*CloudwatchLogMetricFilterMetricTransformationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "defaultValue", GoGetter: "DefaultValue"},
@@ -339,6 +339,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -363,7 +364,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicy",
 		reflect.TypeOf((*CloudwatchLogResourcePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -404,11 +405,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicyConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicyConfig",
 		reflect.TypeOf((*CloudwatchLogResourcePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStream",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStream",
 		reflect.TypeOf((*CloudwatchLogStream)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -450,11 +451,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStreamConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStreamConfig",
 		reflect.TypeOf((*CloudwatchLogStreamConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilter",
 		reflect.TypeOf((*CloudwatchLogSubscriptionFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -505,11 +506,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilterConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilterConfig",
 		reflect.TypeOf((*CloudwatchLogSubscriptionFilterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarm",
 		reflect.TypeOf((*CloudwatchMetricAlarm)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actionsEnabled", GoGetter: "ActionsEnabled"},
@@ -613,19 +614,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmConfig",
 		reflect.TypeOf((*CloudwatchMetricAlarmConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmMetricQuery",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmMetricQuery",
 		reflect.TypeOf((*CloudwatchMetricAlarmMetricQuery)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmMetricQueryMetric",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmMetricQueryMetric",
 		reflect.TypeOf((*CloudwatchMetricAlarmMetricQueryMetric)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
 		reflect.TypeOf((*CloudwatchMetricAlarmMetricQueryMetricOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dimensions", GoGetter: "Dimensions"},
@@ -634,6 +635,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -660,7 +662,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStream",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStream",
 		reflect.TypeOf((*CloudwatchMetricStream)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -729,23 +731,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamConfig",
 		reflect.TypeOf((*CloudwatchMetricStreamConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamExcludeFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamExcludeFilter",
 		reflect.TypeOf((*CloudwatchMetricStreamExcludeFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamIncludeFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamIncludeFilter",
 		reflect.TypeOf((*CloudwatchMetricStreamIncludeFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamTimeouts",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamTimeouts",
 		reflect.TypeOf((*CloudwatchMetricStreamTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamTimeoutsOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamTimeoutsOutputReference",
 		reflect.TypeOf((*CloudwatchMetricStreamTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -756,6 +758,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -771,7 +774,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinition",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinition",
 		reflect.TypeOf((*CloudwatchQueryDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -816,11 +819,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinitionConfig",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinitionConfig",
 		reflect.TypeOf((*CloudwatchQueryDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroup",
 		reflect.TypeOf((*DataAwsCloudwatchLogGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -866,11 +869,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroupConfig",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroupConfig",
 		reflect.TypeOf((*DataAwsCloudwatchLogGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroups",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroups",
 		reflect.TypeOf((*DataAwsCloudwatchLogGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -911,7 +914,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroupsConfig",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroupsConfig",
 		reflect.TypeOf((*DataAwsCloudwatchLogGroupsConfig)(nil)).Elem(),
 	)
 }

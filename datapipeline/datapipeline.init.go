@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataPipeline.DatapipelinePipeline",
+		"hashicorp_aws.datapipeline.DatapipelinePipeline",
 		reflect.TypeOf((*DatapipelinePipeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,7 +56,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataPipeline.DatapipelinePipelineConfig",
+		"hashicorp_aws.datapipeline.DatapipelinePipelineConfig",
 		reflect.TypeOf((*DatapipelinePipelineConfig)(nil)).Elem(),
 	)
 }

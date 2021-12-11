@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.FMS.FmsAdminAccount",
+		"hashicorp_aws.fms.FmsAdminAccount",
 		reflect.TypeOf((*FmsAdminAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.FMS.FmsAdminAccountConfig",
+		"hashicorp_aws.fms.FmsAdminAccountConfig",
 		reflect.TypeOf((*FmsAdminAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.FMS.FmsPolicy",
+		"hashicorp_aws.fms.FmsPolicy",
 		reflect.TypeOf((*FmsPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -121,15 +121,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.FMS.FmsPolicyConfig",
+		"hashicorp_aws.fms.FmsPolicyConfig",
 		reflect.TypeOf((*FmsPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.FMS.FmsPolicyExcludeMap",
+		"hashicorp_aws.fms.FmsPolicyExcludeMap",
 		reflect.TypeOf((*FmsPolicyExcludeMap)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.FMS.FmsPolicyExcludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyExcludeMapOutputReference",
 		reflect.TypeOf((*FmsPolicyExcludeMapOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
@@ -138,6 +138,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -155,11 +156,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.FMS.FmsPolicyIncludeMap",
+		"hashicorp_aws.fms.FmsPolicyIncludeMap",
 		reflect.TypeOf((*FmsPolicyIncludeMap)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.FMS.FmsPolicyIncludeMapOutputReference",
+		"hashicorp_aws.fms.FmsPolicyIncludeMapOutputReference",
 		reflect.TypeOf((*FmsPolicyIncludeMapOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
@@ -168,6 +169,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -185,17 +187,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.FMS.FmsPolicySecurityServicePolicyData",
+		"hashicorp_aws.fms.FmsPolicySecurityServicePolicyData",
 		reflect.TypeOf((*FmsPolicySecurityServicePolicyData)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.FMS.FmsPolicySecurityServicePolicyDataOutputReference",
+		"hashicorp_aws.fms.FmsPolicySecurityServicePolicyDataOutputReference",
 		reflect.TypeOf((*FmsPolicySecurityServicePolicyDataOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

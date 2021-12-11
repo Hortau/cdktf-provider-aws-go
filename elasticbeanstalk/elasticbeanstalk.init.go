@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplication",
 		reflect.TypeOf((*DataAwsElasticBeanstalkApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,7 +50,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
 		reflect.TypeOf((*DataAwsElasticBeanstalkApplicationAppversionLifecycle)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -73,11 +73,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplicationConfig",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationConfig",
 		reflect.TypeOf((*DataAwsElasticBeanstalkApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZone",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZone",
 		reflect.TypeOf((*DataAwsElasticBeanstalkHostedZone)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -117,11 +117,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZoneConfig",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZoneConfig",
 		reflect.TypeOf((*DataAwsElasticBeanstalkHostedZoneConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStack",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStack",
 		reflect.TypeOf((*DataAwsElasticBeanstalkSolutionStack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -164,11 +164,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStackConfig",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStackConfig",
 		reflect.TypeOf((*DataAwsElasticBeanstalkSolutionStackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplication",
 		reflect.TypeOf((*ElasticBeanstalkApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -221,11 +221,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationAppversionLifecycle",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationAppversionLifecycle",
 		reflect.TypeOf((*ElasticBeanstalkApplicationAppversionLifecycle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
 		reflect.TypeOf((*ElasticBeanstalkApplicationAppversionLifecycleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deleteSourceFromS3", GoGetter: "DeleteSourceFromS3"},
@@ -234,6 +234,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -256,11 +257,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationConfig",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationConfig",
 		reflect.TypeOf((*ElasticBeanstalkApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersion",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersion",
 		reflect.TypeOf((*ElasticBeanstalkApplicationVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -318,11 +319,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersionConfig",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersionConfig",
 		reflect.TypeOf((*ElasticBeanstalkApplicationVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplate",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplate",
 		reflect.TypeOf((*ElasticBeanstalkConfigurationTemplate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -375,15 +376,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplateConfig",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplateConfig",
 		reflect.TypeOf((*ElasticBeanstalkConfigurationTemplateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplateSetting",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplateSetting",
 		reflect.TypeOf((*ElasticBeanstalkConfigurationTemplateSetting)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironment",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironment",
 		reflect.TypeOf((*ElasticBeanstalkEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -470,7 +471,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironmentAllSettings",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentAllSettings",
 		reflect.TypeOf((*ElasticBeanstalkEnvironmentAllSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -493,11 +494,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironmentConfig",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentConfig",
 		reflect.TypeOf((*ElasticBeanstalkEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironmentSetting",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentSetting",
 		reflect.TypeOf((*ElasticBeanstalkEnvironmentSetting)(nil)).Elem(),
 	)
 }

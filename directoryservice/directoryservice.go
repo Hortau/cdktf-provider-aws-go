@@ -366,7 +366,7 @@ func NewDataAwsDirectoryServiceDirectory(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsDirectoryServiceDirectory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectory",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -379,7 +379,7 @@ func NewDataAwsDirectoryServiceDirectory_Override(d DataAwsDirectoryServiceDirec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectory",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -443,7 +443,7 @@ func DataAwsDirectoryServiceDirectory_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectory",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -456,7 +456,7 @@ func DataAwsDirectoryServiceDirectory_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectory",
 		"tfResourceType",
 		&returns,
 	)
@@ -652,6 +652,7 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) VpcSettings(index *string) 
 	return returns
 }
 
+// AWS Directory Service.
 type DataAwsDirectoryServiceDirectoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -790,7 +791,7 @@ func NewDataAwsDirectoryServiceDirectoryConnectSettings(terraformResource cdktf.
 	j := jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryConnectSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConnectSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -803,7 +804,7 @@ func NewDataAwsDirectoryServiceDirectoryConnectSettings_Override(d DataAwsDirect
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryConnectSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConnectSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -993,7 +994,7 @@ func NewDataAwsDirectoryServiceDirectoryVpcSettings(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryVpcSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryVpcSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1006,7 +1007,7 @@ func NewDataAwsDirectoryServiceDirectoryVpcSettings_Override(d DataAwsDirectoryS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryVpcSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryVpcSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1362,7 +1363,7 @@ func NewDirectoryServiceConditionalForwarder(scope constructs.Construct, id *str
 	j := jsiiProxy_DirectoryServiceConditionalForwarder{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarder",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarder",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1375,7 +1376,7 @@ func NewDirectoryServiceConditionalForwarder_Override(d DirectoryServiceConditio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarder",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarder",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1447,7 +1448,7 @@ func DirectoryServiceConditionalForwarder_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarder",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarder",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1460,7 +1461,7 @@ func DirectoryServiceConditionalForwarder_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarder",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarder",
 		"tfResourceType",
 		&returns,
 	)
@@ -1622,6 +1623,7 @@ func (d *jsiiProxy_DirectoryServiceConditionalForwarder) ToTerraform() interface
 	return returns
 }
 
+// AWS Directory Service.
 type DirectoryServiceConditionalForwarderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2169,7 +2171,7 @@ func NewDirectoryServiceDirectory(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DirectoryServiceDirectory{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectory",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2182,7 +2184,7 @@ func NewDirectoryServiceDirectory_Override(d DirectoryServiceDirectory, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectory",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2318,7 +2320,7 @@ func DirectoryServiceDirectory_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectory",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2331,7 +2333,7 @@ func DirectoryServiceDirectory_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectory",
 		"tfResourceType",
 		&returns,
 	)
@@ -2597,6 +2599,7 @@ func (d *jsiiProxy_DirectoryServiceDirectory) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Directory Service.
 type DirectoryServiceDirectoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2657,6 +2660,8 @@ type DirectoryServiceDirectoryConnectSettingsOutputReference interface {
 	CustomerUsername() *string
 	SetCustomerUsername(val *string)
 	CustomerUsernameInput() *string
+	InternalValue() *DirectoryServiceDirectoryConnectSettings
+	SetInternalValue(val *DirectoryServiceDirectoryConnectSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubnetIds() *[]*string
@@ -2717,6 +2722,16 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) Cust
 	_jsii_.Get(
 		j,
 		"customerUsernameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) InternalValue() *DirectoryServiceDirectoryConnectSettings {
+	var returns *DirectoryServiceDirectoryConnectSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2798,7 +2813,7 @@ func NewDirectoryServiceDirectoryConnectSettingsOutputReference(terraformResourc
 	j := jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryConnectSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryConnectSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2810,7 +2825,7 @@ func NewDirectoryServiceDirectoryConnectSettingsOutputReference_Override(d Direc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryConnectSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryConnectSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2828,6 +2843,14 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetC
 	_jsii_.Set(
 		j,
 		"customerUsername",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetInternalValue(val *DirectoryServiceDirectoryConnectSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2965,6 +2988,8 @@ type DirectoryServiceDirectoryVpcSettings struct {
 
 type DirectoryServiceDirectoryVpcSettingsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DirectoryServiceDirectoryVpcSettings
+	SetInternalValue(val *DirectoryServiceDirectoryVpcSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubnetIds() *[]*string
@@ -2988,6 +3013,16 @@ type DirectoryServiceDirectoryVpcSettingsOutputReference interface {
 // The jsii proxy struct for DirectoryServiceDirectoryVpcSettingsOutputReference
 type jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) InternalValue() *DirectoryServiceDirectoryVpcSettings {
+	var returns *DirectoryServiceDirectoryVpcSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) IsSingleItem() *bool {
@@ -3066,7 +3101,7 @@ func NewDirectoryServiceDirectoryVpcSettingsOutputReference(terraformResource cd
 	j := jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryVpcSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryVpcSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3078,9 +3113,17 @@ func NewDirectoryServiceDirectoryVpcSettingsOutputReference_Override(d Directory
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryVpcSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryVpcSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) SetInternalValue(val *DirectoryServiceDirectoryVpcSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3441,7 +3484,7 @@ func NewDirectoryServiceLogSubscription(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DirectoryServiceLogSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscription",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3454,7 +3497,7 @@ func NewDirectoryServiceLogSubscription_Override(d DirectoryServiceLogSubscripti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscription",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscription",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3518,7 +3561,7 @@ func DirectoryServiceLogSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscription",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3531,7 +3574,7 @@ func DirectoryServiceLogSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscription",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -3693,6 +3736,7 @@ func (d *jsiiProxy_DirectoryServiceLogSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Directory Service.
 type DirectoryServiceLogSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

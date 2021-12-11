@@ -9,6 +9,786 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/emr/internal"
 )
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels}.
+type DataAwsEmrReleaseLabels interface {
+	cdktf.TerraformDataSource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filters() DataAwsEmrReleaseLabelsFiltersOutputReference
+	FiltersInput() *DataAwsEmrReleaseLabelsFilters
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ReleaseLabels() *[]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutFilters(value *DataAwsEmrReleaseLabelsFilters)
+	ResetFilters()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsEmrReleaseLabels
+type jsiiProxy_DataAwsEmrReleaseLabels struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Filters() DataAwsEmrReleaseLabelsFiltersOutputReference {
+	var returns DataAwsEmrReleaseLabelsFiltersOutputReference
+	_jsii_.Get(
+		j,
+		"filters",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) FiltersInput() *DataAwsEmrReleaseLabelsFilters {
+	var returns *DataAwsEmrReleaseLabelsFilters
+	_jsii_.Get(
+		j,
+		"filtersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) ReleaseLabels() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"releaseLabels",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels} Data Source.
+func NewDataAwsEmrReleaseLabels(scope constructs.Construct, id *string, config *DataAwsEmrReleaseLabelsConfig) DataAwsEmrReleaseLabels {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsEmrReleaseLabels{}
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabels",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels} Data Source.
+func NewDataAwsEmrReleaseLabels_Override(d DataAwsEmrReleaseLabels, scope constructs.Construct, id *string, config *DataAwsEmrReleaseLabelsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabels",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsEmrReleaseLabels_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabels",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsEmrReleaseLabels_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabels",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) PutFilters(value *DataAwsEmrReleaseLabelsFilters) {
+	_jsii_.InvokeVoid(
+		d,
+		"putFilters",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) ResetFilters() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilters",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Elastic MapReduce.
+type DataAwsEmrReleaseLabelsConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// filters block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#filters DataAwsEmrReleaseLabels#filters}
+	Filters *DataAwsEmrReleaseLabelsFilters `json:"filters"`
+}
+
+type DataAwsEmrReleaseLabelsFilters struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#application DataAwsEmrReleaseLabels#application}.
+	Application *string `json:"application"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#prefix DataAwsEmrReleaseLabels#prefix}.
+	Prefix *string `json:"prefix"`
+}
+
+type DataAwsEmrReleaseLabelsFiltersOutputReference interface {
+	cdktf.ComplexObject
+	Application() *string
+	SetApplication(val *string)
+	ApplicationInput() *string
+	InternalValue() *DataAwsEmrReleaseLabelsFilters
+	SetInternalValue(val *DataAwsEmrReleaseLabelsFilters)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Prefix() *string
+	SetPrefix(val *string)
+	PrefixInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetApplication()
+	ResetPrefix()
+}
+
+// The jsii proxy struct for DataAwsEmrReleaseLabelsFiltersOutputReference
+type jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) Application() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"application",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) ApplicationInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"applicationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) InternalValue() *DataAwsEmrReleaseLabelsFilters {
+	var returns *DataAwsEmrReleaseLabelsFilters
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) Prefix() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) PrefixInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"prefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewDataAwsEmrReleaseLabelsFiltersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsEmrReleaseLabelsFiltersOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabelsFiltersOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewDataAwsEmrReleaseLabelsFiltersOutputReference_Override(d DataAwsEmrReleaseLabelsFiltersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabelsFiltersOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetApplication(val *string) {
+	_jsii_.Set(
+		j,
+		"application",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetInternalValue(val *DataAwsEmrReleaseLabelsFilters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetPrefix(val *string) {
+	_jsii_.Set(
+		j,
+		"prefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) ResetApplication() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetApplication",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) ResetPrefix() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetPrefix",
+		nil, // no parameters
+	)
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html aws_emr_cluster}.
 type EmrCluster interface {
 	cdktf.TerraformResource
@@ -22,6 +802,8 @@ type EmrCluster interface {
 	AutoscalingRole() *string
 	SetAutoscalingRole(val *string)
 	AutoscalingRoleInput() *string
+	AutoTerminationPolicy() EmrClusterAutoTerminationPolicyOutputReference
+	AutoTerminationPolicyInput() *EmrClusterAutoTerminationPolicy
 	BootstrapAction() *[]*EmrClusterBootstrapAction
 	SetBootstrapAction(val *[]*EmrClusterBootstrapAction)
 	BootstrapActionInput() *[]*EmrClusterBootstrapAction
@@ -118,6 +900,7 @@ type EmrCluster interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutAutoTerminationPolicy(value *EmrClusterAutoTerminationPolicy)
 	PutCoreInstanceFleet(value *EmrClusterCoreInstanceFleet)
 	PutCoreInstanceGroup(value *EmrClusterCoreInstanceGroup)
 	PutEc2Attributes(value *EmrClusterEc2Attributes)
@@ -127,6 +910,7 @@ type EmrCluster interface {
 	ResetAdditionalInfo()
 	ResetApplications()
 	ResetAutoscalingRole()
+	ResetAutoTerminationPolicy()
 	ResetBootstrapAction()
 	ResetConfigurations()
 	ResetConfigurationsJson()
@@ -226,6 +1010,26 @@ func (j *jsiiProxy_EmrCluster) AutoscalingRoleInput() *string {
 	_jsii_.Get(
 		j,
 		"autoscalingRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrCluster) AutoTerminationPolicy() EmrClusterAutoTerminationPolicyOutputReference {
+	var returns EmrClusterAutoTerminationPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"autoTerminationPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrCluster) AutoTerminationPolicyInput() *EmrClusterAutoTerminationPolicy {
+	var returns *EmrClusterAutoTerminationPolicy
+	_jsii_.Get(
+		j,
+		"autoTerminationPolicyInput",
 		&returns,
 	)
 	return returns
@@ -898,7 +1702,7 @@ func NewEmrCluster(scope constructs.Construct, id *string, config *EmrClusterCon
 	j := jsiiProxy_EmrCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrCluster",
+		"hashicorp_aws.emr.EmrCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -911,7 +1715,7 @@ func NewEmrCluster_Override(e EmrCluster, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrCluster",
+		"hashicorp_aws.emr.EmrCluster",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -1135,7 +1939,7 @@ func EmrCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EMR.EmrCluster",
+		"hashicorp_aws.emr.EmrCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1148,7 +1952,7 @@ func EmrCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EMR.EmrCluster",
+		"hashicorp_aws.emr.EmrCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -1244,6 +2048,14 @@ func (e *jsiiProxy_EmrCluster) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (e *jsiiProxy_EmrCluster) PutAutoTerminationPolicy(value *EmrClusterAutoTerminationPolicy) {
+	_jsii_.InvokeVoid(
+		e,
+		"putAutoTerminationPolicy",
+		[]interface{}{value},
+	)
+}
+
 func (e *jsiiProxy_EmrCluster) PutCoreInstanceFleet(value *EmrClusterCoreInstanceFleet) {
 	_jsii_.InvokeVoid(
 		e,
@@ -1312,6 +2124,14 @@ func (e *jsiiProxy_EmrCluster) ResetAutoscalingRole() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetAutoscalingRole",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrCluster) ResetAutoTerminationPolicy() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetAutoTerminationPolicy",
 		nil, // no parameters
 	)
 }
@@ -1558,6 +2378,254 @@ func (e *jsiiProxy_EmrCluster) ToTerraform() interface{} {
 	return returns
 }
 
+type EmrClusterAutoTerminationPolicy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#idle_timeout EmrCluster#idle_timeout}.
+	IdleTimeout *float64 `json:"idleTimeout"`
+}
+
+type EmrClusterAutoTerminationPolicyOutputReference interface {
+	cdktf.ComplexObject
+	IdleTimeout() *float64
+	SetIdleTimeout(val *float64)
+	IdleTimeoutInput() *float64
+	InternalValue() *EmrClusterAutoTerminationPolicy
+	SetInternalValue(val *EmrClusterAutoTerminationPolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIdleTimeout()
+}
+
+// The jsii proxy struct for EmrClusterAutoTerminationPolicyOutputReference
+type jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) IdleTimeout() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"idleTimeout",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) IdleTimeoutInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"idleTimeoutInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) InternalValue() *EmrClusterAutoTerminationPolicy {
+	var returns *EmrClusterAutoTerminationPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewEmrClusterAutoTerminationPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterAutoTerminationPolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrClusterAutoTerminationPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewEmrClusterAutoTerminationPolicyOutputReference_Override(e EmrClusterAutoTerminationPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrClusterAutoTerminationPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetIdleTimeout(val *float64) {
+	_jsii_.Set(
+		j,
+		"idleTimeout",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetInternalValue(val *EmrClusterAutoTerminationPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) ResetIdleTimeout() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdleTimeout",
+		nil, // no parameters
+	)
+}
+
 type EmrClusterBootstrapAction struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
 	Name *string `json:"name"`
@@ -1567,6 +2635,7 @@ type EmrClusterBootstrapAction struct {
 	Args *[]*string `json:"args"`
 }
 
+// AWS Elastic MapReduce.
 type EmrClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1588,6 +2657,10 @@ type EmrClusterConfig struct {
 	Applications *[]*string `json:"applications"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#autoscaling_role EmrCluster#autoscaling_role}.
 	AutoscalingRole *string `json:"autoscalingRole"`
+	// auto_termination_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#auto_termination_policy EmrCluster#auto_termination_policy}
+	AutoTerminationPolicy *EmrClusterAutoTerminationPolicy `json:"autoTerminationPolicy"`
 	// bootstrap_action block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bootstrap_action EmrCluster#bootstrap_action}
@@ -1720,6 +2793,8 @@ type EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification struct
 
 type EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EmrClusterCoreInstanceFleetLaunchSpecifications
+	SetInternalValue(val *EmrClusterCoreInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnDemandSpecification() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification
@@ -1745,6 +2820,16 @@ type EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference interface {
 // The jsii proxy struct for EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference
 type jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) InternalValue() *EmrClusterCoreInstanceFleetLaunchSpecifications {
+	var returns *EmrClusterCoreInstanceFleetLaunchSpecifications
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) IsSingleItem() *bool {
@@ -1823,7 +2908,7 @@ func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference(terraform
 	j := jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1835,9 +2920,17 @@ func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetInternalValue(val *EmrClusterCoreInstanceFleetLaunchSpecifications) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1997,6 +3090,8 @@ type EmrClusterCoreInstanceFleetOutputReference interface {
 	InstanceTypeConfigs() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
 	SetInstanceTypeConfigs(val *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs)
 	InstanceTypeConfigsInput() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
+	InternalValue() *EmrClusterCoreInstanceFleet
+	SetInternalValue(val *EmrClusterCoreInstanceFleet)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchSpecifications() EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference
@@ -2048,6 +3143,16 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfi
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InternalValue() *EmrClusterCoreInstanceFleet {
+	var returns *EmrClusterCoreInstanceFleet
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2169,7 +3274,7 @@ func NewEmrClusterCoreInstanceFleetOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EmrClusterCoreInstanceFleetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2181,7 +3286,7 @@ func NewEmrClusterCoreInstanceFleetOutputReference_Override(e EmrClusterCoreInst
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -2191,6 +3296,14 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetInstanceTypeCo
 	_jsii_.Set(
 		j,
 		"instanceTypeConfigs",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetInternalValue(val *EmrClusterCoreInstanceFleet) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2420,6 +3533,8 @@ type EmrClusterCoreInstanceGroupOutputReference interface {
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *EmrClusterCoreInstanceGroup
+	SetInternalValue(val *EmrClusterCoreInstanceGroup)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -2547,6 +3662,16 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) InstanceTypeInput
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) InternalValue() *EmrClusterCoreInstanceGroup {
+	var returns *EmrClusterCoreInstanceGroup
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2603,7 +3728,7 @@ func NewEmrClusterCoreInstanceGroupOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EmrClusterCoreInstanceGroupOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2615,7 +3740,7 @@ func NewEmrClusterCoreInstanceGroupOutputReference_Override(e EmrClusterCoreInst
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -2657,6 +3782,14 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetInstanceType(v
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetInternalValue(val *EmrClusterCoreInstanceGroup) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2855,6 +3988,8 @@ type EmrClusterEc2AttributesOutputReference interface {
 	InstanceProfile() *string
 	SetInstanceProfile(val *string)
 	InstanceProfileInput() *string
+	InternalValue() *EmrClusterEc2Attributes
+	SetInternalValue(val *EmrClusterEc2Attributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyName() *string
@@ -2994,6 +4129,16 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) InstanceProfileInput(
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) InternalValue() *EmrClusterEc2Attributes {
+	var returns *EmrClusterEc2Attributes
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3110,7 +4255,7 @@ func NewEmrClusterEc2AttributesOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_EmrClusterEc2AttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterEc2AttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterEc2AttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3122,7 +4267,7 @@ func NewEmrClusterEc2AttributesOutputReference_Override(e EmrClusterEc2Attribute
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterEc2AttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterEc2AttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -3164,6 +4309,14 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetInstanceProfile(va
 	_jsii_.Set(
 		j,
 		"instanceProfile",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetInternalValue(val *EmrClusterEc2Attributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3396,6 +4549,8 @@ type EmrClusterKerberosAttributesOutputReference interface {
 	CrossRealmTrustPrincipalPassword() *string
 	SetCrossRealmTrustPrincipalPassword(val *string)
 	CrossRealmTrustPrincipalPasswordInput() *string
+	InternalValue() *EmrClusterKerberosAttributes
+	SetInternalValue(val *EmrClusterKerberosAttributes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KdcAdminPassword() *string
@@ -3484,6 +4639,16 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) CrossRealmTrustP
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) InternalValue() *EmrClusterKerberosAttributes {
+	var returns *EmrClusterKerberosAttributes
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3560,7 +4725,7 @@ func NewEmrClusterKerberosAttributesOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_EmrClusterKerberosAttributesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterKerberosAttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterKerberosAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3572,7 +4737,7 @@ func NewEmrClusterKerberosAttributesOutputReference_Override(e EmrClusterKerbero
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterKerberosAttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterKerberosAttributesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -3598,6 +4763,14 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetCrossRealmTru
 	_jsii_.Set(
 		j,
 		"crossRealmTrustPrincipalPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetInternalValue(val *EmrClusterKerberosAttributes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3822,6 +4995,8 @@ type EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification stru
 
 type EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EmrClusterMasterInstanceFleetLaunchSpecifications
+	SetInternalValue(val *EmrClusterMasterInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnDemandSpecification() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification
@@ -3847,6 +5022,16 @@ type EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference interface 
 // The jsii proxy struct for EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference
 type jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) InternalValue() *EmrClusterMasterInstanceFleetLaunchSpecifications {
+	var returns *EmrClusterMasterInstanceFleetLaunchSpecifications
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) IsSingleItem() *bool {
@@ -3925,7 +5110,7 @@ func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference(terrafo
 	j := jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3937,9 +5122,17 @@ func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetInternalValue(val *EmrClusterMasterInstanceFleetLaunchSpecifications) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4099,6 +5292,8 @@ type EmrClusterMasterInstanceFleetOutputReference interface {
 	InstanceTypeConfigs() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
 	SetInstanceTypeConfigs(val *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs)
 	InstanceTypeConfigsInput() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
+	InternalValue() *EmrClusterMasterInstanceFleet
+	SetInternalValue(val *EmrClusterMasterInstanceFleet)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchSpecifications() EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference
@@ -4150,6 +5345,16 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeCon
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InternalValue() *EmrClusterMasterInstanceFleet {
+	var returns *EmrClusterMasterInstanceFleet
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4271,7 +5476,7 @@ func NewEmrClusterMasterInstanceFleetOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_EmrClusterMasterInstanceFleetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4283,7 +5488,7 @@ func NewEmrClusterMasterInstanceFleetOutputReference_Override(e EmrClusterMaster
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4293,6 +5498,14 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetInstanceType
 	_jsii_.Set(
 		j,
 		"instanceTypeConfigs",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetInternalValue(val *EmrClusterMasterInstanceFleet) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4517,6 +5730,8 @@ type EmrClusterMasterInstanceGroupOutputReference interface {
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *EmrClusterMasterInstanceGroup
+	SetInternalValue(val *EmrClusterMasterInstanceGroup)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -4623,6 +5838,16 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) InstanceTypeInp
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) InternalValue() *EmrClusterMasterInstanceGroup {
+	var returns *EmrClusterMasterInstanceGroup
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4679,7 +5904,7 @@ func NewEmrClusterMasterInstanceGroupOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_EmrClusterMasterInstanceGroupOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4691,7 +5916,7 @@ func NewEmrClusterMasterInstanceGroupOutputReference_Override(e EmrClusterMaster
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4725,6 +5950,14 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetInstanceType
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetInternalValue(val *EmrClusterMasterInstanceGroup) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5249,7 +6482,7 @@ func NewEmrInstanceFleet(scope constructs.Construct, id *string, config *EmrInst
 	j := jsiiProxy_EmrInstanceFleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceFleet",
+		"hashicorp_aws.emr.EmrInstanceFleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5262,7 +6495,7 @@ func NewEmrInstanceFleet_Override(e EmrInstanceFleet, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceFleet",
+		"hashicorp_aws.emr.EmrInstanceFleet",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -5350,7 +6583,7 @@ func EmrInstanceFleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EMR.EmrInstanceFleet",
+		"hashicorp_aws.emr.EmrInstanceFleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5363,7 +6596,7 @@ func EmrInstanceFleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EMR.EmrInstanceFleet",
+		"hashicorp_aws.emr.EmrInstanceFleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -5573,6 +6806,7 @@ func (e *jsiiProxy_EmrInstanceFleet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic MapReduce.
 type EmrInstanceFleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5655,6 +6889,8 @@ type EmrInstanceFleetLaunchSpecificationsOnDemandSpecification struct {
 
 type EmrInstanceFleetLaunchSpecificationsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EmrInstanceFleetLaunchSpecifications
+	SetInternalValue(val *EmrInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnDemandSpecification() *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification
@@ -5680,6 +6916,16 @@ type EmrInstanceFleetLaunchSpecificationsOutputReference interface {
 // The jsii proxy struct for EmrInstanceFleetLaunchSpecificationsOutputReference
 type jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) InternalValue() *EmrInstanceFleetLaunchSpecifications {
+	var returns *EmrInstanceFleetLaunchSpecifications
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) IsSingleItem() *bool {
@@ -5758,7 +7004,7 @@ func NewEmrInstanceFleetLaunchSpecificationsOutputReference(terraformResource cd
 	j := jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5770,9 +7016,17 @@ func NewEmrInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrInstan
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecificationsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetInternalValue(val *EmrInstanceFleetLaunchSpecifications) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6350,7 +7604,7 @@ func NewEmrInstanceGroup(scope constructs.Construct, id *string, config *EmrInst
 	j := jsiiProxy_EmrInstanceGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceGroup",
+		"hashicorp_aws.emr.EmrInstanceGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6363,7 +7617,7 @@ func NewEmrInstanceGroup_Override(e EmrInstanceGroup, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrInstanceGroup",
+		"hashicorp_aws.emr.EmrInstanceGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6483,7 +7737,7 @@ func EmrInstanceGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EMR.EmrInstanceGroup",
+		"hashicorp_aws.emr.EmrInstanceGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6496,7 +7750,7 @@ func EmrInstanceGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EMR.EmrInstanceGroup",
+		"hashicorp_aws.emr.EmrInstanceGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -6714,6 +7968,7 @@ func (e *jsiiProxy_EmrInstanceGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic MapReduce.
 type EmrInstanceGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6989,7 +8244,7 @@ func NewEmrManagedScalingPolicy(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_EmrManagedScalingPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicy",
+		"hashicorp_aws.emr.EmrManagedScalingPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7002,7 +8257,7 @@ func NewEmrManagedScalingPolicy_Override(e EmrManagedScalingPolicy, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicy",
+		"hashicorp_aws.emr.EmrManagedScalingPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -7066,7 +8321,7 @@ func EmrManagedScalingPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicy",
+		"hashicorp_aws.emr.EmrManagedScalingPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7079,7 +8334,7 @@ func EmrManagedScalingPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicy",
+		"hashicorp_aws.emr.EmrManagedScalingPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -7254,6 +8509,7 @@ type EmrManagedScalingPolicyComputeLimits struct {
 	MaximumOndemandCapacityUnits *float64 `json:"maximumOndemandCapacityUnits"`
 }
 
+// AWS Elastic MapReduce.
 type EmrManagedScalingPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7540,7 +8796,7 @@ func NewEmrSecurityConfiguration(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_EmrSecurityConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrSecurityConfiguration",
+		"hashicorp_aws.emr.EmrSecurityConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7553,7 +8809,7 @@ func NewEmrSecurityConfiguration_Override(e EmrSecurityConfiguration, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EMR.EmrSecurityConfiguration",
+		"hashicorp_aws.emr.EmrSecurityConfiguration",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -7625,7 +8881,7 @@ func EmrSecurityConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EMR.EmrSecurityConfiguration",
+		"hashicorp_aws.emr.EmrSecurityConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7638,7 +8894,7 @@ func EmrSecurityConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EMR.EmrSecurityConfiguration",
+		"hashicorp_aws.emr.EmrSecurityConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -7816,6 +9072,7 @@ func (e *jsiiProxy_EmrSecurityConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic MapReduce.
 type EmrSecurityConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7831,4 +9088,1595 @@ type EmrSecurityConfigurationConfig struct {
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html#name_prefix EmrSecurityConfiguration#name_prefix}.
 	NamePrefix *string `json:"namePrefix"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio}.
+type EmrStudio interface {
+	cdktf.TerraformResource
+	Arn() *string
+	AuthMode() *string
+	SetAuthMode(val *string)
+	AuthModeInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DefaultS3Location() *string
+	SetDefaultS3Location(val *string)
+	DefaultS3LocationInput() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	EngineSecurityGroupId() *string
+	SetEngineSecurityGroupId(val *string)
+	EngineSecurityGroupIdInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IdpAuthUrl() *string
+	SetIdpAuthUrl(val *string)
+	IdpAuthUrlInput() *string
+	IdpRelayStateParameterName() *string
+	SetIdpRelayStateParameterName(val *string)
+	IdpRelayStateParameterNameInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ServiceRole() *string
+	SetServiceRole(val *string)
+	ServiceRoleInput() *string
+	SubnetIds() *[]*string
+	SetSubnetIds(val *[]*string)
+	SubnetIdsInput() *[]*string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Url() *string
+	UserRole() *string
+	SetUserRole(val *string)
+	UserRoleInput() *string
+	VpcId() *string
+	SetVpcId(val *string)
+	VpcIdInput() *string
+	WorkspaceSecurityGroupId() *string
+	SetWorkspaceSecurityGroupId(val *string)
+	WorkspaceSecurityGroupIdInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetDescription()
+	ResetIdpAuthUrl()
+	ResetIdpRelayStateParameterName()
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	ResetUserRole()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EmrStudio
+type jsiiProxy_EmrStudio struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EmrStudio) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) AuthMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) AuthModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) DefaultS3Location() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"defaultS3Location",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) DefaultS3LocationInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"defaultS3LocationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) EngineSecurityGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engineSecurityGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) EngineSecurityGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"engineSecurityGroupIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) IdpAuthUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idpAuthUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) IdpAuthUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idpAuthUrlInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) IdpRelayStateParameterName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idpRelayStateParameterName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) IdpRelayStateParameterNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idpRelayStateParameterNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) ServiceRole() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"serviceRole",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) ServiceRoleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"serviceRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) SubnetIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) SubnetIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIdsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) Url() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"url",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) UserRole() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userRole",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) UserRoleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) VpcId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) VpcIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) WorkspaceSecurityGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"workspaceSecurityGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudio) WorkspaceSecurityGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"workspaceSecurityGroupIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio} Resource.
+func NewEmrStudio(scope constructs.Construct, id *string, config *EmrStudioConfig) EmrStudio {
+	_init_.Initialize()
+
+	j := jsiiProxy_EmrStudio{}
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrStudio",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio} Resource.
+func NewEmrStudio_Override(e EmrStudio, scope constructs.Construct, id *string, config *EmrStudioConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrStudio",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetAuthMode(val *string) {
+	_jsii_.Set(
+		j,
+		"authMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetDefaultS3Location(val *string) {
+	_jsii_.Set(
+		j,
+		"defaultS3Location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetEngineSecurityGroupId(val *string) {
+	_jsii_.Set(
+		j,
+		"engineSecurityGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetIdpAuthUrl(val *string) {
+	_jsii_.Set(
+		j,
+		"idpAuthUrl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetIdpRelayStateParameterName(val *string) {
+	_jsii_.Set(
+		j,
+		"idpRelayStateParameterName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetServiceRole(val *string) {
+	_jsii_.Set(
+		j,
+		"serviceRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetSubnetIds(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"subnetIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetUserRole(val *string) {
+	_jsii_.Set(
+		j,
+		"userRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetVpcId(val *string) {
+	_jsii_.Set(
+		j,
+		"vpcId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudio) SetWorkspaceSecurityGroupId(val *string) {
+	_jsii_.Set(
+		j,
+		"workspaceSecurityGroupId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EmrStudio_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.emr.EmrStudio",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EmrStudio_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.emr.EmrStudio",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EmrStudio) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetDescription() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetIdpAuthUrl() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdpAuthUrl",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetIdpRelayStateParameterName() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdpRelayStateParameterName",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EmrStudio) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetTags() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) ResetUserRole() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetUserRole",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudio) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EmrStudio) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EmrStudio) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Elastic MapReduce.
+type EmrStudioConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#auth_mode EmrStudio#auth_mode}.
+	AuthMode *string `json:"authMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#default_s3_location EmrStudio#default_s3_location}.
+	DefaultS3Location *string `json:"defaultS3Location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#engine_security_group_id EmrStudio#engine_security_group_id}.
+	EngineSecurityGroupId *string `json:"engineSecurityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#name EmrStudio#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#service_role EmrStudio#service_role}.
+	ServiceRole *string `json:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#subnet_ids EmrStudio#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#vpc_id EmrStudio#vpc_id}.
+	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#workspace_security_group_id EmrStudio#workspace_security_group_id}.
+	WorkspaceSecurityGroupId *string `json:"workspaceSecurityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#description EmrStudio#description}.
+	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#idp_auth_url EmrStudio#idp_auth_url}.
+	IdpAuthUrl *string `json:"idpAuthUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#idp_relay_state_parameter_name EmrStudio#idp_relay_state_parameter_name}.
+	IdpRelayStateParameterName *string `json:"idpRelayStateParameterName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#tags EmrStudio#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#tags_all EmrStudio#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#user_role EmrStudio#user_role}.
+	UserRole *string `json:"userRole"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping}.
+type EmrStudioSessionMapping interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IdentityId() *string
+	SetIdentityId(val *string)
+	IdentityIdInput() *string
+	IdentityName() *string
+	SetIdentityName(val *string)
+	IdentityNameInput() *string
+	IdentityType() *string
+	SetIdentityType(val *string)
+	IdentityTypeInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SessionPolicyArn() *string
+	SetSessionPolicyArn(val *string)
+	SessionPolicyArnInput() *string
+	StudioId() *string
+	SetStudioId(val *string)
+	StudioIdInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetIdentityId()
+	ResetIdentityName()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EmrStudioSessionMapping
+type jsiiProxy_EmrStudioSessionMapping struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) IdentityTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SessionPolicyArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sessionPolicyArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SessionPolicyArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sessionPolicyArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) StudioId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"studioId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) StudioIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"studioIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping} Resource.
+func NewEmrStudioSessionMapping(scope constructs.Construct, id *string, config *EmrStudioSessionMappingConfig) EmrStudioSessionMapping {
+	_init_.Initialize()
+
+	j := jsiiProxy_EmrStudioSessionMapping{}
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrStudioSessionMapping",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping} Resource.
+func NewEmrStudioSessionMapping_Override(e EmrStudioSessionMapping, scope constructs.Construct, id *string, config *EmrStudioSessionMappingConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.emr.EmrStudioSessionMapping",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetIdentityId(val *string) {
+	_jsii_.Set(
+		j,
+		"identityId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetIdentityName(val *string) {
+	_jsii_.Set(
+		j,
+		"identityName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetIdentityType(val *string) {
+	_jsii_.Set(
+		j,
+		"identityType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetSessionPolicyArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sessionPolicyArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EmrStudioSessionMapping) SetStudioId(val *string) {
+	_jsii_.Set(
+		j,
+		"studioId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EmrStudioSessionMapping_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.emr.EmrStudioSessionMapping",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EmrStudioSessionMapping_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.emr.EmrStudioSessionMapping",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (e *jsiiProxy_EmrStudioSessionMapping) ResetIdentityId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdentityId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudioSessionMapping) ResetIdentityName() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdentityName",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EmrStudioSessionMapping) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EmrStudioSessionMapping) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Elastic MapReduce.
+type EmrStudioSessionMappingConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_type EmrStudioSessionMapping#identity_type}.
+	IdentityType *string `json:"identityType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#session_policy_arn EmrStudioSessionMapping#session_policy_arn}.
+	SessionPolicyArn *string `json:"sessionPolicyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#studio_id EmrStudioSessionMapping#studio_id}.
+	StudioId *string `json:"studioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_id EmrStudioSessionMapping#identity_id}.
+	IdentityId *string `json:"identityId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_name EmrStudioSessionMapping#identity_name}.
+	IdentityName *string `json:"identityName"`
 }

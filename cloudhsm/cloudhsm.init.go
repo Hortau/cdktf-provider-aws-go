@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Cluster",
 		reflect.TypeOf((*CloudhsmV2Cluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -67,7 +67,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterClusterCertificates",
 		reflect.TypeOf((*CloudhsmV2ClusterClusterCertificates)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsHardwareCertificate", GoGetter: "AwsHardwareCertificate"},
@@ -91,15 +91,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterConfig",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterConfig",
 		reflect.TypeOf((*CloudhsmV2ClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterTimeouts",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterTimeouts",
 		reflect.TypeOf((*CloudhsmV2ClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.CloudhsmV2ClusterTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterTimeoutsOutputReference",
 		reflect.TypeOf((*CloudhsmV2ClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -110,6 +110,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -128,7 +129,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.CloudhsmV2Hsm",
+		"hashicorp_aws.cloudhsm.CloudhsmV2Hsm",
 		reflect.TypeOf((*CloudhsmV2Hsm)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -183,15 +184,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudHSM.CloudhsmV2HsmConfig",
+		"hashicorp_aws.cloudhsm.CloudhsmV2HsmConfig",
 		reflect.TypeOf((*CloudhsmV2HsmConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudHSM.CloudhsmV2HsmTimeouts",
+		"hashicorp_aws.cloudhsm.CloudhsmV2HsmTimeouts",
 		reflect.TypeOf((*CloudhsmV2HsmTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.CloudhsmV2HsmTimeoutsOutputReference",
+		"hashicorp_aws.cloudhsm.CloudhsmV2HsmTimeoutsOutputReference",
 		reflect.TypeOf((*CloudhsmV2HsmTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -202,6 +203,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -217,7 +219,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2Cluster",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2Cluster",
 		reflect.TypeOf((*DataAwsCloudhsmV2Cluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -263,7 +265,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2ClusterClusterCertificates",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterClusterCertificates",
 		reflect.TypeOf((*DataAwsCloudhsmV2ClusterClusterCertificates)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsHardwareCertificate", GoGetter: "AwsHardwareCertificate"},
@@ -287,7 +289,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CloudHSM.DataAwsCloudhsmV2ClusterConfig",
+		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterConfig",
 		reflect.TypeOf((*DataAwsCloudhsmV2ClusterConfig)(nil)).Elem(),
 	)
 }

@@ -335,7 +335,7 @@ func NewCodedeployApp(scope constructs.Construct, id *string, config *Codedeploy
 	j := jsiiProxy_CodedeployApp{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployApp",
+		"hashicorp_aws.codedeploy.CodedeployApp",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -348,7 +348,7 @@ func NewCodedeployApp_Override(c CodedeployApp, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployApp",
+		"hashicorp_aws.codedeploy.CodedeployApp",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -428,7 +428,7 @@ func CodedeployApp_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeDeploy.CodedeployApp",
+		"hashicorp_aws.codedeploy.CodedeployApp",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -441,7 +441,7 @@ func CodedeployApp_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeDeploy.CodedeployApp",
+		"hashicorp_aws.codedeploy.CodedeployApp",
 		"tfResourceType",
 		&returns,
 	)
@@ -627,6 +627,7 @@ func (c *jsiiProxy_CodedeployApp) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeDeploy.
 type CodedeployAppConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -939,7 +940,7 @@ func NewCodedeployDeploymentConfig(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_CodedeployDeploymentConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -952,7 +953,7 @@ func NewCodedeployDeploymentConfig_Override(c CodedeployDeploymentConfig, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfig",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1016,7 +1017,7 @@ func CodedeployDeploymentConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1029,7 +1030,7 @@ func CodedeployDeploymentConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -1231,6 +1232,7 @@ func (c *jsiiProxy_CodedeployDeploymentConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeDeploy.
 type CodedeployDeploymentConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1263,6 +1265,8 @@ type CodedeployDeploymentConfigMinimumHealthyHosts struct {
 
 type CodedeployDeploymentConfigMinimumHealthyHostsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentConfigMinimumHealthyHosts
+	SetInternalValue(val *CodedeployDeploymentConfigMinimumHealthyHosts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1288,6 +1292,16 @@ type CodedeployDeploymentConfigMinimumHealthyHostsOutputReference interface {
 // The jsii proxy struct for CodedeployDeploymentConfigMinimumHealthyHostsOutputReference
 type jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) InternalValue() *CodedeployDeploymentConfigMinimumHealthyHosts {
+	var returns *CodedeployDeploymentConfigMinimumHealthyHosts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) IsSingleItem() *bool {
@@ -1366,7 +1380,7 @@ func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference(terraformRe
 	j := jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1378,9 +1392,17 @@ func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference_Override(c 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) SetInternalValue(val *CodedeployDeploymentConfigMinimumHealthyHosts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1539,6 +1561,8 @@ type CodedeployDeploymentConfigTrafficRoutingConfig struct {
 
 type CodedeployDeploymentConfigTrafficRoutingConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfig
+	SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1568,6 +1592,16 @@ type CodedeployDeploymentConfigTrafficRoutingConfigOutputReference interface {
 // The jsii proxy struct for CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 type jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfig {
+	var returns *CodedeployDeploymentConfigTrafficRoutingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) IsSingleItem() *bool {
@@ -1666,7 +1700,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference(terraformR
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1678,9 +1712,17 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference_Override(c
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1849,6 +1891,8 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary struct {
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
+	SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -1874,6 +1918,16 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReferenc
 // The jsii proxy struct for CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference
 type jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary {
+	var returns *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) Interval() *float64 {
@@ -1952,7 +2006,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputRefer
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1964,9 +2018,17 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2119,6 +2181,8 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear struct {
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
+	SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -2144,6 +2208,16 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReferenc
 // The jsii proxy struct for CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference
 type jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) InternalValue() *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear {
+	var returns *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) Interval() *float64 {
@@ -2222,7 +2296,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputRefer
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2234,9 +2308,17 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) SetInternalValue(val *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3005,7 +3087,7 @@ func NewCodedeployDeploymentGroup(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CodedeployDeploymentGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3018,7 +3100,7 @@ func NewCodedeployDeploymentGroup_Override(c CodedeployDeploymentGroup, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3154,7 +3236,7 @@ func CodedeployDeploymentGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3167,7 +3249,7 @@ func CodedeployDeploymentGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -3509,6 +3591,8 @@ type CodedeployDeploymentGroupAlarmConfigurationOutputReference interface {
 	IgnorePollAlarmFailure() interface{}
 	SetIgnorePollAlarmFailure(val interface{})
 	IgnorePollAlarmFailureInput() interface{}
+	InternalValue() *CodedeployDeploymentGroupAlarmConfiguration
+	SetInternalValue(val *CodedeployDeploymentGroupAlarmConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3591,6 +3675,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) I
 	return returns
 }
 
+func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) InternalValue() *CodedeployDeploymentGroupAlarmConfiguration {
+	var returns *CodedeployDeploymentGroupAlarmConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3627,7 +3721,7 @@ func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference(terraformReso
 	j := jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3639,7 +3733,7 @@ func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference_Override(c Co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3665,6 +3759,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) S
 	_jsii_.Set(
 		j,
 		"ignorePollAlarmFailure",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) SetInternalValue(val *CodedeployDeploymentGroupAlarmConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3816,6 +3918,8 @@ type CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference interface
 	Events() *[]*string
 	SetEvents(val *[]*string)
 	EventsInput() *[]*string
+	InternalValue() *CodedeployDeploymentGroupAutoRollbackConfiguration
+	SetInternalValue(val *CodedeployDeploymentGroupAutoRollbackConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3877,6 +3981,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 	return returns
 }
 
+func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) InternalValue() *CodedeployDeploymentGroupAutoRollbackConfiguration {
+	var returns *CodedeployDeploymentGroupAutoRollbackConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3913,7 +4027,7 @@ func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference(terraf
 	j := jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3925,7 +4039,7 @@ func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3943,6 +4057,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 	_jsii_.Set(
 		j,
 		"events",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) SetInternalValue(val *CodedeployDeploymentGroupAutoRollbackConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4098,6 +4220,8 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutp
 	ActionOnTimeout() *string
 	SetActionOnTimeout(val *string)
 	ActionOnTimeoutInput() *string
+	InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption
+	SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4137,6 +4261,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 	_jsii_.Get(
 		j,
 		"actionOnTimeoutInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption {
+	var returns *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4198,7 +4332,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionO
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4210,7 +4344,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4220,6 +4354,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 	_jsii_.Set(
 		j,
 		"actionOnTimeout",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4366,6 +4508,8 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOpt
 	Action() *string
 	SetAction(val *string)
 	ActionInput() *string
+	InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption
+	SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4401,6 +4545,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption {
+	var returns *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4442,7 +4596,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioning
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4454,7 +4608,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioning
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4464,6 +4618,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 	_jsii_.Set(
 		j,
 		"action",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4590,6 +4752,8 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference interface
 	DeploymentReadyOptionInput() *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption
 	GreenFleetProvisioningOption() CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference
 	GreenFleetProvisioningOptionInput() *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption
+	InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfig
+	SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerminateBlueInstancesOnDeploymentSuccess() CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference
@@ -4657,6 +4821,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 	return returns
 }
 
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfig {
+	var returns *CodedeployDeploymentGroupBlueGreenDeploymentConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4713,7 +4887,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference(terraf
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4725,9 +4899,17 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4899,6 +5081,8 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnD
 	Action() *string
 	SetAction(val *string)
 	ActionInput() *string
+	InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess
+	SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerminationWaitTimeInMinutes() *float64
@@ -4938,6 +5122,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) InternalValue() *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess {
+	var returns *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4999,7 +5193,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstances
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5011,7 +5205,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstances
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5021,6 +5215,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	_jsii_.Set(
 		j,
 		"action",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) SetInternalValue(val *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5157,6 +5359,7 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	)
 }
 
+// AWS CodeDeploy.
 type CodedeployDeploymentGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5237,6 +5440,8 @@ type CodedeployDeploymentGroupDeploymentStyleOutputReference interface {
 	DeploymentType() *string
 	SetDeploymentType(val *string)
 	DeploymentTypeInput() *string
+	InternalValue() *CodedeployDeploymentGroupDeploymentStyle
+	SetInternalValue(val *CodedeployDeploymentGroupDeploymentStyle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5298,6 +5503,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) Depl
 	return returns
 }
 
+func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) InternalValue() *CodedeployDeploymentGroupDeploymentStyle {
+	var returns *CodedeployDeploymentGroupDeploymentStyle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5334,7 +5549,7 @@ func NewCodedeployDeploymentGroupDeploymentStyleOutputReference(terraformResourc
 	j := jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5346,7 +5561,7 @@ func NewCodedeployDeploymentGroupDeploymentStyleOutputReference_Override(c Coded
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5364,6 +5579,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetD
 	_jsii_.Set(
 		j,
 		"deploymentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetInternalValue(val *CodedeployDeploymentGroupDeploymentStyle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5529,6 +5752,8 @@ type CodedeployDeploymentGroupEcsServiceOutputReference interface {
 	ClusterName() *string
 	SetClusterName(val *string)
 	ClusterNameInput() *string
+	InternalValue() *CodedeployDeploymentGroupEcsService
+	SetInternalValue(val *CodedeployDeploymentGroupEcsService)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ServiceName() *string
@@ -5566,6 +5791,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) ClusterNa
 	_jsii_.Get(
 		j,
 		"clusterNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) InternalValue() *CodedeployDeploymentGroupEcsService {
+	var returns *CodedeployDeploymentGroupEcsService
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5627,7 +5862,7 @@ func NewCodedeployDeploymentGroupEcsServiceOutputReference(terraformResource cdk
 	j := jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5639,7 +5874,7 @@ func NewCodedeployDeploymentGroupEcsServiceOutputReference_Override(c Codedeploy
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5649,6 +5884,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetCluste
 	_jsii_.Set(
 		j,
 		"clusterName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetInternalValue(val *CodedeployDeploymentGroupEcsService) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5794,6 +6037,8 @@ type CodedeployDeploymentGroupLoadBalancerInfoOutputReference interface {
 	ElbInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
 	SetElbInfo(val *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo)
 	ElbInfoInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
+	InternalValue() *CodedeployDeploymentGroupLoadBalancerInfo
+	SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TargetGroupInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo
@@ -5837,6 +6082,16 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Elb
 	_jsii_.Get(
 		j,
 		"elbInfoInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) InternalValue() *CodedeployDeploymentGroupLoadBalancerInfo {
+	var returns *CodedeployDeploymentGroupLoadBalancerInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5918,7 +6173,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference(terraformResour
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5930,7 +6185,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference_Override(c Code
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5940,6 +6195,14 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Set
 	_jsii_.Set(
 		j,
 		"elbInfo",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6114,6 +6377,8 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo struct {
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo
+	SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ProdTrafficRoute() CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference
@@ -6141,6 +6406,16 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference
 // The jsii proxy struct for CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference
 type jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo {
+	var returns *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) IsSingleItem() *bool {
@@ -6239,7 +6514,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputRefere
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6251,9 +6526,17 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputRefere
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6404,6 +6687,8 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRout
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute
+	SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ListenerArns() *[]*string
@@ -6424,6 +6709,16 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRout
 // The jsii proxy struct for CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference
 type jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute {
+	var returns *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) IsSingleItem() *bool {
@@ -6482,7 +6777,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficR
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6494,9 +6789,17 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6628,6 +6931,8 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRout
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute
+	SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ListenerArns() *[]*string
@@ -6648,6 +6953,16 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRout
 // The jsii proxy struct for CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference
 type jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) InternalValue() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute {
+	var returns *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) IsSingleItem() *bool {
@@ -6706,7 +7021,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficR
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6718,9 +7033,17 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

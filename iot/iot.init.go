@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.DataAwsIotEndpoint",
+		"hashicorp_aws.iot.DataAwsIotEndpoint",
 		reflect.TypeOf((*DataAwsIotEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -49,11 +49,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.DataAwsIotEndpointConfig",
+		"hashicorp_aws.iot.DataAwsIotEndpointConfig",
 		reflect.TypeOf((*DataAwsIotEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotAuthorizer",
+		"hashicorp_aws.iot.IotAuthorizer",
 		reflect.TypeOf((*IotAuthorizer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -107,11 +107,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotAuthorizerConfig",
+		"hashicorp_aws.iot.IotAuthorizerConfig",
 		reflect.TypeOf((*IotAuthorizerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotCertificate",
+		"hashicorp_aws.iot.IotCertificate",
 		reflect.TypeOf((*IotCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "active", GoGetter: "Active"},
@@ -157,11 +157,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotCertificateConfig",
+		"hashicorp_aws.iot.IotCertificateConfig",
 		reflect.TypeOf((*IotCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotPolicy",
+		"hashicorp_aws.iot.IotPolicy",
 		reflect.TypeOf((*IotPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -204,7 +204,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotPolicyAttachment",
+		"hashicorp_aws.iot.IotPolicyAttachment",
 		reflect.TypeOf((*IotPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -245,15 +245,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotPolicyAttachmentConfig",
+		"hashicorp_aws.iot.IotPolicyAttachmentConfig",
 		reflect.TypeOf((*IotPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotPolicyConfig",
+		"hashicorp_aws.iot.IotPolicyConfig",
 		reflect.TypeOf((*IotPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotRoleAlias",
+		"hashicorp_aws.iot.IotRoleAlias",
 		reflect.TypeOf((*IotRoleAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -298,11 +298,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotRoleAliasConfig",
+		"hashicorp_aws.iot.IotRoleAliasConfig",
 		reflect.TypeOf((*IotRoleAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotThing",
+		"hashicorp_aws.iot.IotThing",
 		reflect.TypeOf((*IotThing)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -350,11 +350,221 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotThingConfig",
+		"hashicorp_aws.iot.IotThingConfig",
 		reflect.TypeOf((*IotThingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachment",
+		"hashicorp_aws.iot.IotThingGroup",
+		reflect.TypeOf((*IotThingGroup)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberMethod{JsiiMethod: "metadata", GoMethod: "Metadata"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "parentGroupName", GoGetter: "ParentGroupName"},
+			_jsii_.MemberProperty{JsiiProperty: "parentGroupNameInput", GoGetter: "ParentGroupNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "properties", GoGetter: "Properties"},
+			_jsii_.MemberProperty{JsiiProperty: "propertiesInput", GoGetter: "PropertiesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putProperties", GoMethod: "PutProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetParentGroupName", GoMethod: "ResetParentGroupName"},
+			_jsii_.MemberMethod{JsiiMethod: "resetProperties", GoMethod: "ResetProperties"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+			_jsii_.MemberProperty{JsiiProperty: "version", GoGetter: "Version"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroup{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.iot.IotThingGroupConfig",
+		reflect.TypeOf((*IotThingGroupConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingGroupMembership",
+		reflect.TypeOf((*IotThingGroupMembership)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "overrideDynamicGroup", GoGetter: "OverrideDynamicGroup"},
+			_jsii_.MemberProperty{JsiiProperty: "overrideDynamicGroupInput", GoGetter: "OverrideDynamicGroupInput"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideDynamicGroup", GoMethod: "ResetOverrideDynamicGroup"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "thingGroupName", GoGetter: "ThingGroupName"},
+			_jsii_.MemberProperty{JsiiProperty: "thingGroupNameInput", GoGetter: "ThingGroupNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "thingName", GoGetter: "ThingName"},
+			_jsii_.MemberProperty{JsiiProperty: "thingNameInput", GoGetter: "ThingNameInput"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroupMembership{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.iot.IotThingGroupMembershipConfig",
+		reflect.TypeOf((*IotThingGroupMembershipConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingGroupMetadata",
+		reflect.TypeOf((*IotThingGroupMetadata)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "creationDate", GoGetter: "CreationDate"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "parentGroupName", GoGetter: "ParentGroupName"},
+			_jsii_.MemberProperty{JsiiProperty: "rootToParentGroups", GoGetter: "RootToParentGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroupMetadata{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingGroupMetadataRootToParentGroups",
+		reflect.TypeOf((*IotThingGroupMetadataRootToParentGroups)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "groupArn", GoGetter: "GroupArn"},
+			_jsii_.MemberProperty{JsiiProperty: "groupName", GoGetter: "GroupName"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroupMetadataRootToParentGroups{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.iot.IotThingGroupProperties",
+		reflect.TypeOf((*IotThingGroupProperties)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.iot.IotThingGroupPropertiesAttributePayload",
+		reflect.TypeOf((*IotThingGroupPropertiesAttributePayload)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingGroupPropertiesAttributePayloadOutputReference",
+		reflect.TypeOf((*IotThingGroupPropertiesAttributePayloadOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attributes", GoGetter: "Attributes"},
+			_jsii_.MemberProperty{JsiiProperty: "attributesInput", GoGetter: "AttributesInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAttributes", GoMethod: "ResetAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingGroupPropertiesOutputReference",
+		reflect.TypeOf((*IotThingGroupPropertiesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attributePayload", GoGetter: "AttributePayload"},
+			_jsii_.MemberProperty{JsiiProperty: "attributePayloadInput", GoGetter: "AttributePayloadInput"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "putAttributePayload", GoMethod: "PutAttributePayload"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAttributePayload", GoMethod: "ResetAttributePayload"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IotThingGroupPropertiesOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.iot.IotThingPrincipalAttachment",
 		reflect.TypeOf((*IotThingPrincipalAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -395,11 +605,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachmentConfig",
+		"hashicorp_aws.iot.IotThingPrincipalAttachmentConfig",
 		reflect.TypeOf((*IotThingPrincipalAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotThingType",
+		"hashicorp_aws.iot.IotThingType",
 		reflect.TypeOf((*IotThingType)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -431,7 +641,13 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetDeprecated", GoMethod: "ResetDeprecated"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetProperties", GoMethod: "ResetProperties"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
@@ -446,15 +662,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotThingTypeConfig",
+		"hashicorp_aws.iot.IotThingTypeConfig",
 		reflect.TypeOf((*IotThingTypeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotThingTypeProperties",
+		"hashicorp_aws.iot.IotThingTypeProperties",
 		reflect.TypeOf((*IotThingTypeProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotThingTypePropertiesOutputReference",
+		"hashicorp_aws.iot.IotThingTypePropertiesOutputReference",
 		reflect.TypeOf((*IotThingTypePropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
@@ -463,6 +679,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -480,7 +697,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRule",
+		"hashicorp_aws.iot.IotTopicRule",
 		reflect.TypeOf((*IotTopicRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -584,37 +801,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleCloudwatchAlarm",
+		"hashicorp_aws.iot.IotTopicRuleCloudwatchAlarm",
 		reflect.TypeOf((*IotTopicRuleCloudwatchAlarm)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleCloudwatchMetric",
+		"hashicorp_aws.iot.IotTopicRuleCloudwatchMetric",
 		reflect.TypeOf((*IotTopicRuleCloudwatchMetric)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleConfig",
+		"hashicorp_aws.iot.IotTopicRuleConfig",
 		reflect.TypeOf((*IotTopicRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodb",
+		"hashicorp_aws.iot.IotTopicRuleDynamodb",
 		reflect.TypeOf((*IotTopicRuleDynamodb)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodbv2",
+		"hashicorp_aws.iot.IotTopicRuleDynamodbv2",
 		reflect.TypeOf((*IotTopicRuleDynamodbv2)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodbv2PutItem",
+		"hashicorp_aws.iot.IotTopicRuleDynamodbv2PutItem",
 		reflect.TypeOf((*IotTopicRuleDynamodbv2PutItem)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleDynamodbv2PutItemOutputReference",
 		reflect.TypeOf((*IotTopicRuleDynamodbv2PutItemOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -630,19 +848,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleElasticsearch",
+		"hashicorp_aws.iot.IotTopicRuleElasticsearch",
 		reflect.TypeOf((*IotTopicRuleElasticsearch)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorAction",
+		"hashicorp_aws.iot.IotTopicRuleErrorAction",
 		reflect.TypeOf((*IotTopicRuleErrorAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchAlarm",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchAlarm",
 		reflect.TypeOf((*IotTopicRuleErrorActionCloudwatchAlarm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionCloudwatchAlarmOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmName", GoGetter: "AlarmName"},
@@ -651,6 +869,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -670,17 +889,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchMetric",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchMetric",
 		reflect.TypeOf((*IotTopicRuleErrorActionCloudwatchMetric)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionCloudwatchMetricOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -707,11 +927,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodb",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodb",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodb)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodbOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -724,6 +944,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "hashKeyTypeInput", GoGetter: "HashKeyTypeInput"},
 			_jsii_.MemberProperty{JsiiProperty: "hashKeyValue", GoGetter: "HashKeyValue"},
 			_jsii_.MemberProperty{JsiiProperty: "hashKeyValueInput", GoGetter: "HashKeyValueInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -757,17 +978,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodbv2)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2OutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodbv2OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -787,17 +1009,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2PutItem",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2PutItem",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodbv2PutItem)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionDynamodbv2PutItemOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -813,11 +1036,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionElasticsearch",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionElasticsearch",
 		reflect.TypeOf((*IotTopicRuleErrorActionElasticsearch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionElasticsearchOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionElasticsearchOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionElasticsearchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "endpoint", GoGetter: "Endpoint"},
@@ -830,6 +1053,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
 			_jsii_.MemberProperty{JsiiProperty: "index", GoGetter: "Index"},
 			_jsii_.MemberProperty{JsiiProperty: "indexInput", GoGetter: "IndexInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -847,11 +1071,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionFirehose",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionFirehose",
 		reflect.TypeOf((*IotTopicRuleErrorActionFirehose)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionFirehoseOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionFirehoseOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionFirehoseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deliveryStreamName", GoGetter: "DeliveryStreamName"},
@@ -860,6 +1084,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -878,11 +1103,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotAnalytics",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotAnalytics",
 		reflect.TypeOf((*IotTopicRuleErrorActionIotAnalytics)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotAnalyticsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotAnalyticsOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionIotAnalyticsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "channelName", GoGetter: "ChannelName"},
@@ -891,6 +1116,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -906,11 +1132,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotEvents",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotEvents",
 		reflect.TypeOf((*IotTopicRuleErrorActionIotEvents)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotEventsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotEventsOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionIotEventsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -919,6 +1145,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inputName", GoGetter: "InputName"},
 			_jsii_.MemberProperty{JsiiProperty: "inputNameInput", GoGetter: "InputNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -937,17 +1164,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionKinesis",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionKinesis",
 		reflect.TypeOf((*IotTopicRuleErrorActionKinesis)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionKinesisOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionKinesisOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionKinesisOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -968,11 +1196,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionLambda",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionLambda",
 		reflect.TypeOf((*IotTopicRuleErrorActionLambda)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionLambdaOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionLambdaOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionLambdaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "functionArn", GoGetter: "FunctionArn"},
@@ -981,6 +1209,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -994,7 +1223,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchAlarm", GoGetter: "CloudwatchAlarm"},
@@ -1013,6 +1242,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iotAnalytics", GoGetter: "IotAnalytics"},
@@ -1074,17 +1304,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionRepublish",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionRepublish",
 		reflect.TypeOf((*IotTopicRuleErrorActionRepublish)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionRepublishOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionRepublishOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionRepublishOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1105,11 +1336,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionS3",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionS3",
 		reflect.TypeOf((*IotTopicRuleErrorActionS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionS3OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionS3OutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketName", GoGetter: "BucketName"},
@@ -1118,6 +1349,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1135,17 +1367,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSns",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSns",
 		reflect.TypeOf((*IotTopicRuleErrorActionSns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSnsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSnsOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionSnsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1166,17 +1399,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSqs",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSqs",
 		reflect.TypeOf((*IotTopicRuleErrorActionSqs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSqsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSqsOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionSqsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1196,11 +1430,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionStepFunctions",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionStepFunctions",
 		reflect.TypeOf((*IotTopicRuleErrorActionStepFunctions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionStepFunctionsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionStepFunctionsOutputReference",
 		reflect.TypeOf((*IotTopicRuleErrorActionStepFunctionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "executionNamePrefix", GoGetter: "ExecutionNamePrefix"},
@@ -1209,6 +1443,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1227,43 +1462,43 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleFirehose",
+		"hashicorp_aws.iot.IotTopicRuleFirehose",
 		reflect.TypeOf((*IotTopicRuleFirehose)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleIotAnalytics",
+		"hashicorp_aws.iot.IotTopicRuleIotAnalytics",
 		reflect.TypeOf((*IotTopicRuleIotAnalytics)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleIotEvents",
+		"hashicorp_aws.iot.IotTopicRuleIotEvents",
 		reflect.TypeOf((*IotTopicRuleIotEvents)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleKinesis",
+		"hashicorp_aws.iot.IotTopicRuleKinesis",
 		reflect.TypeOf((*IotTopicRuleKinesis)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleLambda",
+		"hashicorp_aws.iot.IotTopicRuleLambda",
 		reflect.TypeOf((*IotTopicRuleLambda)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleRepublish",
+		"hashicorp_aws.iot.IotTopicRuleRepublish",
 		reflect.TypeOf((*IotTopicRuleRepublish)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleS3",
+		"hashicorp_aws.iot.IotTopicRuleS3",
 		reflect.TypeOf((*IotTopicRuleS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleSns",
+		"hashicorp_aws.iot.IotTopicRuleSns",
 		reflect.TypeOf((*IotTopicRuleSns)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleSqs",
+		"hashicorp_aws.iot.IotTopicRuleSqs",
 		reflect.TypeOf((*IotTopicRuleSqs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IoT.IotTopicRuleStepFunctions",
+		"hashicorp_aws.iot.IotTopicRuleStepFunctions",
 		reflect.TypeOf((*IotTopicRuleStepFunctions)(nil)).Elem(),
 	)
 }

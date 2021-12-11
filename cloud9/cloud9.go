@@ -408,7 +408,7 @@ func NewCloud9EnvironmentEc2(scope constructs.Construct, id *string, config *Clo
 	j := jsiiProxy_Cloud9EnvironmentEc2{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cloud9.Cloud9EnvironmentEc2",
+		"hashicorp_aws.cloud9.Cloud9EnvironmentEc2",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -421,7 +421,7 @@ func NewCloud9EnvironmentEc2_Override(c Cloud9EnvironmentEc2, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cloud9.Cloud9EnvironmentEc2",
+		"hashicorp_aws.cloud9.Cloud9EnvironmentEc2",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -533,7 +533,7 @@ func Cloud9EnvironmentEc2_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cloud9.Cloud9EnvironmentEc2",
+		"hashicorp_aws.cloud9.Cloud9EnvironmentEc2",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -546,7 +546,7 @@ func Cloud9EnvironmentEc2_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cloud9.Cloud9EnvironmentEc2",
+		"hashicorp_aws.cloud9.Cloud9EnvironmentEc2",
 		"tfResourceType",
 		&returns,
 	)
@@ -756,6 +756,7 @@ func (c *jsiiProxy_Cloud9EnvironmentEc2) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cloud9.
 type Cloud9EnvironmentEc2Config struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettings",
 		reflect.TypeOf((*DataAwsLakeformationDataLakeSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -52,11 +52,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsConfig",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsConfig",
 		reflect.TypeOf((*DataAwsLakeformationDataLakeSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
 		reflect.TypeOf((*DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -77,7 +77,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
 		reflect.TypeOf((*DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -98,7 +98,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissions",
 		reflect.TypeOf((*DataAwsLakeformationPermissions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -161,15 +161,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsConfig",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsConfig",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDataLocation",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDataLocation",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsDataLocation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDataLocationOutputReference",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsDataLocationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -180,6 +180,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -194,11 +195,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDatabase",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDatabase",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsDatabase)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDatabaseOutputReference",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsDatabaseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -207,6 +208,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -223,11 +225,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTable",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTable",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsTable)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableOutputReference",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsTableOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -238,6 +240,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -258,11 +261,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableWithColumns",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableWithColumns",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsTableWithColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
 		reflect.TypeOf((*DataAwsLakeformationPermissionsTableWithColumnsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -277,6 +280,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -298,7 +302,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResource",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResource",
 		reflect.TypeOf((*DataAwsLakeformationResource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -339,11 +343,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResourceConfig",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResourceConfig",
 		reflect.TypeOf((*DataAwsLakeformationResourceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettings",
 		reflect.TypeOf((*LakeformationDataLakeSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -395,19 +399,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettingsConfig",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettingsConfig",
 		reflect.TypeOf((*LakeformationDataLakeSettingsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
 		reflect.TypeOf((*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettingsCreateTableDefaultPermissions",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettingsCreateTableDefaultPermissions",
 		reflect.TypeOf((*LakeformationDataLakeSettingsCreateTableDefaultPermissions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationPermissions",
+		"hashicorp_aws.lakeformation.LakeformationPermissions",
 		reflect.TypeOf((*LakeformationPermissions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -473,15 +477,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsConfig",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsConfig",
 		reflect.TypeOf((*LakeformationPermissionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDataLocation",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDataLocation",
 		reflect.TypeOf((*LakeformationPermissionsDataLocation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDataLocationOutputReference",
 		reflect.TypeOf((*LakeformationPermissionsDataLocationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -492,6 +496,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -506,11 +511,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDatabase",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDatabase",
 		reflect.TypeOf((*LakeformationPermissionsDatabase)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDatabaseOutputReference",
 		reflect.TypeOf((*LakeformationPermissionsDatabaseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -519,6 +524,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -535,11 +541,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTable",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTable",
 		reflect.TypeOf((*LakeformationPermissionsTable)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableOutputReference",
 		reflect.TypeOf((*LakeformationPermissionsTableOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -550,6 +556,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -570,11 +577,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableWithColumns",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableWithColumns",
 		reflect.TypeOf((*LakeformationPermissionsTableWithColumns)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableWithColumnsOutputReference",
 		reflect.TypeOf((*LakeformationPermissionsTableWithColumnsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalogId", GoGetter: "CatalogId"},
@@ -589,6 +596,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -610,7 +618,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.LakeFormation.LakeformationResource",
+		"hashicorp_aws.lakeformation.LakeformationResource",
 		reflect.TypeOf((*LakeformationResource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -653,7 +661,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.LakeFormation.LakeformationResourceConfig",
+		"hashicorp_aws.lakeformation.LakeformationResourceConfig",
 		reflect.TypeOf((*LakeformationResourceConfig)(nil)).Elem(),
 	)
 }

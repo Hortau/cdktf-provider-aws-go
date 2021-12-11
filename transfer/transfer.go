@@ -340,7 +340,7 @@ func NewDataAwsTransferServer(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsTransferServer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.DataAwsTransferServer",
+		"hashicorp_aws.transfer.DataAwsTransferServer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -353,7 +353,7 @@ func NewDataAwsTransferServer_Override(d DataAwsTransferServer, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.DataAwsTransferServer",
+		"hashicorp_aws.transfer.DataAwsTransferServer",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -409,7 +409,7 @@ func DataAwsTransferServer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Transfer.DataAwsTransferServer",
+		"hashicorp_aws.transfer.DataAwsTransferServer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -422,7 +422,7 @@ func DataAwsTransferServer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Transfer.DataAwsTransferServer",
+		"hashicorp_aws.transfer.DataAwsTransferServer",
 		"tfResourceType",
 		&returns,
 	)
@@ -584,6 +584,7 @@ func (d *jsiiProxy_DataAwsTransferServer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Transfer.
 type DataAwsTransferServerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -974,7 +975,7 @@ func NewTransferAccess(scope constructs.Construct, id *string, config *TransferA
 	j := jsiiProxy_TransferAccess{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferAccess",
+		"hashicorp_aws.transfer.TransferAccess",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -987,7 +988,7 @@ func NewTransferAccess_Override(t TransferAccess, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferAccess",
+		"hashicorp_aws.transfer.TransferAccess",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -1091,7 +1092,7 @@ func TransferAccess_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Transfer.TransferAccess",
+		"hashicorp_aws.transfer.TransferAccess",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1104,7 +1105,7 @@ func TransferAccess_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Transfer.TransferAccess",
+		"hashicorp_aws.transfer.TransferAccess",
 		"tfResourceType",
 		&returns,
 	)
@@ -1322,6 +1323,7 @@ func (t *jsiiProxy_TransferAccess) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Transfer.
 type TransferAccessConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1374,6 +1376,8 @@ type TransferAccessPosixProfileOutputReference interface {
 	Gid() *float64
 	SetGid(val *float64)
 	GidInput() *float64
+	InternalValue() *TransferAccessPosixProfile
+	SetInternalValue(val *TransferAccessPosixProfile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecondaryGids() *[]*float64
@@ -1415,6 +1419,16 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) GidInput() *float6
 	_jsii_.Get(
 		j,
 		"gidInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) InternalValue() *TransferAccessPosixProfile {
+	var returns *TransferAccessPosixProfile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1496,7 +1510,7 @@ func NewTransferAccessPosixProfileOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_TransferAccessPosixProfileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferAccessPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferAccessPosixProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1508,7 +1522,7 @@ func NewTransferAccessPosixProfileOutputReference_Override(t TransferAccessPosix
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferAccessPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferAccessPosixProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		t,
 	)
@@ -1518,6 +1532,14 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetGid(val *float6
 	_jsii_.Set(
 		j,
 		"gid",
+		val,
+	)
+}
+
+func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetInternalValue(val *TransferAccessPosixProfile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1684,6 +1706,9 @@ type TransferServer interface {
 	ForceDestroyInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
+	Function() *string
+	SetFunction(val *string)
+	FunctionInput() *string
 	HostKey() *string
 	SetHostKey(val *string)
 	HostKeyFingerprint() *string
@@ -1736,6 +1761,7 @@ type TransferServer interface {
 	ResetEndpointDetails()
 	ResetEndpointType()
 	ResetForceDestroy()
+	ResetFunction()
 	ResetHostKey()
 	ResetIdentityProviderType()
 	ResetInvocationRole()
@@ -1952,6 +1978,26 @@ func (j *jsiiProxy_TransferServer) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransferServer) Function() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"function",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransferServer) FunctionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionInput",
 		&returns,
 	)
 	return returns
@@ -2234,7 +2280,7 @@ func NewTransferServer(scope constructs.Construct, id *string, config *TransferS
 	j := jsiiProxy_TransferServer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferServer",
+		"hashicorp_aws.transfer.TransferServer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2247,7 +2293,7 @@ func NewTransferServer_Override(t TransferServer, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferServer",
+		"hashicorp_aws.transfer.TransferServer",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -2305,6 +2351,14 @@ func (j *jsiiProxy_TransferServer) SetForceDestroy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"forceDestroy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_TransferServer) SetFunction(val *string) {
+	_jsii_.Set(
+		j,
+		"function",
 		val,
 	)
 }
@@ -2407,7 +2461,7 @@ func TransferServer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Transfer.TransferServer",
+		"hashicorp_aws.transfer.TransferServer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2420,7 +2474,7 @@ func TransferServer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Transfer.TransferServer",
+		"hashicorp_aws.transfer.TransferServer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2572,6 +2626,14 @@ func (t *jsiiProxy_TransferServer) ResetForceDestroy() {
 	)
 }
 
+func (t *jsiiProxy_TransferServer) ResetFunction() {
+	_jsii_.InvokeVoid(
+		t,
+		"resetFunction",
+		nil, // no parameters
+	)
+}
+
 func (t *jsiiProxy_TransferServer) ResetHostKey() {
 	_jsii_.InvokeVoid(
 		t,
@@ -2710,6 +2772,7 @@ func (t *jsiiProxy_TransferServer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Transfer.
 type TransferServerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2733,6 +2796,8 @@ type TransferServerConfig struct {
 	EndpointType *string `json:"endpointType"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#force_destroy TransferServer#force_destroy}.
 	ForceDestroy interface{} `json:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#function TransferServer#function}.
+	Function *string `json:"function"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#host_key TransferServer#host_key}.
 	HostKey *string `json:"hostKey"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#identity_provider_type TransferServer#identity_provider_type}.
@@ -2771,6 +2836,8 @@ type TransferServerEndpointDetailsOutputReference interface {
 	AddressAllocationIds() *[]*string
 	SetAddressAllocationIds(val *[]*string)
 	AddressAllocationIdsInput() *[]*string
+	InternalValue() *TransferServerEndpointDetails
+	SetInternalValue(val *TransferServerEndpointDetails)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -2822,6 +2889,16 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) AddressAllocati
 	_jsii_.Get(
 		j,
 		"addressAllocationIdsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) InternalValue() *TransferServerEndpointDetails {
+	var returns *TransferServerEndpointDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2943,7 +3020,7 @@ func NewTransferServerEndpointDetailsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_TransferServerEndpointDetailsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferServerEndpointDetailsOutputReference",
+		"hashicorp_aws.transfer.TransferServerEndpointDetailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2955,7 +3032,7 @@ func NewTransferServerEndpointDetailsOutputReference_Override(t TransferServerEn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferServerEndpointDetailsOutputReference",
+		"hashicorp_aws.transfer.TransferServerEndpointDetailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		t,
 	)
@@ -2965,6 +3042,14 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetAddressAlloc
 	_jsii_.Set(
 		j,
 		"addressAllocationIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetInternalValue(val *TransferServerEndpointDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3405,7 +3490,7 @@ func NewTransferSshKey(scope constructs.Construct, id *string, config *TransferS
 	j := jsiiProxy_TransferSshKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferSshKey",
+		"hashicorp_aws.transfer.TransferSshKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3418,7 +3503,7 @@ func NewTransferSshKey_Override(t TransferSshKey, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferSshKey",
+		"hashicorp_aws.transfer.TransferSshKey",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -3490,7 +3575,7 @@ func TransferSshKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Transfer.TransferSshKey",
+		"hashicorp_aws.transfer.TransferSshKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3503,7 +3588,7 @@ func TransferSshKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Transfer.TransferSshKey",
+		"hashicorp_aws.transfer.TransferSshKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -3665,6 +3750,7 @@ func (t *jsiiProxy_TransferSshKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Transfer.
 type TransferSshKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4117,7 +4203,7 @@ func NewTransferUser(scope constructs.Construct, id *string, config *TransferUse
 	j := jsiiProxy_TransferUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferUser",
+		"hashicorp_aws.transfer.TransferUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4130,7 +4216,7 @@ func NewTransferUser_Override(t TransferUser, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferUser",
+		"hashicorp_aws.transfer.TransferUser",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -4250,7 +4336,7 @@ func TransferUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Transfer.TransferUser",
+		"hashicorp_aws.transfer.TransferUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4263,7 +4349,7 @@ func TransferUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Transfer.TransferUser",
+		"hashicorp_aws.transfer.TransferUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -4489,6 +4575,7 @@ func (t *jsiiProxy_TransferUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Transfer.
 type TransferUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4545,6 +4632,8 @@ type TransferUserPosixProfileOutputReference interface {
 	Gid() *float64
 	SetGid(val *float64)
 	GidInput() *float64
+	InternalValue() *TransferUserPosixProfile
+	SetInternalValue(val *TransferUserPosixProfile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecondaryGids() *[]*float64
@@ -4586,6 +4675,16 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) GidInput() *float64 
 	_jsii_.Get(
 		j,
 		"gidInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransferUserPosixProfileOutputReference) InternalValue() *TransferUserPosixProfile {
+	var returns *TransferUserPosixProfile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4667,7 +4766,7 @@ func NewTransferUserPosixProfileOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_TransferUserPosixProfileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferUserPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferUserPosixProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4679,7 +4778,7 @@ func NewTransferUserPosixProfileOutputReference_Override(t TransferUserPosixProf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Transfer.TransferUserPosixProfileOutputReference",
+		"hashicorp_aws.transfer.TransferUserPosixProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		t,
 	)
@@ -4689,6 +4788,14 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetGid(val *float64)
 	_jsii_.Set(
 		j,
 		"gid",
+		val,
+	)
+}
+
+func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetInternalValue(val *TransferUserPosixProfile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

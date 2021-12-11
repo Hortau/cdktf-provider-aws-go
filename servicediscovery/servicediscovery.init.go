@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespace",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespace",
 		reflect.TypeOf((*DataAwsServiceDiscoveryDnsNamespace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -52,11 +52,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.DataAwsServiceDiscoveryDnsNamespaceConfig",
+		"hashicorp_aws.servicediscovery.DataAwsServiceDiscoveryDnsNamespaceConfig",
 		reflect.TypeOf((*DataAwsServiceDiscoveryDnsNamespaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespace",
 		reflect.TypeOf((*ServiceDiscoveryHttpNamespace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -105,11 +105,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryHttpNamespaceConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryHttpNamespaceConfig",
 		reflect.TypeOf((*ServiceDiscoveryHttpNamespaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstance",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstance",
 		reflect.TypeOf((*ServiceDiscoveryInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -152,11 +152,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryInstanceConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryInstanceConfig",
 		reflect.TypeOf((*ServiceDiscoveryInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespace",
 		reflect.TypeOf((*ServiceDiscoveryPrivateDnsNamespace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -208,11 +208,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPrivateDnsNamespaceConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPrivateDnsNamespaceConfig",
 		reflect.TypeOf((*ServiceDiscoveryPrivateDnsNamespaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespace",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespace",
 		reflect.TypeOf((*ServiceDiscoveryPublicDnsNamespace)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -262,11 +262,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryPublicDnsNamespaceConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryPublicDnsNamespaceConfig",
 		reflect.TypeOf((*ServiceDiscoveryPublicDnsNamespaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryService",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryService",
 		reflect.TypeOf((*ServiceDiscoveryService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -333,19 +333,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceConfig",
 		reflect.TypeOf((*ServiceDiscoveryServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceDnsConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceDnsConfig",
 		reflect.TypeOf((*ServiceDiscoveryServiceDnsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceDnsConfigDnsRecords",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceDnsConfigDnsRecords",
 		reflect.TypeOf((*ServiceDiscoveryServiceDnsConfigDnsRecords)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceDnsConfigOutputReference",
 		reflect.TypeOf((*ServiceDiscoveryServiceDnsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dnsRecords", GoGetter: "DnsRecords"},
@@ -354,6 +354,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -372,11 +373,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckConfig",
 		reflect.TypeOf((*ServiceDiscoveryServiceHealthCheckConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckConfigOutputReference",
 		reflect.TypeOf((*ServiceDiscoveryServiceHealthCheckConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "failureThreshold", GoGetter: "FailureThreshold"},
@@ -385,6 +386,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -405,11 +407,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckCustomConfig",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckCustomConfig",
 		reflect.TypeOf((*ServiceDiscoveryServiceHealthCheckCustomConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceDiscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
+		"hashicorp_aws.servicediscovery.ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference",
 		reflect.TypeOf((*ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "failureThreshold", GoGetter: "FailureThreshold"},
@@ -418,6 +420,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBroker",
+		"hashicorp_aws.mq.DataAwsMqBroker",
 		reflect.TypeOf((*DataAwsMqBroker)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -72,11 +72,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.DataAwsMqBrokerConfig",
+		"hashicorp_aws.mq.DataAwsMqBrokerConfig",
 		reflect.TypeOf((*DataAwsMqBrokerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerConfiguration",
+		"hashicorp_aws.mq.DataAwsMqBrokerConfiguration",
 		reflect.TypeOf((*DataAwsMqBrokerConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -97,7 +97,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerEncryptionOptions",
+		"hashicorp_aws.mq.DataAwsMqBrokerEncryptionOptions",
 		reflect.TypeOf((*DataAwsMqBrokerEncryptionOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -118,7 +118,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerInstances",
+		"hashicorp_aws.mq.DataAwsMqBrokerInstances",
 		reflect.TypeOf((*DataAwsMqBrokerInstances)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -140,7 +140,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLdapServerMetadata",
+		"hashicorp_aws.mq.DataAwsMqBrokerLdapServerMetadata",
 		reflect.TypeOf((*DataAwsMqBrokerLdapServerMetadata)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -170,7 +170,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerLogs",
+		"hashicorp_aws.mq.DataAwsMqBrokerLogs",
 		reflect.TypeOf((*DataAwsMqBrokerLogs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "audit", GoGetter: "Audit"},
@@ -191,7 +191,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerMaintenanceWindowStartTime",
+		"hashicorp_aws.mq.DataAwsMqBrokerMaintenanceWindowStartTime",
 		reflect.TypeOf((*DataAwsMqBrokerMaintenanceWindowStartTime)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -213,7 +213,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.DataAwsMqBrokerUser",
+		"hashicorp_aws.mq.DataAwsMqBrokerUser",
 		reflect.TypeOf((*DataAwsMqBrokerUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -235,7 +235,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBroker",
+		"hashicorp_aws.mq.MqBroker",
 		reflect.TypeOf((*MqBroker)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -334,15 +334,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerConfig",
+		"hashicorp_aws.mq.MqBrokerConfig",
 		reflect.TypeOf((*MqBrokerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerConfiguration",
+		"hashicorp_aws.mq.MqBrokerConfiguration",
 		reflect.TypeOf((*MqBrokerConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerConfigurationOutputReference",
+		"hashicorp_aws.mq.MqBrokerConfigurationOutputReference",
 		reflect.TypeOf((*MqBrokerConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -350,6 +350,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -366,17 +367,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerEncryptionOptions",
+		"hashicorp_aws.mq.MqBrokerEncryptionOptions",
 		reflect.TypeOf((*MqBrokerEncryptionOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerEncryptionOptionsOutputReference",
+		"hashicorp_aws.mq.MqBrokerEncryptionOptionsOutputReference",
 		reflect.TypeOf((*MqBrokerEncryptionOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -396,7 +398,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerInstances",
+		"hashicorp_aws.mq.MqBrokerInstances",
 		reflect.TypeOf((*MqBrokerInstances)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -418,11 +420,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerLdapServerMetadata",
+		"hashicorp_aws.mq.MqBrokerLdapServerMetadata",
 		reflect.TypeOf((*MqBrokerLdapServerMetadata)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerLdapServerMetadataOutputReference",
+		"hashicorp_aws.mq.MqBrokerLdapServerMetadataOutputReference",
 		reflect.TypeOf((*MqBrokerLdapServerMetadataOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -431,6 +433,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "hosts", GoGetter: "Hosts"},
 			_jsii_.MemberProperty{JsiiProperty: "hostsInput", GoGetter: "HostsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -475,11 +478,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerLogs",
+		"hashicorp_aws.mq.MqBrokerLogs",
 		reflect.TypeOf((*MqBrokerLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerLogsOutputReference",
+		"hashicorp_aws.mq.MqBrokerLogsOutputReference",
 		reflect.TypeOf((*MqBrokerLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "audit", GoGetter: "Audit"},
@@ -490,6 +493,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -505,11 +509,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerMaintenanceWindowStartTime",
+		"hashicorp_aws.mq.MqBrokerMaintenanceWindowStartTime",
 		reflect.TypeOf((*MqBrokerMaintenanceWindowStartTime)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqBrokerMaintenanceWindowStartTimeOutputReference",
+		"hashicorp_aws.mq.MqBrokerMaintenanceWindowStartTimeOutputReference",
 		reflect.TypeOf((*MqBrokerMaintenanceWindowStartTimeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dayOfWeek", GoGetter: "DayOfWeek"},
@@ -518,6 +522,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -535,11 +540,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqBrokerUser",
+		"hashicorp_aws.mq.MqBrokerUser",
 		reflect.TypeOf((*MqBrokerUser)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MQ.MqConfiguration",
+		"hashicorp_aws.mq.MqConfiguration",
 		reflect.TypeOf((*MqConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -598,7 +603,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MQ.MqConfigurationConfig",
+		"hashicorp_aws.mq.MqConfigurationConfig",
 		reflect.TypeOf((*MqConfigurationConfig)(nil)).Elem(),
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshot",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshot",
 		reflect.TypeOf((*DataAwsDbClusterSnapshot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -79,11 +79,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshotConfig",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshotConfig",
 		reflect.TypeOf((*DataAwsDbClusterSnapshotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbEventCategories",
+		"hashicorp_aws.rds.DataAwsDbEventCategories",
 		reflect.TypeOf((*DataAwsDbEventCategories)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -124,11 +124,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbEventCategoriesConfig",
+		"hashicorp_aws.rds.DataAwsDbEventCategoriesConfig",
 		reflect.TypeOf((*DataAwsDbEventCategoriesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbInstance",
+		"hashicorp_aws.rds.DataAwsDbInstance",
 		reflect.TypeOf((*DataAwsDbInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -207,11 +207,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbInstanceConfig",
+		"hashicorp_aws.rds.DataAwsDbInstanceConfig",
 		reflect.TypeOf((*DataAwsDbInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbProxy",
+		"hashicorp_aws.rds.DataAwsDbProxy",
 		reflect.TypeOf((*DataAwsDbProxy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -261,7 +261,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbProxyAuth",
+		"hashicorp_aws.rds.DataAwsDbProxyAuth",
 		reflect.TypeOf((*DataAwsDbProxyAuth)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authScheme", GoGetter: "AuthScheme"},
@@ -284,11 +284,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbProxyConfig",
+		"hashicorp_aws.rds.DataAwsDbProxyConfig",
 		reflect.TypeOf((*DataAwsDbProxyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbSnapshot",
+		"hashicorp_aws.rds.DataAwsDbSnapshot",
 		reflect.TypeOf((*DataAwsDbSnapshot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -360,11 +360,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbSnapshotConfig",
+		"hashicorp_aws.rds.DataAwsDbSnapshotConfig",
 		reflect.TypeOf((*DataAwsDbSnapshotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroup",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroup",
 		reflect.TypeOf((*DataAwsDbSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -408,11 +408,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroupConfig",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroupConfig",
 		reflect.TypeOf((*DataAwsDbSubnetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsRdsCertificate",
+		"hashicorp_aws.rds.DataAwsRdsCertificate",
 		reflect.TypeOf((*DataAwsRdsCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -459,11 +459,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsRdsCertificateConfig",
+		"hashicorp_aws.rds.DataAwsRdsCertificateConfig",
 		reflect.TypeOf((*DataAwsRdsCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsRdsCluster",
+		"hashicorp_aws.rds.DataAwsRdsCluster",
 		reflect.TypeOf((*DataAwsRdsCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -531,11 +531,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsRdsClusterConfig",
+		"hashicorp_aws.rds.DataAwsRdsClusterConfig",
 		reflect.TypeOf((*DataAwsRdsClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersion",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersion",
 		reflect.TypeOf((*DataAwsRdsEngineVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -597,11 +597,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersionConfig",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersionConfig",
 		reflect.TypeOf((*DataAwsRdsEngineVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstance",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstance",
 		reflect.TypeOf((*DataAwsRdsOrderableDbInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -699,11 +699,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstanceConfig",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstanceConfig",
 		reflect.TypeOf((*DataAwsRdsOrderableDbInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbClusterSnapshot",
+		"hashicorp_aws.rds.DbClusterSnapshot",
 		reflect.TypeOf((*DbClusterSnapshot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -767,15 +767,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbClusterSnapshotConfig",
+		"hashicorp_aws.rds.DbClusterSnapshotConfig",
 		reflect.TypeOf((*DbClusterSnapshotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbClusterSnapshotTimeouts",
+		"hashicorp_aws.rds.DbClusterSnapshotTimeouts",
 		reflect.TypeOf((*DbClusterSnapshotTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbClusterSnapshotTimeoutsOutputReference",
 		reflect.TypeOf((*DbClusterSnapshotTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -784,6 +784,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -798,7 +799,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbEventSubscription",
+		"hashicorp_aws.rds.DbEventSubscription",
 		reflect.TypeOf((*DbEventSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -867,15 +868,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbEventSubscriptionConfig",
+		"hashicorp_aws.rds.DbEventSubscriptionConfig",
 		reflect.TypeOf((*DbEventSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbEventSubscriptionTimeouts",
+		"hashicorp_aws.rds.DbEventSubscriptionTimeouts",
 		reflect.TypeOf((*DbEventSubscriptionTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbEventSubscriptionTimeoutsOutputReference",
 		reflect.TypeOf((*DbEventSubscriptionTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -886,6 +887,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -904,7 +906,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbInstance",
+		"hashicorp_aws.rds.DbInstance",
 		reflect.TypeOf((*DbInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1123,21 +1125,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbInstanceConfig",
+		"hashicorp_aws.rds.DbInstanceConfig",
 		reflect.TypeOf((*DbInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbInstanceRestoreToPointInTime",
+		"hashicorp_aws.rds.DbInstanceRestoreToPointInTime",
 		reflect.TypeOf((*DbInstanceRestoreToPointInTime)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbInstanceRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.DbInstanceRestoreToPointInTimeOutputReference",
 		reflect.TypeOf((*DbInstanceRestoreToPointInTimeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1163,7 +1166,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociation",
+		"hashicorp_aws.rds.DbInstanceRoleAssociation",
 		reflect.TypeOf((*DbInstanceRoleAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1206,15 +1209,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociationConfig",
+		"hashicorp_aws.rds.DbInstanceRoleAssociationConfig",
 		reflect.TypeOf((*DbInstanceRoleAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbInstanceS3Import",
+		"hashicorp_aws.rds.DbInstanceS3Import",
 		reflect.TypeOf((*DbInstanceS3Import)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbInstanceS3ImportOutputReference",
+		"hashicorp_aws.rds.DbInstanceS3ImportOutputReference",
 		reflect.TypeOf((*DbInstanceS3ImportOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketName", GoGetter: "BucketName"},
@@ -1227,6 +1230,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "ingestionRole", GoGetter: "IngestionRole"},
 			_jsii_.MemberProperty{JsiiProperty: "ingestionRoleInput", GoGetter: "IngestionRoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1245,11 +1249,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbInstanceTimeouts",
+		"hashicorp_aws.rds.DbInstanceTimeouts",
 		reflect.TypeOf((*DbInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*DbInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1260,6 +1264,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1278,7 +1283,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbOptionGroup",
+		"hashicorp_aws.rds.DbOptionGroup",
 		reflect.TypeOf((*DbOptionGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1342,23 +1347,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbOptionGroupConfig",
+		"hashicorp_aws.rds.DbOptionGroupConfig",
 		reflect.TypeOf((*DbOptionGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbOptionGroupOption",
+		"hashicorp_aws.rds.DbOptionGroupOption",
 		reflect.TypeOf((*DbOptionGroupOption)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbOptionGroupOptionOptionSettings",
+		"hashicorp_aws.rds.DbOptionGroupOptionOptionSettings",
 		reflect.TypeOf((*DbOptionGroupOptionOptionSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbOptionGroupTimeouts",
+		"hashicorp_aws.rds.DbOptionGroupTimeouts",
 		reflect.TypeOf((*DbOptionGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbOptionGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbOptionGroupTimeoutsOutputReference",
 		reflect.TypeOf((*DbOptionGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
@@ -1367,6 +1372,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1381,7 +1387,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbParameterGroup",
+		"hashicorp_aws.rds.DbParameterGroup",
 		reflect.TypeOf((*DbParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1439,15 +1445,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbParameterGroupConfig",
+		"hashicorp_aws.rds.DbParameterGroupConfig",
 		reflect.TypeOf((*DbParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbParameterGroupParameter",
+		"hashicorp_aws.rds.DbParameterGroupParameter",
 		reflect.TypeOf((*DbParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxy",
+		"hashicorp_aws.rds.DbProxy",
 		reflect.TypeOf((*DbProxy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1518,15 +1524,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyAuth",
+		"hashicorp_aws.rds.DbProxyAuth",
 		reflect.TypeOf((*DbProxyAuth)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyConfig",
+		"hashicorp_aws.rds.DbProxyConfig",
 		reflect.TypeOf((*DbProxyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroup",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroup",
 		reflect.TypeOf((*DbProxyDefaultTargetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1575,15 +1581,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupConfig",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupConfig",
 		reflect.TypeOf((*DbProxyDefaultTargetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupConnectionPoolConfig",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupConnectionPoolConfig",
 		reflect.TypeOf((*DbProxyDefaultTargetGroupConnectionPoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
 		reflect.TypeOf((*DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "connectionBorrowTimeout", GoGetter: "ConnectionBorrowTimeout"},
@@ -1594,6 +1600,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "initQuery", GoGetter: "InitQuery"},
 			_jsii_.MemberProperty{JsiiProperty: "initQueryInput", GoGetter: "InitQueryInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1618,11 +1625,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupTimeouts",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupTimeouts",
 		reflect.TypeOf((*DbProxyDefaultTargetGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupTimeoutsOutputReference",
 		reflect.TypeOf((*DbProxyDefaultTargetGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1631,6 +1638,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1648,7 +1656,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyEndpoint",
+		"hashicorp_aws.rds.DbProxyEndpoint",
 		reflect.TypeOf((*DbProxyEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1711,15 +1719,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyEndpointConfig",
+		"hashicorp_aws.rds.DbProxyEndpointConfig",
 		reflect.TypeOf((*DbProxyEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyEndpointTimeouts",
+		"hashicorp_aws.rds.DbProxyEndpointTimeouts",
 		reflect.TypeOf((*DbProxyEndpointTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyEndpointTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyEndpointTimeoutsOutputReference",
 		reflect.TypeOf((*DbProxyEndpointTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1730,6 +1738,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1748,7 +1757,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyTarget",
+		"hashicorp_aws.rds.DbProxyTarget",
 		reflect.TypeOf((*DbProxyTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1801,15 +1810,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyTargetConfig",
+		"hashicorp_aws.rds.DbProxyTargetConfig",
 		reflect.TypeOf((*DbProxyTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbProxyTimeouts",
+		"hashicorp_aws.rds.DbProxyTimeouts",
 		reflect.TypeOf((*DbProxyTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbProxyTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyTimeoutsOutputReference",
 		reflect.TypeOf((*DbProxyTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1820,6 +1829,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1838,7 +1848,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbSecurityGroup",
+		"hashicorp_aws.rds.DbSecurityGroup",
 		reflect.TypeOf((*DbSecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1889,15 +1899,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbSecurityGroupConfig",
+		"hashicorp_aws.rds.DbSecurityGroupConfig",
 		reflect.TypeOf((*DbSecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbSecurityGroupIngress",
+		"hashicorp_aws.rds.DbSecurityGroupIngress",
 		reflect.TypeOf((*DbSecurityGroupIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbSnapshot",
+		"hashicorp_aws.rds.DbSnapshot",
 		reflect.TypeOf((*DbSnapshot)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1965,21 +1975,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbSnapshotConfig",
+		"hashicorp_aws.rds.DbSnapshotConfig",
 		reflect.TypeOf((*DbSnapshotConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbSnapshotTimeouts",
+		"hashicorp_aws.rds.DbSnapshotTimeouts",
 		reflect.TypeOf((*DbSnapshotTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbSnapshotTimeoutsOutputReference",
 		reflect.TypeOf((*DbSnapshotTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1996,7 +2007,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.DbSubnetGroup",
+		"hashicorp_aws.rds.DbSubnetGroup",
 		reflect.TypeOf((*DbSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2051,11 +2062,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.DbSubnetGroupConfig",
+		"hashicorp_aws.rds.DbSubnetGroupConfig",
 		reflect.TypeOf((*DbSubnetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsCluster",
+		"hashicorp_aws.rds.RdsCluster",
 		reflect.TypeOf((*RdsCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2228,11 +2239,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterConfig",
+		"hashicorp_aws.rds.RdsClusterConfig",
 		reflect.TypeOf((*RdsClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterEndpoint",
+		"hashicorp_aws.rds.RdsClusterEndpoint",
 		reflect.TypeOf((*RdsClusterEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2289,11 +2300,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterEndpointConfig",
+		"hashicorp_aws.rds.RdsClusterEndpointConfig",
 		reflect.TypeOf((*RdsClusterEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterInstance",
+		"hashicorp_aws.rds.RdsClusterInstance",
 		reflect.TypeOf((*RdsClusterInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2412,15 +2423,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterInstanceConfig",
+		"hashicorp_aws.rds.RdsClusterInstanceConfig",
 		reflect.TypeOf((*RdsClusterInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterInstanceTimeouts",
+		"hashicorp_aws.rds.RdsClusterInstanceTimeouts",
 		reflect.TypeOf((*RdsClusterInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*RdsClusterInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2431,6 +2442,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2449,7 +2461,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterParameterGroup",
+		"hashicorp_aws.rds.RdsClusterParameterGroup",
 		reflect.TypeOf((*RdsClusterParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2507,25 +2519,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterParameterGroupConfig",
+		"hashicorp_aws.rds.RdsClusterParameterGroupConfig",
 		reflect.TypeOf((*RdsClusterParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterParameterGroupParameter",
+		"hashicorp_aws.rds.RdsClusterParameterGroupParameter",
 		reflect.TypeOf((*RdsClusterParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterRestoreToPointInTime",
+		"hashicorp_aws.rds.RdsClusterRestoreToPointInTime",
 		reflect.TypeOf((*RdsClusterRestoreToPointInTime)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.RdsClusterRestoreToPointInTimeOutputReference",
 		reflect.TypeOf((*RdsClusterRestoreToPointInTimeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2550,7 +2563,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociation",
+		"hashicorp_aws.rds.RdsClusterRoleAssociation",
 		reflect.TypeOf((*RdsClusterRoleAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2593,15 +2606,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociationConfig",
+		"hashicorp_aws.rds.RdsClusterRoleAssociationConfig",
 		reflect.TypeOf((*RdsClusterRoleAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterS3Import",
+		"hashicorp_aws.rds.RdsClusterS3Import",
 		reflect.TypeOf((*RdsClusterS3Import)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterS3ImportOutputReference",
+		"hashicorp_aws.rds.RdsClusterS3ImportOutputReference",
 		reflect.TypeOf((*RdsClusterS3ImportOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketName", GoGetter: "BucketName"},
@@ -2614,6 +2627,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "ingestionRole", GoGetter: "IngestionRole"},
 			_jsii_.MemberProperty{JsiiProperty: "ingestionRoleInput", GoGetter: "IngestionRoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2632,11 +2646,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterScalingConfiguration",
+		"hashicorp_aws.rds.RdsClusterScalingConfiguration",
 		reflect.TypeOf((*RdsClusterScalingConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterScalingConfigurationOutputReference",
+		"hashicorp_aws.rds.RdsClusterScalingConfigurationOutputReference",
 		reflect.TypeOf((*RdsClusterScalingConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoPause", GoGetter: "AutoPause"},
@@ -2645,6 +2659,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2671,11 +2686,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsClusterTimeouts",
+		"hashicorp_aws.rds.RdsClusterTimeouts",
 		reflect.TypeOf((*RdsClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsClusterTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterTimeoutsOutputReference",
 		reflect.TypeOf((*RdsClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2686,6 +2701,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2704,7 +2720,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsGlobalCluster",
+		"hashicorp_aws.rds.RdsGlobalCluster",
 		reflect.TypeOf((*RdsGlobalCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2767,11 +2783,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RDS.RdsGlobalClusterConfig",
+		"hashicorp_aws.rds.RdsGlobalClusterConfig",
 		reflect.TypeOf((*RdsGlobalClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RDS.RdsGlobalClusterGlobalClusterMembers",
+		"hashicorp_aws.rds.RdsGlobalClusterGlobalClusterMembers",
 		reflect.TypeOf((*RdsGlobalClusterGlobalClusterMembers)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyApp",
+		"hashicorp_aws.amplify.AmplifyApp",
 		reflect.TypeOf((*AmplifyApp)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessToken", GoGetter: "AccessToken"},
@@ -105,11 +105,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyAppAutoBranchCreationConfig",
+		"hashicorp_aws.amplify.AmplifyAppAutoBranchCreationConfig",
 		reflect.TypeOf((*AmplifyAppAutoBranchCreationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
+		"hashicorp_aws.amplify.AmplifyAppAutoBranchCreationConfigOutputReference",
 		reflect.TypeOf((*AmplifyAppAutoBranchCreationConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "basicAuthCredentials", GoGetter: "BasicAuthCredentials"},
@@ -132,6 +132,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -159,15 +160,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyAppConfig",
+		"hashicorp_aws.amplify.AmplifyAppConfig",
 		reflect.TypeOf((*AmplifyAppConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyAppCustomRule",
+		"hashicorp_aws.amplify.AmplifyAppCustomRule",
 		reflect.TypeOf((*AmplifyAppCustomRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyAppProductionBranch",
+		"hashicorp_aws.amplify.AmplifyAppProductionBranch",
 		reflect.TypeOf((*AmplifyAppProductionBranch)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "branchName", GoGetter: "BranchName"},
@@ -190,7 +191,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironment",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironment",
 		reflect.TypeOf((*AmplifyBackendEnvironment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -238,11 +239,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyBackendEnvironmentConfig",
+		"hashicorp_aws.amplify.AmplifyBackendEnvironmentConfig",
 		reflect.TypeOf((*AmplifyBackendEnvironmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyBranch",
+		"hashicorp_aws.amplify.AmplifyBranch",
 		reflect.TypeOf((*AmplifyBranch)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -336,11 +337,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyBranchConfig",
+		"hashicorp_aws.amplify.AmplifyBranchConfig",
 		reflect.TypeOf((*AmplifyBranchConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociation",
+		"hashicorp_aws.amplify.AmplifyDomainAssociation",
 		reflect.TypeOf((*AmplifyDomainAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -388,15 +389,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociationConfig",
+		"hashicorp_aws.amplify.AmplifyDomainAssociationConfig",
 		reflect.TypeOf((*AmplifyDomainAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyDomainAssociationSubDomain",
+		"hashicorp_aws.amplify.AmplifyDomainAssociationSubDomain",
 		reflect.TypeOf((*AmplifyDomainAssociationSubDomain)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Amplify.AmplifyWebhook",
+		"hashicorp_aws.amplify.AmplifyWebhook",
 		reflect.TypeOf((*AmplifyWebhook)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -442,7 +443,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Amplify.AmplifyWebhookConfig",
+		"hashicorp_aws.amplify.AmplifyWebhookConfig",
 		reflect.TypeOf((*AmplifyWebhookConfig)(nil)).Elem(),
 	)
 }

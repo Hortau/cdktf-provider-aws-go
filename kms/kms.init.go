@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsAlias",
+		"hashicorp_aws.kms.DataAwsKmsAlias",
 		reflect.TypeOf((*DataAwsKmsAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,11 +50,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsAliasConfig",
+		"hashicorp_aws.kms.DataAwsKmsAliasConfig",
 		reflect.TypeOf((*DataAwsKmsAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertext",
+		"hashicorp_aws.kms.DataAwsKmsCiphertext",
 		reflect.TypeOf((*DataAwsKmsCiphertext)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -99,11 +99,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsCiphertextConfig",
+		"hashicorp_aws.kms.DataAwsKmsCiphertextConfig",
 		reflect.TypeOf((*DataAwsKmsCiphertextConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsKey",
+		"hashicorp_aws.kms.DataAwsKmsKey",
 		reflect.TypeOf((*DataAwsKmsKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -160,11 +160,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsKeyConfig",
+		"hashicorp_aws.kms.DataAwsKmsKeyConfig",
 		reflect.TypeOf((*DataAwsKmsKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfiguration",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfiguration",
 		reflect.TypeOf((*DataAwsKmsKeyMultiRegionConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -186,7 +186,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
 		reflect.TypeOf((*DataAwsKmsKeyMultiRegionConfigurationPrimaryKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -207,7 +207,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
+		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
 		reflect.TypeOf((*DataAwsKmsKeyMultiRegionConfigurationReplicaKeys)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -228,7 +228,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKey",
+		"hashicorp_aws.kms.DataAwsKmsPublicKey",
 		reflect.TypeOf((*DataAwsKmsPublicKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -276,11 +276,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsPublicKeyConfig",
+		"hashicorp_aws.kms.DataAwsKmsPublicKeyConfig",
 		reflect.TypeOf((*DataAwsKmsPublicKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecret",
 		reflect.TypeOf((*DataAwsKmsSecret)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -319,15 +319,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsSecretConfig",
+		"hashicorp_aws.kms.DataAwsKmsSecretConfig",
 		reflect.TypeOf((*DataAwsKmsSecretConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsSecretSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecretSecret",
 		reflect.TypeOf((*DataAwsKmsSecretSecret)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.DataAwsKmsSecrets",
+		"hashicorp_aws.kms.DataAwsKmsSecrets",
 		reflect.TypeOf((*DataAwsKmsSecrets)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -367,15 +367,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsSecretsConfig",
+		"hashicorp_aws.kms.DataAwsKmsSecretsConfig",
 		reflect.TypeOf((*DataAwsKmsSecretsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.DataAwsKmsSecretsSecret",
+		"hashicorp_aws.kms.DataAwsKmsSecretsSecret",
 		reflect.TypeOf((*DataAwsKmsSecretsSecret)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsAlias",
+		"hashicorp_aws.kms.KmsAlias",
 		reflect.TypeOf((*KmsAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -422,11 +422,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsAliasConfig",
+		"hashicorp_aws.kms.KmsAliasConfig",
 		reflect.TypeOf((*KmsAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsCiphertext",
+		"hashicorp_aws.kms.KmsCiphertext",
 		reflect.TypeOf((*KmsCiphertext)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -471,11 +471,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsCiphertextConfig",
+		"hashicorp_aws.kms.KmsCiphertextConfig",
 		reflect.TypeOf((*KmsCiphertextConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsExternalKey",
+		"hashicorp_aws.kms.KmsExternalKey",
 		reflect.TypeOf((*KmsExternalKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -546,11 +546,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsExternalKeyConfig",
+		"hashicorp_aws.kms.KmsExternalKeyConfig",
 		reflect.TypeOf((*KmsExternalKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsGrant",
+		"hashicorp_aws.kms.KmsGrant",
 		reflect.TypeOf((*KmsGrant)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -610,15 +610,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsGrantConfig",
+		"hashicorp_aws.kms.KmsGrantConfig",
 		reflect.TypeOf((*KmsGrantConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsGrantConstraints",
+		"hashicorp_aws.kms.KmsGrantConstraints",
 		reflect.TypeOf((*KmsGrantConstraints)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsKey",
+		"hashicorp_aws.kms.KmsKey",
 		reflect.TypeOf((*KmsKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -690,11 +690,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsKeyConfig",
+		"hashicorp_aws.kms.KmsKeyConfig",
 		reflect.TypeOf((*KmsKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsReplicaExternalKey",
+		"hashicorp_aws.kms.KmsReplicaExternalKey",
 		reflect.TypeOf((*KmsReplicaExternalKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -765,11 +765,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsReplicaExternalKeyConfig",
+		"hashicorp_aws.kms.KmsReplicaExternalKeyConfig",
 		reflect.TypeOf((*KmsReplicaExternalKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.KMS.KmsReplicaKey",
+		"hashicorp_aws.kms.KmsReplicaKey",
 		reflect.TypeOf((*KmsReplicaKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -834,7 +834,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.KMS.KmsReplicaKeyConfig",
+		"hashicorp_aws.kms.KmsReplicaKeyConfig",
 		reflect.TypeOf((*KmsReplicaKeyConfig)(nil)).Elem(),
 	)
 }

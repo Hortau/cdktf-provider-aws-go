@@ -221,7 +221,7 @@ func NewDataAwsOrganizationsDelegatedAdministrators(scope constructs.Construct, 
 	j := jsiiProxy_DataAwsOrganizationsDelegatedAdministrators{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministrators",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -234,7 +234,7 @@ func NewDataAwsOrganizationsDelegatedAdministrators_Override(d DataAwsOrganizati
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministrators",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -290,7 +290,7 @@ func DataAwsOrganizationsDelegatedAdministrators_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministrators",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -303,7 +303,7 @@ func DataAwsOrganizationsDelegatedAdministrators_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministrators",
 		"tfResourceType",
 		&returns,
 	)
@@ -486,6 +486,7 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) ToTerraform() in
 	return returns
 }
 
+// AWS Organizations.
 type DataAwsOrganizationsDelegatedAdministratorsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -644,7 +645,7 @@ func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators(terra
 	j := jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -657,7 +658,7 @@ func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -968,7 +969,7 @@ func NewDataAwsOrganizationsDelegatedServices(scope constructs.Construct, id *st
 	j := jsiiProxy_DataAwsOrganizationsDelegatedServices{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServices",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -981,7 +982,7 @@ func NewDataAwsOrganizationsDelegatedServices_Override(d DataAwsOrganizationsDel
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServices",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1037,7 +1038,7 @@ func DataAwsOrganizationsDelegatedServices_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServices",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1050,7 +1051,7 @@ func DataAwsOrganizationsDelegatedServices_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServices",
 		"tfResourceType",
 		&returns,
 	)
@@ -1225,6 +1226,7 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) ToTerraform() interfac
 	return returns
 }
 
+// AWS Organizations.
 type DataAwsOrganizationsDelegatedServicesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1317,7 +1319,7 @@ func NewDataAwsOrganizationsDelegatedServicesDelegatedServices(terraformResource
 	j := jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1330,7 +1332,7 @@ func NewDataAwsOrganizationsDelegatedServicesDelegatedServices_Override(d DataAw
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
+		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1697,7 +1699,7 @@ func NewDataAwsOrganizationsOrganization(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsOrganizationsOrganization{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganization",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganization",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1710,7 +1712,7 @@ func NewDataAwsOrganizationsOrganization_Override(d DataAwsOrganizationsOrganiza
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganization",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganization",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1758,7 +1760,7 @@ func DataAwsOrganizationsOrganization_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganization",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganization",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1771,7 +1773,7 @@ func DataAwsOrganizationsOrganization_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganization",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganization",
 		"tfResourceType",
 		&returns,
 	)
@@ -2084,7 +2086,7 @@ func NewDataAwsOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsOrganizationsOrganizationAccounts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2097,7 +2099,7 @@ func NewDataAwsOrganizationsOrganizationAccounts_Override(d DataAwsOrganizations
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2197,6 +2199,7 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) InterpolationForAtt
 	return returns
 }
 
+// AWS Organizations.
 type DataAwsOrganizationsOrganizationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2320,7 +2323,7 @@ func NewDataAwsOrganizationsOrganizationNonMasterAccounts(terraformResource cdkt
 	j := jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2333,7 +2336,7 @@ func NewDataAwsOrganizationsOrganizationNonMasterAccounts_Override(d DataAwsOrga
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2534,7 +2537,7 @@ func NewDataAwsOrganizationsOrganizationRoots(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsOrganizationsOrganizationRoots{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRoots",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2547,7 +2550,7 @@ func NewDataAwsOrganizationsOrganizationRoots_Override(d DataAwsOrganizationsOrg
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRoots",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2726,7 +2729,7 @@ func NewDataAwsOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf
 	j := jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2739,7 +2742,7 @@ func NewDataAwsOrganizationsOrganizationRootsPolicyTypes_Override(d DataAwsOrgan
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3050,7 +3053,7 @@ func NewDataAwsOrganizationsOrganizationalUnits(scope constructs.Construct, id *
 	j := jsiiProxy_DataAwsOrganizationsOrganizationalUnits{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnits",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnits",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3063,7 +3066,7 @@ func NewDataAwsOrganizationsOrganizationalUnits_Override(d DataAwsOrganizationsO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnits",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnits",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3119,7 +3122,7 @@ func DataAwsOrganizationsOrganizationalUnits_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnits",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnits",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3132,7 +3135,7 @@ func DataAwsOrganizationsOrganizationalUnits_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnits",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnits",
 		"tfResourceType",
 		&returns,
 	)
@@ -3397,7 +3400,7 @@ func NewDataAwsOrganizationsOrganizationalUnitsChildren(terraformResource cdktf.
 	j := jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3410,7 +3413,7 @@ func NewDataAwsOrganizationsOrganizationalUnitsChildren_Override(d DataAwsOrgani
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
+		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3510,6 +3513,7 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) Interpolatio
 	return returns
 }
 
+// AWS Organizations.
 type DataAwsOrganizationsOrganizationalUnitsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3920,7 +3924,7 @@ func NewOrganizationsAccount(scope constructs.Construct, id *string, config *Org
 	j := jsiiProxy_OrganizationsAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsAccount",
+		"hashicorp_aws.organizations.OrganizationsAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3933,7 +3937,7 @@ func NewOrganizationsAccount_Override(o OrganizationsAccount, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsAccount",
+		"hashicorp_aws.organizations.OrganizationsAccount",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -4037,7 +4041,7 @@ func OrganizationsAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsAccount",
+		"hashicorp_aws.organizations.OrganizationsAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4050,7 +4054,7 @@ func OrganizationsAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsAccount",
+		"hashicorp_aws.organizations.OrganizationsAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -4252,6 +4256,7 @@ func (o *jsiiProxy_OrganizationsAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Organizations.
 type OrganizationsAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4587,7 +4592,7 @@ func NewOrganizationsDelegatedAdministrator(scope constructs.Construct, id *stri
 	j := jsiiProxy_OrganizationsDelegatedAdministrator{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministrator",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministrator",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4600,7 +4605,7 @@ func NewOrganizationsDelegatedAdministrator_Override(o OrganizationsDelegatedAdm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministrator",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministrator",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -4664,7 +4669,7 @@ func OrganizationsDelegatedAdministrator_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministrator",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministrator",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4677,7 +4682,7 @@ func OrganizationsDelegatedAdministrator_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsDelegatedAdministrator",
+		"hashicorp_aws.organizations.OrganizationsDelegatedAdministrator",
 		"tfResourceType",
 		&returns,
 	)
@@ -4839,6 +4844,7 @@ func (o *jsiiProxy_OrganizationsDelegatedAdministrator) ToTerraform() interface{
 	return returns
 }
 
+// AWS Organizations.
 type OrganizationsDelegatedAdministratorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5160,7 +5166,7 @@ func NewOrganizationsOrganization(scope constructs.Construct, id *string, config
 	j := jsiiProxy_OrganizationsOrganization{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganization",
+		"hashicorp_aws.organizations.OrganizationsOrganization",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5173,7 +5179,7 @@ func NewOrganizationsOrganization_Override(o OrganizationsOrganization, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganization",
+		"hashicorp_aws.organizations.OrganizationsOrganization",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -5245,7 +5251,7 @@ func OrganizationsOrganization_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsOrganization",
+		"hashicorp_aws.organizations.OrganizationsOrganization",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5258,7 +5264,7 @@ func OrganizationsOrganization_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsOrganization",
+		"hashicorp_aws.organizations.OrganizationsOrganization",
 		"tfResourceType",
 		&returns,
 	)
@@ -5595,7 +5601,7 @@ func NewOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_OrganizationsOrganizationAccounts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5608,7 +5614,7 @@ func NewOrganizationsOrganizationAccounts_Override(o OrganizationsOrganizationAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		o,
 	)
@@ -5708,6 +5714,7 @@ func (o *jsiiProxy_OrganizationsOrganizationAccounts) InterpolationForAttribute(
 	return returns
 }
 
+// AWS Organizations.
 type OrganizationsOrganizationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5837,7 +5844,7 @@ func NewOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.ITerr
 	j := jsiiProxy_OrganizationsOrganizationNonMasterAccounts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationNonMasterAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5850,7 +5857,7 @@ func NewOrganizationsOrganizationNonMasterAccounts_Override(o OrganizationsOrgan
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationNonMasterAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationNonMasterAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		o,
 	)
@@ -6051,7 +6058,7 @@ func NewOrganizationsOrganizationRoots(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_OrganizationsOrganizationRoots{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRoots",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6064,7 +6071,7 @@ func NewOrganizationsOrganizationRoots_Override(o OrganizationsOrganizationRoots
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRoots",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRoots",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		o,
 	)
@@ -6243,7 +6250,7 @@ func NewOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.ITerra
 	j := jsiiProxy_OrganizationsOrganizationRootsPolicyTypes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRootsPolicyTypes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6256,7 +6263,7 @@ func NewOrganizationsOrganizationRootsPolicyTypes_Override(o OrganizationsOrgani
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationRootsPolicyTypes",
+		"hashicorp_aws.organizations.OrganizationsOrganizationRootsPolicyTypes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		o,
 	)
@@ -6649,7 +6656,7 @@ func NewOrganizationsOrganizationalUnit(scope constructs.Construct, id *string, 
 	j := jsiiProxy_OrganizationsOrganizationalUnit{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnit",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnit",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6662,7 +6669,7 @@ func NewOrganizationsOrganizationalUnit_Override(o OrganizationsOrganizationalUn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnit",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnit",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -6742,7 +6749,7 @@ func OrganizationsOrganizationalUnit_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnit",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnit",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6755,7 +6762,7 @@ func OrganizationsOrganizationalUnit_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnit",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnit",
 		"tfResourceType",
 		&returns,
 	)
@@ -7047,7 +7054,7 @@ func NewOrganizationsOrganizationalUnitAccounts(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_OrganizationsOrganizationalUnitAccounts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnitAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7060,7 +7067,7 @@ func NewOrganizationsOrganizationalUnitAccounts_Override(o OrganizationsOrganiza
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsOrganizationalUnitAccounts",
+		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitAccounts",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		o,
 	)
@@ -7160,6 +7167,7 @@ func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) InterpolationForAttr
 	return returns
 }
 
+// AWS Organizations.
 type OrganizationsOrganizationalUnitConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7519,7 +7527,7 @@ func NewOrganizationsPolicy(scope constructs.Construct, id *string, config *Orga
 	j := jsiiProxy_OrganizationsPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsPolicy",
+		"hashicorp_aws.organizations.OrganizationsPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7532,7 +7540,7 @@ func NewOrganizationsPolicy_Override(o OrganizationsPolicy, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsPolicy",
+		"hashicorp_aws.organizations.OrganizationsPolicy",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -7628,7 +7636,7 @@ func OrganizationsPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsPolicy",
+		"hashicorp_aws.organizations.OrganizationsPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7641,7 +7649,7 @@ func OrganizationsPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsPolicy",
+		"hashicorp_aws.organizations.OrganizationsPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -8068,7 +8076,7 @@ func NewOrganizationsPolicyAttachment(scope constructs.Construct, id *string, co
 	j := jsiiProxy_OrganizationsPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachment",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8081,7 +8089,7 @@ func NewOrganizationsPolicyAttachment_Override(o OrganizationsPolicyAttachment, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachment",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachment",
 		[]interface{}{scope, id, config},
 		o,
 	)
@@ -8145,7 +8153,7 @@ func OrganizationsPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachment",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8158,7 +8166,7 @@ func OrganizationsPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Organizations.OrganizationsPolicyAttachment",
+		"hashicorp_aws.organizations.OrganizationsPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -8320,6 +8328,7 @@ func (o *jsiiProxy_OrganizationsPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Organizations.
 type OrganizationsPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8335,6 +8344,7 @@ type OrganizationsPolicyAttachmentConfig struct {
 	TargetId *string `json:"targetId"`
 }
 
+// AWS Organizations.
 type OrganizationsPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

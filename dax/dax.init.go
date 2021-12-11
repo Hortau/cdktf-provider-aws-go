@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxCluster",
+		"hashicorp_aws.dax.DaxCluster",
 		reflect.TypeOf((*DaxCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -93,11 +93,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxClusterConfig",
+		"hashicorp_aws.dax.DaxClusterConfig",
 		reflect.TypeOf((*DaxClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxClusterNodes",
+		"hashicorp_aws.dax.DaxClusterNodes",
 		reflect.TypeOf((*DaxClusterNodes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "address", GoGetter: "Address"},
@@ -120,11 +120,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxClusterServerSideEncryption",
+		"hashicorp_aws.dax.DaxClusterServerSideEncryption",
 		reflect.TypeOf((*DaxClusterServerSideEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxClusterServerSideEncryptionOutputReference",
+		"hashicorp_aws.dax.DaxClusterServerSideEncryptionOutputReference",
 		reflect.TypeOf((*DaxClusterServerSideEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -133,6 +133,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -147,11 +148,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxClusterTimeouts",
+		"hashicorp_aws.dax.DaxClusterTimeouts",
 		reflect.TypeOf((*DaxClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxClusterTimeoutsOutputReference",
+		"hashicorp_aws.dax.DaxClusterTimeoutsOutputReference",
 		reflect.TypeOf((*DaxClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -162,6 +163,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -180,7 +182,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxParameterGroup",
+		"hashicorp_aws.dax.DaxParameterGroup",
 		reflect.TypeOf((*DaxParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -225,15 +227,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxParameterGroupConfig",
+		"hashicorp_aws.dax.DaxParameterGroupConfig",
 		reflect.TypeOf((*DaxParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxParameterGroupParameters",
+		"hashicorp_aws.dax.DaxParameterGroupParameters",
 		reflect.TypeOf((*DaxParameterGroupParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DAX.DaxSubnetGroup",
+		"hashicorp_aws.dax.DaxSubnetGroup",
 		reflect.TypeOf((*DaxSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -278,7 +280,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DAX.DaxSubnetGroupConfig",
+		"hashicorp_aws.dax.DaxSubnetGroupConfig",
 		reflect.TypeOf((*DaxSubnetGroupConfig)(nil)).Elem(),
 	)
 }

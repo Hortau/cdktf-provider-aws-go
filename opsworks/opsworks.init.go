@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksApplication",
+		"hashicorp_aws.opsworks.OpsworksApplication",
 		reflect.TypeOf((*OpsworksApplication)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -93,23 +93,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksApplicationAppSource",
+		"hashicorp_aws.opsworks.OpsworksApplicationAppSource",
 		reflect.TypeOf((*OpsworksApplicationAppSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksApplicationConfig",
+		"hashicorp_aws.opsworks.OpsworksApplicationConfig",
 		reflect.TypeOf((*OpsworksApplicationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksApplicationEnvironment",
+		"hashicorp_aws.opsworks.OpsworksApplicationEnvironment",
 		reflect.TypeOf((*OpsworksApplicationEnvironment)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksApplicationSslConfiguration",
+		"hashicorp_aws.opsworks.OpsworksApplicationSslConfiguration",
 		reflect.TypeOf((*OpsworksApplicationSslConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayer",
+		"hashicorp_aws.opsworks.OpsworksCustomLayer",
 		reflect.TypeOf((*OpsworksCustomLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -213,15 +213,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksCustomLayerConfig",
 		reflect.TypeOf((*OpsworksCustomLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksCustomLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksCustomLayerEbsVolume",
 		reflect.TypeOf((*OpsworksCustomLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayer",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayer",
 		reflect.TypeOf((*OpsworksGangliaLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -332,15 +332,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayerConfig",
 		reflect.TypeOf((*OpsworksGangliaLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksGangliaLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksGangliaLayerEbsVolume",
 		reflect.TypeOf((*OpsworksGangliaLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayer",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayer",
 		reflect.TypeOf((*OpsworksHaproxyLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -460,15 +460,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayerConfig",
 		reflect.TypeOf((*OpsworksHaproxyLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksHaproxyLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayerEbsVolume",
 		reflect.TypeOf((*OpsworksHaproxyLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksInstance",
+		"hashicorp_aws.opsworks.OpsworksInstance",
 		reflect.TypeOf((*OpsworksInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -640,27 +640,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceConfig",
+		"hashicorp_aws.opsworks.OpsworksInstanceConfig",
 		reflect.TypeOf((*OpsworksInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceEbsBlockDevice",
+		"hashicorp_aws.opsworks.OpsworksInstanceEbsBlockDevice",
 		reflect.TypeOf((*OpsworksInstanceEbsBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceEphemeralBlockDevice",
+		"hashicorp_aws.opsworks.OpsworksInstanceEphemeralBlockDevice",
 		reflect.TypeOf((*OpsworksInstanceEphemeralBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceRootBlockDevice",
+		"hashicorp_aws.opsworks.OpsworksInstanceRootBlockDevice",
 		reflect.TypeOf((*OpsworksInstanceRootBlockDevice)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceTimeouts",
+		"hashicorp_aws.opsworks.OpsworksInstanceTimeouts",
 		reflect.TypeOf((*OpsworksInstanceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksInstanceTimeoutsOutputReference",
+		"hashicorp_aws.opsworks.OpsworksInstanceTimeoutsOutputReference",
 		reflect.TypeOf((*OpsworksInstanceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -671,6 +671,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -689,7 +690,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayer",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayer",
 		reflect.TypeOf((*OpsworksJavaAppLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -807,15 +808,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayerConfig",
 		reflect.TypeOf((*OpsworksJavaAppLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksJavaAppLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayerEbsVolume",
 		reflect.TypeOf((*OpsworksJavaAppLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayer",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayer",
 		reflect.TypeOf((*OpsworksMemcachedLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -921,15 +922,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayerConfig",
 		reflect.TypeOf((*OpsworksMemcachedLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksMemcachedLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayerEbsVolume",
 		reflect.TypeOf((*OpsworksMemcachedLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayer",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayer",
 		reflect.TypeOf((*OpsworksMysqlLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1038,15 +1039,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayerConfig",
 		reflect.TypeOf((*OpsworksMysqlLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksMysqlLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksMysqlLayerEbsVolume",
 		reflect.TypeOf((*OpsworksMysqlLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayer",
 		reflect.TypeOf((*OpsworksNodejsAppLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1152,15 +1153,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayerConfig",
 		reflect.TypeOf((*OpsworksNodejsAppLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksNodejsAppLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayerEbsVolume",
 		reflect.TypeOf((*OpsworksNodejsAppLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksPermission",
+		"hashicorp_aws.opsworks.OpsworksPermission",
 		reflect.TypeOf((*OpsworksPermission)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1211,11 +1212,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksPermissionConfig",
+		"hashicorp_aws.opsworks.OpsworksPermissionConfig",
 		reflect.TypeOf((*OpsworksPermissionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayer",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayer",
 		reflect.TypeOf((*OpsworksPhpAppLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1318,15 +1319,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayerConfig",
 		reflect.TypeOf((*OpsworksPhpAppLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksPhpAppLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayerEbsVolume",
 		reflect.TypeOf((*OpsworksPhpAppLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayer",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayer",
 		reflect.TypeOf((*OpsworksRailsAppLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1447,15 +1448,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayerConfig",
 		reflect.TypeOf((*OpsworksRailsAppLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksRailsAppLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayerEbsVolume",
 		reflect.TypeOf((*OpsworksRailsAppLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstance",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstance",
 		reflect.TypeOf((*OpsworksRdsDbInstance)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1500,11 +1501,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksRdsDbInstanceConfig",
+		"hashicorp_aws.opsworks.OpsworksRdsDbInstanceConfig",
 		reflect.TypeOf((*OpsworksRdsDbInstanceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksStack",
+		"hashicorp_aws.opsworks.OpsworksStack",
 		reflect.TypeOf((*OpsworksStack)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1608,15 +1609,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksStackConfig",
+		"hashicorp_aws.opsworks.OpsworksStackConfig",
 		reflect.TypeOf((*OpsworksStackConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksStackCustomCookbooksSource",
+		"hashicorp_aws.opsworks.OpsworksStackCustomCookbooksSource",
 		reflect.TypeOf((*OpsworksStackCustomCookbooksSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayer",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayer",
 		reflect.TypeOf((*OpsworksStaticWebLayer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1719,15 +1720,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayerConfig",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayerConfig",
 		reflect.TypeOf((*OpsworksStaticWebLayerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksStaticWebLayerEbsVolume",
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayerEbsVolume",
 		reflect.TypeOf((*OpsworksStaticWebLayerEbsVolume)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfile",
+		"hashicorp_aws.opsworks.OpsworksUserProfile",
 		reflect.TypeOf((*OpsworksUserProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1774,7 +1775,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.OpsWorks.OpsworksUserProfileConfig",
+		"hashicorp_aws.opsworks.OpsworksUserProfileConfig",
 		reflect.TypeOf((*OpsworksUserProfileConfig)(nil)).Elem(),
 	)
 }

@@ -242,7 +242,7 @@ func NewDataAwsElasticBeanstalkApplication(scope constructs.Construct, id *strin
 	j := jsiiProxy_DataAwsElasticBeanstalkApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -255,7 +255,7 @@ func NewDataAwsElasticBeanstalkApplication_Override(d DataAwsElasticBeanstalkApp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplication",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -311,7 +311,7 @@ func DataAwsElasticBeanstalkApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -324,7 +324,7 @@ func DataAwsElasticBeanstalkApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -600,7 +600,7 @@ func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle(terraformResource 
 	j := jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -613,7 +613,7 @@ func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle_Override(d DataAws
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -713,6 +713,7 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) Interp
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -937,7 +938,7 @@ func NewDataAwsElasticBeanstalkHostedZone(scope constructs.Construct, id *string
 	j := jsiiProxy_DataAwsElasticBeanstalkHostedZone{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZone",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZone",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -950,7 +951,7 @@ func NewDataAwsElasticBeanstalkHostedZone_Override(d DataAwsElasticBeanstalkHost
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZone",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZone",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1006,7 +1007,7 @@ func DataAwsElasticBeanstalkHostedZone_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZone",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZone",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1019,7 +1020,7 @@ func DataAwsElasticBeanstalkHostedZone_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkHostedZone",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkHostedZone",
 		"tfResourceType",
 		&returns,
 	)
@@ -1189,6 +1190,7 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkHostedZoneConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1447,7 +1449,7 @@ func NewDataAwsElasticBeanstalkSolutionStack(scope constructs.Construct, id *str
 	j := jsiiProxy_DataAwsElasticBeanstalkSolutionStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStack",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1460,7 +1462,7 @@ func NewDataAwsElasticBeanstalkSolutionStack_Override(d DataAwsElasticBeanstalkS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStack",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStack",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1524,7 +1526,7 @@ func DataAwsElasticBeanstalkSolutionStack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStack",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1537,7 +1539,7 @@ func DataAwsElasticBeanstalkSolutionStack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.DataAwsElasticBeanstalkSolutionStack",
+		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkSolutionStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -1707,6 +1709,7 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) ToTerraform() interface
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkSolutionStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2039,7 +2042,7 @@ func NewElasticBeanstalkApplication(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ElasticBeanstalkApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2052,7 +2055,7 @@ func NewElasticBeanstalkApplication_Override(e ElasticBeanstalkApplication, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplication",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -2132,7 +2135,7 @@ func ElasticBeanstalkApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2145,7 +2148,7 @@ func ElasticBeanstalkApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplication",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -2363,6 +2366,8 @@ type ElasticBeanstalkApplicationAppversionLifecycleOutputReference interface {
 	DeleteSourceFromS3() interface{}
 	SetDeleteSourceFromS3(val interface{})
 	DeleteSourceFromS3Input() interface{}
+	InternalValue() *ElasticBeanstalkApplicationAppversionLifecycle
+	SetInternalValue(val *ElasticBeanstalkApplicationAppversionLifecycle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAgeInDays() *float64
@@ -2409,6 +2414,16 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	_jsii_.Get(
 		j,
 		"deleteSourceFromS3Input",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) InternalValue() *ElasticBeanstalkApplicationAppversionLifecycle {
+	var returns *ElasticBeanstalkApplicationAppversionLifecycle
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2510,7 +2525,7 @@ func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference(terraformR
 	j := jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2522,7 +2537,7 @@ func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference_Override(e
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationAppversionLifecycleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -2532,6 +2547,14 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	_jsii_.Set(
 		j,
 		"deleteSourceFromS3",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) SetInternalValue(val *ElasticBeanstalkApplicationAppversionLifecycle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2692,6 +2715,7 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	)
 }
 
+// AWS Elastic Beanstalk.
 type ElasticBeanstalkApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3101,7 +3125,7 @@ func NewElasticBeanstalkApplicationVersion(scope constructs.Construct, id *strin
 	j := jsiiProxy_ElasticBeanstalkApplicationVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersion",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3114,7 +3138,7 @@ func NewElasticBeanstalkApplicationVersion_Override(e ElasticBeanstalkApplicatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersion",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersion",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3226,7 +3250,7 @@ func ElasticBeanstalkApplicationVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersion",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3239,7 +3263,7 @@ func ElasticBeanstalkApplicationVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkApplicationVersion",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkApplicationVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -3433,6 +3457,7 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type ElasticBeanstalkApplicationVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3789,7 +3814,7 @@ func NewElasticBeanstalkConfigurationTemplate(scope constructs.Construct, id *st
 	j := jsiiProxy_ElasticBeanstalkConfigurationTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplate",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3802,7 +3827,7 @@ func NewElasticBeanstalkConfigurationTemplate_Override(e ElasticBeanstalkConfigu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplate",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplate",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3898,7 +3923,7 @@ func ElasticBeanstalkConfigurationTemplate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplate",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3911,7 +3936,7 @@ func ElasticBeanstalkConfigurationTemplate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkConfigurationTemplate",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkConfigurationTemplate",
 		"tfResourceType",
 		&returns,
 	)
@@ -4105,6 +4130,7 @@ func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) ToTerraform() interfac
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type ElasticBeanstalkConfigurationTemplateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4762,7 +4788,7 @@ func NewElasticBeanstalkEnvironment(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ElasticBeanstalkEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironment",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4775,7 +4801,7 @@ func NewElasticBeanstalkEnvironment_Override(e ElasticBeanstalkEnvironment, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironment",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironment",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -4935,7 +4961,7 @@ func ElasticBeanstalkEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironment",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4948,7 +4974,7 @@ func ElasticBeanstalkEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironment",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -5320,7 +5346,7 @@ func NewElasticBeanstalkEnvironmentAllSettings(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_ElasticBeanstalkEnvironmentAllSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironmentAllSettings",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentAllSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5333,7 +5359,7 @@ func NewElasticBeanstalkEnvironmentAllSettings_Override(e ElasticBeanstalkEnviro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticBeanstalk.ElasticBeanstalkEnvironmentAllSettings",
+		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentAllSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -5433,6 +5459,7 @@ func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) InterpolationForAttri
 	return returns
 }
 
+// AWS Elastic Beanstalk.
 type ElasticBeanstalkEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

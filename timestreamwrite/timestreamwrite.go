@@ -313,7 +313,7 @@ func NewTimestreamwriteDatabase(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_TimestreamwriteDatabase{}
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabase",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabase",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -326,7 +326,7 @@ func NewTimestreamwriteDatabase_Override(t TimestreamwriteDatabase, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabase",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabase",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -406,7 +406,7 @@ func TimestreamwriteDatabase_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabase",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabase",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -419,7 +419,7 @@ func TimestreamwriteDatabase_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteDatabase",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteDatabase",
 		"tfResourceType",
 		&returns,
 	)
@@ -605,6 +605,7 @@ func (t *jsiiProxy_TimestreamwriteDatabase) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Timestream Write.
 type TimestreamwriteDatabaseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -940,7 +941,7 @@ func NewTimestreamwriteTable(scope constructs.Construct, id *string, config *Tim
 	j := jsiiProxy_TimestreamwriteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTable",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -953,7 +954,7 @@ func NewTimestreamwriteTable_Override(t TimestreamwriteTable, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTable",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTable",
 		[]interface{}{scope, id, config},
 		t,
 	)
@@ -1033,7 +1034,7 @@ func TimestreamwriteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTable",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1046,7 +1047,7 @@ func TimestreamwriteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTable",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -1240,6 +1241,7 @@ func (t *jsiiProxy_TimestreamwriteTable) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Timestream Write.
 type TimestreamwriteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1272,6 +1274,8 @@ type TimestreamwriteTableRetentionProperties struct {
 
 type TimestreamwriteTableRetentionPropertiesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *TimestreamwriteTableRetentionProperties
+	SetInternalValue(val *TimestreamwriteTableRetentionProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MagneticStoreRetentionPeriodInDays() *float64
@@ -1295,6 +1299,16 @@ type TimestreamwriteTableRetentionPropertiesOutputReference interface {
 // The jsii proxy struct for TimestreamwriteTableRetentionPropertiesOutputReference
 type jsiiProxy_TimestreamwriteTableRetentionPropertiesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_TimestreamwriteTableRetentionPropertiesOutputReference) InternalValue() *TimestreamwriteTableRetentionProperties {
+	var returns *TimestreamwriteTableRetentionProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_TimestreamwriteTableRetentionPropertiesOutputReference) IsSingleItem() *bool {
@@ -1373,7 +1387,7 @@ func NewTimestreamwriteTableRetentionPropertiesOutputReference(terraformResource
 	j := jsiiProxy_TimestreamwriteTableRetentionPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTableRetentionPropertiesOutputReference",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTableRetentionPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1385,9 +1399,17 @@ func NewTimestreamwriteTableRetentionPropertiesOutputReference_Override(t Timest
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.TimestreamWrite.TimestreamwriteTableRetentionPropertiesOutputReference",
+		"hashicorp_aws.timestreamwrite.TimestreamwriteTableRetentionPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		t,
+	)
+}
+
+func (j *jsiiProxy_TimestreamwriteTableRetentionPropertiesOutputReference) SetInternalValue(val *TimestreamwriteTableRetentionProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

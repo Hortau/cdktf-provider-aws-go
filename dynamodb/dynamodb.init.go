@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTable",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTable",
 		reflect.TypeOf((*DataAwsDynamodbTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -52,6 +52,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "streamLabel", GoGetter: "StreamLabel"},
 			_jsii_.MemberProperty{JsiiProperty: "streamViewType", GoGetter: "StreamViewType"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tableClass", GoGetter: "TableClass"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
@@ -70,7 +71,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableAttribute",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableAttribute",
 		reflect.TypeOf((*DataAwsDynamodbTableAttribute)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -91,11 +92,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableConfig",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableConfig",
 		reflect.TypeOf((*DataAwsDynamodbTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableGlobalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableGlobalSecondaryIndex",
 		reflect.TypeOf((*DataAwsDynamodbTableGlobalSecondaryIndex)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -121,7 +122,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableLocalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableLocalSecondaryIndex",
 		reflect.TypeOf((*DataAwsDynamodbTableLocalSecondaryIndex)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -144,7 +145,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTablePointInTimeRecovery",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTablePointInTimeRecovery",
 		reflect.TypeOf((*DataAwsDynamodbTablePointInTimeRecovery)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -164,7 +165,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableReplica",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableReplica",
 		reflect.TypeOf((*DataAwsDynamodbTableReplica)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -185,17 +186,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableServerSideEncryption",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableServerSideEncryption",
 		reflect.TypeOf((*DataAwsDynamodbTableServerSideEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableServerSideEncryptionOutputReference",
 		reflect.TypeOf((*DataAwsDynamodbTableServerSideEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -209,7 +211,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableTtl",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableTtl",
 		reflect.TypeOf((*DataAwsDynamodbTableTtl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attributeName", GoGetter: "AttributeName"},
@@ -230,7 +232,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTable",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTable",
 		reflect.TypeOf((*DynamodbGlobalTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -276,19 +278,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableConfig",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableConfig",
 		reflect.TypeOf((*DynamodbGlobalTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableReplica",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableReplica",
 		reflect.TypeOf((*DynamodbGlobalTableReplica)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableTimeouts",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableTimeouts",
 		reflect.TypeOf((*DynamodbGlobalTableTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableTimeoutsOutputReference",
 		reflect.TypeOf((*DynamodbGlobalTableTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -299,6 +301,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -317,7 +320,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestination",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestination",
 		reflect.TypeOf((*DynamodbKinesisStreamingDestination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -358,11 +361,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestinationConfig",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestinationConfig",
 		reflect.TypeOf((*DynamodbKinesisStreamingDestinationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTable",
+		"hashicorp_aws.dynamodb.DynamodbTable",
 		reflect.TypeOf((*DynamodbTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -419,6 +422,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetServerSideEncryption", GoMethod: "ResetServerSideEncryption"},
 			_jsii_.MemberMethod{JsiiMethod: "resetStreamEnabled", GoMethod: "ResetStreamEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetStreamViewType", GoMethod: "ResetStreamViewType"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTableClass", GoMethod: "ResetTableClass"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
@@ -433,6 +437,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "streamViewType", GoGetter: "StreamViewType"},
 			_jsii_.MemberProperty{JsiiProperty: "streamViewTypeInput", GoGetter: "StreamViewTypeInput"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tableClass", GoGetter: "TableClass"},
+			_jsii_.MemberProperty{JsiiProperty: "tableClassInput", GoGetter: "TableClassInput"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
 			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
@@ -457,19 +463,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableAttribute",
+		"hashicorp_aws.dynamodb.DynamodbTableAttribute",
 		reflect.TypeOf((*DynamodbTableAttribute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableConfig",
+		"hashicorp_aws.dynamodb.DynamodbTableConfig",
 		reflect.TypeOf((*DynamodbTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableGlobalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DynamodbTableGlobalSecondaryIndex",
 		reflect.TypeOf((*DynamodbTableGlobalSecondaryIndex)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTableItem",
+		"hashicorp_aws.dynamodb.DynamodbTableItem",
 		reflect.TypeOf((*DynamodbTableItem)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -515,19 +521,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableItemConfig",
+		"hashicorp_aws.dynamodb.DynamodbTableItemConfig",
 		reflect.TypeOf((*DynamodbTableItemConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableLocalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DynamodbTableLocalSecondaryIndex",
 		reflect.TypeOf((*DynamodbTableLocalSecondaryIndex)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTablePointInTimeRecovery",
+		"hashicorp_aws.dynamodb.DynamodbTablePointInTimeRecovery",
 		reflect.TypeOf((*DynamodbTablePointInTimeRecovery)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTablePointInTimeRecoveryOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTablePointInTimeRecoveryOutputReference",
 		reflect.TypeOf((*DynamodbTablePointInTimeRecoveryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -536,6 +542,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -549,15 +556,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableReplica",
+		"hashicorp_aws.dynamodb.DynamodbTableReplica",
 		reflect.TypeOf((*DynamodbTableReplica)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableServerSideEncryption",
+		"hashicorp_aws.dynamodb.DynamodbTableServerSideEncryption",
 		reflect.TypeOf((*DynamodbTableServerSideEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableServerSideEncryptionOutputReference",
 		reflect.TypeOf((*DynamodbTableServerSideEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -566,6 +573,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -582,11 +590,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableTimeouts",
+		"hashicorp_aws.dynamodb.DynamodbTableTimeouts",
 		reflect.TypeOf((*DynamodbTableTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTimeoutsOutputReference",
 		reflect.TypeOf((*DynamodbTableTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -597,6 +605,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -615,11 +624,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTableTtl",
+		"hashicorp_aws.dynamodb.DynamodbTableTtl",
 		reflect.TypeOf((*DynamodbTableTtl)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTableTtlOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTtlOutputReference",
 		reflect.TypeOf((*DynamodbTableTtlOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attributeName", GoGetter: "AttributeName"},
@@ -630,6 +639,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -647,7 +657,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DynamoDB.DynamodbTag",
+		"hashicorp_aws.dynamodb.DynamodbTag",
 		reflect.TypeOf((*DynamodbTag)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -690,7 +700,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DynamoDB.DynamodbTagConfig",
+		"hashicorp_aws.dynamodb.DynamodbTagConfig",
 		reflect.TypeOf((*DynamodbTagConfig)(nil)).Elem(),
 	)
 }

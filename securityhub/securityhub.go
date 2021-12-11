@@ -1,12 +1,12 @@
 package securityhub
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/securityhub/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/securityhub/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account.html aws_securityhub_account}.
@@ -189,7 +189,6 @@ func (j *jsiiProxy_SecurityhubAccount) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account.html aws_securityhub_account} Resource.
 func NewSecurityhubAccount(scope constructs.Construct, id *string, config *SecurityhubAccountConfig) SecurityhubAccount {
 	_init_.Initialize()
@@ -197,7 +196,7 @@ func NewSecurityhubAccount(scope constructs.Construct, id *string, config *Secur
 	j := jsiiProxy_SecurityhubAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubAccount",
+		"hashicorp_aws.securityhub.SecurityhubAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -210,7 +209,7 @@ func NewSecurityhubAccount_Override(s SecurityhubAccount, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubAccount",
+		"hashicorp_aws.securityhub.SecurityhubAccount",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -258,7 +257,7 @@ func SecurityhubAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubAccount",
+		"hashicorp_aws.securityhub.SecurityhubAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -271,7 +270,7 @@ func SecurityhubAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubAccount",
+		"hashicorp_aws.securityhub.SecurityhubAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -433,6 +432,7 @@ func (s *jsiiProxy_SecurityhubAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -704,7 +704,6 @@ func (j *jsiiProxy_SecurityhubActionTarget) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html aws_securityhub_action_target} Resource.
 func NewSecurityhubActionTarget(scope constructs.Construct, id *string, config *SecurityhubActionTargetConfig) SecurityhubActionTarget {
 	_init_.Initialize()
@@ -712,7 +711,7 @@ func NewSecurityhubActionTarget(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_SecurityhubActionTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTarget",
+		"hashicorp_aws.securityhub.SecurityhubActionTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -725,7 +724,7 @@ func NewSecurityhubActionTarget_Override(s SecurityhubActionTarget, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTarget",
+		"hashicorp_aws.securityhub.SecurityhubActionTarget",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -797,7 +796,7 @@ func SecurityhubActionTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTarget",
+		"hashicorp_aws.securityhub.SecurityhubActionTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -810,7 +809,7 @@ func SecurityhubActionTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTarget",
+		"hashicorp_aws.securityhub.SecurityhubActionTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -972,6 +971,7 @@ func (s *jsiiProxy_SecurityhubActionTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubActionTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -987,6 +987,516 @@ type SecurityhubActionTargetConfig struct {
 	Identifier *string `json:"identifier"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html#name SecurityhubActionTarget#name}.
 	Name *string `json:"name"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator}.
+type SecurityhubFindingAggregator interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LinkingMode() *string
+	SetLinkingMode(val *string)
+	LinkingModeInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SpecifiedRegions() *[]*string
+	SetSpecifiedRegions(val *[]*string)
+	SpecifiedRegionsInput() *[]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetSpecifiedRegions()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for SecurityhubFindingAggregator
+type jsiiProxy_SecurityhubFindingAggregator struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) LinkingMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"linkingMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) LinkingModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"linkingModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SpecifiedRegions() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"specifiedRegions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SpecifiedRegionsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"specifiedRegionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator} Resource.
+func NewSecurityhubFindingAggregator(scope constructs.Construct, id *string, config *SecurityhubFindingAggregatorConfig) SecurityhubFindingAggregator {
+	_init_.Initialize()
+
+	j := jsiiProxy_SecurityhubFindingAggregator{}
+
+	_jsii_.Create(
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregator",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator} Resource.
+func NewSecurityhubFindingAggregator_Override(s SecurityhubFindingAggregator, scope constructs.Construct, id *string, config *SecurityhubFindingAggregatorConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregator",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetLinkingMode(val *string) {
+	_jsii_.Set(
+		j,
+		"linkingMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetSpecifiedRegions(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"specifiedRegions",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func SecurityhubFindingAggregator_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregator",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func SecurityhubFindingAggregator_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregator",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SecurityhubFindingAggregator) ResetSpecifiedRegions() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSpecifiedRegions",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SecurityhubFindingAggregator) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_SecurityhubFindingAggregator) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Security Hub.
+type SecurityhubFindingAggregatorConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html#linking_mode SecurityhubFindingAggregator#linking_mode}.
+	LinkingMode *string `json:"linkingMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html#specified_regions SecurityhubFindingAggregator#specified_regions}.
+	SpecifiedRegions *[]*string `json:"specifiedRegions"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html aws_securityhub_insight}.
@@ -1249,7 +1759,6 @@ func (j *jsiiProxy_SecurityhubInsight) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html aws_securityhub_insight} Resource.
 func NewSecurityhubInsight(scope constructs.Construct, id *string, config *SecurityhubInsightConfig) SecurityhubInsight {
 	_init_.Initialize()
@@ -1257,7 +1766,7 @@ func NewSecurityhubInsight(scope constructs.Construct, id *string, config *Secur
 	j := jsiiProxy_SecurityhubInsight{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsight",
+		"hashicorp_aws.securityhub.SecurityhubInsight",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1270,7 +1779,7 @@ func NewSecurityhubInsight_Override(s SecurityhubInsight, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsight",
+		"hashicorp_aws.securityhub.SecurityhubInsight",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1334,7 +1843,7 @@ func SecurityhubInsight_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubInsight",
+		"hashicorp_aws.securityhub.SecurityhubInsight",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1347,7 +1856,7 @@ func SecurityhubInsight_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubInsight",
+		"hashicorp_aws.securityhub.SecurityhubInsight",
 		"tfResourceType",
 		&returns,
 	)
@@ -1517,6 +2026,7 @@ func (s *jsiiProxy_SecurityhubInsight) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubInsightConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1941,6 +2451,8 @@ type SecurityhubInsightFiltersCreatedAtDateRange struct {
 
 type SecurityhubInsightFiltersCreatedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersCreatedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersCreatedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1964,6 +2476,16 @@ type SecurityhubInsightFiltersCreatedAtDateRangeOutputReference interface {
 // The jsii proxy struct for SecurityhubInsightFiltersCreatedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersCreatedAtDateRange {
+	var returns *SecurityhubInsightFiltersCreatedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -2036,14 +2558,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) V
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersCreatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2055,9 +2576,17 @@ func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference_Override(s Se
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersCreatedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2274,6 +2803,8 @@ type SecurityhubInsightFiltersFirstObservedAtDateRange struct {
 
 type SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersFirstObservedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersFirstObservedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2297,6 +2828,16 @@ type SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference interface 
 // The jsii proxy struct for SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersFirstObservedAtDateRange {
+	var returns *SecurityhubInsightFiltersFirstObservedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -2369,14 +2910,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2388,9 +2928,17 @@ func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersFirstObservedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2557,6 +3105,8 @@ type SecurityhubInsightFiltersLastObservedAtDateRange struct {
 
 type SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersLastObservedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersLastObservedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2580,6 +3130,16 @@ type SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference interface {
 // The jsii proxy struct for SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersLastObservedAtDateRange {
+	var returns *SecurityhubInsightFiltersLastObservedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -2652,14 +3212,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2671,9 +3230,17 @@ func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersLastObservedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2929,6 +3496,8 @@ type SecurityhubInsightFiltersNoteUpdatedAtDateRange struct {
 
 type SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersNoteUpdatedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersNoteUpdatedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2952,6 +3521,16 @@ type SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference interface {
 // The jsii proxy struct for SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersNoteUpdatedAtDateRange {
+	var returns *SecurityhubInsightFiltersNoteUpdatedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -3024,14 +3603,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3043,9 +3621,17 @@ func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersNoteUpdatedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3233,6 +3819,8 @@ type SecurityhubInsightFiltersOutputReference interface {
 	Id() *[]*SecurityhubInsightFiltersId
 	SetId(val *[]*SecurityhubInsightFiltersId)
 	IdInput() *[]*SecurityhubInsightFiltersId
+	InternalValue() *SecurityhubInsightFilters
+	SetInternalValue(val *SecurityhubInsightFilters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Keyword() *[]*SecurityhubInsightFiltersKeyword
@@ -3888,6 +4476,16 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) IdInput() *[]*Secur
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) InternalValue() *SecurityhubInsightFilters {
+	var returns *SecurityhubInsightFilters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5343,14 +5941,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatusInput
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5362,7 +5959,7 @@ func NewSecurityhubInsightFiltersOutputReference_Override(s SecurityhubInsightFi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -5500,6 +6097,14 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetId(val *[]*Secur
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetInternalValue(val *SecurityhubInsightFilters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6904,6 +7509,8 @@ type SecurityhubInsightFiltersProcessLaunchedAtDateRange struct {
 
 type SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersProcessLaunchedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersProcessLaunchedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6927,6 +7534,16 @@ type SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference interfac
 // The jsii proxy struct for SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersProcessLaunchedAtDateRange {
+	var returns *SecurityhubInsightFiltersProcessLaunchedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -6999,14 +7616,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7018,9 +7634,17 @@ func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersProcessLaunchedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7200,6 +7824,8 @@ type SecurityhubInsightFiltersProcessTerminatedAtDateRange struct {
 
 type SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersProcessTerminatedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersProcessTerminatedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7223,6 +7849,16 @@ type SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference interf
 // The jsii proxy struct for SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersProcessTerminatedAtDateRange {
+	var returns *SecurityhubInsightFiltersProcessTerminatedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -7295,14 +7931,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7314,9 +7949,17 @@ func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersProcessTerminatedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7546,6 +8189,8 @@ type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange struct {
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7569,6 +8214,16 @@ type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputRef
 // The jsii proxy struct for SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange {
+	var returns *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -7641,14 +8296,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7660,9 +8314,17 @@ func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7831,6 +8493,8 @@ type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange struct {
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7854,6 +8518,16 @@ type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputRef
 // The jsii proxy struct for SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange {
+	var returns *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -7926,14 +8600,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7945,9 +8618,17 @@ func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8137,6 +8818,8 @@ type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange struct {
 
 type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8160,6 +8843,16 @@ type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReferenc
 // The jsii proxy struct for SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange {
+	var returns *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -8232,14 +8925,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8251,9 +8943,17 @@ func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8475,6 +9175,8 @@ type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange struct
 
 type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8498,6 +9200,16 @@ type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputR
 // The jsii proxy struct for SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange {
+	var returns *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -8570,14 +9282,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8589,9 +9300,17 @@ func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8781,6 +9500,8 @@ type SecurityhubInsightFiltersUpdatedAtDateRange struct {
 
 type SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SecurityhubInsightFiltersUpdatedAtDateRange
+	SetInternalValue(val *SecurityhubInsightFiltersUpdatedAtDateRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8804,6 +9525,16 @@ type SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference interface {
 // The jsii proxy struct for SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference
 type jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) InternalValue() *SecurityhubInsightFiltersUpdatedAtDateRange {
+	var returns *SecurityhubInsightFiltersUpdatedAtDateRange
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) IsSingleItem() *bool {
@@ -8876,14 +9607,13 @@ func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) V
 	return returns
 }
 
-
 func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8895,9 +9625,17 @@ func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference_Override(s Se
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) SetInternalValue(val *SecurityhubInsightFiltersUpdatedAtDateRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9262,7 +10000,6 @@ func (j *jsiiProxy_SecurityhubInviteAccepter) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter.html aws_securityhub_invite_accepter} Resource.
 func NewSecurityhubInviteAccepter(scope constructs.Construct, id *string, config *SecurityhubInviteAccepterConfig) SecurityhubInviteAccepter {
 	_init_.Initialize()
@@ -9270,7 +10007,7 @@ func NewSecurityhubInviteAccepter(scope constructs.Construct, id *string, config
 	j := jsiiProxy_SecurityhubInviteAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepter",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9283,7 +10020,7 @@ func NewSecurityhubInviteAccepter_Override(s SecurityhubInviteAccepter, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepter",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepter",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -9339,7 +10076,7 @@ func SecurityhubInviteAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepter",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9352,7 +10089,7 @@ func SecurityhubInviteAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepter",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -9514,6 +10251,7 @@ func (s *jsiiProxy_SecurityhubInviteAccepter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubInviteAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9799,7 +10537,6 @@ func (j *jsiiProxy_SecurityhubMember) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html aws_securityhub_member} Resource.
 func NewSecurityhubMember(scope constructs.Construct, id *string, config *SecurityhubMemberConfig) SecurityhubMember {
 	_init_.Initialize()
@@ -9807,7 +10544,7 @@ func NewSecurityhubMember(scope constructs.Construct, id *string, config *Securi
 	j := jsiiProxy_SecurityhubMember{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubMember",
+		"hashicorp_aws.securityhub.SecurityhubMember",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9820,7 +10557,7 @@ func NewSecurityhubMember_Override(s SecurityhubMember, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubMember",
+		"hashicorp_aws.securityhub.SecurityhubMember",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -9892,7 +10629,7 @@ func SecurityhubMember_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubMember",
+		"hashicorp_aws.securityhub.SecurityhubMember",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9905,7 +10642,7 @@ func SecurityhubMember_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubMember",
+		"hashicorp_aws.securityhub.SecurityhubMember",
 		"tfResourceType",
 		&returns,
 	)
@@ -10075,6 +10812,7 @@ func (s *jsiiProxy_SecurityhubMember) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubMemberConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10295,7 +11033,6 @@ func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) TerraformResourceType() 
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account.html aws_securityhub_organization_admin_account} Resource.
 func NewSecurityhubOrganizationAdminAccount(scope constructs.Construct, id *string, config *SecurityhubOrganizationAdminAccountConfig) SecurityhubOrganizationAdminAccount {
 	_init_.Initialize()
@@ -10303,7 +11040,7 @@ func NewSecurityhubOrganizationAdminAccount(scope constructs.Construct, id *stri
 	j := jsiiProxy_SecurityhubOrganizationAdminAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccount",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10316,7 +11053,7 @@ func NewSecurityhubOrganizationAdminAccount_Override(s SecurityhubOrganizationAd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccount",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccount",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -10372,7 +11109,7 @@ func SecurityhubOrganizationAdminAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccount",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10385,7 +11122,7 @@ func SecurityhubOrganizationAdminAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccount",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -10547,6 +11284,7 @@ func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) ToTerraform() interface{
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubOrganizationAdminAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10763,7 +11501,6 @@ func (j *jsiiProxy_SecurityhubOrganizationConfiguration) TerraformResourceType()
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration.html aws_securityhub_organization_configuration} Resource.
 func NewSecurityhubOrganizationConfiguration(scope constructs.Construct, id *string, config *SecurityhubOrganizationConfigurationConfig) SecurityhubOrganizationConfiguration {
 	_init_.Initialize()
@@ -10771,7 +11508,7 @@ func NewSecurityhubOrganizationConfiguration(scope constructs.Construct, id *str
 	j := jsiiProxy_SecurityhubOrganizationConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfiguration",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10784,7 +11521,7 @@ func NewSecurityhubOrganizationConfiguration_Override(s SecurityhubOrganizationC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfiguration",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfiguration",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -10840,7 +11577,7 @@ func SecurityhubOrganizationConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfiguration",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10853,7 +11590,7 @@ func SecurityhubOrganizationConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfiguration",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -11015,6 +11752,7 @@ func (s *jsiiProxy_SecurityhubOrganizationConfiguration) ToTerraform() interface
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubOrganizationConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11242,7 +11980,6 @@ func (j *jsiiProxy_SecurityhubProductSubscription) TerraformResourceType() *stri
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription.html aws_securityhub_product_subscription} Resource.
 func NewSecurityhubProductSubscription(scope constructs.Construct, id *string, config *SecurityhubProductSubscriptionConfig) SecurityhubProductSubscription {
 	_init_.Initialize()
@@ -11250,7 +11987,7 @@ func NewSecurityhubProductSubscription(scope constructs.Construct, id *string, c
 	j := jsiiProxy_SecurityhubProductSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscription",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11263,7 +12000,7 @@ func NewSecurityhubProductSubscription_Override(s SecurityhubProductSubscription
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscription",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscription",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11319,7 +12056,7 @@ func SecurityhubProductSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscription",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11332,7 +12069,7 @@ func SecurityhubProductSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscription",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -11494,6 +12231,7 @@ func (s *jsiiProxy_SecurityhubProductSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubProductSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11834,7 +12572,6 @@ func (j *jsiiProxy_SecurityhubStandardsControl) Title() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html aws_securityhub_standards_control} Resource.
 func NewSecurityhubStandardsControl(scope constructs.Construct, id *string, config *SecurityhubStandardsControlConfig) SecurityhubStandardsControl {
 	_init_.Initialize()
@@ -11842,7 +12579,7 @@ func NewSecurityhubStandardsControl(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_SecurityhubStandardsControl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControl",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11855,7 +12592,7 @@ func NewSecurityhubStandardsControl_Override(s SecurityhubStandardsControl, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControl",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControl",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -11927,7 +12664,7 @@ func SecurityhubStandardsControl_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControl",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11940,7 +12677,7 @@ func SecurityhubStandardsControl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControl",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControl",
 		"tfResourceType",
 		&returns,
 	)
@@ -12110,6 +12847,7 @@ func (s *jsiiProxy_SecurityhubStandardsControl) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubStandardsControlConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12330,7 +13068,6 @@ func (j *jsiiProxy_SecurityhubStandardsSubscription) TerraformResourceType() *st
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html aws_securityhub_standards_subscription} Resource.
 func NewSecurityhubStandardsSubscription(scope constructs.Construct, id *string, config *SecurityhubStandardsSubscriptionConfig) SecurityhubStandardsSubscription {
 	_init_.Initialize()
@@ -12338,7 +13075,7 @@ func NewSecurityhubStandardsSubscription(scope constructs.Construct, id *string,
 	j := jsiiProxy_SecurityhubStandardsSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscription",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12351,7 +13088,7 @@ func NewSecurityhubStandardsSubscription_Override(s SecurityhubStandardsSubscrip
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscription",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscription",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12407,7 +13144,7 @@ func SecurityhubStandardsSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscription",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12420,7 +13157,7 @@ func SecurityhubStandardsSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscription",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -12582,6 +13319,7 @@ func (s *jsiiProxy_SecurityhubStandardsSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Security Hub.
 type SecurityhubStandardsSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12594,4 +13332,3 @@ type SecurityhubStandardsSubscriptionConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html#standards_arn SecurityhubStandardsSubscription#standards_arn}.
 	StandardsArn *string `json:"standardsArn"`
 }
-

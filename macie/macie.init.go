@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociation",
+		"hashicorp_aws.macie.MacieMemberAccountAssociation",
 		reflect.TypeOf((*MacieMemberAccountAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -47,11 +47,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie.MacieMemberAccountAssociationConfig",
+		"hashicorp_aws.macie.MacieMemberAccountAssociationConfig",
 		reflect.TypeOf((*MacieMemberAccountAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie.MacieS3BucketAssociation",
+		"hashicorp_aws.macie.MacieS3BucketAssociation",
 		reflect.TypeOf((*MacieS3BucketAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -100,11 +100,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie.MacieS3BucketAssociationClassificationType",
+		"hashicorp_aws.macie.MacieS3BucketAssociationClassificationType",
 		reflect.TypeOf((*MacieS3BucketAssociationClassificationType)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie.MacieS3BucketAssociationClassificationTypeOutputReference",
+		"hashicorp_aws.macie.MacieS3BucketAssociationClassificationTypeOutputReference",
 		reflect.TypeOf((*MacieS3BucketAssociationClassificationTypeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "continuous", GoGetter: "Continuous"},
@@ -113,6 +113,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -130,7 +131,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie.MacieS3BucketAssociationConfig",
+		"hashicorp_aws.macie.MacieS3BucketAssociationConfig",
 		reflect.TypeOf((*MacieS3BucketAssociationConfig)(nil)).Elem(),
 	)
 }

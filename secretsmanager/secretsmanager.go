@@ -288,7 +288,7 @@ func NewDataAwsSecretsmanagerSecret(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsSecretsmanagerSecret{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecret",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -301,7 +301,7 @@ func NewDataAwsSecretsmanagerSecret_Override(d DataAwsSecretsmanagerSecret, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecret",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -357,7 +357,7 @@ func DataAwsSecretsmanagerSecret_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecret",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -370,7 +370,7 @@ func DataAwsSecretsmanagerSecret_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecret",
 		"tfResourceType",
 		&returns,
 	)
@@ -566,6 +566,7 @@ func (d *jsiiProxy_DataAwsSecretsmanagerSecret) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Secrets Manager.
 type DataAwsSecretsmanagerSecretConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -812,7 +813,7 @@ func NewDataAwsSecretsmanagerSecretRotation(scope constructs.Construct, id *stri
 	j := jsiiProxy_DataAwsSecretsmanagerSecretRotation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -825,7 +826,7 @@ func NewDataAwsSecretsmanagerSecretRotation_Override(d DataAwsSecretsmanagerSecr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -881,7 +882,7 @@ func DataAwsSecretsmanagerSecretRotation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -894,7 +895,7 @@ func DataAwsSecretsmanagerSecretRotation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1069,6 +1070,7 @@ func (d *jsiiProxy_DataAwsSecretsmanagerSecretRotation) ToTerraform() interface{
 	return returns
 }
 
+// AWS Secrets Manager.
 type DataAwsSecretsmanagerSecretRotationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1150,7 +1152,7 @@ func NewDataAwsSecretsmanagerSecretRotationRotationRules(terraformResource cdktf
 	j := jsiiProxy_DataAwsSecretsmanagerSecretRotationRotationRules{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRotationRules",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1163,7 +1165,7 @@ func NewDataAwsSecretsmanagerSecretRotationRotationRules_Override(d DataAwsSecre
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRotationRules",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1331,7 +1333,7 @@ func NewDataAwsSecretsmanagerSecretRotationRules(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsSecretsmanagerSecretRotationRules{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRules",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1344,7 +1346,7 @@ func NewDataAwsSecretsmanagerSecretRotationRules_Override(d DataAwsSecretsmanage
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretRotationRules",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretRotationRules",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1746,7 +1748,7 @@ func NewDataAwsSecretsmanagerSecretVersion(scope constructs.Construct, id *strin
 	j := jsiiProxy_DataAwsSecretsmanagerSecretVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1759,7 +1761,7 @@ func NewDataAwsSecretsmanagerSecretVersion_Override(d DataAwsSecretsmanagerSecre
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1831,7 +1833,7 @@ func DataAwsSecretsmanagerSecretVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1844,7 +1846,7 @@ func DataAwsSecretsmanagerSecretVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.DataAwsSecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.DataAwsSecretsmanagerSecretVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -2022,6 +2024,7 @@ func (d *jsiiProxy_DataAwsSecretsmanagerSecretVersion) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Secrets Manager.
 type DataAwsSecretsmanagerSecretVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2536,7 +2539,7 @@ func NewSecretsmanagerSecret(scope constructs.Construct, id *string, config *Sec
 	j := jsiiProxy_SecretsmanagerSecret{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecret",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2549,7 +2552,7 @@ func NewSecretsmanagerSecret_Override(s SecretsmanagerSecret, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecret",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2685,7 +2688,7 @@ func SecretsmanagerSecret_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecret",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2698,7 +2701,7 @@ func SecretsmanagerSecret_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecret",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecret",
 		"tfResourceType",
 		&returns,
 	)
@@ -2964,6 +2967,7 @@ func (s *jsiiProxy_SecretsmanagerSecret) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Secrets Manager.
 type SecretsmanagerSecretConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3260,7 +3264,7 @@ func NewSecretsmanagerSecretPolicy(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_SecretsmanagerSecretPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicy",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3273,7 +3277,7 @@ func NewSecretsmanagerSecretPolicy_Override(s SecretsmanagerSecretPolicy, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicy",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3345,7 +3349,7 @@ func SecretsmanagerSecretPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicy",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3358,7 +3362,7 @@ func SecretsmanagerSecretPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretPolicy",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -3528,6 +3532,7 @@ func (s *jsiiProxy_SecretsmanagerSecretPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Secrets Manager.
 type SecretsmanagerSecretPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3843,7 +3848,7 @@ func NewSecretsmanagerSecretRotation(scope constructs.Construct, id *string, con
 	j := jsiiProxy_SecretsmanagerSecretRotation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3856,7 +3861,7 @@ func NewSecretsmanagerSecretRotation_Override(s SecretsmanagerSecretRotation, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3928,7 +3933,7 @@ func SecretsmanagerSecretRotation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3941,7 +3946,7 @@ func SecretsmanagerSecretRotation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotation",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4119,6 +4124,7 @@ func (s *jsiiProxy_SecretsmanagerSecretRotation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Secrets Manager.
 type SecretsmanagerSecretRotationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4150,6 +4156,8 @@ type SecretsmanagerSecretRotationRotationRulesOutputReference interface {
 	AutomaticallyAfterDays() *float64
 	SetAutomaticallyAfterDays(val *float64)
 	AutomaticallyAfterDaysInput() *float64
+	InternalValue() *SecretsmanagerSecretRotationRotationRules
+	SetInternalValue(val *SecretsmanagerSecretRotationRotationRules)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4184,6 +4192,16 @@ func (j *jsiiProxy_SecretsmanagerSecretRotationRotationRulesOutputReference) Aut
 	_jsii_.Get(
 		j,
 		"automaticallyAfterDaysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecretsmanagerSecretRotationRotationRulesOutputReference) InternalValue() *SecretsmanagerSecretRotationRotationRules {
+	var returns *SecretsmanagerSecretRotationRotationRules
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4225,7 +4243,7 @@ func NewSecretsmanagerSecretRotationRotationRulesOutputReference(terraformResour
 	j := jsiiProxy_SecretsmanagerSecretRotationRotationRulesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRotationRulesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4237,7 +4255,7 @@ func NewSecretsmanagerSecretRotationRotationRulesOutputReference_Override(s Secr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRotationRulesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4247,6 +4265,14 @@ func (j *jsiiProxy_SecretsmanagerSecretRotationRotationRulesOutputReference) Set
 	_jsii_.Set(
 		j,
 		"automaticallyAfterDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecretsmanagerSecretRotationRotationRulesOutputReference) SetInternalValue(val *SecretsmanagerSecretRotationRotationRules) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4369,6 +4395,8 @@ type SecretsmanagerSecretRotationRulesOutputReference interface {
 	AutomaticallyAfterDays() *float64
 	SetAutomaticallyAfterDays(val *float64)
 	AutomaticallyAfterDaysInput() *float64
+	InternalValue() *SecretsmanagerSecretRotationRules
+	SetInternalValue(val *SecretsmanagerSecretRotationRules)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4403,6 +4431,16 @@ func (j *jsiiProxy_SecretsmanagerSecretRotationRulesOutputReference) Automatical
 	_jsii_.Get(
 		j,
 		"automaticallyAfterDaysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecretsmanagerSecretRotationRulesOutputReference) InternalValue() *SecretsmanagerSecretRotationRules {
+	var returns *SecretsmanagerSecretRotationRules
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4444,7 +4482,7 @@ func NewSecretsmanagerSecretRotationRulesOutputReference(terraformResource cdktf
 	j := jsiiProxy_SecretsmanagerSecretRotationRulesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRulesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4456,7 +4494,7 @@ func NewSecretsmanagerSecretRotationRulesOutputReference_Override(s Secretsmanag
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretRotationRulesOutputReference",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretRotationRulesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4466,6 +4504,14 @@ func (j *jsiiProxy_SecretsmanagerSecretRotationRulesOutputReference) SetAutomati
 	_jsii_.Set(
 		j,
 		"automaticallyAfterDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecretsmanagerSecretRotationRulesOutputReference) SetInternalValue(val *SecretsmanagerSecretRotationRules) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4882,7 +4928,7 @@ func NewSecretsmanagerSecretVersion(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_SecretsmanagerSecretVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4895,7 +4941,7 @@ func NewSecretsmanagerSecretVersion_Override(s SecretsmanagerSecretVersion, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersion",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -4975,7 +5021,7 @@ func SecretsmanagerSecretVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4988,7 +5034,7 @@ func SecretsmanagerSecretVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SecretsManager.SecretsmanagerSecretVersion",
+		"hashicorp_aws.secretsmanager.SecretsmanagerSecretVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -5174,6 +5220,7 @@ func (s *jsiiProxy_SecretsmanagerSecretVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Secrets Manager.
 type SecretsmanagerSecretVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

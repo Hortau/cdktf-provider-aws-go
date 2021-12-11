@@ -464,7 +464,7 @@ func NewCurReportDefinition(scope constructs.Construct, id *string, config *CurR
 	j := jsiiProxy_CurReportDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cur.CurReportDefinition",
+		"hashicorp_aws.cur.CurReportDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -477,7 +477,7 @@ func NewCurReportDefinition_Override(c CurReportDefinition, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cur.CurReportDefinition",
+		"hashicorp_aws.cur.CurReportDefinition",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -613,7 +613,7 @@ func CurReportDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cur.CurReportDefinition",
+		"hashicorp_aws.cur.CurReportDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -626,7 +626,7 @@ func CurReportDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cur.CurReportDefinition",
+		"hashicorp_aws.cur.CurReportDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -820,6 +820,7 @@ func (c *jsiiProxy_CurReportDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cost and Usage Report.
 type CurReportDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1173,7 +1174,7 @@ func NewDataAwsCurReportDefinition(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsCurReportDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinition",
+		"hashicorp_aws.cur.DataAwsCurReportDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1186,7 +1187,7 @@ func NewDataAwsCurReportDefinition_Override(d DataAwsCurReportDefinition, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinition",
+		"hashicorp_aws.cur.DataAwsCurReportDefinition",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1242,7 +1243,7 @@ func DataAwsCurReportDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinition",
+		"hashicorp_aws.cur.DataAwsCurReportDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1255,7 +1256,7 @@ func DataAwsCurReportDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinition",
+		"hashicorp_aws.cur.DataAwsCurReportDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -1417,6 +1418,7 @@ func (d *jsiiProxy_DataAwsCurReportDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Cost and Usage Report.
 type DataAwsCurReportDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -1,12 +1,12 @@
 package autoscaling
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/autoscaling/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/autoscaling/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html aws_autoscaling_attachment}.
@@ -260,7 +260,6 @@ func (j *jsiiProxy_AutoscalingAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html aws_autoscaling_attachment} Resource.
 func NewAutoscalingAttachment(scope constructs.Construct, id *string, config *AutoscalingAttachmentConfig) AutoscalingAttachment {
 	_init_.Initialize()
@@ -268,7 +267,7 @@ func NewAutoscalingAttachment(scope constructs.Construct, id *string, config *Au
 	j := jsiiProxy_AutoscalingAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingAttachment",
+		"hashicorp_aws.autoscaling.AutoscalingAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -281,7 +280,7 @@ func NewAutoscalingAttachment_Override(a AutoscalingAttachment, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingAttachment",
+		"hashicorp_aws.autoscaling.AutoscalingAttachment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -353,7 +352,7 @@ func AutoscalingAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingAttachment",
+		"hashicorp_aws.autoscaling.AutoscalingAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -366,7 +365,7 @@ func AutoscalingAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingAttachment",
+		"hashicorp_aws.autoscaling.AutoscalingAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -544,6 +543,7 @@ func (a *jsiiProxy_AutoscalingAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1590,7 +1590,6 @@ func (j *jsiiProxy_AutoscalingGroup) WarmPoolInput() *AutoscalingGroupWarmPool {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html aws_autoscaling_group} Resource.
 func NewAutoscalingGroup(scope constructs.Construct, id *string, config *AutoscalingGroupConfig) AutoscalingGroup {
 	_init_.Initialize()
@@ -1598,7 +1597,7 @@ func NewAutoscalingGroup(scope constructs.Construct, id *string, config *Autosca
 	j := jsiiProxy_AutoscalingGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroup",
+		"hashicorp_aws.autoscaling.AutoscalingGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1611,7 +1610,7 @@ func NewAutoscalingGroup_Override(a AutoscalingGroup, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroup",
+		"hashicorp_aws.autoscaling.AutoscalingGroup",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1899,7 +1898,7 @@ func AutoscalingGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingGroup",
+		"hashicorp_aws.autoscaling.AutoscalingGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1912,7 +1911,7 @@ func AutoscalingGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingGroup",
+		"hashicorp_aws.autoscaling.AutoscalingGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -2378,6 +2377,7 @@ func (a *jsiiProxy_AutoscalingGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2503,6 +2503,8 @@ type AutoscalingGroupInstanceRefresh struct {
 
 type AutoscalingGroupInstanceRefreshOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupInstanceRefresh
+	SetInternalValue(val *AutoscalingGroupInstanceRefresh)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Preferences() AutoscalingGroupInstanceRefreshPreferencesOutputReference
@@ -2531,6 +2533,16 @@ type AutoscalingGroupInstanceRefreshOutputReference interface {
 // The jsii proxy struct for AutoscalingGroupInstanceRefreshOutputReference
 type jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) InternalValue() *AutoscalingGroupInstanceRefresh {
+	var returns *AutoscalingGroupInstanceRefresh
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) IsSingleItem() *bool {
@@ -2623,14 +2635,13 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) TriggersInput
 	return returns
 }
 
-
 func NewAutoscalingGroupInstanceRefreshOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupInstanceRefreshOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupInstanceRefreshOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2642,9 +2653,17 @@ func NewAutoscalingGroupInstanceRefreshOutputReference_Override(a AutoscalingGro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupInstanceRefreshOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupInstanceRefreshOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) SetInternalValue(val *AutoscalingGroupInstanceRefresh) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2818,6 +2837,8 @@ type AutoscalingGroupInstanceRefreshPreferencesOutputReference interface {
 	InstanceWarmup() *string
 	SetInstanceWarmup(val *string)
 	InstanceWarmupInput() *string
+	InternalValue() *AutoscalingGroupInstanceRefreshPreferences
+	SetInternalValue(val *AutoscalingGroupInstanceRefreshPreferences)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MinHealthyPercentage() *float64
@@ -2904,6 +2925,16 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) In
 	return returns
 }
 
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) InternalValue() *AutoscalingGroupInstanceRefreshPreferences {
+	var returns *AutoscalingGroupInstanceRefreshPreferences
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2954,14 +2985,13 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Te
 	return returns
 }
 
-
 func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshPreferencesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupInstanceRefreshPreferencesOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupInstanceRefreshPreferencesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2973,7 +3003,7 @@ func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference_Override(a Aut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupInstanceRefreshPreferencesOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupInstanceRefreshPreferencesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2999,6 +3029,14 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Se
 	_jsii_.Set(
 		j,
 		"instanceWarmup",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) SetInternalValue(val *AutoscalingGroupInstanceRefreshPreferences) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3163,6 +3201,8 @@ type AutoscalingGroupLaunchTemplate struct {
 type AutoscalingGroupLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
 	Id() *string
+	InternalValue() *AutoscalingGroupLaunchTemplate
+	SetInternalValue(val *AutoscalingGroupLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -3195,6 +3235,16 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) InternalValue() *AutoscalingGroupLaunchTemplate {
+	var returns *AutoscalingGroupLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3270,14 +3320,13 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) VersionInput()
 	return returns
 }
 
-
 func NewAutoscalingGroupLaunchTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupLaunchTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupLaunchTemplateOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3289,9 +3338,17 @@ func NewAutoscalingGroupLaunchTemplateOutputReference_Override(a AutoscalingGrou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupLaunchTemplateOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) SetInternalValue(val *AutoscalingGroupLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3463,6 +3520,8 @@ type AutoscalingGroupMixedInstancesPolicyInstancesDistribution struct {
 
 type AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupMixedInstancesPolicyInstancesDistribution
+	SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyInstancesDistribution)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnDemandAllocationStrategy() *string
@@ -3504,6 +3563,16 @@ type AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference in
 // The jsii proxy struct for AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference
 type jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) InternalValue() *AutoscalingGroupMixedInstancesPolicyInstancesDistribution {
+	var returns *AutoscalingGroupMixedInstancesPolicyInstancesDistribution
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) IsSingleItem() *bool {
@@ -3656,14 +3725,13 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 	return returns
 }
 
-
 func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3675,9 +3743,17 @@ func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyInstancesDistribution) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3907,6 +3983,8 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificati
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
+	SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateId() *string
@@ -3936,6 +4014,16 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificati
 // The jsii proxy struct for AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference
 type jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
+	var returns *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) IsSingleItem() *bool {
@@ -4028,14 +4116,13 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 	return returns
 }
 
-
 func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4047,9 +4134,17 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecific
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4211,6 +4306,8 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplate
+	SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateSpecification() AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference
@@ -4235,6 +4332,16 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference interface
 // The jsii proxy struct for AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference
 type jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplate {
+	var returns *AutoscalingGroupMixedInstancesPolicyLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) IsSingleItem() *bool {
@@ -4307,14 +4414,13 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	return returns
 }
 
-
 func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4326,9 +4432,17 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4486,6 +4600,8 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpe
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification
+	SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateId() *string
@@ -4515,6 +4631,16 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpe
 // The jsii proxy struct for AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference
 type jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) InternalValue() *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification {
+	var returns *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) IsSingleItem() *bool {
@@ -4607,14 +4733,13 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 	return returns
 }
 
-
 func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4626,9 +4751,17 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) SetInternalValue(val *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4792,6 +4925,8 @@ type AutoscalingGroupMixedInstancesPolicyOutputReference interface {
 	cdktf.ComplexObject
 	InstancesDistribution() AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference
 	InstancesDistributionInput() *AutoscalingGroupMixedInstancesPolicyInstancesDistribution
+	InternalValue() *AutoscalingGroupMixedInstancesPolicy
+	SetInternalValue(val *AutoscalingGroupMixedInstancesPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplate() AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference
@@ -4831,6 +4966,16 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) Instance
 	_jsii_.Get(
 		j,
 		"instancesDistributionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) InternalValue() *AutoscalingGroupMixedInstancesPolicy {
+	var returns *AutoscalingGroupMixedInstancesPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4886,14 +5031,13 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) Terrafor
 	return returns
 }
 
-
 func NewAutoscalingGroupMixedInstancesPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4905,9 +5049,17 @@ func NewAutoscalingGroupMixedInstancesPolicyOutputReference_Override(a Autoscali
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupMixedInstancesPolicyOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupMixedInstancesPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) SetInternalValue(val *AutoscalingGroupMixedInstancesPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5278,7 +5430,6 @@ func (j *jsiiProxy_AutoscalingGroupTagA) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html aws_autoscaling_group_tag} Resource.
 func NewAutoscalingGroupTagA(scope constructs.Construct, id *string, config *AutoscalingGroupTagAConfig) AutoscalingGroupTagA {
 	_init_.Initialize()
@@ -5286,7 +5437,7 @@ func NewAutoscalingGroupTagA(scope constructs.Construct, id *string, config *Aut
 	j := jsiiProxy_AutoscalingGroupTagA{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagA",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagA",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5299,7 +5450,7 @@ func NewAutoscalingGroupTagA_Override(a AutoscalingGroupTagA, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagA",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagA",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -5355,7 +5506,7 @@ func AutoscalingGroupTagA_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagA",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagA",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5368,7 +5519,7 @@ func AutoscalingGroupTagA_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagA",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagA",
 		"tfResourceType",
 		&returns,
 	)
@@ -5538,6 +5689,7 @@ func (a *jsiiProxy_AutoscalingGroupTagA) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingGroupTagAConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5566,6 +5718,8 @@ type AutoscalingGroupTagTag struct {
 
 type AutoscalingGroupTagTagOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupTagTag
+	SetInternalValue(val *AutoscalingGroupTagTag)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -5592,6 +5746,16 @@ type AutoscalingGroupTagTagOutputReference interface {
 // The jsii proxy struct for AutoscalingGroupTagTagOutputReference
 type jsiiProxy_AutoscalingGroupTagTagOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) InternalValue() *AutoscalingGroupTagTag {
+	var returns *AutoscalingGroupTagTag
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) IsSingleItem() *bool {
@@ -5684,14 +5848,13 @@ func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) ValueInput() *string {
 	return returns
 }
 
-
 func NewAutoscalingGroupTagTagOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTagTagOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupTagTagOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagTagOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagTagOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5703,9 +5866,17 @@ func NewAutoscalingGroupTagTagOutputReference_Override(a AutoscalingGroupTagTagO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTagTagOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTagTagOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) SetInternalValue(val *AutoscalingGroupTagTag) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5851,6 +6022,8 @@ type AutoscalingGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *AutoscalingGroupTimeouts
+	SetInternalValue(val *AutoscalingGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5891,6 +6064,16 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) DeleteInput() *strin
 	return returns
 }
 
+func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) InternalValue() *AutoscalingGroupTimeouts {
+	var returns *AutoscalingGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5921,14 +6104,13 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) TerraformResource() 
 	return returns
 }
 
-
 func NewAutoscalingGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTimeoutsOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5940,7 +6122,7 @@ func NewAutoscalingGroupTimeoutsOutputReference_Override(a AutoscalingGroupTimeo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupTimeoutsOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5950,6 +6132,14 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetDelete(val *strin
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetInternalValue(val *AutoscalingGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6081,6 +6271,8 @@ type AutoscalingGroupWarmPool struct {
 
 type AutoscalingGroupWarmPoolOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingGroupWarmPool
+	SetInternalValue(val *AutoscalingGroupWarmPool)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxGroupPreparedCapacity() *float64
@@ -6110,6 +6302,16 @@ type AutoscalingGroupWarmPoolOutputReference interface {
 // The jsii proxy struct for AutoscalingGroupWarmPoolOutputReference
 type jsiiProxy_AutoscalingGroupWarmPoolOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) InternalValue() *AutoscalingGroupWarmPool {
+	var returns *AutoscalingGroupWarmPool
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) IsSingleItem() *bool {
@@ -6202,14 +6404,13 @@ func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) TerraformResource() 
 	return returns
 }
 
-
 func NewAutoscalingGroupWarmPoolOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupWarmPoolOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupWarmPoolOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupWarmPoolOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupWarmPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6221,9 +6422,17 @@ func NewAutoscalingGroupWarmPoolOutputReference_Override(a AutoscalingGroupWarmP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingGroupWarmPoolOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingGroupWarmPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) SetInternalValue(val *AutoscalingGroupWarmPool) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6752,7 +6961,6 @@ func (j *jsiiProxy_AutoscalingLifecycleHook) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html aws_autoscaling_lifecycle_hook} Resource.
 func NewAutoscalingLifecycleHook(scope constructs.Construct, id *string, config *AutoscalingLifecycleHookConfig) AutoscalingLifecycleHook {
 	_init_.Initialize()
@@ -6760,7 +6968,7 @@ func NewAutoscalingLifecycleHook(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_AutoscalingLifecycleHook{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingLifecycleHook",
+		"hashicorp_aws.autoscaling.AutoscalingLifecycleHook",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6773,7 +6981,7 @@ func NewAutoscalingLifecycleHook_Override(a AutoscalingLifecycleHook, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingLifecycleHook",
+		"hashicorp_aws.autoscaling.AutoscalingLifecycleHook",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6885,7 +7093,7 @@ func AutoscalingLifecycleHook_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingLifecycleHook",
+		"hashicorp_aws.autoscaling.AutoscalingLifecycleHook",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6898,7 +7106,7 @@ func AutoscalingLifecycleHook_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingLifecycleHook",
+		"hashicorp_aws.autoscaling.AutoscalingLifecycleHook",
 		"tfResourceType",
 		&returns,
 	)
@@ -7100,6 +7308,7 @@ func (a *jsiiProxy_AutoscalingLifecycleHook) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingLifecycleHookConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7376,7 +7585,6 @@ func (j *jsiiProxy_AutoscalingNotification) TopicArnInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html aws_autoscaling_notification} Resource.
 func NewAutoscalingNotification(scope constructs.Construct, id *string, config *AutoscalingNotificationConfig) AutoscalingNotification {
 	_init_.Initialize()
@@ -7384,7 +7592,7 @@ func NewAutoscalingNotification(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_AutoscalingNotification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingNotification",
+		"hashicorp_aws.autoscaling.AutoscalingNotification",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7397,7 +7605,7 @@ func NewAutoscalingNotification_Override(a AutoscalingNotification, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingNotification",
+		"hashicorp_aws.autoscaling.AutoscalingNotification",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -7469,7 +7677,7 @@ func AutoscalingNotification_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingNotification",
+		"hashicorp_aws.autoscaling.AutoscalingNotification",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7482,7 +7690,7 @@ func AutoscalingNotification_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingNotification",
+		"hashicorp_aws.autoscaling.AutoscalingNotification",
 		"tfResourceType",
 		&returns,
 	)
@@ -7644,6 +7852,7 @@ func (a *jsiiProxy_AutoscalingNotification) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingNotificationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8138,7 +8347,6 @@ func (j *jsiiProxy_AutoscalingPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html aws_autoscaling_policy} Resource.
 func NewAutoscalingPolicy(scope constructs.Construct, id *string, config *AutoscalingPolicyConfig) AutoscalingPolicy {
 	_init_.Initialize()
@@ -8146,7 +8354,7 @@ func NewAutoscalingPolicy(scope constructs.Construct, id *string, config *Autosc
 	j := jsiiProxy_AutoscalingPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicy",
+		"hashicorp_aws.autoscaling.AutoscalingPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8159,7 +8367,7 @@ func NewAutoscalingPolicy_Override(a AutoscalingPolicy, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicy",
+		"hashicorp_aws.autoscaling.AutoscalingPolicy",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -8287,7 +8495,7 @@ func AutoscalingPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicy",
+		"hashicorp_aws.autoscaling.AutoscalingPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8300,7 +8508,7 @@ func AutoscalingPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicy",
+		"hashicorp_aws.autoscaling.AutoscalingPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -8558,6 +8766,7 @@ func (a *jsiiProxy_AutoscalingPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8633,6 +8842,8 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification struct {
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification
+	SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedLoadMetricSpecification() AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference
@@ -8665,6 +8876,16 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputRef
 // The jsii proxy struct for AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification {
+	var returns *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -8777,14 +8998,13 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-
 func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8796,9 +9016,17 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8975,6 +9203,8 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification
+	SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedMetricType() *string
@@ -8998,6 +9228,16 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 // The jsii proxy struct for AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification {
+	var returns *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -9070,14 +9310,13 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-
 func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9089,9 +9328,17 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9228,6 +9475,8 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification
+	SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedMetricType() *string
@@ -9251,6 +9500,16 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 // The jsii proxy struct for AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification {
+	var returns *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) IsSingleItem() *bool {
@@ -9323,14 +9582,13 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-
 func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9342,9 +9600,17 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9481,6 +9747,8 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification
+	SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedMetricType() *string
@@ -9504,6 +9772,16 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 // The jsii proxy struct for AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) InternalValue() *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification {
+	var returns *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -9576,14 +9854,13 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-
 func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9595,9 +9872,17 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9727,6 +10012,8 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 
 type AutoscalingPolicyPredictiveScalingConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyPredictiveScalingConfiguration
+	SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxCapacityBreachBehavior() *string
@@ -9763,6 +10050,16 @@ type AutoscalingPolicyPredictiveScalingConfigurationOutputReference interface {
 // The jsii proxy struct for AutoscalingPolicyPredictiveScalingConfigurationOutputReference
 type jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) InternalValue() *AutoscalingPolicyPredictiveScalingConfiguration {
+	var returns *AutoscalingPolicyPredictiveScalingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) IsSingleItem() *bool {
@@ -9895,14 +10192,13 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 	return returns
 }
 
-
 func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9914,9 +10210,17 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyPredictiveScalingConfigurationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyPredictiveScalingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) SetInternalValue(val *AutoscalingPolicyPredictiveScalingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10148,6 +10452,8 @@ type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMe
 
 type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification
+	SetInternalValue(val *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetricDimension() *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension
@@ -10182,6 +10488,16 @@ type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOu
 // The jsii proxy struct for AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) InternalValue() *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification {
+	var returns *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -10314,14 +10630,13 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	return returns
 }
 
-
 func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10333,9 +10648,17 @@ func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10510,6 +10833,8 @@ type AutoscalingPolicyTargetTrackingConfigurationOutputReference interface {
 	DisableScaleIn() interface{}
 	SetDisableScaleIn(val interface{})
 	DisableScaleInInput() interface{}
+	InternalValue() *AutoscalingPolicyTargetTrackingConfiguration
+	SetInternalValue(val *AutoscalingPolicyTargetTrackingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedMetricSpecification() AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference
@@ -10574,6 +10899,16 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	_jsii_.Get(
 		j,
 		"disableScaleInInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) InternalValue() *AutoscalingPolicyTargetTrackingConfiguration {
+	var returns *AutoscalingPolicyTargetTrackingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10649,14 +10984,13 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	return returns
 }
 
-
 func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10668,7 +11002,7 @@ func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -10678,6 +11012,14 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	_jsii_.Set(
 		j,
 		"disableScaleIn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) SetInternalValue(val *AutoscalingPolicyTargetTrackingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10847,6 +11189,8 @@ type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification s
 
 type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification
+	SetInternalValue(val *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PredefinedMetricType() *string
@@ -10871,6 +11215,16 @@ type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOu
 // The jsii proxy struct for AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference
 type jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) InternalValue() *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification {
+	var returns *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) IsSingleItem() *bool {
@@ -10943,14 +11297,13 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 	return returns
 }
 
-
 func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10962,9 +11315,17 @@ func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference",
+		"hashicorp_aws.autoscaling.AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) SetInternalValue(val *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11505,7 +11866,6 @@ func (j *jsiiProxy_AutoscalingSchedule) TimeZoneInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html aws_autoscaling_schedule} Resource.
 func NewAutoscalingSchedule(scope constructs.Construct, id *string, config *AutoscalingScheduleConfig) AutoscalingSchedule {
 	_init_.Initialize()
@@ -11513,7 +11873,7 @@ func NewAutoscalingSchedule(scope constructs.Construct, id *string, config *Auto
 	j := jsiiProxy_AutoscalingSchedule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingSchedule",
+		"hashicorp_aws.autoscaling.AutoscalingSchedule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11526,7 +11886,7 @@ func NewAutoscalingSchedule_Override(a AutoscalingSchedule, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.AutoscalingSchedule",
+		"hashicorp_aws.autoscaling.AutoscalingSchedule",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -11646,7 +12006,7 @@ func AutoscalingSchedule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.AutoscalingSchedule",
+		"hashicorp_aws.autoscaling.AutoscalingSchedule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11659,7 +12019,7 @@ func AutoscalingSchedule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.AutoscalingSchedule",
+		"hashicorp_aws.autoscaling.AutoscalingSchedule",
 		"tfResourceType",
 		&returns,
 	)
@@ -11877,6 +12237,7 @@ func (a *jsiiProxy_AutoscalingSchedule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type AutoscalingScheduleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12297,7 +12658,6 @@ func (j *jsiiProxy_DataAwsAutoscalingGroup) VpcZoneIdentifier() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group.html aws_autoscaling_group} Data Source.
 func NewDataAwsAutoscalingGroup(scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupConfig) DataAwsAutoscalingGroup {
 	_init_.Initialize()
@@ -12305,7 +12665,7 @@ func NewDataAwsAutoscalingGroup(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsAutoscalingGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroup",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12318,7 +12678,7 @@ func NewDataAwsAutoscalingGroup_Override(d DataAwsAutoscalingGroup, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroup",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12374,7 +12734,7 @@ func DataAwsAutoscalingGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroup",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12387,7 +12747,7 @@ func DataAwsAutoscalingGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroup",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -12562,6 +12922,7 @@ func (d *jsiiProxy_DataAwsAutoscalingGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type DataAwsAutoscalingGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12658,7 +13019,6 @@ func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) Version() *string {
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsAutoscalingGroupLaunchTemplate(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAutoscalingGroupLaunchTemplate {
 	_init_.Initialize()
@@ -12666,7 +13026,7 @@ func NewDataAwsAutoscalingGroupLaunchTemplate(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroupLaunchTemplate",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroupLaunchTemplate",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -12679,7 +13039,7 @@ func NewDataAwsAutoscalingGroupLaunchTemplate_Override(d DataAwsAutoscalingGroup
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroupLaunchTemplate",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroupLaunchTemplate",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -13005,7 +13365,6 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html aws_autoscaling_groups} Data Source.
 func NewDataAwsAutoscalingGroups(scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupsConfig) DataAwsAutoscalingGroups {
 	_init_.Initialize()
@@ -13013,7 +13372,7 @@ func NewDataAwsAutoscalingGroups(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsAutoscalingGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroups",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroups",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13026,7 +13385,7 @@ func NewDataAwsAutoscalingGroups_Override(d DataAwsAutoscalingGroups, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroups",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroups",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13082,7 +13441,7 @@ func DataAwsAutoscalingGroups_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroups",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroups",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13095,7 +13454,7 @@ func DataAwsAutoscalingGroups_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AutoScaling.DataAwsAutoscalingGroups",
+		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroups",
 		"tfResourceType",
 		&returns,
 	)
@@ -13265,6 +13624,7 @@ func (d *jsiiProxy_DataAwsAutoscalingGroups) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Auto Scaling.
 type DataAwsAutoscalingGroupsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13286,4 +13646,3 @@ type DataAwsAutoscalingGroupsFilter struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html#values DataAwsAutoscalingGroups#values}.
 	Values *[]*string `json:"values"`
 }
-

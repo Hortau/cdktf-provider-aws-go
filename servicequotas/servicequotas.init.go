@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasService",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasService",
 		reflect.TypeOf((*DataAwsServicequotasService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceConfig",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceConfig",
 		reflect.TypeOf((*DataAwsServicequotasServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuota",
 		reflect.TypeOf((*DataAwsServicequotasServiceQuota)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -103,11 +103,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuotaConfig",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuotaConfig",
 		reflect.TypeOf((*DataAwsServicequotasServiceQuotaConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuota",
 		reflect.TypeOf((*ServicequotasServiceQuota)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -157,7 +157,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuotaConfig",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuotaConfig",
 		reflect.TypeOf((*ServicequotasServiceQuotaConfig)(nil)).Elem(),
 	)
 }

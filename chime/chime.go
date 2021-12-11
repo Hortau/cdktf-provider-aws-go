@@ -277,7 +277,7 @@ func NewChimeVoiceConnector(scope constructs.Construct, id *string, config *Chim
 	j := jsiiProxy_ChimeVoiceConnector{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnector",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -290,7 +290,7 @@ func NewChimeVoiceConnector_Override(c ChimeVoiceConnector, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnector",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -362,7 +362,7 @@ func ChimeVoiceConnector_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnector",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -375,7 +375,7 @@ func ChimeVoiceConnector_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnector",
+		"hashicorp_aws.chime.ChimeVoiceConnector",
 		"tfResourceType",
 		&returns,
 	)
@@ -545,6 +545,7 @@ func (c *jsiiProxy_ChimeVoiceConnector) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -796,7 +797,7 @@ func NewChimeVoiceConnectorGroup(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ChimeVoiceConnectorGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroup",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -809,7 +810,7 @@ func NewChimeVoiceConnectorGroup_Override(c ChimeVoiceConnectorGroup, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroup",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -873,7 +874,7 @@ func ChimeVoiceConnectorGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroup",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -886,7 +887,7 @@ func ChimeVoiceConnectorGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorGroup",
+		"hashicorp_aws.chime.ChimeVoiceConnectorGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -1056,6 +1057,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1314,7 +1316,7 @@ func NewChimeVoiceConnectorLogging(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_ChimeVoiceConnectorLogging{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLogging",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLogging",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1327,7 +1329,7 @@ func NewChimeVoiceConnectorLogging_Override(c ChimeVoiceConnectorLogging, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLogging",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLogging",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1391,7 +1393,7 @@ func ChimeVoiceConnectorLogging_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLogging",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLogging",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1404,7 +1406,7 @@ func ChimeVoiceConnectorLogging_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorLogging",
+		"hashicorp_aws.chime.ChimeVoiceConnectorLogging",
 		"tfResourceType",
 		&returns,
 	)
@@ -1574,6 +1576,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorLogging) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorLoggingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1846,7 +1849,7 @@ func NewChimeVoiceConnectorOrigination(scope constructs.Construct, id *string, c
 	j := jsiiProxy_ChimeVoiceConnectorOrigination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOrigination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOrigination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1859,7 +1862,7 @@ func NewChimeVoiceConnectorOrigination_Override(c ChimeVoiceConnectorOrigination
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOrigination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOrigination",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1931,7 +1934,7 @@ func ChimeVoiceConnectorOrigination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOrigination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOrigination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1944,7 +1947,7 @@ func ChimeVoiceConnectorOrigination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorOrigination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorOrigination",
 		"tfResourceType",
 		&returns,
 	)
@@ -2114,6 +2117,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorOrigination) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorOriginationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2427,7 +2431,7 @@ func NewChimeVoiceConnectorStreaming(scope constructs.Construct, id *string, con
 	j := jsiiProxy_ChimeVoiceConnectorStreaming{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreaming",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreaming",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2440,7 +2444,7 @@ func NewChimeVoiceConnectorStreaming_Override(c ChimeVoiceConnectorStreaming, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreaming",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreaming",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2520,7 +2524,7 @@ func ChimeVoiceConnectorStreaming_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreaming",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreaming",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2533,7 +2537,7 @@ func ChimeVoiceConnectorStreaming_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorStreaming",
+		"hashicorp_aws.chime.ChimeVoiceConnectorStreaming",
 		"tfResourceType",
 		&returns,
 	)
@@ -2711,6 +2715,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorStreaming) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorStreamingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3058,7 +3063,7 @@ func NewChimeVoiceConnectorTermination(scope constructs.Construct, id *string, c
 	j := jsiiProxy_ChimeVoiceConnectorTermination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTermination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTermination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3071,7 +3076,7 @@ func NewChimeVoiceConnectorTermination_Override(c ChimeVoiceConnectorTermination
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTermination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTermination",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3167,7 +3172,7 @@ func ChimeVoiceConnectorTermination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTermination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTermination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3180,7 +3185,7 @@ func ChimeVoiceConnectorTermination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTermination",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTermination",
 		"tfResourceType",
 		&returns,
 	)
@@ -3366,6 +3371,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorTermination) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorTerminationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3622,7 +3628,7 @@ func NewChimeVoiceConnectorTerminationCredentials(scope constructs.Construct, id
 	j := jsiiProxy_ChimeVoiceConnectorTerminationCredentials{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentials",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3635,7 +3641,7 @@ func NewChimeVoiceConnectorTerminationCredentials_Override(c ChimeVoiceConnector
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentials",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3699,7 +3705,7 @@ func ChimeVoiceConnectorTerminationCredentials_IsConstruct(x interface{}) *bool 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentials",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3712,7 +3718,7 @@ func ChimeVoiceConnectorTerminationCredentials_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Chime.ChimeVoiceConnectorTerminationCredentials",
+		"hashicorp_aws.chime.ChimeVoiceConnectorTerminationCredentials",
 		"tfResourceType",
 		&returns,
 	)
@@ -3874,6 +3880,7 @@ func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) ToTerraform() inte
 	return returns
 }
 
+// Amazon Chime.
 type ChimeVoiceConnectorTerminationCredentialsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

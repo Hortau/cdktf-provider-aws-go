@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectory",
 		reflect.TypeOf((*DataAwsDirectoryServiceDirectory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessUrl", GoGetter: "AccessUrl"},
@@ -63,11 +63,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryConfig",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConfig",
 		reflect.TypeOf((*DataAwsDirectoryServiceDirectoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryConnectSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConnectSettings",
 		reflect.TypeOf((*DataAwsDirectoryServiceDirectoryConnectSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZones", GoGetter: "AvailabilityZones"},
@@ -92,7 +92,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DataAwsDirectoryServiceDirectoryVpcSettings",
+		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryVpcSettings",
 		reflect.TypeOf((*DataAwsDirectoryServiceDirectoryVpcSettings)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZones", GoGetter: "AvailabilityZones"},
@@ -114,7 +114,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarder",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarder",
 		reflect.TypeOf((*DirectoryServiceConditionalForwarder)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -157,11 +157,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DirectoryServiceConditionalForwarderConfig",
+		"hashicorp_aws.directoryservice.DirectoryServiceConditionalForwarderConfig",
 		reflect.TypeOf((*DirectoryServiceConditionalForwarderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectory",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectory",
 		reflect.TypeOf((*DirectoryServiceDirectory)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessUrl", GoGetter: "AccessUrl"},
@@ -240,15 +240,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryConfig",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryConfig",
 		reflect.TypeOf((*DirectoryServiceDirectoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryConnectSettings",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryConnectSettings",
 		reflect.TypeOf((*DirectoryServiceDirectoryConnectSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryConnectSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryConnectSettingsOutputReference",
 		reflect.TypeOf((*DirectoryServiceDirectoryConnectSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customerDnsIps", GoGetter: "CustomerDnsIps"},
@@ -259,6 +259,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -276,17 +277,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryVpcSettings",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryVpcSettings",
 		reflect.TypeOf((*DirectoryServiceDirectoryVpcSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DirectoryServiceDirectoryVpcSettingsOutputReference",
+		"hashicorp_aws.directoryservice.DirectoryServiceDirectoryVpcSettingsOutputReference",
 		reflect.TypeOf((*DirectoryServiceDirectoryVpcSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -304,7 +306,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscription",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscription",
 		reflect.TypeOf((*DirectoryServiceLogSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -345,7 +347,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectoryService.DirectoryServiceLogSubscriptionConfig",
+		"hashicorp_aws.directoryservice.DirectoryServiceLogSubscriptionConfig",
 		reflect.TypeOf((*DirectoryServiceLogSubscriptionConfig)(nil)).Elem(),
 	)
 }

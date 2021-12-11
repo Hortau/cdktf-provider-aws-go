@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WorkLink.WorklinkFleet",
+		"hashicorp_aws.worklink.WorklinkFleet",
 		reflect.TypeOf((*WorklinkFleet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -71,21 +71,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WorkLink.WorklinkFleetConfig",
+		"hashicorp_aws.worklink.WorklinkFleetConfig",
 		reflect.TypeOf((*WorklinkFleetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WorkLink.WorklinkFleetIdentityProvider",
+		"hashicorp_aws.worklink.WorklinkFleetIdentityProvider",
 		reflect.TypeOf((*WorklinkFleetIdentityProvider)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WorkLink.WorklinkFleetIdentityProviderOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetIdentityProviderOutputReference",
 		reflect.TypeOf((*WorklinkFleetIdentityProviderOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -103,17 +104,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WorkLink.WorklinkFleetNetwork",
+		"hashicorp_aws.worklink.WorklinkFleetNetwork",
 		reflect.TypeOf((*WorklinkFleetNetwork)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WorkLink.WorklinkFleetNetworkOutputReference",
+		"hashicorp_aws.worklink.WorklinkFleetNetworkOutputReference",
 		reflect.TypeOf((*WorklinkFleetNetworkOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -133,7 +135,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociation",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociation",
 		reflect.TypeOf((*WorklinkWebsiteCertificateAuthorityAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -178,7 +180,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.WorkLink.WorklinkWebsiteCertificateAuthorityAssociationConfig",
+		"hashicorp_aws.worklink.WorklinkWebsiteCertificateAuthorityAssociationConfig",
 		reflect.TypeOf((*WorklinkWebsiteCertificateAuthorityAssociationConfig)(nil)).Elem(),
 	)
 }

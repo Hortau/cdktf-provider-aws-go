@@ -348,7 +348,7 @@ func NewDlmLifecyclePolicy(scope constructs.Construct, id *string, config *DlmLi
 	j := jsiiProxy_DlmLifecyclePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicy",
+		"hashicorp_aws.dlm.DlmLifecyclePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -361,7 +361,7 @@ func NewDlmLifecyclePolicy_Override(d DlmLifecyclePolicy, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicy",
+		"hashicorp_aws.dlm.DlmLifecyclePolicy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -449,7 +449,7 @@ func DlmLifecyclePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DLM.DlmLifecyclePolicy",
+		"hashicorp_aws.dlm.DlmLifecyclePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -462,7 +462,7 @@ func DlmLifecyclePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DLM.DlmLifecyclePolicy",
+		"hashicorp_aws.dlm.DlmLifecyclePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -656,6 +656,7 @@ func (d *jsiiProxy_DlmLifecyclePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Data Lifecycle Manager.
 type DlmLifecyclePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -694,6 +695,8 @@ type DlmLifecyclePolicyPolicyDetails struct {
 
 type DlmLifecyclePolicyPolicyDetailsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DlmLifecyclePolicyPolicyDetails
+	SetInternalValue(val *DlmLifecyclePolicyPolicyDetails)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceTypes() *[]*string
@@ -720,6 +723,16 @@ type DlmLifecyclePolicyPolicyDetailsOutputReference interface {
 // The jsii proxy struct for DlmLifecyclePolicyPolicyDetailsOutputReference
 type jsiiProxy_DlmLifecyclePolicyPolicyDetailsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsOutputReference) InternalValue() *DlmLifecyclePolicyPolicyDetails {
+	var returns *DlmLifecyclePolicyPolicyDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsOutputReference) IsSingleItem() *bool {
@@ -818,7 +831,7 @@ func NewDlmLifecyclePolicyPolicyDetailsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_DlmLifecyclePolicyPolicyDetailsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -830,9 +843,17 @@ func NewDlmLifecyclePolicyPolicyDetailsOutputReference_Override(d DlmLifecyclePo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsOutputReference) SetInternalValue(val *DlmLifecyclePolicyPolicyDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -981,6 +1002,10 @@ type DlmLifecyclePolicyPolicyDetailsSchedule struct {
 	RetainRule *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule `json:"retainRule"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#copy_tags DlmLifecyclePolicy#copy_tags}.
 	CopyTags interface{} `json:"copyTags"`
+	// cross_region_copy_rule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#cross_region_copy_rule DlmLifecyclePolicy#cross_region_copy_rule}
+	CrossRegionCopyRule *[]*DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRule `json:"crossRegionCopyRule"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#tags_to_add DlmLifecyclePolicy#tags_to_add}.
 	TagsToAdd interface{} `json:"tagsToAdd"`
 }
@@ -996,6 +1021,8 @@ type DlmLifecyclePolicyPolicyDetailsScheduleCreateRule struct {
 
 type DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCreateRule
+	SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCreateRule)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -1024,6 +1051,16 @@ type DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference interface 
 // The jsii proxy struct for DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference
 type jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference) InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCreateRule {
+	var returns *DlmLifecyclePolicyPolicyDetailsScheduleCreateRule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference) Interval() *float64 {
@@ -1122,7 +1159,7 @@ func NewDlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference(terrafo
 	j := jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1134,9 +1171,17 @@ func NewDlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputReference) SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCreateRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1288,6 +1333,569 @@ func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCreateRuleOutputRefere
 	)
 }
 
+type DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRule struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#encrypted DlmLifecyclePolicy#encrypted}.
+	Encrypted interface{} `json:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#target DlmLifecyclePolicy#target}.
+	Target *string `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#cmk_arn DlmLifecyclePolicy#cmk_arn}.
+	CmkArn *string `json:"cmkArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#copy_tags DlmLifecyclePolicy#copy_tags}.
+	CopyTags interface{} `json:"copyTags"`
+	// deprecate_rule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#deprecate_rule DlmLifecyclePolicy#deprecate_rule}
+	DeprecateRule *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule `json:"deprecateRule"`
+	// retain_rule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#retain_rule DlmLifecyclePolicy#retain_rule}
+	RetainRule *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule `json:"retainRule"`
+}
+
+type DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#interval DlmLifecyclePolicy#interval}.
+	Interval *float64 `json:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#interval_unit DlmLifecyclePolicy#interval_unit}.
+	IntervalUnit *string `json:"intervalUnit"`
+}
+
+type DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule
+	SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule)
+	Interval() *float64
+	SetInterval(val *float64)
+	IntervalInput() *float64
+	IntervalUnit() *string
+	SetIntervalUnit(val *string)
+	IntervalUnitInput() *string
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference
+type jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule {
+	var returns *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) Interval() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"interval",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) IntervalInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"intervalInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) IntervalUnit() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"intervalUnit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) IntervalUnitInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"intervalUnitInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewDlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewDlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference_Override(d DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetInterval(val *float64) {
+	_jsii_.Set(
+		j,
+		"interval",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetIntervalUnit(val *string) {
+	_jsii_.Set(
+		j,
+		"intervalUnit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#interval DlmLifecyclePolicy#interval}.
+	Interval *float64 `json:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#interval_unit DlmLifecyclePolicy#interval_unit}.
+	IntervalUnit *string `json:"intervalUnit"`
+}
+
+type DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule
+	SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule)
+	Interval() *float64
+	SetInterval(val *float64)
+	IntervalInput() *float64
+	IntervalUnit() *string
+	SetIntervalUnit(val *string)
+	IntervalUnitInput() *string
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference
+type jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule {
+	var returns *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) Interval() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"interval",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) IntervalInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"intervalInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) IntervalUnit() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"intervalUnit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) IntervalUnitInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"intervalUnitInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewDlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewDlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference_Override(d DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetInterval(val *float64) {
+	_jsii_.Set(
+		j,
+		"interval",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetIntervalUnit(val *string) {
+	_jsii_.Set(
+		j,
+		"intervalUnit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
 type DlmLifecyclePolicyPolicyDetailsScheduleRetainRule struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dlm_lifecycle_policy.html#count DlmLifecyclePolicy#count}.
 	Count *float64 `json:"count"`
@@ -1298,6 +1906,8 @@ type DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference interface 
 	Count() *float64
 	SetCount(val *float64)
 	CountInput() *float64
+	InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule
+	SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1332,6 +1942,16 @@ func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputRefere
 	_jsii_.Get(
 		j,
 		"countInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference) InternalValue() *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule {
+	var returns *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1373,7 +1993,7 @@ func NewDlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference(terrafo
 	j := jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1385,7 +2005,7 @@ func NewDlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DLM.DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference",
+		"hashicorp_aws.dlm.DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -1395,6 +2015,14 @@ func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputRefere
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DlmLifecyclePolicyPolicyDetailsScheduleRetainRuleOutputReference) SetInternalValue(val *DlmLifecyclePolicyPolicyDetailsScheduleRetainRule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

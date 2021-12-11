@@ -404,7 +404,7 @@ func NewAppmeshGatewayRoute(scope constructs.Construct, id *string, config *Appm
 	j := jsiiProxy_AppmeshGatewayRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -417,7 +417,7 @@ func NewAppmeshGatewayRoute_Override(a AppmeshGatewayRoute, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRoute",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -513,7 +513,7 @@ func AppmeshGatewayRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -526,7 +526,7 @@ func AppmeshGatewayRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRoute",
+		"hashicorp_aws.appmesh.AppmeshGatewayRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -720,6 +720,7 @@ func (a *jsiiProxy_AppmeshGatewayRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshGatewayRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -782,6 +783,8 @@ type AppmeshGatewayRouteSpecGrpcRouteAction struct {
 
 type AppmeshGatewayRouteSpecGrpcRouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecGrpcRouteAction
+	SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Target() AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference
@@ -802,6 +805,16 @@ type AppmeshGatewayRouteSpecGrpcRouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecGrpcRouteActionOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionOutputReference) InternalValue() *AppmeshGatewayRouteSpecGrpcRouteAction {
+	var returns *AppmeshGatewayRouteSpecGrpcRouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionOutputReference) IsSingleItem() *bool {
@@ -860,7 +873,7 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionOutputReference(terraformResource 
 	j := jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -872,9 +885,17 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionOutputReference_Override(a Appmesh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1003,6 +1024,8 @@ type AppmeshGatewayRouteSpecGrpcRouteActionTarget struct {
 
 type AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecGrpcRouteActionTarget
+	SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteActionTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1023,6 +1046,16 @@ type AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference) InternalValue() *AppmeshGatewayRouteSpecGrpcRouteActionTarget {
+	var returns *AppmeshGatewayRouteSpecGrpcRouteActionTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference) IsSingleItem() *bool {
@@ -1081,7 +1114,7 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference(terraformRes
 	j := jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1093,9 +1126,17 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteActionTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1222,6 +1263,8 @@ type AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService struct {
 
 type AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService
+	SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1242,6 +1285,16 @@ type AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference i
 // The jsii proxy struct for AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference) InternalValue() *AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService {
+	var returns *AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference) IsSingleItem() *bool {
@@ -1300,7 +1353,7 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReferenc
 	j := jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1312,9 +1365,17 @@ func NewAppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualServiceOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteActionTargetVirtualService) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1441,6 +1502,8 @@ type AppmeshGatewayRouteSpecGrpcRouteMatch struct {
 
 type AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecGrpcRouteMatch
+	SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ServiceName() *string
@@ -1461,6 +1524,16 @@ type AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference) InternalValue() *AppmeshGatewayRouteSpecGrpcRouteMatch {
+	var returns *AppmeshGatewayRouteSpecGrpcRouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference) IsSingleItem() *bool {
@@ -1519,7 +1592,7 @@ func NewAppmeshGatewayRouteSpecGrpcRouteMatchOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1531,9 +1604,17 @@ func NewAppmeshGatewayRouteSpecGrpcRouteMatchOutputReference_Override(a AppmeshG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1657,6 +1738,8 @@ type AppmeshGatewayRouteSpecGrpcRouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshGatewayRouteSpecGrpcRouteActionOutputReference
 	ActionInput() *AppmeshGatewayRouteSpecGrpcRouteAction
+	InternalValue() *AppmeshGatewayRouteSpecGrpcRoute
+	SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshGatewayRouteSpecGrpcRouteMatchOutputReference
@@ -1695,6 +1778,16 @@ func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteOutputReference) ActionInput(
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteOutputReference) InternalValue() *AppmeshGatewayRouteSpecGrpcRoute {
+	var returns *AppmeshGatewayRouteSpecGrpcRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1756,7 +1849,7 @@ func NewAppmeshGatewayRouteSpecGrpcRouteOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1768,9 +1861,17 @@ func NewAppmeshGatewayRouteSpecGrpcRouteOutputReference_Override(a AppmeshGatewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecGrpcRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecGrpcRouteOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecGrpcRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1918,6 +2019,8 @@ type AppmeshGatewayRouteSpecHttp2RouteAction struct {
 
 type AppmeshGatewayRouteSpecHttp2RouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttp2RouteAction
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Target() AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference
@@ -1938,6 +2041,16 @@ type AppmeshGatewayRouteSpecHttp2RouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttp2RouteActionOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttp2RouteAction {
+	var returns *AppmeshGatewayRouteSpecHttp2RouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionOutputReference) IsSingleItem() *bool {
@@ -1996,7 +2109,7 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionOutputReference(terraformResource
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2008,9 +2121,17 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionOutputReference_Override(a Appmes
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2139,6 +2260,8 @@ type AppmeshGatewayRouteSpecHttp2RouteActionTarget struct {
 
 type AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttp2RouteActionTarget
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteActionTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2159,6 +2282,16 @@ type AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttp2RouteActionTarget {
+	var returns *AppmeshGatewayRouteSpecHttp2RouteActionTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference) IsSingleItem() *bool {
@@ -2217,7 +2350,7 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference(terraformRe
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2229,9 +2362,17 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteActionTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2358,6 +2499,8 @@ type AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService struct {
 
 type AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2378,6 +2521,16 @@ type AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference 
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService {
+	var returns *AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference) IsSingleItem() *bool {
@@ -2436,7 +2589,7 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReferen
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2448,9 +2601,17 @@ func NewAppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualServiceOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteActionTargetVirtualService) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2577,6 +2738,8 @@ type AppmeshGatewayRouteSpecHttp2RouteMatch struct {
 
 type AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttp2RouteMatch
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -2597,6 +2760,16 @@ type AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttp2RouteMatch {
+	var returns *AppmeshGatewayRouteSpecHttp2RouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference) IsSingleItem() *bool {
@@ -2655,7 +2828,7 @@ func NewAppmeshGatewayRouteSpecHttp2RouteMatchOutputReference(terraformResource 
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2667,9 +2840,17 @@ func NewAppmeshGatewayRouteSpecHttp2RouteMatchOutputReference_Override(a Appmesh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttp2RouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2793,6 +2974,8 @@ type AppmeshGatewayRouteSpecHttp2RouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshGatewayRouteSpecHttp2RouteActionOutputReference
 	ActionInput() *AppmeshGatewayRouteSpecHttp2RouteAction
+	InternalValue() *AppmeshGatewayRouteSpecHttp2Route
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttp2Route)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshGatewayRouteSpecHttp2RouteMatchOutputReference
@@ -2831,6 +3014,16 @@ func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteOutputReference) ActionInput
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttp2Route {
+	var returns *AppmeshGatewayRouteSpecHttp2Route
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2892,7 +3085,7 @@ func NewAppmeshGatewayRouteSpecHttp2RouteOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2904,9 +3097,17 @@ func NewAppmeshGatewayRouteSpecHttp2RouteOutputReference_Override(a AppmeshGatew
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttp2RouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttp2RouteOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttp2Route) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3054,6 +3255,8 @@ type AppmeshGatewayRouteSpecHttpRouteAction struct {
 
 type AppmeshGatewayRouteSpecHttpRouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttpRouteAction
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Target() AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference
@@ -3074,6 +3277,16 @@ type AppmeshGatewayRouteSpecHttpRouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttpRouteActionOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttpRouteAction {
+	var returns *AppmeshGatewayRouteSpecHttpRouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionOutputReference) IsSingleItem() *bool {
@@ -3132,7 +3345,7 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionOutputReference(terraformResource 
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3144,9 +3357,17 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionOutputReference_Override(a Appmesh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3275,6 +3496,8 @@ type AppmeshGatewayRouteSpecHttpRouteActionTarget struct {
 
 type AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttpRouteActionTarget
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteActionTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3295,6 +3518,16 @@ type AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttpRouteActionTarget {
+	var returns *AppmeshGatewayRouteSpecHttpRouteActionTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference) IsSingleItem() *bool {
@@ -3353,7 +3586,7 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference(terraformRes
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3365,9 +3598,17 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteActionTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3494,6 +3735,8 @@ type AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService struct {
 
 type AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3514,6 +3757,16 @@ type AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference i
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService {
+	var returns *AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference) IsSingleItem() *bool {
@@ -3572,7 +3825,7 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReferenc
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3584,9 +3837,17 @@ func NewAppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualServiceOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteActionTargetVirtualService) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3713,6 +3974,8 @@ type AppmeshGatewayRouteSpecHttpRouteMatch struct {
 
 type AppmeshGatewayRouteSpecHttpRouteMatchOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshGatewayRouteSpecHttpRouteMatch
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -3733,6 +3996,16 @@ type AppmeshGatewayRouteSpecHttpRouteMatchOutputReference interface {
 // The jsii proxy struct for AppmeshGatewayRouteSpecHttpRouteMatchOutputReference
 type jsiiProxy_AppmeshGatewayRouteSpecHttpRouteMatchOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteMatchOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttpRouteMatch {
+	var returns *AppmeshGatewayRouteSpecHttpRouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteMatchOutputReference) IsSingleItem() *bool {
@@ -3791,7 +4064,7 @@ func NewAppmeshGatewayRouteSpecHttpRouteMatchOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttpRouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3803,9 +4076,17 @@ func NewAppmeshGatewayRouteSpecHttpRouteMatchOutputReference_Override(a AppmeshG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteMatchOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttpRouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3929,6 +4210,8 @@ type AppmeshGatewayRouteSpecHttpRouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshGatewayRouteSpecHttpRouteActionOutputReference
 	ActionInput() *AppmeshGatewayRouteSpecHttpRouteAction
+	InternalValue() *AppmeshGatewayRouteSpecHttpRoute
+	SetInternalValue(val *AppmeshGatewayRouteSpecHttpRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshGatewayRouteSpecHttpRouteMatchOutputReference
@@ -3967,6 +4250,16 @@ func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteOutputReference) ActionInput(
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteOutputReference) InternalValue() *AppmeshGatewayRouteSpecHttpRoute {
+	var returns *AppmeshGatewayRouteSpecHttpRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4028,7 +4321,7 @@ func NewAppmeshGatewayRouteSpecHttpRouteOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshGatewayRouteSpecHttpRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4040,9 +4333,17 @@ func NewAppmeshGatewayRouteSpecHttpRouteOutputReference_Override(a AppmeshGatewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecHttpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecHttpRouteOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpecHttpRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4178,6 +4479,8 @@ type AppmeshGatewayRouteSpecOutputReference interface {
 	Http2RouteInput() *AppmeshGatewayRouteSpecHttp2Route
 	HttpRoute() AppmeshGatewayRouteSpecHttpRouteOutputReference
 	HttpRouteInput() *AppmeshGatewayRouteSpecHttpRoute
+	InternalValue() *AppmeshGatewayRouteSpec
+	SetInternalValue(val *AppmeshGatewayRouteSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4263,6 +4566,16 @@ func (j *jsiiProxy_AppmeshGatewayRouteSpecOutputReference) HttpRouteInput() *App
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshGatewayRouteSpecOutputReference) InternalValue() *AppmeshGatewayRouteSpec {
+	var returns *AppmeshGatewayRouteSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshGatewayRouteSpecOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4299,7 +4612,7 @@ func NewAppmeshGatewayRouteSpecOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_AppmeshGatewayRouteSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4311,9 +4624,17 @@ func NewAppmeshGatewayRouteSpecOutputReference_Override(a AppmeshGatewayRouteSpe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshGatewayRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshGatewayRouteSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshGatewayRouteSpecOutputReference) SetInternalValue(val *AppmeshGatewayRouteSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4810,7 +5131,7 @@ func NewAppmeshMesh(scope constructs.Construct, id *string, config *AppmeshMeshC
 	j := jsiiProxy_AppmeshMesh{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMesh",
+		"hashicorp_aws.appmesh.AppmeshMesh",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4823,7 +5144,7 @@ func NewAppmeshMesh_Override(a AppmeshMesh, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMesh",
+		"hashicorp_aws.appmesh.AppmeshMesh",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4895,7 +5216,7 @@ func AppmeshMesh_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshMesh",
+		"hashicorp_aws.appmesh.AppmeshMesh",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4908,7 +5229,7 @@ func AppmeshMesh_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshMesh",
+		"hashicorp_aws.appmesh.AppmeshMesh",
 		"tfResourceType",
 		&returns,
 	)
@@ -5102,6 +5423,7 @@ func (a *jsiiProxy_AppmeshMesh) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshMeshConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5137,6 +5459,8 @@ type AppmeshMeshSpecEgressFilter struct {
 
 type AppmeshMeshSpecEgressFilterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshMeshSpecEgressFilter
+	SetInternalValue(val *AppmeshMeshSpecEgressFilter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5158,6 +5482,16 @@ type AppmeshMeshSpecEgressFilterOutputReference interface {
 // The jsii proxy struct for AppmeshMeshSpecEgressFilterOutputReference
 type jsiiProxy_AppmeshMeshSpecEgressFilterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshMeshSpecEgressFilterOutputReference) InternalValue() *AppmeshMeshSpecEgressFilter {
+	var returns *AppmeshMeshSpecEgressFilter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshMeshSpecEgressFilterOutputReference) IsSingleItem() *bool {
@@ -5216,7 +5550,7 @@ func NewAppmeshMeshSpecEgressFilterOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_AppmeshMeshSpecEgressFilterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecEgressFilterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecEgressFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5228,9 +5562,17 @@ func NewAppmeshMeshSpecEgressFilterOutputReference_Override(a AppmeshMeshSpecEgr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecEgressFilterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecEgressFilterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshMeshSpecEgressFilterOutputReference) SetInternalValue(val *AppmeshMeshSpecEgressFilter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5362,6 +5704,8 @@ type AppmeshMeshSpecOutputReference interface {
 	cdktf.ComplexObject
 	EgressFilter() AppmeshMeshSpecEgressFilterOutputReference
 	EgressFilterInput() *AppmeshMeshSpecEgressFilter
+	InternalValue() *AppmeshMeshSpec
+	SetInternalValue(val *AppmeshMeshSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5403,6 +5747,16 @@ func (j *jsiiProxy_AppmeshMeshSpecOutputReference) EgressFilterInput() *AppmeshM
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshMeshSpecOutputReference) InternalValue() *AppmeshMeshSpec {
+	var returns *AppmeshMeshSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshMeshSpecOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5439,7 +5793,7 @@ func NewAppmeshMeshSpecOutputReference(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_AppmeshMeshSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5451,9 +5805,17 @@ func NewAppmeshMeshSpecOutputReference_Override(a AppmeshMeshSpecOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshMeshSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshMeshSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshMeshSpecOutputReference) SetInternalValue(val *AppmeshMeshSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5976,7 +6338,7 @@ func NewAppmeshRoute(scope constructs.Construct, id *string, config *AppmeshRout
 	j := jsiiProxy_AppmeshRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRoute",
+		"hashicorp_aws.appmesh.AppmeshRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5989,7 +6351,7 @@ func NewAppmeshRoute_Override(a AppmeshRoute, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRoute",
+		"hashicorp_aws.appmesh.AppmeshRoute",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6085,7 +6447,7 @@ func AppmeshRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshRoute",
+		"hashicorp_aws.appmesh.AppmeshRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6098,7 +6460,7 @@ func AppmeshRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshRoute",
+		"hashicorp_aws.appmesh.AppmeshRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -6292,6 +6654,7 @@ func (a *jsiiProxy_AppmeshRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6368,6 +6731,8 @@ type AppmeshRouteSpecGrpcRouteAction struct {
 
 type AppmeshRouteSpecGrpcRouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecGrpcRouteAction
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6388,6 +6753,16 @@ type AppmeshRouteSpecGrpcRouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecGrpcRouteActionOutputReference
 type jsiiProxy_AppmeshRouteSpecGrpcRouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteActionOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteAction {
+	var returns *AppmeshRouteSpecGrpcRouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteActionOutputReference) IsSingleItem() *bool {
@@ -6446,7 +6821,7 @@ func NewAppmeshRouteSpecGrpcRouteActionOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6458,9 +6833,17 @@ func NewAppmeshRouteSpecGrpcRouteActionOutputReference_Override(a AppmeshRouteSp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteActionOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6631,6 +7014,8 @@ type AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference interface {
 	Exact() *string
 	SetExact(val *string)
 	ExactInput() *string
+	InternalValue() *AppmeshRouteSpecGrpcRouteMatchMetadataMatch
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatchMetadataMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -6682,6 +7067,16 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference) E
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteMatchMetadataMatch {
+	var returns *AppmeshRouteSpecGrpcRouteMatchMetadataMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6803,7 +7198,7 @@ func NewAppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference(terraformReso
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6815,7 +7210,7 @@ func NewAppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6825,6 +7220,14 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference) S
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatchMetadataMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7021,6 +7424,8 @@ type AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference interface {
 	End() *float64
 	SetEnd(val *float64)
 	EndInput() *float64
+	InternalValue() *AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Start() *float64
@@ -7058,6 +7463,16 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReferen
 	_jsii_.Get(
 		j,
 		"endInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange {
+	var returns *AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7119,7 +7534,7 @@ func NewAppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference(terrafor
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7131,7 +7546,7 @@ func NewAppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -7141,6 +7556,14 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReferen
 	_jsii_.Set(
 		j,
 		"end",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatchMetadataMatchRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7263,6 +7686,8 @@ func (a *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchMetadataMatchRangeOutputReferen
 
 type AppmeshRouteSpecGrpcRouteMatchOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecGrpcRouteMatch
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Metadata() *[]*AppmeshRouteSpecGrpcRouteMatchMetadata
@@ -7296,6 +7721,16 @@ type AppmeshRouteSpecGrpcRouteMatchOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecGrpcRouteMatchOutputReference
 type jsiiProxy_AppmeshRouteSpecGrpcRouteMatchOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteMatch {
+	var returns *AppmeshRouteSpecGrpcRouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchOutputReference) IsSingleItem() *bool {
@@ -7414,7 +7849,7 @@ func NewAppmeshRouteSpecGrpcRouteMatchOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7426,9 +7861,17 @@ func NewAppmeshRouteSpecGrpcRouteMatchOutputReference_Override(a AppmeshRouteSpe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7608,6 +8051,8 @@ type AppmeshRouteSpecGrpcRouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshRouteSpecGrpcRouteActionOutputReference
 	ActionInput() *AppmeshRouteSpecGrpcRouteAction
+	InternalValue() *AppmeshRouteSpecGrpcRoute
+	SetInternalValue(val *AppmeshRouteSpecGrpcRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshRouteSpecGrpcRouteMatchOutputReference
@@ -7655,6 +8100,16 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteOutputReference) ActionInput() *Appm
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteOutputReference) InternalValue() *AppmeshRouteSpecGrpcRoute {
+	var returns *AppmeshRouteSpecGrpcRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7756,7 +8211,7 @@ func NewAppmeshRouteSpecGrpcRouteOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7768,9 +8223,17 @@ func NewAppmeshRouteSpecGrpcRouteOutputReference_Override(a AppmeshRouteSpecGrpc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7961,6 +8424,8 @@ type AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference interface {
 	HttpRetryEvents() *[]*string
 	SetHttpRetryEvents(val *[]*string)
 	HttpRetryEventsInput() *[]*string
+	InternalValue() *AppmeshRouteSpecGrpcRouteRetryPolicy
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteRetryPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRetries() *float64
@@ -8027,6 +8492,16 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference) HttpRetr
 	_jsii_.Get(
 		j,
 		"httpRetryEventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteRetryPolicy {
+	var returns *AppmeshRouteSpecGrpcRouteRetryPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8128,7 +8603,7 @@ func NewAppmeshRouteSpecGrpcRouteRetryPolicyOutputReference(terraformResource cd
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8140,7 +8615,7 @@ func NewAppmeshRouteSpecGrpcRouteRetryPolicyOutputReference_Override(a AppmeshRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -8158,6 +8633,14 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference) SetHttpR
 	_jsii_.Set(
 		j,
 		"httpRetryEvents",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteRetryPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8327,6 +8810,8 @@ type AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout struct {
 
 type AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8350,6 +8835,16 @@ type AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference interfac
 // The jsii proxy struct for AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference
 type jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout {
+	var returns *AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference) IsSingleItem() *bool {
@@ -8428,7 +8923,7 @@ func NewAppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference(terra
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8440,9 +8935,17 @@ func NewAppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteRetryPolicyPerRetryTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8590,6 +9093,8 @@ type AppmeshRouteSpecGrpcRouteTimeoutIdle struct {
 
 type AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecGrpcRouteTimeoutIdle
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeoutIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8613,6 +9118,16 @@ type AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference
 type jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteTimeoutIdle {
+	var returns *AppmeshRouteSpecGrpcRouteTimeoutIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference) IsSingleItem() *bool {
@@ -8691,7 +9206,7 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference(terraformResource cd
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8703,9 +9218,17 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference_Override(a AppmeshRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeoutIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8837,6 +9360,8 @@ type AppmeshRouteSpecGrpcRouteTimeoutOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshRouteSpecGrpcRouteTimeoutIdleOutputReference
 	IdleInput() *AppmeshRouteSpecGrpcRouteTimeoutIdle
+	InternalValue() *AppmeshRouteSpecGrpcRouteTimeout
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference
@@ -8877,6 +9402,16 @@ func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutOutputReference) IdleInput() 
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteTimeout {
+	var returns *AppmeshRouteSpecGrpcRouteTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8938,7 +9473,7 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8950,9 +9485,17 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutOutputReference_Override(a AppmeshRouteS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9105,6 +9648,8 @@ type AppmeshRouteSpecGrpcRouteTimeoutPerRequest struct {
 
 type AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecGrpcRouteTimeoutPerRequest
+	SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeoutPerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9128,6 +9673,16 @@ type AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference
 type jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference) InternalValue() *AppmeshRouteSpecGrpcRouteTimeoutPerRequest {
+	var returns *AppmeshRouteSpecGrpcRouteTimeoutPerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference) IsSingleItem() *bool {
@@ -9206,7 +9761,7 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference(terraformResou
 	j := jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9218,9 +9773,17 @@ func NewAppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference_Override(a App
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecGrpcRouteTimeoutPerRequestOutputReference) SetInternalValue(val *AppmeshRouteSpecGrpcRouteTimeoutPerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9376,6 +9939,8 @@ type AppmeshRouteSpecHttp2RouteAction struct {
 
 type AppmeshRouteSpecHttp2RouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttp2RouteAction
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9396,6 +9961,16 @@ type AppmeshRouteSpecHttp2RouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttp2RouteActionOutputReference
 type jsiiProxy_AppmeshRouteSpecHttp2RouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteActionOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteAction {
+	var returns *AppmeshRouteSpecHttp2RouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteActionOutputReference) IsSingleItem() *bool {
@@ -9454,7 +10029,7 @@ func NewAppmeshRouteSpecHttp2RouteActionOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9466,9 +10041,17 @@ func NewAppmeshRouteSpecHttp2RouteActionOutputReference_Override(a AppmeshRouteS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteActionOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9639,6 +10222,8 @@ type AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference interface {
 	Exact() *string
 	SetExact(val *string)
 	ExactInput() *string
+	InternalValue() *AppmeshRouteSpecHttp2RouteMatchHeaderMatch
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatchHeaderMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -9690,6 +10275,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference) Ex
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteMatchHeaderMatch {
+	var returns *AppmeshRouteSpecHttp2RouteMatchHeaderMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9811,7 +10406,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference(terraformResou
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9823,7 +10418,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference_Override(a App
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -9833,6 +10428,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference) Se
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatchHeaderMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10029,6 +10632,8 @@ type AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference interface {
 	End() *float64
 	SetEnd(val *float64)
 	EndInput() *float64
+	InternalValue() *AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Start() *float64
@@ -10066,6 +10671,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReferenc
 	_jsii_.Get(
 		j,
 		"endInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange {
+	var returns *AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10127,7 +10742,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference(terraform
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10139,7 +10754,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -10149,6 +10764,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReferenc
 	_jsii_.Set(
 		j,
 		"end",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchHeaderMatchRangeOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatchHeaderMatchRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10274,6 +10897,8 @@ type AppmeshRouteSpecHttp2RouteMatchOutputReference interface {
 	Header() *[]*AppmeshRouteSpecHttp2RouteMatchHeader
 	SetHeader(val *[]*AppmeshRouteSpecHttp2RouteMatchHeader)
 	HeaderInput() *[]*AppmeshRouteSpecHttp2RouteMatchHeader
+	InternalValue() *AppmeshRouteSpecHttp2RouteMatch
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Method() *string
@@ -10320,6 +10945,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchOutputReference) HeaderInput()
 	_jsii_.Get(
 		j,
 		"headerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteMatch {
+	var returns *AppmeshRouteSpecHttp2RouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10421,7 +11056,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10433,7 +11068,7 @@ func NewAppmeshRouteSpecHttp2RouteMatchOutputReference_Override(a AppmeshRouteSp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -10443,6 +11078,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchOutputReference) SetHeader(val
 	_jsii_.Set(
 		j,
 		"header",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10607,6 +11250,8 @@ type AppmeshRouteSpecHttp2RouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshRouteSpecHttp2RouteActionOutputReference
 	ActionInput() *AppmeshRouteSpecHttp2RouteAction
+	InternalValue() *AppmeshRouteSpecHttp2Route
+	SetInternalValue(val *AppmeshRouteSpecHttp2Route)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshRouteSpecHttp2RouteMatchOutputReference
@@ -10653,6 +11298,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteOutputReference) ActionInput() *App
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteOutputReference) InternalValue() *AppmeshRouteSpecHttp2Route {
+	var returns *AppmeshRouteSpecHttp2Route
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10754,7 +11409,7 @@ func NewAppmeshRouteSpecHttp2RouteOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10766,9 +11421,17 @@ func NewAppmeshRouteSpecHttp2RouteOutputReference_Override(a AppmeshRouteSpecHtt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2Route) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10946,6 +11609,8 @@ type AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference interface {
 	HttpRetryEvents() *[]*string
 	SetHttpRetryEvents(val *[]*string)
 	HttpRetryEventsInput() *[]*string
+	InternalValue() *AppmeshRouteSpecHttp2RouteRetryPolicy
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteRetryPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRetries() *float64
@@ -10991,6 +11656,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference) HttpRet
 	_jsii_.Get(
 		j,
 		"httpRetryEventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteRetryPolicy {
+	var returns *AppmeshRouteSpecHttp2RouteRetryPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11092,7 +11767,7 @@ func NewAppmeshRouteSpecHttp2RouteRetryPolicyOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11104,7 +11779,7 @@ func NewAppmeshRouteSpecHttp2RouteRetryPolicyOutputReference_Override(a AppmeshR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -11114,6 +11789,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference) SetHttp
 	_jsii_.Set(
 		j,
 		"httpRetryEvents",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteRetryPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11275,6 +11958,8 @@ type AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout struct {
 
 type AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11298,6 +11983,16 @@ type AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference interfa
 // The jsii proxy struct for AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference
 type jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout {
+	var returns *AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference) IsSingleItem() *bool {
@@ -11376,7 +12071,7 @@ func NewAppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference(terr
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11388,9 +12083,17 @@ func NewAppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteRetryPolicyPerRetryTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11538,6 +12241,8 @@ type AppmeshRouteSpecHttp2RouteTimeoutIdle struct {
 
 type AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttp2RouteTimeoutIdle
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeoutIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11561,6 +12266,16 @@ type AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference
 type jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteTimeoutIdle {
+	var returns *AppmeshRouteSpecHttp2RouteTimeoutIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference) IsSingleItem() *bool {
@@ -11639,7 +12354,7 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11651,9 +12366,17 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference_Override(a AppmeshR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeoutIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11785,6 +12508,8 @@ type AppmeshRouteSpecHttp2RouteTimeoutOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshRouteSpecHttp2RouteTimeoutIdleOutputReference
 	IdleInput() *AppmeshRouteSpecHttp2RouteTimeoutIdle
+	InternalValue() *AppmeshRouteSpecHttp2RouteTimeout
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference
@@ -11825,6 +12550,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutOutputReference) IdleInput()
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteTimeout {
+	var returns *AppmeshRouteSpecHttp2RouteTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11886,7 +12621,7 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11898,9 +12633,17 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutOutputReference_Override(a AppmeshRoute
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12053,6 +12796,8 @@ type AppmeshRouteSpecHttp2RouteTimeoutPerRequest struct {
 
 type AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttp2RouteTimeoutPerRequest
+	SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeoutPerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12076,6 +12821,16 @@ type AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference
 type jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference) InternalValue() *AppmeshRouteSpecHttp2RouteTimeoutPerRequest {
+	var returns *AppmeshRouteSpecHttp2RouteTimeoutPerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference) IsSingleItem() *bool {
@@ -12154,7 +12909,7 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference(terraformReso
 	j := jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12166,9 +12921,17 @@ func NewAppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttp2RouteTimeoutPerRequestOutputReference) SetInternalValue(val *AppmeshRouteSpecHttp2RouteTimeoutPerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12324,6 +13087,8 @@ type AppmeshRouteSpecHttpRouteAction struct {
 
 type AppmeshRouteSpecHttpRouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttpRouteAction
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -12344,6 +13109,16 @@ type AppmeshRouteSpecHttpRouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttpRouteActionOutputReference
 type jsiiProxy_AppmeshRouteSpecHttpRouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteActionOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteAction {
+	var returns *AppmeshRouteSpecHttpRouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttpRouteActionOutputReference) IsSingleItem() *bool {
@@ -12402,7 +13177,7 @@ func NewAppmeshRouteSpecHttpRouteActionOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12414,9 +13189,17 @@ func NewAppmeshRouteSpecHttpRouteActionOutputReference_Override(a AppmeshRouteSp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteActionOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12587,6 +13370,8 @@ type AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference interface {
 	Exact() *string
 	SetExact(val *string)
 	ExactInput() *string
+	InternalValue() *AppmeshRouteSpecHttpRouteMatchHeaderMatch
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteMatchHeaderMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -12638,6 +13423,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference) Exa
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteMatchHeaderMatch {
+	var returns *AppmeshRouteSpecHttpRouteMatchHeaderMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12759,7 +13554,7 @@ func NewAppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference(terraformResour
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12771,7 +13566,7 @@ func NewAppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -12781,6 +13576,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference) Set
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteMatchHeaderMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12977,6 +13780,8 @@ type AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference interface {
 	End() *float64
 	SetEnd(val *float64)
 	EndInput() *float64
+	InternalValue() *AppmeshRouteSpecHttpRouteMatchHeaderMatchRange
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteMatchHeaderMatchRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Start() *float64
@@ -13014,6 +13819,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference
 	_jsii_.Get(
 		j,
 		"endInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteMatchHeaderMatchRange {
+	var returns *AppmeshRouteSpecHttpRouteMatchHeaderMatchRange
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13075,7 +13890,7 @@ func NewAppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference(terraformR
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13087,7 +13902,7 @@ func NewAppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference_Override(a
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -13097,6 +13912,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference
 	_jsii_.Set(
 		j,
 		"end",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchHeaderMatchRangeOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteMatchHeaderMatchRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13222,6 +14045,8 @@ type AppmeshRouteSpecHttpRouteMatchOutputReference interface {
 	Header() *[]*AppmeshRouteSpecHttpRouteMatchHeader
 	SetHeader(val *[]*AppmeshRouteSpecHttpRouteMatchHeader)
 	HeaderInput() *[]*AppmeshRouteSpecHttpRouteMatchHeader
+	InternalValue() *AppmeshRouteSpecHttpRouteMatch
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Method() *string
@@ -13268,6 +14093,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchOutputReference) HeaderInput() 
 	_jsii_.Get(
 		j,
 		"headerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteMatch {
+	var returns *AppmeshRouteSpecHttpRouteMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13369,7 +14204,7 @@ func NewAppmeshRouteSpecHttpRouteMatchOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13381,7 +14216,7 @@ func NewAppmeshRouteSpecHttpRouteMatchOutputReference_Override(a AppmeshRouteSpe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -13391,6 +14226,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchOutputReference) SetHeader(val 
 	_jsii_.Set(
 		j,
 		"header",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteMatchOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13555,6 +14398,8 @@ type AppmeshRouteSpecHttpRouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshRouteSpecHttpRouteActionOutputReference
 	ActionInput() *AppmeshRouteSpecHttpRouteAction
+	InternalValue() *AppmeshRouteSpecHttpRoute
+	SetInternalValue(val *AppmeshRouteSpecHttpRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshRouteSpecHttpRouteMatchOutputReference
@@ -13601,6 +14446,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteOutputReference) ActionInput() *Appm
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteOutputReference) InternalValue() *AppmeshRouteSpecHttpRoute {
+	var returns *AppmeshRouteSpecHttpRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13702,7 +14557,7 @@ func NewAppmeshRouteSpecHttpRouteOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13714,9 +14569,17 @@ func NewAppmeshRouteSpecHttpRouteOutputReference_Override(a AppmeshRouteSpecHttp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13894,6 +14757,8 @@ type AppmeshRouteSpecHttpRouteRetryPolicyOutputReference interface {
 	HttpRetryEvents() *[]*string
 	SetHttpRetryEvents(val *[]*string)
 	HttpRetryEventsInput() *[]*string
+	InternalValue() *AppmeshRouteSpecHttpRouteRetryPolicy
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteRetryPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRetries() *float64
@@ -13939,6 +14804,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyOutputReference) HttpRetr
 	_jsii_.Get(
 		j,
 		"httpRetryEventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteRetryPolicy {
+	var returns *AppmeshRouteSpecHttpRouteRetryPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14040,7 +14915,7 @@ func NewAppmeshRouteSpecHttpRouteRetryPolicyOutputReference(terraformResource cd
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14052,7 +14927,7 @@ func NewAppmeshRouteSpecHttpRouteRetryPolicyOutputReference_Override(a AppmeshRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -14062,6 +14937,14 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyOutputReference) SetHttpR
 	_jsii_.Set(
 		j,
 		"httpRetryEvents",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteRetryPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14223,6 +15106,8 @@ type AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout struct {
 
 type AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14246,6 +15131,16 @@ type AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference interfac
 // The jsii proxy struct for AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference
 type jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout {
+	var returns *AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference) IsSingleItem() *bool {
@@ -14324,7 +15219,7 @@ func NewAppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference(terra
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14336,9 +15231,17 @@ func NewAppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteRetryPolicyPerRetryTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14486,6 +15389,8 @@ type AppmeshRouteSpecHttpRouteTimeoutIdle struct {
 
 type AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttpRouteTimeoutIdle
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeoutIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14509,6 +15414,16 @@ type AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference
 type jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteTimeoutIdle {
+	var returns *AppmeshRouteSpecHttpRouteTimeoutIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference) IsSingleItem() *bool {
@@ -14587,7 +15502,7 @@ func NewAppmeshRouteSpecHttpRouteTimeoutIdleOutputReference(terraformResource cd
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14599,9 +15514,17 @@ func NewAppmeshRouteSpecHttpRouteTimeoutIdleOutputReference_Override(a AppmeshRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeoutIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14733,6 +15656,8 @@ type AppmeshRouteSpecHttpRouteTimeoutOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshRouteSpecHttpRouteTimeoutIdleOutputReference
 	IdleInput() *AppmeshRouteSpecHttpRouteTimeoutIdle
+	InternalValue() *AppmeshRouteSpecHttpRouteTimeout
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference
@@ -14773,6 +15698,16 @@ func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutOutputReference) IdleInput() 
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteTimeout {
+	var returns *AppmeshRouteSpecHttpRouteTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -14834,7 +15769,7 @@ func NewAppmeshRouteSpecHttpRouteTimeoutOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14846,9 +15781,17 @@ func NewAppmeshRouteSpecHttpRouteTimeoutOutputReference_Override(a AppmeshRouteS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15001,6 +15944,8 @@ type AppmeshRouteSpecHttpRouteTimeoutPerRequest struct {
 
 type AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecHttpRouteTimeoutPerRequest
+	SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeoutPerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15024,6 +15969,16 @@ type AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference
 type jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference) InternalValue() *AppmeshRouteSpecHttpRouteTimeoutPerRequest {
+	var returns *AppmeshRouteSpecHttpRouteTimeoutPerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference) IsSingleItem() *bool {
@@ -15102,7 +16057,7 @@ func NewAppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference(terraformResou
 	j := jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15114,9 +16069,17 @@ func NewAppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference_Override(a App
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecHttpRouteTimeoutPerRequestOutputReference) SetInternalValue(val *AppmeshRouteSpecHttpRouteTimeoutPerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15252,6 +16215,8 @@ type AppmeshRouteSpecOutputReference interface {
 	Http2RouteInput() *AppmeshRouteSpecHttp2Route
 	HttpRoute() AppmeshRouteSpecHttpRouteOutputReference
 	HttpRouteInput() *AppmeshRouteSpecHttpRoute
+	InternalValue() *AppmeshRouteSpec
+	SetInternalValue(val *AppmeshRouteSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Priority() *float64
@@ -15345,6 +16310,16 @@ func (j *jsiiProxy_AppmeshRouteSpecOutputReference) HttpRouteInput() *AppmeshRou
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshRouteSpecOutputReference) InternalValue() *AppmeshRouteSpec {
+	var returns *AppmeshRouteSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshRouteSpecOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -15421,7 +16396,7 @@ func NewAppmeshRouteSpecOutputReference(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_AppmeshRouteSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15433,9 +16408,17 @@ func NewAppmeshRouteSpecOutputReference_Override(a AppmeshRouteSpecOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecOutputReference) SetInternalValue(val *AppmeshRouteSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15647,6 +16630,8 @@ type AppmeshRouteSpecTcpRouteAction struct {
 
 type AppmeshRouteSpecTcpRouteActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecTcpRouteAction
+	SetInternalValue(val *AppmeshRouteSpecTcpRouteAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15667,6 +16652,16 @@ type AppmeshRouteSpecTcpRouteActionOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecTcpRouteActionOutputReference
 type jsiiProxy_AppmeshRouteSpecTcpRouteActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteActionOutputReference) InternalValue() *AppmeshRouteSpecTcpRouteAction {
+	var returns *AppmeshRouteSpecTcpRouteAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecTcpRouteActionOutputReference) IsSingleItem() *bool {
@@ -15725,7 +16720,7 @@ func NewAppmeshRouteSpecTcpRouteActionOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_AppmeshRouteSpecTcpRouteActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15737,9 +16732,17 @@ func NewAppmeshRouteSpecTcpRouteActionOutputReference_Override(a AppmeshRouteSpe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteActionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteActionOutputReference) SetInternalValue(val *AppmeshRouteSpecTcpRouteAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15870,6 +16873,8 @@ type AppmeshRouteSpecTcpRouteOutputReference interface {
 	cdktf.ComplexObject
 	Action() AppmeshRouteSpecTcpRouteActionOutputReference
 	ActionInput() *AppmeshRouteSpecTcpRouteAction
+	InternalValue() *AppmeshRouteSpecTcpRoute
+	SetInternalValue(val *AppmeshRouteSpecTcpRoute)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15909,6 +16914,16 @@ func (j *jsiiProxy_AppmeshRouteSpecTcpRouteOutputReference) ActionInput() *Appme
 	_jsii_.Get(
 		j,
 		"actionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteOutputReference) InternalValue() *AppmeshRouteSpecTcpRoute {
+	var returns *AppmeshRouteSpecTcpRoute
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15970,7 +16985,7 @@ func NewAppmeshRouteSpecTcpRouteOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_AppmeshRouteSpecTcpRouteOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15982,9 +16997,17 @@ func NewAppmeshRouteSpecTcpRouteOutputReference_Override(a AppmeshRouteSpecTcpRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteOutputReference) SetInternalValue(val *AppmeshRouteSpecTcpRoute) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16136,6 +17159,8 @@ type AppmeshRouteSpecTcpRouteTimeoutIdle struct {
 
 type AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshRouteSpecTcpRouteTimeoutIdle
+	SetInternalValue(val *AppmeshRouteSpecTcpRouteTimeoutIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -16159,6 +17184,16 @@ type AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference interface {
 // The jsii proxy struct for AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference
 type jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference) InternalValue() *AppmeshRouteSpecTcpRouteTimeoutIdle {
+	var returns *AppmeshRouteSpecTcpRouteTimeoutIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference) IsSingleItem() *bool {
@@ -16237,7 +17272,7 @@ func NewAppmeshRouteSpecTcpRouteTimeoutIdleOutputReference(terraformResource cdk
 	j := jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16249,9 +17284,17 @@ func NewAppmeshRouteSpecTcpRouteTimeoutIdleOutputReference_Override(a AppmeshRou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference) SetInternalValue(val *AppmeshRouteSpecTcpRouteTimeoutIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16383,6 +17426,8 @@ type AppmeshRouteSpecTcpRouteTimeoutOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshRouteSpecTcpRouteTimeoutIdleOutputReference
 	IdleInput() *AppmeshRouteSpecTcpRouteTimeoutIdle
+	InternalValue() *AppmeshRouteSpecTcpRouteTimeout
+	SetInternalValue(val *AppmeshRouteSpecTcpRouteTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -16424,6 +17469,16 @@ func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutOutputReference) IdleInput() *
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutOutputReference) InternalValue() *AppmeshRouteSpecTcpRouteTimeout {
+	var returns *AppmeshRouteSpecTcpRouteTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -16460,7 +17515,7 @@ func NewAppmeshRouteSpecTcpRouteTimeoutOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16472,9 +17527,17 @@ func NewAppmeshRouteSpecTcpRouteTimeoutOutputReference_Override(a AppmeshRouteSp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshRouteSpecTcpRouteTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshRouteSpecTcpRouteTimeoutOutputReference) SetInternalValue(val *AppmeshRouteSpecTcpRouteTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -16974,7 +18037,7 @@ func NewAppmeshVirtualGateway(scope constructs.Construct, id *string, config *Ap
 	j := jsiiProxy_AppmeshVirtualGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGateway",
+		"hashicorp_aws.appmesh.AppmeshVirtualGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16987,7 +18050,7 @@ func NewAppmeshVirtualGateway_Override(a AppmeshVirtualGateway, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGateway",
+		"hashicorp_aws.appmesh.AppmeshVirtualGateway",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -17075,7 +18138,7 @@ func AppmeshVirtualGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGateway",
+		"hashicorp_aws.appmesh.AppmeshVirtualGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17088,7 +18151,7 @@ func AppmeshVirtualGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGateway",
+		"hashicorp_aws.appmesh.AppmeshVirtualGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -17282,6 +18345,7 @@ func (a *jsiiProxy_AppmeshVirtualGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshVirtualGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17338,6 +18402,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy struct {
 
 type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -17359,6 +18425,16 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference interfa
 // The jsii proxy struct for AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference) IsSingleItem() *bool {
@@ -17417,7 +18493,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference(terr
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17429,9 +18505,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -17597,6 +18681,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutpu
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivateKey() *string
@@ -17634,6 +18720,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertif
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17695,7 +18791,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOu
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17707,7 +18803,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -17717,6 +18813,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertif
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17841,6 +18945,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputRef
 	cdktf.ComplexObject
 	File() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference
 	FileInput() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference
@@ -17881,6 +18987,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertif
 	_jsii_.Get(
 		j,
 		"fileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -17942,7 +19058,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutput
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17954,9 +19070,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18107,6 +19231,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds struc
 
 type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -18127,6 +19253,16 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutput
 // The jsii proxy struct for AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) IsSingleItem() *bool {
@@ -18185,7 +19321,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOut
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18197,9 +19333,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18326,6 +19470,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference inte
 	Enforce() interface{}
 	SetEnforce(val interface{})
 	EnforceInput() interface{}
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Ports() *[]*float64
@@ -18390,6 +19536,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutput
 	_jsii_.Get(
 		j,
 		"enforceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18471,7 +19627,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference(t
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18483,7 +19639,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -18493,6 +19649,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutput
 	_jsii_.Set(
 		j,
 		"enforce",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18666,6 +19830,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation struct {
 
 type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubjectAlternativeNames() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
@@ -18690,6 +19856,16 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputRefe
 // The jsii proxy struct for AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference) IsSingleItem() *bool {
@@ -18768,7 +19944,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputR
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18780,9 +19956,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18935,6 +20119,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 	Exact() *[]*string
 	SetExact(val *[]*string)
 	ExactInput() *[]*string
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18969,6 +20155,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19010,7 +20206,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubject
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19022,7 +20218,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubject
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -19032,6 +20228,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19146,6 +20350,8 @@ func (a *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 
 type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference
@@ -19166,6 +20372,16 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 // The jsii proxy struct for AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) IsSingleItem() *bool {
@@ -19224,7 +20440,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubject
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19236,9 +20452,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubject
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -19383,6 +20607,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOu
 	CertificateAuthorityArns() *[]*string
 	SetCertificateAuthorityArns(val *[]*string)
 	CertificateAuthorityArnsInput() *[]*string
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -19417,6 +20643,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Get(
 		j,
 		"certificateAuthorityArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19458,7 +20694,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAc
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19470,7 +20706,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -19480,6 +20716,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Set(
 		j,
 		"certificateAuthorityArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19602,6 +20846,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileO
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -19636,6 +20882,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19677,7 +20933,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFi
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19689,7 +20945,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -19699,6 +20955,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19817,6 +21081,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutpu
 	AcmInput() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm
 	File() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference
 	FileInput() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference
@@ -19884,6 +21150,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValida
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -19940,7 +21216,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOu
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19952,9 +21228,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrust) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20121,6 +21405,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds s
 
 type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -20141,6 +21427,16 @@ type AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOu
 // The jsii proxy struct for AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) IsSingleItem() *bool {
@@ -20199,7 +21495,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSd
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20211,9 +21507,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20337,6 +21641,8 @@ type AppmeshVirtualGatewaySpecBackendDefaultsOutputReference interface {
 	cdktf.ComplexObject
 	ClientPolicy() AppmeshVirtualGatewaySpecBackendDefaultsClientPolicyOutputReference
 	ClientPolicyInput() *AppmeshVirtualGatewaySpecBackendDefaultsClientPolicy
+	InternalValue() *AppmeshVirtualGatewaySpecBackendDefaults
+	SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaults)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -20378,6 +21684,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsOutputReference) Clie
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecBackendDefaults {
+	var returns *AppmeshVirtualGatewaySpecBackendDefaults
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -20414,7 +21730,7 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsOutputReference(terraformResourc
 	j := jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20426,9 +21742,17 @@ func NewAppmeshVirtualGatewaySpecBackendDefaultsOutputReference_Override(a Appme
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecBackendDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecBackendDefaultsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecBackendDefaults) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20597,6 +21921,8 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc struct {
 
 type AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRequests() *float64
@@ -20617,6 +21943,16 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference interfac
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc {
+	var returns *AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference) IsSingleItem() *bool {
@@ -20675,7 +22011,7 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20687,9 +22023,17 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolGrpcOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolGrpc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -20823,6 +22167,8 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2 struct {
 
 type AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRequests() *float64
@@ -20843,6 +22189,16 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference interfa
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2 {
+	var returns *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference) IsSingleItem() *bool {
@@ -20901,7 +22257,7 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference(terr
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20913,9 +22269,17 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21037,6 +22401,8 @@ func (a *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputRef
 
 type AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConnections() *float64
@@ -21061,6 +22427,16 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference interfac
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp {
+	var returns *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference) IsSingleItem() *bool {
@@ -21139,7 +22515,7 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21151,9 +22527,17 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolHttpOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21297,6 +22681,8 @@ type AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference interface {
 	Http2() AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2OutputReference
 	Http2Input() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp2
 	HttpInput() *AppmeshVirtualGatewaySpecListenerConnectionPoolHttp
+	InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPool
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPool)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -21382,6 +22768,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerConnectionPool {
+	var returns *AppmeshVirtualGatewaySpecListenerConnectionPool
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -21418,7 +22814,7 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference(terraform
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21430,9 +22826,17 @@ func NewAppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerConnectionPoolOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerConnectionPool) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -21614,6 +23018,8 @@ type AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *AppmeshVirtualGatewaySpecListenerHealthCheck
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerHealthCheck)
 	IntervalMillis() *float64
 	SetIntervalMillis(val *float64)
 	IntervalMillisInput() *float64
@@ -21668,6 +23074,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference) 
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerHealthCheck {
+	var returns *AppmeshVirtualGatewaySpecListenerHealthCheck
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -21829,7 +23245,7 @@ func NewAppmeshVirtualGatewaySpecListenerHealthCheckOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21841,7 +23257,7 @@ func NewAppmeshVirtualGatewaySpecListenerHealthCheckOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -21851,6 +23267,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference) 
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerHealthCheck) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22033,6 +23457,8 @@ type AppmeshVirtualGatewaySpecListenerOutputReference interface {
 	ConnectionPoolInput() *AppmeshVirtualGatewaySpecListenerConnectionPool
 	HealthCheck() AppmeshVirtualGatewaySpecListenerHealthCheckOutputReference
 	HealthCheckInput() *AppmeshVirtualGatewaySpecListenerHealthCheck
+	InternalValue() *AppmeshVirtualGatewaySpecListener
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListener)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PortMapping() AppmeshVirtualGatewaySpecListenerPortMappingOutputReference
@@ -22098,6 +23524,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerOutputReference) HealthCheck
 	_jsii_.Get(
 		j,
 		"healthCheckInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListener {
+	var returns *AppmeshVirtualGatewaySpecListener
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -22179,7 +23615,7 @@ func NewAppmeshVirtualGatewaySpecListenerOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22191,9 +23627,17 @@ func NewAppmeshVirtualGatewaySpecListenerOutputReference_Override(a AppmeshVirtu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListener) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -22370,6 +23814,8 @@ type AppmeshVirtualGatewaySpecListenerPortMapping struct {
 
 type AppmeshVirtualGatewaySpecListenerPortMappingOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerPortMapping
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerPortMapping)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -22393,6 +23839,16 @@ type AppmeshVirtualGatewaySpecListenerPortMappingOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerPortMappingOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerPortMappingOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerPortMappingOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerPortMapping {
+	var returns *AppmeshVirtualGatewaySpecListenerPortMapping
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerPortMappingOutputReference) IsSingleItem() *bool {
@@ -22471,7 +23927,7 @@ func NewAppmeshVirtualGatewaySpecListenerPortMappingOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerPortMappingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22483,9 +23939,17 @@ func NewAppmeshVirtualGatewaySpecListenerPortMappingOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerPortMappingOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerPortMapping) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -22651,6 +24115,8 @@ type AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference interface
 	CertificateArn() *string
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -22685,6 +24151,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputRefer
 	_jsii_.Get(
 		j,
 		"certificateArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -22726,7 +24202,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference(terraf
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22738,7 +24214,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -22748,6 +24224,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputRefer
 	_jsii_.Set(
 		j,
 		"certificateArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateAcmOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -22872,6 +24356,8 @@ type AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference interfac
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateFile
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivateKey() *string
@@ -22909,6 +24395,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputRefe
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateFile {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsCertificateFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -22970,7 +24466,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22982,7 +24478,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -22992,6 +24488,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputRefe
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -23118,6 +24622,8 @@ type AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference interface {
 	AcmInput() *AppmeshVirtualGatewaySpecListenerTlsCertificateAcm
 	File() AppmeshVirtualGatewaySpecListenerTlsCertificateFileOutputReference
 	FileInput() *AppmeshVirtualGatewaySpecListenerTlsCertificateFile
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificate
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference
@@ -23185,6 +24691,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificate {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -23241,7 +24757,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference(terraform
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23253,9 +24769,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -23422,6 +24946,8 @@ type AppmeshVirtualGatewaySpecListenerTlsCertificateSds struct {
 
 type AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateSds
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -23442,6 +24968,16 @@ type AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference interface
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsCertificateSds {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsCertificateSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference) IsSingleItem() *bool {
@@ -23500,7 +25036,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference(terraf
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23512,9 +25048,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsCertificateSdsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsCertificateSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -23638,6 +25182,8 @@ type AppmeshVirtualGatewaySpecListenerTlsOutputReference interface {
 	cdktf.ComplexObject
 	Certificate() AppmeshVirtualGatewaySpecListenerTlsCertificateOutputReference
 	CertificateInput() *AppmeshVirtualGatewaySpecListenerTlsCertificate
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTls
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -23680,6 +25226,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsOutputReference) Certific
 	_jsii_.Get(
 		j,
 		"certificateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTls {
+	var returns *AppmeshVirtualGatewaySpecListenerTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -23761,7 +25317,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsOutputReference(terraformResource cd
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -23773,9 +25329,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsOutputReference_Override(a AppmeshVi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -23932,6 +25496,8 @@ type AppmeshVirtualGatewaySpecListenerTlsValidation struct {
 
 type AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidation
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubjectAlternativeNames() AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference
@@ -23956,6 +25522,16 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidation {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference) IsSingleItem() *bool {
@@ -24034,7 +25610,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationOutputReference(terraformR
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24046,9 +25622,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationOutputReference_Override(a
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -24201,6 +25785,8 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchO
 	Exact() *[]*string
 	SetExact(val *[]*string)
 	ExactInput() *[]*string
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -24235,6 +25821,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternat
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -24276,7 +25872,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMat
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24288,7 +25884,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -24298,6 +25894,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternat
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -24412,6 +26016,8 @@ func (a *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternat
 
 type AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference
@@ -24432,6 +26038,16 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutput
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference) IsSingleItem() *bool {
@@ -24490,7 +26106,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOut
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24502,9 +26118,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -24645,6 +26269,8 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference inte
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -24679,6 +26305,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutput
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -24720,7 +26356,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference(t
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24732,7 +26368,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -24742,6 +26378,14 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutput
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -24858,6 +26502,8 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference interfac
 	cdktf.ComplexObject
 	File() AppmeshVirtualGatewaySpecListenerTlsValidationTrustFileOutputReference
 	FileInput() *AppmeshVirtualGatewaySpecListenerTlsValidationTrustFile
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrust
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrust)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference
@@ -24898,6 +26544,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputRefe
 	_jsii_.Get(
 		j,
 		"fileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrust {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidationTrust
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -24959,7 +26615,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24971,9 +26627,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrust) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25124,6 +26788,8 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds struct {
 
 type AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds
+	SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -25144,6 +26810,16 @@ type AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference inter
 // The jsii proxy struct for AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference) InternalValue() *AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds {
+	var returns *AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference) IsSingleItem() *bool {
@@ -25202,7 +26878,7 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference(te
 	j := jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25214,9 +26890,17 @@ func NewAppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecListenerTlsValidationTrustSdsOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecListenerTlsValidationTrustSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25357,6 +27041,8 @@ type AppmeshVirtualGatewaySpecLoggingAccessLogFile struct {
 
 type AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualGatewaySpecLoggingAccessLogFile
+	SetInternalValue(val *AppmeshVirtualGatewaySpecLoggingAccessLogFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -25377,6 +27063,16 @@ type AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference
 type jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference) InternalValue() *AppmeshVirtualGatewaySpecLoggingAccessLogFile {
+	var returns *AppmeshVirtualGatewaySpecLoggingAccessLogFile
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference) IsSingleItem() *bool {
@@ -25435,7 +27131,7 @@ func NewAppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference(terraformRe
 	j := jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25447,9 +27143,17 @@ func NewAppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecLoggingAccessLogFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25573,6 +27277,8 @@ type AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference interface {
 	cdktf.ComplexObject
 	File() AppmeshVirtualGatewaySpecLoggingAccessLogFileOutputReference
 	FileInput() *AppmeshVirtualGatewaySpecLoggingAccessLogFile
+	InternalValue() *AppmeshVirtualGatewaySpecLoggingAccessLog
+	SetInternalValue(val *AppmeshVirtualGatewaySpecLoggingAccessLog)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -25614,6 +27320,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference) Fil
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference) InternalValue() *AppmeshVirtualGatewaySpecLoggingAccessLog {
+	var returns *AppmeshVirtualGatewaySpecLoggingAccessLog
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -25650,7 +27366,7 @@ func NewAppmeshVirtualGatewaySpecLoggingAccessLogOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25662,9 +27378,17 @@ func NewAppmeshVirtualGatewaySpecLoggingAccessLogOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecLoggingAccessLog) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -25796,6 +27520,8 @@ type AppmeshVirtualGatewaySpecLoggingOutputReference interface {
 	cdktf.ComplexObject
 	AccessLog() AppmeshVirtualGatewaySpecLoggingAccessLogOutputReference
 	AccessLogInput() *AppmeshVirtualGatewaySpecLoggingAccessLog
+	InternalValue() *AppmeshVirtualGatewaySpecLogging
+	SetInternalValue(val *AppmeshVirtualGatewaySpecLogging)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -25837,6 +27563,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingOutputReference) AccessLogInp
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingOutputReference) InternalValue() *AppmeshVirtualGatewaySpecLogging {
+	var returns *AppmeshVirtualGatewaySpecLogging
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -25873,7 +27609,7 @@ func NewAppmeshVirtualGatewaySpecLoggingOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshVirtualGatewaySpecLoggingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -25885,9 +27621,17 @@ func NewAppmeshVirtualGatewaySpecLoggingOutputReference_Override(a AppmeshVirtua
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecLoggingOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpecLogging) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -26019,6 +27763,8 @@ type AppmeshVirtualGatewaySpecOutputReference interface {
 	cdktf.ComplexObject
 	BackendDefaults() AppmeshVirtualGatewaySpecBackendDefaultsOutputReference
 	BackendDefaultsInput() *AppmeshVirtualGatewaySpecBackendDefaults
+	InternalValue() *AppmeshVirtualGatewaySpec
+	SetInternalValue(val *AppmeshVirtualGatewaySpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Listener() AppmeshVirtualGatewaySpecListenerOutputReference
@@ -26062,6 +27808,16 @@ func (j *jsiiProxy_AppmeshVirtualGatewaySpecOutputReference) BackendDefaultsInpu
 	_jsii_.Get(
 		j,
 		"backendDefaultsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecOutputReference) InternalValue() *AppmeshVirtualGatewaySpec {
+	var returns *AppmeshVirtualGatewaySpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -26143,7 +27899,7 @@ func NewAppmeshVirtualGatewaySpecOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_AppmeshVirtualGatewaySpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -26155,9 +27911,17 @@ func NewAppmeshVirtualGatewaySpecOutputReference_Override(a AppmeshVirtualGatewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualGatewaySpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualGatewaySpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualGatewaySpecOutputReference) SetInternalValue(val *AppmeshVirtualGatewaySpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -26681,7 +28445,7 @@ func NewAppmeshVirtualNode(scope constructs.Construct, id *string, config *Appme
 	j := jsiiProxy_AppmeshVirtualNode{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualNode",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26694,7 +28458,7 @@ func NewAppmeshVirtualNode_Override(a AppmeshVirtualNode, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualNode",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -26782,7 +28546,7 @@ func AppmeshVirtualNode_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualNode",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26795,7 +28559,7 @@ func AppmeshVirtualNode_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNode",
+		"hashicorp_aws.appmesh.AppmeshVirtualNode",
 		"tfResourceType",
 		&returns,
 	)
@@ -26989,6 +28753,7 @@ func (a *jsiiProxy_AppmeshVirtualNode) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshVirtualNodeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -27060,6 +28825,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicy struct {
 
 type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -27081,6 +28848,16 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference interface 
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference) IsSingleItem() *bool {
@@ -27139,7 +28916,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference(terrafo
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27151,9 +28928,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -27319,6 +29104,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputRe
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivateKey() *string
@@ -27356,6 +29143,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertifica
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27417,7 +29214,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutpu
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27429,7 +29226,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -27439,6 +29236,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertifica
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -27563,6 +29368,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputRefere
 	cdktf.ComplexObject
 	File() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFile
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference
@@ -27603,6 +29410,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertifica
 	_jsii_.Get(
 		j,
 		"fileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -27664,7 +29481,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputRef
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27676,9 +29493,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -27829,6 +29654,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds struct {
 
 type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -27849,6 +29676,16 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputRef
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) IsSingleItem() *bool {
@@ -27907,7 +29744,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutput
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27919,9 +29756,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -28048,6 +29893,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference interfa
 	Enforce() interface{}
 	SetEnforce(val interface{})
 	EnforceInput() interface{}
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Ports() *[]*float64
@@ -28112,6 +29959,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputRef
 	_jsii_.Get(
 		j,
 		"enforceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28193,7 +30050,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference(terr
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28205,7 +30062,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -28215,6 +30072,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputRef
 	_jsii_.Set(
 		j,
 		"enforce",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28388,6 +30253,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation struct {
 
 type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubjectAlternativeNames() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
@@ -28412,6 +30279,16 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReferen
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference) IsSingleItem() *bool {
@@ -28490,7 +30367,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputRefe
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28502,9 +30379,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -28657,6 +30542,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAltern
 	Exact() *[]*string
 	SetExact(val *[]*string)
 	ExactInput() *[]*string
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -28691,6 +30578,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -28732,7 +30629,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28744,7 +30641,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -28754,6 +30651,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28868,6 +30773,8 @@ func (a *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 
 type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference
@@ -28888,6 +30795,16 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAltern
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) IsSingleItem() *bool {
@@ -28946,7 +30863,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28958,9 +30875,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -29105,6 +31030,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutpu
 	CertificateAuthorityArns() *[]*string
 	SetCertificateAuthorityArns(val *[]*string)
 	CertificateAuthorityArnsInput() *[]*string
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -29139,6 +31066,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Get(
 		j,
 		"certificateAuthorityArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29180,7 +31117,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOu
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29192,7 +31129,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -29202,6 +31139,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Set(
 		j,
 		"certificateAuthorityArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29324,6 +31269,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutp
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -29358,6 +31305,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29399,7 +31356,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileO
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29411,7 +31368,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -29421,6 +31378,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29539,6 +31504,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputRe
 	AcmInput() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm
 	File() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference
@@ -29606,6 +31573,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidatio
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -29662,7 +31639,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutpu
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29674,9 +31651,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -29843,6 +31828,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds stru
 
 type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -29863,6 +31850,16 @@ type AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutpu
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds {
+	var returns *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) IsSingleItem() *bool {
@@ -29921,7 +31918,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOu
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29933,9 +31930,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30059,6 +32064,8 @@ type AppmeshVirtualNodeSpecBackendDefaultsOutputReference interface {
 	cdktf.ComplexObject
 	ClientPolicy() AppmeshVirtualNodeSpecBackendDefaultsClientPolicyOutputReference
 	ClientPolicyInput() *AppmeshVirtualNodeSpecBackendDefaultsClientPolicy
+	InternalValue() *AppmeshVirtualNodeSpecBackendDefaults
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaults)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30100,6 +32107,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsOutputReference) ClientP
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendDefaults {
+	var returns *AppmeshVirtualNodeSpecBackendDefaults
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -30136,7 +32153,7 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30148,9 +32165,17 @@ func NewAppmeshVirtualNodeSpecBackendDefaultsOutputReference_Override(a AppmeshV
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendDefaultsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendDefaultsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendDefaults) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30296,6 +32321,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy struct {
 
 type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30317,6 +32344,16 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference inte
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference) IsSingleItem() *bool {
@@ -30375,7 +32412,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference(t
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30387,9 +32424,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -30555,6 +32600,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOu
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivateKey() *string
@@ -30592,6 +32639,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCer
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30653,7 +32710,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFil
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30665,7 +32722,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFil
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -30675,6 +32732,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCer
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30799,6 +32864,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutput
 	cdktf.ComplexObject
 	File() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference
@@ -30839,6 +32906,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCer
 	_jsii_.Get(
 		j,
 		"fileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -30900,7 +32977,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOut
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30912,9 +32989,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31065,6 +33150,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds st
 
 type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -31085,6 +33172,16 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOut
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference) IsSingleItem() *bool {
@@ -31143,7 +33240,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31155,9 +33252,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31284,6 +33389,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference i
 	Enforce() interface{}
 	SetEnforce(val interface{})
 	EnforceInput() interface{}
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Ports() *[]*float64
@@ -31348,6 +33455,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOut
 	_jsii_.Get(
 		j,
 		"enforceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -31429,7 +33546,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReferenc
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31441,7 +33558,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -31451,6 +33568,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOut
 	_jsii_.Set(
 		j,
 		"enforce",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -31624,6 +33749,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation struct
 
 type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubjectAlternativeNames() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
@@ -31648,6 +33775,16 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputR
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference) IsSingleItem() *bool {
@@ -31726,7 +33863,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutp
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31738,9 +33875,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -31893,6 +34038,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubject
 	Exact() *[]*string
 	SetExact(val *[]*string)
 	ExactInput() *[]*string
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -31927,6 +34074,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -31968,7 +34125,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubj
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -31980,7 +34137,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubj
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -31990,6 +34147,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -32104,6 +34269,8 @@ func (a *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 
 type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchOutputReference
@@ -32124,6 +34291,16 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubject
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) IsSingleItem() *bool {
@@ -32182,7 +34359,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubj
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32194,9 +34371,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubj
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -32341,6 +34526,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAc
 	CertificateAuthorityArns() *[]*string
 	SetCertificateAuthorityArns(val *[]*string)
 	CertificateAuthorityArnsInput() *[]*string
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32375,6 +34562,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Get(
 		j,
 		"certificateAuthorityArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -32416,7 +34613,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32428,7 +34625,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -32438,6 +34635,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Set(
 		j,
 		"certificateAuthorityArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -32560,6 +34765,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFi
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32594,6 +34801,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -32635,7 +34852,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32647,7 +34864,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -32657,6 +34874,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -32775,6 +35000,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOu
 	AcmInput() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm
 	File() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference
@@ -32842,6 +35069,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsVal
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -32898,7 +35135,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32910,9 +35147,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33079,6 +35324,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSd
 
 type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -33099,6 +35346,16 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSd
 // The jsii proxy struct for AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference) IsSingleItem() *bool {
@@ -33157,7 +35414,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33169,9 +35426,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrus
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33295,6 +35560,8 @@ type AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference interface {
 	cdktf.ComplexObject
 	ClientPolicy() AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicyOutputReference
 	ClientPolicyInput() *AppmeshVirtualNodeSpecBackendVirtualServiceClientPolicy
+	InternalValue() *AppmeshVirtualNodeSpecBackendVirtualService
+	SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualService)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -33334,6 +35601,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference) C
 	_jsii_.Get(
 		j,
 		"clientPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference) InternalValue() *AppmeshVirtualNodeSpecBackendVirtualService {
+	var returns *AppmeshVirtualNodeSpecBackendVirtualService
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -33395,7 +35672,7 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceOutputReference(terraformReso
 	j := jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33407,9 +35684,17 @@ func NewAppmeshVirtualNodeSpecBackendVirtualServiceOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecBackendVirtualServiceOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecBackendVirtualService) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33598,6 +35883,8 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolGrpc struct {
 
 type AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolGrpc
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolGrpc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRequests() *float64
@@ -33618,6 +35905,16 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolGrpc {
+	var returns *AppmeshVirtualNodeSpecListenerConnectionPoolGrpc
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference) IsSingleItem() *bool {
@@ -33676,7 +35973,7 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference(terrafor
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33688,9 +35985,17 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolGrpcOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolGrpc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -33824,6 +36129,8 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolHttp2 struct {
 
 type AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxRequests() *float64
@@ -33844,6 +36151,16 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference interface 
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2 {
+	var returns *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference) IsSingleItem() *bool {
@@ -33902,7 +36219,7 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference(terrafo
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33914,9 +36231,17 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34038,6 +36363,8 @@ func (a *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputRefere
 
 type AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolHttp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConnections() *float64
@@ -34062,6 +36389,16 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp {
+	var returns *AppmeshVirtualNodeSpecListenerConnectionPoolHttp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference) IsSingleItem() *bool {
@@ -34140,7 +36477,7 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference(terrafor
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34152,9 +36489,17 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolHttpOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolHttp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34298,6 +36643,8 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference interface {
 	Http2() AppmeshVirtualNodeSpecListenerConnectionPoolHttp2OutputReference
 	Http2Input() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp2
 	HttpInput() *AppmeshVirtualNodeSpecListenerConnectionPoolHttp
+	InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPool
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPool)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Tcp() AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference
@@ -34387,6 +36734,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference) 
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPool {
+	var returns *AppmeshVirtualNodeSpecListenerConnectionPool
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -34443,7 +36800,7 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34455,9 +36812,17 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPool) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34640,6 +37005,8 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolTcp struct {
 
 type AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolTcp
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolTcp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConnections() *float64
@@ -34660,6 +37027,16 @@ type AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerConnectionPoolTcp {
+	var returns *AppmeshVirtualNodeSpecListenerConnectionPoolTcp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference) IsSingleItem() *bool {
@@ -34718,7 +37095,7 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference(terraform
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -34730,9 +37107,17 @@ func NewAppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerConnectionPoolTcpOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerConnectionPoolTcp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -34874,6 +37259,8 @@ type AppmeshVirtualNodeSpecListenerHealthCheckOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *AppmeshVirtualNodeSpecListenerHealthCheck
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerHealthCheck)
 	IntervalMillis() *float64
 	SetIntervalMillis(val *float64)
 	IntervalMillisInput() *float64
@@ -34928,6 +37315,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerHealthCheckOutputReference) Hea
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerHealthCheckOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerHealthCheck {
+	var returns *AppmeshVirtualNodeSpecListenerHealthCheck
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35089,7 +37486,7 @@ func NewAppmeshVirtualNodeSpecListenerHealthCheckOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerHealthCheckOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35101,7 +37498,7 @@ func NewAppmeshVirtualNodeSpecListenerHealthCheckOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerHealthCheckOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -35111,6 +37508,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerHealthCheckOutputReference) Set
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerHealthCheckOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerHealthCheck) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -35311,6 +37716,8 @@ type AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration struct {
 
 type AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -35334,6 +37741,16 @@ type AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputRef
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration {
+	var returns *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference) IsSingleItem() *bool {
@@ -35412,7 +37829,7 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutput
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35424,9 +37841,17 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35563,6 +37988,8 @@ type AppmeshVirtualNodeSpecListenerOutlierDetectionInterval struct {
 
 type AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -35586,6 +38013,16 @@ type AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference inter
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval {
+	var returns *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference) IsSingleItem() *bool {
@@ -35664,7 +38101,7 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference(te
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35676,9 +38113,17 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference_Ov
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -35810,6 +38255,8 @@ type AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference interface {
 	cdktf.ComplexObject
 	BaseEjectionDuration() AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationOutputReference
 	BaseEjectionDurationInput() *AppmeshVirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration
+	InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetection
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetection)
 	Interval() AppmeshVirtualNodeSpecListenerOutlierDetectionIntervalOutputReference
 	IntervalInput() *AppmeshVirtualNodeSpecListenerOutlierDetectionInterval
 	IsSingleItem() *bool
@@ -35854,6 +38301,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference
 	_jsii_.Get(
 		j,
 		"baseEjectionDurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerOutlierDetection {
+	var returns *AppmeshVirtualNodeSpecListenerOutlierDetection
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35955,7 +38412,7 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference(terraformR
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35967,9 +38424,17 @@ func NewAppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference_Override(a
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerOutlierDetection) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36119,6 +38584,8 @@ type AppmeshVirtualNodeSpecListenerOutputReference interface {
 	ConnectionPoolInput() *AppmeshVirtualNodeSpecListenerConnectionPool
 	HealthCheck() AppmeshVirtualNodeSpecListenerHealthCheckOutputReference
 	HealthCheckInput() *AppmeshVirtualNodeSpecListenerHealthCheck
+	InternalValue() *AppmeshVirtualNodeSpecListener
+	SetInternalValue(val *AppmeshVirtualNodeSpecListener)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OutlierDetection() AppmeshVirtualNodeSpecListenerOutlierDetectionOutputReference
@@ -36192,6 +38659,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutputReference) HealthCheckInp
 	_jsii_.Get(
 		j,
 		"healthCheckInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutputReference) InternalValue() *AppmeshVirtualNodeSpecListener {
+	var returns *AppmeshVirtualNodeSpecListener
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -36313,7 +38790,7 @@ func NewAppmeshVirtualNodeSpecListenerOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36325,9 +38802,17 @@ func NewAppmeshVirtualNodeSpecListenerOutputReference_Override(a AppmeshVirtualN
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListener) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36536,6 +39021,8 @@ type AppmeshVirtualNodeSpecListenerPortMapping struct {
 
 type AppmeshVirtualNodeSpecListenerPortMappingOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerPortMapping
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerPortMapping)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -36559,6 +39046,16 @@ type AppmeshVirtualNodeSpecListenerPortMappingOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerPortMappingOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerPortMappingOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerPortMappingOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerPortMapping {
+	var returns *AppmeshVirtualNodeSpecListenerPortMapping
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerPortMappingOutputReference) IsSingleItem() *bool {
@@ -36637,7 +39134,7 @@ func NewAppmeshVirtualNodeSpecListenerPortMappingOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerPortMappingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36649,9 +39146,17 @@ func NewAppmeshVirtualNodeSpecListenerPortMappingOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerPortMappingOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerPortMapping) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36818,6 +39323,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36841,6 +39348,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference) IsSingleItem() *bool {
@@ -36919,7 +39436,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference(terraformRe
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36931,9 +39448,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -37065,6 +39590,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshVirtualNodeSpecListenerTimeoutGrpcIdleOutputReference
 	IdleInput() *AppmeshVirtualNodeSpecListenerTimeoutGrpcIdle
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpc
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference
@@ -37105,6 +39632,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference) Idl
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpc {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutGrpc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -37166,7 +39703,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -37178,9 +39715,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -37333,6 +39878,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -37356,6 +39903,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference interfac
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference) IsSingleItem() *bool {
@@ -37434,7 +39991,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -37446,9 +40003,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequestOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutGrpcPerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -37607,6 +40172,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -37630,6 +40197,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference) IsSingleItem() *bool {
@@ -37708,7 +40285,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference(terraformR
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -37720,9 +40297,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference_Override(a
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -37854,6 +40439,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshVirtualNodeSpecListenerTimeoutHttp2IdleOutputReference
 	IdleInput() *AppmeshVirtualNodeSpecListenerTimeoutHttp2Idle
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference
@@ -37894,6 +40481,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference) Id
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2 {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttp2
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -37955,7 +40552,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference(terraformResou
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -37967,9 +40564,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference_Override(a App
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -38122,6 +40727,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -38145,6 +40752,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference interfa
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference) IsSingleItem() *bool {
@@ -38223,7 +40840,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference(terr
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -38235,9 +40852,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequestOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp2PerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -38374,6 +40999,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttpIdle struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -38397,6 +41024,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference) IsSingleItem() *bool {
@@ -38475,7 +41112,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference(terraformRe
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -38487,9 +41124,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -38621,6 +41266,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshVirtualNodeSpecListenerTimeoutHttpIdleOutputReference
 	IdleInput() *AppmeshVirtualNodeSpecListenerTimeoutHttpIdle
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerRequest() AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference
@@ -38661,6 +41308,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference) Idl
 	_jsii_.Get(
 		j,
 		"idleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttp {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttp
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -38722,7 +41379,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -38734,9 +41391,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -38889,6 +41554,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -38912,6 +41579,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference interfac
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference) IsSingleItem() *bool {
@@ -38990,7 +41667,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -39002,9 +41679,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequestOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutHttpPerRequest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -39140,6 +41825,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutOutputReference interface {
 	Http2() AppmeshVirtualNodeSpecListenerTimeoutHttp2OutputReference
 	Http2Input() *AppmeshVirtualNodeSpecListenerTimeoutHttp2
 	HttpInput() *AppmeshVirtualNodeSpecListenerTimeoutHttp
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeout
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeout)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Tcp() AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference
@@ -39229,6 +41916,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutOutputReference) HttpInp
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeout {
+	var returns *AppmeshVirtualNodeSpecListenerTimeout
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -39285,7 +41982,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutOutputReference(terraformResource c
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -39297,9 +41994,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutOutputReference_Override(a AppmeshV
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeout) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -39491,6 +42196,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutTcpIdle struct {
 
 type AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -39514,6 +42221,16 @@ type AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference) IsSingleItem() *bool {
@@ -39592,7 +42309,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -39604,9 +42321,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -39738,6 +42463,8 @@ type AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference interface {
 	cdktf.ComplexObject
 	Idle() AppmeshVirtualNodeSpecListenerTimeoutTcpIdleOutputReference
 	IdleInput() *AppmeshVirtualNodeSpecListenerTimeoutTcpIdle
+	InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutTcp
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutTcp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -39779,6 +42506,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference) Idle
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTimeoutTcp {
+	var returns *AppmeshVirtualNodeSpecListenerTimeoutTcp
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -39815,7 +42552,7 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference(terraformResourc
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -39827,9 +42564,17 @@ func NewAppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference_Override(a Appme
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTimeoutTcpOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTimeoutTcp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -39995,6 +42740,8 @@ type AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference interface {
 	CertificateArn() *string
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateAcm
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateAcm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -40029,6 +42776,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReferenc
 	_jsii_.Get(
 		j,
 		"certificateArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateAcm {
+	var returns *AppmeshVirtualNodeSpecListenerTlsCertificateAcm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -40070,7 +42827,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference(terraform
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -40082,7 +42839,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -40092,6 +42849,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReferenc
 	_jsii_.Set(
 		j,
 		"certificateArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateAcmOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateAcm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -40216,6 +42981,8 @@ type AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference interface {
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivateKey() *string
@@ -40253,6 +43020,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReferen
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateFile {
+	var returns *AppmeshVirtualNodeSpecListenerTlsCertificateFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -40314,7 +43091,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference(terrafor
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -40326,7 +43103,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -40336,6 +43113,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReferen
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -40462,6 +43247,8 @@ type AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference interface {
 	AcmInput() *AppmeshVirtualNodeSpecListenerTlsCertificateAcm
 	File() AppmeshVirtualNodeSpecListenerTlsCertificateFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecListenerTlsCertificateFile
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificate
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference
@@ -40529,6 +43316,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference) 
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificate {
+	var returns *AppmeshVirtualNodeSpecListenerTlsCertificate
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -40585,7 +43382,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -40597,9 +43394,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -40766,6 +43571,8 @@ type AppmeshVirtualNodeSpecListenerTlsCertificateSds struct {
 
 type AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -40786,6 +43593,16 @@ type AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsCertificateSds {
+	var returns *AppmeshVirtualNodeSpecListenerTlsCertificateSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference) IsSingleItem() *bool {
@@ -40844,7 +43661,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference(terraform
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -40856,9 +43673,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsCertificateSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsCertificateSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -40982,6 +43807,8 @@ type AppmeshVirtualNodeSpecListenerTlsOutputReference interface {
 	cdktf.ComplexObject
 	Certificate() AppmeshVirtualNodeSpecListenerTlsCertificateOutputReference
 	CertificateInput() *AppmeshVirtualNodeSpecListenerTlsCertificate
+	InternalValue() *AppmeshVirtualNodeSpecListenerTls
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Mode() *string
@@ -41024,6 +43851,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsOutputReference) Certificate
 	_jsii_.Get(
 		j,
 		"certificateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTls {
+	var returns *AppmeshVirtualNodeSpecListenerTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -41105,7 +43942,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -41117,9 +43954,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsOutputReference_Override(a AppmeshVirtu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -41276,6 +44121,8 @@ type AppmeshVirtualNodeSpecListenerTlsValidation struct {
 
 type AppmeshVirtualNodeSpecListenerTlsValidationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidation
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SubjectAlternativeNames() AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference
@@ -41300,6 +44147,16 @@ type AppmeshVirtualNodeSpecListenerTlsValidationOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTlsValidationOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidation {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationOutputReference) IsSingleItem() *bool {
@@ -41378,7 +44235,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationOutputReference(terraformReso
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -41390,9 +44247,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -41545,6 +44410,8 @@ type AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutp
 	Exact() *[]*string
 	SetExact(val *[]*string)
 	ExactInput() *[]*string
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -41579,6 +44446,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternative
 	_jsii_.Get(
 		j,
 		"exactInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -41620,7 +44497,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchO
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -41632,7 +44509,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -41642,6 +44519,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternative
 	_jsii_.Set(
 		j,
 		"exact",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -41756,6 +44641,8 @@ func (a *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternative
 
 type AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Match() AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchOutputReference
@@ -41776,6 +44663,16 @@ type AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputRef
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference) IsSingleItem() *bool {
@@ -41834,7 +44731,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutput
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -41846,9 +44743,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationSubjectAlternativeNames) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -41989,6 +44894,8 @@ type AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference interfa
 	CertificateChain() *string
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -42023,6 +44930,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputRef
 	_jsii_.Get(
 		j,
 		"certificateChainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -42064,7 +44981,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference(terr
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -42076,7 +44993,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -42086,6 +45003,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputRef
 	_jsii_.Set(
 		j,
 		"certificateChain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -42202,6 +45127,8 @@ type AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference interface {
 	cdktf.ComplexObject
 	File() AppmeshVirtualNodeSpecListenerTlsValidationTrustFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecListenerTlsValidationTrustFile
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrust
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrust)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sds() AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference
@@ -42242,6 +45169,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReferen
 	_jsii_.Get(
 		j,
 		"fileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrust {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidationTrust
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -42303,7 +45240,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference(terrafor
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -42315,9 +45252,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrust) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -42468,6 +45413,8 @@ type AppmeshVirtualNodeSpecListenerTlsValidationTrustSds struct {
 
 type AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrustSds
+	SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrustSds)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretName() *string
@@ -42488,6 +45435,16 @@ type AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference interfac
 // The jsii proxy struct for AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference) InternalValue() *AppmeshVirtualNodeSpecListenerTlsValidationTrustSds {
+	var returns *AppmeshVirtualNodeSpecListenerTlsValidationTrustSds
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference) IsSingleItem() *bool {
@@ -42546,7 +45503,7 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference(terra
 	j := jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -42558,9 +45515,17 @@ func NewAppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecListenerTlsValidationTrustSdsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecListenerTlsValidationTrustSds) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -42701,6 +45666,8 @@ type AppmeshVirtualNodeSpecLoggingAccessLogFile struct {
 
 type AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualNodeSpecLoggingAccessLogFile
+	SetInternalValue(val *AppmeshVirtualNodeSpecLoggingAccessLogFile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Path() *string
@@ -42721,6 +45688,16 @@ type AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference
 type jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference) InternalValue() *AppmeshVirtualNodeSpecLoggingAccessLogFile {
+	var returns *AppmeshVirtualNodeSpecLoggingAccessLogFile
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference) IsSingleItem() *bool {
@@ -42779,7 +45756,7 @@ func NewAppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference(terraformResou
 	j := jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -42791,9 +45768,17 @@ func NewAppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference_Override(a App
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecLoggingAccessLogFile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -42917,6 +45902,8 @@ type AppmeshVirtualNodeSpecLoggingAccessLogOutputReference interface {
 	cdktf.ComplexObject
 	File() AppmeshVirtualNodeSpecLoggingAccessLogFileOutputReference
 	FileInput() *AppmeshVirtualNodeSpecLoggingAccessLogFile
+	InternalValue() *AppmeshVirtualNodeSpecLoggingAccessLog
+	SetInternalValue(val *AppmeshVirtualNodeSpecLoggingAccessLog)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -42958,6 +45945,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogOutputReference) FileIn
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogOutputReference) InternalValue() *AppmeshVirtualNodeSpecLoggingAccessLog {
+	var returns *AppmeshVirtualNodeSpecLoggingAccessLog
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -42994,7 +45991,7 @@ func NewAppmeshVirtualNodeSpecLoggingAccessLogOutputReference(terraformResource 
 	j := jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43006,9 +46003,17 @@ func NewAppmeshVirtualNodeSpecLoggingAccessLogOutputReference_Override(a Appmesh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingAccessLogOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingAccessLogOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecLoggingAccessLog) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -43140,6 +46145,8 @@ type AppmeshVirtualNodeSpecLoggingOutputReference interface {
 	cdktf.ComplexObject
 	AccessLog() AppmeshVirtualNodeSpecLoggingAccessLogOutputReference
 	AccessLogInput() *AppmeshVirtualNodeSpecLoggingAccessLog
+	InternalValue() *AppmeshVirtualNodeSpecLogging
+	SetInternalValue(val *AppmeshVirtualNodeSpecLogging)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -43181,6 +46188,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingOutputReference) AccessLogInput(
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingOutputReference) InternalValue() *AppmeshVirtualNodeSpecLogging {
+	var returns *AppmeshVirtualNodeSpecLogging
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -43217,7 +46234,7 @@ func NewAppmeshVirtualNodeSpecLoggingOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_AppmeshVirtualNodeSpecLoggingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43229,9 +46246,17 @@ func NewAppmeshVirtualNodeSpecLoggingOutputReference_Override(a AppmeshVirtualNo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecLoggingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecLoggingOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecLogging) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -43366,6 +46391,8 @@ type AppmeshVirtualNodeSpecOutputReference interface {
 	BackendDefaults() AppmeshVirtualNodeSpecBackendDefaultsOutputReference
 	BackendDefaultsInput() *AppmeshVirtualNodeSpecBackendDefaults
 	BackendInput() *[]*AppmeshVirtualNodeSpecBackend
+	InternalValue() *AppmeshVirtualNodeSpec
+	SetInternalValue(val *AppmeshVirtualNodeSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Listener() AppmeshVirtualNodeSpecListenerOutputReference
@@ -43435,6 +46462,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecOutputReference) BackendInput() *[]*App
 	_jsii_.Get(
 		j,
 		"backendInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecOutputReference) InternalValue() *AppmeshVirtualNodeSpec {
+	var returns *AppmeshVirtualNodeSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -43536,7 +46573,7 @@ func NewAppmeshVirtualNodeSpecOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_AppmeshVirtualNodeSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43548,7 +46585,7 @@ func NewAppmeshVirtualNodeSpecOutputReference_Override(a AppmeshVirtualNodeSpecO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -43558,6 +46595,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecOutputReference) SetBackend(val *[]*App
 	_jsii_.Set(
 		j,
 		"backend",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -43767,6 +46812,8 @@ type AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference interface 
 	Attributes() interface{}
 	SetAttributes(val interface{})
 	AttributesInput() interface{}
+	InternalValue() *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap
+	SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NamespaceName() *string
@@ -43808,6 +46855,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputRefere
 	_jsii_.Get(
 		j,
 		"attributesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference) InternalValue() *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap {
+	var returns *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -43889,7 +46946,7 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference(terrafo
 	j := jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43901,7 +46958,7 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -43911,6 +46968,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputRefere
 	_jsii_.Set(
 		j,
 		"attributes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMapOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -44057,6 +47122,8 @@ type AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference interface {
 	Hostname() *string
 	SetHostname(val *string)
 	HostnameInput() *string
+	InternalValue() *AppmeshVirtualNodeSpecServiceDiscoveryDns
+	SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscoveryDns)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -44091,6 +47158,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference) Hos
 	_jsii_.Get(
 		j,
 		"hostnameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference) InternalValue() *AppmeshVirtualNodeSpecServiceDiscoveryDns {
+	var returns *AppmeshVirtualNodeSpecServiceDiscoveryDns
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -44132,7 +47209,7 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference(terraformResour
 	j := jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44144,7 +47221,7 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference_Override(a Appm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -44154,6 +47231,14 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference) Set
 	_jsii_.Set(
 		j,
 		"hostname",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscoveryDns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -44272,6 +47357,8 @@ type AppmeshVirtualNodeSpecServiceDiscoveryOutputReference interface {
 	AwsCloudMapInput() *AppmeshVirtualNodeSpecServiceDiscoveryAwsCloudMap
 	Dns() AppmeshVirtualNodeSpecServiceDiscoveryDnsOutputReference
 	DnsInput() *AppmeshVirtualNodeSpecServiceDiscoveryDns
+	InternalValue() *AppmeshVirtualNodeSpecServiceDiscovery
+	SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscovery)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -44335,6 +47422,16 @@ func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryOutputReference) DnsInp
 	return returns
 }
 
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryOutputReference) InternalValue() *AppmeshVirtualNodeSpecServiceDiscovery {
+	var returns *AppmeshVirtualNodeSpecServiceDiscovery
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -44371,7 +47468,7 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryOutputReference(terraformResource 
 	j := jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44383,9 +47480,17 @@ func NewAppmeshVirtualNodeSpecServiceDiscoveryOutputReference_Override(a Appmesh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualNodeSpecServiceDiscoveryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualNodeSpecServiceDiscoveryOutputReference) SetInternalValue(val *AppmeshVirtualNodeSpecServiceDiscovery) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -44901,7 +48006,7 @@ func NewAppmeshVirtualRouter(scope constructs.Construct, id *string, config *App
 	j := jsiiProxy_AppmeshVirtualRouter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -44914,7 +48019,7 @@ func NewAppmeshVirtualRouter_Override(a AppmeshVirtualRouter, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouter",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -45002,7 +48107,7 @@ func AppmeshVirtualRouter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -45015,7 +48120,7 @@ func AppmeshVirtualRouter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouter",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouter",
 		"tfResourceType",
 		&returns,
 	)
@@ -45209,6 +48314,7 @@ func (a *jsiiProxy_AppmeshVirtualRouter) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshVirtualRouterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -45250,6 +48356,8 @@ type AppmeshVirtualRouterSpecListener struct {
 
 type AppmeshVirtualRouterSpecListenerOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualRouterSpecListener
+	SetInternalValue(val *AppmeshVirtualRouterSpecListener)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PortMapping() AppmeshVirtualRouterSpecListenerPortMappingOutputReference
@@ -45270,6 +48378,16 @@ type AppmeshVirtualRouterSpecListenerOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualRouterSpecListenerOutputReference
 type jsiiProxy_AppmeshVirtualRouterSpecListenerOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerOutputReference) InternalValue() *AppmeshVirtualRouterSpecListener {
+	var returns *AppmeshVirtualRouterSpecListener
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerOutputReference) IsSingleItem() *bool {
@@ -45328,7 +48446,7 @@ func NewAppmeshVirtualRouterSpecListenerOutputReference(terraformResource cdktf.
 	j := jsiiProxy_AppmeshVirtualRouterSpecListenerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45340,9 +48458,17 @@ func NewAppmeshVirtualRouterSpecListenerOutputReference_Override(a AppmeshVirtua
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerOutputReference) SetInternalValue(val *AppmeshVirtualRouterSpecListener) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -45471,6 +48597,8 @@ type AppmeshVirtualRouterSpecListenerPortMapping struct {
 
 type AppmeshVirtualRouterSpecListenerPortMappingOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualRouterSpecListenerPortMapping
+	SetInternalValue(val *AppmeshVirtualRouterSpecListenerPortMapping)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *float64
@@ -45494,6 +48622,16 @@ type AppmeshVirtualRouterSpecListenerPortMappingOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualRouterSpecListenerPortMappingOutputReference
 type jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference) InternalValue() *AppmeshVirtualRouterSpecListenerPortMapping {
+	var returns *AppmeshVirtualRouterSpecListenerPortMapping
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference) IsSingleItem() *bool {
@@ -45572,7 +48710,7 @@ func NewAppmeshVirtualRouterSpecListenerPortMappingOutputReference(terraformReso
 	j := jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45584,9 +48722,17 @@ func NewAppmeshVirtualRouterSpecListenerPortMappingOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecListenerPortMappingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference) SetInternalValue(val *AppmeshVirtualRouterSpecListenerPortMapping) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -45716,6 +48862,8 @@ func (a *jsiiProxy_AppmeshVirtualRouterSpecListenerPortMappingOutputReference) I
 
 type AppmeshVirtualRouterSpecOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualRouterSpec
+	SetInternalValue(val *AppmeshVirtualRouterSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Listener() AppmeshVirtualRouterSpecListenerOutputReference
@@ -45736,6 +48884,16 @@ type AppmeshVirtualRouterSpecOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualRouterSpecOutputReference
 type jsiiProxy_AppmeshVirtualRouterSpecOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecOutputReference) InternalValue() *AppmeshVirtualRouterSpec {
+	var returns *AppmeshVirtualRouterSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualRouterSpecOutputReference) IsSingleItem() *bool {
@@ -45794,7 +48952,7 @@ func NewAppmeshVirtualRouterSpecOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_AppmeshVirtualRouterSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45806,9 +48964,17 @@ func NewAppmeshVirtualRouterSpecOutputReference_Override(a AppmeshVirtualRouterS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualRouterSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualRouterSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualRouterSpecOutputReference) SetInternalValue(val *AppmeshVirtualRouterSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -46300,7 +49466,7 @@ func NewAppmeshVirtualService(scope constructs.Construct, id *string, config *Ap
 	j := jsiiProxy_AppmeshVirtualService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -46313,7 +49479,7 @@ func NewAppmeshVirtualService_Override(a AppmeshVirtualService, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualService",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -46401,7 +49567,7 @@ func AppmeshVirtualService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.AppmeshVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -46414,7 +49580,7 @@ func AppmeshVirtualService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.AppmeshVirtualService",
+		"hashicorp_aws.appmesh.AppmeshVirtualService",
 		"tfResourceType",
 		&returns,
 	)
@@ -46608,6 +49774,7 @@ func (a *jsiiProxy_AppmeshVirtualService) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type AppmeshVirtualServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -46642,6 +49809,8 @@ type AppmeshVirtualServiceSpec struct {
 
 type AppmeshVirtualServiceSpecOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualServiceSpec
+	SetInternalValue(val *AppmeshVirtualServiceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Provider() AppmeshVirtualServiceSpecProviderOutputReference
@@ -46663,6 +49832,16 @@ type AppmeshVirtualServiceSpecOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualServiceSpecOutputReference
 type jsiiProxy_AppmeshVirtualServiceSpecOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecOutputReference) InternalValue() *AppmeshVirtualServiceSpec {
+	var returns *AppmeshVirtualServiceSpec
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualServiceSpecOutputReference) IsSingleItem() *bool {
@@ -46721,7 +49900,7 @@ func NewAppmeshVirtualServiceSpecOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_AppmeshVirtualServiceSpecOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -46733,9 +49912,17 @@ func NewAppmeshVirtualServiceSpecOutputReference_Override(a AppmeshVirtualServic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecOutputReference) SetInternalValue(val *AppmeshVirtualServiceSpec) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -46876,6 +50063,8 @@ type AppmeshVirtualServiceSpecProvider struct {
 
 type AppmeshVirtualServiceSpecProviderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualServiceSpecProvider
+	SetInternalValue(val *AppmeshVirtualServiceSpecProvider)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -46901,6 +50090,16 @@ type AppmeshVirtualServiceSpecProviderOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualServiceSpecProviderOutputReference
 type jsiiProxy_AppmeshVirtualServiceSpecProviderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderOutputReference) InternalValue() *AppmeshVirtualServiceSpecProvider {
+	var returns *AppmeshVirtualServiceSpecProvider
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderOutputReference) IsSingleItem() *bool {
@@ -46979,7 +50178,7 @@ func NewAppmeshVirtualServiceSpecProviderOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppmeshVirtualServiceSpecProviderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -46991,9 +50190,17 @@ func NewAppmeshVirtualServiceSpecProviderOutputReference_Override(a AppmeshVirtu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderOutputReference) SetInternalValue(val *AppmeshVirtualServiceSpecProvider) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -47144,6 +50351,8 @@ type AppmeshVirtualServiceSpecProviderVirtualNode struct {
 
 type AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualServiceSpecProviderVirtualNode
+	SetInternalValue(val *AppmeshVirtualServiceSpecProviderVirtualNode)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -47164,6 +50373,16 @@ type AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference
 type jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference) InternalValue() *AppmeshVirtualServiceSpecProviderVirtualNode {
+	var returns *AppmeshVirtualServiceSpecProviderVirtualNode
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference) IsSingleItem() *bool {
@@ -47222,7 +50441,7 @@ func NewAppmeshVirtualServiceSpecProviderVirtualNodeOutputReference(terraformRes
 	j := jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -47234,9 +50453,17 @@ func NewAppmeshVirtualServiceSpecProviderVirtualNodeOutputReference_Override(a A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualNodeOutputReference) SetInternalValue(val *AppmeshVirtualServiceSpecProviderVirtualNode) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -47363,6 +50590,8 @@ type AppmeshVirtualServiceSpecProviderVirtualRouter struct {
 
 type AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppmeshVirtualServiceSpecProviderVirtualRouter
+	SetInternalValue(val *AppmeshVirtualServiceSpecProviderVirtualRouter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -47383,6 +50612,16 @@ type AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference interface {
 // The jsii proxy struct for AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference
 type jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference) InternalValue() *AppmeshVirtualServiceSpecProviderVirtualRouter {
+	var returns *AppmeshVirtualServiceSpecProviderVirtualRouter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference) IsSingleItem() *bool {
@@ -47441,7 +50680,7 @@ func NewAppmeshVirtualServiceSpecProviderVirtualRouterOutputReference(terraformR
 	j := jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -47453,9 +50692,17 @@ func NewAppmeshVirtualServiceSpecProviderVirtualRouterOutputReference_Override(a
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
+		"hashicorp_aws.appmesh.AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppmeshVirtualServiceSpecProviderVirtualRouterOutputReference) SetInternalValue(val *AppmeshVirtualServiceSpecProviderVirtualRouter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -47878,7 +51125,7 @@ func NewDataAwsAppmeshMesh(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsAppmeshMesh{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMesh",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMesh",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -47891,7 +51138,7 @@ func NewDataAwsAppmeshMesh_Override(d DataAwsAppmeshMesh, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMesh",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMesh",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -47963,7 +51210,7 @@ func DataAwsAppmeshMesh_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMesh",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMesh",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -47976,7 +51223,7 @@ func DataAwsAppmeshMesh_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMesh",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMesh",
 		"tfResourceType",
 		&returns,
 	)
@@ -48167,6 +51414,7 @@ func (d *jsiiProxy_DataAwsAppmeshMesh) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type DataAwsAppmeshMeshConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -48252,7 +51500,7 @@ func NewDataAwsAppmeshMeshSpec(terraformResource cdktf.ITerraformResource, terra
 	j := jsiiProxy_DataAwsAppmeshMeshSpec{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpec",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -48265,7 +51513,7 @@ func NewDataAwsAppmeshMeshSpec_Override(d DataAwsAppmeshMeshSpec, terraformResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpec",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -48433,7 +51681,7 @@ func NewDataAwsAppmeshMeshSpecEgressFilter(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsAppmeshMeshSpecEgressFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpecEgressFilter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpecEgressFilter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -48446,7 +51694,7 @@ func NewDataAwsAppmeshMeshSpecEgressFilter_Override(d DataAwsAppmeshMeshSpecEgre
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshMeshSpecEgressFilter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshMeshSpecEgressFilter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -48872,7 +52120,7 @@ func NewDataAwsAppmeshVirtualService(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsAppmeshVirtualService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualService",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -48885,7 +52133,7 @@ func NewDataAwsAppmeshVirtualService_Override(d DataAwsAppmeshVirtualService, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualService",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualService",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -48965,7 +52213,7 @@ func DataAwsAppmeshVirtualService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualService",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -48978,7 +52226,7 @@ func DataAwsAppmeshVirtualService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualService",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualService",
 		"tfResourceType",
 		&returns,
 	)
@@ -49169,6 +52417,7 @@ func (d *jsiiProxy_DataAwsAppmeshVirtualService) ToTerraform() interface{} {
 	return returns
 }
 
+// App Mesh.
 type DataAwsAppmeshVirtualServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -49256,7 +52505,7 @@ func NewDataAwsAppmeshVirtualServiceSpec(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DataAwsAppmeshVirtualServiceSpec{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpec",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -49269,7 +52518,7 @@ func NewDataAwsAppmeshVirtualServiceSpec_Override(d DataAwsAppmeshVirtualService
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpec",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpec",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -49448,7 +52697,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProvider(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsAppmeshVirtualServiceSpecProvider{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProvider",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProvider",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -49461,7 +52710,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProvider_Override(d DataAwsAppmeshVirtua
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProvider",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProvider",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -49629,7 +52878,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProviderVirtualNode(terraformResource cd
 	j := jsiiProxy_DataAwsAppmeshVirtualServiceSpecProviderVirtualNode{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -49642,7 +52891,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProviderVirtualNode_Override(d DataAwsAp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualNode",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -49810,7 +53059,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProviderVirtualRouter(terraformResource 
 	j := jsiiProxy_DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -49823,7 +53072,7 @@ func NewDataAwsAppmeshVirtualServiceSpecProviderVirtualRouter_Override(d DataAws
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppMesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
+		"hashicorp_aws.appmesh.DataAwsAppmeshVirtualServiceSpecProviderVirtualRouter",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)

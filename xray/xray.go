@@ -243,7 +243,7 @@ func NewXrayEncryptionConfig(scope constructs.Construct, id *string, config *Xra
 	j := jsiiProxy_XrayEncryptionConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XrayEncryptionConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -256,7 +256,7 @@ func NewXrayEncryptionConfig_Override(x XrayEncryptionConfig, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XrayEncryptionConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfig",
 		[]interface{}{scope, id, config},
 		x,
 	)
@@ -320,7 +320,7 @@ func XrayEncryptionConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.XRay.XrayEncryptionConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -333,7 +333,7 @@ func XrayEncryptionConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.XRay.XrayEncryptionConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -503,6 +503,7 @@ func (x *jsiiProxy_XrayEncryptionConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS X-Ray.
 type XrayEncryptionConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -810,7 +811,7 @@ func NewXrayGroup(scope constructs.Construct, id *string, config *XrayGroupConfi
 	j := jsiiProxy_XrayGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XrayGroup",
+		"hashicorp_aws.xray.XrayGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -823,7 +824,7 @@ func NewXrayGroup_Override(x XrayGroup, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XrayGroup",
+		"hashicorp_aws.xray.XrayGroup",
 		[]interface{}{scope, id, config},
 		x,
 	)
@@ -903,7 +904,7 @@ func XrayGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.XRay.XrayGroup",
+		"hashicorp_aws.xray.XrayGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -916,7 +917,7 @@ func XrayGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.XRay.XrayGroup",
+		"hashicorp_aws.xray.XrayGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -1094,6 +1095,7 @@ func (x *jsiiProxy_XrayGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS X-Ray.
 type XrayGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1637,7 +1639,7 @@ func NewXraySamplingRule(scope constructs.Construct, id *string, config *XraySam
 	j := jsiiProxy_XraySamplingRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XraySamplingRule",
+		"hashicorp_aws.xray.XraySamplingRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1650,7 +1652,7 @@ func NewXraySamplingRule_Override(x XraySamplingRule, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.XRay.XraySamplingRule",
+		"hashicorp_aws.xray.XraySamplingRule",
 		[]interface{}{scope, id, config},
 		x,
 	)
@@ -1810,7 +1812,7 @@ func XraySamplingRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.XRay.XraySamplingRule",
+		"hashicorp_aws.xray.XraySamplingRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1823,7 +1825,7 @@ func XraySamplingRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.XRay.XraySamplingRule",
+		"hashicorp_aws.xray.XraySamplingRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -2017,6 +2019,7 @@ func (x *jsiiProxy_XraySamplingRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS X-Ray.
 type XraySamplingRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

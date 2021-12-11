@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomain",
 		reflect.TypeOf((*DataAwsElasticsearchDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPolicies", GoGetter: "AccessPolicies"},
@@ -16,6 +16,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "advancedOptions", GoMethod: "AdvancedOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "advancedSecurityOptions", GoMethod: "AdvancedSecurityOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberMethod{JsiiMethod: "autoTuneOptions", GoMethod: "AutoTuneOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
 			_jsii_.MemberMethod{JsiiMethod: "clusterConfig", GoMethod: "ClusterConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "cognitoOptions", GoMethod: "CognitoOptions"},
@@ -69,7 +70,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainAdvancedSecurityOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -90,7 +91,72 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptions",
+		reflect.TypeOf((*DataAwsElasticsearchDomainAutoTuneOptions)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "desiredState", GoGetter: "DesiredState"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "maintenanceSchedule", GoGetter: "MaintenanceSchedule"},
+			_jsii_.MemberProperty{JsiiProperty: "rollbackOnDisable", GoGetter: "RollbackOnDisable"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule",
+		reflect.TypeOf((*DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "cronExpressionForRecurrence", GoGetter: "CronExpressionForRecurrence"},
+			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "startAt", GoGetter: "StartAt"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration",
+		reflect.TypeOf((*DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexComputedList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfig",
 		reflect.TypeOf((*DataAwsElasticsearchDomainClusterConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -119,7 +185,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
 		reflect.TypeOf((*DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneCount", GoGetter: "AvailabilityZoneCount"},
@@ -139,7 +205,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainCognitoOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainCognitoOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainCognitoOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -162,11 +228,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainConfig",
 		reflect.TypeOf((*DataAwsElasticsearchDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEbsOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEbsOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainEbsOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -189,7 +255,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEncryptionAtRest",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEncryptionAtRest",
 		reflect.TypeOf((*DataAwsElasticsearchDomainEncryptionAtRest)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -210,7 +276,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainLogPublishingOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainLogPublishingOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainLogPublishingOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchLogGroupArn", GoGetter: "CloudwatchLogGroupArn"},
@@ -232,7 +298,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
 		reflect.TypeOf((*DataAwsElasticsearchDomainNodeToNodeEncryption)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -252,7 +318,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainSnapshotOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainSnapshotOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainSnapshotOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automatedSnapshotStartHour", GoGetter: "AutomatedSnapshotStartHour"},
@@ -272,7 +338,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainVpcOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainVpcOptions",
 		reflect.TypeOf((*DataAwsElasticsearchDomainVpcOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZones", GoGetter: "AvailabilityZones"},
@@ -295,7 +361,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomain",
 		reflect.TypeOf((*ElasticsearchDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPolicies", GoGetter: "AccessPolicies"},
@@ -306,6 +372,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "advancedSecurityOptions", GoGetter: "AdvancedSecurityOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "advancedSecurityOptionsInput", GoGetter: "AdvancedSecurityOptionsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "autoTuneOptions", GoGetter: "AutoTuneOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "autoTuneOptionsInput", GoGetter: "AutoTuneOptionsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
 			_jsii_.MemberProperty{JsiiProperty: "clusterConfig", GoGetter: "ClusterConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "clusterConfigInput", GoGetter: "ClusterConfigInput"},
@@ -344,6 +412,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberMethod{JsiiMethod: "putAdvancedSecurityOptions", GoMethod: "PutAdvancedSecurityOptions"},
+			_jsii_.MemberMethod{JsiiMethod: "putAutoTuneOptions", GoMethod: "PutAutoTuneOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "putClusterConfig", GoMethod: "PutClusterConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "putCognitoOptions", GoMethod: "PutCognitoOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "putDomainEndpointOptions", GoMethod: "PutDomainEndpointOptions"},
@@ -357,6 +426,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetAccessPolicies", GoMethod: "ResetAccessPolicies"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAdvancedOptions", GoMethod: "ResetAdvancedOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAdvancedSecurityOptions", GoMethod: "ResetAdvancedSecurityOptions"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAutoTuneOptions", GoMethod: "ResetAutoTuneOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "resetClusterConfig", GoMethod: "ResetClusterConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCognitoOptions", GoMethod: "ResetCognitoOptions"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDomainEndpointOptions", GoMethod: "ResetDomainEndpointOptions"},
@@ -396,21 +466,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptions",
 		reflect.TypeOf((*ElasticsearchDomainAdvancedSecurityOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions",
 		reflect.TypeOf((*ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -433,7 +504,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainAdvancedSecurityOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -444,6 +515,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "internalUserDatabaseEnabled", GoGetter: "InternalUserDatabaseEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "internalUserDatabaseEnabledInput", GoGetter: "InternalUserDatabaseEnabledInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -462,11 +534,77 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfig",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptions",
+		reflect.TypeOf((*ElasticsearchDomainAutoTuneOptions)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule",
+		reflect.TypeOf((*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration",
+		reflect.TypeOf((*ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference",
+		reflect.TypeOf((*ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+			_jsii_.MemberProperty{JsiiProperty: "unitInput", GoGetter: "UnitInput"},
+			_jsii_.MemberProperty{JsiiProperty: "value", GoGetter: "Value"},
+			_jsii_.MemberProperty{JsiiProperty: "valueInput", GoGetter: "ValueInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsOutputReference",
+		reflect.TypeOf((*ElasticsearchDomainAutoTuneOptionsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "desiredState", GoGetter: "DesiredState"},
+			_jsii_.MemberProperty{JsiiProperty: "desiredStateInput", GoGetter: "DesiredStateInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "maintenanceSchedule", GoGetter: "MaintenanceSchedule"},
+			_jsii_.MemberProperty{JsiiProperty: "maintenanceScheduleInput", GoGetter: "MaintenanceScheduleInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetMaintenanceSchedule", GoMethod: "ResetMaintenanceSchedule"},
+			_jsii_.MemberMethod{JsiiMethod: "resetRollbackOnDisable", GoMethod: "ResetRollbackOnDisable"},
+			_jsii_.MemberProperty{JsiiProperty: "rollbackOnDisable", GoGetter: "RollbackOnDisable"},
+			_jsii_.MemberProperty{JsiiProperty: "rollbackOnDisableInput", GoGetter: "RollbackOnDisableInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfig",
 		reflect.TypeOf((*ElasticsearchDomainClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainClusterConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dedicatedMasterCount", GoGetter: "DedicatedMasterCount"},
@@ -483,6 +621,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "instanceCountInput", GoGetter: "InstanceCountInput"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -517,11 +656,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigZoneAwarenessConfig",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigZoneAwarenessConfig",
 		reflect.TypeOf((*ElasticsearchDomainClusterConfigZoneAwarenessConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneCount", GoGetter: "AvailabilityZoneCount"},
@@ -530,6 +669,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -544,11 +684,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainCognitoOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainCognitoOptions",
 		reflect.TypeOf((*ElasticsearchDomainCognitoOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainCognitoOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainCognitoOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainCognitoOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -559,6 +699,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "identityPoolId", GoGetter: "IdentityPoolId"},
 			_jsii_.MemberProperty{JsiiProperty: "identityPoolIdInput", GoGetter: "IdentityPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -577,15 +718,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainConfig",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainConfig",
 		reflect.TypeOf((*ElasticsearchDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainDomainEndpointOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainDomainEndpointOptions",
 		reflect.TypeOf((*ElasticsearchDomainDomainEndpointOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainDomainEndpointOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customEndpoint", GoGetter: "CustomEndpoint"},
@@ -600,6 +741,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -620,11 +762,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEbsOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEbsOptions",
 		reflect.TypeOf((*ElasticsearchDomainEbsOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEbsOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEbsOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainEbsOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "ebsEnabled", GoGetter: "EbsEnabled"},
@@ -633,6 +775,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iops", GoGetter: "Iops"},
@@ -655,11 +798,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEncryptAtRest",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEncryptAtRest",
 		reflect.TypeOf((*ElasticsearchDomainEncryptAtRest)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEncryptAtRestOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEncryptAtRestOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainEncryptAtRestOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -668,6 +811,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -684,15 +828,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainLogPublishingOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainLogPublishingOptions",
 		reflect.TypeOf((*ElasticsearchDomainLogPublishingOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainNodeToNodeEncryption",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainNodeToNodeEncryption",
 		reflect.TypeOf((*ElasticsearchDomainNodeToNodeEncryption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainNodeToNodeEncryptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -701,6 +845,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -714,7 +859,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicy",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicy",
 		reflect.TypeOf((*ElasticsearchDomainPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessPolicies", GoGetter: "AccessPolicies"},
@@ -755,11 +900,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicyConfig",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicyConfig",
 		reflect.TypeOf((*ElasticsearchDomainPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptions",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -802,19 +947,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsConfig",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsConfig",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptions",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptionsSamlOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsIdp",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsIdp",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptionsSamlOptionsIdp)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "entityId", GoGetter: "EntityId"},
@@ -823,6 +968,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -838,7 +984,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainSamlOptionsSamlOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -849,6 +995,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "idp", GoGetter: "Idp"},
 			_jsii_.MemberProperty{JsiiProperty: "idpInput", GoGetter: "IdpInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -880,11 +1027,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSnapshotOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSnapshotOptions",
 		reflect.TypeOf((*ElasticsearchDomainSnapshotOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSnapshotOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSnapshotOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainSnapshotOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "automatedSnapshotStartHour", GoGetter: "AutomatedSnapshotStartHour"},
@@ -893,6 +1040,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -906,17 +1054,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainTimeouts",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainTimeouts",
 		reflect.TypeOf((*ElasticsearchDomainTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainTimeoutsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainTimeoutsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -933,17 +1082,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainVpcOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainVpcOptions",
 		reflect.TypeOf((*ElasticsearchDomainVpcOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainVpcOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainVpcOptionsOutputReference",
 		reflect.TypeOf((*ElasticsearchDomainVpcOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

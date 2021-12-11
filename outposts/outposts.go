@@ -299,7 +299,7 @@ func NewDataAwsOutpostsOutpost(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsOutpostsOutpost{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpost",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpost",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -312,7 +312,7 @@ func NewDataAwsOutpostsOutpost_Override(d DataAwsOutpostsOutpost, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpost",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpost",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -376,7 +376,7 @@ func DataAwsOutpostsOutpost_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpost",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpost",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -389,7 +389,7 @@ func DataAwsOutpostsOutpost_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpost",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpost",
 		"tfResourceType",
 		&returns,
 	)
@@ -567,6 +567,7 @@ func (d *jsiiProxy_DataAwsOutpostsOutpost) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsOutpostConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -840,7 +841,7 @@ func NewDataAwsOutpostsOutpostInstanceType(scope constructs.Construct, id *strin
 	j := jsiiProxy_DataAwsOutpostsOutpostInstanceType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceType",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -853,7 +854,7 @@ func NewDataAwsOutpostsOutpostInstanceType_Override(d DataAwsOutpostsOutpostInst
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceType",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceType",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -925,7 +926,7 @@ func DataAwsOutpostsOutpostInstanceType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceType",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -938,7 +939,7 @@ func DataAwsOutpostsOutpostInstanceType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceType",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceType",
 		"tfResourceType",
 		&returns,
 	)
@@ -1116,6 +1117,7 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsOutpostInstanceTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1354,7 +1356,7 @@ func NewDataAwsOutpostsOutpostInstanceTypes(scope constructs.Construct, id *stri
 	j := jsiiProxy_DataAwsOutpostsOutpostInstanceTypes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypes",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypes",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1367,7 +1369,7 @@ func NewDataAwsOutpostsOutpostInstanceTypes_Override(d DataAwsOutpostsOutpostIns
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypes",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypes",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1423,7 +1425,7 @@ func DataAwsOutpostsOutpostInstanceTypes_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypes",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypes",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1436,7 +1438,7 @@ func DataAwsOutpostsOutpostInstanceTypes_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutpostInstanceTypes",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutpostInstanceTypes",
 		"tfResourceType",
 		&returns,
 	)
@@ -1598,6 +1600,7 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) ToTerraform() interface{
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsOutpostInstanceTypesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1916,7 +1919,7 @@ func NewDataAwsOutpostsOutposts(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsOutpostsOutposts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutposts",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutposts",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1929,7 +1932,7 @@ func NewDataAwsOutpostsOutposts_Override(d DataAwsOutpostsOutposts, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutposts",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutposts",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2009,7 +2012,7 @@ func DataAwsOutpostsOutposts_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutposts",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutposts",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2022,7 +2025,7 @@ func DataAwsOutpostsOutposts_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsOutposts",
+		"hashicorp_aws.outposts.DataAwsOutpostsOutposts",
 		"tfResourceType",
 		&returns,
 	)
@@ -2216,6 +2219,7 @@ func (d *jsiiProxy_DataAwsOutpostsOutposts) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsOutpostsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2468,7 +2472,7 @@ func NewDataAwsOutpostsSite(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsOutpostsSite{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSite",
+		"hashicorp_aws.outposts.DataAwsOutpostsSite",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2481,7 +2485,7 @@ func NewDataAwsOutpostsSite_Override(d DataAwsOutpostsSite, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSite",
+		"hashicorp_aws.outposts.DataAwsOutpostsSite",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2537,7 +2541,7 @@ func DataAwsOutpostsSite_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSite",
+		"hashicorp_aws.outposts.DataAwsOutpostsSite",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2550,7 +2554,7 @@ func DataAwsOutpostsSite_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSite",
+		"hashicorp_aws.outposts.DataAwsOutpostsSite",
 		"tfResourceType",
 		&returns,
 	)
@@ -2720,6 +2724,7 @@ func (d *jsiiProxy_DataAwsOutpostsSite) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsSiteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2931,7 +2936,7 @@ func NewDataAwsOutpostsSites(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsOutpostsSites{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSites",
+		"hashicorp_aws.outposts.DataAwsOutpostsSites",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2944,7 +2949,7 @@ func NewDataAwsOutpostsSites_Override(d DataAwsOutpostsSites, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSites",
+		"hashicorp_aws.outposts.DataAwsOutpostsSites",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2992,7 +2997,7 @@ func DataAwsOutpostsSites_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSites",
+		"hashicorp_aws.outposts.DataAwsOutpostsSites",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3005,7 +3010,7 @@ func DataAwsOutpostsSites_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Outposts.DataAwsOutpostsSites",
+		"hashicorp_aws.outposts.DataAwsOutpostsSites",
 		"tfResourceType",
 		&returns,
 	)
@@ -3167,6 +3172,7 @@ func (d *jsiiProxy_DataAwsOutpostsSites) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Outposts.
 type DataAwsOutpostsSitesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomain",
+		"hashicorp_aws.codeartifact.CodeartifactDomain",
 		reflect.TypeOf((*CodeartifactDomain)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -61,11 +61,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainConfig",
+		"hashicorp_aws.codeartifact.CodeartifactDomainConfig",
 		reflect.TypeOf((*CodeartifactDomainConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicy",
 		reflect.TypeOf((*CodeartifactDomainPermissionsPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -113,11 +113,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicyConfig",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicyConfig",
 		reflect.TypeOf((*CodeartifactDomainPermissionsPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepository",
+		"hashicorp_aws.codeartifact.CodeartifactRepository",
 		reflect.TypeOf((*CodeartifactRepository)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -179,15 +179,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryConfig",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryConfig",
 		reflect.TypeOf((*CodeartifactRepositoryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryExternalConnections",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryExternalConnections",
 		reflect.TypeOf((*CodeartifactRepositoryExternalConnections)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryExternalConnectionsOutputReference",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryExternalConnectionsOutputReference",
 		reflect.TypeOf((*CodeartifactRepositoryExternalConnectionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "externalConnectionName", GoGetter: "ExternalConnectionName"},
@@ -196,6 +196,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -209,7 +210,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicy",
 		reflect.TypeOf((*CodeartifactRepositoryPermissionsPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -259,15 +260,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicyConfig",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicyConfig",
 		reflect.TypeOf((*CodeartifactRepositoryPermissionsPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryUpstream",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryUpstream",
 		reflect.TypeOf((*CodeartifactRepositoryUpstream)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationToken",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationToken",
 		reflect.TypeOf((*DataAwsCodeartifactAuthorizationToken)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -314,11 +315,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationTokenConfig",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationTokenConfig",
 		reflect.TypeOf((*DataAwsCodeartifactAuthorizationTokenConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpoint",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpoint",
 		reflect.TypeOf((*DataAwsCodeartifactRepositoryEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -365,7 +366,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpointConfig",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpointConfig",
 		reflect.TypeOf((*DataAwsCodeartifactRepositoryEndpointConfig)(nil)).Elem(),
 	)
 }

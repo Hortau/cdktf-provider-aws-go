@@ -456,7 +456,7 @@ func NewConnectContactFlow(scope constructs.Construct, id *string, config *Conne
 	j := jsiiProxy_ConnectContactFlow{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectContactFlow",
+		"hashicorp_aws.connect.ConnectContactFlow",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -469,7 +469,7 @@ func NewConnectContactFlow_Override(c ConnectContactFlow, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectContactFlow",
+		"hashicorp_aws.connect.ConnectContactFlow",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -589,7 +589,7 @@ func ConnectContactFlow_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Connect.ConnectContactFlow",
+		"hashicorp_aws.connect.ConnectContactFlow",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -602,7 +602,7 @@ func ConnectContactFlow_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Connect.ConnectContactFlow",
+		"hashicorp_aws.connect.ConnectContactFlow",
 		"tfResourceType",
 		&returns,
 	)
@@ -836,6 +836,7 @@ func (c *jsiiProxy_ConnectContactFlow) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Connect.
 type ConnectContactFlowConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -881,6 +882,8 @@ type ConnectContactFlowTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *ConnectContactFlowTimeouts
+	SetInternalValue(val *ConnectContactFlowTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -920,6 +923,16 @@ func (j *jsiiProxy_ConnectContactFlowTimeoutsOutputReference) CreateInput() *str
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConnectContactFlowTimeoutsOutputReference) InternalValue() *ConnectContactFlowTimeouts {
+	var returns *ConnectContactFlowTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -981,7 +994,7 @@ func NewConnectContactFlowTimeoutsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_ConnectContactFlowTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectContactFlowTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectContactFlowTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -993,7 +1006,7 @@ func NewConnectContactFlowTimeoutsOutputReference_Override(c ConnectContactFlowT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectContactFlowTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectContactFlowTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1003,6 +1016,14 @@ func (j *jsiiProxy_ConnectContactFlowTimeoutsOutputReference) SetCreate(val *str
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConnectContactFlowTimeoutsOutputReference) SetInternalValue(val *ConnectContactFlowTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1607,7 +1628,7 @@ func NewConnectInstance(scope constructs.Construct, id *string, config *ConnectI
 	j := jsiiProxy_ConnectInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectInstance",
+		"hashicorp_aws.connect.ConnectInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1620,7 +1641,7 @@ func NewConnectInstance_Override(c ConnectInstance, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectInstance",
+		"hashicorp_aws.connect.ConnectInstance",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1740,7 +1761,7 @@ func ConnectInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Connect.ConnectInstance",
+		"hashicorp_aws.connect.ConnectInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1753,7 +1774,7 @@ func ConnectInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Connect.ConnectInstance",
+		"hashicorp_aws.connect.ConnectInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -1979,6 +2000,7 @@ func (c *jsiiProxy_ConnectInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Connect.
 type ConnectInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2027,6 +2049,8 @@ type ConnectInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ConnectInstanceTimeouts
+	SetInternalValue(val *ConnectInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2088,6 +2112,16 @@ func (j *jsiiProxy_ConnectInstanceTimeoutsOutputReference) DeleteInput() *string
 	return returns
 }
 
+func (j *jsiiProxy_ConnectInstanceTimeoutsOutputReference) InternalValue() *ConnectInstanceTimeouts {
+	var returns *ConnectInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConnectInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2124,7 +2158,7 @@ func NewConnectInstanceTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_ConnectInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectInstanceTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2136,7 +2170,7 @@ func NewConnectInstanceTimeoutsOutputReference_Override(c ConnectInstanceTimeout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.ConnectInstanceTimeoutsOutputReference",
+		"hashicorp_aws.connect.ConnectInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2154,6 +2188,14 @@ func (j *jsiiProxy_ConnectInstanceTimeoutsOutputReference) SetDelete(val *string
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConnectInstanceTimeoutsOutputReference) SetInternalValue(val *ConnectInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2621,7 +2663,7 @@ func NewDataAwsConnectContactFlow(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsConnectContactFlow{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlow",
+		"hashicorp_aws.connect.DataAwsConnectContactFlow",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2634,7 +2676,7 @@ func NewDataAwsConnectContactFlow_Override(d DataAwsConnectContactFlow, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlow",
+		"hashicorp_aws.connect.DataAwsConnectContactFlow",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2722,7 +2764,7 @@ func DataAwsConnectContactFlow_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlow",
+		"hashicorp_aws.connect.DataAwsConnectContactFlow",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2735,7 +2777,7 @@ func DataAwsConnectContactFlow_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Connect.DataAwsConnectContactFlow",
+		"hashicorp_aws.connect.DataAwsConnectContactFlow",
 		"tfResourceType",
 		&returns,
 	)
@@ -2929,6 +2971,7 @@ func (d *jsiiProxy_DataAwsConnectContactFlow) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Connect.
 type DataAwsConnectContactFlowConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3306,7 +3349,7 @@ func NewDataAwsConnectInstance(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsConnectInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.DataAwsConnectInstance",
+		"hashicorp_aws.connect.DataAwsConnectInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3319,7 +3362,7 @@ func NewDataAwsConnectInstance_Override(d DataAwsConnectInstance, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Connect.DataAwsConnectInstance",
+		"hashicorp_aws.connect.DataAwsConnectInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3383,7 +3426,7 @@ func DataAwsConnectInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Connect.DataAwsConnectInstance",
+		"hashicorp_aws.connect.DataAwsConnectInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3396,7 +3439,7 @@ func DataAwsConnectInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Connect.DataAwsConnectInstance",
+		"hashicorp_aws.connect.DataAwsConnectInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -3574,6 +3617,7 @@ func (d *jsiiProxy_DataAwsConnectInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Connect.
 type DataAwsConnectInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

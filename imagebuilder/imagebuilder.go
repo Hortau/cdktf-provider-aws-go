@@ -375,7 +375,7 @@ func NewDataAwsImagebuilderComponent(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsImagebuilderComponent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponent",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -388,7 +388,7 @@ func NewDataAwsImagebuilderComponent_Override(d DataAwsImagebuilderComponent, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponent",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -452,7 +452,7 @@ func DataAwsImagebuilderComponent_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponent",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -465,7 +465,7 @@ func DataAwsImagebuilderComponent_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponent",
 		"tfResourceType",
 		&returns,
 	)
@@ -635,6 +635,7 @@ func (d *jsiiProxy_DataAwsImagebuilderComponent) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderComponentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -929,7 +930,7 @@ func NewDataAwsImagebuilderDistributionConfiguration(scope constructs.Construct,
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -942,7 +943,7 @@ func NewDataAwsImagebuilderDistributionConfiguration_Override(d DataAwsImagebuil
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfiguration",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1006,7 +1007,7 @@ func DataAwsImagebuilderDistributionConfiguration_IsConstruct(x interface{}) *bo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1019,7 +1020,7 @@ func DataAwsImagebuilderDistributionConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -1202,6 +1203,7 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) ToTerraform() i
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderDistributionConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1307,7 +1309,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistribution(terraformResour
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1320,7 +1322,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistribution_Override(d Data
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1543,7 +1545,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1556,7 +1558,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1735,7 +1737,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1748,7 +1750,7 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2194,7 +2196,7 @@ func NewDataAwsImagebuilderImage(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsImagebuilderImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImage",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2207,7 +2209,7 @@ func NewDataAwsImagebuilderImage_Override(d DataAwsImagebuilderImage, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImage",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImage",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2271,7 +2273,7 @@ func DataAwsImagebuilderImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImage",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2284,7 +2286,7 @@ func DataAwsImagebuilderImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImage",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -2480,6 +2482,7 @@ func (d *jsiiProxy_DataAwsImagebuilderImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2574,7 +2577,7 @@ func NewDataAwsImagebuilderImageImageTestsConfiguration(terraformResource cdktf.
 	j := jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageImageTestsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2587,7 +2590,7 @@ func NewDataAwsImagebuilderImageImageTestsConfiguration_Override(d DataAwsImageb
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageImageTestsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2755,7 +2758,7 @@ func NewDataAwsImagebuilderImageOutputResources(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsImagebuilderImageOutputResources{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2768,7 +2771,7 @@ func NewDataAwsImagebuilderImageOutputResources_Override(d DataAwsImagebuilderIm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2980,7 +2983,7 @@ func NewDataAwsImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResourcesAmis",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2993,7 +2996,7 @@ func NewDataAwsImagebuilderImageOutputResourcesAmis_Override(d DataAwsImagebuild
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResourcesAmis",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3461,7 +3464,7 @@ func NewDataAwsImagebuilderImagePipeline(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsImagebuilderImagePipeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipeline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3474,7 +3477,7 @@ func NewDataAwsImagebuilderImagePipeline_Override(d DataAwsImagebuilderImagePipe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipeline",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3538,7 +3541,7 @@ func DataAwsImagebuilderImagePipeline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipeline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3551,7 +3554,7 @@ func DataAwsImagebuilderImagePipeline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipeline",
 		"tfResourceType",
 		&returns,
 	)
@@ -3747,6 +3750,7 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderImagePipelineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3841,7 +3845,7 @@ func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration(terraformResourc
 	j := jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3854,7 +3858,7 @@ func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration_Override(d DataA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4033,7 +4037,7 @@ func NewDataAwsImagebuilderImagePipelineSchedule(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsImagebuilderImagePipelineSchedule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineSchedule",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineSchedule",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4046,7 +4050,7 @@ func NewDataAwsImagebuilderImagePipelineSchedule_Override(d DataAwsImagebuilderI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineSchedule",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineSchedule",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4470,7 +4474,7 @@ func NewDataAwsImagebuilderImageRecipe(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsImagebuilderImageRecipe{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipe",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4483,7 +4487,7 @@ func NewDataAwsImagebuilderImageRecipe_Override(d DataAwsImagebuilderImageRecipe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipe",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4547,7 +4551,7 @@ func DataAwsImagebuilderImageRecipe_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipe",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4560,7 +4564,7 @@ func DataAwsImagebuilderImageRecipe_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipe",
 		"tfResourceType",
 		&returns,
 	)
@@ -4857,7 +4861,7 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping(terraformResource cdktf
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4870,7 +4874,7 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping_Override(d DataAwsImage
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5104,7 +5108,7 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs(terraformResource cd
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5117,7 +5121,7 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs_Override(d DataAwsIm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5285,7 +5289,7 @@ func NewDataAwsImagebuilderImageRecipeComponent(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeComponent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeComponent",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5298,7 +5302,7 @@ func NewDataAwsImagebuilderImageRecipeComponent_Override(d DataAwsImagebuilderIm
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeComponent",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5398,6 +5402,7 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) InterpolationForAttr
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderImageRecipeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5411,6 +5416,556 @@ type DataAwsImagebuilderImageRecipeConfig struct {
 	Arn *string `json:"arn"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html#tags DataAwsImagebuilderImageRecipe#tags}.
 	Tags interface{} `json:"tags"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes}.
+type DataAwsImagebuilderImageRecipes interface {
+	cdktf.TerraformDataSource
+	Arns() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() *[]*DataAwsImagebuilderImageRecipesFilter
+	SetFilter(val *[]*DataAwsImagebuilderImageRecipesFilter)
+	FilterInput() *[]*DataAwsImagebuilderImageRecipesFilter
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Names() *[]*string
+	Node() constructs.Node
+	Owner() *string
+	SetOwner(val *string)
+	OwnerInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	ResetOwner()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsImagebuilderImageRecipes
+type jsiiProxy_DataAwsImagebuilderImageRecipes struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Arns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"arns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Filter() *[]*DataAwsImagebuilderImageRecipesFilter {
+	var returns *[]*DataAwsImagebuilderImageRecipesFilter
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) FilterInput() *[]*DataAwsImagebuilderImageRecipesFilter {
+	var returns *[]*DataAwsImagebuilderImageRecipesFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Names() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"names",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Owner() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"owner",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) OwnerInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ownerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes} Data Source.
+func NewDataAwsImagebuilderImageRecipes(scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipesConfig) DataAwsImagebuilderImageRecipes {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsImagebuilderImageRecipes{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipes",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes} Data Source.
+func NewDataAwsImagebuilderImageRecipes_Override(d DataAwsImagebuilderImageRecipes, scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipesConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipes",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetFilter(val *[]*DataAwsImagebuilderImageRecipesFilter) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetOwner(val *string) {
+	_jsii_.Set(
+		j,
+		"owner",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsImagebuilderImageRecipes_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipes",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsImagebuilderImageRecipes_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipes",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ResetOwner() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOwner",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Image Builder.
+type DataAwsImagebuilderImageRecipesConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#filter DataAwsImagebuilderImageRecipes#filter}
+	Filter *[]*DataAwsImagebuilderImageRecipesFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#owner DataAwsImagebuilderImageRecipes#owner}.
+	Owner *string `json:"owner"`
+}
+
+type DataAwsImagebuilderImageRecipesFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#name DataAwsImagebuilderImageRecipes#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#values DataAwsImagebuilderImageRecipes#values}.
+	Values *[]*string `json:"values"`
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration}.
@@ -5793,7 +6348,7 @@ func NewDataAwsImagebuilderInfrastructureConfiguration(scope constructs.Construc
 	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5806,7 +6361,7 @@ func NewDataAwsImagebuilderInfrastructureConfiguration_Override(d DataAwsImagebu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfiguration",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5878,7 +6433,7 @@ func DataAwsImagebuilderInfrastructureConfiguration_IsConstruct(x interface{}) *
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5891,7 +6446,7 @@ func DataAwsImagebuilderInfrastructureConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -6082,6 +6637,7 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ToTerraform()
 	return returns
 }
 
+// AWS Image Builder.
 type DataAwsImagebuilderInfrastructureConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6167,7 +6723,7 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLogging(terraformResource 
 	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6180,7 +6736,7 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLogging_Override(d DataAws
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -6359,7 +6915,7 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs(terraformRes
 	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6372,7 +6928,7 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs_Override(d D
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -6975,7 +7531,7 @@ func NewImagebuilderComponent(scope constructs.Construct, id *string, config *Im
 	j := jsiiProxy_ImagebuilderComponent{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponent",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6988,7 +7544,7 @@ func NewImagebuilderComponent_Override(i ImagebuilderComponent, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponent",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -7124,7 +7680,7 @@ func ImagebuilderComponent_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponent",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7137,7 +7693,7 @@ func ImagebuilderComponent_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponent",
 		"tfResourceType",
 		&returns,
 	)
@@ -7363,6 +7919,7 @@ func (i *jsiiProxy_ImagebuilderComponent) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type ImagebuilderComponentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7734,7 +8291,7 @@ func NewImagebuilderDistributionConfiguration(scope constructs.Construct, id *st
 	j := jsiiProxy_ImagebuilderDistributionConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7747,7 +8304,7 @@ func NewImagebuilderDistributionConfiguration_Override(i ImagebuilderDistributio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfiguration",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -7835,7 +8392,7 @@ func ImagebuilderDistributionConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7848,7 +8405,7 @@ func ImagebuilderDistributionConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -8034,6 +8591,7 @@ func (i *jsiiProxy_ImagebuilderDistributionConfiguration) ToTerraform() interfac
 	return returns
 }
 
+// AWS Image Builder.
 type ImagebuilderDistributionConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8094,6 +8652,8 @@ type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurati
 
 type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission
+	SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8119,6 +8679,16 @@ type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurati
 // The jsii proxy struct for ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference
 type jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) InternalValue() *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
+	var returns *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) IsSingleItem() *bool {
@@ -8197,7 +8767,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8209,9 +8779,17 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8363,6 +8941,8 @@ type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurati
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	InternalValue() *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration
+	SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -8435,6 +9015,16 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	_jsii_.Get(
 		j,
 		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) InternalValue() *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration {
+	var returns *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8556,7 +9146,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8568,7 +9158,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -8586,6 +9176,14 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	_jsii_.Set(
 		j,
 		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9222,7 +9820,7 @@ func NewImagebuilderImage(scope constructs.Construct, id *string, config *Imageb
 	j := jsiiProxy_ImagebuilderImage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImage",
+		"hashicorp_aws.imagebuilder.ImagebuilderImage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9235,7 +9833,7 @@ func NewImagebuilderImage_Override(i ImagebuilderImage, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImage",
+		"hashicorp_aws.imagebuilder.ImagebuilderImage",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -9331,7 +9929,7 @@ func ImagebuilderImage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImage",
+		"hashicorp_aws.imagebuilder.ImagebuilderImage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9344,7 +9942,7 @@ func ImagebuilderImage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImage",
+		"hashicorp_aws.imagebuilder.ImagebuilderImage",
 		"tfResourceType",
 		&returns,
 	)
@@ -9583,6 +10181,7 @@ func (i *jsiiProxy_ImagebuilderImage) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type ImagebuilderImageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9626,6 +10225,8 @@ type ImagebuilderImageImageTestsConfigurationOutputReference interface {
 	ImageTestsEnabled() interface{}
 	SetImageTestsEnabled(val interface{})
 	ImageTestsEnabledInput() interface{}
+	InternalValue() *ImagebuilderImageImageTestsConfiguration
+	SetInternalValue(val *ImagebuilderImageImageTestsConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9665,6 +10266,16 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) Imag
 	_jsii_.Get(
 		j,
 		"imageTestsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) InternalValue() *ImagebuilderImageImageTestsConfiguration {
+	var returns *ImagebuilderImageImageTestsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9726,7 +10337,7 @@ func NewImagebuilderImageImageTestsConfigurationOutputReference(terraformResourc
 	j := jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9738,7 +10349,7 @@ func NewImagebuilderImageImageTestsConfigurationOutputReference_Override(i Image
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -9748,6 +10359,14 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetI
 	_jsii_.Set(
 		j,
 		"imageTestsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetInternalValue(val *ImagebuilderImageImageTestsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9952,7 +10571,7 @@ func NewImagebuilderImageOutputResources(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_ImagebuilderImageOutputResources{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -9965,7 +10584,7 @@ func NewImagebuilderImageOutputResources_Override(i ImagebuilderImageOutputResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		i,
 	)
@@ -10177,7 +10796,7 @@ func NewImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_ImagebuilderImageOutputResourcesAmis{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResourcesAmis",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -10190,7 +10809,7 @@ func NewImagebuilderImageOutputResourcesAmis_Override(i ImagebuilderImageOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResourcesAmis",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		i,
 	)
@@ -10804,7 +11423,7 @@ func NewImagebuilderImagePipeline(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ImagebuilderImagePipeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipeline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10817,7 +11436,7 @@ func NewImagebuilderImagePipeline_Override(i ImagebuilderImagePipeline, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipeline",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -10937,7 +11556,7 @@ func ImagebuilderImagePipeline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipeline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10950,7 +11569,7 @@ func ImagebuilderImagePipeline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipeline",
 		"tfResourceType",
 		&returns,
 	)
@@ -11192,6 +11811,7 @@ func (i *jsiiProxy_ImagebuilderImagePipeline) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Image Builder.
 type ImagebuilderImagePipelineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11241,6 +11861,8 @@ type ImagebuilderImagePipelineImageTestsConfigurationOutputReference interface {
 	ImageTestsEnabled() interface{}
 	SetImageTestsEnabled(val interface{})
 	ImageTestsEnabledInput() interface{}
+	InternalValue() *ImagebuilderImagePipelineImageTestsConfiguration
+	SetInternalValue(val *ImagebuilderImagePipelineImageTestsConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11280,6 +11902,16 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 	_jsii_.Get(
 		j,
 		"imageTestsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) InternalValue() *ImagebuilderImagePipelineImageTestsConfiguration {
+	var returns *ImagebuilderImagePipelineImageTestsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11341,7 +11973,7 @@ func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference(terrafor
 	j := jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11353,7 +11985,7 @@ func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -11363,6 +11995,14 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 	_jsii_.Set(
 		j,
 		"imageTestsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) SetInternalValue(val *ImagebuilderImagePipelineImageTestsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11508,6 +12148,8 @@ type ImagebuilderImagePipelineSchedule struct {
 
 type ImagebuilderImagePipelineScheduleOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ImagebuilderImagePipelineSchedule
+	SetInternalValue(val *ImagebuilderImagePipelineSchedule)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PipelineExecutionStartCondition() *string
@@ -11532,6 +12174,16 @@ type ImagebuilderImagePipelineScheduleOutputReference interface {
 // The jsii proxy struct for ImagebuilderImagePipelineScheduleOutputReference
 type jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) InternalValue() *ImagebuilderImagePipelineSchedule {
+	var returns *ImagebuilderImagePipelineSchedule
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) IsSingleItem() *bool {
@@ -11610,7 +12262,7 @@ func NewImagebuilderImagePipelineScheduleOutputReference(terraformResource cdktf
 	j := jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineScheduleOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11622,9 +12274,17 @@ func NewImagebuilderImagePipelineScheduleOutputReference_Override(i Imagebuilder
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineScheduleOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineScheduleOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) SetInternalValue(val *ImagebuilderImagePipelineSchedule) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12203,7 +12863,7 @@ func NewImagebuilderImageRecipe(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ImagebuilderImageRecipe{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipe",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12216,7 +12876,7 @@ func NewImagebuilderImageRecipe_Override(i ImagebuilderImageRecipe, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipe",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -12336,7 +12996,7 @@ func ImagebuilderImageRecipe_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipe",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12349,7 +13009,7 @@ func ImagebuilderImageRecipe_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipe",
 		"tfResourceType",
 		&returns,
 	)
@@ -12589,6 +13249,8 @@ type ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference interface {
 	Encrypted() *string
 	SetEncrypted(val *string)
 	EncryptedInput() *string
+	InternalValue() *ImagebuilderImageRecipeBlockDeviceMappingEbs
+	SetInternalValue(val *ImagebuilderImageRecipeBlockDeviceMappingEbs)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -12665,6 +13327,16 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 	_jsii_.Get(
 		j,
 		"encryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) InternalValue() *ImagebuilderImageRecipeBlockDeviceMappingEbs {
+	var returns *ImagebuilderImageRecipeBlockDeviceMappingEbs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12806,7 +13478,7 @@ func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference(terraformRes
 	j := jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12818,7 +13490,7 @@ func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference_Override(i I
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -12836,6 +13508,14 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 	_jsii_.Set(
 		j,
 		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) SetInternalValue(val *ImagebuilderImageRecipeBlockDeviceMappingEbs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13049,6 +13729,7 @@ type ImagebuilderImageRecipeComponent struct {
 	ComponentArn *string `json:"componentArn"`
 }
 
+// AWS Image Builder.
 type ImagebuilderImageRecipeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13092,6 +13773,8 @@ type ImagebuilderImageTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *ImagebuilderImageTimeouts
+	SetInternalValue(val *ImagebuilderImageTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13127,6 +13810,16 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) CreateInput() *stri
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) InternalValue() *ImagebuilderImageTimeouts {
+	var returns *ImagebuilderImageTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13168,7 +13861,7 @@ func NewImagebuilderImageTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_ImagebuilderImageTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageTimeoutsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13180,7 +13873,7 @@ func NewImagebuilderImageTimeoutsOutputReference_Override(i ImagebuilderImageTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageTimeoutsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -13190,6 +13883,14 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetCreate(val *stri
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetInternalValue(val *ImagebuilderImageTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13840,7 +14541,7 @@ func NewImagebuilderInfrastructureConfiguration(scope constructs.Construct, id *
 	j := jsiiProxy_ImagebuilderInfrastructureConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13853,7 +14554,7 @@ func NewImagebuilderInfrastructureConfiguration_Override(i ImagebuilderInfrastru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfiguration",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -13997,7 +14698,7 @@ func ImagebuilderInfrastructureConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14010,7 +14711,7 @@ func ImagebuilderInfrastructureConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -14268,6 +14969,7 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) ToTerraform() interf
 	return returns
 }
 
+// AWS Image Builder.
 type ImagebuilderInfrastructureConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14316,6 +15018,8 @@ type ImagebuilderInfrastructureConfigurationLogging struct {
 
 type ImagebuilderInfrastructureConfigurationLoggingOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ImagebuilderInfrastructureConfigurationLogging
+	SetInternalValue(val *ImagebuilderInfrastructureConfigurationLogging)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Logs() ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference
@@ -14336,6 +15040,16 @@ type ImagebuilderInfrastructureConfigurationLoggingOutputReference interface {
 // The jsii proxy struct for ImagebuilderInfrastructureConfigurationLoggingOutputReference
 type jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) InternalValue() *ImagebuilderInfrastructureConfigurationLogging {
+	var returns *ImagebuilderInfrastructureConfigurationLogging
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) IsSingleItem() *bool {
@@ -14394,7 +15108,7 @@ func NewImagebuilderInfrastructureConfigurationLoggingOutputReference(terraformR
 	j := jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14406,9 +15120,17 @@ func NewImagebuilderInfrastructureConfigurationLoggingOutputReference_Override(i
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) SetInternalValue(val *ImagebuilderInfrastructureConfigurationLogging) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -14537,6 +15259,8 @@ type ImagebuilderInfrastructureConfigurationLoggingS3Logs struct {
 
 type ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ImagebuilderInfrastructureConfigurationLoggingS3Logs
+	SetInternalValue(val *ImagebuilderInfrastructureConfigurationLoggingS3Logs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3BucketName() *string
@@ -14561,6 +15285,16 @@ type ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference interfa
 // The jsii proxy struct for ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference
 type jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) InternalValue() *ImagebuilderInfrastructureConfigurationLoggingS3Logs {
+	var returns *ImagebuilderInfrastructureConfigurationLoggingS3Logs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) IsSingleItem() *bool {
@@ -14639,7 +15373,7 @@ func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference(terr
 	j := jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14651,9 +15385,17 @@ func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) SetInternalValue(val *ImagebuilderInfrastructureConfigurationLoggingS3Logs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

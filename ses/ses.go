@@ -230,7 +230,7 @@ func NewSesActiveReceiptRuleSet(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_SesActiveReceiptRuleSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSet",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -243,7 +243,7 @@ func NewSesActiveReceiptRuleSet_Override(s SesActiveReceiptRuleSet, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSet",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -299,7 +299,7 @@ func SesActiveReceiptRuleSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSet",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -312,7 +312,7 @@ func SesActiveReceiptRuleSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesActiveReceiptRuleSet",
+		"hashicorp_aws.ses.SesActiveReceiptRuleSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -474,6 +474,7 @@ func (s *jsiiProxy_SesActiveReceiptRuleSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesActiveReceiptRuleSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -791,7 +792,7 @@ func NewSesConfigurationSet(scope constructs.Construct, id *string, config *SesC
 	j := jsiiProxy_SesConfigurationSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesConfigurationSet",
+		"hashicorp_aws.ses.SesConfigurationSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -804,7 +805,7 @@ func NewSesConfigurationSet_Override(s SesConfigurationSet, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesConfigurationSet",
+		"hashicorp_aws.ses.SesConfigurationSet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -876,7 +877,7 @@ func SesConfigurationSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesConfigurationSet",
+		"hashicorp_aws.ses.SesConfigurationSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -889,7 +890,7 @@ func SesConfigurationSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesConfigurationSet",
+		"hashicorp_aws.ses.SesConfigurationSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -1083,6 +1084,7 @@ func (s *jsiiProxy_SesConfigurationSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesConfigurationSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1111,6 +1113,8 @@ type SesConfigurationSetDeliveryOptions struct {
 
 type SesConfigurationSetDeliveryOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SesConfigurationSetDeliveryOptions
+	SetInternalValue(val *SesConfigurationSetDeliveryOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1132,6 +1136,16 @@ type SesConfigurationSetDeliveryOptionsOutputReference interface {
 // The jsii proxy struct for SesConfigurationSetDeliveryOptionsOutputReference
 type jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) InternalValue() *SesConfigurationSetDeliveryOptions {
+	var returns *SesConfigurationSetDeliveryOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) IsSingleItem() *bool {
@@ -1190,7 +1204,7 @@ func NewSesConfigurationSetDeliveryOptionsOutputReference(terraformResource cdkt
 	j := jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesConfigurationSetDeliveryOptionsOutputReference",
+		"hashicorp_aws.ses.SesConfigurationSetDeliveryOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1202,9 +1216,17 @@ func NewSesConfigurationSetDeliveryOptionsOutputReference_Override(s SesConfigur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesConfigurationSetDeliveryOptionsOutputReference",
+		"hashicorp_aws.ses.SesConfigurationSetDeliveryOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) SetInternalValue(val *SesConfigurationSetDeliveryOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1553,7 +1575,7 @@ func NewSesDomainDkim(scope constructs.Construct, id *string, config *SesDomainD
 	j := jsiiProxy_SesDomainDkim{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainDkim",
+		"hashicorp_aws.ses.SesDomainDkim",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1566,7 +1588,7 @@ func NewSesDomainDkim_Override(s SesDomainDkim, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainDkim",
+		"hashicorp_aws.ses.SesDomainDkim",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1622,7 +1644,7 @@ func SesDomainDkim_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesDomainDkim",
+		"hashicorp_aws.ses.SesDomainDkim",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1635,7 +1657,7 @@ func SesDomainDkim_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesDomainDkim",
+		"hashicorp_aws.ses.SesDomainDkim",
 		"tfResourceType",
 		&returns,
 	)
@@ -1797,6 +1819,7 @@ func (s *jsiiProxy_SesDomainDkim) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesDomainDkimConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2042,7 +2065,7 @@ func NewSesDomainIdentity(scope constructs.Construct, id *string, config *SesDom
 	j := jsiiProxy_SesDomainIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentity",
+		"hashicorp_aws.ses.SesDomainIdentity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2055,7 +2078,7 @@ func NewSesDomainIdentity_Override(s SesDomainIdentity, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentity",
+		"hashicorp_aws.ses.SesDomainIdentity",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2111,7 +2134,7 @@ func SesDomainIdentity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesDomainIdentity",
+		"hashicorp_aws.ses.SesDomainIdentity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2124,7 +2147,7 @@ func SesDomainIdentity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesDomainIdentity",
+		"hashicorp_aws.ses.SesDomainIdentity",
 		"tfResourceType",
 		&returns,
 	)
@@ -2286,6 +2309,7 @@ func (s *jsiiProxy_SesDomainIdentity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesDomainIdentityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2544,7 +2568,7 @@ func NewSesDomainIdentityVerification(scope constructs.Construct, id *string, co
 	j := jsiiProxy_SesDomainIdentityVerification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentityVerification",
+		"hashicorp_aws.ses.SesDomainIdentityVerification",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2557,7 +2581,7 @@ func NewSesDomainIdentityVerification_Override(s SesDomainIdentityVerification, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentityVerification",
+		"hashicorp_aws.ses.SesDomainIdentityVerification",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2613,7 +2637,7 @@ func SesDomainIdentityVerification_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesDomainIdentityVerification",
+		"hashicorp_aws.ses.SesDomainIdentityVerification",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2626,7 +2650,7 @@ func SesDomainIdentityVerification_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesDomainIdentityVerification",
+		"hashicorp_aws.ses.SesDomainIdentityVerification",
 		"tfResourceType",
 		&returns,
 	)
@@ -2804,6 +2828,7 @@ func (s *jsiiProxy_SesDomainIdentityVerification) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesDomainIdentityVerificationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2831,6 +2856,8 @@ type SesDomainIdentityVerificationTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *SesDomainIdentityVerificationTimeouts
+	SetInternalValue(val *SesDomainIdentityVerificationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2866,6 +2893,16 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) CreateI
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) InternalValue() *SesDomainIdentityVerificationTimeouts {
+	var returns *SesDomainIdentityVerificationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2907,7 +2944,7 @@ func NewSesDomainIdentityVerificationTimeoutsOutputReference(terraformResource c
 	j := jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentityVerificationTimeoutsOutputReference",
+		"hashicorp_aws.ses.SesDomainIdentityVerificationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2919,7 +2956,7 @@ func NewSesDomainIdentityVerificationTimeoutsOutputReference_Override(s SesDomai
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainIdentityVerificationTimeoutsOutputReference",
+		"hashicorp_aws.ses.SesDomainIdentityVerificationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2929,6 +2966,14 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetCrea
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetInternalValue(val *SesDomainIdentityVerificationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3306,7 +3351,7 @@ func NewSesDomainMailFrom(scope constructs.Construct, id *string, config *SesDom
 	j := jsiiProxy_SesDomainMailFrom{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainMailFrom",
+		"hashicorp_aws.ses.SesDomainMailFrom",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3319,7 +3364,7 @@ func NewSesDomainMailFrom_Override(s SesDomainMailFrom, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesDomainMailFrom",
+		"hashicorp_aws.ses.SesDomainMailFrom",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3391,7 +3436,7 @@ func SesDomainMailFrom_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesDomainMailFrom",
+		"hashicorp_aws.ses.SesDomainMailFrom",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3404,7 +3449,7 @@ func SesDomainMailFrom_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesDomainMailFrom",
+		"hashicorp_aws.ses.SesDomainMailFrom",
 		"tfResourceType",
 		&returns,
 	)
@@ -3574,6 +3619,7 @@ func (s *jsiiProxy_SesDomainMailFrom) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesDomainMailFromConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3812,7 +3858,7 @@ func NewSesEmailIdentity(scope constructs.Construct, id *string, config *SesEmai
 	j := jsiiProxy_SesEmailIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEmailIdentity",
+		"hashicorp_aws.ses.SesEmailIdentity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3825,7 +3871,7 @@ func NewSesEmailIdentity_Override(s SesEmailIdentity, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEmailIdentity",
+		"hashicorp_aws.ses.SesEmailIdentity",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3881,7 +3927,7 @@ func SesEmailIdentity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesEmailIdentity",
+		"hashicorp_aws.ses.SesEmailIdentity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3894,7 +3940,7 @@ func SesEmailIdentity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesEmailIdentity",
+		"hashicorp_aws.ses.SesEmailIdentity",
 		"tfResourceType",
 		&returns,
 	)
@@ -4056,6 +4102,7 @@ func (s *jsiiProxy_SesEmailIdentity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesEmailIdentityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4432,7 +4479,7 @@ func NewSesEventDestination(scope constructs.Construct, id *string, config *SesE
 	j := jsiiProxy_SesEventDestination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestination",
+		"hashicorp_aws.ses.SesEventDestination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4445,7 +4492,7 @@ func NewSesEventDestination_Override(s SesEventDestination, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestination",
+		"hashicorp_aws.ses.SesEventDestination",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -4533,7 +4580,7 @@ func SesEventDestination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesEventDestination",
+		"hashicorp_aws.ses.SesEventDestination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4546,7 +4593,7 @@ func SesEventDestination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesEventDestination",
+		"hashicorp_aws.ses.SesEventDestination",
 		"tfResourceType",
 		&returns,
 	)
@@ -4765,6 +4812,7 @@ type SesEventDestinationCloudwatchDestination struct {
 	ValueSource *string `json:"valueSource"`
 }
 
+// AWS Simple Email Service.
 type SesEventDestinationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4805,6 +4853,8 @@ type SesEventDestinationKinesisDestination struct {
 
 type SesEventDestinationKinesisDestinationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SesEventDestinationKinesisDestination
+	SetInternalValue(val *SesEventDestinationKinesisDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -4828,6 +4878,16 @@ type SesEventDestinationKinesisDestinationOutputReference interface {
 // The jsii proxy struct for SesEventDestinationKinesisDestinationOutputReference
 type jsiiProxy_SesEventDestinationKinesisDestinationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) InternalValue() *SesEventDestinationKinesisDestination {
+	var returns *SesEventDestinationKinesisDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) IsSingleItem() *bool {
@@ -4906,7 +4966,7 @@ func NewSesEventDestinationKinesisDestinationOutputReference(terraformResource c
 	j := jsiiProxy_SesEventDestinationKinesisDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestinationKinesisDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationKinesisDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4918,9 +4978,17 @@ func NewSesEventDestinationKinesisDestinationOutputReference_Override(s SesEvent
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestinationKinesisDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationKinesisDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) SetInternalValue(val *SesEventDestinationKinesisDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5055,6 +5123,8 @@ type SesEventDestinationSnsDestination struct {
 
 type SesEventDestinationSnsDestinationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SesEventDestinationSnsDestination
+	SetInternalValue(val *SesEventDestinationSnsDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5075,6 +5145,16 @@ type SesEventDestinationSnsDestinationOutputReference interface {
 // The jsii proxy struct for SesEventDestinationSnsDestinationOutputReference
 type jsiiProxy_SesEventDestinationSnsDestinationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) InternalValue() *SesEventDestinationSnsDestination {
+	var returns *SesEventDestinationSnsDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) IsSingleItem() *bool {
@@ -5133,7 +5213,7 @@ func NewSesEventDestinationSnsDestinationOutputReference(terraformResource cdktf
 	j := jsiiProxy_SesEventDestinationSnsDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestinationSnsDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationSnsDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5145,9 +5225,17 @@ func NewSesEventDestinationSnsDestinationOutputReference_Override(s SesEventDest
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesEventDestinationSnsDestinationOutputReference",
+		"hashicorp_aws.ses.SesEventDestinationSnsDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) SetInternalValue(val *SesEventDestinationSnsDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5548,7 +5636,7 @@ func NewSesIdentityNotificationTopic(scope constructs.Construct, id *string, con
 	j := jsiiProxy_SesIdentityNotificationTopic{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesIdentityNotificationTopic",
+		"hashicorp_aws.ses.SesIdentityNotificationTopic",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5561,7 +5649,7 @@ func NewSesIdentityNotificationTopic_Override(s SesIdentityNotificationTopic, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesIdentityNotificationTopic",
+		"hashicorp_aws.ses.SesIdentityNotificationTopic",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5641,7 +5729,7 @@ func SesIdentityNotificationTopic_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesIdentityNotificationTopic",
+		"hashicorp_aws.ses.SesIdentityNotificationTopic",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5654,7 +5742,7 @@ func SesIdentityNotificationTopic_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesIdentityNotificationTopic",
+		"hashicorp_aws.ses.SesIdentityNotificationTopic",
 		"tfResourceType",
 		&returns,
 	)
@@ -5832,6 +5920,7 @@ func (s *jsiiProxy_SesIdentityNotificationTopic) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesIdentityNotificationTopicConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6107,7 +6196,7 @@ func NewSesIdentityPolicy(scope constructs.Construct, id *string, config *SesIde
 	j := jsiiProxy_SesIdentityPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesIdentityPolicy",
+		"hashicorp_aws.ses.SesIdentityPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6120,7 +6209,7 @@ func NewSesIdentityPolicy_Override(s SesIdentityPolicy, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesIdentityPolicy",
+		"hashicorp_aws.ses.SesIdentityPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6192,7 +6281,7 @@ func SesIdentityPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesIdentityPolicy",
+		"hashicorp_aws.ses.SesIdentityPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6205,7 +6294,7 @@ func SesIdentityPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesIdentityPolicy",
+		"hashicorp_aws.ses.SesIdentityPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -6367,6 +6456,7 @@ func (s *jsiiProxy_SesIdentityPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesIdentityPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6651,7 +6741,7 @@ func NewSesReceiptFilter(scope constructs.Construct, id *string, config *SesRece
 	j := jsiiProxy_SesReceiptFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptFilter",
+		"hashicorp_aws.ses.SesReceiptFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6664,7 +6754,7 @@ func NewSesReceiptFilter_Override(s SesReceiptFilter, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptFilter",
+		"hashicorp_aws.ses.SesReceiptFilter",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6736,7 +6826,7 @@ func SesReceiptFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesReceiptFilter",
+		"hashicorp_aws.ses.SesReceiptFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6749,7 +6839,7 @@ func SesReceiptFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesReceiptFilter",
+		"hashicorp_aws.ses.SesReceiptFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -6911,6 +7001,7 @@ func (s *jsiiProxy_SesReceiptFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesReceiptFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7460,7 +7551,7 @@ func NewSesReceiptRule(scope constructs.Construct, id *string, config *SesReceip
 	j := jsiiProxy_SesReceiptRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptRule",
+		"hashicorp_aws.ses.SesReceiptRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7473,7 +7564,7 @@ func NewSesReceiptRule_Override(s SesReceiptRule, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptRule",
+		"hashicorp_aws.ses.SesReceiptRule",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -7633,7 +7724,7 @@ func SesReceiptRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesReceiptRule",
+		"hashicorp_aws.ses.SesReceiptRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7646,7 +7737,7 @@ func SesReceiptRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesReceiptRule",
+		"hashicorp_aws.ses.SesReceiptRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -7928,6 +8019,7 @@ type SesReceiptRuleBounceAction struct {
 	TopicArn *string `json:"topicArn"`
 }
 
+// AWS Simple Email Service.
 type SesReceiptRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8226,7 +8318,7 @@ func NewSesReceiptRuleSet(scope constructs.Construct, id *string, config *SesRec
 	j := jsiiProxy_SesReceiptRuleSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptRuleSet",
+		"hashicorp_aws.ses.SesReceiptRuleSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8239,7 +8331,7 @@ func NewSesReceiptRuleSet_Override(s SesReceiptRuleSet, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesReceiptRuleSet",
+		"hashicorp_aws.ses.SesReceiptRuleSet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8295,7 +8387,7 @@ func SesReceiptRuleSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesReceiptRuleSet",
+		"hashicorp_aws.ses.SesReceiptRuleSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8308,7 +8400,7 @@ func SesReceiptRuleSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesReceiptRuleSet",
+		"hashicorp_aws.ses.SesReceiptRuleSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -8470,6 +8562,7 @@ func (s *jsiiProxy_SesReceiptRuleSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesReceiptRuleSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8803,7 +8896,7 @@ func NewSesTemplate(scope constructs.Construct, id *string, config *SesTemplateC
 	j := jsiiProxy_SesTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesTemplate",
+		"hashicorp_aws.ses.SesTemplate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8816,7 +8909,7 @@ func NewSesTemplate_Override(s SesTemplate, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SES.SesTemplate",
+		"hashicorp_aws.ses.SesTemplate",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8896,7 +8989,7 @@ func SesTemplate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SES.SesTemplate",
+		"hashicorp_aws.ses.SesTemplate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8909,7 +9002,7 @@ func SesTemplate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SES.SesTemplate",
+		"hashicorp_aws.ses.SesTemplate",
 		"tfResourceType",
 		&returns,
 	)
@@ -9095,6 +9188,7 @@ func (s *jsiiProxy_SesTemplate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Email Service.
 type SesTemplateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

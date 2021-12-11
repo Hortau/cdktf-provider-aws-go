@@ -421,7 +421,7 @@ func NewCloudwatchCompositeAlarm(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_CloudwatchCompositeAlarm{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarm",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -434,7 +434,7 @@ func NewCloudwatchCompositeAlarm_Override(c CloudwatchCompositeAlarm, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarm",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -554,7 +554,7 @@ func CloudwatchCompositeAlarm_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarm",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -567,7 +567,7 @@ func CloudwatchCompositeAlarm_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchCompositeAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchCompositeAlarm",
 		"tfResourceType",
 		&returns,
 	)
@@ -785,6 +785,7 @@ func (c *jsiiProxy_CloudwatchCompositeAlarm) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchCompositeAlarmConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1058,7 +1059,7 @@ func NewCloudwatchDashboard(scope constructs.Construct, id *string, config *Clou
 	j := jsiiProxy_CloudwatchDashboard{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboard",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboard",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1071,7 +1072,7 @@ func NewCloudwatchDashboard_Override(c CloudwatchDashboard, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboard",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboard",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1135,7 +1136,7 @@ func CloudwatchDashboard_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboard",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboard",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1148,7 +1149,7 @@ func CloudwatchDashboard_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchDashboard",
+		"hashicorp_aws.cloudwatch.CloudwatchDashboard",
 		"tfResourceType",
 		&returns,
 	)
@@ -1310,6 +1311,7 @@ func (c *jsiiProxy_CloudwatchDashboard) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchDashboardConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1592,7 +1594,7 @@ func NewCloudwatchLogDestination(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_CloudwatchLogDestination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestination",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1605,7 +1607,7 @@ func NewCloudwatchLogDestination_Override(c CloudwatchLogDestination, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestination",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestination",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1677,7 +1679,7 @@ func CloudwatchLogDestination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestination",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1690,7 +1692,7 @@ func CloudwatchLogDestination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestination",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestination",
 		"tfResourceType",
 		&returns,
 	)
@@ -1852,6 +1854,7 @@ func (c *jsiiProxy_CloudwatchLogDestination) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogDestinationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2102,7 +2105,7 @@ func NewCloudwatchLogDestinationPolicy(scope constructs.Construct, id *string, c
 	j := jsiiProxy_CloudwatchLogDestinationPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2115,7 +2118,7 @@ func NewCloudwatchLogDestinationPolicy_Override(c CloudwatchLogDestinationPolicy
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2179,7 +2182,7 @@ func CloudwatchLogDestinationPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2192,7 +2195,7 @@ func CloudwatchLogDestinationPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogDestinationPolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogDestinationPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2354,6 +2357,7 @@ func (c *jsiiProxy_CloudwatchLogDestinationPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogDestinationPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2711,7 +2715,7 @@ func NewCloudwatchLogGroup(scope constructs.Construct, id *string, config *Cloud
 	j := jsiiProxy_CloudwatchLogGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2724,7 +2728,7 @@ func NewCloudwatchLogGroup_Override(c CloudwatchLogGroup, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2820,7 +2824,7 @@ func CloudwatchLogGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2833,7 +2837,7 @@ func CloudwatchLogGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.CloudwatchLogGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -3043,6 +3047,7 @@ func (c *jsiiProxy_CloudwatchLogGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3345,7 +3350,7 @@ func NewCloudwatchLogMetricFilter(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CloudwatchLogMetricFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3358,7 +3363,7 @@ func NewCloudwatchLogMetricFilter_Override(c CloudwatchLogMetricFilter, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilter",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3430,7 +3435,7 @@ func CloudwatchLogMetricFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3443,7 +3448,7 @@ func CloudwatchLogMetricFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -3613,6 +3618,7 @@ func (c *jsiiProxy_CloudwatchLogMetricFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogMetricFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3657,6 +3663,8 @@ type CloudwatchLogMetricFilterMetricTransformationOutputReference interface {
 	Dimensions() interface{}
 	SetDimensions(val interface{})
 	DimensionsInput() interface{}
+	InternalValue() *CloudwatchLogMetricFilterMetricTransformation
+	SetInternalValue(val *CloudwatchLogMetricFilterMetricTransformation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -3726,6 +3734,16 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) InternalValue() *CloudwatchLogMetricFilterMetricTransformation {
+	var returns *CloudwatchLogMetricFilterMetricTransformation
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3847,7 +3865,7 @@ func NewCloudwatchLogMetricFilterMetricTransformationOutputReference(terraformRe
 	j := jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3859,7 +3877,7 @@ func NewCloudwatchLogMetricFilterMetricTransformationOutputReference_Override(c 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchLogMetricFilterMetricTransformationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3877,6 +3895,14 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	_jsii_.Set(
 		j,
 		"dimensions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) SetInternalValue(val *CloudwatchLogMetricFilterMetricTransformation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4278,7 +4304,7 @@ func NewCloudwatchLogResourcePolicy(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_CloudwatchLogResourcePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4291,7 +4317,7 @@ func NewCloudwatchLogResourcePolicy_Override(c CloudwatchLogResourcePolicy, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -4355,7 +4381,7 @@ func CloudwatchLogResourcePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4368,7 +4394,7 @@ func CloudwatchLogResourcePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogResourcePolicy",
+		"hashicorp_aws.cloudwatch.CloudwatchLogResourcePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -4530,6 +4556,7 @@ func (c *jsiiProxy_CloudwatchLogResourcePolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogResourcePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4789,7 +4816,7 @@ func NewCloudwatchLogStream(scope constructs.Construct, id *string, config *Clou
 	j := jsiiProxy_CloudwatchLogStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStream",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4802,7 +4829,7 @@ func NewCloudwatchLogStream_Override(c CloudwatchLogStream, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStream",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStream",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -4866,7 +4893,7 @@ func CloudwatchLogStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStream",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4879,7 +4906,7 @@ func CloudwatchLogStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogStream",
+		"hashicorp_aws.cloudwatch.CloudwatchLogStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -5041,6 +5068,7 @@ func (c *jsiiProxy_CloudwatchLogStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5383,7 +5411,7 @@ func NewCloudwatchLogSubscriptionFilter(scope constructs.Construct, id *string, 
 	j := jsiiProxy_CloudwatchLogSubscriptionFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5396,7 +5424,7 @@ func NewCloudwatchLogSubscriptionFilter_Override(c CloudwatchLogSubscriptionFilt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilter",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -5492,7 +5520,7 @@ func CloudwatchLogSubscriptionFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5505,7 +5533,7 @@ func CloudwatchLogSubscriptionFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchLogSubscriptionFilter",
+		"hashicorp_aws.cloudwatch.CloudwatchLogSubscriptionFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -5683,6 +5711,7 @@ func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchLogSubscriptionFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6453,7 +6482,7 @@ func NewCloudwatchMetricAlarm(scope constructs.Construct, id *string, config *Cl
 	j := jsiiProxy_CloudwatchMetricAlarm{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarm",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6466,7 +6495,7 @@ func NewCloudwatchMetricAlarm_Override(c CloudwatchMetricAlarm, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarm",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -6698,7 +6727,7 @@ func CloudwatchMetricAlarm_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarm",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6711,7 +6740,7 @@ func CloudwatchMetricAlarm_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarm",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarm",
 		"tfResourceType",
 		&returns,
 	)
@@ -7033,6 +7062,7 @@ func (c *jsiiProxy_CloudwatchMetricAlarm) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchMetricAlarmConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7129,6 +7159,8 @@ type CloudwatchMetricAlarmMetricQueryMetricOutputReference interface {
 	Dimensions() interface{}
 	SetDimensions(val interface{})
 	DimensionsInput() interface{}
+	InternalValue() *CloudwatchMetricAlarmMetricQueryMetric
+	SetInternalValue(val *CloudwatchMetricAlarmMetricQueryMetric)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetricName() *string
@@ -7181,6 +7213,16 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) Dimens
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) InternalValue() *CloudwatchMetricAlarmMetricQueryMetric {
+	var returns *CloudwatchMetricAlarmMetricQueryMetric
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7322,7 +7364,7 @@ func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference(terraformResource 
 	j := jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7334,7 +7376,7 @@ func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference_Override(c Cloudwa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricAlarmMetricQueryMetricOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -7344,6 +7386,14 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetDim
 	_jsii_.Set(
 		j,
 		"dimensions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetInternalValue(val *CloudwatchMetricAlarmMetricQueryMetric) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7988,7 +8038,7 @@ func NewCloudwatchMetricStream(scope constructs.Construct, id *string, config *C
 	j := jsiiProxy_CloudwatchMetricStream{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStream",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStream",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8001,7 +8051,7 @@ func NewCloudwatchMetricStream_Override(c CloudwatchMetricStream, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStream",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStream",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -8121,7 +8171,7 @@ func CloudwatchMetricStream_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStream",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStream",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8134,7 +8184,7 @@ func CloudwatchMetricStream_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStream",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStream",
 		"tfResourceType",
 		&returns,
 	)
@@ -8360,6 +8410,7 @@ func (c *jsiiProxy_CloudwatchMetricStream) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchMetricStreamConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8422,6 +8473,8 @@ type CloudwatchMetricStreamTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *CloudwatchMetricStreamTimeouts
+	SetInternalValue(val *CloudwatchMetricStreamTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8483,6 +8536,16 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) DeleteInput() 
 	return returns
 }
 
+func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) InternalValue() *CloudwatchMetricStreamTimeouts {
+	var returns *CloudwatchMetricStreamTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8519,7 +8582,7 @@ func NewCloudwatchMetricStreamTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamTimeoutsOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8531,7 +8594,7 @@ func NewCloudwatchMetricStreamTimeoutsOutputReference_Override(c CloudwatchMetri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchMetricStreamTimeoutsOutputReference",
+		"hashicorp_aws.cloudwatch.CloudwatchMetricStreamTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8549,6 +8612,14 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetDelete(val 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetInternalValue(val *CloudwatchMetricStreamTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8945,7 +9016,7 @@ func NewCloudwatchQueryDefinition(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CloudwatchQueryDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinition",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8958,7 +9029,7 @@ func NewCloudwatchQueryDefinition_Override(c CloudwatchQueryDefinition, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinition",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinition",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -9030,7 +9101,7 @@ func CloudwatchQueryDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinition",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9043,7 +9114,7 @@ func CloudwatchQueryDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.CloudwatchQueryDefinition",
+		"hashicorp_aws.cloudwatch.CloudwatchQueryDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -9213,6 +9284,7 @@ func (c *jsiiProxy_CloudwatchQueryDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type CloudwatchQueryDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9508,7 +9580,7 @@ func NewDataAwsCloudwatchLogGroup(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsCloudwatchLogGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9521,7 +9593,7 @@ func NewDataAwsCloudwatchLogGroup_Override(d DataAwsCloudwatchLogGroup, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9585,7 +9657,7 @@ func DataAwsCloudwatchLogGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9598,7 +9670,7 @@ func DataAwsCloudwatchLogGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroup",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -9768,6 +9840,7 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type DataAwsCloudwatchLogGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10015,7 +10088,7 @@ func NewDataAwsCloudwatchLogGroups(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsCloudwatchLogGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroups",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroups",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10028,7 +10101,7 @@ func NewDataAwsCloudwatchLogGroups_Override(d DataAwsCloudwatchLogGroups, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroups",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroups",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10084,7 +10157,7 @@ func DataAwsCloudwatchLogGroups_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroups",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroups",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10097,7 +10170,7 @@ func DataAwsCloudwatchLogGroups_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudWatch.DataAwsCloudwatchLogGroups",
+		"hashicorp_aws.cloudwatch.DataAwsCloudwatchLogGroups",
 		"tfResourceType",
 		&returns,
 	)
@@ -10259,6 +10332,7 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroups) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudWatch.
 type DataAwsCloudwatchLogGroupsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

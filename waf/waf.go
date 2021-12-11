@@ -219,7 +219,7 @@ func NewDataAwsWafIpset(scope constructs.Construct, id *string, config *DataAwsW
 	j := jsiiProxy_DataAwsWafIpset{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafIpset",
+		"hashicorp_aws.waf.DataAwsWafIpset",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -232,7 +232,7 @@ func NewDataAwsWafIpset_Override(d DataAwsWafIpset, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafIpset",
+		"hashicorp_aws.waf.DataAwsWafIpset",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -288,7 +288,7 @@ func DataAwsWafIpset_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.DataAwsWafIpset",
+		"hashicorp_aws.waf.DataAwsWafIpset",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -301,7 +301,7 @@ func DataAwsWafIpset_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.DataAwsWafIpset",
+		"hashicorp_aws.waf.DataAwsWafIpset",
 		"tfResourceType",
 		&returns,
 	)
@@ -463,6 +463,7 @@ func (d *jsiiProxy_DataAwsWafIpset) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type DataAwsWafIpsetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -686,7 +687,7 @@ func NewDataAwsWafRateBasedRule(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsWafRateBasedRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafRateBasedRule",
+		"hashicorp_aws.waf.DataAwsWafRateBasedRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -699,7 +700,7 @@ func NewDataAwsWafRateBasedRule_Override(d DataAwsWafRateBasedRule, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafRateBasedRule",
+		"hashicorp_aws.waf.DataAwsWafRateBasedRule",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -755,7 +756,7 @@ func DataAwsWafRateBasedRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.DataAwsWafRateBasedRule",
+		"hashicorp_aws.waf.DataAwsWafRateBasedRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -768,7 +769,7 @@ func DataAwsWafRateBasedRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.DataAwsWafRateBasedRule",
+		"hashicorp_aws.waf.DataAwsWafRateBasedRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -930,6 +931,7 @@ func (d *jsiiProxy_DataAwsWafRateBasedRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type DataAwsWafRateBasedRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1153,7 +1155,7 @@ func NewDataAwsWafRule(scope constructs.Construct, id *string, config *DataAwsWa
 	j := jsiiProxy_DataAwsWafRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafRule",
+		"hashicorp_aws.waf.DataAwsWafRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1166,7 +1168,7 @@ func NewDataAwsWafRule_Override(d DataAwsWafRule, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafRule",
+		"hashicorp_aws.waf.DataAwsWafRule",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1222,7 +1224,7 @@ func DataAwsWafRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.DataAwsWafRule",
+		"hashicorp_aws.waf.DataAwsWafRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1235,7 +1237,7 @@ func DataAwsWafRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.DataAwsWafRule",
+		"hashicorp_aws.waf.DataAwsWafRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -1397,6 +1399,7 @@ func (d *jsiiProxy_DataAwsWafRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type DataAwsWafRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1620,7 +1623,7 @@ func NewDataAwsWafWebAcl(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsWafWebAcl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafWebAcl",
+		"hashicorp_aws.waf.DataAwsWafWebAcl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1633,7 +1636,7 @@ func NewDataAwsWafWebAcl_Override(d DataAwsWafWebAcl, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.DataAwsWafWebAcl",
+		"hashicorp_aws.waf.DataAwsWafWebAcl",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1689,7 +1692,7 @@ func DataAwsWafWebAcl_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.DataAwsWafWebAcl",
+		"hashicorp_aws.waf.DataAwsWafWebAcl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1702,7 +1705,7 @@ func DataAwsWafWebAcl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.DataAwsWafWebAcl",
+		"hashicorp_aws.waf.DataAwsWafWebAcl",
 		"tfResourceType",
 		&returns,
 	)
@@ -1864,6 +1867,7 @@ func (d *jsiiProxy_DataAwsWafWebAcl) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type DataAwsWafWebAclConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2111,7 +2115,7 @@ func NewWafByteMatchSet(scope constructs.Construct, id *string, config *WafByteM
 	j := jsiiProxy_WafByteMatchSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafByteMatchSet",
+		"hashicorp_aws.waf.WafByteMatchSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2124,7 +2128,7 @@ func NewWafByteMatchSet_Override(w WafByteMatchSet, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafByteMatchSet",
+		"hashicorp_aws.waf.WafByteMatchSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -2188,7 +2192,7 @@ func WafByteMatchSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafByteMatchSet",
+		"hashicorp_aws.waf.WafByteMatchSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2201,7 +2205,7 @@ func WafByteMatchSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafByteMatchSet",
+		"hashicorp_aws.waf.WafByteMatchSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -2396,6 +2400,8 @@ type WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference interface {
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
+	InternalValue() *WafByteMatchSetByteMatchTuplesFieldToMatch
+	SetInternalValue(val *WafByteMatchSetByteMatchTuplesFieldToMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2434,6 +2440,16 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Da
 	_jsii_.Get(
 		j,
 		"dataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) InternalValue() *WafByteMatchSetByteMatchTuplesFieldToMatch {
+	var returns *WafByteMatchSetByteMatchTuplesFieldToMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2495,7 +2511,7 @@ func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference(terraformResou
 	j := jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2507,7 +2523,7 @@ func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference_Override(w Waf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -2517,6 +2533,14 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Se
 	_jsii_.Set(
 		j,
 		"data",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) SetInternalValue(val *WafByteMatchSetByteMatchTuplesFieldToMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2645,6 +2669,7 @@ func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Re
 	)
 }
 
+// AWS WAF.
 type WafByteMatchSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2907,7 +2932,7 @@ func NewWafGeoMatchSet(scope constructs.Construct, id *string, config *WafGeoMat
 	j := jsiiProxy_WafGeoMatchSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafGeoMatchSet",
+		"hashicorp_aws.waf.WafGeoMatchSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2920,7 +2945,7 @@ func NewWafGeoMatchSet_Override(w WafGeoMatchSet, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafGeoMatchSet",
+		"hashicorp_aws.waf.WafGeoMatchSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -2984,7 +3009,7 @@ func WafGeoMatchSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafGeoMatchSet",
+		"hashicorp_aws.waf.WafGeoMatchSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2997,7 +3022,7 @@ func WafGeoMatchSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafGeoMatchSet",
+		"hashicorp_aws.waf.WafGeoMatchSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -3167,6 +3192,7 @@ func (w *jsiiProxy_WafGeoMatchSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafGeoMatchSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3436,7 +3462,7 @@ func NewWafIpset(scope constructs.Construct, id *string, config *WafIpsetConfig)
 	j := jsiiProxy_WafIpset{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafIpset",
+		"hashicorp_aws.waf.WafIpset",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3449,7 +3475,7 @@ func NewWafIpset_Override(w WafIpset, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafIpset",
+		"hashicorp_aws.waf.WafIpset",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -3513,7 +3539,7 @@ func WafIpset_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafIpset",
+		"hashicorp_aws.waf.WafIpset",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3526,7 +3552,7 @@ func WafIpset_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafIpset",
+		"hashicorp_aws.waf.WafIpset",
 		"tfResourceType",
 		&returns,
 	)
@@ -3696,6 +3722,7 @@ func (w *jsiiProxy_WafIpset) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafIpsetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4082,7 +4109,7 @@ func NewWafRateBasedRule(scope constructs.Construct, id *string, config *WafRate
 	j := jsiiProxy_WafRateBasedRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRateBasedRule",
+		"hashicorp_aws.waf.WafRateBasedRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4095,7 +4122,7 @@ func NewWafRateBasedRule_Override(w WafRateBasedRule, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRateBasedRule",
+		"hashicorp_aws.waf.WafRateBasedRule",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -4199,7 +4226,7 @@ func WafRateBasedRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafRateBasedRule",
+		"hashicorp_aws.waf.WafRateBasedRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4212,7 +4239,7 @@ func WafRateBasedRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafRateBasedRule",
+		"hashicorp_aws.waf.WafRateBasedRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -4398,6 +4425,7 @@ func (w *jsiiProxy_WafRateBasedRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafRateBasedRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4679,7 +4707,7 @@ func NewWafRegexMatchSet(scope constructs.Construct, id *string, config *WafRege
 	j := jsiiProxy_WafRegexMatchSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexMatchSet",
+		"hashicorp_aws.waf.WafRegexMatchSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4692,7 +4720,7 @@ func NewWafRegexMatchSet_Override(w WafRegexMatchSet, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexMatchSet",
+		"hashicorp_aws.waf.WafRegexMatchSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -4756,7 +4784,7 @@ func WafRegexMatchSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafRegexMatchSet",
+		"hashicorp_aws.waf.WafRegexMatchSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4769,7 +4797,7 @@ func WafRegexMatchSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafRegexMatchSet",
+		"hashicorp_aws.waf.WafRegexMatchSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -4939,6 +4967,7 @@ func (w *jsiiProxy_WafRegexMatchSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafRegexMatchSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4979,6 +5008,8 @@ type WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference interface {
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
+	InternalValue() *WafRegexMatchSetRegexMatchTupleFieldToMatch
+	SetInternalValue(val *WafRegexMatchSetRegexMatchTupleFieldToMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5017,6 +5048,16 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) D
 	_jsii_.Get(
 		j,
 		"dataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) InternalValue() *WafRegexMatchSetRegexMatchTupleFieldToMatch {
+	var returns *WafRegexMatchSetRegexMatchTupleFieldToMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5078,7 +5119,7 @@ func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference(terraformReso
 	j := jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5090,7 +5131,7 @@ func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference_Override(w Wa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -5100,6 +5141,14 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) S
 	_jsii_.Set(
 		j,
 		"data",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) SetInternalValue(val *WafRegexMatchSetRegexMatchTupleFieldToMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5473,7 +5522,7 @@ func NewWafRegexPatternSet(scope constructs.Construct, id *string, config *WafRe
 	j := jsiiProxy_WafRegexPatternSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexPatternSet",
+		"hashicorp_aws.waf.WafRegexPatternSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5486,7 +5535,7 @@ func NewWafRegexPatternSet_Override(w WafRegexPatternSet, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRegexPatternSet",
+		"hashicorp_aws.waf.WafRegexPatternSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -5550,7 +5599,7 @@ func WafRegexPatternSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafRegexPatternSet",
+		"hashicorp_aws.waf.WafRegexPatternSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5563,7 +5612,7 @@ func WafRegexPatternSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafRegexPatternSet",
+		"hashicorp_aws.waf.WafRegexPatternSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -5733,6 +5782,7 @@ func (w *jsiiProxy_WafRegexPatternSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafRegexPatternSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6064,7 +6114,7 @@ func NewWafRule(scope constructs.Construct, id *string, config *WafRuleConfig) W
 	j := jsiiProxy_WafRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRule",
+		"hashicorp_aws.waf.WafRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6077,7 +6127,7 @@ func NewWafRule_Override(w WafRule, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRule",
+		"hashicorp_aws.waf.WafRule",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -6165,7 +6215,7 @@ func WafRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafRule",
+		"hashicorp_aws.waf.WafRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6178,7 +6228,7 @@ func WafRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafRule",
+		"hashicorp_aws.waf.WafRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -6364,6 +6414,7 @@ func (w *jsiiProxy_WafRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6703,7 +6754,7 @@ func NewWafRuleGroup(scope constructs.Construct, id *string, config *WafRuleGrou
 	j := jsiiProxy_WafRuleGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRuleGroup",
+		"hashicorp_aws.waf.WafRuleGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6716,7 +6767,7 @@ func NewWafRuleGroup_Override(w WafRuleGroup, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRuleGroup",
+		"hashicorp_aws.waf.WafRuleGroup",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -6804,7 +6855,7 @@ func WafRuleGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafRuleGroup",
+		"hashicorp_aws.waf.WafRuleGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6817,7 +6868,7 @@ func WafRuleGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafRuleGroup",
+		"hashicorp_aws.waf.WafRuleGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -7023,6 +7074,8 @@ type WafRuleGroupActivatedRuleAction struct {
 
 type WafRuleGroupActivatedRuleActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WafRuleGroupActivatedRuleAction
+	SetInternalValue(val *WafRuleGroupActivatedRuleAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7043,6 +7096,16 @@ type WafRuleGroupActivatedRuleActionOutputReference interface {
 // The jsii proxy struct for WafRuleGroupActivatedRuleActionOutputReference
 type jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) InternalValue() *WafRuleGroupActivatedRuleAction {
+	var returns *WafRuleGroupActivatedRuleAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) IsSingleItem() *bool {
@@ -7101,7 +7164,7 @@ func NewWafRuleGroupActivatedRuleActionOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRuleGroupActivatedRuleActionOutputReference",
+		"hashicorp_aws.waf.WafRuleGroupActivatedRuleActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7113,9 +7176,17 @@ func NewWafRuleGroupActivatedRuleActionOutputReference_Override(w WafRuleGroupAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafRuleGroupActivatedRuleActionOutputReference",
+		"hashicorp_aws.waf.WafRuleGroupActivatedRuleActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) SetInternalValue(val *WafRuleGroupActivatedRuleAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7235,6 +7306,7 @@ func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) Interpolation
 	return returns
 }
 
+// AWS WAF.
 type WafRuleGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7512,7 +7584,7 @@ func NewWafSizeConstraintSet(scope constructs.Construct, id *string, config *Waf
 	j := jsiiProxy_WafSizeConstraintSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSizeConstraintSet",
+		"hashicorp_aws.waf.WafSizeConstraintSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7525,7 +7597,7 @@ func NewWafSizeConstraintSet_Override(w WafSizeConstraintSet, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSizeConstraintSet",
+		"hashicorp_aws.waf.WafSizeConstraintSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -7589,7 +7661,7 @@ func WafSizeConstraintSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafSizeConstraintSet",
+		"hashicorp_aws.waf.WafSizeConstraintSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7602,7 +7674,7 @@ func WafSizeConstraintSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafSizeConstraintSet",
+		"hashicorp_aws.waf.WafSizeConstraintSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -7772,6 +7844,7 @@ func (w *jsiiProxy_WafSizeConstraintSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafSizeConstraintSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7814,6 +7887,8 @@ type WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference interface {
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
+	InternalValue() *WafSizeConstraintSetSizeConstraintsFieldToMatch
+	SetInternalValue(val *WafSizeConstraintSetSizeConstraintsFieldToMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7852,6 +7927,16 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	_jsii_.Get(
 		j,
 		"dataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) InternalValue() *WafSizeConstraintSetSizeConstraintsFieldToMatch {
+	var returns *WafSizeConstraintSetSizeConstraintsFieldToMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7913,7 +7998,7 @@ func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference(terraform
 	j := jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7925,7 +8010,7 @@ func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -7935,6 +8020,14 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	_jsii_.Set(
 		j,
 		"data",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) SetInternalValue(val *WafSizeConstraintSetSizeConstraintsFieldToMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8297,7 +8390,7 @@ func NewWafSqlInjectionMatchSet(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_WafSqlInjectionMatchSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSet",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8310,7 +8403,7 @@ func NewWafSqlInjectionMatchSet_Override(w WafSqlInjectionMatchSet, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSet",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -8374,7 +8467,7 @@ func WafSqlInjectionMatchSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSet",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8387,7 +8480,7 @@ func WafSqlInjectionMatchSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSet",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -8557,6 +8650,7 @@ func (w *jsiiProxy_WafSqlInjectionMatchSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafSqlInjectionMatchSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8595,6 +8689,8 @@ type WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference i
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
+	InternalValue() *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch
+	SetInternalValue(val *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8633,6 +8729,16 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	_jsii_.Get(
 		j,
 		"dataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) InternalValue() *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch {
+	var returns *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8694,7 +8800,7 @@ func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReferenc
 	j := jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8706,7 +8812,7 @@ func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -8716,6 +8822,14 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	_jsii_.Set(
 		j,
 		"data",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) SetInternalValue(val *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9207,7 +9321,7 @@ func NewWafWebAcl(scope constructs.Construct, id *string, config *WafWebAclConfi
 	j := jsiiProxy_WafWebAcl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAcl",
+		"hashicorp_aws.waf.WafWebAcl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9220,7 +9334,7 @@ func NewWafWebAcl_Override(w WafWebAcl, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAcl",
+		"hashicorp_aws.waf.WafWebAcl",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -9308,7 +9422,7 @@ func WafWebAcl_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafWebAcl",
+		"hashicorp_aws.waf.WafWebAcl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9321,7 +9435,7 @@ func WafWebAcl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafWebAcl",
+		"hashicorp_aws.waf.WafWebAcl",
 		"tfResourceType",
 		&returns,
 	)
@@ -9531,6 +9645,7 @@ func (w *jsiiProxy_WafWebAcl) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafWebAclConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9569,6 +9684,8 @@ type WafWebAclDefaultAction struct {
 
 type WafWebAclDefaultActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WafWebAclDefaultAction
+	SetInternalValue(val *WafWebAclDefaultAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9589,6 +9706,16 @@ type WafWebAclDefaultActionOutputReference interface {
 // The jsii proxy struct for WafWebAclDefaultActionOutputReference
 type jsiiProxy_WafWebAclDefaultActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) InternalValue() *WafWebAclDefaultAction {
+	var returns *WafWebAclDefaultAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) IsSingleItem() *bool {
@@ -9647,7 +9774,7 @@ func NewWafWebAclDefaultActionOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_WafWebAclDefaultActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclDefaultActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclDefaultActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9659,9 +9786,17 @@ func NewWafWebAclDefaultActionOutputReference_Override(w WafWebAclDefaultActionO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclDefaultActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclDefaultActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) SetInternalValue(val *WafWebAclDefaultAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9792,6 +9927,8 @@ type WafWebAclLoggingConfiguration struct {
 
 type WafWebAclLoggingConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WafWebAclLoggingConfiguration
+	SetInternalValue(val *WafWebAclLoggingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogDestination() *string
@@ -9816,6 +9953,16 @@ type WafWebAclLoggingConfigurationOutputReference interface {
 // The jsii proxy struct for WafWebAclLoggingConfigurationOutputReference
 type jsiiProxy_WafWebAclLoggingConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) InternalValue() *WafWebAclLoggingConfiguration {
+	var returns *WafWebAclLoggingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) IsSingleItem() *bool {
@@ -9894,7 +10041,7 @@ func NewWafWebAclLoggingConfigurationOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_WafWebAclLoggingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclLoggingConfigurationOutputReference",
+		"hashicorp_aws.waf.WafWebAclLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9906,9 +10053,17 @@ func NewWafWebAclLoggingConfigurationOutputReference_Override(w WafWebAclLogging
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclLoggingConfigurationOutputReference",
+		"hashicorp_aws.waf.WafWebAclLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) SetInternalValue(val *WafWebAclLoggingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10063,6 +10218,8 @@ type WafWebAclLoggingConfigurationRedactedFieldsOutputReference interface {
 	FieldToMatch() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
 	SetFieldToMatch(val *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch)
 	FieldToMatchInput() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
+	InternalValue() *WafWebAclLoggingConfigurationRedactedFields
+	SetInternalValue(val *WafWebAclLoggingConfigurationRedactedFields)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10097,6 +10254,16 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) F
 	_jsii_.Get(
 		j,
 		"fieldToMatchInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) InternalValue() *WafWebAclLoggingConfigurationRedactedFields {
+	var returns *WafWebAclLoggingConfigurationRedactedFields
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10138,7 +10305,7 @@ func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference(terraformReso
 	j := jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclLoggingConfigurationRedactedFieldsOutputReference",
+		"hashicorp_aws.waf.WafWebAclLoggingConfigurationRedactedFieldsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10150,7 +10317,7 @@ func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference_Override(w Wa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclLoggingConfigurationRedactedFieldsOutputReference",
+		"hashicorp_aws.waf.WafWebAclLoggingConfigurationRedactedFieldsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -10160,6 +10327,14 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) S
 	_jsii_.Set(
 		j,
 		"fieldToMatch",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) SetInternalValue(val *WafWebAclLoggingConfigurationRedactedFields) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10296,6 +10471,8 @@ type WafWebAclRulesAction struct {
 
 type WafWebAclRulesActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WafWebAclRulesAction
+	SetInternalValue(val *WafWebAclRulesAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10316,6 +10493,16 @@ type WafWebAclRulesActionOutputReference interface {
 // The jsii proxy struct for WafWebAclRulesActionOutputReference
 type jsiiProxy_WafWebAclRulesActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WafWebAclRulesActionOutputReference) InternalValue() *WafWebAclRulesAction {
+	var returns *WafWebAclRulesAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WafWebAclRulesActionOutputReference) IsSingleItem() *bool {
@@ -10374,7 +10561,7 @@ func NewWafWebAclRulesActionOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_WafWebAclRulesActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclRulesActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclRulesActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10386,9 +10573,17 @@ func NewWafWebAclRulesActionOutputReference_Override(w WafWebAclRulesActionOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclRulesActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclRulesActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WafWebAclRulesActionOutputReference) SetInternalValue(val *WafWebAclRulesAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10515,6 +10710,8 @@ type WafWebAclRulesOverrideAction struct {
 
 type WafWebAclRulesOverrideActionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *WafWebAclRulesOverrideAction
+	SetInternalValue(val *WafWebAclRulesOverrideAction)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10535,6 +10732,16 @@ type WafWebAclRulesOverrideActionOutputReference interface {
 // The jsii proxy struct for WafWebAclRulesOverrideActionOutputReference
 type jsiiProxy_WafWebAclRulesOverrideActionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) InternalValue() *WafWebAclRulesOverrideAction {
+	var returns *WafWebAclRulesOverrideAction
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) IsSingleItem() *bool {
@@ -10593,7 +10800,7 @@ func NewWafWebAclRulesOverrideActionOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_WafWebAclRulesOverrideActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclRulesOverrideActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclRulesOverrideActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10605,9 +10812,17 @@ func NewWafWebAclRulesOverrideActionOutputReference_Override(w WafWebAclRulesOve
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafWebAclRulesOverrideActionOutputReference",
+		"hashicorp_aws.waf.WafWebAclRulesOverrideActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
+	)
+}
+
+func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) SetInternalValue(val *WafWebAclRulesOverrideAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10972,7 +11187,7 @@ func NewWafXssMatchSet(scope constructs.Construct, id *string, config *WafXssMat
 	j := jsiiProxy_WafXssMatchSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafXssMatchSet",
+		"hashicorp_aws.waf.WafXssMatchSet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10985,7 +11200,7 @@ func NewWafXssMatchSet_Override(w WafXssMatchSet, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafXssMatchSet",
+		"hashicorp_aws.waf.WafXssMatchSet",
 		[]interface{}{scope, id, config},
 		w,
 	)
@@ -11049,7 +11264,7 @@ func WafXssMatchSet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.WAF.WafXssMatchSet",
+		"hashicorp_aws.waf.WafXssMatchSet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11062,7 +11277,7 @@ func WafXssMatchSet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.WAF.WafXssMatchSet",
+		"hashicorp_aws.waf.WafXssMatchSet",
 		"tfResourceType",
 		&returns,
 	)
@@ -11232,6 +11447,7 @@ func (w *jsiiProxy_WafXssMatchSet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS WAF.
 type WafXssMatchSetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11270,6 +11486,8 @@ type WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference interface {
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
+	InternalValue() *WafXssMatchSetXssMatchTuplesFieldToMatch
+	SetInternalValue(val *WafXssMatchSetXssMatchTuplesFieldToMatch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11308,6 +11526,16 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) Data
 	_jsii_.Get(
 		j,
 		"dataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) InternalValue() *WafXssMatchSetXssMatchTuplesFieldToMatch {
+	var returns *WafXssMatchSetXssMatchTuplesFieldToMatch
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11369,7 +11597,7 @@ func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference(terraformResourc
 	j := jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11381,7 +11609,7 @@ func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference_Override(w WafXs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.WAF.WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference",
+		"hashicorp_aws.waf.WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		w,
 	)
@@ -11391,6 +11619,14 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetD
 	_jsii_.Set(
 		j,
 		"data",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetInternalValue(val *WafXssMatchSetXssMatchTuplesFieldToMatch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

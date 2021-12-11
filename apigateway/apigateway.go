@@ -221,7 +221,7 @@ func NewApiGatewayAccount(scope constructs.Construct, id *string, config *ApiGat
 	j := jsiiProxy_ApiGatewayAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAccount",
+		"hashicorp_aws.apigateway.ApiGatewayAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -234,7 +234,7 @@ func NewApiGatewayAccount_Override(a ApiGatewayAccount, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAccount",
+		"hashicorp_aws.apigateway.ApiGatewayAccount",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -290,7 +290,7 @@ func ApiGatewayAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayAccount",
+		"hashicorp_aws.apigateway.ApiGatewayAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -303,7 +303,7 @@ func ApiGatewayAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayAccount",
+		"hashicorp_aws.apigateway.ApiGatewayAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -486,6 +486,7 @@ func (a *jsiiProxy_ApiGatewayAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -578,7 +579,7 @@ func NewApiGatewayAccountThrottleSettings(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_ApiGatewayAccountThrottleSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAccountThrottleSettings",
+		"hashicorp_aws.apigateway.ApiGatewayAccountThrottleSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -591,7 +592,7 @@ func NewApiGatewayAccountThrottleSettings_Override(a ApiGatewayAccountThrottleSe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAccountThrottleSettings",
+		"hashicorp_aws.apigateway.ApiGatewayAccountThrottleSettings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		a,
 	)
@@ -1054,7 +1055,7 @@ func NewApiGatewayApiKey(scope constructs.Construct, id *string, config *ApiGate
 	j := jsiiProxy_ApiGatewayApiKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayApiKey",
+		"hashicorp_aws.apigateway.ApiGatewayApiKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1067,7 +1068,7 @@ func NewApiGatewayApiKey_Override(a ApiGatewayApiKey, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayApiKey",
+		"hashicorp_aws.apigateway.ApiGatewayApiKey",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1163,7 +1164,7 @@ func ApiGatewayApiKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayApiKey",
+		"hashicorp_aws.apigateway.ApiGatewayApiKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1176,7 +1177,7 @@ func ApiGatewayApiKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayApiKey",
+		"hashicorp_aws.apigateway.ApiGatewayApiKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -1378,6 +1379,7 @@ func (a *jsiiProxy_ApiGatewayApiKey) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayApiKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1802,7 +1804,7 @@ func NewApiGatewayAuthorizer(scope constructs.Construct, id *string, config *Api
 	j := jsiiProxy_ApiGatewayAuthorizer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAuthorizer",
+		"hashicorp_aws.apigateway.ApiGatewayAuthorizer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1815,7 +1817,7 @@ func NewApiGatewayAuthorizer_Override(a ApiGatewayAuthorizer, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayAuthorizer",
+		"hashicorp_aws.apigateway.ApiGatewayAuthorizer",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1935,7 +1937,7 @@ func ApiGatewayAuthorizer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayAuthorizer",
+		"hashicorp_aws.apigateway.ApiGatewayAuthorizer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1948,7 +1950,7 @@ func ApiGatewayAuthorizer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayAuthorizer",
+		"hashicorp_aws.apigateway.ApiGatewayAuthorizer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2166,6 +2168,7 @@ func (a *jsiiProxy_ApiGatewayAuthorizer) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayAuthorizerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2476,7 +2479,7 @@ func NewApiGatewayBasePathMapping(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ApiGatewayBasePathMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayBasePathMapping",
+		"hashicorp_aws.apigateway.ApiGatewayBasePathMapping",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2489,7 +2492,7 @@ func NewApiGatewayBasePathMapping_Override(a ApiGatewayBasePathMapping, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayBasePathMapping",
+		"hashicorp_aws.apigateway.ApiGatewayBasePathMapping",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2569,7 +2572,7 @@ func ApiGatewayBasePathMapping_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayBasePathMapping",
+		"hashicorp_aws.apigateway.ApiGatewayBasePathMapping",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2582,7 +2585,7 @@ func ApiGatewayBasePathMapping_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayBasePathMapping",
+		"hashicorp_aws.apigateway.ApiGatewayBasePathMapping",
 		"tfResourceType",
 		&returns,
 	)
@@ -2760,6 +2763,7 @@ func (a *jsiiProxy_ApiGatewayBasePathMapping) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayBasePathMappingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3082,7 +3086,7 @@ func NewApiGatewayClientCertificate(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ApiGatewayClientCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayClientCertificate",
+		"hashicorp_aws.apigateway.ApiGatewayClientCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3095,7 +3099,7 @@ func NewApiGatewayClientCertificate_Override(a ApiGatewayClientCertificate, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayClientCertificate",
+		"hashicorp_aws.apigateway.ApiGatewayClientCertificate",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3167,7 +3171,7 @@ func ApiGatewayClientCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayClientCertificate",
+		"hashicorp_aws.apigateway.ApiGatewayClientCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3180,7 +3184,7 @@ func ApiGatewayClientCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayClientCertificate",
+		"hashicorp_aws.apigateway.ApiGatewayClientCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -3366,6 +3370,7 @@ func (a *jsiiProxy_ApiGatewayClientCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayClientCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3746,7 +3751,7 @@ func NewApiGatewayDeployment(scope constructs.Construct, id *string, config *Api
 	j := jsiiProxy_ApiGatewayDeployment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDeployment",
+		"hashicorp_aws.apigateway.ApiGatewayDeployment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3759,7 +3764,7 @@ func NewApiGatewayDeployment_Override(a ApiGatewayDeployment, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDeployment",
+		"hashicorp_aws.apigateway.ApiGatewayDeployment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3855,7 +3860,7 @@ func ApiGatewayDeployment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayDeployment",
+		"hashicorp_aws.apigateway.ApiGatewayDeployment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3868,7 +3873,7 @@ func ApiGatewayDeployment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayDeployment",
+		"hashicorp_aws.apigateway.ApiGatewayDeployment",
 		"tfResourceType",
 		&returns,
 	)
@@ -4070,6 +4075,7 @@ func (a *jsiiProxy_ApiGatewayDeployment) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayDeploymentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4349,7 +4355,7 @@ func NewApiGatewayDocumentationPart(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ApiGatewayDocumentationPart{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPart",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPart",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4362,7 +4368,7 @@ func NewApiGatewayDocumentationPart_Override(a ApiGatewayDocumentationPart, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPart",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPart",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4426,7 +4432,7 @@ func ApiGatewayDocumentationPart_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPart",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPart",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4439,7 +4445,7 @@ func ApiGatewayDocumentationPart_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPart",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPart",
 		"tfResourceType",
 		&returns,
 	)
@@ -4609,6 +4615,7 @@ func (a *jsiiProxy_ApiGatewayDocumentationPart) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayDocumentationPartConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4643,6 +4650,8 @@ type ApiGatewayDocumentationPartLocation struct {
 
 type ApiGatewayDocumentationPartLocationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApiGatewayDocumentationPartLocation
+	SetInternalValue(val *ApiGatewayDocumentationPartLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Method() *string
@@ -4679,6 +4688,16 @@ type ApiGatewayDocumentationPartLocationOutputReference interface {
 // The jsii proxy struct for ApiGatewayDocumentationPartLocationOutputReference
 type jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) InternalValue() *ApiGatewayDocumentationPartLocation {
+	var returns *ApiGatewayDocumentationPartLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) IsSingleItem() *bool {
@@ -4817,7 +4836,7 @@ func NewApiGatewayDocumentationPartLocationOutputReference(terraformResource cdk
 	j := jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPartLocationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPartLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4829,9 +4848,17 @@ func NewApiGatewayDocumentationPartLocationOutputReference_Override(a ApiGateway
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationPartLocationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationPartLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) SetInternalValue(val *ApiGatewayDocumentationPartLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5272,7 +5299,7 @@ func NewApiGatewayDocumentationVersion(scope constructs.Construct, id *string, c
 	j := jsiiProxy_ApiGatewayDocumentationVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationVersion",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5285,7 +5312,7 @@ func NewApiGatewayDocumentationVersion_Override(a ApiGatewayDocumentationVersion
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationVersion",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationVersion",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -5357,7 +5384,7 @@ func ApiGatewayDocumentationVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationVersion",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5370,7 +5397,7 @@ func ApiGatewayDocumentationVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayDocumentationVersion",
+		"hashicorp_aws.apigateway.ApiGatewayDocumentationVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -5540,6 +5567,7 @@ func (a *jsiiProxy_ApiGatewayDocumentationVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayDocumentationVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6121,7 +6149,7 @@ func NewApiGatewayDomainName(scope constructs.Construct, id *string, config *Api
 	j := jsiiProxy_ApiGatewayDomainName{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainName",
+		"hashicorp_aws.apigateway.ApiGatewayDomainName",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6134,7 +6162,7 @@ func NewApiGatewayDomainName_Override(a ApiGatewayDomainName, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainName",
+		"hashicorp_aws.apigateway.ApiGatewayDomainName",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6270,7 +6298,7 @@ func ApiGatewayDomainName_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainName",
+		"hashicorp_aws.apigateway.ApiGatewayDomainName",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6283,7 +6311,7 @@ func ApiGatewayDomainName_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainName",
+		"hashicorp_aws.apigateway.ApiGatewayDomainName",
 		"tfResourceType",
 		&returns,
 	)
@@ -6557,6 +6585,7 @@ func (a *jsiiProxy_ApiGatewayDomainName) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayDomainNameConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6605,6 +6634,8 @@ type ApiGatewayDomainNameEndpointConfiguration struct {
 
 type ApiGatewayDomainNameEndpointConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApiGatewayDomainNameEndpointConfiguration
+	SetInternalValue(val *ApiGatewayDomainNameEndpointConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6625,6 +6656,16 @@ type ApiGatewayDomainNameEndpointConfigurationOutputReference interface {
 // The jsii proxy struct for ApiGatewayDomainNameEndpointConfigurationOutputReference
 type jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) InternalValue() *ApiGatewayDomainNameEndpointConfiguration {
+	var returns *ApiGatewayDomainNameEndpointConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) IsSingleItem() *bool {
@@ -6683,7 +6724,7 @@ func NewApiGatewayDomainNameEndpointConfigurationOutputReference(terraformResour
 	j := jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainNameEndpointConfigurationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDomainNameEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6695,9 +6736,17 @@ func NewApiGatewayDomainNameEndpointConfigurationOutputReference_Override(a ApiG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainNameEndpointConfigurationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDomainNameEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) SetInternalValue(val *ApiGatewayDomainNameEndpointConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6826,6 +6875,8 @@ type ApiGatewayDomainNameMutualTlsAuthentication struct {
 
 type ApiGatewayDomainNameMutualTlsAuthenticationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApiGatewayDomainNameMutualTlsAuthentication
+	SetInternalValue(val *ApiGatewayDomainNameMutualTlsAuthentication)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6850,6 +6901,16 @@ type ApiGatewayDomainNameMutualTlsAuthenticationOutputReference interface {
 // The jsii proxy struct for ApiGatewayDomainNameMutualTlsAuthenticationOutputReference
 type jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) InternalValue() *ApiGatewayDomainNameMutualTlsAuthentication {
+	var returns *ApiGatewayDomainNameMutualTlsAuthentication
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) IsSingleItem() *bool {
@@ -6928,7 +6989,7 @@ func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference(terraformReso
 	j := jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainNameMutualTlsAuthenticationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDomainNameMutualTlsAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6940,9 +7001,17 @@ func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference_Override(a Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayDomainNameMutualTlsAuthenticationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayDomainNameMutualTlsAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) SetInternalValue(val *ApiGatewayDomainNameMutualTlsAuthentication) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7383,7 +7452,7 @@ func NewApiGatewayGatewayResponse(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ApiGatewayGatewayResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayGatewayResponse",
+		"hashicorp_aws.apigateway.ApiGatewayGatewayResponse",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7396,7 +7465,7 @@ func NewApiGatewayGatewayResponse_Override(a ApiGatewayGatewayResponse, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayGatewayResponse",
+		"hashicorp_aws.apigateway.ApiGatewayGatewayResponse",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -7484,7 +7553,7 @@ func ApiGatewayGatewayResponse_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayGatewayResponse",
+		"hashicorp_aws.apigateway.ApiGatewayGatewayResponse",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7497,7 +7566,7 @@ func ApiGatewayGatewayResponse_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayGatewayResponse",
+		"hashicorp_aws.apigateway.ApiGatewayGatewayResponse",
 		"tfResourceType",
 		&returns,
 	)
@@ -7683,6 +7752,7 @@ func (a *jsiiProxy_ApiGatewayGatewayResponse) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayGatewayResponseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8295,7 +8365,7 @@ func NewApiGatewayIntegration(scope constructs.Construct, id *string, config *Ap
 	j := jsiiProxy_ApiGatewayIntegration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegration",
+		"hashicorp_aws.apigateway.ApiGatewayIntegration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8308,7 +8378,7 @@ func NewApiGatewayIntegration_Override(a ApiGatewayIntegration, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegration",
+		"hashicorp_aws.apigateway.ApiGatewayIntegration",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -8484,7 +8554,7 @@ func ApiGatewayIntegration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegration",
+		"hashicorp_aws.apigateway.ApiGatewayIntegration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8497,7 +8567,7 @@ func ApiGatewayIntegration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegration",
+		"hashicorp_aws.apigateway.ApiGatewayIntegration",
 		"tfResourceType",
 		&returns,
 	)
@@ -8771,6 +8841,7 @@ func (a *jsiiProxy_ApiGatewayIntegration) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayIntegrationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9193,7 +9264,7 @@ func NewApiGatewayIntegrationResponse(scope constructs.Construct, id *string, co
 	j := jsiiProxy_ApiGatewayIntegrationResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationResponse",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationResponse",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9206,7 +9277,7 @@ func NewApiGatewayIntegrationResponse_Override(a ApiGatewayIntegrationResponse, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationResponse",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationResponse",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -9318,7 +9389,7 @@ func ApiGatewayIntegrationResponse_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationResponse",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationResponse",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9331,7 +9402,7 @@ func ApiGatewayIntegrationResponse_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationResponse",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationResponse",
 		"tfResourceType",
 		&returns,
 	)
@@ -9525,6 +9596,7 @@ func (a *jsiiProxy_ApiGatewayIntegrationResponse) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayIntegrationResponseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9562,6 +9634,8 @@ type ApiGatewayIntegrationTlsConfigOutputReference interface {
 	InsecureSkipVerification() interface{}
 	SetInsecureSkipVerification(val interface{})
 	InsecureSkipVerificationInput() interface{}
+	InternalValue() *ApiGatewayIntegrationTlsConfig
+	SetInternalValue(val *ApiGatewayIntegrationTlsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9597,6 +9671,16 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) InsecureSkipVe
 	_jsii_.Get(
 		j,
 		"insecureSkipVerificationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) InternalValue() *ApiGatewayIntegrationTlsConfig {
+	var returns *ApiGatewayIntegrationTlsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9638,7 +9722,7 @@ func NewApiGatewayIntegrationTlsConfigOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationTlsConfigOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationTlsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9650,7 +9734,7 @@ func NewApiGatewayIntegrationTlsConfigOutputReference_Override(a ApiGatewayInteg
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayIntegrationTlsConfigOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayIntegrationTlsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -9660,6 +9744,14 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetInsecureSki
 	_jsii_.Set(
 		j,
 		"insecureSkipVerification",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetInternalValue(val *ApiGatewayIntegrationTlsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10227,7 +10319,7 @@ func NewApiGatewayMethod(scope constructs.Construct, id *string, config *ApiGate
 	j := jsiiProxy_ApiGatewayMethod{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethod",
+		"hashicorp_aws.apigateway.ApiGatewayMethod",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10240,7 +10332,7 @@ func NewApiGatewayMethod_Override(a ApiGatewayMethod, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethod",
+		"hashicorp_aws.apigateway.ApiGatewayMethod",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -10376,7 +10468,7 @@ func ApiGatewayMethod_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayMethod",
+		"hashicorp_aws.apigateway.ApiGatewayMethod",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10389,7 +10481,7 @@ func ApiGatewayMethod_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayMethod",
+		"hashicorp_aws.apigateway.ApiGatewayMethod",
 		"tfResourceType",
 		&returns,
 	)
@@ -10607,6 +10699,7 @@ func (a *jsiiProxy_ApiGatewayMethod) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayMethodConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10967,7 +11060,7 @@ func NewApiGatewayMethodResponse(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ApiGatewayMethodResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodResponse",
+		"hashicorp_aws.apigateway.ApiGatewayMethodResponse",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10980,7 +11073,7 @@ func NewApiGatewayMethodResponse_Override(a ApiGatewayMethodResponse, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodResponse",
+		"hashicorp_aws.apigateway.ApiGatewayMethodResponse",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -11076,7 +11169,7 @@ func ApiGatewayMethodResponse_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodResponse",
+		"hashicorp_aws.apigateway.ApiGatewayMethodResponse",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11089,7 +11182,7 @@ func ApiGatewayMethodResponse_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodResponse",
+		"hashicorp_aws.apigateway.ApiGatewayMethodResponse",
 		"tfResourceType",
 		&returns,
 	)
@@ -11267,6 +11360,7 @@ func (a *jsiiProxy_ApiGatewayMethodResponse) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayMethodResponseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11569,7 +11663,7 @@ func NewApiGatewayMethodSettings(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ApiGatewayMethodSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettings",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11582,7 +11676,7 @@ func NewApiGatewayMethodSettings_Override(a ApiGatewayMethodSettings, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettings",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettings",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -11654,7 +11748,7 @@ func ApiGatewayMethodSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettings",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11667,7 +11761,7 @@ func ApiGatewayMethodSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettings",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -11837,6 +11931,7 @@ func (a *jsiiProxy_ApiGatewayMethodSettings) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayMethodSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11895,6 +11990,8 @@ type ApiGatewayMethodSettingsSettingsOutputReference interface {
 	DataTraceEnabled() interface{}
 	SetDataTraceEnabled(val interface{})
 	DataTraceEnabledInput() interface{}
+	InternalValue() *ApiGatewayMethodSettingsSettings
+	SetInternalValue(val *ApiGatewayMethodSettingsSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LoggingLevel() *string
@@ -12017,6 +12114,16 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) DataTraceEna
 	_jsii_.Get(
 		j,
 		"dataTraceEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) InternalValue() *ApiGatewayMethodSettingsSettings {
+	var returns *ApiGatewayMethodSettingsSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12178,7 +12285,7 @@ func NewApiGatewayMethodSettingsSettingsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettingsSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettingsSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12190,7 +12297,7 @@ func NewApiGatewayMethodSettingsSettingsOutputReference_Override(a ApiGatewayMet
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayMethodSettingsSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayMethodSettingsSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -12224,6 +12331,14 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetDataTrace
 	_jsii_.Set(
 		j,
 		"dataTraceEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetInternalValue(val *ApiGatewayMethodSettingsSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12768,7 +12883,7 @@ func NewApiGatewayModel(scope constructs.Construct, id *string, config *ApiGatew
 	j := jsiiProxy_ApiGatewayModel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayModel",
+		"hashicorp_aws.apigateway.ApiGatewayModel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12781,7 +12896,7 @@ func NewApiGatewayModel_Override(a ApiGatewayModel, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayModel",
+		"hashicorp_aws.apigateway.ApiGatewayModel",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -12869,7 +12984,7 @@ func ApiGatewayModel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayModel",
+		"hashicorp_aws.apigateway.ApiGatewayModel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12882,7 +12997,7 @@ func ApiGatewayModel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayModel",
+		"hashicorp_aws.apigateway.ApiGatewayModel",
 		"tfResourceType",
 		&returns,
 	)
@@ -13060,6 +13175,7 @@ func (a *jsiiProxy_ApiGatewayModel) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayModelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13362,7 +13478,7 @@ func NewApiGatewayRequestValidator(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_ApiGatewayRequestValidator{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRequestValidator",
+		"hashicorp_aws.apigateway.ApiGatewayRequestValidator",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13375,7 +13491,7 @@ func NewApiGatewayRequestValidator_Override(a ApiGatewayRequestValidator, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRequestValidator",
+		"hashicorp_aws.apigateway.ApiGatewayRequestValidator",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -13455,7 +13571,7 @@ func ApiGatewayRequestValidator_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayRequestValidator",
+		"hashicorp_aws.apigateway.ApiGatewayRequestValidator",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13468,7 +13584,7 @@ func ApiGatewayRequestValidator_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayRequestValidator",
+		"hashicorp_aws.apigateway.ApiGatewayRequestValidator",
 		"tfResourceType",
 		&returns,
 	)
@@ -13646,6 +13762,7 @@ func (a *jsiiProxy_ApiGatewayRequestValidator) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayRequestValidatorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13932,7 +14049,7 @@ func NewApiGatewayResource(scope constructs.Construct, id *string, config *ApiGa
 	j := jsiiProxy_ApiGatewayResource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayResource",
+		"hashicorp_aws.apigateway.ApiGatewayResource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13945,7 +14062,7 @@ func NewApiGatewayResource_Override(a ApiGatewayResource, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayResource",
+		"hashicorp_aws.apigateway.ApiGatewayResource",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -14017,7 +14134,7 @@ func ApiGatewayResource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayResource",
+		"hashicorp_aws.apigateway.ApiGatewayResource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14030,7 +14147,7 @@ func ApiGatewayResource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayResource",
+		"hashicorp_aws.apigateway.ApiGatewayResource",
 		"tfResourceType",
 		&returns,
 	)
@@ -14192,6 +14309,7 @@ func (a *jsiiProxy_ApiGatewayResource) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayResourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14727,7 +14845,7 @@ func NewApiGatewayRestApi(scope constructs.Construct, id *string, config *ApiGat
 	j := jsiiProxy_ApiGatewayRestApi{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApi",
+		"hashicorp_aws.apigateway.ApiGatewayRestApi",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14740,7 +14858,7 @@ func NewApiGatewayRestApi_Override(a ApiGatewayRestApi, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApi",
+		"hashicorp_aws.apigateway.ApiGatewayRestApi",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -14876,7 +14994,7 @@ func ApiGatewayRestApi_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApi",
+		"hashicorp_aws.apigateway.ApiGatewayRestApi",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14889,7 +15007,7 @@ func ApiGatewayRestApi_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApi",
+		"hashicorp_aws.apigateway.ApiGatewayRestApi",
 		"tfResourceType",
 		&returns,
 	)
@@ -15147,6 +15265,7 @@ func (a *jsiiProxy_ApiGatewayRestApi) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayRestApiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15193,6 +15312,8 @@ type ApiGatewayRestApiEndpointConfiguration struct {
 
 type ApiGatewayRestApiEndpointConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApiGatewayRestApiEndpointConfiguration
+	SetInternalValue(val *ApiGatewayRestApiEndpointConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15217,6 +15338,16 @@ type ApiGatewayRestApiEndpointConfigurationOutputReference interface {
 // The jsii proxy struct for ApiGatewayRestApiEndpointConfigurationOutputReference
 type jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) InternalValue() *ApiGatewayRestApiEndpointConfiguration {
+	var returns *ApiGatewayRestApiEndpointConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) IsSingleItem() *bool {
@@ -15295,7 +15426,7 @@ func NewApiGatewayRestApiEndpointConfigurationOutputReference(terraformResource 
 	j := jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiEndpointConfigurationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15307,9 +15438,17 @@ func NewApiGatewayRestApiEndpointConfigurationOutputReference_Override(a ApiGate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiEndpointConfigurationOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiEndpointConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) SetInternalValue(val *ApiGatewayRestApiEndpointConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -15678,7 +15817,7 @@ func NewApiGatewayRestApiPolicy(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ApiGatewayRestApiPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiPolicy",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15691,7 +15830,7 @@ func NewApiGatewayRestApiPolicy_Override(a ApiGatewayRestApiPolicy, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiPolicy",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiPolicy",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -15755,7 +15894,7 @@ func ApiGatewayRestApiPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiPolicy",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15768,7 +15907,7 @@ func ApiGatewayRestApiPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayRestApiPolicy",
+		"hashicorp_aws.apigateway.ApiGatewayRestApiPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -15930,6 +16069,7 @@ func (a *jsiiProxy_ApiGatewayRestApiPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayRestApiPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16474,7 +16614,7 @@ func NewApiGatewayStage(scope constructs.Construct, id *string, config *ApiGatew
 	j := jsiiProxy_ApiGatewayStage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayStage",
+		"hashicorp_aws.apigateway.ApiGatewayStage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16487,7 +16627,7 @@ func NewApiGatewayStage_Override(a ApiGatewayStage, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayStage",
+		"hashicorp_aws.apigateway.ApiGatewayStage",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -16631,7 +16771,7 @@ func ApiGatewayStage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayStage",
+		"hashicorp_aws.apigateway.ApiGatewayStage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16644,7 +16784,7 @@ func ApiGatewayStage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayStage",
+		"hashicorp_aws.apigateway.ApiGatewayStage",
 		"tfResourceType",
 		&returns,
 	)
@@ -16909,6 +17049,8 @@ type ApiGatewayStageAccessLogSettingsOutputReference interface {
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *ApiGatewayStageAccessLogSettings
+	SetInternalValue(val *ApiGatewayStageAccessLogSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -16968,6 +17110,16 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) FormatInput(
 	return returns
 }
 
+func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) InternalValue() *ApiGatewayStageAccessLogSettings {
+	var returns *ApiGatewayStageAccessLogSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -17004,7 +17156,7 @@ func NewApiGatewayStageAccessLogSettingsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayStageAccessLogSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayStageAccessLogSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17016,7 +17168,7 @@ func NewApiGatewayStageAccessLogSettingsOutputReference_Override(a ApiGatewaySta
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayStageAccessLogSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayStageAccessLogSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -17034,6 +17186,14 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetFormat(va
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetInternalValue(val *ApiGatewayStageAccessLogSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17146,6 +17306,7 @@ func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) Interpolatio
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayStageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17574,7 +17735,7 @@ func NewApiGatewayUsagePlan(scope constructs.Construct, id *string, config *ApiG
 	j := jsiiProxy_ApiGatewayUsagePlan{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlan",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlan",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17587,7 +17748,7 @@ func NewApiGatewayUsagePlan_Override(a ApiGatewayUsagePlan, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlan",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlan",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -17683,7 +17844,7 @@ func ApiGatewayUsagePlan_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlan",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlan",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17696,7 +17857,7 @@ func ApiGatewayUsagePlan_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlan",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlan",
 		"tfResourceType",
 		&returns,
 	)
@@ -17950,6 +18111,7 @@ type ApiGatewayUsagePlanApiStagesThrottle struct {
 	RateLimit *float64 `json:"rateLimit"`
 }
 
+// API Gateway.
 type ApiGatewayUsagePlanConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18261,7 +18423,7 @@ func NewApiGatewayUsagePlanKey(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_ApiGatewayUsagePlanKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanKey",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18274,7 +18436,7 @@ func NewApiGatewayUsagePlanKey_Override(a ApiGatewayUsagePlanKey, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanKey",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanKey",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -18346,7 +18508,7 @@ func ApiGatewayUsagePlanKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanKey",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18359,7 +18521,7 @@ func ApiGatewayUsagePlanKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanKey",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -18521,6 +18683,7 @@ func (a *jsiiProxy_ApiGatewayUsagePlanKey) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayUsagePlanKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18549,6 +18712,8 @@ type ApiGatewayUsagePlanQuotaSettings struct {
 
 type ApiGatewayUsagePlanQuotaSettingsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApiGatewayUsagePlanQuotaSettings
+	SetInternalValue(val *ApiGatewayUsagePlanQuotaSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Limit() *float64
@@ -18576,6 +18741,16 @@ type ApiGatewayUsagePlanQuotaSettingsOutputReference interface {
 // The jsii proxy struct for ApiGatewayUsagePlanQuotaSettingsOutputReference
 type jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) InternalValue() *ApiGatewayUsagePlanQuotaSettings {
+	var returns *ApiGatewayUsagePlanQuotaSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) IsSingleItem() *bool {
@@ -18674,7 +18849,7 @@ func NewApiGatewayUsagePlanQuotaSettingsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanQuotaSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanQuotaSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18686,9 +18861,17 @@ func NewApiGatewayUsagePlanQuotaSettingsOutputReference_Override(a ApiGatewayUsa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanQuotaSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanQuotaSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) SetInternalValue(val *ApiGatewayUsagePlanQuotaSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -18844,6 +19027,8 @@ type ApiGatewayUsagePlanThrottleSettingsOutputReference interface {
 	BurstLimit() *float64
 	SetBurstLimit(val *float64)
 	BurstLimitInput() *float64
+	InternalValue() *ApiGatewayUsagePlanThrottleSettings
+	SetInternalValue(val *ApiGatewayUsagePlanThrottleSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RateLimit() *float64
@@ -18883,6 +19068,16 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) BurstLimi
 	_jsii_.Get(
 		j,
 		"burstLimitInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) InternalValue() *ApiGatewayUsagePlanThrottleSettings {
+	var returns *ApiGatewayUsagePlanThrottleSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18944,7 +19139,7 @@ func NewApiGatewayUsagePlanThrottleSettingsOutputReference(terraformResource cdk
 	j := jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanThrottleSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanThrottleSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18956,7 +19151,7 @@ func NewApiGatewayUsagePlanThrottleSettingsOutputReference_Override(a ApiGateway
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayUsagePlanThrottleSettingsOutputReference",
+		"hashicorp_aws.apigateway.ApiGatewayUsagePlanThrottleSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -18966,6 +19161,14 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetBurstL
 	_jsii_.Set(
 		j,
 		"burstLimit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetInternalValue(val *ApiGatewayUsagePlanThrottleSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19418,7 +19621,7 @@ func NewApiGatewayVpcLink(scope constructs.Construct, id *string, config *ApiGat
 	j := jsiiProxy_ApiGatewayVpcLink{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.ApiGatewayVpcLink",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19431,7 +19634,7 @@ func NewApiGatewayVpcLink_Override(a ApiGatewayVpcLink, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.ApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.ApiGatewayVpcLink",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -19519,7 +19722,7 @@ func ApiGatewayVpcLink_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.ApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.ApiGatewayVpcLink",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19532,7 +19735,7 @@ func ApiGatewayVpcLink_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.ApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.ApiGatewayVpcLink",
 		"tfResourceType",
 		&returns,
 	)
@@ -19718,6 +19921,7 @@ func (a *jsiiProxy_ApiGatewayVpcLink) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type ApiGatewayVpcLinkConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20028,7 +20232,7 @@ func NewDataAwsApiGatewayApiKey(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsApiGatewayApiKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayApiKey",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayApiKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20041,7 +20245,7 @@ func NewDataAwsApiGatewayApiKey_Override(d DataAwsApiGatewayApiKey, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayApiKey",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayApiKey",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20105,7 +20309,7 @@ func DataAwsApiGatewayApiKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayApiKey",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayApiKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20118,7 +20322,7 @@ func DataAwsApiGatewayApiKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayApiKey",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayApiKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -20288,6 +20492,7 @@ func (d *jsiiProxy_DataAwsApiGatewayApiKey) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type DataAwsApiGatewayApiKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20659,7 +20864,7 @@ func NewDataAwsApiGatewayDomainName(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsApiGatewayDomainName{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainName",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainName",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20672,7 +20877,7 @@ func NewDataAwsApiGatewayDomainName_Override(d DataAwsApiGatewayDomainName, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainName",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainName",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20736,7 +20941,7 @@ func DataAwsApiGatewayDomainName_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainName",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainName",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20749,7 +20954,7 @@ func DataAwsApiGatewayDomainName_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainName",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainName",
 		"tfResourceType",
 		&returns,
 	)
@@ -20932,6 +21137,7 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainName) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type DataAwsApiGatewayDomainNameConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21015,7 +21221,7 @@ func NewDataAwsApiGatewayDomainNameEndpointConfiguration(terraformResource cdktf
 	j := jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -21028,7 +21234,7 @@ func NewDataAwsApiGatewayDomainNameEndpointConfiguration_Override(d DataAwsApiGa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -21383,7 +21589,7 @@ func NewDataAwsApiGatewayResource(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsApiGatewayResource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayResource",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayResource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21396,7 +21602,7 @@ func NewDataAwsApiGatewayResource_Override(d DataAwsApiGatewayResource, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayResource",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayResource",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -21460,7 +21666,7 @@ func DataAwsApiGatewayResource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayResource",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayResource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21473,7 +21679,7 @@ func DataAwsApiGatewayResource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayResource",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayResource",
 		"tfResourceType",
 		&returns,
 	)
@@ -21635,6 +21841,7 @@ func (d *jsiiProxy_DataAwsApiGatewayResource) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type DataAwsApiGatewayResourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21973,7 +22180,7 @@ func NewDataAwsApiGatewayRestApi(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsApiGatewayRestApi{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApi",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApi",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21986,7 +22193,7 @@ func NewDataAwsApiGatewayRestApi_Override(d DataAwsApiGatewayRestApi, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApi",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApi",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22050,7 +22257,7 @@ func DataAwsApiGatewayRestApi_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApi",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApi",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22063,7 +22270,7 @@ func DataAwsApiGatewayRestApi_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApi",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApi",
 		"tfResourceType",
 		&returns,
 	)
@@ -22246,6 +22453,7 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApi) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type DataAwsApiGatewayRestApiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22340,7 +22548,7 @@ func NewDataAwsApiGatewayRestApiEndpointConfiguration(terraformResource cdktf.IT
 	j := jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApiEndpointConfiguration",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApiEndpointConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -22353,7 +22561,7 @@ func NewDataAwsApiGatewayRestApiEndpointConfiguration_Override(d DataAwsApiGatew
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayRestApiEndpointConfiguration",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApiEndpointConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -22731,7 +22939,7 @@ func NewDataAwsApiGatewayVpcLink(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsApiGatewayVpcLink{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayVpcLink",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22744,7 +22952,7 @@ func NewDataAwsApiGatewayVpcLink_Override(d DataAwsApiGatewayVpcLink, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayVpcLink",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22808,7 +23016,7 @@ func DataAwsApiGatewayVpcLink_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayVpcLink",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22821,7 +23029,7 @@ func DataAwsApiGatewayVpcLink_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGateway.DataAwsApiGatewayVpcLink",
+		"hashicorp_aws.apigateway.DataAwsApiGatewayVpcLink",
 		"tfResourceType",
 		&returns,
 	)
@@ -22991,6 +23199,7 @@ func (d *jsiiProxy_DataAwsApiGatewayVpcLink) ToTerraform() interface{} {
 	return returns
 }
 
+// API Gateway.
 type DataAwsApiGatewayVpcLinkConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

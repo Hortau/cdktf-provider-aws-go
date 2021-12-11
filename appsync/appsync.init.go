@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncApiKey",
+		"hashicorp_aws.appsync.AppsyncApiKey",
 		reflect.TypeOf((*AppsyncApiKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncApiKeyConfig",
+		"hashicorp_aws.appsync.AppsyncApiKeyConfig",
 		reflect.TypeOf((*AppsyncApiKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncDatasource",
+		"hashicorp_aws.appsync.AppsyncDatasource",
 		reflect.TypeOf((*AppsyncDatasource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -124,21 +124,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncDatasourceConfig",
+		"hashicorp_aws.appsync.AppsyncDatasourceConfig",
 		reflect.TypeOf((*AppsyncDatasourceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncDatasourceDynamodbConfig",
+		"hashicorp_aws.appsync.AppsyncDatasourceDynamodbConfig",
 		reflect.TypeOf((*AppsyncDatasourceDynamodbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncDatasourceDynamodbConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceDynamodbConfigOutputReference",
 		reflect.TypeOf((*AppsyncDatasourceDynamodbConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -160,11 +161,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncDatasourceElasticsearchConfig",
+		"hashicorp_aws.appsync.AppsyncDatasourceElasticsearchConfig",
 		reflect.TypeOf((*AppsyncDatasourceElasticsearchConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncDatasourceElasticsearchConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceElasticsearchConfigOutputReference",
 		reflect.TypeOf((*AppsyncDatasourceElasticsearchConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "endpoint", GoGetter: "Endpoint"},
@@ -173,6 +174,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -189,11 +191,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncDatasourceHttpConfig",
+		"hashicorp_aws.appsync.AppsyncDatasourceHttpConfig",
 		reflect.TypeOf((*AppsyncDatasourceHttpConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncDatasourceHttpConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceHttpConfigOutputReference",
 		reflect.TypeOf((*AppsyncDatasourceHttpConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "endpoint", GoGetter: "Endpoint"},
@@ -202,6 +204,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -215,11 +218,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncDatasourceLambdaConfig",
+		"hashicorp_aws.appsync.AppsyncDatasourceLambdaConfig",
 		reflect.TypeOf((*AppsyncDatasourceLambdaConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncDatasourceLambdaConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceLambdaConfigOutputReference",
 		reflect.TypeOf((*AppsyncDatasourceLambdaConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "functionArn", GoGetter: "FunctionArn"},
@@ -228,6 +231,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -241,7 +245,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncFunction",
+		"hashicorp_aws.appsync.AppsyncFunction",
 		reflect.TypeOf((*AppsyncFunction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -296,11 +300,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncFunctionConfig",
+		"hashicorp_aws.appsync.AppsyncFunctionConfig",
 		reflect.TypeOf((*AppsyncFunctionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApi",
+		"hashicorp_aws.appsync.AppsyncGraphqlApi",
 		reflect.TypeOf((*AppsyncGraphqlApi)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalAuthenticationProvider", GoGetter: "AdditionalAuthenticationProvider"},
@@ -370,15 +374,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProvider",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProvider",
 		reflect.TypeOf((*AppsyncGraphqlApiAdditionalAuthenticationProvider)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
 		reflect.TypeOf((*AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authTtl", GoGetter: "AuthTtl"},
@@ -391,6 +395,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iatTtl", GoGetter: "IatTtl"},
 			_jsii_.MemberProperty{JsiiProperty: "iatTtlInput", GoGetter: "IatTtlInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -409,11 +414,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
 		reflect.TypeOf((*AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "appIdClientRegex", GoGetter: "AppIdClientRegex"},
@@ -424,6 +429,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -441,15 +447,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiLogConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiLogConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiLogConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiLogConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiLogConfigOutputReference",
 		reflect.TypeOf((*AppsyncGraphqlApiLogConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchLogsRoleArn", GoGetter: "CloudwatchLogsRoleArn"},
@@ -462,6 +468,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -476,11 +483,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiOpenidConnectConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiOpenidConnectConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiOpenidConnectConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
 		reflect.TypeOf((*AppsyncGraphqlApiOpenidConnectConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "authTtl", GoGetter: "AuthTtl"},
@@ -493,6 +500,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iatTtl", GoGetter: "IatTtl"},
 			_jsii_.MemberProperty{JsiiProperty: "iatTtlInput", GoGetter: "IatTtlInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -511,11 +519,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiUserPoolConfig",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiUserPoolConfig",
 		reflect.TypeOf((*AppsyncGraphqlApiUserPoolConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiUserPoolConfigOutputReference",
 		reflect.TypeOf((*AppsyncGraphqlApiUserPoolConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "appIdClientRegex", GoGetter: "AppIdClientRegex"},
@@ -528,6 +536,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -545,7 +554,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncResolver",
+		"hashicorp_aws.appsync.AppsyncResolver",
 		reflect.TypeOf((*AppsyncResolver)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -609,11 +618,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncResolverCachingConfig",
+		"hashicorp_aws.appsync.AppsyncResolverCachingConfig",
 		reflect.TypeOf((*AppsyncResolverCachingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncResolverCachingConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverCachingConfigOutputReference",
 		reflect.TypeOf((*AppsyncResolverCachingConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cachingKeys", GoGetter: "CachingKeys"},
@@ -622,6 +631,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -639,15 +649,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncResolverConfig",
+		"hashicorp_aws.appsync.AppsyncResolverConfig",
 		reflect.TypeOf((*AppsyncResolverConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.AppSync.AppsyncResolverPipelineConfig",
+		"hashicorp_aws.appsync.AppsyncResolverPipelineConfig",
 		reflect.TypeOf((*AppsyncResolverPipelineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.AppSync.AppsyncResolverPipelineConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverPipelineConfigOutputReference",
 		reflect.TypeOf((*AppsyncResolverPipelineConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "functions", GoGetter: "Functions"},
@@ -656,6 +666,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamAccountAlias",
+		"hashicorp_aws.iam.DataAwsIamAccountAlias",
 		reflect.TypeOf((*DataAwsIamAccountAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountAlias", GoGetter: "AccountAlias"},
@@ -46,11 +46,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamAccountAliasConfig",
+		"hashicorp_aws.iam.DataAwsIamAccountAliasConfig",
 		reflect.TypeOf((*DataAwsIamAccountAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamGroup",
+		"hashicorp_aws.iam.DataAwsIamGroup",
 		reflect.TypeOf((*DataAwsIamGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -93,11 +93,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamGroupConfig",
+		"hashicorp_aws.iam.DataAwsIamGroupConfig",
 		reflect.TypeOf((*DataAwsIamGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamGroupUsers",
+		"hashicorp_aws.iam.DataAwsIamGroupUsers",
 		reflect.TypeOf((*DataAwsIamGroupUsers)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -120,7 +120,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfile",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfile",
 		reflect.TypeOf((*DataAwsIamInstanceProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -165,11 +165,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfileConfig",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfileConfig",
 		reflect.TypeOf((*DataAwsIamInstanceProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamPolicy",
+		"hashicorp_aws.iam.DataAwsIamPolicy",
 		reflect.TypeOf((*DataAwsIamPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -220,11 +220,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyConfig",
+		"hashicorp_aws.iam.DataAwsIamPolicyConfig",
 		reflect.TypeOf((*DataAwsIamPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocument",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocument",
 		reflect.TypeOf((*DataAwsIamPolicyDocument)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -283,27 +283,27 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocumentConfig",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocumentConfig",
 		reflect.TypeOf((*DataAwsIamPolicyDocumentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocumentStatement",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocumentStatement",
 		reflect.TypeOf((*DataAwsIamPolicyDocumentStatement)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocumentStatementCondition",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocumentStatementCondition",
 		reflect.TypeOf((*DataAwsIamPolicyDocumentStatementCondition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocumentStatementNotPrincipals",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocumentStatementNotPrincipals",
 		reflect.TypeOf((*DataAwsIamPolicyDocumentStatementNotPrincipals)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocumentStatementPrincipals",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocumentStatementPrincipals",
 		reflect.TypeOf((*DataAwsIamPolicyDocumentStatementPrincipals)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamRole",
+		"hashicorp_aws.iam.DataAwsIamRole",
 		reflect.TypeOf((*DataAwsIamRole)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -353,11 +353,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamRoleConfig",
+		"hashicorp_aws.iam.DataAwsIamRoleConfig",
 		reflect.TypeOf((*DataAwsIamRoleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamRoles",
+		"hashicorp_aws.iam.DataAwsIamRoles",
 		reflect.TypeOf((*DataAwsIamRoles)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -402,11 +402,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamRolesConfig",
+		"hashicorp_aws.iam.DataAwsIamRolesConfig",
 		reflect.TypeOf((*DataAwsIamRolesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificate",
+		"hashicorp_aws.iam.DataAwsIamServerCertificate",
 		reflect.TypeOf((*DataAwsIamServerCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -461,11 +461,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificateConfig",
+		"hashicorp_aws.iam.DataAwsIamServerCertificateConfig",
 		reflect.TypeOf((*DataAwsIamServerCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamSessionContext",
+		"hashicorp_aws.iam.DataAwsIamSessionContext",
 		reflect.TypeOf((*DataAwsIamSessionContext)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -508,11 +508,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamSessionContextConfig",
+		"hashicorp_aws.iam.DataAwsIamSessionContextConfig",
 		reflect.TypeOf((*DataAwsIamSessionContextConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamUser",
+		"hashicorp_aws.iam.DataAwsIamUser",
 		reflect.TypeOf((*DataAwsIamUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -558,11 +558,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamUserConfig",
+		"hashicorp_aws.iam.DataAwsIamUserConfig",
 		reflect.TypeOf((*DataAwsIamUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKey",
+		"hashicorp_aws.iam.DataAwsIamUserSshKey",
 		reflect.TypeOf((*DataAwsIamUserSshKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -608,11 +608,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKeyConfig",
+		"hashicorp_aws.iam.DataAwsIamUserSshKeyConfig",
 		reflect.TypeOf((*DataAwsIamUserSshKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.DataAwsIamUsers",
+		"hashicorp_aws.iam.DataAwsIamUsers",
 		reflect.TypeOf((*DataAwsIamUsers)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -657,11 +657,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.DataAwsIamUsersConfig",
+		"hashicorp_aws.iam.DataAwsIamUsersConfig",
 		reflect.TypeOf((*DataAwsIamUsersConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamAccessKey",
+		"hashicorp_aws.iam.IamAccessKey",
 		reflect.TypeOf((*IamAccessKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -712,11 +712,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamAccessKeyConfig",
+		"hashicorp_aws.iam.IamAccessKeyConfig",
 		reflect.TypeOf((*IamAccessKeyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamAccountAlias",
+		"hashicorp_aws.iam.IamAccountAlias",
 		reflect.TypeOf((*IamAccountAlias)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountAlias", GoGetter: "AccountAlias"},
@@ -755,11 +755,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamAccountAliasConfig",
+		"hashicorp_aws.iam.IamAccountAliasConfig",
 		reflect.TypeOf((*IamAccountAliasConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicy",
+		"hashicorp_aws.iam.IamAccountPasswordPolicy",
 		reflect.TypeOf((*IamAccountPasswordPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -824,11 +824,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicyConfig",
+		"hashicorp_aws.iam.IamAccountPasswordPolicyConfig",
 		reflect.TypeOf((*IamAccountPasswordPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamGroup",
+		"hashicorp_aws.iam.IamGroup",
 		reflect.TypeOf((*IamGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -872,11 +872,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamGroupConfig",
+		"hashicorp_aws.iam.IamGroupConfig",
 		reflect.TypeOf((*IamGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamGroupMembership",
+		"hashicorp_aws.iam.IamGroupMembership",
 		reflect.TypeOf((*IamGroupMembership)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -919,11 +919,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamGroupMembershipConfig",
+		"hashicorp_aws.iam.IamGroupMembershipConfig",
 		reflect.TypeOf((*IamGroupMembershipConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamGroupPolicy",
+		"hashicorp_aws.iam.IamGroupPolicy",
 		reflect.TypeOf((*IamGroupPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -970,7 +970,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachment",
+		"hashicorp_aws.iam.IamGroupPolicyAttachment",
 		reflect.TypeOf((*IamGroupPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1011,15 +1011,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachmentConfig",
+		"hashicorp_aws.iam.IamGroupPolicyAttachmentConfig",
 		reflect.TypeOf((*IamGroupPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamGroupPolicyConfig",
+		"hashicorp_aws.iam.IamGroupPolicyConfig",
 		reflect.TypeOf((*IamGroupPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamInstanceProfile",
+		"hashicorp_aws.iam.IamInstanceProfile",
 		reflect.TypeOf((*IamInstanceProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1077,11 +1077,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamInstanceProfileConfig",
+		"hashicorp_aws.iam.IamInstanceProfileConfig",
 		reflect.TypeOf((*IamInstanceProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamOpenidConnectProvider",
+		"hashicorp_aws.iam.IamOpenidConnectProvider",
 		reflect.TypeOf((*IamOpenidConnectProvider)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1131,11 +1131,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamOpenidConnectProviderConfig",
+		"hashicorp_aws.iam.IamOpenidConnectProviderConfig",
 		reflect.TypeOf((*IamOpenidConnectProviderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamPolicy",
+		"hashicorp_aws.iam.IamPolicy",
 		reflect.TypeOf((*IamPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1194,7 +1194,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamPolicyAttachment",
+		"hashicorp_aws.iam.IamPolicyAttachment",
 		reflect.TypeOf((*IamPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1244,15 +1244,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamPolicyAttachmentConfig",
+		"hashicorp_aws.iam.IamPolicyAttachmentConfig",
 		reflect.TypeOf((*IamPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamPolicyConfig",
+		"hashicorp_aws.iam.IamPolicyConfig",
 		reflect.TypeOf((*IamPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamRole",
+		"hashicorp_aws.iam.IamRole",
 		reflect.TypeOf((*IamRole)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1327,15 +1327,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamRoleConfig",
+		"hashicorp_aws.iam.IamRoleConfig",
 		reflect.TypeOf((*IamRoleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamRoleInlinePolicy",
+		"hashicorp_aws.iam.IamRoleInlinePolicy",
 		reflect.TypeOf((*IamRoleInlinePolicy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamRolePolicy",
+		"hashicorp_aws.iam.IamRolePolicy",
 		reflect.TypeOf((*IamRolePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1382,7 +1382,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamRolePolicyAttachment",
+		"hashicorp_aws.iam.IamRolePolicyAttachment",
 		reflect.TypeOf((*IamRolePolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1423,15 +1423,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamRolePolicyAttachmentConfig",
+		"hashicorp_aws.iam.IamRolePolicyAttachmentConfig",
 		reflect.TypeOf((*IamRolePolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamRolePolicyConfig",
+		"hashicorp_aws.iam.IamRolePolicyConfig",
 		reflect.TypeOf((*IamRolePolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamSamlProvider",
+		"hashicorp_aws.iam.IamSamlProvider",
 		reflect.TypeOf((*IamSamlProvider)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1480,11 +1480,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamSamlProviderConfig",
+		"hashicorp_aws.iam.IamSamlProviderConfig",
 		reflect.TypeOf((*IamSamlProviderConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamServerCertificate",
+		"hashicorp_aws.iam.IamServerCertificate",
 		reflect.TypeOf((*IamServerCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1546,11 +1546,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamServerCertificateConfig",
+		"hashicorp_aws.iam.IamServerCertificateConfig",
 		reflect.TypeOf((*IamServerCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamServiceLinkedRole",
+		"hashicorp_aws.iam.IamServiceLinkedRole",
 		reflect.TypeOf((*IamServiceLinkedRole)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1600,11 +1600,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamServiceLinkedRoleConfig",
+		"hashicorp_aws.iam.IamServiceLinkedRoleConfig",
 		reflect.TypeOf((*IamServiceLinkedRoleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUser",
+		"hashicorp_aws.iam.IamUser",
 		reflect.TypeOf((*IamUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1660,11 +1660,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserConfig",
+		"hashicorp_aws.iam.IamUserConfig",
 		reflect.TypeOf((*IamUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUserGroupMembership",
+		"hashicorp_aws.iam.IamUserGroupMembership",
 		reflect.TypeOf((*IamUserGroupMembership)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1705,11 +1705,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserGroupMembershipConfig",
+		"hashicorp_aws.iam.IamUserGroupMembershipConfig",
 		reflect.TypeOf((*IamUserGroupMembershipConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUserLoginProfile",
+		"hashicorp_aws.iam.IamUserLoginProfile",
 		reflect.TypeOf((*IamUserLoginProfile)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1758,11 +1758,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserLoginProfileConfig",
+		"hashicorp_aws.iam.IamUserLoginProfileConfig",
 		reflect.TypeOf((*IamUserLoginProfileConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUserPolicy",
+		"hashicorp_aws.iam.IamUserPolicy",
 		reflect.TypeOf((*IamUserPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1809,7 +1809,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUserPolicyAttachment",
+		"hashicorp_aws.iam.IamUserPolicyAttachment",
 		reflect.TypeOf((*IamUserPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1850,15 +1850,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserPolicyAttachmentConfig",
+		"hashicorp_aws.iam.IamUserPolicyAttachmentConfig",
 		reflect.TypeOf((*IamUserPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserPolicyConfig",
+		"hashicorp_aws.iam.IamUserPolicyConfig",
 		reflect.TypeOf((*IamUserPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.IAM.IamUserSshKey",
+		"hashicorp_aws.iam.IamUserSshKey",
 		reflect.TypeOf((*IamUserSshKey)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1906,7 +1906,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.IAM.IamUserSshKeyConfig",
+		"hashicorp_aws.iam.IamUserSshKeyConfig",
 		reflect.TypeOf((*IamUserSshKeyConfig)(nil)).Elem(),
 	)
 }

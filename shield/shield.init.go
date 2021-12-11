@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Shield.ShieldProtection",
+		"hashicorp_aws.shield.ShieldProtection",
 		reflect.TypeOf((*ShieldProtection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Shield.ShieldProtectionConfig",
+		"hashicorp_aws.shield.ShieldProtectionConfig",
 		reflect.TypeOf((*ShieldProtectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Shield.ShieldProtectionGroup",
+		"hashicorp_aws.shield.ShieldProtectionGroup",
 		reflect.TypeOf((*ShieldProtectionGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -116,7 +116,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Shield.ShieldProtectionGroupConfig",
+		"hashicorp_aws.shield.ShieldProtectionGroupConfig",
 		reflect.TypeOf((*ShieldProtectionGroupConfig)(nil)).Elem(),
 	)
 }

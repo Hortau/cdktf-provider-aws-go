@@ -717,7 +717,7 @@ func NewCodebuildProject(scope constructs.Construct, id *string, config *Codebui
 	j := jsiiProxy_CodebuildProject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProject",
+		"hashicorp_aws.codebuild.CodebuildProject",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -730,7 +730,7 @@ func NewCodebuildProject_Override(c CodebuildProject, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProject",
+		"hashicorp_aws.codebuild.CodebuildProject",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -890,7 +890,7 @@ func CodebuildProject_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeBuild.CodebuildProject",
+		"hashicorp_aws.codebuild.CodebuildProject",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -903,7 +903,7 @@ func CodebuildProject_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeBuild.CodebuildProject",
+		"hashicorp_aws.codebuild.CodebuildProject",
 		"tfResourceType",
 		&returns,
 	)
@@ -1278,6 +1278,8 @@ type CodebuildProjectArtifactsOutputReference interface {
 	EncryptionDisabled() interface{}
 	SetEncryptionDisabled(val interface{})
 	EncryptionDisabledInput() interface{}
+	InternalValue() *CodebuildProjectArtifacts
+	SetInternalValue(val *CodebuildProjectArtifacts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -1361,6 +1363,16 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) EncryptionDisabledI
 	_jsii_.Get(
 		j,
 		"encryptionDisabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) InternalValue() *CodebuildProjectArtifacts {
+	var returns *CodebuildProjectArtifacts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1542,7 +1554,7 @@ func NewCodebuildProjectArtifactsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_CodebuildProjectArtifactsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectArtifactsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectArtifactsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1554,7 +1566,7 @@ func NewCodebuildProjectArtifactsOutputReference_Override(c CodebuildProjectArti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectArtifactsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectArtifactsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1572,6 +1584,14 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetEncryptionDisabl
 	_jsii_.Set(
 		j,
 		"encryptionDisabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetInternalValue(val *CodebuildProjectArtifacts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1822,6 +1842,8 @@ type CodebuildProjectBuildBatchConfigOutputReference interface {
 	CombineArtifacts() interface{}
 	SetCombineArtifacts(val interface{})
 	CombineArtifactsInput() interface{}
+	InternalValue() *CodebuildProjectBuildBatchConfig
+	SetInternalValue(val *CodebuildProjectBuildBatchConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Restrictions() CodebuildProjectBuildBatchConfigRestrictionsOutputReference
@@ -1868,6 +1890,16 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) CombineArtif
 	_jsii_.Get(
 		j,
 		"combineArtifactsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) InternalValue() *CodebuildProjectBuildBatchConfig {
+	var returns *CodebuildProjectBuildBatchConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1969,7 +2001,7 @@ func NewCodebuildProjectBuildBatchConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1981,7 +2013,7 @@ func NewCodebuildProjectBuildBatchConfigOutputReference_Override(c CodebuildProj
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1991,6 +2023,14 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetCombineAr
 	_jsii_.Set(
 		j,
 		"combineArtifacts",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetInternalValue(val *CodebuildProjectBuildBatchConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2163,6 +2203,8 @@ type CodebuildProjectBuildBatchConfigRestrictionsOutputReference interface {
 	ComputeTypesAllowed() *[]*string
 	SetComputeTypesAllowed(val *[]*string)
 	ComputeTypesAllowedInput() *[]*string
+	InternalValue() *CodebuildProjectBuildBatchConfigRestrictions
+	SetInternalValue(val *CodebuildProjectBuildBatchConfigRestrictions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaximumBuildsAllowed() *float64
@@ -2202,6 +2244,16 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 	_jsii_.Get(
 		j,
 		"computeTypesAllowedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) InternalValue() *CodebuildProjectBuildBatchConfigRestrictions {
+	var returns *CodebuildProjectBuildBatchConfigRestrictions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2263,7 +2315,7 @@ func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference(terraformRes
 	j := jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2275,7 +2327,7 @@ func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference_Override(c C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectBuildBatchConfigRestrictionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2285,6 +2337,14 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 	_jsii_.Set(
 		j,
 		"computeTypesAllowed",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) SetInternalValue(val *CodebuildProjectBuildBatchConfigRestrictions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2432,6 +2492,8 @@ type CodebuildProjectCache struct {
 
 type CodebuildProjectCacheOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodebuildProjectCache
+	SetInternalValue(val *CodebuildProjectCache)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -2461,6 +2523,16 @@ type CodebuildProjectCacheOutputReference interface {
 // The jsii proxy struct for CodebuildProjectCacheOutputReference
 type jsiiProxy_CodebuildProjectCacheOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildProjectCacheOutputReference) InternalValue() *CodebuildProjectCache {
+	var returns *CodebuildProjectCache
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildProjectCacheOutputReference) IsSingleItem() *bool {
@@ -2559,7 +2631,7 @@ func NewCodebuildProjectCacheOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_CodebuildProjectCacheOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectCacheOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectCacheOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2571,9 +2643,17 @@ func NewCodebuildProjectCacheOutputReference_Override(c CodebuildProjectCacheOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectCacheOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectCacheOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectCacheOutputReference) SetInternalValue(val *CodebuildProjectCache) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2733,6 +2813,7 @@ func (c *jsiiProxy_CodebuildProjectCacheOutputReference) ResetType() {
 	)
 }
 
+// AWS CodeBuild.
 type CodebuildProjectConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2855,6 +2936,8 @@ type CodebuildProjectEnvironmentOutputReference interface {
 	ImagePullCredentialsType() *string
 	SetImagePullCredentialsType(val *string)
 	ImagePullCredentialsTypeInput() *string
+	InternalValue() *CodebuildProjectEnvironment
+	SetInternalValue(val *CodebuildProjectEnvironment)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PrivilegedMode() interface{}
@@ -2988,6 +3071,16 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) ImagePullCredenti
 	return returns
 }
 
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) InternalValue() *CodebuildProjectEnvironment {
+	var returns *CodebuildProjectEnvironment
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3084,7 +3177,7 @@ func NewCodebuildProjectEnvironmentOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_CodebuildProjectEnvironmentOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3096,7 +3189,7 @@ func NewCodebuildProjectEnvironmentOutputReference_Override(c CodebuildProjectEn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3138,6 +3231,14 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetImagePullCrede
 	_jsii_.Set(
 		j,
 		"imagePullCredentialsType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetInternalValue(val *CodebuildProjectEnvironment) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3329,6 +3430,8 @@ type CodebuildProjectEnvironmentRegistryCredentialOutputReference interface {
 	CredentialProvider() *string
 	SetCredentialProvider(val *string)
 	CredentialProviderInput() *string
+	InternalValue() *CodebuildProjectEnvironmentRegistryCredential
+	SetInternalValue(val *CodebuildProjectEnvironmentRegistryCredential)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3388,6 +3491,16 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 	return returns
 }
 
+func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) InternalValue() *CodebuildProjectEnvironmentRegistryCredential {
+	var returns *CodebuildProjectEnvironmentRegistryCredential
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3424,7 +3537,7 @@ func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference(terraformRe
 	j := jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3436,7 +3549,7 @@ func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference_Override(c 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectEnvironmentRegistryCredentialOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3454,6 +3567,14 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 	_jsii_.Set(
 		j,
 		"credentialProvider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) SetInternalValue(val *CodebuildProjectEnvironmentRegistryCredential) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3604,6 +3725,8 @@ type CodebuildProjectLogsConfigCloudwatchLogsOutputReference interface {
 	GroupName() *string
 	SetGroupName(val *string)
 	GroupNameInput() *string
+	InternalValue() *CodebuildProjectLogsConfigCloudwatchLogs
+	SetInternalValue(val *CodebuildProjectLogsConfigCloudwatchLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Status() *string
@@ -3647,6 +3770,16 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) Grou
 	_jsii_.Get(
 		j,
 		"groupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) InternalValue() *CodebuildProjectLogsConfigCloudwatchLogs {
+	var returns *CodebuildProjectLogsConfigCloudwatchLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3728,7 +3861,7 @@ func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference(terraformResourc
 	j := jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3740,7 +3873,7 @@ func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference_Override(c Codeb
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigCloudwatchLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3750,6 +3883,14 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetG
 	_jsii_.Set(
 		j,
 		"groupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetInternalValue(val *CodebuildProjectLogsConfigCloudwatchLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3906,6 +4047,8 @@ type CodebuildProjectLogsConfigOutputReference interface {
 	cdktf.ComplexObject
 	CloudwatchLogs() CodebuildProjectLogsConfigCloudwatchLogsOutputReference
 	CloudwatchLogsInput() *CodebuildProjectLogsConfigCloudwatchLogs
+	InternalValue() *CodebuildProjectLogsConfig
+	SetInternalValue(val *CodebuildProjectLogsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Logs() CodebuildProjectLogsConfigS3LogsOutputReference
@@ -3946,6 +4089,16 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) CloudwatchLogsInpu
 	_jsii_.Get(
 		j,
 		"cloudwatchLogsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) InternalValue() *CodebuildProjectLogsConfig {
+	var returns *CodebuildProjectLogsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4007,7 +4160,7 @@ func NewCodebuildProjectLogsConfigOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_CodebuildProjectLogsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4019,9 +4172,17 @@ func NewCodebuildProjectLogsConfigOutputReference_Override(c CodebuildProjectLog
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) SetInternalValue(val *CodebuildProjectLogsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4179,6 +4340,8 @@ type CodebuildProjectLogsConfigS3LogsOutputReference interface {
 	EncryptionDisabled() interface{}
 	SetEncryptionDisabled(val interface{})
 	EncryptionDisabledInput() interface{}
+	InternalValue() *CodebuildProjectLogsConfigS3Logs
+	SetInternalValue(val *CodebuildProjectLogsConfigS3Logs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -4222,6 +4385,16 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) EncryptionDi
 	_jsii_.Get(
 		j,
 		"encryptionDisabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) InternalValue() *CodebuildProjectLogsConfigS3Logs {
+	var returns *CodebuildProjectLogsConfigS3Logs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4303,7 +4476,7 @@ func NewCodebuildProjectLogsConfigS3LogsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigS3LogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4315,7 +4488,7 @@ func NewCodebuildProjectLogsConfigS3LogsOutputReference_Override(c CodebuildProj
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectLogsConfigS3LogsOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4325,6 +4498,14 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetEncryptio
 	_jsii_.Set(
 		j,
 		"encryptionDisabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetInternalValue(val *CodebuildProjectLogsConfigS3Logs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4536,6 +4717,8 @@ type CodebuildProjectSecondarySourcesAuth struct {
 
 type CodebuildProjectSecondarySourcesAuthOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodebuildProjectSecondarySourcesAuth
+	SetInternalValue(val *CodebuildProjectSecondarySourcesAuth)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Resource() *string
@@ -4560,6 +4743,16 @@ type CodebuildProjectSecondarySourcesAuthOutputReference interface {
 // The jsii proxy struct for CodebuildProjectSecondarySourcesAuthOutputReference
 type jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) InternalValue() *CodebuildProjectSecondarySourcesAuth {
+	var returns *CodebuildProjectSecondarySourcesAuth
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) IsSingleItem() *bool {
@@ -4638,7 +4831,7 @@ func NewCodebuildProjectSecondarySourcesAuthOutputReference(terraformResource cd
 	j := jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesAuthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4650,9 +4843,17 @@ func NewCodebuildProjectSecondarySourcesAuthOutputReference_Override(c Codebuild
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesAuthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) SetInternalValue(val *CodebuildProjectSecondarySourcesAuth) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4800,6 +5001,8 @@ type CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference interface 
 	Context() *string
 	SetContext(val *string)
 	ContextInput() *string
+	InternalValue() *CodebuildProjectSecondarySourcesBuildStatusConfig
+	SetInternalValue(val *CodebuildProjectSecondarySourcesBuildStatusConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TargetUrl() *string
@@ -4839,6 +5042,16 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 	_jsii_.Get(
 		j,
 		"contextInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) InternalValue() *CodebuildProjectSecondarySourcesBuildStatusConfig {
+	var returns *CodebuildProjectSecondarySourcesBuildStatusConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4900,7 +5113,7 @@ func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference(terrafo
 	j := jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4912,7 +5125,7 @@ func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4922,6 +5135,14 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 	_jsii_.Set(
 		j,
 		"context",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) SetInternalValue(val *CodebuildProjectSecondarySourcesBuildStatusConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5068,6 +5289,8 @@ type CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference interfac
 	FetchSubmodules() interface{}
 	SetFetchSubmodules(val interface{})
 	FetchSubmodulesInput() interface{}
+	InternalValue() *CodebuildProjectSecondarySourcesGitSubmodulesConfig
+	SetInternalValue(val *CodebuildProjectSecondarySourcesGitSubmodulesConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5102,6 +5325,16 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 	_jsii_.Get(
 		j,
 		"fetchSubmodulesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) InternalValue() *CodebuildProjectSecondarySourcesGitSubmodulesConfig {
+	var returns *CodebuildProjectSecondarySourcesGitSubmodulesConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5143,7 +5376,7 @@ func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference(terra
 	j := jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5155,7 +5388,7 @@ func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5165,6 +5398,14 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 	_jsii_.Set(
 		j,
 		"fetchSubmodules",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) SetInternalValue(val *CodebuildProjectSecondarySourcesGitSubmodulesConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5313,6 +5554,8 @@ type CodebuildProjectSourceAuth struct {
 
 type CodebuildProjectSourceAuthOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodebuildProjectSourceAuth
+	SetInternalValue(val *CodebuildProjectSourceAuth)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Resource() *string
@@ -5337,6 +5580,16 @@ type CodebuildProjectSourceAuthOutputReference interface {
 // The jsii proxy struct for CodebuildProjectSourceAuthOutputReference
 type jsiiProxy_CodebuildProjectSourceAuthOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) InternalValue() *CodebuildProjectSourceAuth {
+	var returns *CodebuildProjectSourceAuth
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) IsSingleItem() *bool {
@@ -5415,7 +5668,7 @@ func NewCodebuildProjectSourceAuthOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_CodebuildProjectSourceAuthOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceAuthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5427,9 +5680,17 @@ func NewCodebuildProjectSourceAuthOutputReference_Override(c CodebuildProjectSou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceAuthOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceAuthOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) SetInternalValue(val *CodebuildProjectSourceAuth) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5577,6 +5838,8 @@ type CodebuildProjectSourceBuildStatusConfigOutputReference interface {
 	Context() *string
 	SetContext(val *string)
 	ContextInput() *string
+	InternalValue() *CodebuildProjectSourceBuildStatusConfig
+	SetInternalValue(val *CodebuildProjectSourceBuildStatusConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TargetUrl() *string
@@ -5616,6 +5879,16 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) Conte
 	_jsii_.Get(
 		j,
 		"contextInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) InternalValue() *CodebuildProjectSourceBuildStatusConfig {
+	var returns *CodebuildProjectSourceBuildStatusConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5677,7 +5950,7 @@ func NewCodebuildProjectSourceBuildStatusConfigOutputReference(terraformResource
 	j := jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5689,7 +5962,7 @@ func NewCodebuildProjectSourceBuildStatusConfigOutputReference_Override(c Codebu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceBuildStatusConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5699,6 +5972,14 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetCo
 	_jsii_.Set(
 		j,
 		"context",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetInternalValue(val *CodebuildProjectSourceBuildStatusConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5845,6 +6126,8 @@ type CodebuildProjectSourceGitSubmodulesConfigOutputReference interface {
 	FetchSubmodules() interface{}
 	SetFetchSubmodules(val interface{})
 	FetchSubmodulesInput() interface{}
+	InternalValue() *CodebuildProjectSourceGitSubmodulesConfig
+	SetInternalValue(val *CodebuildProjectSourceGitSubmodulesConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5879,6 +6162,16 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Fet
 	_jsii_.Get(
 		j,
 		"fetchSubmodulesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) InternalValue() *CodebuildProjectSourceGitSubmodulesConfig {
+	var returns *CodebuildProjectSourceGitSubmodulesConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5920,7 +6213,7 @@ func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference(terraformResour
 	j := jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5932,7 +6225,7 @@ func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference_Override(c Code
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceGitSubmodulesConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -5942,6 +6235,14 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Set
 	_jsii_.Set(
 		j,
 		"fetchSubmodules",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) SetInternalValue(val *CodebuildProjectSourceGitSubmodulesConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6071,6 +6372,8 @@ type CodebuildProjectSourceOutputReference interface {
 	InsecureSsl() interface{}
 	SetInsecureSsl(val interface{})
 	InsecureSslInput() interface{}
+	InternalValue() *CodebuildProjectSource
+	SetInternalValue(val *CodebuildProjectSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Location() *string
@@ -6230,6 +6533,16 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) InsecureSslInput() int
 	return returns
 }
 
+func (j *jsiiProxy_CodebuildProjectSourceOutputReference) InternalValue() *CodebuildProjectSource {
+	var returns *CodebuildProjectSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodebuildProjectSourceOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6326,7 +6639,7 @@ func NewCodebuildProjectSourceOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_CodebuildProjectSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6338,7 +6651,7 @@ func NewCodebuildProjectSourceOutputReference_Override(c CodebuildProjectSourceO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectSourceOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6364,6 +6677,14 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetInsecureSsl(val int
 	_jsii_.Set(
 		j,
 		"insecureSsl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetInternalValue(val *CodebuildProjectSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6599,6 +6920,8 @@ type CodebuildProjectVpcConfig struct {
 
 type CodebuildProjectVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodebuildProjectVpcConfig
+	SetInternalValue(val *CodebuildProjectVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -6625,6 +6948,16 @@ type CodebuildProjectVpcConfigOutputReference interface {
 // The jsii proxy struct for CodebuildProjectVpcConfigOutputReference
 type jsiiProxy_CodebuildProjectVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) InternalValue() *CodebuildProjectVpcConfig {
+	var returns *CodebuildProjectVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) IsSingleItem() *bool {
@@ -6723,7 +7056,7 @@ func NewCodebuildProjectVpcConfigOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_CodebuildProjectVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectVpcConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6735,9 +7068,17 @@ func NewCodebuildProjectVpcConfigOutputReference_Override(c CodebuildProjectVpcC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildProjectVpcConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildProjectVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) SetInternalValue(val *CodebuildProjectVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7223,7 +7564,7 @@ func NewCodebuildReportGroup(scope constructs.Construct, id *string, config *Cod
 	j := jsiiProxy_CodebuildReportGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroup",
+		"hashicorp_aws.codebuild.CodebuildReportGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7236,7 +7577,7 @@ func NewCodebuildReportGroup_Override(c CodebuildReportGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroup",
+		"hashicorp_aws.codebuild.CodebuildReportGroup",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -7324,7 +7665,7 @@ func CodebuildReportGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroup",
+		"hashicorp_aws.codebuild.CodebuildReportGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7337,7 +7678,7 @@ func CodebuildReportGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroup",
+		"hashicorp_aws.codebuild.CodebuildReportGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -7531,6 +7872,7 @@ func (c *jsiiProxy_CodebuildReportGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeBuild.
 type CodebuildReportGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7567,6 +7909,8 @@ type CodebuildReportGroupExportConfig struct {
 
 type CodebuildReportGroupExportConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *CodebuildReportGroupExportConfig
+	SetInternalValue(val *CodebuildReportGroupExportConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Destination() CodebuildReportGroupExportConfigS3DestinationOutputReference
@@ -7591,6 +7935,16 @@ type CodebuildReportGroupExportConfigOutputReference interface {
 // The jsii proxy struct for CodebuildReportGroupExportConfigOutputReference
 type jsiiProxy_CodebuildReportGroupExportConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) InternalValue() *CodebuildReportGroupExportConfig {
+	var returns *CodebuildReportGroupExportConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) IsSingleItem() *bool {
@@ -7669,7 +8023,7 @@ func NewCodebuildReportGroupExportConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_CodebuildReportGroupExportConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7681,9 +8035,17 @@ func NewCodebuildReportGroupExportConfigOutputReference_Override(c CodebuildRepo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) SetInternalValue(val *CodebuildReportGroupExportConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7843,6 +8205,8 @@ type CodebuildReportGroupExportConfigS3DestinationOutputReference interface {
 	EncryptionKey() *string
 	SetEncryptionKey(val *string)
 	EncryptionKeyInput() *string
+	InternalValue() *CodebuildReportGroupExportConfigS3Destination
+	SetInternalValue(val *CodebuildReportGroupExportConfigS3Destination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Packaging() *string
@@ -7931,6 +8295,16 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	return returns
 }
 
+func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) InternalValue() *CodebuildReportGroupExportConfigS3Destination {
+	var returns *CodebuildReportGroupExportConfigS3Destination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8007,7 +8381,7 @@ func NewCodebuildReportGroupExportConfigS3DestinationOutputReference(terraformRe
 	j := jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8019,7 +8393,7 @@ func NewCodebuildReportGroupExportConfigS3DestinationOutputReference_Override(c 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
+		"hashicorp_aws.codebuild.CodebuildReportGroupExportConfigS3DestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8045,6 +8419,14 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	_jsii_.Set(
 		j,
 		"encryptionKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) SetInternalValue(val *CodebuildReportGroupExportConfigS3Destination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8488,7 +8870,7 @@ func NewCodebuildSourceCredential(scope constructs.Construct, id *string, config
 	j := jsiiProxy_CodebuildSourceCredential{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredential",
+		"hashicorp_aws.codebuild.CodebuildSourceCredential",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8501,7 +8883,7 @@ func NewCodebuildSourceCredential_Override(c CodebuildSourceCredential, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredential",
+		"hashicorp_aws.codebuild.CodebuildSourceCredential",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -8581,7 +8963,7 @@ func CodebuildSourceCredential_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredential",
+		"hashicorp_aws.codebuild.CodebuildSourceCredential",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8594,7 +8976,7 @@ func CodebuildSourceCredential_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeBuild.CodebuildSourceCredential",
+		"hashicorp_aws.codebuild.CodebuildSourceCredential",
 		"tfResourceType",
 		&returns,
 	)
@@ -8764,6 +9146,7 @@ func (c *jsiiProxy_CodebuildSourceCredential) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeBuild.
 type CodebuildSourceCredentialConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9098,7 +9481,7 @@ func NewCodebuildWebhook(scope constructs.Construct, id *string, config *Codebui
 	j := jsiiProxy_CodebuildWebhook{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildWebhook",
+		"hashicorp_aws.codebuild.CodebuildWebhook",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9111,7 +9494,7 @@ func NewCodebuildWebhook_Override(c CodebuildWebhook, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeBuild.CodebuildWebhook",
+		"hashicorp_aws.codebuild.CodebuildWebhook",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -9191,7 +9574,7 @@ func CodebuildWebhook_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeBuild.CodebuildWebhook",
+		"hashicorp_aws.codebuild.CodebuildWebhook",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9204,7 +9587,7 @@ func CodebuildWebhook_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeBuild.CodebuildWebhook",
+		"hashicorp_aws.codebuild.CodebuildWebhook",
 		"tfResourceType",
 		&returns,
 	)
@@ -9390,6 +9773,7 @@ func (c *jsiiProxy_CodebuildWebhook) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeBuild.
 type CodebuildWebhookConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

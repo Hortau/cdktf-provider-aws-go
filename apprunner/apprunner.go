@@ -383,7 +383,7 @@ func NewApprunnerAutoScalingConfigurationVersion(scope constructs.Construct, id 
 	j := jsiiProxy_ApprunnerAutoScalingConfigurationVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersion",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -396,7 +396,7 @@ func NewApprunnerAutoScalingConfigurationVersion_Override(a ApprunnerAutoScaling
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersion",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersion",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -492,7 +492,7 @@ func ApprunnerAutoScalingConfigurationVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersion",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -505,7 +505,7 @@ func ApprunnerAutoScalingConfigurationVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppRunner.ApprunnerAutoScalingConfigurationVersion",
+		"hashicorp_aws.apprunner.ApprunnerAutoScalingConfigurationVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -707,6 +707,7 @@ func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) ToTerraform() inter
 	return returns
 }
 
+// App Runner.
 type ApprunnerAutoScalingConfigurationVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1033,7 +1034,7 @@ func NewApprunnerConnection(scope constructs.Construct, id *string, config *Appr
 	j := jsiiProxy_ApprunnerConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerConnection",
+		"hashicorp_aws.apprunner.ApprunnerConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1046,7 +1047,7 @@ func NewApprunnerConnection_Override(a ApprunnerConnection, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerConnection",
+		"hashicorp_aws.apprunner.ApprunnerConnection",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1126,7 +1127,7 @@ func ApprunnerConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppRunner.ApprunnerConnection",
+		"hashicorp_aws.apprunner.ApprunnerConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1139,7 +1140,7 @@ func ApprunnerConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppRunner.ApprunnerConnection",
+		"hashicorp_aws.apprunner.ApprunnerConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -1317,6 +1318,7 @@ func (a *jsiiProxy_ApprunnerConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// App Runner.
 type ApprunnerConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1616,7 +1618,7 @@ func NewApprunnerCustomDomainAssociation(scope constructs.Construct, id *string,
 	j := jsiiProxy_ApprunnerCustomDomainAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociation",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1629,7 +1631,7 @@ func NewApprunnerCustomDomainAssociation_Override(a ApprunnerCustomDomainAssocia
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociation",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociation",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1701,7 +1703,7 @@ func ApprunnerCustomDomainAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociation",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1714,7 +1716,7 @@ func ApprunnerCustomDomainAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociation",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1998,7 +2000,7 @@ func NewApprunnerCustomDomainAssociationCertificateValidationRecords(terraformRe
 	j := jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2011,7 +2013,7 @@ func NewApprunnerCustomDomainAssociationCertificateValidationRecords_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
+		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		a,
 	)
@@ -2111,6 +2113,7 @@ func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 	return returns
 }
 
+// App Runner.
 type ApprunnerCustomDomainAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2549,7 +2552,7 @@ func NewApprunnerService(scope constructs.Construct, id *string, config *Apprunn
 	j := jsiiProxy_ApprunnerService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerService",
+		"hashicorp_aws.apprunner.ApprunnerService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2562,7 +2565,7 @@ func NewApprunnerService_Override(a ApprunnerService, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerService",
+		"hashicorp_aws.apprunner.ApprunnerService",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2642,7 +2645,7 @@ func ApprunnerService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppRunner.ApprunnerService",
+		"hashicorp_aws.apprunner.ApprunnerService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2655,7 +2658,7 @@ func ApprunnerService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppRunner.ApprunnerService",
+		"hashicorp_aws.apprunner.ApprunnerService",
 		"tfResourceType",
 		&returns,
 	)
@@ -2897,6 +2900,7 @@ func (a *jsiiProxy_ApprunnerService) ToTerraform() interface{} {
 	return returns
 }
 
+// App Runner.
 type ApprunnerServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2939,6 +2943,8 @@ type ApprunnerServiceEncryptionConfiguration struct {
 
 type ApprunnerServiceEncryptionConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApprunnerServiceEncryptionConfiguration
+	SetInternalValue(val *ApprunnerServiceEncryptionConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKey() *string
@@ -2959,6 +2965,16 @@ type ApprunnerServiceEncryptionConfigurationOutputReference interface {
 // The jsii proxy struct for ApprunnerServiceEncryptionConfigurationOutputReference
 type jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) InternalValue() *ApprunnerServiceEncryptionConfiguration {
+	var returns *ApprunnerServiceEncryptionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) IsSingleItem() *bool {
@@ -3017,7 +3033,7 @@ func NewApprunnerServiceEncryptionConfigurationOutputReference(terraformResource
 	j := jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceEncryptionConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3029,9 +3045,17 @@ func NewApprunnerServiceEncryptionConfigurationOutputReference_Override(a Apprun
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceEncryptionConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceEncryptionConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceEncryptionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3171,6 +3195,8 @@ type ApprunnerServiceHealthCheckConfigurationOutputReference interface {
 	HealthyThreshold() *float64
 	SetHealthyThreshold(val *float64)
 	HealthyThresholdInput() *float64
+	InternalValue() *ApprunnerServiceHealthCheckConfiguration
+	SetInternalValue(val *ApprunnerServiceHealthCheckConfiguration)
 	Interval() *float64
 	SetInterval(val *float64)
 	IntervalInput() *float64
@@ -3226,6 +3252,16 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) Heal
 	_jsii_.Get(
 		j,
 		"healthyThresholdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) InternalValue() *ApprunnerServiceHealthCheckConfiguration {
+	var returns *ApprunnerServiceHealthCheckConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3367,7 +3403,7 @@ func NewApprunnerServiceHealthCheckConfigurationOutputReference(terraformResourc
 	j := jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3379,7 +3415,7 @@ func NewApprunnerServiceHealthCheckConfigurationOutputReference_Override(a Appru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceHealthCheckConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3389,6 +3425,14 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetH
 	_jsii_.Set(
 		j,
 		"healthyThreshold",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceHealthCheckConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3590,10 +3634,10 @@ func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) Rese
 }
 
 type ApprunnerServiceInstanceConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#instance_role_arn ApprunnerService#instance_role_arn}.
-	InstanceRoleArn *string `json:"instanceRoleArn"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#cpu ApprunnerService#cpu}.
 	Cpu *string `json:"cpu"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#instance_role_arn ApprunnerService#instance_role_arn}.
+	InstanceRoleArn *string `json:"instanceRoleArn"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#memory ApprunnerService#memory}.
 	Memory *string `json:"memory"`
 }
@@ -3606,6 +3650,8 @@ type ApprunnerServiceInstanceConfigurationOutputReference interface {
 	InstanceRoleArn() *string
 	SetInstanceRoleArn(val *string)
 	InstanceRoleArnInput() *string
+	InternalValue() *ApprunnerServiceInstanceConfiguration
+	SetInternalValue(val *ApprunnerServiceInstanceConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Memory() *string
@@ -3622,6 +3668,7 @@ type ApprunnerServiceInstanceConfigurationOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCpu()
+	ResetInstanceRoleArn()
 	ResetMemory()
 }
 
@@ -3665,6 +3712,16 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) Instanc
 	_jsii_.Get(
 		j,
 		"instanceRoleArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) InternalValue() *ApprunnerServiceInstanceConfiguration {
+	var returns *ApprunnerServiceInstanceConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3726,7 +3783,7 @@ func NewApprunnerServiceInstanceConfigurationOutputReference(terraformResource c
 	j := jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceInstanceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceInstanceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3738,7 +3795,7 @@ func NewApprunnerServiceInstanceConfigurationOutputReference_Override(a Apprunne
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceInstanceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceInstanceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3756,6 +3813,14 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetInst
 	_jsii_.Set(
 		j,
 		"instanceRoleArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceInstanceConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3884,6 +3949,14 @@ func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) ResetCp
 	)
 }
 
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) ResetInstanceRoleArn() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetInstanceRoleArn",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) ResetMemory() {
 	_jsii_.InvokeVoid(
 		a,
@@ -3924,6 +3997,8 @@ type ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReferen
 	ConnectionArn() *string
 	SetConnectionArn(val *string)
 	ConnectionArnInput() *string
+	InternalValue() *ApprunnerServiceSourceConfigurationAuthenticationConfiguration
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationAuthenticationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3985,6 +4060,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 	return returns
 }
 
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationAuthenticationConfiguration {
+	var returns *ApprunnerServiceSourceConfigurationAuthenticationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4021,7 +4106,7 @@ func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputRefe
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4033,7 +4118,7 @@ func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputRefe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4051,6 +4136,14 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 	_jsii_.Set(
 		j,
 		"connectionArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationAuthenticationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4219,6 +4312,8 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfi
 	BuildCommand() *string
 	SetBuildCommand(val *string)
 	BuildCommandInput() *string
+	InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *string
@@ -4269,6 +4364,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	_jsii_.Get(
 		j,
 		"buildCommandInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues {
+	var returns *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4390,7 +4495,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeCo
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4402,7 +4507,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeCo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4412,6 +4517,14 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	_jsii_.Set(
 		j,
 		"buildCommand",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4595,6 +4708,8 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputRef
 	ConfigurationSource() *string
 	SetConfigurationSource(val *string)
 	ConfigurationSourceInput() *string
+	InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4656,6 +4771,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration {
+	var returns *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4692,7 +4817,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutput
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4704,7 +4829,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4714,6 +4839,14 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	_jsii_.Set(
 		j,
 		"configurationSource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4846,6 +4979,8 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference interface 
 	cdktf.ComplexObject
 	CodeConfiguration() ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference
 	CodeConfigurationInput() *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration
+	InternalValue() *ApprunnerServiceSourceConfigurationCodeRepository
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepository)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RepositoryUrl() *string
@@ -4888,6 +5023,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 	_jsii_.Get(
 		j,
 		"codeConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationCodeRepository {
+	var returns *ApprunnerServiceSourceConfigurationCodeRepository
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4969,7 +5114,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference(terrafo
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4981,9 +5126,17 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference_Overrid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepository) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5136,6 +5289,8 @@ type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion struct {
 
 type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5159,6 +5314,16 @@ type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputRef
 // The jsii proxy struct for ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference
 type jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion {
+	var returns *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) IsSingleItem() *bool {
@@ -5237,7 +5402,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutput
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5249,9 +5414,17 @@ func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutput
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5401,6 +5574,8 @@ type ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration struct
 
 type ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Port() *string
@@ -5430,6 +5605,16 @@ type ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputR
 // The jsii proxy struct for ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference
 type jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration {
+	var returns *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) IsSingleItem() *bool {
@@ -5528,7 +5713,7 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutp
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5540,9 +5725,17 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5712,6 +5905,8 @@ type ApprunnerServiceSourceConfigurationImageRepositoryOutputReference interface
 	ImageRepositoryType() *string
 	SetImageRepositoryType(val *string)
 	ImageRepositoryTypeInput() *string
+	InternalValue() *ApprunnerServiceSourceConfigurationImageRepository
+	SetInternalValue(val *ApprunnerServiceSourceConfigurationImageRepository)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5793,6 +5988,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 	return returns
 }
 
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) InternalValue() *ApprunnerServiceSourceConfigurationImageRepository {
+	var returns *ApprunnerServiceSourceConfigurationImageRepository
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5829,7 +6034,7 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference(terraf
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5841,7 +6046,7 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationImageRepositoryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5859,6 +6064,14 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 	_jsii_.Set(
 		j,
 		"imageRepositoryType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfigurationImageRepository) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5998,6 +6211,8 @@ type ApprunnerServiceSourceConfigurationOutputReference interface {
 	CodeRepositoryInput() *ApprunnerServiceSourceConfigurationCodeRepository
 	ImageRepository() ApprunnerServiceSourceConfigurationImageRepositoryOutputReference
 	ImageRepositoryInput() *ApprunnerServiceSourceConfigurationImageRepository
+	InternalValue() *ApprunnerServiceSourceConfiguration
+	SetInternalValue(val *ApprunnerServiceSourceConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6104,6 +6319,16 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) ImageRepo
 	return returns
 }
 
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) InternalValue() *ApprunnerServiceSourceConfiguration {
+	var returns *ApprunnerServiceSourceConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6140,7 +6365,7 @@ func NewApprunnerServiceSourceConfigurationOutputReference(terraformResource cdk
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6152,7 +6377,7 @@ func NewApprunnerServiceSourceConfigurationOutputReference_Override(a ApprunnerS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppRunner.ApprunnerServiceSourceConfigurationOutputReference",
+		"hashicorp_aws.apprunner.ApprunnerServiceSourceConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6162,6 +6387,14 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetAutoDe
 	_jsii_.Set(
 		j,
 		"autoDeploymentsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetInternalValue(val *ApprunnerServiceSourceConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaPackage.MediaPackageChannel",
+		"hashicorp_aws.mediapackage.MediaPackageChannel",
 		reflect.TypeOf((*MediaPackageChannel)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,11 +58,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelConfig",
+		"hashicorp_aws.mediapackage.MediaPackageChannelConfig",
 		reflect.TypeOf((*MediaPackageChannelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngest",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngest",
 		reflect.TypeOf((*MediaPackageChannelHlsIngest)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -82,7 +82,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MediaPackage.MediaPackageChannelHlsIngestIngestEndpoints",
+		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngestIngestEndpoints",
 		reflect.TypeOf((*MediaPackageChannelHlsIngestIngestEndpoints)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},

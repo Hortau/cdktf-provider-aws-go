@@ -244,7 +244,7 @@ func NewDataAwsLakeformationDataLakeSettings(scope constructs.Construct, id *str
 	j := jsiiProxy_DataAwsLakeformationDataLakeSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -257,7 +257,7 @@ func NewDataAwsLakeformationDataLakeSettings_Override(d DataAwsLakeformationData
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettings",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -313,7 +313,7 @@ func DataAwsLakeformationDataLakeSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -326,7 +326,7 @@ func DataAwsLakeformationDataLakeSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -522,6 +522,7 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) ToTerraform() interface
 	return returns
 }
 
+// AWS Lake Formation.
 type DataAwsLakeformationDataLakeSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -614,7 +615,7 @@ func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions(ter
 	j := jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -627,7 +628,7 @@ func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -806,7 +807,7 @@ func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions(terraf
 	j := jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -819,7 +820,7 @@ func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions_Overri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1295,7 +1296,7 @@ func NewDataAwsLakeformationPermissions(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsLakeformationPermissions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1308,7 +1309,7 @@ func NewDataAwsLakeformationPermissions_Override(d DataAwsLakeformationPermissio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissions",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1380,7 +1381,7 @@ func DataAwsLakeformationPermissions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1393,7 +1394,7 @@ func DataAwsLakeformationPermissions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissions",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissions",
 		"tfResourceType",
 		&returns,
 	)
@@ -1635,6 +1636,7 @@ func (d *jsiiProxy_DataAwsLakeformationPermissions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lake Formation.
 type DataAwsLakeformationPermissionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1683,6 +1685,8 @@ type DataAwsLakeformationPermissionsDataLocationOutputReference interface {
 	CatalogId() *string
 	SetCatalogId(val *string)
 	CatalogIdInput() *string
+	InternalValue() *DataAwsLakeformationPermissionsDataLocation
+	SetInternalValue(val *DataAwsLakeformationPermissionsDataLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1743,6 +1747,16 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) C
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) InternalValue() *DataAwsLakeformationPermissionsDataLocation {
+	var returns *DataAwsLakeformationPermissionsDataLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1779,7 +1793,7 @@ func NewDataAwsLakeformationPermissionsDataLocationOutputReference(terraformReso
 	j := jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDataLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1791,7 +1805,7 @@ func NewDataAwsLakeformationPermissionsDataLocationOutputReference_Override(d Da
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDataLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -1809,6 +1823,14 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) S
 	_jsii_.Set(
 		j,
 		"catalogId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) SetInternalValue(val *DataAwsLakeformationPermissionsDataLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1941,6 +1963,8 @@ type DataAwsLakeformationPermissionsDatabaseOutputReference interface {
 	CatalogId() *string
 	SetCatalogId(val *string)
 	CatalogIdInput() *string
+	InternalValue() *DataAwsLakeformationPermissionsDatabase
+	SetInternalValue(val *DataAwsLakeformationPermissionsDatabase)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -1979,6 +2003,16 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) Catal
 	_jsii_.Get(
 		j,
 		"catalogIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) InternalValue() *DataAwsLakeformationPermissionsDatabase {
+	var returns *DataAwsLakeformationPermissionsDatabase
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2040,7 +2074,7 @@ func NewDataAwsLakeformationPermissionsDatabaseOutputReference(terraformResource
 	j := jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2052,7 +2086,7 @@ func NewDataAwsLakeformationPermissionsDatabaseOutputReference_Override(d DataAw
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2062,6 +2096,14 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetCa
 	_jsii_.Set(
 		j,
 		"catalogId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetInternalValue(val *DataAwsLakeformationPermissionsDatabase) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2209,6 +2251,8 @@ type DataAwsLakeformationPermissionsTableOutputReference interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	InternalValue() *DataAwsLakeformationPermissionsTable
+	SetInternalValue(val *DataAwsLakeformationPermissionsTable)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -2272,6 +2316,16 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) Database
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) InternalValue() *DataAwsLakeformationPermissionsTable {
+	var returns *DataAwsLakeformationPermissionsTable
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2353,7 +2407,7 @@ func NewDataAwsLakeformationPermissionsTableOutputReference(terraformResource cd
 	j := jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2365,7 +2419,7 @@ func NewDataAwsLakeformationPermissionsTableOutputReference_Override(d DataAwsLa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2383,6 +2437,14 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetDatab
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetInternalValue(val *DataAwsLakeformationPermissionsTable) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2564,6 +2626,8 @@ type DataAwsLakeformationPermissionsTableWithColumnsOutputReference interface {
 	ExcludedColumnNames() *[]*string
 	SetExcludedColumnNames(val *[]*string)
 	ExcludedColumnNamesInput() *[]*string
+	InternalValue() *DataAwsLakeformationPermissionsTableWithColumns
+	SetInternalValue(val *DataAwsLakeformationPermissionsTableWithColumns)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -2673,6 +2737,16 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) InternalValue() *DataAwsLakeformationPermissionsTableWithColumns {
+	var returns *DataAwsLakeformationPermissionsTableWithColumns
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2749,7 +2823,7 @@ func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference(terraform
 	j := jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2761,7 +2835,7 @@ func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationPermissionsTableWithColumnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2795,6 +2869,14 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	_jsii_.Set(
 		j,
 		"excludedColumnNames",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) SetInternalValue(val *DataAwsLakeformationPermissionsTableWithColumns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3187,7 +3269,7 @@ func NewDataAwsLakeformationResource(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsLakeformationResource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResource",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3200,7 +3282,7 @@ func NewDataAwsLakeformationResource_Override(d DataAwsLakeformationResource, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResource",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResource",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3256,7 +3338,7 @@ func DataAwsLakeformationResource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResource",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3269,7 +3351,7 @@ func DataAwsLakeformationResource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.DataAwsLakeformationResource",
+		"hashicorp_aws.lakeformation.DataAwsLakeformationResource",
 		"tfResourceType",
 		&returns,
 	)
@@ -3431,6 +3513,7 @@ func (d *jsiiProxy_DataAwsLakeformationResource) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lake Formation.
 type DataAwsLakeformationResourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3751,7 +3834,7 @@ func NewLakeformationDataLakeSettings(scope constructs.Construct, id *string, co
 	j := jsiiProxy_LakeformationDataLakeSettings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3764,7 +3847,7 @@ func NewLakeformationDataLakeSettings_Override(l LakeformationDataLakeSettings, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettings",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -3852,7 +3935,7 @@ func LakeformationDataLakeSettings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3865,7 +3948,7 @@ func LakeformationDataLakeSettings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.LakeformationDataLakeSettings",
+		"hashicorp_aws.lakeformation.LakeformationDataLakeSettings",
 		"tfResourceType",
 		&returns,
 	)
@@ -4067,6 +4150,7 @@ func (l *jsiiProxy_LakeformationDataLakeSettings) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lake Formation.
 type LakeformationDataLakeSettingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4507,7 +4591,7 @@ func NewLakeformationPermissions(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_LakeformationPermissions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissions",
+		"hashicorp_aws.lakeformation.LakeformationPermissions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4520,7 +4604,7 @@ func NewLakeformationPermissions_Override(l LakeformationPermissions, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissions",
+		"hashicorp_aws.lakeformation.LakeformationPermissions",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -4608,7 +4692,7 @@ func LakeformationPermissions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.LakeformationPermissions",
+		"hashicorp_aws.lakeformation.LakeformationPermissions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4621,7 +4705,7 @@ func LakeformationPermissions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.LakeformationPermissions",
+		"hashicorp_aws.lakeformation.LakeformationPermissions",
 		"tfResourceType",
 		&returns,
 	)
@@ -4871,6 +4955,7 @@ func (l *jsiiProxy_LakeformationPermissions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lake Formation.
 type LakeformationPermissionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4923,6 +5008,8 @@ type LakeformationPermissionsDataLocationOutputReference interface {
 	CatalogId() *string
 	SetCatalogId(val *string)
 	CatalogIdInput() *string
+	InternalValue() *LakeformationPermissionsDataLocation
+	SetInternalValue(val *LakeformationPermissionsDataLocation)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4983,6 +5070,16 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) CatalogI
 	return returns
 }
 
+func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) InternalValue() *LakeformationPermissionsDataLocation {
+	var returns *LakeformationPermissionsDataLocation
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5019,7 +5116,7 @@ func NewLakeformationPermissionsDataLocationOutputReference(terraformResource cd
 	j := jsiiProxy_LakeformationPermissionsDataLocationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDataLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5031,7 +5128,7 @@ func NewLakeformationPermissionsDataLocationOutputReference_Override(l Lakeforma
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDataLocationOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDataLocationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5049,6 +5146,14 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetCatal
 	_jsii_.Set(
 		j,
 		"catalogId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetInternalValue(val *LakeformationPermissionsDataLocation) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5181,6 +5286,8 @@ type LakeformationPermissionsDatabaseOutputReference interface {
 	CatalogId() *string
 	SetCatalogId(val *string)
 	CatalogIdInput() *string
+	InternalValue() *LakeformationPermissionsDatabase
+	SetInternalValue(val *LakeformationPermissionsDatabase)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -5219,6 +5326,16 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) CatalogIdInp
 	_jsii_.Get(
 		j,
 		"catalogIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) InternalValue() *LakeformationPermissionsDatabase {
+	var returns *LakeformationPermissionsDatabase
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5280,7 +5397,7 @@ func NewLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.
 	j := jsiiProxy_LakeformationPermissionsDatabaseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5292,7 +5409,7 @@ func NewLakeformationPermissionsDatabaseOutputReference_Override(l Lakeformation
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsDatabaseOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsDatabaseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5302,6 +5419,14 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetCatalogId
 	_jsii_.Set(
 		j,
 		"catalogId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetInternalValue(val *LakeformationPermissionsDatabase) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5449,6 +5574,8 @@ type LakeformationPermissionsTableOutputReference interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	InternalValue() *LakeformationPermissionsTable
+	SetInternalValue(val *LakeformationPermissionsTable)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -5512,6 +5639,16 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) DatabaseNameInp
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) InternalValue() *LakeformationPermissionsTable {
+	var returns *LakeformationPermissionsTable
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5593,7 +5730,7 @@ func NewLakeformationPermissionsTableOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_LakeformationPermissionsTableOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5605,7 +5742,7 @@ func NewLakeformationPermissionsTableOutputReference_Override(l LakeformationPer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -5623,6 +5760,14 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetDatabaseName
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetInternalValue(val *LakeformationPermissionsTable) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5804,6 +5949,8 @@ type LakeformationPermissionsTableWithColumnsOutputReference interface {
 	ExcludedColumnNames() *[]*string
 	SetExcludedColumnNames(val *[]*string)
 	ExcludedColumnNamesInput() *[]*string
+	InternalValue() *LakeformationPermissionsTableWithColumns
+	SetInternalValue(val *LakeformationPermissionsTableWithColumns)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -5913,6 +6060,16 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) Excl
 	return returns
 }
 
+func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) InternalValue() *LakeformationPermissionsTableWithColumns {
+	var returns *LakeformationPermissionsTableWithColumns
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5989,7 +6146,7 @@ func NewLakeformationPermissionsTableWithColumnsOutputReference(terraformResourc
 	j := jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableWithColumnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6001,7 +6158,7 @@ func NewLakeformationPermissionsTableWithColumnsOutputReference_Override(l Lakef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationPermissionsTableWithColumnsOutputReference",
+		"hashicorp_aws.lakeformation.LakeformationPermissionsTableWithColumnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -6035,6 +6192,14 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetE
 	_jsii_.Set(
 		j,
 		"excludedColumnNames",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetInternalValue(val *LakeformationPermissionsTableWithColumns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6440,7 +6605,7 @@ func NewLakeformationResource(scope constructs.Construct, id *string, config *La
 	j := jsiiProxy_LakeformationResource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationResource",
+		"hashicorp_aws.lakeformation.LakeformationResource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6453,7 +6618,7 @@ func NewLakeformationResource_Override(l LakeformationResource, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.LakeFormation.LakeformationResource",
+		"hashicorp_aws.lakeformation.LakeformationResource",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -6517,7 +6682,7 @@ func LakeformationResource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.LakeFormation.LakeformationResource",
+		"hashicorp_aws.lakeformation.LakeformationResource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6530,7 +6695,7 @@ func LakeformationResource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.LakeFormation.LakeformationResource",
+		"hashicorp_aws.lakeformation.LakeformationResource",
 		"tfResourceType",
 		&returns,
 	)
@@ -6700,6 +6865,7 @@ func (l *jsiiProxy_LakeformationResource) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lake Formation.
 type LakeformationResourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

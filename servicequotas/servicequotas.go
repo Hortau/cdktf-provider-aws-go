@@ -230,7 +230,7 @@ func NewDataAwsServicequotasService(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsServicequotasService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasService",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -243,7 +243,7 @@ func NewDataAwsServicequotasService_Override(d DataAwsServicequotasService, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasService",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasService",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -299,7 +299,7 @@ func DataAwsServicequotasService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasService",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -312,7 +312,7 @@ func DataAwsServicequotasService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasService",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasService",
 		"tfResourceType",
 		&returns,
 	)
@@ -474,6 +474,7 @@ func (d *jsiiProxy_DataAwsServicequotasService) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Quotas.
 type DataAwsServicequotasServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -811,7 +812,7 @@ func NewDataAwsServicequotasServiceQuota(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsServicequotasServiceQuota{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuota",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -824,7 +825,7 @@ func NewDataAwsServicequotasServiceQuota_Override(d DataAwsServicequotasServiceQ
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuota",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -896,7 +897,7 @@ func DataAwsServicequotasServiceQuota_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuota",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -909,7 +910,7 @@ func DataAwsServicequotasServiceQuota_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceQuotas.DataAwsServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.DataAwsServicequotasServiceQuota",
 		"tfResourceType",
 		&returns,
 	)
@@ -1087,6 +1088,7 @@ func (d *jsiiProxy_DataAwsServicequotasServiceQuota) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Quotas.
 type DataAwsServicequotasServiceQuotaConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1437,7 +1439,7 @@ func NewServicequotasServiceQuota(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ServicequotasServiceQuota{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuota",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1450,7 +1452,7 @@ func NewServicequotasServiceQuota_Override(s ServicequotasServiceQuota, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuota",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1522,7 +1524,7 @@ func ServicequotasServiceQuota_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuota",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1535,7 +1537,7 @@ func ServicequotasServiceQuota_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceQuotas.ServicequotasServiceQuota",
+		"hashicorp_aws.servicequotas.ServicequotasServiceQuota",
 		"tfResourceType",
 		&returns,
 	)
@@ -1697,6 +1699,7 @@ func (s *jsiiProxy_ServicequotasServiceQuota) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Quotas.
 type ServicequotasServiceQuotaConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

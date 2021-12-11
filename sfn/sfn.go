@@ -242,7 +242,7 @@ func NewDataAwsSfnActivity(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsSfnActivity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.DataAwsSfnActivity",
+		"hashicorp_aws.sfn.DataAwsSfnActivity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -255,7 +255,7 @@ func NewDataAwsSfnActivity_Override(d DataAwsSfnActivity, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.DataAwsSfnActivity",
+		"hashicorp_aws.sfn.DataAwsSfnActivity",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -311,7 +311,7 @@ func DataAwsSfnActivity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SFN.DataAwsSfnActivity",
+		"hashicorp_aws.sfn.DataAwsSfnActivity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -324,7 +324,7 @@ func DataAwsSfnActivity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SFN.DataAwsSfnActivity",
+		"hashicorp_aws.sfn.DataAwsSfnActivity",
 		"tfResourceType",
 		&returns,
 	)
@@ -494,6 +494,7 @@ func (d *jsiiProxy_DataAwsSfnActivity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Step Functions.
 type DataAwsSfnActivityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -772,7 +773,7 @@ func NewDataAwsSfnStateMachine(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsSfnStateMachine{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachine",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachine",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -785,7 +786,7 @@ func NewDataAwsSfnStateMachine_Override(d DataAwsSfnStateMachine, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachine",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachine",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -841,7 +842,7 @@ func DataAwsSfnStateMachine_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachine",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachine",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -854,7 +855,7 @@ func DataAwsSfnStateMachine_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SFN.DataAwsSfnStateMachine",
+		"hashicorp_aws.sfn.DataAwsSfnStateMachine",
 		"tfResourceType",
 		&returns,
 	)
@@ -1016,6 +1017,7 @@ func (d *jsiiProxy_DataAwsSfnStateMachine) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Step Functions.
 type DataAwsSfnStateMachineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1298,7 +1300,7 @@ func NewSfnActivity(scope constructs.Construct, id *string, config *SfnActivityC
 	j := jsiiProxy_SfnActivity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnActivity",
+		"hashicorp_aws.sfn.SfnActivity",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1311,7 +1313,7 @@ func NewSfnActivity_Override(s SfnActivity, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnActivity",
+		"hashicorp_aws.sfn.SfnActivity",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1383,7 +1385,7 @@ func SfnActivity_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SFN.SfnActivity",
+		"hashicorp_aws.sfn.SfnActivity",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1396,7 +1398,7 @@ func SfnActivity_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SFN.SfnActivity",
+		"hashicorp_aws.sfn.SfnActivity",
 		"tfResourceType",
 		&returns,
 	)
@@ -1574,6 +1576,7 @@ func (s *jsiiProxy_SfnActivity) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Step Functions.
 type SfnActivityConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2000,7 +2003,7 @@ func NewSfnStateMachine(scope constructs.Construct, id *string, config *SfnState
 	j := jsiiProxy_SfnStateMachine{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachine",
+		"hashicorp_aws.sfn.SfnStateMachine",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2013,7 +2016,7 @@ func NewSfnStateMachine_Override(s SfnStateMachine, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachine",
+		"hashicorp_aws.sfn.SfnStateMachine",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -2109,7 +2112,7 @@ func SfnStateMachine_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SFN.SfnStateMachine",
+		"hashicorp_aws.sfn.SfnStateMachine",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2122,7 +2125,7 @@ func SfnStateMachine_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SFN.SfnStateMachine",
+		"hashicorp_aws.sfn.SfnStateMachine",
 		"tfResourceType",
 		&returns,
 	)
@@ -2340,6 +2343,7 @@ func (s *jsiiProxy_SfnStateMachine) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Step Functions.
 type SfnStateMachineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2385,6 +2389,8 @@ type SfnStateMachineLoggingConfigurationOutputReference interface {
 	IncludeExecutionData() interface{}
 	SetIncludeExecutionData(val interface{})
 	IncludeExecutionDataInput() interface{}
+	InternalValue() *SfnStateMachineLoggingConfiguration
+	SetInternalValue(val *SfnStateMachineLoggingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Level() *string
@@ -2428,6 +2434,16 @@ func (j *jsiiProxy_SfnStateMachineLoggingConfigurationOutputReference) IncludeEx
 	_jsii_.Get(
 		j,
 		"includeExecutionDataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SfnStateMachineLoggingConfigurationOutputReference) InternalValue() *SfnStateMachineLoggingConfiguration {
+	var returns *SfnStateMachineLoggingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2509,7 +2525,7 @@ func NewSfnStateMachineLoggingConfigurationOutputReference(terraformResource cdk
 	j := jsiiProxy_SfnStateMachineLoggingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachineLoggingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2521,7 +2537,7 @@ func NewSfnStateMachineLoggingConfigurationOutputReference_Override(s SfnStateMa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachineLoggingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2531,6 +2547,14 @@ func (j *jsiiProxy_SfnStateMachineLoggingConfigurationOutputReference) SetInclud
 	_jsii_.Set(
 		j,
 		"includeExecutionData",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SfnStateMachineLoggingConfigurationOutputReference) SetInternalValue(val *SfnStateMachineLoggingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2693,6 +2717,8 @@ type SfnStateMachineTracingConfigurationOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *SfnStateMachineTracingConfiguration
+	SetInternalValue(val *SfnStateMachineTracingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2728,6 +2754,16 @@ func (j *jsiiProxy_SfnStateMachineTracingConfigurationOutputReference) EnabledIn
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SfnStateMachineTracingConfigurationOutputReference) InternalValue() *SfnStateMachineTracingConfiguration {
+	var returns *SfnStateMachineTracingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2769,7 +2805,7 @@ func NewSfnStateMachineTracingConfigurationOutputReference(terraformResource cdk
 	j := jsiiProxy_SfnStateMachineTracingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachineTracingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineTracingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2781,7 +2817,7 @@ func NewSfnStateMachineTracingConfigurationOutputReference_Override(s SfnStateMa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SFN.SfnStateMachineTracingConfigurationOutputReference",
+		"hashicorp_aws.sfn.SfnStateMachineTracingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -2791,6 +2827,14 @@ func (j *jsiiProxy_SfnStateMachineTracingConfigurationOutputReference) SetEnable
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SfnStateMachineTracingConfigurationOutputReference) SetInternalValue(val *SfnStateMachineTracingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

@@ -9,6 +9,825 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/appstream/internal"
 )
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config}.
+type AppstreamDirectoryConfig interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	CreatedTime() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	DirectoryName() *string
+	SetDirectoryName(val *string)
+	DirectoryNameInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	OrganizationalUnitDistinguishedNames() *[]*string
+	SetOrganizationalUnitDistinguishedNames(val *[]*string)
+	OrganizationalUnitDistinguishedNamesInput() *[]*string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ServiceAccountCredentials() AppstreamDirectoryConfigServiceAccountCredentialsOutputReference
+	ServiceAccountCredentialsInput() *AppstreamDirectoryConfigServiceAccountCredentials
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutServiceAccountCredentials(value *AppstreamDirectoryConfigServiceAccountCredentials)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for AppstreamDirectoryConfig
+type jsiiProxy_AppstreamDirectoryConfig struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) CreatedTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createdTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) DirectoryName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"directoryName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) DirectoryNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"directoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) OrganizationalUnitDistinguishedNames() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguishedNames",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) OrganizationalUnitDistinguishedNamesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguishedNamesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) ServiceAccountCredentials() AppstreamDirectoryConfigServiceAccountCredentialsOutputReference {
+	var returns AppstreamDirectoryConfigServiceAccountCredentialsOutputReference
+	_jsii_.Get(
+		j,
+		"serviceAccountCredentials",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) ServiceAccountCredentialsInput() *AppstreamDirectoryConfigServiceAccountCredentials {
+	var returns *AppstreamDirectoryConfigServiceAccountCredentials
+	_jsii_.Get(
+		j,
+		"serviceAccountCredentialsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config} Resource.
+func NewAppstreamDirectoryConfig(scope constructs.Construct, id *string, config *AppstreamDirectoryConfigConfig) AppstreamDirectoryConfig {
+	_init_.Initialize()
+
+	j := jsiiProxy_AppstreamDirectoryConfig{}
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfig",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config} Resource.
+func NewAppstreamDirectoryConfig_Override(a AppstreamDirectoryConfig, scope constructs.Construct, id *string, config *AppstreamDirectoryConfigConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfig",
+		[]interface{}{scope, id, config},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetDirectoryName(val *string) {
+	_jsii_.Set(
+		j,
+		"directoryName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetOrganizationalUnitDistinguishedNames(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"organizationalUnitDistinguishedNames",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func AppstreamDirectoryConfig_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfig",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func AppstreamDirectoryConfig_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfig",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		a,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		a,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (a *jsiiProxy_AppstreamDirectoryConfig) PutServiceAccountCredentials(value *AppstreamDirectoryConfigServiceAccountCredentials) {
+	_jsii_.InvokeVoid(
+		a,
+		"putServiceAccountCredentials",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamDirectoryConfig) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (a *jsiiProxy_AppstreamDirectoryConfig) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AppStream.
+type AppstreamDirectoryConfigConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#directory_name AppstreamDirectoryConfig#directory_name}.
+	DirectoryName *string `json:"directoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#organizational_unit_distinguished_names AppstreamDirectoryConfig#organizational_unit_distinguished_names}.
+	OrganizationalUnitDistinguishedNames *[]*string `json:"organizationalUnitDistinguishedNames"`
+	// service_account_credentials block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#service_account_credentials AppstreamDirectoryConfig#service_account_credentials}
+	ServiceAccountCredentials *AppstreamDirectoryConfigServiceAccountCredentials `json:"serviceAccountCredentials"`
+}
+
+type AppstreamDirectoryConfigServiceAccountCredentials struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#account_name AppstreamDirectoryConfig#account_name}.
+	AccountName *string `json:"accountName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#account_password AppstreamDirectoryConfig#account_password}.
+	AccountPassword *string `json:"accountPassword"`
+}
+
+type AppstreamDirectoryConfigServiceAccountCredentialsOutputReference interface {
+	cdktf.ComplexObject
+	AccountName() *string
+	SetAccountName(val *string)
+	AccountNameInput() *string
+	AccountPassword() *string
+	SetAccountPassword(val *string)
+	AccountPasswordInput() *string
+	InternalValue() *AppstreamDirectoryConfigServiceAccountCredentials
+	SetInternalValue(val *AppstreamDirectoryConfigServiceAccountCredentials)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for AppstreamDirectoryConfigServiceAccountCredentialsOutputReference
+type jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) AccountName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) AccountNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) AccountPassword() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) AccountPasswordInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accountPasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) InternalValue() *AppstreamDirectoryConfigServiceAccountCredentials {
+	var returns *AppstreamDirectoryConfigServiceAccountCredentials
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamDirectoryConfigServiceAccountCredentialsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfigServiceAccountCredentialsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference_Override(a AppstreamDirectoryConfigServiceAccountCredentialsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamDirectoryConfigServiceAccountCredentialsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetAccountName(val *string) {
+	_jsii_.Set(
+		j,
+		"accountName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetAccountPassword(val *string) {
+	_jsii_.Set(
+		j,
+		"accountPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetInternalValue(val *AppstreamDirectoryConfigServiceAccountCredentials) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html aws_appstream_fleet}.
 type AppstreamFleet interface {
 	cdktf.TerraformResource
@@ -658,7 +1477,7 @@ func NewAppstreamFleet(scope constructs.Construct, id *string, config *Appstream
 	j := jsiiProxy_AppstreamFleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleet",
+		"hashicorp_aws.appstream.AppstreamFleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -671,7 +1490,7 @@ func NewAppstreamFleet_Override(a AppstreamFleet, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleet",
+		"hashicorp_aws.appstream.AppstreamFleet",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -839,7 +1658,7 @@ func AppstreamFleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppStream.AppstreamFleet",
+		"hashicorp_aws.appstream.AppstreamFleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -852,7 +1671,7 @@ func AppstreamFleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppStream.AppstreamFleet",
+		"hashicorp_aws.appstream.AppstreamFleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -1168,6 +1987,8 @@ type AppstreamFleetComputeCapacityOutputReference interface {
 	DesiredInstances() *float64
 	SetDesiredInstances(val *float64)
 	DesiredInstancesInput() *float64
+	InternalValue() *AppstreamFleetComputeCapacity
+	SetInternalValue(val *AppstreamFleetComputeCapacity)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1202,6 +2023,16 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) DesiredInstance
 	_jsii_.Get(
 		j,
 		"desiredInstancesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) InternalValue() *AppstreamFleetComputeCapacity {
+	var returns *AppstreamFleetComputeCapacity
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1243,7 +2074,7 @@ func NewAppstreamFleetComputeCapacityOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_AppstreamFleetComputeCapacityOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetComputeCapacityOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetComputeCapacityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1255,7 +2086,7 @@ func NewAppstreamFleetComputeCapacityOutputReference_Override(a AppstreamFleetCo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetComputeCapacityOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetComputeCapacityOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1265,6 +2096,14 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetDesiredInsta
 	_jsii_.Set(
 		j,
 		"desiredInstances",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetInternalValue(val *AppstreamFleetComputeCapacity) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1377,6 +2216,7 @@ func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) InterpolationFo
 	return returns
 }
 
+// AppStream.
 type AppstreamFleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1442,6 +2282,8 @@ type AppstreamFleetDomainJoinInfoOutputReference interface {
 	DirectoryName() *string
 	SetDirectoryName(val *string)
 	DirectoryNameInput() *string
+	InternalValue() *AppstreamFleetDomainJoinInfo
+	SetInternalValue(val *AppstreamFleetDomainJoinInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrganizationalUnitDistinguishedName() *string
@@ -1481,6 +2323,16 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) DirectoryNameInp
 	_jsii_.Get(
 		j,
 		"directoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) InternalValue() *AppstreamFleetDomainJoinInfo {
+	var returns *AppstreamFleetDomainJoinInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1542,7 +2394,7 @@ func NewAppstreamFleetDomainJoinInfoOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetDomainJoinInfoOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetDomainJoinInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1554,7 +2406,7 @@ func NewAppstreamFleetDomainJoinInfoOutputReference_Override(a AppstreamFleetDom
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetDomainJoinInfoOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetDomainJoinInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1564,6 +2416,14 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetDirectoryName
 	_jsii_.Set(
 		j,
 		"directoryName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetInternalValue(val *AppstreamFleetDomainJoinInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1700,6 +2560,507 @@ func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) ResetOrganizatio
 	)
 }
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association}.
+type AppstreamFleetStackAssociation interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	FleetName() *string
+	SetFleetName(val *string)
+	FleetNameInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	StackName() *string
+	SetStackName(val *string)
+	StackNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for AppstreamFleetStackAssociation
+type jsiiProxy_AppstreamFleetStackAssociation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) FleetName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fleetName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) FleetNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fleetNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) StackName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stackName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) StackNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stackNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association} Resource.
+func NewAppstreamFleetStackAssociation(scope constructs.Construct, id *string, config *AppstreamFleetStackAssociationConfig) AppstreamFleetStackAssociation {
+	_init_.Initialize()
+
+	j := jsiiProxy_AppstreamFleetStackAssociation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamFleetStackAssociation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association} Resource.
+func NewAppstreamFleetStackAssociation_Override(a AppstreamFleetStackAssociation, scope constructs.Construct, id *string, config *AppstreamFleetStackAssociationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamFleetStackAssociation",
+		[]interface{}{scope, id, config},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetFleetName(val *string) {
+	_jsii_.Set(
+		j,
+		"fleetName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetStackName(val *string) {
+	_jsii_.Set(
+		j,
+		"stackName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func AppstreamFleetStackAssociation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.appstream.AppstreamFleetStackAssociation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func AppstreamFleetStackAssociation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.appstream.AppstreamFleetStackAssociation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		a,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		a,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamFleetStackAssociation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AppStream.
+type AppstreamFleetStackAssociationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html#fleet_name AppstreamFleetStackAssociation#fleet_name}.
+	FleetName *string `json:"fleetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html#stack_name AppstreamFleetStackAssociation#stack_name}.
+	StackName *string `json:"stackName"`
+}
+
 type AppstreamFleetVpcConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#security_group_ids AppstreamFleet#security_group_ids}.
 	SecurityGroupIds *[]*string `json:"securityGroupIds"`
@@ -1709,6 +3070,8 @@ type AppstreamFleetVpcConfig struct {
 
 type AppstreamFleetVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppstreamFleetVpcConfig
+	SetInternalValue(val *AppstreamFleetVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -1734,6 +3097,16 @@ type AppstreamFleetVpcConfigOutputReference interface {
 // The jsii proxy struct for AppstreamFleetVpcConfigOutputReference
 type jsiiProxy_AppstreamFleetVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) InternalValue() *AppstreamFleetVpcConfig {
+	var returns *AppstreamFleetVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) IsSingleItem() *bool {
@@ -1812,7 +3185,7 @@ func NewAppstreamFleetVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_AppstreamFleetVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetVpcConfigOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1824,9 +3197,17 @@ func NewAppstreamFleetVpcConfigOutputReference_Override(a AppstreamFleetVpcConfi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamFleetVpcConfigOutputReference",
+		"hashicorp_aws.appstream.AppstreamFleetVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) SetInternalValue(val *AppstreamFleetVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2524,7 +3905,7 @@ func NewAppstreamImageBuilder(scope constructs.Construct, id *string, config *Ap
 	j := jsiiProxy_AppstreamImageBuilder{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilder",
+		"hashicorp_aws.appstream.AppstreamImageBuilder",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2537,7 +3918,7 @@ func NewAppstreamImageBuilder_Override(a AppstreamImageBuilder, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilder",
+		"hashicorp_aws.appstream.AppstreamImageBuilder",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2681,7 +4062,7 @@ func AppstreamImageBuilder_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppStream.AppstreamImageBuilder",
+		"hashicorp_aws.appstream.AppstreamImageBuilder",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2694,7 +4075,7 @@ func AppstreamImageBuilder_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppStream.AppstreamImageBuilder",
+		"hashicorp_aws.appstream.AppstreamImageBuilder",
 		"tfResourceType",
 		&returns,
 	)
@@ -2975,6 +4356,7 @@ type AppstreamImageBuilderAccessEndpoint struct {
 	VpceId *string `json:"vpceId"`
 }
 
+// AppStream.
 type AppstreamImageBuilderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3032,6 +4414,8 @@ type AppstreamImageBuilderDomainJoinInfoOutputReference interface {
 	DirectoryName() *string
 	SetDirectoryName(val *string)
 	DirectoryNameInput() *string
+	InternalValue() *AppstreamImageBuilderDomainJoinInfo
+	SetInternalValue(val *AppstreamImageBuilderDomainJoinInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OrganizationalUnitDistinguishedName() *string
@@ -3071,6 +4455,16 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) Directory
 	_jsii_.Get(
 		j,
 		"directoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) InternalValue() *AppstreamImageBuilderDomainJoinInfo {
+	var returns *AppstreamImageBuilderDomainJoinInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3132,7 +4526,7 @@ func NewAppstreamImageBuilderDomainJoinInfoOutputReference(terraformResource cdk
 	j := jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilderDomainJoinInfoOutputReference",
+		"hashicorp_aws.appstream.AppstreamImageBuilderDomainJoinInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3144,7 +4538,7 @@ func NewAppstreamImageBuilderDomainJoinInfoOutputReference_Override(a AppstreamI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilderDomainJoinInfoOutputReference",
+		"hashicorp_aws.appstream.AppstreamImageBuilderDomainJoinInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3154,6 +4548,14 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetDirect
 	_jsii_.Set(
 		j,
 		"directoryName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetInternalValue(val *AppstreamImageBuilderDomainJoinInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3299,6 +4701,8 @@ type AppstreamImageBuilderVpcConfig struct {
 
 type AppstreamImageBuilderVpcConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppstreamImageBuilderVpcConfig
+	SetInternalValue(val *AppstreamImageBuilderVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -3324,6 +4728,16 @@ type AppstreamImageBuilderVpcConfigOutputReference interface {
 // The jsii proxy struct for AppstreamImageBuilderVpcConfigOutputReference
 type jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) InternalValue() *AppstreamImageBuilderVpcConfig {
+	var returns *AppstreamImageBuilderVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) IsSingleItem() *bool {
@@ -3402,7 +4816,7 @@ func NewAppstreamImageBuilderVpcConfigOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilderVpcConfigOutputReference",
+		"hashicorp_aws.appstream.AppstreamImageBuilderVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3414,9 +4828,17 @@ func NewAppstreamImageBuilderVpcConfigOutputReference_Override(a AppstreamImageB
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamImageBuilderVpcConfigOutputReference",
+		"hashicorp_aws.appstream.AppstreamImageBuilderVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) SetInternalValue(val *AppstreamImageBuilderVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4056,7 +5478,7 @@ func NewAppstreamStack(scope constructs.Construct, id *string, config *Appstream
 	j := jsiiProxy_AppstreamStack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamStack",
+		"hashicorp_aws.appstream.AppstreamStack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4069,7 +5491,7 @@ func NewAppstreamStack_Override(a AppstreamStack, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamStack",
+		"hashicorp_aws.appstream.AppstreamStack",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4205,7 +5627,7 @@ func AppstreamStack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppStream.AppstreamStack",
+		"hashicorp_aws.appstream.AppstreamStack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4218,7 +5640,7 @@ func AppstreamStack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppStream.AppstreamStack",
+		"hashicorp_aws.appstream.AppstreamStack",
 		"tfResourceType",
 		&returns,
 	)
@@ -4495,6 +5917,8 @@ type AppstreamStackApplicationSettingsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *AppstreamStackApplicationSettings
+	SetInternalValue(val *AppstreamStackApplicationSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SettingsGroup() *string
@@ -4534,6 +5958,16 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) EnabledInpu
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) InternalValue() *AppstreamStackApplicationSettings {
+	var returns *AppstreamStackApplicationSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4595,7 +6029,7 @@ func NewAppstreamStackApplicationSettingsOutputReference(terraformResource cdktf
 	j := jsiiProxy_AppstreamStackApplicationSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamStackApplicationSettingsOutputReference",
+		"hashicorp_aws.appstream.AppstreamStackApplicationSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4607,7 +6041,7 @@ func NewAppstreamStackApplicationSettingsOutputReference_Override(a AppstreamSta
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppStream.AppstreamStackApplicationSettingsOutputReference",
+		"hashicorp_aws.appstream.AppstreamStackApplicationSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4617,6 +6051,14 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetEnabled(
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetInternalValue(val *AppstreamStackApplicationSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4753,6 +6195,7 @@ func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) ResetSettin
 	)
 }
 
+// AppStream.
 type AppstreamStackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4810,4 +6253,1271 @@ type AppstreamStackUserSettings struct {
 	Action *string `json:"action"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#permission AppstreamStack#permission}.
 	Permission *string `json:"permission"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user}.
+type AppstreamUser interface {
+	cdktf.TerraformResource
+	Arn() *string
+	AuthenticationType() *string
+	SetAuthenticationType(val *string)
+	AuthenticationTypeInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	CreatedTime() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	FirstName() *string
+	SetFirstName(val *string)
+	FirstNameInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	LastName() *string
+	SetLastName(val *string)
+	LastNameInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SendEmailNotification() interface{}
+	SetSendEmailNotification(val interface{})
+	SendEmailNotificationInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UserName() *string
+	SetUserName(val *string)
+	UserNameInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetEnabled()
+	ResetFirstName()
+	ResetLastName()
+	ResetOverrideLogicalId()
+	ResetSendEmailNotification()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for AppstreamUser
+type jsiiProxy_AppstreamUser struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_AppstreamUser) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) AuthenticationType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) AuthenticationTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) CreatedTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createdTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) FirstName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"firstName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) FirstNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"firstNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) LastName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) LastNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) SendEmailNotification() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sendEmailNotification",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) SendEmailNotificationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sendEmailNotificationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) UserName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUser) UserNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userNameInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user} Resource.
+func NewAppstreamUser(scope constructs.Construct, id *string, config *AppstreamUserConfig) AppstreamUser {
+	_init_.Initialize()
+
+	j := jsiiProxy_AppstreamUser{}
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamUser",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user} Resource.
+func NewAppstreamUser_Override(a AppstreamUser, scope constructs.Construct, id *string, config *AppstreamUserConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamUser",
+		[]interface{}{scope, id, config},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetAuthenticationType(val *string) {
+	_jsii_.Set(
+		j,
+		"authenticationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetFirstName(val *string) {
+	_jsii_.Set(
+		j,
+		"firstName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetLastName(val *string) {
+	_jsii_.Set(
+		j,
+		"lastName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetSendEmailNotification(val interface{}) {
+	_jsii_.Set(
+		j,
+		"sendEmailNotification",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUser) SetUserName(val *string) {
+	_jsii_.Set(
+		j,
+		"userName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func AppstreamUser_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.appstream.AppstreamUser",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func AppstreamUser_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.appstream.AppstreamUser",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		a,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		a,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (a *jsiiProxy_AppstreamUser) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUser) ResetFirstName() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetFirstName",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUser) ResetLastName() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetLastName",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUser) ResetSendEmailNotification() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetSendEmailNotification",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUser) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (a *jsiiProxy_AppstreamUser) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AppStream.
+type AppstreamUserConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#authentication_type AppstreamUser#authentication_type}.
+	AuthenticationType *string `json:"authenticationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#user_name AppstreamUser#user_name}.
+	UserName *string `json:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#enabled AppstreamUser#enabled}.
+	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#first_name AppstreamUser#first_name}.
+	FirstName *string `json:"firstName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#last_name AppstreamUser#last_name}.
+	LastName *string `json:"lastName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#send_email_notification AppstreamUser#send_email_notification}.
+	SendEmailNotification interface{} `json:"sendEmailNotification"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association}.
+type AppstreamUserStackAssociation interface {
+	cdktf.TerraformResource
+	AuthenticationType() *string
+	SetAuthenticationType(val *string)
+	AuthenticationTypeInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SendEmailNotification() interface{}
+	SetSendEmailNotification(val interface{})
+	SendEmailNotificationInput() interface{}
+	StackName() *string
+	SetStackName(val *string)
+	StackNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UserName() *string
+	SetUserName(val *string)
+	UserNameInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetSendEmailNotification()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for AppstreamUserStackAssociation
+type jsiiProxy_AppstreamUserStackAssociation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) AuthenticationType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) AuthenticationTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SendEmailNotification() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sendEmailNotification",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SendEmailNotificationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sendEmailNotificationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) StackName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stackName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) StackNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stackNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) UserName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) UserNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userNameInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association} Resource.
+func NewAppstreamUserStackAssociation(scope constructs.Construct, id *string, config *AppstreamUserStackAssociationConfig) AppstreamUserStackAssociation {
+	_init_.Initialize()
+
+	j := jsiiProxy_AppstreamUserStackAssociation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamUserStackAssociation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association} Resource.
+func NewAppstreamUserStackAssociation_Override(a AppstreamUserStackAssociation, scope constructs.Construct, id *string, config *AppstreamUserStackAssociationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.appstream.AppstreamUserStackAssociation",
+		[]interface{}{scope, id, config},
+		a,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetAuthenticationType(val *string) {
+	_jsii_.Set(
+		j,
+		"authenticationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetSendEmailNotification(val interface{}) {
+	_jsii_.Set(
+		j,
+		"sendEmailNotification",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetStackName(val *string) {
+	_jsii_.Set(
+		j,
+		"stackName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetUserName(val *string) {
+	_jsii_.Set(
+		j,
+		"userName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func AppstreamUserStackAssociation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.appstream.AppstreamUserStackAssociation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func AppstreamUserStackAssociation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.appstream.AppstreamUserStackAssociation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		a,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		a,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		a,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUserStackAssociation) ResetSendEmailNotification() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetSendEmailNotification",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppstreamUserStackAssociation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (a *jsiiProxy_AppstreamUserStackAssociation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		a,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AppStream.
+type AppstreamUserStackAssociationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#authentication_type AppstreamUserStackAssociation#authentication_type}.
+	AuthenticationType *string `json:"authenticationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#stack_name AppstreamUserStackAssociation#stack_name}.
+	StackName *string `json:"stackName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#user_name AppstreamUserStackAssociation#user_name}.
+	UserName *string `json:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#send_email_notification AppstreamUserStackAssociation#send_email_notification}.
+	SendEmailNotification interface{} `json:"sendEmailNotification"`
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudget",
+		"hashicorp_aws.budgets.BudgetsBudget",
 		reflect.TypeOf((*BudgetsBudget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -82,7 +82,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetAction",
+		"hashicorp_aws.budgets.BudgetsBudgetAction",
 		reflect.TypeOf((*BudgetsBudgetAction)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -143,11 +143,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionActionThreshold",
+		"hashicorp_aws.budgets.BudgetsBudgetActionActionThreshold",
 		reflect.TypeOf((*BudgetsBudgetActionActionThreshold)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionActionThresholdOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionActionThresholdOutputReference",
 		reflect.TypeOf((*BudgetsBudgetActionActionThresholdOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actionThresholdType", GoGetter: "ActionThresholdType"},
@@ -158,6 +158,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -171,19 +172,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionConfig",
+		"hashicorp_aws.budgets.BudgetsBudgetActionConfig",
 		reflect.TypeOf((*BudgetsBudgetActionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinition",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinition",
 		reflect.TypeOf((*BudgetsBudgetActionDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionIamActionDefinition",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionIamActionDefinition",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionIamActionDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -192,6 +193,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "groups", GoGetter: "Groups"},
 			_jsii_.MemberProperty{JsiiProperty: "groupsInput", GoGetter: "GroupsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -214,7 +216,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionOutputReference",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -223,6 +225,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iamActionDefinition", GoGetter: "IamActionDefinition"},
 			_jsii_.MemberProperty{JsiiProperty: "iamActionDefinitionInput", GoGetter: "IamActionDefinitionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -246,17 +249,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionScpActionDefinition",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionScpActionDefinition",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionScpActionDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -274,11 +278,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionSsmActionDefinition",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionSsmActionDefinition",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionSsmActionDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
 		reflect.TypeOf((*BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actionSubType", GoGetter: "ActionSubType"},
@@ -289,6 +293,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceIds", GoGetter: "InstanceIds"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceIdsInput", GoGetter: "InstanceIdsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -304,23 +309,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionSubscriber",
+		"hashicorp_aws.budgets.BudgetsBudgetActionSubscriber",
 		reflect.TypeOf((*BudgetsBudgetActionSubscriber)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetConfig",
+		"hashicorp_aws.budgets.BudgetsBudgetConfig",
 		reflect.TypeOf((*BudgetsBudgetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetCostFilter",
+		"hashicorp_aws.budgets.BudgetsBudgetCostFilter",
 		reflect.TypeOf((*BudgetsBudgetCostFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetCostTypes",
+		"hashicorp_aws.budgets.BudgetsBudgetCostTypes",
 		reflect.TypeOf((*BudgetsBudgetCostTypes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Budgets.BudgetsBudgetCostTypesOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetCostTypesOutputReference",
 		reflect.TypeOf((*BudgetsBudgetCostTypesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -345,6 +350,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "includeTaxInput", GoGetter: "IncludeTaxInput"},
 			_jsii_.MemberProperty{JsiiProperty: "includeUpfront", GoGetter: "IncludeUpfront"},
 			_jsii_.MemberProperty{JsiiProperty: "includeUpfrontInput", GoGetter: "IncludeUpfrontInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -373,7 +379,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Budgets.BudgetsBudgetNotification",
+		"hashicorp_aws.budgets.BudgetsBudgetNotification",
 		reflect.TypeOf((*BudgetsBudgetNotification)(nil)).Elem(),
 	)
 }

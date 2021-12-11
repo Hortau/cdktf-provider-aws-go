@@ -676,7 +676,7 @@ func NewAmi(scope constructs.Construct, id *string, config *AmiConfig) Ami {
 	j := jsiiProxy_Ami{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ami",
+		"hashicorp_aws.ec2.Ami",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -689,7 +689,7 @@ func NewAmi_Override(a Ami, scope constructs.Construct, id *string, config *AmiC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ami",
+		"hashicorp_aws.ec2.Ami",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -849,7 +849,7 @@ func Ami_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ami",
+		"hashicorp_aws.ec2.Ami",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -862,7 +862,7 @@ func Ami_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ami",
+		"hashicorp_aws.ec2.Ami",
 		"tfResourceType",
 		&returns,
 	)
@@ -1144,6 +1144,7 @@ func (a *jsiiProxy_Ami) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type AmiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1872,7 +1873,7 @@ func NewAmiCopy(scope constructs.Construct, id *string, config *AmiCopyConfig) A
 	j := jsiiProxy_AmiCopy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiCopy",
+		"hashicorp_aws.ec2.AmiCopy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1885,7 +1886,7 @@ func NewAmiCopy_Override(a AmiCopy, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiCopy",
+		"hashicorp_aws.ec2.AmiCopy",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2021,7 +2022,7 @@ func AmiCopy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.AmiCopy",
+		"hashicorp_aws.ec2.AmiCopy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2034,7 +2035,7 @@ func AmiCopy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.AmiCopy",
+		"hashicorp_aws.ec2.AmiCopy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2276,6 +2277,7 @@ func (a *jsiiProxy_AmiCopy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type AmiCopyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2340,6 +2342,8 @@ type AmiCopyTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *AmiCopyTimeouts
+	SetInternalValue(val *AmiCopyTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2405,6 +2409,16 @@ func (j *jsiiProxy_AmiCopyTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AmiCopyTimeoutsOutputReference) InternalValue() *AmiCopyTimeouts {
+	var returns *AmiCopyTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AmiCopyTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2461,7 +2475,7 @@ func NewAmiCopyTimeoutsOutputReference(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_AmiCopyTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiCopyTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiCopyTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2473,7 +2487,7 @@ func NewAmiCopyTimeoutsOutputReference_Override(a AmiCopyTimeoutsOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiCopyTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiCopyTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2491,6 +2505,14 @@ func (j *jsiiProxy_AmiCopyTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AmiCopyTimeoutsOutputReference) SetInternalValue(val *AmiCopyTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3271,7 +3293,7 @@ func NewAmiFromInstance(scope constructs.Construct, id *string, config *AmiFromI
 	j := jsiiProxy_AmiFromInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiFromInstance",
+		"hashicorp_aws.ec2.AmiFromInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3284,7 +3306,7 @@ func NewAmiFromInstance_Override(a AmiFromInstance, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiFromInstance",
+		"hashicorp_aws.ec2.AmiFromInstance",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3396,7 +3418,7 @@ func AmiFromInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.AmiFromInstance",
+		"hashicorp_aws.ec2.AmiFromInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3409,7 +3431,7 @@ func AmiFromInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.AmiFromInstance",
+		"hashicorp_aws.ec2.AmiFromInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -3635,6 +3657,7 @@ func (a *jsiiProxy_AmiFromInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type AmiFromInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3693,6 +3716,8 @@ type AmiFromInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *AmiFromInstanceTimeouts
+	SetInternalValue(val *AmiFromInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3758,6 +3783,16 @@ func (j *jsiiProxy_AmiFromInstanceTimeoutsOutputReference) DeleteInput() *string
 	return returns
 }
 
+func (j *jsiiProxy_AmiFromInstanceTimeoutsOutputReference) InternalValue() *AmiFromInstanceTimeouts {
+	var returns *AmiFromInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AmiFromInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3814,7 +3849,7 @@ func NewAmiFromInstanceTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_AmiFromInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiFromInstanceTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiFromInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3826,7 +3861,7 @@ func NewAmiFromInstanceTimeoutsOutputReference_Override(a AmiFromInstanceTimeout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiFromInstanceTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiFromInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3844,6 +3879,14 @@ func (j *jsiiProxy_AmiFromInstanceTimeoutsOutputReference) SetDelete(val *string
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AmiFromInstanceTimeoutsOutputReference) SetInternalValue(val *AmiFromInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4221,7 +4264,7 @@ func NewAmiLaunchPermission(scope constructs.Construct, id *string, config *AmiL
 	j := jsiiProxy_AmiLaunchPermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiLaunchPermission",
+		"hashicorp_aws.ec2.AmiLaunchPermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4234,7 +4277,7 @@ func NewAmiLaunchPermission_Override(a AmiLaunchPermission, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiLaunchPermission",
+		"hashicorp_aws.ec2.AmiLaunchPermission",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4298,7 +4341,7 @@ func AmiLaunchPermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.AmiLaunchPermission",
+		"hashicorp_aws.ec2.AmiLaunchPermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4311,7 +4354,7 @@ func AmiLaunchPermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.AmiLaunchPermission",
+		"hashicorp_aws.ec2.AmiLaunchPermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -4473,6 +4516,7 @@ func (a *jsiiProxy_AmiLaunchPermission) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type AmiLaunchPermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4505,6 +4549,8 @@ type AmiTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *AmiTimeouts
+	SetInternalValue(val *AmiTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4570,6 +4616,16 @@ func (j *jsiiProxy_AmiTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AmiTimeoutsOutputReference) InternalValue() *AmiTimeouts {
+	var returns *AmiTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AmiTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4626,7 +4682,7 @@ func NewAmiTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_AmiTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4638,7 +4694,7 @@ func NewAmiTimeoutsOutputReference_Override(a AmiTimeoutsOutputReference, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.AmiTimeoutsOutputReference",
+		"hashicorp_aws.ec2.AmiTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4656,6 +4712,14 @@ func (j *jsiiProxy_AmiTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AmiTimeoutsOutputReference) SetInternalValue(val *AmiTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5397,7 +5461,7 @@ func NewDataAwsAmi(scope constructs.Construct, id *string, config *DataAwsAmiCon
 	j := jsiiProxy_DataAwsAmi{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmi",
+		"hashicorp_aws.ec2.DataAwsAmi",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5410,7 +5474,7 @@ func NewDataAwsAmi_Override(d DataAwsAmi, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmi",
+		"hashicorp_aws.ec2.DataAwsAmi",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5506,7 +5570,7 @@ func DataAwsAmi_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsAmi",
+		"hashicorp_aws.ec2.DataAwsAmi",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5519,7 +5583,7 @@ func DataAwsAmi_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsAmi",
+		"hashicorp_aws.ec2.DataAwsAmi",
 		"tfResourceType",
 		&returns,
 	)
@@ -5861,7 +5925,7 @@ func NewDataAwsAmiBlockDeviceMappings(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsAmiBlockDeviceMappings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiBlockDeviceMappings",
+		"hashicorp_aws.ec2.DataAwsAmiBlockDeviceMappings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -5874,7 +5938,7 @@ func NewDataAwsAmiBlockDeviceMappings_Override(d DataAwsAmiBlockDeviceMappings, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiBlockDeviceMappings",
+		"hashicorp_aws.ec2.DataAwsAmiBlockDeviceMappings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -5974,6 +6038,7 @@ func (d *jsiiProxy_DataAwsAmiBlockDeviceMappings) InterpolationForAttribute(prop
 	return returns
 }
 
+// AWS EC2.
 type DataAwsAmiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6323,7 +6388,7 @@ func NewDataAwsAmiIds(scope constructs.Construct, id *string, config *DataAwsAmi
 	j := jsiiProxy_DataAwsAmiIds{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiIds",
+		"hashicorp_aws.ec2.DataAwsAmiIds",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6336,7 +6401,7 @@ func NewDataAwsAmiIds_Override(d DataAwsAmiIds, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiIds",
+		"hashicorp_aws.ec2.DataAwsAmiIds",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6424,7 +6489,7 @@ func DataAwsAmiIds_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsAmiIds",
+		"hashicorp_aws.ec2.DataAwsAmiIds",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6437,7 +6502,7 @@ func DataAwsAmiIds_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsAmiIds",
+		"hashicorp_aws.ec2.DataAwsAmiIds",
 		"tfResourceType",
 		&returns,
 	)
@@ -6631,6 +6696,7 @@ func (d *jsiiProxy_DataAwsAmiIds) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsAmiIdsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6740,7 +6806,7 @@ func NewDataAwsAmiProductCodes(terraformResource cdktf.ITerraformResource, terra
 	j := jsiiProxy_DataAwsAmiProductCodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiProductCodes",
+		"hashicorp_aws.ec2.DataAwsAmiProductCodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6753,7 +6819,7 @@ func NewDataAwsAmiProductCodes_Override(d DataAwsAmiProductCodes, terraformResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsAmiProductCodes",
+		"hashicorp_aws.ec2.DataAwsAmiProductCodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -7051,7 +7117,7 @@ func NewDataAwsEbsDefaultKmsKey(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsEbsDefaultKmsKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsDefaultKmsKey",
+		"hashicorp_aws.ec2.DataAwsEbsDefaultKmsKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7064,7 +7130,7 @@ func NewDataAwsEbsDefaultKmsKey_Override(d DataAwsEbsDefaultKmsKey, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsDefaultKmsKey",
+		"hashicorp_aws.ec2.DataAwsEbsDefaultKmsKey",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7112,7 +7178,7 @@ func DataAwsEbsDefaultKmsKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsDefaultKmsKey",
+		"hashicorp_aws.ec2.DataAwsEbsDefaultKmsKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7125,7 +7191,7 @@ func DataAwsEbsDefaultKmsKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsDefaultKmsKey",
+		"hashicorp_aws.ec2.DataAwsEbsDefaultKmsKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -7287,6 +7353,7 @@ func (d *jsiiProxy_DataAwsEbsDefaultKmsKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsDefaultKmsKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7496,7 +7563,7 @@ func NewDataAwsEbsEncryptionByDefault(scope constructs.Construct, id *string, co
 	j := jsiiProxy_DataAwsEbsEncryptionByDefault{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsEncryptionByDefault",
+		"hashicorp_aws.ec2.DataAwsEbsEncryptionByDefault",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7509,7 +7576,7 @@ func NewDataAwsEbsEncryptionByDefault_Override(d DataAwsEbsEncryptionByDefault, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsEncryptionByDefault",
+		"hashicorp_aws.ec2.DataAwsEbsEncryptionByDefault",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7557,7 +7624,7 @@ func DataAwsEbsEncryptionByDefault_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsEncryptionByDefault",
+		"hashicorp_aws.ec2.DataAwsEbsEncryptionByDefault",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7570,7 +7637,7 @@ func DataAwsEbsEncryptionByDefault_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsEncryptionByDefault",
+		"hashicorp_aws.ec2.DataAwsEbsEncryptionByDefault",
 		"tfResourceType",
 		&returns,
 	)
@@ -7732,6 +7799,7 @@ func (d *jsiiProxy_DataAwsEbsEncryptionByDefault) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsEncryptionByDefaultConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8195,7 +8263,7 @@ func NewDataAwsEbsSnapshot(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsEbsSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshot",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8208,7 +8276,7 @@ func NewDataAwsEbsSnapshot_Override(d DataAwsEbsSnapshot, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshot",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8304,7 +8372,7 @@ func DataAwsEbsSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshot",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8317,7 +8385,7 @@ func DataAwsEbsSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshot",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -8527,6 +8595,7 @@ func (d *jsiiProxy_DataAwsEbsSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8829,7 +8898,7 @@ func NewDataAwsEbsSnapshotIds(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsEbsSnapshotIds{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshotIds",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshotIds",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8842,7 +8911,7 @@ func NewDataAwsEbsSnapshotIds_Override(d DataAwsEbsSnapshotIds, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshotIds",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshotIds",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8914,7 +8983,7 @@ func DataAwsEbsSnapshotIds_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshotIds",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshotIds",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8927,7 +8996,7 @@ func DataAwsEbsSnapshotIds_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsSnapshotIds",
+		"hashicorp_aws.ec2.DataAwsEbsSnapshotIds",
 		"tfResourceType",
 		&returns,
 	)
@@ -9113,6 +9182,7 @@ func (d *jsiiProxy_DataAwsEbsSnapshotIds) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsSnapshotIdsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9530,7 +9600,7 @@ func NewDataAwsEbsVolume(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsEbsVolume{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsVolume",
+		"hashicorp_aws.ec2.DataAwsEbsVolume",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9543,7 +9613,7 @@ func NewDataAwsEbsVolume_Override(d DataAwsEbsVolume, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsVolume",
+		"hashicorp_aws.ec2.DataAwsEbsVolume",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9615,7 +9685,7 @@ func DataAwsEbsVolume_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsVolume",
+		"hashicorp_aws.ec2.DataAwsEbsVolume",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9628,7 +9698,7 @@ func DataAwsEbsVolume_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsVolume",
+		"hashicorp_aws.ec2.DataAwsEbsVolume",
 		"tfResourceType",
 		&returns,
 	)
@@ -9814,6 +9884,7 @@ func (d *jsiiProxy_DataAwsEbsVolume) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsVolumeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10086,7 +10157,7 @@ func NewDataAwsEbsVolumes(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsEbsVolumes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsVolumes",
+		"hashicorp_aws.ec2.DataAwsEbsVolumes",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10099,7 +10170,7 @@ func NewDataAwsEbsVolumes_Override(d DataAwsEbsVolumes, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEbsVolumes",
+		"hashicorp_aws.ec2.DataAwsEbsVolumes",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10163,7 +10234,7 @@ func DataAwsEbsVolumes_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEbsVolumes",
+		"hashicorp_aws.ec2.DataAwsEbsVolumes",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10176,7 +10247,7 @@ func DataAwsEbsVolumes_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEbsVolumes",
+		"hashicorp_aws.ec2.DataAwsEbsVolumes",
 		"tfResourceType",
 		&returns,
 	)
@@ -10354,6 +10425,7 @@ func (d *jsiiProxy_DataAwsEbsVolumes) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEbsVolumesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10683,7 +10755,7 @@ func NewDataAwsEc2CoipPool(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsEc2CoipPool{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPool",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPool",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10696,7 +10768,7 @@ func NewDataAwsEc2CoipPool_Override(d DataAwsEc2CoipPool, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPool",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPool",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10776,7 +10848,7 @@ func DataAwsEc2CoipPool_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPool",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPool",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10789,7 +10861,7 @@ func DataAwsEc2CoipPool_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPool",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPool",
 		"tfResourceType",
 		&returns,
 	)
@@ -10983,6 +11055,7 @@ func (d *jsiiProxy_DataAwsEc2CoipPool) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2CoipPoolConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11257,7 +11330,7 @@ func NewDataAwsEc2CoipPools(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsEc2CoipPools{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPools",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPools",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11270,7 +11343,7 @@ func NewDataAwsEc2CoipPools_Override(d DataAwsEc2CoipPools, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPools",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPools",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -11334,7 +11407,7 @@ func DataAwsEc2CoipPools_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPools",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPools",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11347,7 +11420,7 @@ func DataAwsEc2CoipPools_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2CoipPools",
+		"hashicorp_aws.ec2.DataAwsEc2CoipPools",
 		"tfResourceType",
 		&returns,
 	)
@@ -11525,6 +11598,7 @@ func (d *jsiiProxy_DataAwsEc2CoipPools) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2CoipPoolsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11918,7 +11992,7 @@ func NewDataAwsEc2Host(scope constructs.Construct, id *string, config *DataAwsEc
 	j := jsiiProxy_DataAwsEc2Host{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2Host",
+		"hashicorp_aws.ec2.DataAwsEc2Host",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11931,7 +12005,7 @@ func NewDataAwsEc2Host_Override(d DataAwsEc2Host, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2Host",
+		"hashicorp_aws.ec2.DataAwsEc2Host",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12003,7 +12077,7 @@ func DataAwsEc2Host_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2Host",
+		"hashicorp_aws.ec2.DataAwsEc2Host",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12016,7 +12090,7 @@ func DataAwsEc2Host_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2Host",
+		"hashicorp_aws.ec2.DataAwsEc2Host",
 		"tfResourceType",
 		&returns,
 	)
@@ -12202,6 +12276,7 @@ func (d *jsiiProxy_DataAwsEc2Host) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2HostConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12260,6 +12335,7 @@ type DataAwsEc2InstanceType interface {
 	EbsPerformanceMaximumThroughput() *float64
 	EfaSupported() interface{}
 	EnaSupport() *string
+	EncryptionInTransitSupported() interface{}
 	Fpgas() *[]*DataAwsEc2InstanceTypeFpgas
 	SetFpgas(val *[]*DataAwsEc2InstanceTypeFpgas)
 	FpgasInput() *[]*DataAwsEc2InstanceTypeFpgas
@@ -12593,6 +12669,16 @@ func (j *jsiiProxy_DataAwsEc2InstanceType) EnaSupport() *string {
 	_jsii_.Get(
 		j,
 		"enaSupport",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceType) EncryptionInTransitSupported() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"encryptionInTransitSupported",
 		&returns,
 	)
 	return returns
@@ -13065,7 +13151,7 @@ func NewDataAwsEc2InstanceType(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsEc2InstanceType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceType",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13078,7 +13164,7 @@ func NewDataAwsEc2InstanceType_Override(d DataAwsEc2InstanceType, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceType",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceType",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13222,7 +13308,7 @@ func DataAwsEc2InstanceType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceType",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13235,7 +13321,7 @@ func DataAwsEc2InstanceType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceType",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceType",
 		"tfResourceType",
 		&returns,
 	)
@@ -13485,6 +13571,7 @@ func (d *jsiiProxy_DataAwsEc2InstanceType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2InstanceTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13810,7 +13897,7 @@ func NewDataAwsEc2InstanceTypeOffering(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsEc2InstanceTypeOffering{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOffering",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOffering",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13823,7 +13910,7 @@ func NewDataAwsEc2InstanceTypeOffering_Override(d DataAwsEc2InstanceTypeOffering
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOffering",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOffering",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13895,7 +13982,7 @@ func DataAwsEc2InstanceTypeOffering_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOffering",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOffering",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13908,7 +13995,7 @@ func DataAwsEc2InstanceTypeOffering_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOffering",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOffering",
 		"tfResourceType",
 		&returns,
 	)
@@ -14094,6 +14181,7 @@ func (d *jsiiProxy_DataAwsEc2InstanceTypeOffering) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2InstanceTypeOfferingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14388,7 +14476,7 @@ func NewDataAwsEc2InstanceTypeOfferings(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsEc2InstanceTypeOfferings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOfferings",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOfferings",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14401,7 +14489,7 @@ func NewDataAwsEc2InstanceTypeOfferings_Override(d DataAwsEc2InstanceTypeOfferin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOfferings",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOfferings",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -14465,7 +14553,7 @@ func DataAwsEc2InstanceTypeOfferings_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOfferings",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOfferings",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14478,7 +14566,7 @@ func DataAwsEc2InstanceTypeOfferings_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2InstanceTypeOfferings",
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypeOfferings",
 		"tfResourceType",
 		&returns,
 	)
@@ -14656,6 +14744,7 @@ func (d *jsiiProxy_DataAwsEc2InstanceTypeOfferings) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2InstanceTypeOfferingsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14677,6 +14766,503 @@ type DataAwsEc2InstanceTypeOfferingsFilter struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_type_offerings.html#name DataAwsEc2InstanceTypeOfferings#name}.
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_type_offerings.html#values DataAwsEc2InstanceTypeOfferings#values}.
+	Values *[]*string `json:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html aws_ec2_instance_types}.
+type DataAwsEc2InstanceTypes interface {
+	cdktf.TerraformDataSource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() *[]*DataAwsEc2InstanceTypesFilter
+	SetFilter(val *[]*DataAwsEc2InstanceTypesFilter)
+	FilterInput() *[]*DataAwsEc2InstanceTypesFilter
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	InstanceTypes() *[]*string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsEc2InstanceTypes
+type jsiiProxy_DataAwsEc2InstanceTypes struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Filter() *[]*DataAwsEc2InstanceTypesFilter {
+	var returns *[]*DataAwsEc2InstanceTypesFilter
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) FilterInput() *[]*DataAwsEc2InstanceTypesFilter {
+	var returns *[]*DataAwsEc2InstanceTypesFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) InstanceTypes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"instanceTypes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html aws_ec2_instance_types} Data Source.
+func NewDataAwsEc2InstanceTypes(scope constructs.Construct, id *string, config *DataAwsEc2InstanceTypesConfig) DataAwsEc2InstanceTypes {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsEc2InstanceTypes{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypes",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html aws_ec2_instance_types} Data Source.
+func NewDataAwsEc2InstanceTypes_Override(d DataAwsEc2InstanceTypes, scope constructs.Construct, id *string, config *DataAwsEc2InstanceTypesConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypes",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) SetFilter(val *[]*DataAwsEc2InstanceTypesFilter) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsEc2InstanceTypes) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsEc2InstanceTypes_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypes",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsEc2InstanceTypes_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ec2.DataAwsEc2InstanceTypes",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsEc2InstanceTypes) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2.
+type DataAwsEc2InstanceTypesConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html#filter DataAwsEc2InstanceTypes#filter}
+	Filter *[]*DataAwsEc2InstanceTypesFilter `json:"filter"`
+}
+
+type DataAwsEc2InstanceTypesFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html#name DataAwsEc2InstanceTypes#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ec2_instance_types.html#values DataAwsEc2InstanceTypes#values}.
 	Values *[]*string `json:"values"`
 }
 
@@ -14961,7 +15547,7 @@ func NewDataAwsEc2LocalGateway(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsEc2LocalGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateway",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14974,7 +15560,7 @@ func NewDataAwsEc2LocalGateway_Override(d DataAwsEc2LocalGateway, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateway",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -15046,7 +15632,7 @@ func DataAwsEc2LocalGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateway",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15059,7 +15645,7 @@ func DataAwsEc2LocalGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateway",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -15245,6 +15831,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15602,7 +16189,7 @@ func NewDataAwsEc2LocalGatewayRouteTable(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsEc2LocalGatewayRouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15615,7 +16202,7 @@ func NewDataAwsEc2LocalGatewayRouteTable_Override(d DataAwsEc2LocalGatewayRouteT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -15711,7 +16298,7 @@ func DataAwsEc2LocalGatewayRouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15724,7 +16311,7 @@ func DataAwsEc2LocalGatewayRouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -15934,6 +16521,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGatewayRouteTable) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayRouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16212,7 +16800,7 @@ func NewDataAwsEc2LocalGatewayRouteTables(scope constructs.Construct, id *string
 	j := jsiiProxy_DataAwsEc2LocalGatewayRouteTables{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTables",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16225,7 +16813,7 @@ func NewDataAwsEc2LocalGatewayRouteTables_Override(d DataAwsEc2LocalGatewayRoute
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTables",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16289,7 +16877,7 @@ func DataAwsEc2LocalGatewayRouteTables_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTables",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16302,7 +16890,7 @@ func DataAwsEc2LocalGatewayRouteTables_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayRouteTables",
 		"tfResourceType",
 		&returns,
 	)
@@ -16480,6 +17068,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGatewayRouteTables) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayRouteTablesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16816,7 +17405,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterface(scope constructs.Construct, id *s
 	j := jsiiProxy_DataAwsEc2LocalGatewayVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterface",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16829,7 +17418,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterface_Override(d DataAwsEc2LocalGateway
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterface",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16893,7 +17482,7 @@ func DataAwsEc2LocalGatewayVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterface",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16906,7 +17495,7 @@ func DataAwsEc2LocalGatewayVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterface",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -17084,6 +17673,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGatewayVirtualInterface) ToTerraform() interfa
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17378,7 +17968,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterfaceGroup(scope constructs.Construct, 
 	j := jsiiProxy_DataAwsEc2LocalGatewayVirtualInterfaceGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17391,7 +17981,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterfaceGroup_Override(d DataAwsEc2LocalGa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -17463,7 +18053,7 @@ func DataAwsEc2LocalGatewayVirtualInterfaceGroup_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17476,7 +18066,7 @@ func DataAwsEc2LocalGatewayVirtualInterfaceGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -17662,6 +18252,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGatewayVirtualInterfaceGroup) ToTerraform() in
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayVirtualInterfaceGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17945,7 +18536,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterfaceGroups(scope constructs.Construct,
 	j := jsiiProxy_DataAwsEc2LocalGatewayVirtualInterfaceGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17958,7 +18549,7 @@ func NewDataAwsEc2LocalGatewayVirtualInterfaceGroups_Override(d DataAwsEc2LocalG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18022,7 +18613,7 @@ func DataAwsEc2LocalGatewayVirtualInterfaceGroups_IsConstruct(x interface{}) *bo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18035,7 +18626,7 @@ func DataAwsEc2LocalGatewayVirtualInterfaceGroups_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGatewayVirtualInterfaceGroups",
 		"tfResourceType",
 		&returns,
 	)
@@ -18213,6 +18804,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGatewayVirtualInterfaceGroups) ToTerraform() i
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewayVirtualInterfaceGroupsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18483,7 +19075,7 @@ func NewDataAwsEc2LocalGateways(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsEc2LocalGateways{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateways",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateways",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18496,7 +19088,7 @@ func NewDataAwsEc2LocalGateways_Override(d DataAwsEc2LocalGateways, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateways",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateways",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18560,7 +19152,7 @@ func DataAwsEc2LocalGateways_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateways",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateways",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18573,7 +19165,7 @@ func DataAwsEc2LocalGateways_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2LocalGateways",
+		"hashicorp_aws.ec2.DataAwsEc2LocalGateways",
 		"tfResourceType",
 		&returns,
 	)
@@ -18751,6 +19343,7 @@ func (d *jsiiProxy_DataAwsEc2LocalGateways) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2LocalGatewaysConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19090,7 +19683,7 @@ func NewDataAwsEc2ManagedPrefixList(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsEc2ManagedPrefixList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixList",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixList",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19103,7 +19696,7 @@ func NewDataAwsEc2ManagedPrefixList_Override(d DataAwsEc2ManagedPrefixList, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixList",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixList",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -19175,7 +19768,7 @@ func DataAwsEc2ManagedPrefixList_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixList",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixList",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19188,7 +19781,7 @@ func DataAwsEc2ManagedPrefixList_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixList",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixList",
 		"tfResourceType",
 		&returns,
 	)
@@ -19387,6 +19980,7 @@ func (d *jsiiProxy_DataAwsEc2ManagedPrefixList) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2ManagedPrefixListConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19485,7 +20079,7 @@ func NewDataAwsEc2ManagedPrefixListEntries(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsEc2ManagedPrefixListEntries{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixListEntries",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixListEntries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -19498,7 +20092,7 @@ func NewDataAwsEc2ManagedPrefixListEntries_Override(d DataAwsEc2ManagedPrefixLis
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2ManagedPrefixListEntries",
+		"hashicorp_aws.ec2.DataAwsEc2ManagedPrefixListEntries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -19886,7 +20480,7 @@ func NewDataAwsEc2SpotPrice(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsEc2SpotPrice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2SpotPrice",
+		"hashicorp_aws.ec2.DataAwsEc2SpotPrice",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19899,7 +20493,7 @@ func NewDataAwsEc2SpotPrice_Override(d DataAwsEc2SpotPrice, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2SpotPrice",
+		"hashicorp_aws.ec2.DataAwsEc2SpotPrice",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -19971,7 +20565,7 @@ func DataAwsEc2SpotPrice_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2SpotPrice",
+		"hashicorp_aws.ec2.DataAwsEc2SpotPrice",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19984,7 +20578,7 @@ func DataAwsEc2SpotPrice_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2SpotPrice",
+		"hashicorp_aws.ec2.DataAwsEc2SpotPrice",
 		"tfResourceType",
 		&returns,
 	)
@@ -20170,6 +20764,7 @@ func (d *jsiiProxy_DataAwsEc2SpotPrice) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2SpotPriceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20552,7 +21147,7 @@ func NewDataAwsEc2TransitGateway(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsEc2TransitGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGateway",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20565,7 +21160,7 @@ func NewDataAwsEc2TransitGateway_Override(d DataAwsEc2TransitGateway, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGateway",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20629,7 +21224,7 @@ func DataAwsEc2TransitGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGateway",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20642,7 +21237,7 @@ func DataAwsEc2TransitGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGateway",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -20820,6 +21415,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21120,7 +21716,7 @@ func NewDataAwsEc2TransitGatewayDxGatewayAttachment(scope constructs.Construct, 
 	j := jsiiProxy_DataAwsEc2TransitGatewayDxGatewayAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayDxGatewayAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayDxGatewayAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21133,7 +21729,7 @@ func NewDataAwsEc2TransitGatewayDxGatewayAttachment_Override(d DataAwsEc2Transit
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayDxGatewayAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayDxGatewayAttachment",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -21213,7 +21809,7 @@ func DataAwsEc2TransitGatewayDxGatewayAttachment_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayDxGatewayAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayDxGatewayAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21226,7 +21822,7 @@ func DataAwsEc2TransitGatewayDxGatewayAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayDxGatewayAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayDxGatewayAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -21420,6 +22016,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayDxGatewayAttachment) ToTerraform() in
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayDxGatewayAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21734,7 +22331,7 @@ func NewDataAwsEc2TransitGatewayPeeringAttachment(scope constructs.Construct, id
 	j := jsiiProxy_DataAwsEc2TransitGatewayPeeringAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayPeeringAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21747,7 +22344,7 @@ func NewDataAwsEc2TransitGatewayPeeringAttachment_Override(d DataAwsEc2TransitGa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayPeeringAttachment",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -21811,7 +22408,7 @@ func DataAwsEc2TransitGatewayPeeringAttachment_IsConstruct(x interface{}) *bool 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayPeeringAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21824,7 +22421,7 @@ func DataAwsEc2TransitGatewayPeeringAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayPeeringAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -22002,6 +22599,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayPeeringAttachment) ToTerraform() inte
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayPeeringAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22305,7 +22903,7 @@ func NewDataAwsEc2TransitGatewayRouteTable(scope constructs.Construct, id *strin
 	j := jsiiProxy_DataAwsEc2TransitGatewayRouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22318,7 +22916,7 @@ func NewDataAwsEc2TransitGatewayRouteTable_Override(d DataAwsEc2TransitGatewayRo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22382,7 +22980,7 @@ func DataAwsEc2TransitGatewayRouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22395,7 +22993,7 @@ func DataAwsEc2TransitGatewayRouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -22573,6 +23171,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayRouteTable) ToTerraform() interface{}
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayRouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22843,7 +23442,7 @@ func NewDataAwsEc2TransitGatewayRouteTables(scope constructs.Construct, id *stri
 	j := jsiiProxy_DataAwsEc2TransitGatewayRouteTables{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTables",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22856,7 +23455,7 @@ func NewDataAwsEc2TransitGatewayRouteTables_Override(d DataAwsEc2TransitGatewayR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTables",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22920,7 +23519,7 @@ func DataAwsEc2TransitGatewayRouteTables_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTables",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22933,7 +23532,7 @@ func DataAwsEc2TransitGatewayRouteTables_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayRouteTables",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayRouteTables",
 		"tfResourceType",
 		&returns,
 	)
@@ -23111,6 +23710,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayRouteTables) ToTerraform() interface{
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayRouteTablesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23447,7 +24047,7 @@ func NewDataAwsEc2TransitGatewayVpcAttachment(scope constructs.Construct, id *st
 	j := jsiiProxy_DataAwsEc2TransitGatewayVpcAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpcAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23460,7 +24060,7 @@ func NewDataAwsEc2TransitGatewayVpcAttachment_Override(d DataAwsEc2TransitGatewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpcAttachment",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -23524,7 +24124,7 @@ func DataAwsEc2TransitGatewayVpcAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpcAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23537,7 +24137,7 @@ func DataAwsEc2TransitGatewayVpcAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpcAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -23715,6 +24315,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayVpcAttachment) ToTerraform() interfac
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayVpcAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24022,7 +24623,7 @@ func NewDataAwsEc2TransitGatewayVpnAttachment(scope constructs.Construct, id *st
 	j := jsiiProxy_DataAwsEc2TransitGatewayVpnAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpnAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpnAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24035,7 +24636,7 @@ func NewDataAwsEc2TransitGatewayVpnAttachment_Override(d DataAwsEc2TransitGatewa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpnAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpnAttachment",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -24115,7 +24716,7 @@ func DataAwsEc2TransitGatewayVpnAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpnAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpnAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24128,7 +24729,7 @@ func DataAwsEc2TransitGatewayVpnAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEc2TransitGatewayVpnAttachment",
+		"hashicorp_aws.ec2.DataAwsEc2TransitGatewayVpnAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -24322,6 +24923,7 @@ func (d *jsiiProxy_DataAwsEc2TransitGatewayVpnAttachment) ToTerraform() interfac
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEc2TransitGatewayVpnAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24741,7 +25343,7 @@ func NewDataAwsEip(scope constructs.Construct, id *string, config *DataAwsEipCon
 	j := jsiiProxy_DataAwsEip{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEip",
+		"hashicorp_aws.ec2.DataAwsEip",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24754,7 +25356,7 @@ func NewDataAwsEip_Override(d DataAwsEip, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsEip",
+		"hashicorp_aws.ec2.DataAwsEip",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -24826,7 +25428,7 @@ func DataAwsEip_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsEip",
+		"hashicorp_aws.ec2.DataAwsEip",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24839,7 +25441,7 @@ func DataAwsEip_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsEip",
+		"hashicorp_aws.ec2.DataAwsEip",
 		"tfResourceType",
 		&returns,
 	)
@@ -25025,6 +25627,7 @@ func (d *jsiiProxy_DataAwsEip) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsEipConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25718,7 +26321,7 @@ func NewDataAwsInstance(scope constructs.Construct, id *string, config *DataAwsI
 	j := jsiiProxy_DataAwsInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstance",
+		"hashicorp_aws.ec2.DataAwsInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -25731,7 +26334,7 @@ func NewDataAwsInstance_Override(d DataAwsInstance, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstance",
+		"hashicorp_aws.ec2.DataAwsInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -25827,7 +26430,7 @@ func DataAwsInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsInstance",
+		"hashicorp_aws.ec2.DataAwsInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25840,7 +26443,7 @@ func DataAwsInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsInstance",
+		"hashicorp_aws.ec2.DataAwsInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -26128,6 +26731,7 @@ func (d *jsiiProxy_DataAwsInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26221,7 +26825,7 @@ func NewDataAwsInstanceCreditSpecification(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsInstanceCreditSpecification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceCreditSpecification",
+		"hashicorp_aws.ec2.DataAwsInstanceCreditSpecification",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26234,7 +26838,7 @@ func NewDataAwsInstanceCreditSpecification_Override(d DataAwsInstanceCreditSpeci
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceCreditSpecification",
+		"hashicorp_aws.ec2.DataAwsInstanceCreditSpecification",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26512,7 +27116,7 @@ func NewDataAwsInstanceEbsBlockDevice(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsInstanceEbsBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEbsBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceEbsBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26525,7 +27129,7 @@ func NewDataAwsInstanceEbsBlockDevice_Override(d DataAwsInstanceEbsBlockDevice, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEbsBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceEbsBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26693,7 +27297,7 @@ func NewDataAwsInstanceEnclaveOptions(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsInstanceEnclaveOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEnclaveOptions",
+		"hashicorp_aws.ec2.DataAwsInstanceEnclaveOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26706,7 +27310,7 @@ func NewDataAwsInstanceEnclaveOptions_Override(d DataAwsInstanceEnclaveOptions, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEnclaveOptions",
+		"hashicorp_aws.ec2.DataAwsInstanceEnclaveOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -26896,7 +27500,7 @@ func NewDataAwsInstanceEphemeralBlockDevice(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DataAwsInstanceEphemeralBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEphemeralBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceEphemeralBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -26909,7 +27513,7 @@ func NewDataAwsInstanceEphemeralBlockDevice_Override(d DataAwsInstanceEphemeralB
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceEphemeralBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceEphemeralBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27106,7 +27710,7 @@ func NewDataAwsInstanceMetadataOptions(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsInstanceMetadataOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceMetadataOptions",
+		"hashicorp_aws.ec2.DataAwsInstanceMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27119,7 +27723,7 @@ func NewDataAwsInstanceMetadataOptions_Override(d DataAwsInstanceMetadataOptions
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceMetadataOptions",
+		"hashicorp_aws.ec2.DataAwsInstanceMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27386,7 +27990,7 @@ func NewDataAwsInstanceRootBlockDevice(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsInstanceRootBlockDevice{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceRootBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceRootBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -27399,7 +28003,7 @@ func NewDataAwsInstanceRootBlockDevice_Override(d DataAwsInstanceRootBlockDevice
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstanceRootBlockDevice",
+		"hashicorp_aws.ec2.DataAwsInstanceRootBlockDevice",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -27791,7 +28395,7 @@ func NewDataAwsInstances(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsInstances{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstances",
+		"hashicorp_aws.ec2.DataAwsInstances",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -27804,7 +28408,7 @@ func NewDataAwsInstances_Override(d DataAwsInstances, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsInstances",
+		"hashicorp_aws.ec2.DataAwsInstances",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -27876,7 +28480,7 @@ func DataAwsInstances_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsInstances",
+		"hashicorp_aws.ec2.DataAwsInstances",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -27889,7 +28493,7 @@ func DataAwsInstances_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsInstances",
+		"hashicorp_aws.ec2.DataAwsInstances",
 		"tfResourceType",
 		&returns,
 	)
@@ -28075,6 +28679,7 @@ func (d *jsiiProxy_DataAwsInstances) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type DataAwsInstancesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -28098,6 +28703,640 @@ type DataAwsInstancesFilter struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/instances.html#name DataAwsInstances#name}.
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/instances.html#values DataAwsInstances#values}.
+	Values *[]*string `json:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html aws_key_pair}.
+type DataAwsKeyPair interface {
+	cdktf.TerraformDataSource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() *[]*DataAwsKeyPairFilter
+	SetFilter(val *[]*DataAwsKeyPairFilter)
+	FilterInput() *[]*DataAwsKeyPairFilter
+	Fingerprint() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	KeyName() *string
+	SetKeyName(val *string)
+	KeyNameInput() *string
+	KeyPairId() *string
+	SetKeyPairId(val *string)
+	KeyPairIdInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetKeyName()
+	ResetKeyPairId()
+	ResetOverrideLogicalId()
+	ResetTags()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsKeyPair
+type jsiiProxy_DataAwsKeyPair struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Filter() *[]*DataAwsKeyPairFilter {
+	var returns *[]*DataAwsKeyPairFilter
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) FilterInput() *[]*DataAwsKeyPairFilter {
+	var returns *[]*DataAwsKeyPairFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Fingerprint() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fingerprint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) KeyName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) KeyNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) KeyPairId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyPairId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) KeyPairIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyPairIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html aws_key_pair} Data Source.
+func NewDataAwsKeyPair(scope constructs.Construct, id *string, config *DataAwsKeyPairConfig) DataAwsKeyPair {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsKeyPair{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.DataAwsKeyPair",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html aws_key_pair} Data Source.
+func NewDataAwsKeyPair_Override(d DataAwsKeyPair, scope constructs.Construct, id *string, config *DataAwsKeyPairConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.DataAwsKeyPair",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetFilter(val *[]*DataAwsKeyPairFilter) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetKeyName(val *string) {
+	_jsii_.Set(
+		j,
+		"keyName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetKeyPairId(val *string) {
+	_jsii_.Set(
+		j,
+		"keyPairId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsKeyPair) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsKeyPair_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ec2.DataAwsKeyPair",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsKeyPair_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ec2.DataAwsKeyPair",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsKeyPair) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsKeyPair) ResetKeyName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKeyName",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsKeyPair) ResetKeyPairId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKeyPairId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsKeyPair) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsKeyPair) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsKeyPair) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsKeyPair) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2.
+type DataAwsKeyPairConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#filter DataAwsKeyPair#filter}
+	Filter *[]*DataAwsKeyPairFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#key_name DataAwsKeyPair#key_name}.
+	KeyName *string `json:"keyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#key_pair_id DataAwsKeyPair#key_pair_id}.
+	KeyPairId *string `json:"keyPairId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#tags DataAwsKeyPair#tags}.
+	Tags interface{} `json:"tags"`
+}
+
+type DataAwsKeyPairFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#name DataAwsKeyPair#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/key_pair.html#values DataAwsKeyPair#values}.
 	Values *[]*string `json:"values"`
 }
 
@@ -28537,7 +29776,7 @@ func NewDataAwsLaunchTemplate(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsLaunchTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplate",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -28550,7 +29789,7 @@ func NewDataAwsLaunchTemplate_Override(d DataAwsLaunchTemplate, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplate",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -28622,7 +29861,7 @@ func DataAwsLaunchTemplate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplate",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -28635,7 +29874,7 @@ func DataAwsLaunchTemplate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplate",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplate",
 		"tfResourceType",
 		&returns,
 	)
@@ -29078,7 +30317,7 @@ func NewDataAwsLaunchTemplateBlockDeviceMappings(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsLaunchTemplateBlockDeviceMappings{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateBlockDeviceMappings",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateBlockDeviceMappings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -29091,7 +30330,7 @@ func NewDataAwsLaunchTemplateBlockDeviceMappings_Override(d DataAwsLaunchTemplat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateBlockDeviceMappings",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateBlockDeviceMappings",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -29336,7 +30575,7 @@ func NewDataAwsLaunchTemplateBlockDeviceMappingsEbs(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsLaunchTemplateBlockDeviceMappingsEbs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateBlockDeviceMappingsEbs",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateBlockDeviceMappingsEbs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -29349,7 +30588,7 @@ func NewDataAwsLaunchTemplateBlockDeviceMappingsEbs_Override(d DataAwsLaunchTemp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateBlockDeviceMappingsEbs",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateBlockDeviceMappingsEbs",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -29449,6 +30688,7 @@ func (d *jsiiProxy_DataAwsLaunchTemplateBlockDeviceMappingsEbs) InterpolationFor
 	return returns
 }
 
+// AWS EC2.
 type DataAwsLaunchTemplateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -29536,7 +30776,7 @@ func NewDataAwsLaunchTemplateCreditSpecification(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsLaunchTemplateCreditSpecification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateCreditSpecification",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateCreditSpecification",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -29549,7 +30789,7 @@ func NewDataAwsLaunchTemplateCreditSpecification_Override(d DataAwsLaunchTemplat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateCreditSpecification",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateCreditSpecification",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -29717,7 +30957,7 @@ func NewDataAwsLaunchTemplateElasticGpuSpecifications(terraformResource cdktf.IT
 	j := jsiiProxy_DataAwsLaunchTemplateElasticGpuSpecifications{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateElasticGpuSpecifications",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateElasticGpuSpecifications",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -29730,7 +30970,7 @@ func NewDataAwsLaunchTemplateElasticGpuSpecifications_Override(d DataAwsLaunchTe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateElasticGpuSpecifications",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateElasticGpuSpecifications",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -29898,7 +31138,7 @@ func NewDataAwsLaunchTemplateEnclaveOptions(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DataAwsLaunchTemplateEnclaveOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateEnclaveOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateEnclaveOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -29911,7 +31151,7 @@ func NewDataAwsLaunchTemplateEnclaveOptions_Override(d DataAwsLaunchTemplateEncl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateEnclaveOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateEnclaveOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -30086,7 +31326,7 @@ func NewDataAwsLaunchTemplateHibernationOptions(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsLaunchTemplateHibernationOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateHibernationOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateHibernationOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -30099,7 +31339,7 @@ func NewDataAwsLaunchTemplateHibernationOptions_Override(d DataAwsLaunchTemplate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateHibernationOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateHibernationOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -30278,7 +31518,7 @@ func NewDataAwsLaunchTemplateIamInstanceProfile(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsLaunchTemplateIamInstanceProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateIamInstanceProfile",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateIamInstanceProfile",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -30291,7 +31531,7 @@ func NewDataAwsLaunchTemplateIamInstanceProfile_Override(d DataAwsLaunchTemplate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateIamInstanceProfile",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateIamInstanceProfile",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -30470,7 +31710,7 @@ func NewDataAwsLaunchTemplateInstanceMarketOptions(terraformResource cdktf.ITerr
 	j := jsiiProxy_DataAwsLaunchTemplateInstanceMarketOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateInstanceMarketOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateInstanceMarketOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -30483,7 +31723,7 @@ func NewDataAwsLaunchTemplateInstanceMarketOptions_Override(d DataAwsLaunchTempl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateInstanceMarketOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateInstanceMarketOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -30695,7 +31935,7 @@ func NewDataAwsLaunchTemplateInstanceMarketOptionsSpotOptions(terraformResource 
 	j := jsiiProxy_DataAwsLaunchTemplateInstanceMarketOptionsSpotOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateInstanceMarketOptionsSpotOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateInstanceMarketOptionsSpotOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -30708,7 +31948,7 @@ func NewDataAwsLaunchTemplateInstanceMarketOptionsSpotOptions_Override(d DataAws
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateInstanceMarketOptionsSpotOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateInstanceMarketOptionsSpotOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -30909,7 +32149,7 @@ func NewDataAwsLaunchTemplateMetadataOptions(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DataAwsLaunchTemplateMetadataOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateMetadataOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -30922,7 +32162,7 @@ func NewDataAwsLaunchTemplateMetadataOptions_Override(d DataAwsLaunchTemplateMet
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateMetadataOptions",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateMetadataOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -31090,7 +32330,7 @@ func NewDataAwsLaunchTemplateMonitoring(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsLaunchTemplateMonitoring{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateMonitoring",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateMonitoring",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -31103,7 +32343,7 @@ func NewDataAwsLaunchTemplateMonitoring_Override(d DataAwsLaunchTemplateMonitori
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateMonitoring",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateMonitoring",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -31425,7 +32665,7 @@ func NewDataAwsLaunchTemplateNetworkInterfaces(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsLaunchTemplateNetworkInterfaces{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateNetworkInterfaces",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateNetworkInterfaces",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -31438,7 +32678,7 @@ func NewDataAwsLaunchTemplateNetworkInterfaces_Override(d DataAwsLaunchTemplateN
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateNetworkInterfaces",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateNetworkInterfaces",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -31683,7 +32923,7 @@ func NewDataAwsLaunchTemplatePlacement(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DataAwsLaunchTemplatePlacement{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplatePlacement",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplatePlacement",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -31696,7 +32936,7 @@ func NewDataAwsLaunchTemplatePlacement_Override(d DataAwsLaunchTemplatePlacement
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplatePlacement",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplatePlacement",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -31875,7 +33115,7 @@ func NewDataAwsLaunchTemplateTagSpecifications(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DataAwsLaunchTemplateTagSpecifications{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateTagSpecifications",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateTagSpecifications",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -31888,7 +33128,7 @@ func NewDataAwsLaunchTemplateTagSpecifications_Override(d DataAwsLaunchTemplateT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.DataAwsLaunchTemplateTagSpecifications",
+		"hashicorp_aws.ec2.DataAwsLaunchTemplateTagSpecifications",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -32198,7 +33438,7 @@ func NewEbsDefaultKmsKey(scope constructs.Construct, id *string, config *EbsDefa
 	j := jsiiProxy_EbsDefaultKmsKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsDefaultKmsKey",
+		"hashicorp_aws.ec2.EbsDefaultKmsKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -32211,7 +33451,7 @@ func NewEbsDefaultKmsKey_Override(e EbsDefaultKmsKey, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsDefaultKmsKey",
+		"hashicorp_aws.ec2.EbsDefaultKmsKey",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -32267,7 +33507,7 @@ func EbsDefaultKmsKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsDefaultKmsKey",
+		"hashicorp_aws.ec2.EbsDefaultKmsKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -32280,7 +33520,7 @@ func EbsDefaultKmsKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsDefaultKmsKey",
+		"hashicorp_aws.ec2.EbsDefaultKmsKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -32442,6 +33682,7 @@ func (e *jsiiProxy_EbsDefaultKmsKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EbsDefaultKmsKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -32666,7 +33907,7 @@ func NewEbsEncryptionByDefault(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_EbsEncryptionByDefault{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsEncryptionByDefault",
+		"hashicorp_aws.ec2.EbsEncryptionByDefault",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -32679,7 +33920,7 @@ func NewEbsEncryptionByDefault_Override(e EbsEncryptionByDefault, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsEncryptionByDefault",
+		"hashicorp_aws.ec2.EbsEncryptionByDefault",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -32735,7 +33976,7 @@ func EbsEncryptionByDefault_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsEncryptionByDefault",
+		"hashicorp_aws.ec2.EbsEncryptionByDefault",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -32748,7 +33989,7 @@ func EbsEncryptionByDefault_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsEncryptionByDefault",
+		"hashicorp_aws.ec2.EbsEncryptionByDefault",
 		"tfResourceType",
 		&returns,
 	)
@@ -32918,6 +34159,7 @@ func (e *jsiiProxy_EbsEncryptionByDefault) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EbsEncryptionByDefaultConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -33314,7 +34556,7 @@ func NewEbsSnapshot(scope constructs.Construct, id *string, config *EbsSnapshotC
 	j := jsiiProxy_EbsSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshot",
+		"hashicorp_aws.ec2.EbsSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -33327,7 +34569,7 @@ func NewEbsSnapshot_Override(e EbsSnapshot, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshot",
+		"hashicorp_aws.ec2.EbsSnapshot",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -33407,7 +34649,7 @@ func EbsSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsSnapshot",
+		"hashicorp_aws.ec2.EbsSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -33420,7 +34662,7 @@ func EbsSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsSnapshot",
+		"hashicorp_aws.ec2.EbsSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -33622,6 +34864,7 @@ func (e *jsiiProxy_EbsSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EbsSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -34064,7 +35307,7 @@ func NewEbsSnapshotCopy(scope constructs.Construct, id *string, config *EbsSnaps
 	j := jsiiProxy_EbsSnapshotCopy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotCopy",
+		"hashicorp_aws.ec2.EbsSnapshotCopy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -34077,7 +35320,7 @@ func NewEbsSnapshotCopy_Override(e EbsSnapshotCopy, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotCopy",
+		"hashicorp_aws.ec2.EbsSnapshotCopy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -34181,7 +35424,7 @@ func EbsSnapshotCopy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsSnapshotCopy",
+		"hashicorp_aws.ec2.EbsSnapshotCopy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -34194,7 +35437,7 @@ func EbsSnapshotCopy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsSnapshotCopy",
+		"hashicorp_aws.ec2.EbsSnapshotCopy",
 		"tfResourceType",
 		&returns,
 	)
@@ -34396,6 +35639,7 @@ func (e *jsiiProxy_EbsSnapshotCopy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EbsSnapshotCopyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -34878,7 +36122,7 @@ func NewEbsSnapshotImport(scope constructs.Construct, id *string, config *EbsSna
 	j := jsiiProxy_EbsSnapshotImport{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImport",
+		"hashicorp_aws.ec2.EbsSnapshotImport",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -34891,7 +36135,7 @@ func NewEbsSnapshotImport_Override(e EbsSnapshotImport, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImport",
+		"hashicorp_aws.ec2.EbsSnapshotImport",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -34987,7 +36231,7 @@ func EbsSnapshotImport_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsSnapshotImport",
+		"hashicorp_aws.ec2.EbsSnapshotImport",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -35000,7 +36244,7 @@ func EbsSnapshotImport_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsSnapshotImport",
+		"hashicorp_aws.ec2.EbsSnapshotImport",
 		"tfResourceType",
 		&returns,
 	)
@@ -35266,6 +36510,8 @@ type EbsSnapshotImportClientDataOutputReference interface {
 	Comment() *string
 	SetComment(val *string)
 	CommentInput() *string
+	InternalValue() *EbsSnapshotImportClientData
+	SetInternalValue(val *EbsSnapshotImportClientData)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -35313,6 +36559,16 @@ func (j *jsiiProxy_EbsSnapshotImportClientDataOutputReference) CommentInput() *s
 	_jsii_.Get(
 		j,
 		"commentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EbsSnapshotImportClientDataOutputReference) InternalValue() *EbsSnapshotImportClientData {
+	var returns *EbsSnapshotImportClientData
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35414,7 +36670,7 @@ func NewEbsSnapshotImportClientDataOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_EbsSnapshotImportClientDataOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportClientDataOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportClientDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35426,7 +36682,7 @@ func NewEbsSnapshotImportClientDataOutputReference_Override(e EbsSnapshotImportC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportClientDataOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportClientDataOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -35436,6 +36692,14 @@ func (j *jsiiProxy_EbsSnapshotImportClientDataOutputReference) SetComment(val *s
 	_jsii_.Set(
 		j,
 		"comment",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EbsSnapshotImportClientDataOutputReference) SetInternalValue(val *EbsSnapshotImportClientData) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -35604,6 +36868,7 @@ func (e *jsiiProxy_EbsSnapshotImportClientDataOutputReference) ResetUploadStart(
 	)
 }
 
+// AWS EC2.
 type EbsSnapshotImportConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -35660,6 +36925,8 @@ type EbsSnapshotImportDiskContainerOutputReference interface {
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *EbsSnapshotImportDiskContainer
+	SetInternalValue(val *EbsSnapshotImportDiskContainer)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -35723,6 +36990,16 @@ func (j *jsiiProxy_EbsSnapshotImportDiskContainerOutputReference) FormatInput() 
 	_jsii_.Get(
 		j,
 		"formatInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EbsSnapshotImportDiskContainerOutputReference) InternalValue() *EbsSnapshotImportDiskContainer {
+	var returns *EbsSnapshotImportDiskContainer
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -35804,7 +37081,7 @@ func NewEbsSnapshotImportDiskContainerOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_EbsSnapshotImportDiskContainerOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportDiskContainerOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportDiskContainerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35816,7 +37093,7 @@ func NewEbsSnapshotImportDiskContainerOutputReference_Override(e EbsSnapshotImpo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportDiskContainerOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportDiskContainerOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -35834,6 +37111,14 @@ func (j *jsiiProxy_EbsSnapshotImportDiskContainerOutputReference) SetFormat(val 
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EbsSnapshotImportDiskContainerOutputReference) SetInternalValue(val *EbsSnapshotImportDiskContainer) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -35995,6 +37280,8 @@ type EbsSnapshotImportDiskContainerUserBucket struct {
 
 type EbsSnapshotImportDiskContainerUserBucketOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EbsSnapshotImportDiskContainerUserBucket
+	SetInternalValue(val *EbsSnapshotImportDiskContainerUserBucket)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3Bucket() *string
@@ -36018,6 +37305,16 @@ type EbsSnapshotImportDiskContainerUserBucketOutputReference interface {
 // The jsii proxy struct for EbsSnapshotImportDiskContainerUserBucketOutputReference
 type jsiiProxy_EbsSnapshotImportDiskContainerUserBucketOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EbsSnapshotImportDiskContainerUserBucketOutputReference) InternalValue() *EbsSnapshotImportDiskContainerUserBucket {
+	var returns *EbsSnapshotImportDiskContainerUserBucket
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EbsSnapshotImportDiskContainerUserBucketOutputReference) IsSingleItem() *bool {
@@ -36096,7 +37393,7 @@ func NewEbsSnapshotImportDiskContainerUserBucketOutputReference(terraformResourc
 	j := jsiiProxy_EbsSnapshotImportDiskContainerUserBucketOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportDiskContainerUserBucketOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportDiskContainerUserBucketOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36108,9 +37405,17 @@ func NewEbsSnapshotImportDiskContainerUserBucketOutputReference_Override(e EbsSn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportDiskContainerUserBucketOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportDiskContainerUserBucketOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EbsSnapshotImportDiskContainerUserBucketOutputReference) SetInternalValue(val *EbsSnapshotImportDiskContainerUserBucket) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -36253,6 +37558,8 @@ type EbsSnapshotImportTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EbsSnapshotImportTimeouts
+	SetInternalValue(val *EbsSnapshotImportTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36314,6 +37621,16 @@ func (j *jsiiProxy_EbsSnapshotImportTimeoutsOutputReference) DeleteInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_EbsSnapshotImportTimeoutsOutputReference) InternalValue() *EbsSnapshotImportTimeouts {
+	var returns *EbsSnapshotImportTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EbsSnapshotImportTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36350,7 +37667,7 @@ func NewEbsSnapshotImportTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_EbsSnapshotImportTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36362,7 +37679,7 @@ func NewEbsSnapshotImportTimeoutsOutputReference_Override(e EbsSnapshotImportTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotImportTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotImportTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -36380,6 +37697,14 @@ func (j *jsiiProxy_EbsSnapshotImportTimeoutsOutputReference) SetDelete(val *stri
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EbsSnapshotImportTimeoutsOutputReference) SetInternalValue(val *EbsSnapshotImportTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36523,6 +37848,8 @@ type EbsSnapshotTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EbsSnapshotTimeouts
+	SetInternalValue(val *EbsSnapshotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36584,6 +37911,16 @@ func (j *jsiiProxy_EbsSnapshotTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_EbsSnapshotTimeoutsOutputReference) InternalValue() *EbsSnapshotTimeouts {
+	var returns *EbsSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EbsSnapshotTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36620,7 +37957,7 @@ func NewEbsSnapshotTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_EbsSnapshotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36632,7 +37969,7 @@ func NewEbsSnapshotTimeoutsOutputReference_Override(e EbsSnapshotTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EbsSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -36650,6 +37987,14 @@ func (j *jsiiProxy_EbsSnapshotTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EbsSnapshotTimeoutsOutputReference) SetInternalValue(val *EbsSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -37263,7 +38608,7 @@ func NewEbsVolume(scope constructs.Construct, id *string, config *EbsVolumeConfi
 	j := jsiiProxy_EbsVolume{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsVolume",
+		"hashicorp_aws.ec2.EbsVolume",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -37276,7 +38621,7 @@ func NewEbsVolume_Override(e EbsVolume, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EbsVolume",
+		"hashicorp_aws.ec2.EbsVolume",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -37420,7 +38765,7 @@ func EbsVolume_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EbsVolume",
+		"hashicorp_aws.ec2.EbsVolume",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37433,7 +38778,7 @@ func EbsVolume_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EbsVolume",
+		"hashicorp_aws.ec2.EbsVolume",
 		"tfResourceType",
 		&returns,
 	)
@@ -37683,6 +39028,7 @@ func (e *jsiiProxy_EbsVolume) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EbsVolumeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -37951,7 +39297,7 @@ func NewEc2AvailabilityZoneGroup(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_Ec2AvailabilityZoneGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2AvailabilityZoneGroup",
+		"hashicorp_aws.ec2.Ec2AvailabilityZoneGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -37964,7 +39310,7 @@ func NewEc2AvailabilityZoneGroup_Override(e Ec2AvailabilityZoneGroup, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2AvailabilityZoneGroup",
+		"hashicorp_aws.ec2.Ec2AvailabilityZoneGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -38028,7 +39374,7 @@ func Ec2AvailabilityZoneGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2AvailabilityZoneGroup",
+		"hashicorp_aws.ec2.Ec2AvailabilityZoneGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -38041,7 +39387,7 @@ func Ec2AvailabilityZoneGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2AvailabilityZoneGroup",
+		"hashicorp_aws.ec2.Ec2AvailabilityZoneGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -38203,6 +39549,7 @@ func (e *jsiiProxy_Ec2AvailabilityZoneGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2AvailabilityZoneGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -38735,7 +40082,7 @@ func NewEc2CapacityReservation(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_Ec2CapacityReservation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2CapacityReservation",
+		"hashicorp_aws.ec2.Ec2CapacityReservation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -38748,7 +40095,7 @@ func NewEc2CapacityReservation_Override(e Ec2CapacityReservation, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2CapacityReservation",
+		"hashicorp_aws.ec2.Ec2CapacityReservation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -38900,7 +40247,7 @@ func Ec2CapacityReservation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2CapacityReservation",
+		"hashicorp_aws.ec2.Ec2CapacityReservation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -38913,7 +40260,7 @@ func Ec2CapacityReservation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2CapacityReservation",
+		"hashicorp_aws.ec2.Ec2CapacityReservation",
 		"tfResourceType",
 		&returns,
 	)
@@ -39147,6 +40494,7 @@ func (e *jsiiProxy_Ec2CapacityReservation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2CapacityReservationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -39464,7 +40812,7 @@ func NewEc2CarrierGateway(scope constructs.Construct, id *string, config *Ec2Car
 	j := jsiiProxy_Ec2CarrierGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2CarrierGateway",
+		"hashicorp_aws.ec2.Ec2CarrierGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -39477,7 +40825,7 @@ func NewEc2CarrierGateway_Override(e Ec2CarrierGateway, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2CarrierGateway",
+		"hashicorp_aws.ec2.Ec2CarrierGateway",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -39549,7 +40897,7 @@ func Ec2CarrierGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2CarrierGateway",
+		"hashicorp_aws.ec2.Ec2CarrierGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -39562,7 +40910,7 @@ func Ec2CarrierGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2CarrierGateway",
+		"hashicorp_aws.ec2.Ec2CarrierGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -39740,6 +41088,7 @@ func (e *jsiiProxy_Ec2CarrierGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2CarrierGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -40062,7 +41411,7 @@ func NewEc2ClientVpnAuthorizationRule(scope constructs.Construct, id *string, co
 	j := jsiiProxy_Ec2ClientVpnAuthorizationRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnAuthorizationRule",
+		"hashicorp_aws.ec2.Ec2ClientVpnAuthorizationRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -40075,7 +41424,7 @@ func NewEc2ClientVpnAuthorizationRule_Override(e Ec2ClientVpnAuthorizationRule, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnAuthorizationRule",
+		"hashicorp_aws.ec2.Ec2ClientVpnAuthorizationRule",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -40163,7 +41512,7 @@ func Ec2ClientVpnAuthorizationRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ClientVpnAuthorizationRule",
+		"hashicorp_aws.ec2.Ec2ClientVpnAuthorizationRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -40176,7 +41525,7 @@ func Ec2ClientVpnAuthorizationRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ClientVpnAuthorizationRule",
+		"hashicorp_aws.ec2.Ec2ClientVpnAuthorizationRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -40362,6 +41711,7 @@ func (e *jsiiProxy_Ec2ClientVpnAuthorizationRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2ClientVpnAuthorizationRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -40863,7 +42213,7 @@ func NewEc2ClientVpnEndpoint(scope constructs.Construct, id *string, config *Ec2
 	j := jsiiProxy_Ec2ClientVpnEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpoint",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -40876,7 +42226,7 @@ func NewEc2ClientVpnEndpoint_Override(e Ec2ClientVpnEndpoint, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpoint",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpoint",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -41004,7 +42354,7 @@ func Ec2ClientVpnEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpoint",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -41017,7 +42367,7 @@ func Ec2ClientVpnEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpoint",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -41256,6 +42606,7 @@ type Ec2ClientVpnEndpointAuthenticationOptions struct {
 	SelfServiceSamlProviderArn *string `json:"selfServiceSamlProviderArn"`
 }
 
+// AWS EC2.
 type Ec2ClientVpnEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -41313,6 +42664,8 @@ type Ec2ClientVpnEndpointConnectionLogOptionsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *Ec2ClientVpnEndpointConnectionLogOptions
+	SetInternalValue(val *Ec2ClientVpnEndpointConnectionLogOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -41394,6 +42747,16 @@ func (j *jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference) Enab
 	return returns
 }
 
+func (j *jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference) InternalValue() *Ec2ClientVpnEndpointConnectionLogOptions {
+	var returns *Ec2ClientVpnEndpointConnectionLogOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -41430,7 +42793,7 @@ func NewEc2ClientVpnEndpointConnectionLogOptionsOutputReference(terraformResourc
 	j := jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpointConnectionLogOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpointConnectionLogOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -41442,7 +42805,7 @@ func NewEc2ClientVpnEndpointConnectionLogOptionsOutputReference_Override(e Ec2Cl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnEndpointConnectionLogOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2ClientVpnEndpointConnectionLogOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -41468,6 +42831,14 @@ func (j *jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference) SetE
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2ClientVpnEndpointConnectionLogOptionsOutputReference) SetInternalValue(val *Ec2ClientVpnEndpointConnectionLogOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -41886,7 +43257,7 @@ func NewEc2ClientVpnNetworkAssociation(scope constructs.Construct, id *string, c
 	j := jsiiProxy_Ec2ClientVpnNetworkAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnNetworkAssociation",
+		"hashicorp_aws.ec2.Ec2ClientVpnNetworkAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -41899,7 +43270,7 @@ func NewEc2ClientVpnNetworkAssociation_Override(e Ec2ClientVpnNetworkAssociation
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnNetworkAssociation",
+		"hashicorp_aws.ec2.Ec2ClientVpnNetworkAssociation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -41971,7 +43342,7 @@ func Ec2ClientVpnNetworkAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ClientVpnNetworkAssociation",
+		"hashicorp_aws.ec2.Ec2ClientVpnNetworkAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -41984,7 +43355,7 @@ func Ec2ClientVpnNetworkAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ClientVpnNetworkAssociation",
+		"hashicorp_aws.ec2.Ec2ClientVpnNetworkAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -42154,6 +43525,7 @@ func (e *jsiiProxy_Ec2ClientVpnNetworkAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2ClientVpnNetworkAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -42473,7 +43845,7 @@ func NewEc2ClientVpnRoute(scope constructs.Construct, id *string, config *Ec2Cli
 	j := jsiiProxy_Ec2ClientVpnRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnRoute",
+		"hashicorp_aws.ec2.Ec2ClientVpnRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -42486,7 +43858,7 @@ func NewEc2ClientVpnRoute_Override(e Ec2ClientVpnRoute, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ClientVpnRoute",
+		"hashicorp_aws.ec2.Ec2ClientVpnRoute",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -42566,7 +43938,7 @@ func Ec2ClientVpnRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ClientVpnRoute",
+		"hashicorp_aws.ec2.Ec2ClientVpnRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -42579,7 +43951,7 @@ func Ec2ClientVpnRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ClientVpnRoute",
+		"hashicorp_aws.ec2.Ec2ClientVpnRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -42749,6 +44121,7 @@ func (e *jsiiProxy_Ec2ClientVpnRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2ClientVpnRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -43241,7 +44614,7 @@ func NewEc2Fleet(scope constructs.Construct, id *string, config *Ec2FleetConfig)
 	j := jsiiProxy_Ec2Fleet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Fleet",
+		"hashicorp_aws.ec2.Ec2Fleet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -43254,7 +44627,7 @@ func NewEc2Fleet_Override(e Ec2Fleet, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Fleet",
+		"hashicorp_aws.ec2.Ec2Fleet",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -43358,7 +44731,7 @@ func Ec2Fleet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2Fleet",
+		"hashicorp_aws.ec2.Ec2Fleet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -43371,7 +44744,7 @@ func Ec2Fleet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2Fleet",
+		"hashicorp_aws.ec2.Ec2Fleet",
 		"tfResourceType",
 		&returns,
 	)
@@ -43653,6 +45026,7 @@ func (e *jsiiProxy_Ec2Fleet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2FleetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -43720,6 +45094,8 @@ type Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification struct {
 
 type Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification
+	SetInternalValue(val *Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateId() *string
@@ -43748,6 +45124,16 @@ type Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference inte
 // The jsii proxy struct for Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference
 type jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference) InternalValue() *Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification {
+	var returns *Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference) IsSingleItem() *bool {
@@ -43846,7 +45232,7 @@ func NewEc2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference(t
 	j := jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43858,9 +45244,17 @@ func NewEc2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference_O
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference) SetInternalValue(val *Ec2FleetLaunchTemplateConfigLaunchTemplateSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -44014,6 +45408,8 @@ func (e *jsiiProxy_Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutput
 
 type Ec2FleetLaunchTemplateConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Ec2FleetLaunchTemplateConfig
+	SetInternalValue(val *Ec2FleetLaunchTemplateConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LaunchTemplateSpecification() Ec2FleetLaunchTemplateConfigLaunchTemplateSpecificationOutputReference
@@ -44038,6 +45434,16 @@ type Ec2FleetLaunchTemplateConfigOutputReference interface {
 // The jsii proxy struct for Ec2FleetLaunchTemplateConfigOutputReference
 type jsiiProxy_Ec2FleetLaunchTemplateConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigOutputReference) InternalValue() *Ec2FleetLaunchTemplateConfig {
+	var returns *Ec2FleetLaunchTemplateConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigOutputReference) IsSingleItem() *bool {
@@ -44116,7 +45522,7 @@ func NewEc2FleetLaunchTemplateConfigOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_Ec2FleetLaunchTemplateConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetLaunchTemplateConfigOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetLaunchTemplateConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44128,9 +45534,17 @@ func NewEc2FleetLaunchTemplateConfigOutputReference_Override(e Ec2FleetLaunchTem
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetLaunchTemplateConfigOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetLaunchTemplateConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetLaunchTemplateConfigOutputReference) SetInternalValue(val *Ec2FleetLaunchTemplateConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -44291,6 +45705,8 @@ type Ec2FleetOnDemandOptionsOutputReference interface {
 	AllocationStrategy() *string
 	SetAllocationStrategy(val *string)
 	AllocationStrategyInput() *string
+	InternalValue() *Ec2FleetOnDemandOptions
+	SetInternalValue(val *Ec2FleetOnDemandOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -44326,6 +45742,16 @@ func (j *jsiiProxy_Ec2FleetOnDemandOptionsOutputReference) AllocationStrategyInp
 	_jsii_.Get(
 		j,
 		"allocationStrategyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2FleetOnDemandOptionsOutputReference) InternalValue() *Ec2FleetOnDemandOptions {
+	var returns *Ec2FleetOnDemandOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -44367,7 +45793,7 @@ func NewEc2FleetOnDemandOptionsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_Ec2FleetOnDemandOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetOnDemandOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetOnDemandOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44379,7 +45805,7 @@ func NewEc2FleetOnDemandOptionsOutputReference_Override(e Ec2FleetOnDemandOption
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetOnDemandOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetOnDemandOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -44389,6 +45815,14 @@ func (j *jsiiProxy_Ec2FleetOnDemandOptionsOutputReference) SetAllocationStrategy
 	_jsii_.Set(
 		j,
 		"allocationStrategy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetOnDemandOptionsOutputReference) SetInternalValue(val *Ec2FleetOnDemandOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -44536,6 +45970,8 @@ type Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance struct {
 
 type Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance
+	SetInternalValue(val *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReplacementStrategy() *string
@@ -44557,6 +45993,16 @@ type Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference in
 // The jsii proxy struct for Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference
 type jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference) InternalValue() *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance {
+	var returns *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference) IsSingleItem() *bool {
@@ -44615,7 +46061,7 @@ func NewEc2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference
 	j := jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44627,9 +46073,17 @@ func NewEc2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference) SetInternalValue(val *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -44761,6 +46215,8 @@ type Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference interface {
 	cdktf.ComplexObject
 	CapacityRebalance() Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceOutputReference
 	CapacityRebalanceInput() *Ec2FleetSpotOptionsMaintenanceStrategiesCapacityRebalance
+	InternalValue() *Ec2FleetSpotOptionsMaintenanceStrategies
+	SetInternalValue(val *Ec2FleetSpotOptionsMaintenanceStrategies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -44802,6 +46258,16 @@ func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference) Capa
 	return returns
 }
 
+func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference) InternalValue() *Ec2FleetSpotOptionsMaintenanceStrategies {
+	var returns *Ec2FleetSpotOptionsMaintenanceStrategies
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -44838,7 +46304,7 @@ func NewEc2FleetSpotOptionsMaintenanceStrategiesOutputReference(terraformResourc
 	j := jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44850,9 +46316,17 @@ func NewEc2FleetSpotOptionsMaintenanceStrategiesOutputReference_Override(e Ec2Fl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference) SetInternalValue(val *Ec2FleetSpotOptionsMaintenanceStrategies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -44991,6 +46465,8 @@ type Ec2FleetSpotOptionsOutputReference interface {
 	InstancePoolsToUseCount() *float64
 	SetInstancePoolsToUseCount(val *float64)
 	InstancePoolsToUseCountInput() *float64
+	InternalValue() *Ec2FleetSpotOptions
+	SetInternalValue(val *Ec2FleetSpotOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaintenanceStrategies() Ec2FleetSpotOptionsMaintenanceStrategiesOutputReference
@@ -45077,6 +46553,16 @@ func (j *jsiiProxy_Ec2FleetSpotOptionsOutputReference) InstancePoolsToUseCountIn
 	return returns
 }
 
+func (j *jsiiProxy_Ec2FleetSpotOptionsOutputReference) InternalValue() *Ec2FleetSpotOptions {
+	var returns *Ec2FleetSpotOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Ec2FleetSpotOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -45133,7 +46619,7 @@ func NewEc2FleetSpotOptionsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_Ec2FleetSpotOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45145,7 +46631,7 @@ func NewEc2FleetSpotOptionsOutputReference_Override(e Ec2FleetSpotOptionsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetSpotOptionsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetSpotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -45171,6 +46657,14 @@ func (j *jsiiProxy_Ec2FleetSpotOptionsOutputReference) SetInstancePoolsToUseCoun
 	_jsii_.Set(
 		j,
 		"instancePoolsToUseCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetSpotOptionsOutputReference) SetInternalValue(val *Ec2FleetSpotOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -45339,6 +46833,8 @@ type Ec2FleetTargetCapacitySpecificationOutputReference interface {
 	DefaultTargetCapacityType() *string
 	SetDefaultTargetCapacityType(val *string)
 	DefaultTargetCapacityTypeInput() *string
+	InternalValue() *Ec2FleetTargetCapacitySpecification
+	SetInternalValue(val *Ec2FleetTargetCapacitySpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	OnDemandTargetCapacity() *float64
@@ -45384,6 +46880,16 @@ func (j *jsiiProxy_Ec2FleetTargetCapacitySpecificationOutputReference) DefaultTa
 	_jsii_.Get(
 		j,
 		"defaultTargetCapacityTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2FleetTargetCapacitySpecificationOutputReference) InternalValue() *Ec2FleetTargetCapacitySpecification {
+	var returns *Ec2FleetTargetCapacitySpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -45485,7 +46991,7 @@ func NewEc2FleetTargetCapacitySpecificationOutputReference(terraformResource cdk
 	j := jsiiProxy_Ec2FleetTargetCapacitySpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetTargetCapacitySpecificationOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetTargetCapacitySpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45497,7 +47003,7 @@ func NewEc2FleetTargetCapacitySpecificationOutputReference_Override(e Ec2FleetTa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetTargetCapacitySpecificationOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetTargetCapacitySpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -45507,6 +47013,14 @@ func (j *jsiiProxy_Ec2FleetTargetCapacitySpecificationOutputReference) SetDefaul
 	_jsii_.Set(
 		j,
 		"defaultTargetCapacityType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetTargetCapacitySpecificationOutputReference) SetInternalValue(val *Ec2FleetTargetCapacitySpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -45676,6 +47190,8 @@ type Ec2FleetTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *Ec2FleetTimeouts
+	SetInternalValue(val *Ec2FleetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -45741,6 +47257,16 @@ func (j *jsiiProxy_Ec2FleetTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Ec2FleetTimeoutsOutputReference) InternalValue() *Ec2FleetTimeouts {
+	var returns *Ec2FleetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Ec2FleetTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -45797,7 +47323,7 @@ func NewEc2FleetTimeoutsOutputReference(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_Ec2FleetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetTimeoutsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -45809,7 +47335,7 @@ func NewEc2FleetTimeoutsOutputReference_Override(e Ec2FleetTimeoutsOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2FleetTimeoutsOutputReference",
+		"hashicorp_aws.ec2.Ec2FleetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -45827,6 +47353,14 @@ func (j *jsiiProxy_Ec2FleetTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2FleetTimeoutsOutputReference) SetInternalValue(val *Ec2FleetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -46347,7 +47881,7 @@ func NewEc2Host(scope constructs.Construct, id *string, config *Ec2HostConfig) E
 	j := jsiiProxy_Ec2Host{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Host",
+		"hashicorp_aws.ec2.Ec2Host",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -46360,7 +47894,7 @@ func NewEc2Host_Override(e Ec2Host, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Host",
+		"hashicorp_aws.ec2.Ec2Host",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -46464,7 +47998,7 @@ func Ec2Host_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2Host",
+		"hashicorp_aws.ec2.Ec2Host",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -46477,7 +48011,7 @@ func Ec2Host_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2Host",
+		"hashicorp_aws.ec2.Ec2Host",
 		"tfResourceType",
 		&returns,
 	)
@@ -46687,6 +48221,7 @@ func (e *jsiiProxy_Ec2Host) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2HostConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -46968,7 +48503,7 @@ func NewEc2LocalGatewayRoute(scope constructs.Construct, id *string, config *Ec2
 	j := jsiiProxy_Ec2LocalGatewayRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRoute",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -46981,7 +48516,7 @@ func NewEc2LocalGatewayRoute_Override(e Ec2LocalGatewayRoute, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRoute",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRoute",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -47053,7 +48588,7 @@ func Ec2LocalGatewayRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRoute",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -47066,7 +48601,7 @@ func Ec2LocalGatewayRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRoute",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -47228,6 +48763,7 @@ func (e *jsiiProxy_Ec2LocalGatewayRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2LocalGatewayRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -47537,7 +49073,7 @@ func NewEc2LocalGatewayRouteTableVpcAssociation(scope constructs.Construct, id *
 	j := jsiiProxy_Ec2LocalGatewayRouteTableVpcAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRouteTableVpcAssociation",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRouteTableVpcAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -47550,7 +49086,7 @@ func NewEc2LocalGatewayRouteTableVpcAssociation_Override(e Ec2LocalGatewayRouteT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRouteTableVpcAssociation",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRouteTableVpcAssociation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -47630,7 +49166,7 @@ func Ec2LocalGatewayRouteTableVpcAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRouteTableVpcAssociation",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRouteTableVpcAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -47643,7 +49179,7 @@ func Ec2LocalGatewayRouteTableVpcAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2LocalGatewayRouteTableVpcAssociation",
+		"hashicorp_aws.ec2.Ec2LocalGatewayRouteTableVpcAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -47821,6 +49357,7 @@ func (e *jsiiProxy_Ec2LocalGatewayRouteTableVpcAssociation) ToTerraform() interf
 	return returns
 }
 
+// AWS EC2.
 type Ec2LocalGatewayRouteTableVpcAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -48201,7 +49738,7 @@ func NewEc2ManagedPrefixList(scope constructs.Construct, id *string, config *Ec2
 	j := jsiiProxy_Ec2ManagedPrefixList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixList",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixList",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -48214,7 +49751,7 @@ func NewEc2ManagedPrefixList_Override(e Ec2ManagedPrefixList, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixList",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixList",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -48310,7 +49847,7 @@ func Ec2ManagedPrefixList_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixList",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixList",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -48323,7 +49860,7 @@ func Ec2ManagedPrefixList_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixList",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixList",
 		"tfResourceType",
 		&returns,
 	)
@@ -48509,6 +50046,7 @@ func (e *jsiiProxy_Ec2ManagedPrefixList) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2ManagedPrefixListConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -48798,7 +50336,7 @@ func NewEc2ManagedPrefixListEntryA(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_Ec2ManagedPrefixListEntryA{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixListEntryA",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixListEntryA",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -48811,7 +50349,7 @@ func NewEc2ManagedPrefixListEntryA_Override(e Ec2ManagedPrefixListEntryA, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixListEntryA",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixListEntryA",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -48883,7 +50421,7 @@ func Ec2ManagedPrefixListEntryA_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixListEntryA",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixListEntryA",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -48896,7 +50434,7 @@ func Ec2ManagedPrefixListEntryA_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2ManagedPrefixListEntryA",
+		"hashicorp_aws.ec2.Ec2ManagedPrefixListEntryA",
 		"tfResourceType",
 		&returns,
 	)
@@ -49066,6 +50604,7 @@ func (e *jsiiProxy_Ec2ManagedPrefixListEntryA) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2ManagedPrefixListEntryAConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -49080,6 +50619,593 @@ type Ec2ManagedPrefixListEntryAConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_managed_prefix_list_entry.html#prefix_list_id Ec2ManagedPrefixListEntryA#prefix_list_id}.
 	PrefixListId *string `json:"prefixListId"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_managed_prefix_list_entry.html#description Ec2ManagedPrefixListEntryA#description}.
+	Description *string `json:"description"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html aws_ec2_subnet_cidr_reservation}.
+type Ec2SubnetCidrReservation interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	CidrBlock() *string
+	SetCidrBlock(val *string)
+	CidrBlockInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	OwnerId() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ReservationType() *string
+	SetReservationType(val *string)
+	ReservationTypeInput() *string
+	SubnetId() *string
+	SetSubnetId(val *string)
+	SubnetIdInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetDescription()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for Ec2SubnetCidrReservation
+type jsiiProxy_Ec2SubnetCidrReservation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) CidrBlock() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidrBlock",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) CidrBlockInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidrBlockInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) OwnerId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ownerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) ReservationType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"reservationType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) ReservationTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"reservationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subnetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html aws_ec2_subnet_cidr_reservation} Resource.
+func NewEc2SubnetCidrReservation(scope constructs.Construct, id *string, config *Ec2SubnetCidrReservationConfig) Ec2SubnetCidrReservation {
+	_init_.Initialize()
+
+	j := jsiiProxy_Ec2SubnetCidrReservation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.Ec2SubnetCidrReservation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html aws_ec2_subnet_cidr_reservation} Resource.
+func NewEc2SubnetCidrReservation_Override(e Ec2SubnetCidrReservation, scope constructs.Construct, id *string, config *Ec2SubnetCidrReservationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ec2.Ec2SubnetCidrReservation",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetCidrBlock(val *string) {
+	_jsii_.Set(
+		j,
+		"cidrBlock",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetReservationType(val *string) {
+	_jsii_.Set(
+		j,
+		"reservationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2SubnetCidrReservation) SetSubnetId(val *string) {
+	_jsii_.Set(
+		j,
+		"subnetId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func Ec2SubnetCidrReservation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ec2.Ec2SubnetCidrReservation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func Ec2SubnetCidrReservation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ec2.Ec2SubnetCidrReservation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (e *jsiiProxy_Ec2SubnetCidrReservation) ResetDescription() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_Ec2SubnetCidrReservation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_Ec2SubnetCidrReservation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2.
+type Ec2SubnetCidrReservationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html#cidr_block Ec2SubnetCidrReservation#cidr_block}.
+	CidrBlock *string `json:"cidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html#reservation_type Ec2SubnetCidrReservation#reservation_type}.
+	ReservationType *string `json:"reservationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html#subnet_id Ec2SubnetCidrReservation#subnet_id}.
+	SubnetId *string `json:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ec2_subnet_cidr_reservation.html#description Ec2SubnetCidrReservation#description}.
 	Description *string `json:"description"`
 }
 
@@ -49339,7 +51465,7 @@ func NewEc2Tag(scope constructs.Construct, id *string, config *Ec2TagConfig) Ec2
 	j := jsiiProxy_Ec2Tag{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Tag",
+		"hashicorp_aws.ec2.Ec2Tag",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -49352,7 +51478,7 @@ func NewEc2Tag_Override(e Ec2Tag, scope constructs.Construct, id *string, config
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2Tag",
+		"hashicorp_aws.ec2.Ec2Tag",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -49424,7 +51550,7 @@ func Ec2Tag_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2Tag",
+		"hashicorp_aws.ec2.Ec2Tag",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -49437,7 +51563,7 @@ func Ec2Tag_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2Tag",
+		"hashicorp_aws.ec2.Ec2Tag",
 		"tfResourceType",
 		&returns,
 	)
@@ -49599,6 +51725,7 @@ func (e *jsiiProxy_Ec2Tag) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TagConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -49910,7 +52037,7 @@ func NewEc2TrafficMirrorFilter(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_Ec2TrafficMirrorFilter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilter",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -49923,7 +52050,7 @@ func NewEc2TrafficMirrorFilter_Override(e Ec2TrafficMirrorFilter, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilter",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilter",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -50003,7 +52130,7 @@ func Ec2TrafficMirrorFilter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilter",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -50016,7 +52143,7 @@ func Ec2TrafficMirrorFilter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilter",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilter",
 		"tfResourceType",
 		&returns,
 	)
@@ -50210,6 +52337,7 @@ func (e *jsiiProxy_Ec2TrafficMirrorFilter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TrafficMirrorFilterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -50661,7 +52789,7 @@ func NewEc2TrafficMirrorFilterRule(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_Ec2TrafficMirrorFilterRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRule",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -50674,7 +52802,7 @@ func NewEc2TrafficMirrorFilterRule_Override(e Ec2TrafficMirrorFilterRule, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRule",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRule",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -50786,7 +52914,7 @@ func Ec2TrafficMirrorFilterRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRule",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -50799,7 +52927,7 @@ func Ec2TrafficMirrorFilterRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRule",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -51009,6 +53137,7 @@ func (e *jsiiProxy_Ec2TrafficMirrorFilterRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TrafficMirrorFilterRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -51056,6 +53185,8 @@ type Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference interface {
 	FromPort() *float64
 	SetFromPort(val *float64)
 	FromPortInput() *float64
+	InternalValue() *Ec2TrafficMirrorFilterRuleDestinationPortRange
+	SetInternalValue(val *Ec2TrafficMirrorFilterRuleDestinationPortRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -51095,6 +53226,16 @@ func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference
 	_jsii_.Get(
 		j,
 		"fromPortInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference) InternalValue() *Ec2TrafficMirrorFilterRuleDestinationPortRange {
+	var returns *Ec2TrafficMirrorFilterRuleDestinationPortRange
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -51156,7 +53297,7 @@ func NewEc2TrafficMirrorFilterRuleDestinationPortRangeOutputReference(terraformR
 	j := jsiiProxy_Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -51168,7 +53309,7 @@ func NewEc2TrafficMirrorFilterRuleDestinationPortRangeOutputReference_Override(e
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -51178,6 +53319,14 @@ func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference
 	_jsii_.Set(
 		j,
 		"fromPort",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleDestinationPortRangeOutputReference) SetInternalValue(val *Ec2TrafficMirrorFilterRuleDestinationPortRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -51326,6 +53475,8 @@ type Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference interface {
 	FromPort() *float64
 	SetFromPort(val *float64)
 	FromPortInput() *float64
+	InternalValue() *Ec2TrafficMirrorFilterRuleSourcePortRange
+	SetInternalValue(val *Ec2TrafficMirrorFilterRuleSourcePortRange)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -51365,6 +53516,16 @@ func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference) Fro
 	_jsii_.Get(
 		j,
 		"fromPortInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference) InternalValue() *Ec2TrafficMirrorFilterRuleSourcePortRange {
+	var returns *Ec2TrafficMirrorFilterRuleSourcePortRange
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -51426,7 +53587,7 @@ func NewEc2TrafficMirrorFilterRuleSourcePortRangeOutputReference(terraformResour
 	j := jsiiProxy_Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -51438,7 +53599,7 @@ func NewEc2TrafficMirrorFilterRuleSourcePortRangeOutputReference_Override(e Ec2T
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -51448,6 +53609,14 @@ func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference) Set
 	_jsii_.Set(
 		j,
 		"fromPort",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Ec2TrafficMirrorFilterRuleSourcePortRangeOutputReference) SetInternalValue(val *Ec2TrafficMirrorFilterRuleSourcePortRange) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -52005,7 +54174,7 @@ func NewEc2TrafficMirrorSession(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_Ec2TrafficMirrorSession{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorSession",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorSession",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -52018,7 +54187,7 @@ func NewEc2TrafficMirrorSession_Override(e Ec2TrafficMirrorSession, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorSession",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorSession",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -52138,7 +54307,7 @@ func Ec2TrafficMirrorSession_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorSession",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorSession",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -52151,7 +54320,7 @@ func Ec2TrafficMirrorSession_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorSession",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorSession",
 		"tfResourceType",
 		&returns,
 	)
@@ -52353,6 +54522,7 @@ func (e *jsiiProxy_Ec2TrafficMirrorSession) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TrafficMirrorSessionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -52711,7 +54881,7 @@ func NewEc2TrafficMirrorTarget(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_Ec2TrafficMirrorTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorTarget",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -52724,7 +54894,7 @@ func NewEc2TrafficMirrorTarget_Override(e Ec2TrafficMirrorTarget, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorTarget",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorTarget",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -52812,7 +54982,7 @@ func Ec2TrafficMirrorTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorTarget",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -52825,7 +54995,7 @@ func Ec2TrafficMirrorTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TrafficMirrorTarget",
+		"hashicorp_aws.ec2.Ec2TrafficMirrorTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -53027,6 +55197,7 @@ func (e *jsiiProxy_Ec2TrafficMirrorTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TrafficMirrorTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -53495,7 +55666,7 @@ func NewEc2TransitGateway(scope constructs.Construct, id *string, config *Ec2Tra
 	j := jsiiProxy_Ec2TransitGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGateway",
+		"hashicorp_aws.ec2.Ec2TransitGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -53508,7 +55679,7 @@ func NewEc2TransitGateway_Override(e Ec2TransitGateway, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGateway",
+		"hashicorp_aws.ec2.Ec2TransitGateway",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -53628,7 +55799,7 @@ func Ec2TransitGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGateway",
+		"hashicorp_aws.ec2.Ec2TransitGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -53641,7 +55812,7 @@ func Ec2TransitGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGateway",
+		"hashicorp_aws.ec2.Ec2TransitGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -53875,6 +56046,7 @@ func (e *jsiiProxy_Ec2TransitGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -54232,7 +56404,7 @@ func NewEc2TransitGatewayPeeringAttachment(scope constructs.Construct, id *strin
 	j := jsiiProxy_Ec2TransitGatewayPeeringAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -54245,7 +56417,7 @@ func NewEc2TransitGatewayPeeringAttachment_Override(e Ec2TransitGatewayPeeringAt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachment",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -54341,7 +56513,7 @@ func Ec2TransitGatewayPeeringAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -54354,7 +56526,7 @@ func Ec2TransitGatewayPeeringAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -54842,7 +57014,7 @@ func NewEc2TransitGatewayPeeringAttachmentAccepter(scope constructs.Construct, i
 	j := jsiiProxy_Ec2TransitGatewayPeeringAttachmentAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachmentAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -54855,7 +57027,7 @@ func NewEc2TransitGatewayPeeringAttachmentAccepter_Override(e Ec2TransitGatewayP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachmentAccepter",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -54927,7 +57099,7 @@ func Ec2TransitGatewayPeeringAttachmentAccepter_IsConstruct(x interface{}) *bool
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachmentAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -54940,7 +57112,7 @@ func Ec2TransitGatewayPeeringAttachmentAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPeeringAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPeeringAttachmentAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -55118,6 +57290,7 @@ func (e *jsiiProxy_Ec2TransitGatewayPeeringAttachmentAccepter) ToTerraform() int
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayPeeringAttachmentAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -55135,6 +57308,7 @@ type Ec2TransitGatewayPeeringAttachmentAccepterConfig struct {
 	TagsAll interface{} `json:"tagsAll"`
 }
 
+// AWS EC2.
 type Ec2TransitGatewayPeeringAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -55450,7 +57624,7 @@ func NewEc2TransitGatewayPrefixListReference(scope constructs.Construct, id *str
 	j := jsiiProxy_Ec2TransitGatewayPrefixListReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPrefixListReference",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPrefixListReference",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -55463,7 +57637,7 @@ func NewEc2TransitGatewayPrefixListReference_Override(e Ec2TransitGatewayPrefixL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPrefixListReference",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPrefixListReference",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -55543,7 +57717,7 @@ func Ec2TransitGatewayPrefixListReference_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPrefixListReference",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPrefixListReference",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -55556,7 +57730,7 @@ func Ec2TransitGatewayPrefixListReference_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayPrefixListReference",
+		"hashicorp_aws.ec2.Ec2TransitGatewayPrefixListReference",
 		"tfResourceType",
 		&returns,
 	)
@@ -55734,6 +57908,7 @@ func (e *jsiiProxy_Ec2TransitGatewayPrefixListReference) ToTerraform() interface
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayPrefixListReferenceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -56034,7 +58209,7 @@ func NewEc2TransitGatewayRoute(scope constructs.Construct, id *string, config *E
 	j := jsiiProxy_Ec2TransitGatewayRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRoute",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -56047,7 +58222,7 @@ func NewEc2TransitGatewayRoute_Override(e Ec2TransitGatewayRoute, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRoute",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRoute",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -56127,7 +58302,7 @@ func Ec2TransitGatewayRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRoute",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -56140,7 +58315,7 @@ func Ec2TransitGatewayRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRoute",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -56318,6 +58493,7 @@ func (e *jsiiProxy_Ec2TransitGatewayRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -56628,7 +58804,7 @@ func NewEc2TransitGatewayRouteTable(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_Ec2TransitGatewayRouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -56641,7 +58817,7 @@ func NewEc2TransitGatewayRouteTable_Override(e Ec2TransitGatewayRouteTable, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTable",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -56713,7 +58889,7 @@ func Ec2TransitGatewayRouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -56726,7 +58902,7 @@ func Ec2TransitGatewayRouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTable",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -57159,7 +59335,7 @@ func NewEc2TransitGatewayRouteTableAssociation(scope constructs.Construct, id *s
 	j := jsiiProxy_Ec2TransitGatewayRouteTableAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTableAssociation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -57172,7 +59348,7 @@ func NewEc2TransitGatewayRouteTableAssociation_Override(e Ec2TransitGatewayRoute
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTableAssociation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -57236,7 +59412,7 @@ func Ec2TransitGatewayRouteTableAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTableAssociation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTableAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -57249,7 +59425,7 @@ func Ec2TransitGatewayRouteTableAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTableAssociation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTableAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -57411,6 +59587,7 @@ func (e *jsiiProxy_Ec2TransitGatewayRouteTableAssociation) ToTerraform() interfa
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayRouteTableAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -57426,6 +59603,7 @@ type Ec2TransitGatewayRouteTableAssociationConfig struct {
 	TransitGatewayRouteTableId *string `json:"transitGatewayRouteTableId"`
 }
 
+// AWS EC2.
 type Ec2TransitGatewayRouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -57698,7 +59876,7 @@ func NewEc2TransitGatewayRouteTablePropagation(scope constructs.Construct, id *s
 	j := jsiiProxy_Ec2TransitGatewayRouteTablePropagation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTablePropagation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTablePropagation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -57711,7 +59889,7 @@ func NewEc2TransitGatewayRouteTablePropagation_Override(e Ec2TransitGatewayRoute
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTablePropagation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTablePropagation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -57775,7 +59953,7 @@ func Ec2TransitGatewayRouteTablePropagation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTablePropagation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTablePropagation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -57788,7 +59966,7 @@ func Ec2TransitGatewayRouteTablePropagation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayRouteTablePropagation",
+		"hashicorp_aws.ec2.Ec2TransitGatewayRouteTablePropagation",
 		"tfResourceType",
 		&returns,
 	)
@@ -57950,6 +60128,7 @@ func (e *jsiiProxy_Ec2TransitGatewayRouteTablePropagation) ToTerraform() interfa
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayRouteTablePropagationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -58400,7 +60579,7 @@ func NewEc2TransitGatewayVpcAttachment(scope constructs.Construct, id *string, c
 	j := jsiiProxy_Ec2TransitGatewayVpcAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -58413,7 +60592,7 @@ func NewEc2TransitGatewayVpcAttachment_Override(e Ec2TransitGatewayVpcAttachment
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachment",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -58541,7 +60720,7 @@ func Ec2TransitGatewayVpcAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -58554,7 +60733,7 @@ func Ec2TransitGatewayVpcAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachment",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -59155,7 +61334,7 @@ func NewEc2TransitGatewayVpcAttachmentAccepter(scope constructs.Construct, id *s
 	j := jsiiProxy_Ec2TransitGatewayVpcAttachmentAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachmentAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -59168,7 +61347,7 @@ func NewEc2TransitGatewayVpcAttachmentAccepter_Override(e Ec2TransitGatewayVpcAt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachmentAccepter",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -59256,7 +61435,7 @@ func Ec2TransitGatewayVpcAttachmentAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachmentAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -59269,7 +61448,7 @@ func Ec2TransitGatewayVpcAttachmentAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Ec2TransitGatewayVpcAttachmentAccepter",
+		"hashicorp_aws.ec2.Ec2TransitGatewayVpcAttachmentAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -59463,6 +61642,7 @@ func (e *jsiiProxy_Ec2TransitGatewayVpcAttachmentAccepter) ToTerraform() interfa
 	return returns
 }
 
+// AWS EC2.
 type Ec2TransitGatewayVpcAttachmentAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -59484,6 +61664,7 @@ type Ec2TransitGatewayVpcAttachmentAccepterConfig struct {
 	TransitGatewayDefaultRouteTablePropagation interface{} `json:"transitGatewayDefaultRouteTablePropagation"`
 }
 
+// AWS EC2.
 type Ec2TransitGatewayVpcAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -60065,7 +62246,7 @@ func NewEip(scope constructs.Construct, id *string, config *EipConfig) Eip {
 	j := jsiiProxy_Eip{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Eip",
+		"hashicorp_aws.ec2.Eip",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -60078,7 +62259,7 @@ func NewEip_Override(e Eip, scope constructs.Construct, id *string, config *EipC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Eip",
+		"hashicorp_aws.ec2.Eip",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -60206,7 +62387,7 @@ func Eip_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Eip",
+		"hashicorp_aws.ec2.Eip",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -60219,7 +62400,7 @@ func Eip_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Eip",
+		"hashicorp_aws.ec2.Eip",
 		"tfResourceType",
 		&returns,
 	)
@@ -60808,7 +62989,7 @@ func NewEipAssociation(scope constructs.Construct, id *string, config *EipAssoci
 	j := jsiiProxy_EipAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EipAssociation",
+		"hashicorp_aws.ec2.EipAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -60821,7 +63002,7 @@ func NewEipAssociation_Override(e EipAssociation, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EipAssociation",
+		"hashicorp_aws.ec2.EipAssociation",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -60917,7 +63098,7 @@ func EipAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.EipAssociation",
+		"hashicorp_aws.ec2.EipAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -60930,7 +63111,7 @@ func EipAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.EipAssociation",
+		"hashicorp_aws.ec2.EipAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -61140,6 +63321,7 @@ func (e *jsiiProxy_EipAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type EipAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -61163,6 +63345,7 @@ type EipAssociationConfig struct {
 	PublicIp *string `json:"publicIp"`
 }
 
+// AWS EC2.
 type EipConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -61212,6 +63395,8 @@ type EipTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EipTimeouts
+	SetInternalValue(val *EipTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Read() *string
@@ -61255,6 +63440,16 @@ func (j *jsiiProxy_EipTimeoutsOutputReference) DeleteInput() *string {
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EipTimeoutsOutputReference) InternalValue() *EipTimeouts {
+	var returns *EipTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -61336,7 +63531,7 @@ func NewEipTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_EipTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EipTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EipTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -61348,7 +63543,7 @@ func NewEipTimeoutsOutputReference_Override(e EipTimeoutsOutputReference, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.EipTimeoutsOutputReference",
+		"hashicorp_aws.ec2.EipTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -61358,6 +63553,14 @@ func (j *jsiiProxy_EipTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EipTimeoutsOutputReference) SetInternalValue(val *EipTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -62769,7 +64972,7 @@ func NewInstance(scope constructs.Construct, id *string, config *InstanceConfig)
 	j := jsiiProxy_Instance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Instance",
+		"hashicorp_aws.ec2.Instance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -62782,7 +64985,7 @@ func NewInstance_Override(i Instance, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.Instance",
+		"hashicorp_aws.ec2.Instance",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -63102,7 +65305,7 @@ func Instance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.Instance",
+		"hashicorp_aws.ec2.Instance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -63115,7 +65318,7 @@ func Instance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.Instance",
+		"hashicorp_aws.ec2.Instance",
 		"tfResourceType",
 		&returns,
 	)
@@ -63680,6 +65883,8 @@ type InstanceCapacityReservationSpecificationCapacityReservationTargetOutputRefe
 	CapacityReservationId() *string
 	SetCapacityReservationId(val *string)
 	CapacityReservationIdInput() *string
+	InternalValue() *InstanceCapacityReservationSpecificationCapacityReservationTarget
+	SetInternalValue(val *InstanceCapacityReservationSpecificationCapacityReservationTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -63715,6 +65920,16 @@ func (j *jsiiProxy_InstanceCapacityReservationSpecificationCapacityReservationTa
 	_jsii_.Get(
 		j,
 		"capacityReservationIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference) InternalValue() *InstanceCapacityReservationSpecificationCapacityReservationTarget {
+	var returns *InstanceCapacityReservationSpecificationCapacityReservationTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -63756,7 +65971,7 @@ func NewInstanceCapacityReservationSpecificationCapacityReservationTargetOutputR
 	j := jsiiProxy_InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -63768,7 +65983,7 @@ func NewInstanceCapacityReservationSpecificationCapacityReservationTargetOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -63778,6 +65993,14 @@ func (j *jsiiProxy_InstanceCapacityReservationSpecificationCapacityReservationTa
 	_jsii_.Set(
 		j,
 		"capacityReservationId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference) SetInternalValue(val *InstanceCapacityReservationSpecificationCapacityReservationTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -63905,6 +66128,8 @@ type InstanceCapacityReservationSpecificationOutputReference interface {
 	CapacityReservationPreferenceInput() *string
 	CapacityReservationTarget() InstanceCapacityReservationSpecificationCapacityReservationTargetOutputReference
 	CapacityReservationTargetInput() *InstanceCapacityReservationSpecificationCapacityReservationTarget
+	InternalValue() *InstanceCapacityReservationSpecification
+	SetInternalValue(val *InstanceCapacityReservationSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -63967,6 +66192,16 @@ func (j *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) Capa
 	return returns
 }
 
+func (j *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) InternalValue() *InstanceCapacityReservationSpecification {
+	var returns *InstanceCapacityReservationSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -64003,7 +66238,7 @@ func NewInstanceCapacityReservationSpecificationOutputReference(terraformResourc
 	j := jsiiProxy_InstanceCapacityReservationSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.InstanceCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -64015,7 +66250,7 @@ func NewInstanceCapacityReservationSpecificationOutputReference_Override(i Insta
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.InstanceCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -64025,6 +66260,14 @@ func (j *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) SetC
 	_jsii_.Set(
 		j,
 		"capacityReservationPreference",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) SetInternalValue(val *InstanceCapacityReservationSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -64161,6 +66404,7 @@ func (i *jsiiProxy_InstanceCapacityReservationSpecificationOutputReference) Rese
 	)
 }
 
+// AWS EC2.
 type InstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -64284,6 +66528,8 @@ type InstanceCreditSpecificationOutputReference interface {
 	CpuCredits() *string
 	SetCpuCredits(val *string)
 	CpuCreditsInput() *string
+	InternalValue() *InstanceCreditSpecification
+	SetInternalValue(val *InstanceCreditSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -64319,6 +66565,16 @@ func (j *jsiiProxy_InstanceCreditSpecificationOutputReference) CpuCreditsInput()
 	_jsii_.Get(
 		j,
 		"cpuCreditsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceCreditSpecificationOutputReference) InternalValue() *InstanceCreditSpecification {
+	var returns *InstanceCreditSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -64360,7 +66616,7 @@ func NewInstanceCreditSpecificationOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_InstanceCreditSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.InstanceCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -64372,7 +66628,7 @@ func NewInstanceCreditSpecificationOutputReference_Override(i InstanceCreditSpec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.InstanceCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -64382,6 +66638,14 @@ func (j *jsiiProxy_InstanceCreditSpecificationOutputReference) SetCpuCredits(val
 	_jsii_.Set(
 		j,
 		"cpuCredits",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceCreditSpecificationOutputReference) SetInternalValue(val *InstanceCreditSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -64535,6 +66799,8 @@ type InstanceEnclaveOptionsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *InstanceEnclaveOptions
+	SetInternalValue(val *InstanceEnclaveOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -64570,6 +66836,16 @@ func (j *jsiiProxy_InstanceEnclaveOptionsOutputReference) EnabledInput() interfa
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceEnclaveOptionsOutputReference) InternalValue() *InstanceEnclaveOptions {
+	var returns *InstanceEnclaveOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -64611,7 +66887,7 @@ func NewInstanceEnclaveOptionsOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_InstanceEnclaveOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.InstanceEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -64623,7 +66899,7 @@ func NewInstanceEnclaveOptionsOutputReference_Override(i InstanceEnclaveOptionsO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.InstanceEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -64633,6 +66909,14 @@ func (j *jsiiProxy_InstanceEnclaveOptionsOutputReference) SetEnabled(val interfa
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceEnclaveOptionsOutputReference) SetInternalValue(val *InstanceEnclaveOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -64774,6 +67058,8 @@ type InstanceLaunchTemplate struct {
 type InstanceLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
 	Id() *string
+	InternalValue() *InstanceLaunchTemplate
+	SetInternalValue(val *InstanceLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -64806,6 +67092,16 @@ func (j *jsiiProxy_InstanceLaunchTemplateOutputReference) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceLaunchTemplateOutputReference) InternalValue() *InstanceLaunchTemplate {
+	var returns *InstanceLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -64887,7 +67183,7 @@ func NewInstanceLaunchTemplateOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_InstanceLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceLaunchTemplateOutputReference",
+		"hashicorp_aws.ec2.InstanceLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -64899,9 +67195,17 @@ func NewInstanceLaunchTemplateOutputReference_Override(i InstanceLaunchTemplateO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceLaunchTemplateOutputReference",
+		"hashicorp_aws.ec2.InstanceLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_InstanceLaunchTemplateOutputReference) SetInternalValue(val *InstanceLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -65065,6 +67369,8 @@ type InstanceMetadataOptionsOutputReference interface {
 	HttpTokens() *string
 	SetHttpTokens(val *string)
 	HttpTokensInput() *string
+	InternalValue() *InstanceMetadataOptions
+	SetInternalValue(val *InstanceMetadataOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -65147,6 +67453,16 @@ func (j *jsiiProxy_InstanceMetadataOptionsOutputReference) HttpTokensInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_InstanceMetadataOptionsOutputReference) InternalValue() *InstanceMetadataOptions {
+	var returns *InstanceMetadataOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_InstanceMetadataOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -65183,7 +67499,7 @@ func NewInstanceMetadataOptionsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_InstanceMetadataOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.InstanceMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -65195,7 +67511,7 @@ func NewInstanceMetadataOptionsOutputReference_Override(i InstanceMetadataOption
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.InstanceMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -65221,6 +67537,14 @@ func (j *jsiiProxy_InstanceMetadataOptionsOutputReference) SetHttpTokens(val *st
 	_jsii_.Set(
 		j,
 		"httpTokens",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceMetadataOptionsOutputReference) SetInternalValue(val *InstanceMetadataOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -65393,6 +67717,8 @@ type InstanceRootBlockDeviceOutputReference interface {
 	Encrypted() interface{}
 	SetEncrypted(val interface{})
 	EncryptedInput() interface{}
+	InternalValue() *InstanceRootBlockDevice
+	SetInternalValue(val *InstanceRootBlockDevice)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -65473,6 +67799,16 @@ func (j *jsiiProxy_InstanceRootBlockDeviceOutputReference) EncryptedInput() inte
 	_jsii_.Get(
 		j,
 		"encryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceRootBlockDeviceOutputReference) InternalValue() *InstanceRootBlockDevice {
+	var returns *InstanceRootBlockDevice
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -65634,7 +67970,7 @@ func NewInstanceRootBlockDeviceOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_InstanceRootBlockDeviceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceRootBlockDeviceOutputReference",
+		"hashicorp_aws.ec2.InstanceRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -65646,7 +67982,7 @@ func NewInstanceRootBlockDeviceOutputReference_Override(i InstanceRootBlockDevic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceRootBlockDeviceOutputReference",
+		"hashicorp_aws.ec2.InstanceRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -65664,6 +68000,14 @@ func (j *jsiiProxy_InstanceRootBlockDeviceOutputReference) SetEncrypted(val inte
 	_jsii_.Set(
 		j,
 		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceRootBlockDeviceOutputReference) SetInternalValue(val *InstanceRootBlockDevice) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -65905,6 +68249,8 @@ type InstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *InstanceTimeouts
+	SetInternalValue(val *InstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -65970,6 +68316,16 @@ func (j *jsiiProxy_InstanceTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_InstanceTimeoutsOutputReference) InternalValue() *InstanceTimeouts {
+	var returns *InstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_InstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -66026,7 +68382,7 @@ func NewInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_InstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceTimeoutsOutputReference",
+		"hashicorp_aws.ec2.InstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -66038,7 +68394,7 @@ func NewInstanceTimeoutsOutputReference_Override(i InstanceTimeoutsOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.InstanceTimeoutsOutputReference",
+		"hashicorp_aws.ec2.InstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -66056,6 +68412,14 @@ func (j *jsiiProxy_InstanceTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_InstanceTimeoutsOutputReference) SetInternalValue(val *InstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -66539,7 +68903,7 @@ func NewKeyPair(scope constructs.Construct, id *string, config *KeyPairConfig) K
 	j := jsiiProxy_KeyPair{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.KeyPair",
+		"hashicorp_aws.ec2.KeyPair",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -66552,7 +68916,7 @@ func NewKeyPair_Override(k KeyPair, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.KeyPair",
+		"hashicorp_aws.ec2.KeyPair",
 		[]interface{}{scope, id, config},
 		k,
 	)
@@ -66640,7 +69004,7 @@ func KeyPair_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.KeyPair",
+		"hashicorp_aws.ec2.KeyPair",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -66653,7 +69017,7 @@ func KeyPair_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.KeyPair",
+		"hashicorp_aws.ec2.KeyPair",
 		"tfResourceType",
 		&returns,
 	)
@@ -66847,6 +69211,7 @@ func (k *jsiiProxy_KeyPair) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type KeyPairConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -67893,7 +70258,7 @@ func NewLaunchTemplate(scope constructs.Construct, id *string, config *LaunchTem
 	j := jsiiProxy_LaunchTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplate",
+		"hashicorp_aws.ec2.LaunchTemplate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -67906,7 +70271,7 @@ func NewLaunchTemplate_Override(l LaunchTemplate, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplate",
+		"hashicorp_aws.ec2.LaunchTemplate",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -68138,7 +70503,7 @@ func LaunchTemplate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.LaunchTemplate",
+		"hashicorp_aws.ec2.LaunchTemplate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -68151,7 +70516,7 @@ func LaunchTemplate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.LaunchTemplate",
+		"hashicorp_aws.ec2.LaunchTemplate",
 		"tfResourceType",
 		&returns,
 	)
@@ -68713,6 +71078,8 @@ type LaunchTemplateBlockDeviceMappingsEbsOutputReference interface {
 	Encrypted() *string
 	SetEncrypted(val *string)
 	EncryptedInput() *string
+	InternalValue() *LaunchTemplateBlockDeviceMappingsEbs
+	SetInternalValue(val *LaunchTemplateBlockDeviceMappingsEbs)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -68793,6 +71160,16 @@ func (j *jsiiProxy_LaunchTemplateBlockDeviceMappingsEbsOutputReference) Encrypte
 	_jsii_.Get(
 		j,
 		"encryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateBlockDeviceMappingsEbsOutputReference) InternalValue() *LaunchTemplateBlockDeviceMappingsEbs {
+	var returns *LaunchTemplateBlockDeviceMappingsEbs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -68954,7 +71331,7 @@ func NewLaunchTemplateBlockDeviceMappingsEbsOutputReference(terraformResource cd
 	j := jsiiProxy_LaunchTemplateBlockDeviceMappingsEbsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateBlockDeviceMappingsEbsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateBlockDeviceMappingsEbsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -68966,7 +71343,7 @@ func NewLaunchTemplateBlockDeviceMappingsEbsOutputReference_Override(l LaunchTem
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateBlockDeviceMappingsEbsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateBlockDeviceMappingsEbsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -68984,6 +71361,14 @@ func (j *jsiiProxy_LaunchTemplateBlockDeviceMappingsEbsOutputReference) SetEncry
 	_jsii_.Set(
 		j,
 		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateBlockDeviceMappingsEbsOutputReference) SetInternalValue(val *LaunchTemplateBlockDeviceMappingsEbs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -69227,6 +71612,8 @@ type LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutp
 	CapacityReservationId() *string
 	SetCapacityReservationId(val *string)
 	CapacityReservationIdInput() *string
+	InternalValue() *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget
+	SetInternalValue(val *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -69262,6 +71649,16 @@ func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationCapacityReserva
 	_jsii_.Get(
 		j,
 		"capacityReservationIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference) InternalValue() *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget {
+	var returns *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -69303,7 +71700,7 @@ func NewLaunchTemplateCapacityReservationSpecificationCapacityReservationTargetO
 	j := jsiiProxy_LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -69315,7 +71712,7 @@ func NewLaunchTemplateCapacityReservationSpecificationCapacityReservationTargetO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -69325,6 +71722,14 @@ func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationCapacityReserva
 	_jsii_.Set(
 		j,
 		"capacityReservationId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference) SetInternalValue(val *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -69452,6 +71857,8 @@ type LaunchTemplateCapacityReservationSpecificationOutputReference interface {
 	CapacityReservationPreferenceInput() *string
 	CapacityReservationTarget() LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetOutputReference
 	CapacityReservationTargetInput() *LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget
+	InternalValue() *LaunchTemplateCapacityReservationSpecification
+	SetInternalValue(val *LaunchTemplateCapacityReservationSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -69514,6 +71921,16 @@ func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference
 	return returns
 }
 
+func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference) InternalValue() *LaunchTemplateCapacityReservationSpecification {
+	var returns *LaunchTemplateCapacityReservationSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -69550,7 +71967,7 @@ func NewLaunchTemplateCapacityReservationSpecificationOutputReference(terraformR
 	j := jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -69562,7 +71979,7 @@ func NewLaunchTemplateCapacityReservationSpecificationOutputReference_Override(l
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -69572,6 +71989,14 @@ func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference
 	_jsii_.Set(
 		j,
 		"capacityReservationPreference",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference) SetInternalValue(val *LaunchTemplateCapacityReservationSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -69708,6 +72133,7 @@ func (l *jsiiProxy_LaunchTemplateCapacityReservationSpecificationOutputReference
 	)
 }
 
+// AWS EC2.
 type LaunchTemplateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -69831,6 +72257,8 @@ type LaunchTemplateCpuOptionsOutputReference interface {
 	CoreCount() *float64
 	SetCoreCount(val *float64)
 	CoreCountInput() *float64
+	InternalValue() *LaunchTemplateCpuOptions
+	SetInternalValue(val *LaunchTemplateCpuOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -69870,6 +72298,16 @@ func (j *jsiiProxy_LaunchTemplateCpuOptionsOutputReference) CoreCountInput() *fl
 	_jsii_.Get(
 		j,
 		"coreCountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateCpuOptionsOutputReference) InternalValue() *LaunchTemplateCpuOptions {
+	var returns *LaunchTemplateCpuOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -69931,7 +72369,7 @@ func NewLaunchTemplateCpuOptionsOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_LaunchTemplateCpuOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCpuOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCpuOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -69943,7 +72381,7 @@ func NewLaunchTemplateCpuOptionsOutputReference_Override(l LaunchTemplateCpuOpti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCpuOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCpuOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -69953,6 +72391,14 @@ func (j *jsiiProxy_LaunchTemplateCpuOptionsOutputReference) SetCoreCount(val *fl
 	_jsii_.Set(
 		j,
 		"coreCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateCpuOptionsOutputReference) SetInternalValue(val *LaunchTemplateCpuOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -70099,6 +72545,8 @@ type LaunchTemplateCreditSpecificationOutputReference interface {
 	CpuCredits() *string
 	SetCpuCredits(val *string)
 	CpuCreditsInput() *string
+	InternalValue() *LaunchTemplateCreditSpecification
+	SetInternalValue(val *LaunchTemplateCreditSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -70134,6 +72582,16 @@ func (j *jsiiProxy_LaunchTemplateCreditSpecificationOutputReference) CpuCreditsI
 	_jsii_.Get(
 		j,
 		"cpuCreditsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateCreditSpecificationOutputReference) InternalValue() *LaunchTemplateCreditSpecification {
+	var returns *LaunchTemplateCreditSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -70175,7 +72633,7 @@ func NewLaunchTemplateCreditSpecificationOutputReference(terraformResource cdktf
 	j := jsiiProxy_LaunchTemplateCreditSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -70187,7 +72645,7 @@ func NewLaunchTemplateCreditSpecificationOutputReference_Override(l LaunchTempla
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -70197,6 +72655,14 @@ func (j *jsiiProxy_LaunchTemplateCreditSpecificationOutputReference) SetCpuCredi
 	_jsii_.Set(
 		j,
 		"cpuCredits",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateCreditSpecificationOutputReference) SetInternalValue(val *LaunchTemplateCreditSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -70329,6 +72795,8 @@ type LaunchTemplateElasticInferenceAccelerator struct {
 
 type LaunchTemplateElasticInferenceAcceleratorOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LaunchTemplateElasticInferenceAccelerator
+	SetInternalValue(val *LaunchTemplateElasticInferenceAccelerator)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -70349,6 +72817,16 @@ type LaunchTemplateElasticInferenceAcceleratorOutputReference interface {
 // The jsii proxy struct for LaunchTemplateElasticInferenceAcceleratorOutputReference
 type jsiiProxy_LaunchTemplateElasticInferenceAcceleratorOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LaunchTemplateElasticInferenceAcceleratorOutputReference) InternalValue() *LaunchTemplateElasticInferenceAccelerator {
+	var returns *LaunchTemplateElasticInferenceAccelerator
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LaunchTemplateElasticInferenceAcceleratorOutputReference) IsSingleItem() *bool {
@@ -70407,7 +72885,7 @@ func NewLaunchTemplateElasticInferenceAcceleratorOutputReference(terraformResour
 	j := jsiiProxy_LaunchTemplateElasticInferenceAcceleratorOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateElasticInferenceAcceleratorOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateElasticInferenceAcceleratorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -70419,9 +72897,17 @@ func NewLaunchTemplateElasticInferenceAcceleratorOutputReference_Override(l Laun
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateElasticInferenceAcceleratorOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateElasticInferenceAcceleratorOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateElasticInferenceAcceleratorOutputReference) SetInternalValue(val *LaunchTemplateElasticInferenceAccelerator) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -70551,6 +73037,8 @@ type LaunchTemplateEnclaveOptionsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LaunchTemplateEnclaveOptions
+	SetInternalValue(val *LaunchTemplateEnclaveOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -70586,6 +73074,16 @@ func (j *jsiiProxy_LaunchTemplateEnclaveOptionsOutputReference) EnabledInput() i
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateEnclaveOptionsOutputReference) InternalValue() *LaunchTemplateEnclaveOptions {
+	var returns *LaunchTemplateEnclaveOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -70627,7 +73125,7 @@ func NewLaunchTemplateEnclaveOptionsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_LaunchTemplateEnclaveOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -70639,7 +73137,7 @@ func NewLaunchTemplateEnclaveOptionsOutputReference_Override(l LaunchTemplateEnc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -70649,6 +73147,14 @@ func (j *jsiiProxy_LaunchTemplateEnclaveOptionsOutputReference) SetEnabled(val i
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateEnclaveOptionsOutputReference) SetInternalValue(val *LaunchTemplateEnclaveOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -70779,6 +73285,8 @@ type LaunchTemplateHibernationOptionsOutputReference interface {
 	Configured() interface{}
 	SetConfigured(val interface{})
 	ConfiguredInput() interface{}
+	InternalValue() *LaunchTemplateHibernationOptions
+	SetInternalValue(val *LaunchTemplateHibernationOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -70813,6 +73321,16 @@ func (j *jsiiProxy_LaunchTemplateHibernationOptionsOutputReference) ConfiguredIn
 	_jsii_.Get(
 		j,
 		"configuredInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateHibernationOptionsOutputReference) InternalValue() *LaunchTemplateHibernationOptions {
+	var returns *LaunchTemplateHibernationOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -70854,7 +73372,7 @@ func NewLaunchTemplateHibernationOptionsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_LaunchTemplateHibernationOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateHibernationOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateHibernationOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -70866,7 +73384,7 @@ func NewLaunchTemplateHibernationOptionsOutputReference_Override(l LaunchTemplat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateHibernationOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateHibernationOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -70876,6 +73394,14 @@ func (j *jsiiProxy_LaunchTemplateHibernationOptionsOutputReference) SetConfigure
 	_jsii_.Set(
 		j,
 		"configured",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateHibernationOptionsOutputReference) SetInternalValue(val *LaunchTemplateHibernationOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -71000,6 +73526,8 @@ type LaunchTemplateIamInstanceProfileOutputReference interface {
 	Arn() *string
 	SetArn(val *string)
 	ArnInput() *string
+	InternalValue() *LaunchTemplateIamInstanceProfile
+	SetInternalValue(val *LaunchTemplateIamInstanceProfile)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -71039,6 +73567,16 @@ func (j *jsiiProxy_LaunchTemplateIamInstanceProfileOutputReference) ArnInput() *
 	_jsii_.Get(
 		j,
 		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateIamInstanceProfileOutputReference) InternalValue() *LaunchTemplateIamInstanceProfile {
+	var returns *LaunchTemplateIamInstanceProfile
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -71100,7 +73638,7 @@ func NewLaunchTemplateIamInstanceProfileOutputReference(terraformResource cdktf.
 	j := jsiiProxy_LaunchTemplateIamInstanceProfileOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateIamInstanceProfileOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateIamInstanceProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -71112,7 +73650,7 @@ func NewLaunchTemplateIamInstanceProfileOutputReference_Override(l LaunchTemplat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateIamInstanceProfileOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateIamInstanceProfileOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -71122,6 +73660,14 @@ func (j *jsiiProxy_LaunchTemplateIamInstanceProfileOutputReference) SetArn(val *
 	_jsii_.Set(
 		j,
 		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateIamInstanceProfileOutputReference) SetInternalValue(val *LaunchTemplateIamInstanceProfile) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -71269,6 +73815,8 @@ type LaunchTemplateInstanceMarketOptions struct {
 
 type LaunchTemplateInstanceMarketOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *LaunchTemplateInstanceMarketOptions
+	SetInternalValue(val *LaunchTemplateInstanceMarketOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MarketType() *string
@@ -71294,6 +73842,16 @@ type LaunchTemplateInstanceMarketOptionsOutputReference interface {
 // The jsii proxy struct for LaunchTemplateInstanceMarketOptionsOutputReference
 type jsiiProxy_LaunchTemplateInstanceMarketOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsOutputReference) InternalValue() *LaunchTemplateInstanceMarketOptions {
+	var returns *LaunchTemplateInstanceMarketOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsOutputReference) IsSingleItem() *bool {
@@ -71372,7 +73930,7 @@ func NewLaunchTemplateInstanceMarketOptionsOutputReference(terraformResource cdk
 	j := jsiiProxy_LaunchTemplateInstanceMarketOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateInstanceMarketOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateInstanceMarketOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -71384,9 +73942,17 @@ func NewLaunchTemplateInstanceMarketOptionsOutputReference_Override(l LaunchTemp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateInstanceMarketOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateInstanceMarketOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsOutputReference) SetInternalValue(val *LaunchTemplateInstanceMarketOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -71551,6 +74117,8 @@ type LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference interface {
 	InstanceInterruptionBehavior() *string
 	SetInstanceInterruptionBehavior(val *string)
 	InstanceInterruptionBehaviorInput() *string
+	InternalValue() *LaunchTemplateInstanceMarketOptionsSpotOptions
+	SetInternalValue(val *LaunchTemplateInstanceMarketOptionsSpotOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxPrice() *string
@@ -71619,6 +74187,16 @@ func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference
 	_jsii_.Get(
 		j,
 		"instanceInterruptionBehaviorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference) InternalValue() *LaunchTemplateInstanceMarketOptionsSpotOptions {
+	var returns *LaunchTemplateInstanceMarketOptionsSpotOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -71720,7 +74298,7 @@ func NewLaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference(terraformR
 	j := jsiiProxy_LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -71732,7 +74310,7 @@ func NewLaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference_Override(l
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -71750,6 +74328,14 @@ func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference
 	_jsii_.Set(
 		j,
 		"instanceInterruptionBehavior",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateInstanceMarketOptionsSpotOptionsOutputReference) SetInternalValue(val *LaunchTemplateInstanceMarketOptionsSpotOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -71956,6 +74542,8 @@ type LaunchTemplateMetadataOptionsOutputReference interface {
 	HttpTokens() *string
 	SetHttpTokens(val *string)
 	HttpTokensInput() *string
+	InternalValue() *LaunchTemplateMetadataOptions
+	SetInternalValue(val *LaunchTemplateMetadataOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -72059,6 +74647,16 @@ func (j *jsiiProxy_LaunchTemplateMetadataOptionsOutputReference) HttpTokensInput
 	return returns
 }
 
+func (j *jsiiProxy_LaunchTemplateMetadataOptionsOutputReference) InternalValue() *LaunchTemplateMetadataOptions {
+	var returns *LaunchTemplateMetadataOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LaunchTemplateMetadataOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -72095,7 +74693,7 @@ func NewLaunchTemplateMetadataOptionsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_LaunchTemplateMetadataOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -72107,7 +74705,7 @@ func NewLaunchTemplateMetadataOptionsOutputReference_Override(l LaunchTemplateMe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -72141,6 +74739,14 @@ func (j *jsiiProxy_LaunchTemplateMetadataOptionsOutputReference) SetHttpTokens(v
 	_jsii_.Set(
 		j,
 		"httpTokens",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateMetadataOptionsOutputReference) SetInternalValue(val *LaunchTemplateMetadataOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -72295,6 +74901,8 @@ type LaunchTemplateMonitoringOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *LaunchTemplateMonitoring
+	SetInternalValue(val *LaunchTemplateMonitoring)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -72330,6 +74938,16 @@ func (j *jsiiProxy_LaunchTemplateMonitoringOutputReference) EnabledInput() inter
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplateMonitoringOutputReference) InternalValue() *LaunchTemplateMonitoring {
+	var returns *LaunchTemplateMonitoring
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -72371,7 +74989,7 @@ func NewLaunchTemplateMonitoringOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_LaunchTemplateMonitoringOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateMonitoringOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateMonitoringOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -72383,7 +75001,7 @@ func NewLaunchTemplateMonitoringOutputReference_Override(l LaunchTemplateMonitor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplateMonitoringOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplateMonitoringOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -72393,6 +75011,14 @@ func (j *jsiiProxy_LaunchTemplateMonitoringOutputReference) SetEnabled(val inter
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplateMonitoringOutputReference) SetInternalValue(val *LaunchTemplateMonitoring) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -72582,6 +75208,8 @@ type LaunchTemplatePlacementOutputReference interface {
 	HostResourceGroupArn() *string
 	SetHostResourceGroupArn(val *string)
 	HostResourceGroupArnInput() *string
+	InternalValue() *LaunchTemplatePlacement
+	SetInternalValue(val *LaunchTemplatePlacement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PartitionNumber() *float64
@@ -72718,6 +75346,16 @@ func (j *jsiiProxy_LaunchTemplatePlacementOutputReference) HostResourceGroupArnI
 	return returns
 }
 
+func (j *jsiiProxy_LaunchTemplatePlacementOutputReference) InternalValue() *LaunchTemplatePlacement {
+	var returns *LaunchTemplatePlacement
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LaunchTemplatePlacementOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -72814,7 +75452,7 @@ func NewLaunchTemplatePlacementOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_LaunchTemplatePlacementOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplatePlacementOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplatePlacementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -72826,7 +75464,7 @@ func NewLaunchTemplatePlacementOutputReference_Override(l LaunchTemplatePlacemen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.LaunchTemplatePlacementOutputReference",
+		"hashicorp_aws.ec2.LaunchTemplatePlacementOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		l,
 	)
@@ -72868,6 +75506,14 @@ func (j *jsiiProxy_LaunchTemplatePlacementOutputReference) SetHostResourceGroupA
 	_jsii_.Set(
 		j,
 		"hostResourceGroupArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LaunchTemplatePlacementOutputReference) SetInternalValue(val *LaunchTemplatePlacement) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -73402,7 +76048,7 @@ func NewPlacementGroup(scope constructs.Construct, id *string, config *Placement
 	j := jsiiProxy_PlacementGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.PlacementGroup",
+		"hashicorp_aws.ec2.PlacementGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -73415,7 +76061,7 @@ func NewPlacementGroup_Override(p PlacementGroup, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.PlacementGroup",
+		"hashicorp_aws.ec2.PlacementGroup",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -73503,7 +76149,7 @@ func PlacementGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.PlacementGroup",
+		"hashicorp_aws.ec2.PlacementGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -73516,7 +76162,7 @@ func PlacementGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.PlacementGroup",
+		"hashicorp_aws.ec2.PlacementGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -73702,6 +76348,7 @@ func (p *jsiiProxy_PlacementGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type PlacementGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -73956,7 +76603,7 @@ func NewSnapshotCreateVolumePermission(scope constructs.Construct, id *string, c
 	j := jsiiProxy_SnapshotCreateVolumePermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SnapshotCreateVolumePermission",
+		"hashicorp_aws.ec2.SnapshotCreateVolumePermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -73969,7 +76616,7 @@ func NewSnapshotCreateVolumePermission_Override(s SnapshotCreateVolumePermission
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SnapshotCreateVolumePermission",
+		"hashicorp_aws.ec2.SnapshotCreateVolumePermission",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -74033,7 +76680,7 @@ func SnapshotCreateVolumePermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.SnapshotCreateVolumePermission",
+		"hashicorp_aws.ec2.SnapshotCreateVolumePermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -74046,7 +76693,7 @@ func SnapshotCreateVolumePermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.SnapshotCreateVolumePermission",
+		"hashicorp_aws.ec2.SnapshotCreateVolumePermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -74208,6 +76855,7 @@ func (s *jsiiProxy_SnapshotCreateVolumePermission) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type SnapshotCreateVolumePermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -74457,7 +77105,7 @@ func NewSpotDatafeedSubscription(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_SpotDatafeedSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotDatafeedSubscription",
+		"hashicorp_aws.ec2.SpotDatafeedSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -74470,7 +77118,7 @@ func NewSpotDatafeedSubscription_Override(s SpotDatafeedSubscription, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotDatafeedSubscription",
+		"hashicorp_aws.ec2.SpotDatafeedSubscription",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -74534,7 +77182,7 @@ func SpotDatafeedSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.SpotDatafeedSubscription",
+		"hashicorp_aws.ec2.SpotDatafeedSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -74547,7 +77195,7 @@ func SpotDatafeedSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.SpotDatafeedSubscription",
+		"hashicorp_aws.ec2.SpotDatafeedSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -74717,6 +77365,7 @@ func (s *jsiiProxy_SpotDatafeedSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type SpotDatafeedSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -75515,7 +78164,7 @@ func NewSpotFleetRequest(scope constructs.Construct, id *string, config *SpotFle
 	j := jsiiProxy_SpotFleetRequest{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequest",
+		"hashicorp_aws.ec2.SpotFleetRequest",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -75528,7 +78177,7 @@ func NewSpotFleetRequest_Override(s SpotFleetRequest, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequest",
+		"hashicorp_aws.ec2.SpotFleetRequest",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -75752,7 +78401,7 @@ func SpotFleetRequest_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.SpotFleetRequest",
+		"hashicorp_aws.ec2.SpotFleetRequest",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -75765,7 +78414,7 @@ func SpotFleetRequest_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.SpotFleetRequest",
+		"hashicorp_aws.ec2.SpotFleetRequest",
 		"tfResourceType",
 		&returns,
 	)
@@ -76119,6 +78768,7 @@ func (s *jsiiProxy_SpotFleetRequest) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type SpotFleetRequestConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -76305,6 +78955,8 @@ type SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputRefere
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InternalValue() *SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification
+	SetInternalValue(val *SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -76348,6 +79000,16 @@ func (j *jsiiProxy_SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificati
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference) InternalValue() *SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification {
+	var returns *SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -76429,7 +79091,7 @@ func NewSpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputRef
 	j := jsiiProxy_SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -76441,7 +79103,7 @@ func NewSpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -76451,6 +79113,14 @@ func (j *jsiiProxy_SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificati
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecificationOutputReference) SetInternalValue(val *SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -76632,6 +79302,8 @@ type SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance struct {
 
 type SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance
+	SetInternalValue(val *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ReplacementStrategy() *string
@@ -76653,6 +79325,16 @@ type SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference i
 // The jsii proxy struct for SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference
 type jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference) InternalValue() *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance {
+	var returns *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference) IsSingleItem() *bool {
@@ -76711,7 +79393,7 @@ func NewSpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReferenc
 	j := jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -76723,9 +79405,17 @@ func NewSpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference) SetInternalValue(val *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -76857,6 +79547,8 @@ type SpotFleetRequestSpotMaintenanceStrategiesOutputReference interface {
 	cdktf.ComplexObject
 	CapacityRebalance() SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceOutputReference
 	CapacityRebalanceInput() *SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalance
+	InternalValue() *SpotFleetRequestSpotMaintenanceStrategies
+	SetInternalValue(val *SpotFleetRequestSpotMaintenanceStrategies)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -76898,6 +79590,16 @@ func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesOutputReference) Cap
 	return returns
 }
 
+func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesOutputReference) InternalValue() *SpotFleetRequestSpotMaintenanceStrategies {
+	var returns *SpotFleetRequestSpotMaintenanceStrategies
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -76934,7 +79636,7 @@ func NewSpotFleetRequestSpotMaintenanceStrategiesOutputReference(terraformResour
 	j := jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestSpotMaintenanceStrategiesOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestSpotMaintenanceStrategiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -76946,9 +79648,17 @@ func NewSpotFleetRequestSpotMaintenanceStrategiesOutputReference_Override(s Spot
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestSpotMaintenanceStrategiesOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestSpotMaintenanceStrategiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SpotFleetRequestSpotMaintenanceStrategiesOutputReference) SetInternalValue(val *SpotFleetRequestSpotMaintenanceStrategies) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -77091,6 +79801,8 @@ type SpotFleetRequestTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *SpotFleetRequestTimeouts
+	SetInternalValue(val *SpotFleetRequestTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -77152,6 +79864,16 @@ func (j *jsiiProxy_SpotFleetRequestTimeoutsOutputReference) DeleteInput() *strin
 	return returns
 }
 
+func (j *jsiiProxy_SpotFleetRequestTimeoutsOutputReference) InternalValue() *SpotFleetRequestTimeouts {
+	var returns *SpotFleetRequestTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpotFleetRequestTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -77188,7 +79910,7 @@ func NewSpotFleetRequestTimeoutsOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_SpotFleetRequestTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestTimeoutsOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -77200,7 +79922,7 @@ func NewSpotFleetRequestTimeoutsOutputReference_Override(s SpotFleetRequestTimeo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotFleetRequestTimeoutsOutputReference",
+		"hashicorp_aws.ec2.SpotFleetRequestTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -77218,6 +79940,14 @@ func (j *jsiiProxy_SpotFleetRequestTimeoutsOutputReference) SetDelete(val *strin
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotFleetRequestTimeoutsOutputReference) SetInternalValue(val *SpotFleetRequestTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -78854,7 +81584,7 @@ func NewSpotInstanceRequest(scope constructs.Construct, id *string, config *Spot
 	j := jsiiProxy_SpotInstanceRequest{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequest",
+		"hashicorp_aws.ec2.SpotInstanceRequest",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -78867,7 +81597,7 @@ func NewSpotInstanceRequest_Override(s SpotInstanceRequest, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequest",
+		"hashicorp_aws.ec2.SpotInstanceRequest",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -79259,7 +81989,7 @@ func SpotInstanceRequest_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.SpotInstanceRequest",
+		"hashicorp_aws.ec2.SpotInstanceRequest",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -79272,7 +82002,7 @@ func SpotInstanceRequest_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.SpotInstanceRequest",
+		"hashicorp_aws.ec2.SpotInstanceRequest",
 		"tfResourceType",
 		&returns,
 	)
@@ -79909,6 +82639,8 @@ type SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarge
 	CapacityReservationId() *string
 	SetCapacityReservationId(val *string)
 	CapacityReservationIdInput() *string
+	InternalValue() *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget
+	SetInternalValue(val *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -79944,6 +82676,16 @@ func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationCapacityRe
 	_jsii_.Get(
 		j,
 		"capacityReservationIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference) InternalValue() *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget {
+	var returns *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -79985,7 +82727,7 @@ func NewSpotInstanceRequestCapacityReservationSpecificationCapacityReservationTa
 	j := jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -79997,7 +82739,7 @@ func NewSpotInstanceRequestCapacityReservationSpecificationCapacityReservationTa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -80007,6 +82749,14 @@ func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationCapacityRe
 	_jsii_.Set(
 		j,
 		"capacityReservationId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference) SetInternalValue(val *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -80134,6 +82884,8 @@ type SpotInstanceRequestCapacityReservationSpecificationOutputReference interfac
 	CapacityReservationPreferenceInput() *string
 	CapacityReservationTarget() SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetOutputReference
 	CapacityReservationTargetInput() *SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget
+	InternalValue() *SpotInstanceRequestCapacityReservationSpecification
+	SetInternalValue(val *SpotInstanceRequestCapacityReservationSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -80196,6 +82948,16 @@ func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputRefe
 	return returns
 }
 
+func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputReference) InternalValue() *SpotInstanceRequestCapacityReservationSpecification {
+	var returns *SpotInstanceRequestCapacityReservationSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -80232,7 +82994,7 @@ func NewSpotInstanceRequestCapacityReservationSpecificationOutputReference(terra
 	j := jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -80244,7 +83006,7 @@ func NewSpotInstanceRequestCapacityReservationSpecificationOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCapacityReservationSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCapacityReservationSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -80254,6 +83016,14 @@ func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputRefe
 	_jsii_.Set(
 		j,
 		"capacityReservationPreference",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputReference) SetInternalValue(val *SpotInstanceRequestCapacityReservationSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -80390,6 +83160,7 @@ func (s *jsiiProxy_SpotInstanceRequestCapacityReservationSpecificationOutputRefe
 	)
 }
 
+// AWS EC2.
 type SpotInstanceRequestConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -80531,6 +83302,8 @@ type SpotInstanceRequestCreditSpecificationOutputReference interface {
 	CpuCredits() *string
 	SetCpuCredits(val *string)
 	CpuCreditsInput() *string
+	InternalValue() *SpotInstanceRequestCreditSpecification
+	SetInternalValue(val *SpotInstanceRequestCreditSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -80566,6 +83339,16 @@ func (j *jsiiProxy_SpotInstanceRequestCreditSpecificationOutputReference) CpuCre
 	_jsii_.Get(
 		j,
 		"cpuCreditsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotInstanceRequestCreditSpecificationOutputReference) InternalValue() *SpotInstanceRequestCreditSpecification {
+	var returns *SpotInstanceRequestCreditSpecification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -80607,7 +83390,7 @@ func NewSpotInstanceRequestCreditSpecificationOutputReference(terraformResource 
 	j := jsiiProxy_SpotInstanceRequestCreditSpecificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -80619,7 +83402,7 @@ func NewSpotInstanceRequestCreditSpecificationOutputReference_Override(s SpotIns
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestCreditSpecificationOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestCreditSpecificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -80629,6 +83412,14 @@ func (j *jsiiProxy_SpotInstanceRequestCreditSpecificationOutputReference) SetCpu
 	_jsii_.Set(
 		j,
 		"cpuCredits",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestCreditSpecificationOutputReference) SetInternalValue(val *SpotInstanceRequestCreditSpecification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -80782,6 +83573,8 @@ type SpotInstanceRequestEnclaveOptionsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *SpotInstanceRequestEnclaveOptions
+	SetInternalValue(val *SpotInstanceRequestEnclaveOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -80817,6 +83610,16 @@ func (j *jsiiProxy_SpotInstanceRequestEnclaveOptionsOutputReference) EnabledInpu
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotInstanceRequestEnclaveOptionsOutputReference) InternalValue() *SpotInstanceRequestEnclaveOptions {
+	var returns *SpotInstanceRequestEnclaveOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -80858,7 +83661,7 @@ func NewSpotInstanceRequestEnclaveOptionsOutputReference(terraformResource cdktf
 	j := jsiiProxy_SpotInstanceRequestEnclaveOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -80870,7 +83673,7 @@ func NewSpotInstanceRequestEnclaveOptionsOutputReference_Override(s SpotInstance
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestEnclaveOptionsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestEnclaveOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -80880,6 +83683,14 @@ func (j *jsiiProxy_SpotInstanceRequestEnclaveOptionsOutputReference) SetEnabled(
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestEnclaveOptionsOutputReference) SetInternalValue(val *SpotInstanceRequestEnclaveOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -81021,6 +83832,8 @@ type SpotInstanceRequestLaunchTemplate struct {
 type SpotInstanceRequestLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
 	Id() *string
+	InternalValue() *SpotInstanceRequestLaunchTemplate
+	SetInternalValue(val *SpotInstanceRequestLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -81053,6 +83866,16 @@ func (j *jsiiProxy_SpotInstanceRequestLaunchTemplateOutputReference) Id() *strin
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotInstanceRequestLaunchTemplateOutputReference) InternalValue() *SpotInstanceRequestLaunchTemplate {
+	var returns *SpotInstanceRequestLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -81134,7 +83957,7 @@ func NewSpotInstanceRequestLaunchTemplateOutputReference(terraformResource cdktf
 	j := jsiiProxy_SpotInstanceRequestLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestLaunchTemplateOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -81146,9 +83969,17 @@ func NewSpotInstanceRequestLaunchTemplateOutputReference_Override(s SpotInstance
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestLaunchTemplateOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestLaunchTemplateOutputReference) SetInternalValue(val *SpotInstanceRequestLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -81312,6 +84143,8 @@ type SpotInstanceRequestMetadataOptionsOutputReference interface {
 	HttpTokens() *string
 	SetHttpTokens(val *string)
 	HttpTokensInput() *string
+	InternalValue() *SpotInstanceRequestMetadataOptions
+	SetInternalValue(val *SpotInstanceRequestMetadataOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -81394,6 +84227,16 @@ func (j *jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference) HttpTokens
 	return returns
 }
 
+func (j *jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference) InternalValue() *SpotInstanceRequestMetadataOptions {
+	var returns *SpotInstanceRequestMetadataOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -81430,7 +84273,7 @@ func NewSpotInstanceRequestMetadataOptionsOutputReference(terraformResource cdkt
 	j := jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -81442,7 +84285,7 @@ func NewSpotInstanceRequestMetadataOptionsOutputReference_Override(s SpotInstanc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestMetadataOptionsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestMetadataOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -81468,6 +84311,14 @@ func (j *jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference) SetHttpTok
 	_jsii_.Set(
 		j,
 		"httpTokens",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestMetadataOptionsOutputReference) SetInternalValue(val *SpotInstanceRequestMetadataOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -81640,6 +84491,8 @@ type SpotInstanceRequestRootBlockDeviceOutputReference interface {
 	Encrypted() interface{}
 	SetEncrypted(val interface{})
 	EncryptedInput() interface{}
+	InternalValue() *SpotInstanceRequestRootBlockDevice
+	SetInternalValue(val *SpotInstanceRequestRootBlockDevice)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -81720,6 +84573,16 @@ func (j *jsiiProxy_SpotInstanceRequestRootBlockDeviceOutputReference) EncryptedI
 	_jsii_.Get(
 		j,
 		"encryptedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpotInstanceRequestRootBlockDeviceOutputReference) InternalValue() *SpotInstanceRequestRootBlockDevice {
+	var returns *SpotInstanceRequestRootBlockDevice
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -81881,7 +84744,7 @@ func NewSpotInstanceRequestRootBlockDeviceOutputReference(terraformResource cdkt
 	j := jsiiProxy_SpotInstanceRequestRootBlockDeviceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestRootBlockDeviceOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -81893,7 +84756,7 @@ func NewSpotInstanceRequestRootBlockDeviceOutputReference_Override(s SpotInstanc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestRootBlockDeviceOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestRootBlockDeviceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -81911,6 +84774,14 @@ func (j *jsiiProxy_SpotInstanceRequestRootBlockDeviceOutputReference) SetEncrypt
 	_jsii_.Set(
 		j,
 		"encrypted",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestRootBlockDeviceOutputReference) SetInternalValue(val *SpotInstanceRequestRootBlockDevice) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -82150,6 +85021,8 @@ type SpotInstanceRequestTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *SpotInstanceRequestTimeouts
+	SetInternalValue(val *SpotInstanceRequestTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -82211,6 +85084,16 @@ func (j *jsiiProxy_SpotInstanceRequestTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_SpotInstanceRequestTimeoutsOutputReference) InternalValue() *SpotInstanceRequestTimeouts {
+	var returns *SpotInstanceRequestTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpotInstanceRequestTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -82247,7 +85130,7 @@ func NewSpotInstanceRequestTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_SpotInstanceRequestTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestTimeoutsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -82259,7 +85142,7 @@ func NewSpotInstanceRequestTimeoutsOutputReference_Override(s SpotInstanceReques
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.SpotInstanceRequestTimeoutsOutputReference",
+		"hashicorp_aws.ec2.SpotInstanceRequestTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -82277,6 +85160,14 @@ func (j *jsiiProxy_SpotInstanceRequestTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpotInstanceRequestTimeoutsOutputReference) SetInternalValue(val *SpotInstanceRequestTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -82733,7 +85624,7 @@ func NewVolumeAttachment(scope constructs.Construct, id *string, config *VolumeA
 	j := jsiiProxy_VolumeAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.VolumeAttachment",
+		"hashicorp_aws.ec2.VolumeAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -82746,7 +85637,7 @@ func NewVolumeAttachment_Override(v VolumeAttachment, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EC2.VolumeAttachment",
+		"hashicorp_aws.ec2.VolumeAttachment",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -82842,7 +85733,7 @@ func VolumeAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EC2.VolumeAttachment",
+		"hashicorp_aws.ec2.VolumeAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -82855,7 +85746,7 @@ func VolumeAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EC2.VolumeAttachment",
+		"hashicorp_aws.ec2.VolumeAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -83041,6 +85932,7 @@ func (v *jsiiProxy_VolumeAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS EC2.
 type VolumeAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

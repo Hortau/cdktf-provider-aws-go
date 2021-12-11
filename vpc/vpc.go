@@ -348,7 +348,7 @@ func NewCustomerGateway(scope constructs.Construct, id *string, config *Customer
 	j := jsiiProxy_CustomerGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.CustomerGateway",
+		"hashicorp_aws.vpc.CustomerGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -361,7 +361,7 @@ func NewCustomerGateway_Override(c CustomerGateway, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.CustomerGateway",
+		"hashicorp_aws.vpc.CustomerGateway",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -457,7 +457,7 @@ func CustomerGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.CustomerGateway",
+		"hashicorp_aws.vpc.CustomerGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -470,7 +470,7 @@ func CustomerGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.CustomerGateway",
+		"hashicorp_aws.vpc.CustomerGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -656,6 +656,7 @@ func (c *jsiiProxy_CustomerGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type CustomerGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -969,7 +970,7 @@ func NewDataAwsCustomerGateway(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsCustomerGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsCustomerGateway",
+		"hashicorp_aws.vpc.DataAwsCustomerGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -982,7 +983,7 @@ func NewDataAwsCustomerGateway_Override(d DataAwsCustomerGateway, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsCustomerGateway",
+		"hashicorp_aws.vpc.DataAwsCustomerGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1046,7 +1047,7 @@ func DataAwsCustomerGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsCustomerGateway",
+		"hashicorp_aws.vpc.DataAwsCustomerGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1059,7 +1060,7 @@ func DataAwsCustomerGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsCustomerGateway",
+		"hashicorp_aws.vpc.DataAwsCustomerGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -1237,6 +1238,7 @@ func (d *jsiiProxy_DataAwsCustomerGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsCustomerGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1543,7 +1545,7 @@ func NewDataAwsInternetGateway(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsInternetGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsInternetGateway",
+		"hashicorp_aws.vpc.DataAwsInternetGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1556,7 +1558,7 @@ func NewDataAwsInternetGateway_Override(d DataAwsInternetGateway, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsInternetGateway",
+		"hashicorp_aws.vpc.DataAwsInternetGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1628,7 +1630,7 @@ func DataAwsInternetGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsInternetGateway",
+		"hashicorp_aws.vpc.DataAwsInternetGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1641,7 +1643,7 @@ func DataAwsInternetGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsInternetGateway",
+		"hashicorp_aws.vpc.DataAwsInternetGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -1919,7 +1921,7 @@ func NewDataAwsInternetGatewayAttachments(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DataAwsInternetGatewayAttachments{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsInternetGatewayAttachments",
+		"hashicorp_aws.vpc.DataAwsInternetGatewayAttachments",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1932,7 +1934,7 @@ func NewDataAwsInternetGatewayAttachments_Override(d DataAwsInternetGatewayAttac
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsInternetGatewayAttachments",
+		"hashicorp_aws.vpc.DataAwsInternetGatewayAttachments",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2032,6 +2034,7 @@ func (d *jsiiProxy_DataAwsInternetGatewayAttachments) InterpolationForAttribute(
 	return returns
 }
 
+// AWS VPC.
 type DataAwsInternetGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2420,7 +2423,7 @@ func NewDataAwsNatGateway(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsNatGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNatGateway",
+		"hashicorp_aws.vpc.DataAwsNatGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2433,7 +2436,7 @@ func NewDataAwsNatGateway_Override(d DataAwsNatGateway, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNatGateway",
+		"hashicorp_aws.vpc.DataAwsNatGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2521,7 +2524,7 @@ func DataAwsNatGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsNatGateway",
+		"hashicorp_aws.vpc.DataAwsNatGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2534,7 +2537,7 @@ func DataAwsNatGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsNatGateway",
+		"hashicorp_aws.vpc.DataAwsNatGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -2736,6 +2739,7 @@ func (d *jsiiProxy_DataAwsNatGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsNatGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3036,7 +3040,7 @@ func NewDataAwsNetworkAcls(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsNetworkAcls{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkAcls",
+		"hashicorp_aws.vpc.DataAwsNetworkAcls",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3049,7 +3053,7 @@ func NewDataAwsNetworkAcls_Override(d DataAwsNetworkAcls, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkAcls",
+		"hashicorp_aws.vpc.DataAwsNetworkAcls",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3121,7 +3125,7 @@ func DataAwsNetworkAcls_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsNetworkAcls",
+		"hashicorp_aws.vpc.DataAwsNetworkAcls",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3134,7 +3138,7 @@ func DataAwsNetworkAcls_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsNetworkAcls",
+		"hashicorp_aws.vpc.DataAwsNetworkAcls",
 		"tfResourceType",
 		&returns,
 	)
@@ -3320,6 +3324,7 @@ func (d *jsiiProxy_DataAwsNetworkAcls) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsNetworkAclsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3748,7 +3753,7 @@ func NewDataAwsNetworkInterface(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsNetworkInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterface",
+		"hashicorp_aws.vpc.DataAwsNetworkInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3761,7 +3766,7 @@ func NewDataAwsNetworkInterface_Override(d DataAwsNetworkInterface, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterface",
+		"hashicorp_aws.vpc.DataAwsNetworkInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3825,7 +3830,7 @@ func DataAwsNetworkInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsNetworkInterface",
+		"hashicorp_aws.vpc.DataAwsNetworkInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3838,7 +3843,7 @@ func DataAwsNetworkInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsNetworkInterface",
+		"hashicorp_aws.vpc.DataAwsNetworkInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -4176,7 +4181,7 @@ func NewDataAwsNetworkInterfaceAssociation(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_DataAwsNetworkInterfaceAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAssociation",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAssociation",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4189,7 +4194,7 @@ func NewDataAwsNetworkInterfaceAssociation_Override(d DataAwsNetworkInterfaceAss
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAssociation",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAssociation",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4390,7 +4395,7 @@ func NewDataAwsNetworkInterfaceAttachment(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DataAwsNetworkInterfaceAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAttachment",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAttachment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4403,7 +4408,7 @@ func NewDataAwsNetworkInterfaceAttachment_Override(d DataAwsNetworkInterfaceAtta
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAttachment",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAttachment",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4503,6 +4508,7 @@ func (d *jsiiProxy_DataAwsNetworkInterfaceAttachment) InterpolationForAttribute(
 	return returns
 }
 
+// AWS VPC.
 type DataAwsNetworkInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4773,7 +4779,7 @@ func NewDataAwsNetworkInterfaces(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsNetworkInterfaces{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaces",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaces",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4786,7 +4792,7 @@ func NewDataAwsNetworkInterfaces_Override(d DataAwsNetworkInterfaces, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaces",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaces",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4850,7 +4856,7 @@ func DataAwsNetworkInterfaces_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaces",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaces",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4863,7 +4869,7 @@ func DataAwsNetworkInterfaces_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaces",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaces",
 		"tfResourceType",
 		&returns,
 	)
@@ -5041,6 +5047,7 @@ func (d *jsiiProxy_DataAwsNetworkInterfaces) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsNetworkInterfacesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5563,7 +5570,7 @@ func NewDataAwsRoute(scope constructs.Construct, id *string, config *DataAwsRout
 	j := jsiiProxy_DataAwsRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRoute",
+		"hashicorp_aws.vpc.DataAwsRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5576,7 +5583,7 @@ func NewDataAwsRoute_Override(d DataAwsRoute, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRoute",
+		"hashicorp_aws.vpc.DataAwsRoute",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5728,7 +5735,7 @@ func DataAwsRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsRoute",
+		"hashicorp_aws.vpc.DataAwsRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5741,7 +5748,7 @@ func DataAwsRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsRoute",
+		"hashicorp_aws.vpc.DataAwsRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -5999,6 +6006,7 @@ func (d *jsiiProxy_DataAwsRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6391,7 +6399,7 @@ func NewDataAwsRouteTable(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsRouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTable",
+		"hashicorp_aws.vpc.DataAwsRouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6404,7 +6412,7 @@ func NewDataAwsRouteTable_Override(d DataAwsRouteTable, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTable",
+		"hashicorp_aws.vpc.DataAwsRouteTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6500,7 +6508,7 @@ func DataAwsRouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsRouteTable",
+		"hashicorp_aws.vpc.DataAwsRouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6513,7 +6521,7 @@ func DataAwsRouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsRouteTable",
+		"hashicorp_aws.vpc.DataAwsRouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -6861,7 +6869,7 @@ func NewDataAwsRouteTableAssociations(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsRouteTableAssociations{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTableAssociations",
+		"hashicorp_aws.vpc.DataAwsRouteTableAssociations",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6874,7 +6882,7 @@ func NewDataAwsRouteTableAssociations_Override(d DataAwsRouteTableAssociations, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTableAssociations",
+		"hashicorp_aws.vpc.DataAwsRouteTableAssociations",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -6974,6 +6982,7 @@ func (d *jsiiProxy_DataAwsRouteTableAssociations) InterpolationForAttribute(prop
 	return returns
 }
 
+// AWS VPC.
 type DataAwsRouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7206,7 +7215,7 @@ func NewDataAwsRouteTableRoutes(terraformResource cdktf.ITerraformResource, terr
 	j := jsiiProxy_DataAwsRouteTableRoutes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTableRoutes",
+		"hashicorp_aws.vpc.DataAwsRouteTableRoutes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7219,7 +7228,7 @@ func NewDataAwsRouteTableRoutes_Override(d DataAwsRouteTableRoutes, terraformRes
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTableRoutes",
+		"hashicorp_aws.vpc.DataAwsRouteTableRoutes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -7589,7 +7598,7 @@ func NewDataAwsRouteTables(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsRouteTables{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTables",
+		"hashicorp_aws.vpc.DataAwsRouteTables",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7602,7 +7611,7 @@ func NewDataAwsRouteTables_Override(d DataAwsRouteTables, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsRouteTables",
+		"hashicorp_aws.vpc.DataAwsRouteTables",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7674,7 +7683,7 @@ func DataAwsRouteTables_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsRouteTables",
+		"hashicorp_aws.vpc.DataAwsRouteTables",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7687,7 +7696,7 @@ func DataAwsRouteTables_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsRouteTables",
+		"hashicorp_aws.vpc.DataAwsRouteTables",
 		"tfResourceType",
 		&returns,
 	)
@@ -7873,6 +7882,7 @@ func (d *jsiiProxy_DataAwsRouteTables) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsRouteTablesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8204,7 +8214,7 @@ func NewDataAwsSecurityGroup(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsSecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSecurityGroup",
+		"hashicorp_aws.vpc.DataAwsSecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8217,7 +8227,7 @@ func NewDataAwsSecurityGroup_Override(d DataAwsSecurityGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSecurityGroup",
+		"hashicorp_aws.vpc.DataAwsSecurityGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8297,7 +8307,7 @@ func DataAwsSecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsSecurityGroup",
+		"hashicorp_aws.vpc.DataAwsSecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8310,7 +8320,7 @@ func DataAwsSecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsSecurityGroup",
+		"hashicorp_aws.vpc.DataAwsSecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -8504,6 +8514,7 @@ func (d *jsiiProxy_DataAwsSecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsSecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8800,7 +8811,7 @@ func NewDataAwsSecurityGroups(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsSecurityGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSecurityGroups",
+		"hashicorp_aws.vpc.DataAwsSecurityGroups",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8813,7 +8824,7 @@ func NewDataAwsSecurityGroups_Override(d DataAwsSecurityGroups, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSecurityGroups",
+		"hashicorp_aws.vpc.DataAwsSecurityGroups",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8877,7 +8888,7 @@ func DataAwsSecurityGroups_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsSecurityGroups",
+		"hashicorp_aws.vpc.DataAwsSecurityGroups",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8890,7 +8901,7 @@ func DataAwsSecurityGroups_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsSecurityGroups",
+		"hashicorp_aws.vpc.DataAwsSecurityGroups",
 		"tfResourceType",
 		&returns,
 	)
@@ -9068,6 +9079,7 @@ func (d *jsiiProxy_DataAwsSecurityGroups) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsSecurityGroupsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9594,7 +9606,7 @@ func NewDataAwsSubnet(scope constructs.Construct, id *string, config *DataAwsSub
 	j := jsiiProxy_DataAwsSubnet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnet",
+		"hashicorp_aws.vpc.DataAwsSubnet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9607,7 +9619,7 @@ func NewDataAwsSubnet_Override(d DataAwsSubnet, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnet",
+		"hashicorp_aws.vpc.DataAwsSubnet",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9727,7 +9739,7 @@ func DataAwsSubnet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsSubnet",
+		"hashicorp_aws.vpc.DataAwsSubnet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9740,7 +9752,7 @@ func DataAwsSubnet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsSubnet",
+		"hashicorp_aws.vpc.DataAwsSubnet",
 		"tfResourceType",
 		&returns,
 	)
@@ -9974,6 +9986,7 @@ func (d *jsiiProxy_DataAwsSubnet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsSubnetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10281,7 +10294,7 @@ func NewDataAwsSubnetIds(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsSubnetIds{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnetIds",
+		"hashicorp_aws.vpc.DataAwsSubnetIds",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10294,7 +10307,7 @@ func NewDataAwsSubnetIds_Override(d DataAwsSubnetIds, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnetIds",
+		"hashicorp_aws.vpc.DataAwsSubnetIds",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10366,7 +10379,7 @@ func DataAwsSubnetIds_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsSubnetIds",
+		"hashicorp_aws.vpc.DataAwsSubnetIds",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10379,7 +10392,7 @@ func DataAwsSubnetIds_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsSubnetIds",
+		"hashicorp_aws.vpc.DataAwsSubnetIds",
 		"tfResourceType",
 		&returns,
 	)
@@ -10557,6 +10570,7 @@ func (d *jsiiProxy_DataAwsSubnetIds) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsSubnetIdsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10829,7 +10843,7 @@ func NewDataAwsSubnets(scope constructs.Construct, id *string, config *DataAwsSu
 	j := jsiiProxy_DataAwsSubnets{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnets",
+		"hashicorp_aws.vpc.DataAwsSubnets",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10842,7 +10856,7 @@ func NewDataAwsSubnets_Override(d DataAwsSubnets, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsSubnets",
+		"hashicorp_aws.vpc.DataAwsSubnets",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10906,7 +10920,7 @@ func DataAwsSubnets_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsSubnets",
+		"hashicorp_aws.vpc.DataAwsSubnets",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10919,7 +10933,7 @@ func DataAwsSubnets_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsSubnets",
+		"hashicorp_aws.vpc.DataAwsSubnets",
 		"tfResourceType",
 		&returns,
 	)
@@ -11097,6 +11111,7 @@ func (d *jsiiProxy_DataAwsSubnets) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsSubnetsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11541,7 +11556,7 @@ func NewDataAwsVpc(scope constructs.Construct, id *string, config *DataAwsVpcCon
 	j := jsiiProxy_DataAwsVpc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpc",
+		"hashicorp_aws.vpc.DataAwsVpc",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11554,7 +11569,7 @@ func NewDataAwsVpc_Override(d DataAwsVpc, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpc",
+		"hashicorp_aws.vpc.DataAwsVpc",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -11650,7 +11665,7 @@ func DataAwsVpc_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpc",
+		"hashicorp_aws.vpc.DataAwsVpc",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11663,7 +11678,7 @@ func DataAwsVpc_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpc",
+		"hashicorp_aws.vpc.DataAwsVpc",
 		"tfResourceType",
 		&returns,
 	)
@@ -11976,7 +11991,7 @@ func NewDataAwsVpcCidrBlockAssociations(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsVpcCidrBlockAssociations{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcCidrBlockAssociations",
+		"hashicorp_aws.vpc.DataAwsVpcCidrBlockAssociations",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -11989,7 +12004,7 @@ func NewDataAwsVpcCidrBlockAssociations_Override(d DataAwsVpcCidrBlockAssociatio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcCidrBlockAssociations",
+		"hashicorp_aws.vpc.DataAwsVpcCidrBlockAssociations",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -12089,6 +12104,7 @@ func (d *jsiiProxy_DataAwsVpcCidrBlockAssociations) InterpolationForAttribute(pr
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12450,7 +12466,7 @@ func NewDataAwsVpcDhcpOptions(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsVpcDhcpOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptions",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12463,7 +12479,7 @@ func NewDataAwsVpcDhcpOptions_Override(d DataAwsVpcDhcpOptions, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptions",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12535,7 +12551,7 @@ func DataAwsVpcDhcpOptions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptions",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12548,7 +12564,7 @@ func DataAwsVpcDhcpOptions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptions",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptions",
 		"tfResourceType",
 		&returns,
 	)
@@ -12734,6 +12750,7 @@ func (d *jsiiProxy_DataAwsVpcDhcpOptions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcDhcpOptionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13200,7 +13217,7 @@ func NewDataAwsVpcEndpoint(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsVpcEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpoint",
+		"hashicorp_aws.vpc.DataAwsVpcEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13213,7 +13230,7 @@ func NewDataAwsVpcEndpoint_Override(d DataAwsVpcEndpoint, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpoint",
+		"hashicorp_aws.vpc.DataAwsVpcEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13301,7 +13318,7 @@ func DataAwsVpcEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcEndpoint",
+		"hashicorp_aws.vpc.DataAwsVpcEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13314,7 +13331,7 @@ func DataAwsVpcEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcEndpoint",
+		"hashicorp_aws.vpc.DataAwsVpcEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -13529,6 +13546,7 @@ func (d *jsiiProxy_DataAwsVpcEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13631,7 +13649,7 @@ func NewDataAwsVpcEndpointDnsEntry(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_DataAwsVpcEndpointDnsEntry{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointDnsEntry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -13644,7 +13662,7 @@ func NewDataAwsVpcEndpointDnsEntry_Override(d DataAwsVpcEndpointDnsEntry, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointDnsEntry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -14157,7 +14175,7 @@ func NewDataAwsVpcEndpointService(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsVpcEndpointService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointService",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14170,7 +14188,7 @@ func NewDataAwsVpcEndpointService_Override(d DataAwsVpcEndpointService, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointService",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointService",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -14258,7 +14276,7 @@ func DataAwsVpcEndpointService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointService",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14271,7 +14289,7 @@ func DataAwsVpcEndpointService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointService",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointService",
 		"tfResourceType",
 		&returns,
 	)
@@ -14473,6 +14491,7 @@ func (d *jsiiProxy_DataAwsVpcEndpointService) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcEndpointServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14507,6 +14526,814 @@ type DataAwsVpcFilter struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc.html#name DataAwsVpc#name}.
 	Name *string `json:"name"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc.html#values DataAwsVpc#values}.
+	Values *[]*string `json:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html aws_vpc_ipam_pool}.
+type DataAwsVpcIpamPool interface {
+	cdktf.TerraformDataSource
+	AddressFamily() *string
+	AllocationDefaultNetmaskLength() *float64
+	AllocationMaxNetmaskLength() *float64
+	AllocationMinNetmaskLength() *float64
+	AllocationResourceTags() interface{}
+	SetAllocationResourceTags(val interface{})
+	AllocationResourceTagsInput() interface{}
+	Arn() *string
+	AutoImport() interface{}
+	AwsService() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	Filter() *[]*DataAwsVpcIpamPoolFilter
+	SetFilter(val *[]*DataAwsVpcIpamPoolFilter)
+	FilterInput() *[]*DataAwsVpcIpamPoolFilter
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	SetId(val *string)
+	IdInput() *string
+	IpamPoolId() *string
+	SetIpamPoolId(val *string)
+	IpamPoolIdInput() *string
+	IpamScopeId() *string
+	IpamScopeType() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Locale() *string
+	Node() constructs.Node
+	PoolDepth() *float64
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	PubliclyAdvertisable() interface{}
+	RawOverrides() interface{}
+	SourceIpamPoolId() *string
+	State() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetAllocationResourceTags()
+	ResetFilter()
+	ResetId()
+	ResetIpamPoolId()
+	ResetOverrideLogicalId()
+	ResetTags()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsVpcIpamPool
+type jsiiProxy_DataAwsVpcIpamPool struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AddressFamily() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"addressFamily",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AllocationDefaultNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationDefaultNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AllocationMaxNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMaxNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AllocationMinNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMinNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AllocationResourceTags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allocationResourceTags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AllocationResourceTagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allocationResourceTagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AutoImport() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoImport",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) AwsService() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"awsService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Filter() *[]*DataAwsVpcIpamPoolFilter {
+	var returns *[]*DataAwsVpcIpamPoolFilter
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) FilterInput() *[]*DataAwsVpcIpamPoolFilter {
+	var returns *[]*DataAwsVpcIpamPoolFilter
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) IdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) IpamScopeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) IpamScopeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Locale() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"locale",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) PoolDepth() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"poolDepth",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) PubliclyAdvertisable() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publiclyAdvertisable",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SourceIpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sourceIpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) State() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"state",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html aws_vpc_ipam_pool} Data Source.
+func NewDataAwsVpcIpamPool(scope constructs.Construct, id *string, config *DataAwsVpcIpamPoolConfig) DataAwsVpcIpamPool {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsVpcIpamPool{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPool",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html aws_vpc_ipam_pool} Data Source.
+func NewDataAwsVpcIpamPool_Override(d DataAwsVpcIpamPool, scope constructs.Construct, id *string, config *DataAwsVpcIpamPoolConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPool",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetAllocationResourceTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"allocationResourceTags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetFilter(val *[]*DataAwsVpcIpamPoolFilter) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetId(val *string) {
+	_jsii_.Set(
+		j,
+		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetIpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsVpcIpamPool) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsVpcIpamPool_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPool",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsVpcIpamPool_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPool",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetAllocationResourceTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetAllocationResourceTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetIpamPoolId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpamPoolId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsVpcIpamPool) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsVpcIpamPool) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsVpcIpamPool) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS VPC.
+type DataAwsVpcIpamPoolConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#allocation_resource_tags DataAwsVpcIpamPool#allocation_resource_tags}.
+	AllocationResourceTags interface{} `json:"allocationResourceTags"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#filter DataAwsVpcIpamPool#filter}
+	Filter *[]*DataAwsVpcIpamPoolFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#id DataAwsVpcIpamPool#id}.
+	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#ipam_pool_id DataAwsVpcIpamPool#ipam_pool_id}.
+	IpamPoolId *string `json:"ipamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#tags DataAwsVpcIpamPool#tags}.
+	Tags interface{} `json:"tags"`
+}
+
+type DataAwsVpcIpamPoolFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#name DataAwsVpcIpamPool#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/vpc_ipam_pool.html#values DataAwsVpcIpamPool#values}.
 	Values *[]*string `json:"values"`
 }
 
@@ -14965,7 +15792,7 @@ func NewDataAwsVpcPeeringConnection(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsVpcPeeringConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnection",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14978,7 +15805,7 @@ func NewDataAwsVpcPeeringConnection_Override(d DataAwsVpcPeeringConnection, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnection",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -15114,7 +15941,7 @@ func DataAwsVpcPeeringConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnection",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15127,7 +15954,7 @@ func DataAwsVpcPeeringConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnection",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -15497,7 +16324,7 @@ func NewDataAwsVpcPeeringConnectionCidrBlockSet(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsVpcPeeringConnectionCidrBlockSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionCidrBlockSet",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15510,7 +16337,7 @@ func NewDataAwsVpcPeeringConnectionCidrBlockSet_Override(d DataAwsVpcPeeringConn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionCidrBlockSet",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -15610,6 +16437,7 @@ func (d *jsiiProxy_DataAwsVpcPeeringConnectionCidrBlockSet) InterpolationForAttr
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcPeeringConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15720,7 +16548,7 @@ func NewDataAwsVpcPeeringConnectionPeerCidrBlockSet(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsVpcPeeringConnectionPeerCidrBlockSet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -15733,7 +16561,7 @@ func NewDataAwsVpcPeeringConnectionPeerCidrBlockSet_Override(d DataAwsVpcPeering
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -16079,7 +16907,7 @@ func NewDataAwsVpcPeeringConnections(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsVpcPeeringConnections{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnections",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnections",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16092,7 +16920,7 @@ func NewDataAwsVpcPeeringConnections_Override(d DataAwsVpcPeeringConnections, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnections",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnections",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16156,7 +16984,7 @@ func DataAwsVpcPeeringConnections_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnections",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnections",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16169,7 +16997,7 @@ func DataAwsVpcPeeringConnections_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnections",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnections",
 		"tfResourceType",
 		&returns,
 	)
@@ -16347,6 +17175,7 @@ func (d *jsiiProxy_DataAwsVpcPeeringConnections) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcPeeringConnectionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16617,7 +17446,7 @@ func NewDataAwsVpcs(scope constructs.Construct, id *string, config *DataAwsVpcsC
 	j := jsiiProxy_DataAwsVpcs{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcs",
+		"hashicorp_aws.vpc.DataAwsVpcs",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16630,7 +17459,7 @@ func NewDataAwsVpcs_Override(d DataAwsVpcs, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpcs",
+		"hashicorp_aws.vpc.DataAwsVpcs",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16694,7 +17523,7 @@ func DataAwsVpcs_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpcs",
+		"hashicorp_aws.vpc.DataAwsVpcs",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16707,7 +17536,7 @@ func DataAwsVpcs_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpcs",
+		"hashicorp_aws.vpc.DataAwsVpcs",
 		"tfResourceType",
 		&returns,
 	)
@@ -16885,6 +17714,7 @@ func (d *jsiiProxy_DataAwsVpcs) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpcsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17251,7 +18081,7 @@ func NewDataAwsVpnGateway(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsVpnGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpnGateway",
+		"hashicorp_aws.vpc.DataAwsVpnGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17264,7 +18094,7 @@ func NewDataAwsVpnGateway_Override(d DataAwsVpnGateway, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DataAwsVpnGateway",
+		"hashicorp_aws.vpc.DataAwsVpnGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -17360,7 +18190,7 @@ func DataAwsVpnGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DataAwsVpnGateway",
+		"hashicorp_aws.vpc.DataAwsVpnGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17373,7 +18203,7 @@ func DataAwsVpnGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DataAwsVpnGateway",
+		"hashicorp_aws.vpc.DataAwsVpnGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -17583,6 +18413,7 @@ func (d *jsiiProxy_DataAwsVpnGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DataAwsVpnGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17978,7 +18809,7 @@ func NewDefaultNetworkAcl(scope constructs.Construct, id *string, config *Defaul
 	j := jsiiProxy_DefaultNetworkAcl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultNetworkAcl",
+		"hashicorp_aws.vpc.DefaultNetworkAcl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17991,7 +18822,7 @@ func NewDefaultNetworkAcl_Override(d DefaultNetworkAcl, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultNetworkAcl",
+		"hashicorp_aws.vpc.DefaultNetworkAcl",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18087,7 +18918,7 @@ func DefaultNetworkAcl_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultNetworkAcl",
+		"hashicorp_aws.vpc.DefaultNetworkAcl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18100,7 +18931,7 @@ func DefaultNetworkAcl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultNetworkAcl",
+		"hashicorp_aws.vpc.DefaultNetworkAcl",
 		"tfResourceType",
 		&returns,
 	)
@@ -18302,6 +19133,7 @@ func (d *jsiiProxy_DefaultNetworkAcl) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultNetworkAclConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18734,7 +19566,7 @@ func NewDefaultRouteTable(scope constructs.Construct, id *string, config *Defaul
 	j := jsiiProxy_DefaultRouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultRouteTable",
+		"hashicorp_aws.vpc.DefaultRouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18747,7 +19579,7 @@ func NewDefaultRouteTable_Override(d DefaultRouteTable, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultRouteTable",
+		"hashicorp_aws.vpc.DefaultRouteTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18835,7 +19667,7 @@ func DefaultRouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultRouteTable",
+		"hashicorp_aws.vpc.DefaultRouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18848,7 +19680,7 @@ func DefaultRouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultRouteTable",
+		"hashicorp_aws.vpc.DefaultRouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -19058,6 +19890,7 @@ func (d *jsiiProxy_DefaultRouteTable) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultRouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19120,6 +19953,8 @@ type DefaultRouteTableTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DefaultRouteTableTimeouts
+	SetInternalValue(val *DefaultRouteTableTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -19159,6 +19994,16 @@ func (j *jsiiProxy_DefaultRouteTableTimeoutsOutputReference) CreateInput() *stri
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultRouteTableTimeoutsOutputReference) InternalValue() *DefaultRouteTableTimeouts {
+	var returns *DefaultRouteTableTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -19220,7 +20065,7 @@ func NewDefaultRouteTableTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DefaultRouteTableTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultRouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultRouteTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19232,7 +20077,7 @@ func NewDefaultRouteTableTimeoutsOutputReference_Override(d DefaultRouteTableTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultRouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultRouteTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -19242,6 +20087,14 @@ func (j *jsiiProxy_DefaultRouteTableTimeoutsOutputReference) SetCreate(val *stri
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultRouteTableTimeoutsOutputReference) SetInternalValue(val *DefaultRouteTableTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19753,7 +20606,7 @@ func NewDefaultSecurityGroup(scope constructs.Construct, id *string, config *Def
 	j := jsiiProxy_DefaultSecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSecurityGroup",
+		"hashicorp_aws.vpc.DefaultSecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19766,7 +20619,7 @@ func NewDefaultSecurityGroup_Override(d DefaultSecurityGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSecurityGroup",
+		"hashicorp_aws.vpc.DefaultSecurityGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -19862,7 +20715,7 @@ func DefaultSecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultSecurityGroup",
+		"hashicorp_aws.vpc.DefaultSecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19875,7 +20728,7 @@ func DefaultSecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultSecurityGroup",
+		"hashicorp_aws.vpc.DefaultSecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -20085,6 +20938,7 @@ func (d *jsiiProxy_DefaultSecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultSecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20616,7 +21470,7 @@ func NewDefaultSubnet(scope constructs.Construct, id *string, config *DefaultSub
 	j := jsiiProxy_DefaultSubnet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSubnet",
+		"hashicorp_aws.vpc.DefaultSubnet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20629,7 +21483,7 @@ func NewDefaultSubnet_Override(d DefaultSubnet, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSubnet",
+		"hashicorp_aws.vpc.DefaultSubnet",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20733,7 +21587,7 @@ func DefaultSubnet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultSubnet",
+		"hashicorp_aws.vpc.DefaultSubnet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20746,7 +21600,7 @@ func DefaultSubnet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultSubnet",
+		"hashicorp_aws.vpc.DefaultSubnet",
 		"tfResourceType",
 		&returns,
 	)
@@ -20972,6 +21826,7 @@ func (d *jsiiProxy_DefaultSubnet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultSubnetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21016,6 +21871,8 @@ type DefaultSubnetTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DefaultSubnetTimeouts
+	SetInternalValue(val *DefaultSubnetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -21077,6 +21934,16 @@ func (j *jsiiProxy_DefaultSubnetTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DefaultSubnetTimeoutsOutputReference) InternalValue() *DefaultSubnetTimeouts {
+	var returns *DefaultSubnetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DefaultSubnetTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -21113,7 +21980,7 @@ func NewDefaultSubnetTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DefaultSubnetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultSubnetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -21125,7 +21992,7 @@ func NewDefaultSubnetTimeoutsOutputReference_Override(d DefaultSubnetTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultSubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultSubnetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -21143,6 +22010,14 @@ func (j *jsiiProxy_DefaultSubnetTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultSubnetTimeoutsOutputReference) SetInternalValue(val *DefaultSubnetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -21303,8 +22178,22 @@ type DefaultVpc interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	InstanceTenancy() *string
+	Ipv4IpamPoolId() *string
+	SetIpv4IpamPoolId(val *string)
+	Ipv4IpamPoolIdInput() *string
+	Ipv4NetmaskLength() *float64
+	SetIpv4NetmaskLength(val *float64)
+	Ipv4NetmaskLengthInput() *float64
 	Ipv6AssociationId() *string
 	Ipv6CidrBlock() *string
+	SetIpv6CidrBlock(val *string)
+	Ipv6CidrBlockInput() *string
+	Ipv6IpamPoolId() *string
+	SetIpv6IpamPoolId(val *string)
+	Ipv6IpamPoolIdInput() *string
+	Ipv6NetmaskLength() *float64
+	SetIpv6NetmaskLength(val *float64)
+	Ipv6NetmaskLengthInput() *float64
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MainRouteTableId() *string
@@ -21333,6 +22222,11 @@ type DefaultVpc interface {
 	ResetEnableClassiclinkDnsSupport()
 	ResetEnableDnsHostnames()
 	ResetEnableDnsSupport()
+	ResetIpv4IpamPoolId()
+	ResetIpv4NetmaskLength()
+	ResetIpv6CidrBlock()
+	ResetIpv6IpamPoolId()
+	ResetIpv6NetmaskLength()
 	ResetOverrideLogicalId()
 	ResetTags()
 	ResetTagsAll()
@@ -21577,6 +22471,46 @@ func (j *jsiiProxy_DefaultVpc) InstanceTenancy() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DefaultVpc) Ipv4IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv4IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv4NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv4NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DefaultVpc) Ipv6AssociationId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -21592,6 +22526,56 @@ func (j *jsiiProxy_DefaultVpc) Ipv6CidrBlock() *string {
 	_jsii_.Get(
 		j,
 		"ipv6CidrBlock",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv6CidrBlockInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6CidrBlockInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv6IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv6IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv6NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DefaultVpc) Ipv6NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLengthInput",
 		&returns,
 	)
 	return returns
@@ -21734,7 +22718,7 @@ func NewDefaultVpc(scope constructs.Construct, id *string, config *DefaultVpcCon
 	j := jsiiProxy_DefaultVpc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultVpc",
+		"hashicorp_aws.vpc.DefaultVpc",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21747,7 +22731,7 @@ func NewDefaultVpc_Override(d DefaultVpc, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultVpc",
+		"hashicorp_aws.vpc.DefaultVpc",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -21801,6 +22785,46 @@ func (j *jsiiProxy_DefaultVpc) SetEnableDnsSupport(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_DefaultVpc) SetIpv4IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv4IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultVpc) SetIpv4NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv4NetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultVpc) SetIpv6CidrBlock(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6CidrBlock",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultVpc) SetIpv6IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DefaultVpc) SetIpv6NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv6NetmaskLength",
+		val,
+	)
+}
+
 func (j *jsiiProxy_DefaultVpc) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	_jsii_.Set(
 		j,
@@ -21843,7 +22867,7 @@ func DefaultVpc_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultVpc",
+		"hashicorp_aws.vpc.DefaultVpc",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21856,7 +22880,7 @@ func DefaultVpc_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultVpc",
+		"hashicorp_aws.vpc.DefaultVpc",
 		"tfResourceType",
 		&returns,
 	)
@@ -21984,6 +23008,46 @@ func (d *jsiiProxy_DefaultVpc) ResetEnableDnsSupport() {
 	)
 }
 
+func (d *jsiiProxy_DefaultVpc) ResetIpv4IpamPoolId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpv4IpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DefaultVpc) ResetIpv4NetmaskLength() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpv4NetmaskLength",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DefaultVpc) ResetIpv6CidrBlock() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpv6CidrBlock",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DefaultVpc) ResetIpv6IpamPoolId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpv6IpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DefaultVpc) ResetIpv6NetmaskLength() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIpv6NetmaskLength",
+		nil, // no parameters
+	)
+}
+
 // Resets a previously passed logical Id to use the auto-generated logical id again.
 // Experimental.
 func (d *jsiiProxy_DefaultVpc) ResetOverrideLogicalId() {
@@ -22066,6 +23130,7 @@ func (d *jsiiProxy_DefaultVpc) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultVpcConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22083,6 +23148,16 @@ type DefaultVpcConfig struct {
 	EnableDnsHostnames interface{} `json:"enableDnsHostnames"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#enable_dns_support DefaultVpc#enable_dns_support}.
 	EnableDnsSupport interface{} `json:"enableDnsSupport"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#ipv4_ipam_pool_id DefaultVpc#ipv4_ipam_pool_id}.
+	Ipv4IpamPoolId *string `json:"ipv4IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#ipv4_netmask_length DefaultVpc#ipv4_netmask_length}.
+	Ipv4NetmaskLength *float64 `json:"ipv4NetmaskLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#ipv6_cidr_block DefaultVpc#ipv6_cidr_block}.
+	Ipv6CidrBlock *string `json:"ipv6CidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#ipv6_ipam_pool_id DefaultVpc#ipv6_ipam_pool_id}.
+	Ipv6IpamPoolId *string `json:"ipv6IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#ipv6_netmask_length DefaultVpc#ipv6_netmask_length}.
+	Ipv6NetmaskLength *float64 `json:"ipv6NetmaskLength"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#tags DefaultVpc#tags}.
 	Tags interface{} `json:"tags"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/default_vpc.html#tags_all DefaultVpc#tags_all}.
@@ -22440,7 +23515,7 @@ func NewDefaultVpcDhcpOptions(scope constructs.Construct, id *string, config *De
 	j := jsiiProxy_DefaultVpcDhcpOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptions",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22453,7 +23528,7 @@ func NewDefaultVpcDhcpOptions_Override(d DefaultVpcDhcpOptions, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptions",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22541,7 +23616,7 @@ func DefaultVpcDhcpOptions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptions",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22554,7 +23629,7 @@ func DefaultVpcDhcpOptions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptions",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptions",
 		"tfResourceType",
 		&returns,
 	)
@@ -22756,6 +23831,7 @@ func (d *jsiiProxy_DefaultVpcDhcpOptions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type DefaultVpcDhcpOptionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23035,7 +24111,7 @@ func NewEgressOnlyInternetGateway(scope constructs.Construct, id *string, config
 	j := jsiiProxy_EgressOnlyInternetGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.EgressOnlyInternetGateway",
+		"hashicorp_aws.vpc.EgressOnlyInternetGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23048,7 +24124,7 @@ func NewEgressOnlyInternetGateway_Override(e EgressOnlyInternetGateway, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.EgressOnlyInternetGateway",
+		"hashicorp_aws.vpc.EgressOnlyInternetGateway",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -23120,7 +24196,7 @@ func EgressOnlyInternetGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.EgressOnlyInternetGateway",
+		"hashicorp_aws.vpc.EgressOnlyInternetGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -23133,7 +24209,7 @@ func EgressOnlyInternetGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.EgressOnlyInternetGateway",
+		"hashicorp_aws.vpc.EgressOnlyInternetGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -23311,6 +24387,7 @@ func (e *jsiiProxy_EgressOnlyInternetGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type EgressOnlyInternetGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -23837,7 +24914,7 @@ func NewFlowLog(scope constructs.Construct, id *string, config *FlowLogConfig) F
 	j := jsiiProxy_FlowLog{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.FlowLog",
+		"hashicorp_aws.vpc.FlowLog",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -23850,7 +24927,7 @@ func NewFlowLog_Override(f FlowLog, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.FlowLog",
+		"hashicorp_aws.vpc.FlowLog",
 		[]interface{}{scope, id, config},
 		f,
 	)
@@ -23994,7 +25071,7 @@ func FlowLog_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.FlowLog",
+		"hashicorp_aws.vpc.FlowLog",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24007,7 +25084,7 @@ func FlowLog_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.FlowLog",
+		"hashicorp_aws.vpc.FlowLog",
 		"tfResourceType",
 		&returns,
 	)
@@ -24273,6 +25350,7 @@ func (f *jsiiProxy_FlowLog) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type FlowLogConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24329,6 +25407,8 @@ type FlowLogDestinationOptionsOutputReference interface {
 	HiveCompatiblePartitions() interface{}
 	SetHiveCompatiblePartitions(val interface{})
 	HiveCompatiblePartitionsInput() interface{}
+	InternalValue() *FlowLogDestinationOptions
+	SetInternalValue(val *FlowLogDestinationOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PerHourPartition() interface{}
@@ -24394,6 +25474,16 @@ func (j *jsiiProxy_FlowLogDestinationOptionsOutputReference) HiveCompatibleParti
 	return returns
 }
 
+func (j *jsiiProxy_FlowLogDestinationOptionsOutputReference) InternalValue() *FlowLogDestinationOptions {
+	var returns *FlowLogDestinationOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FlowLogDestinationOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -24450,7 +25540,7 @@ func NewFlowLogDestinationOptionsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_FlowLogDestinationOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.FlowLogDestinationOptionsOutputReference",
+		"hashicorp_aws.vpc.FlowLogDestinationOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -24462,7 +25552,7 @@ func NewFlowLogDestinationOptionsOutputReference_Override(f FlowLogDestinationOp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.FlowLogDestinationOptionsOutputReference",
+		"hashicorp_aws.vpc.FlowLogDestinationOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		f,
 	)
@@ -24480,6 +25570,14 @@ func (j *jsiiProxy_FlowLogDestinationOptionsOutputReference) SetHiveCompatiblePa
 	_jsii_.Set(
 		j,
 		"hiveCompatiblePartitions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FlowLogDestinationOptionsOutputReference) SetInternalValue(val *FlowLogDestinationOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -24905,7 +26003,7 @@ func NewInternetGateway(scope constructs.Construct, id *string, config *Internet
 	j := jsiiProxy_InternetGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.InternetGateway",
+		"hashicorp_aws.vpc.InternetGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24918,7 +26016,7 @@ func NewInternetGateway_Override(i InternetGateway, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.InternetGateway",
+		"hashicorp_aws.vpc.InternetGateway",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -24990,7 +26088,7 @@ func InternetGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.InternetGateway",
+		"hashicorp_aws.vpc.InternetGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25003,7 +26101,7 @@ func InternetGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.InternetGateway",
+		"hashicorp_aws.vpc.InternetGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -25189,6 +26287,7 @@ func (i *jsiiProxy_InternetGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type InternetGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25450,7 +26549,7 @@ func NewMainRouteTableAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_MainRouteTableAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.MainRouteTableAssociation",
+		"hashicorp_aws.vpc.MainRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -25463,7 +26562,7 @@ func NewMainRouteTableAssociation_Override(m MainRouteTableAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.MainRouteTableAssociation",
+		"hashicorp_aws.vpc.MainRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -25527,7 +26626,7 @@ func MainRouteTableAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.MainRouteTableAssociation",
+		"hashicorp_aws.vpc.MainRouteTableAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25540,7 +26639,7 @@ func MainRouteTableAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.MainRouteTableAssociation",
+		"hashicorp_aws.vpc.MainRouteTableAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -25702,6 +26801,7 @@ func (m *jsiiProxy_MainRouteTableAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type MainRouteTableAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26056,7 +27156,7 @@ func NewNatGateway(scope constructs.Construct, id *string, config *NatGatewayCon
 	j := jsiiProxy_NatGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NatGateway",
+		"hashicorp_aws.vpc.NatGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26069,7 +27169,7 @@ func NewNatGateway_Override(n NatGateway, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NatGateway",
+		"hashicorp_aws.vpc.NatGateway",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -26157,7 +27257,7 @@ func NatGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NatGateway",
+		"hashicorp_aws.vpc.NatGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26170,7 +27270,7 @@ func NatGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NatGateway",
+		"hashicorp_aws.vpc.NatGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -26364,6 +27464,7 @@ func (n *jsiiProxy_NatGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type NatGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26737,7 +27838,7 @@ func NewNetworkAcl(scope constructs.Construct, id *string, config *NetworkAclCon
 	j := jsiiProxy_NetworkAcl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkAcl",
+		"hashicorp_aws.vpc.NetworkAcl",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26750,7 +27851,7 @@ func NewNetworkAcl_Override(n NetworkAcl, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkAcl",
+		"hashicorp_aws.vpc.NetworkAcl",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -26846,7 +27947,7 @@ func NetworkAcl_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NetworkAcl",
+		"hashicorp_aws.vpc.NetworkAcl",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -26859,7 +27960,7 @@ func NetworkAcl_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NetworkAcl",
+		"hashicorp_aws.vpc.NetworkAcl",
 		"tfResourceType",
 		&returns,
 	)
@@ -27061,6 +28162,7 @@ func (n *jsiiProxy_NetworkAcl) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type NetworkAclConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -27573,7 +28675,7 @@ func NewNetworkAclRule(scope constructs.Construct, id *string, config *NetworkAc
 	j := jsiiProxy_NetworkAclRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkAclRule",
+		"hashicorp_aws.vpc.NetworkAclRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -27586,7 +28688,7 @@ func NewNetworkAclRule_Override(n NetworkAclRule, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkAclRule",
+		"hashicorp_aws.vpc.NetworkAclRule",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -27722,7 +28824,7 @@ func NetworkAclRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NetworkAclRule",
+		"hashicorp_aws.vpc.NetworkAclRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -27735,7 +28837,7 @@ func NetworkAclRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NetworkAclRule",
+		"hashicorp_aws.vpc.NetworkAclRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -27953,6 +29055,7 @@ func (n *jsiiProxy_NetworkAclRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type NetworkAclRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -28635,7 +29738,7 @@ func NewNetworkInterface(scope constructs.Construct, id *string, config *Network
 	j := jsiiProxy_NetworkInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterface",
+		"hashicorp_aws.vpc.NetworkInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -28648,7 +29751,7 @@ func NewNetworkInterface_Override(n NetworkInterface, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterface",
+		"hashicorp_aws.vpc.NetworkInterface",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -28832,7 +29935,7 @@ func NetworkInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NetworkInterface",
+		"hashicorp_aws.vpc.NetworkInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -28845,7 +29948,7 @@ func NetworkInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NetworkInterface",
+		"hashicorp_aws.vpc.NetworkInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -29420,7 +30523,7 @@ func NewNetworkInterfaceAttachmentA(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_NetworkInterfaceAttachmentA{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentA",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentA",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -29433,7 +30536,7 @@ func NewNetworkInterfaceAttachmentA_Override(n NetworkInterfaceAttachmentA, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentA",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentA",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -29505,7 +30608,7 @@ func NetworkInterfaceAttachmentA_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentA",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentA",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -29518,7 +30621,7 @@ func NetworkInterfaceAttachmentA_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentA",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentA",
 		"tfResourceType",
 		&returns,
 	)
@@ -29680,6 +30783,7 @@ func (n *jsiiProxy_NetworkInterfaceAttachmentA) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type NetworkInterfaceAttachmentAConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -29697,6 +30801,7 @@ type NetworkInterfaceAttachmentAConfig struct {
 	NetworkInterfaceId *string `json:"networkInterfaceId"`
 }
 
+// AWS VPC.
 type NetworkInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -29977,7 +31082,7 @@ func NewNetworkInterfaceSgAttachment(scope constructs.Construct, id *string, con
 	j := jsiiProxy_NetworkInterfaceSgAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -29990,7 +31095,7 @@ func NewNetworkInterfaceSgAttachment_Override(n NetworkInterfaceSgAttachment, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachment",
 		[]interface{}{scope, id, config},
 		n,
 	)
@@ -30054,7 +31159,7 @@ func NetworkInterfaceSgAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -30067,7 +31172,7 @@ func NetworkInterfaceSgAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -30229,6 +31334,7 @@ func (n *jsiiProxy_NetworkInterfaceSgAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type NetworkInterfaceSgAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -30823,7 +31929,7 @@ func NewRoute(scope constructs.Construct, id *string, config *RouteConfig) Route
 	j := jsiiProxy_Route{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Route",
+		"hashicorp_aws.vpc.Route",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -30836,7 +31942,7 @@ func NewRoute_Override(r Route, scope constructs.Construct, id *string, config *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Route",
+		"hashicorp_aws.vpc.Route",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -30996,7 +32102,7 @@ func Route_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.Route",
+		"hashicorp_aws.vpc.Route",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -31009,7 +32115,7 @@ func Route_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.Route",
+		"hashicorp_aws.vpc.Route",
 		"tfResourceType",
 		&returns,
 	)
@@ -31291,6 +32397,7 @@ func (r *jsiiProxy_Route) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type RouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -31686,7 +32793,7 @@ func NewRouteTable(scope constructs.Construct, id *string, config *RouteTableCon
 	j := jsiiProxy_RouteTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTable",
+		"hashicorp_aws.vpc.RouteTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -31699,7 +32806,7 @@ func NewRouteTable_Override(r RouteTable, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTable",
+		"hashicorp_aws.vpc.RouteTable",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -31787,7 +32894,7 @@ func RouteTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.RouteTable",
+		"hashicorp_aws.vpc.RouteTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -31800,7 +32907,7 @@ func RouteTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.RouteTable",
+		"hashicorp_aws.vpc.RouteTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -32268,7 +33375,7 @@ func NewRouteTableAssociation(scope constructs.Construct, id *string, config *Ro
 	j := jsiiProxy_RouteTableAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTableAssociation",
+		"hashicorp_aws.vpc.RouteTableAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -32281,7 +33388,7 @@ func NewRouteTableAssociation_Override(r RouteTableAssociation, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTableAssociation",
+		"hashicorp_aws.vpc.RouteTableAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -32353,7 +33460,7 @@ func RouteTableAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.RouteTableAssociation",
+		"hashicorp_aws.vpc.RouteTableAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -32366,7 +33473,7 @@ func RouteTableAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.RouteTableAssociation",
+		"hashicorp_aws.vpc.RouteTableAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -32544,6 +33651,7 @@ func (r *jsiiProxy_RouteTableAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type RouteTableAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -32561,6 +33669,7 @@ type RouteTableAssociationConfig struct {
 	SubnetId *string `json:"subnetId"`
 }
 
+// AWS VPC.
 type RouteTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -32632,6 +33741,8 @@ type RouteTableTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RouteTableTimeouts
+	SetInternalValue(val *RouteTableTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -32697,6 +33808,16 @@ func (j *jsiiProxy_RouteTableTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RouteTableTimeoutsOutputReference) InternalValue() *RouteTableTimeouts {
+	var returns *RouteTableTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RouteTableTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -32753,7 +33874,7 @@ func NewRouteTableTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_RouteTableTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -32765,7 +33886,7 @@ func NewRouteTableTimeoutsOutputReference_Override(r RouteTableTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -32783,6 +33904,14 @@ func (j *jsiiProxy_RouteTableTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RouteTableTimeoutsOutputReference) SetInternalValue(val *RouteTableTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -32944,6 +34073,8 @@ type RouteTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RouteTimeouts
+	SetInternalValue(val *RouteTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -33009,6 +34140,16 @@ func (j *jsiiProxy_RouteTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RouteTimeoutsOutputReference) InternalValue() *RouteTimeouts {
+	var returns *RouteTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RouteTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -33065,7 +34206,7 @@ func NewRouteTimeoutsOutputReference(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_RouteTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -33077,7 +34218,7 @@ func NewRouteTimeoutsOutputReference_Override(r RouteTimeoutsOutputReference, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.RouteTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -33095,6 +34236,14 @@ func (j *jsiiProxy_RouteTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RouteTimeoutsOutputReference) SetInternalValue(val *RouteTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -33688,7 +34837,7 @@ func NewSecurityGroup(scope constructs.Construct, id *string, config *SecurityGr
 	j := jsiiProxy_SecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroup",
+		"hashicorp_aws.vpc.SecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -33701,7 +34850,7 @@ func NewSecurityGroup_Override(s SecurityGroup, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroup",
+		"hashicorp_aws.vpc.SecurityGroup",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -33821,7 +34970,7 @@ func SecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.SecurityGroup",
+		"hashicorp_aws.vpc.SecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -33834,7 +34983,7 @@ func SecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.SecurityGroup",
+		"hashicorp_aws.vpc.SecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -34084,6 +35233,7 @@ func (s *jsiiProxy_SecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type SecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -34605,7 +35755,7 @@ func NewSecurityGroupRule(scope constructs.Construct, id *string, config *Securi
 	j := jsiiProxy_SecurityGroupRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroupRule",
+		"hashicorp_aws.vpc.SecurityGroupRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -34618,7 +35768,7 @@ func NewSecurityGroupRule_Override(s SecurityGroupRule, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroupRule",
+		"hashicorp_aws.vpc.SecurityGroupRule",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -34754,7 +35904,7 @@ func SecurityGroupRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.SecurityGroupRule",
+		"hashicorp_aws.vpc.SecurityGroupRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -34767,7 +35917,7 @@ func SecurityGroupRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.SecurityGroupRule",
+		"hashicorp_aws.vpc.SecurityGroupRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -34977,6 +36127,7 @@ func (s *jsiiProxy_SecurityGroupRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type SecurityGroupRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -35027,6 +36178,8 @@ type SecurityGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *SecurityGroupTimeouts
+	SetInternalValue(val *SecurityGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -35088,6 +36241,16 @@ func (j *jsiiProxy_SecurityGroupTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SecurityGroupTimeoutsOutputReference) InternalValue() *SecurityGroupTimeouts {
+	var returns *SecurityGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SecurityGroupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -35124,7 +36287,7 @@ func NewSecurityGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_SecurityGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroupTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SecurityGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -35136,7 +36299,7 @@ func NewSecurityGroupTimeoutsOutputReference_Override(s SecurityGroupTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SecurityGroupTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SecurityGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -35154,6 +36317,14 @@ func (j *jsiiProxy_SecurityGroupTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityGroupTimeoutsOutputReference) SetInternalValue(val *SecurityGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -35812,7 +36983,7 @@ func NewSubnet(scope constructs.Construct, id *string, config *SubnetConfig) Sub
 	j := jsiiProxy_Subnet{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Subnet",
+		"hashicorp_aws.vpc.Subnet",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -35825,7 +36996,7 @@ func NewSubnet_Override(s Subnet, scope constructs.Construct, id *string, config
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Subnet",
+		"hashicorp_aws.vpc.Subnet",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -35969,7 +37140,7 @@ func Subnet_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.Subnet",
+		"hashicorp_aws.vpc.Subnet",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -35982,7 +37153,7 @@ func Subnet_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.Subnet",
+		"hashicorp_aws.vpc.Subnet",
 		"tfResourceType",
 		&returns,
 	)
@@ -36240,6 +37411,7 @@ func (s *jsiiProxy_Subnet) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type SubnetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -36294,6 +37466,8 @@ type SubnetTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *SubnetTimeouts
+	SetInternalValue(val *SubnetTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -36355,6 +37529,16 @@ func (j *jsiiProxy_SubnetTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SubnetTimeoutsOutputReference) InternalValue() *SubnetTimeouts {
+	var returns *SubnetTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SubnetTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -36391,7 +37575,7 @@ func NewSubnetTimeoutsOutputReference(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_SubnetTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SubnetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -36403,7 +37587,7 @@ func NewSubnetTimeoutsOutputReference_Override(s SubnetTimeoutsOutputReference, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.SubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SubnetTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -36421,6 +37605,14 @@ func (j *jsiiProxy_SubnetTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SubnetTimeoutsOutputReference) SetInternalValue(val *SubnetTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -36587,8 +37779,22 @@ type Vpc interface {
 	InstanceTenancy() *string
 	SetInstanceTenancy(val *string)
 	InstanceTenancyInput() *string
+	Ipv4IpamPoolId() *string
+	SetIpv4IpamPoolId(val *string)
+	Ipv4IpamPoolIdInput() *string
+	Ipv4NetmaskLength() *float64
+	SetIpv4NetmaskLength(val *float64)
+	Ipv4NetmaskLengthInput() *float64
 	Ipv6AssociationId() *string
 	Ipv6CidrBlock() *string
+	SetIpv6CidrBlock(val *string)
+	Ipv6CidrBlockInput() *string
+	Ipv6IpamPoolId() *string
+	SetIpv6IpamPoolId(val *string)
+	Ipv6IpamPoolIdInput() *string
+	Ipv6NetmaskLength() *float64
+	SetIpv6NetmaskLength(val *float64)
+	Ipv6NetmaskLengthInput() *float64
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MainRouteTableId() *string
@@ -36614,11 +37820,17 @@ type Vpc interface {
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAssignGeneratedIpv6CidrBlock()
+	ResetCidrBlock()
 	ResetEnableClassiclink()
 	ResetEnableClassiclinkDnsSupport()
 	ResetEnableDnsHostnames()
 	ResetEnableDnsSupport()
 	ResetInstanceTenancy()
+	ResetIpv4IpamPoolId()
+	ResetIpv4NetmaskLength()
+	ResetIpv6CidrBlock()
+	ResetIpv6IpamPoolId()
+	ResetIpv6NetmaskLength()
 	ResetOverrideLogicalId()
 	ResetTags()
 	ResetTagsAll()
@@ -36893,6 +38105,46 @@ func (j *jsiiProxy_Vpc) InstanceTenancyInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_Vpc) Ipv4IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv4IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv4NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv4NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Vpc) Ipv6AssociationId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -36908,6 +38160,56 @@ func (j *jsiiProxy_Vpc) Ipv6CidrBlock() *string {
 	_jsii_.Get(
 		j,
 		"ipv6CidrBlock",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv6CidrBlockInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6CidrBlockInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv6IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv6IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv6NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Ipv6NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLengthInput",
 		&returns,
 	)
 	return returns
@@ -37050,7 +38352,7 @@ func NewVpc(scope constructs.Construct, id *string, config *VpcConfig) Vpc {
 	j := jsiiProxy_Vpc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Vpc",
+		"hashicorp_aws.vpc.Vpc",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -37063,7 +38365,7 @@ func NewVpc_Override(v Vpc, scope constructs.Construct, id *string, config *VpcC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.Vpc",
+		"hashicorp_aws.vpc.Vpc",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -37141,6 +38443,46 @@ func (j *jsiiProxy_Vpc) SetInstanceTenancy(val *string) {
 	)
 }
 
+func (j *jsiiProxy_Vpc) SetIpv4IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv4IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Vpc) SetIpv4NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv4NetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Vpc) SetIpv6CidrBlock(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6CidrBlock",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Vpc) SetIpv6IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Vpc) SetIpv6NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv6NetmaskLength",
+		val,
+	)
+}
+
 func (j *jsiiProxy_Vpc) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	_jsii_.Set(
 		j,
@@ -37183,7 +38525,7 @@ func Vpc_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.Vpc",
+		"hashicorp_aws.vpc.Vpc",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37196,7 +38538,7 @@ func Vpc_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.Vpc",
+		"hashicorp_aws.vpc.Vpc",
 		"tfResourceType",
 		&returns,
 	)
@@ -37300,6 +38642,14 @@ func (v *jsiiProxy_Vpc) ResetAssignGeneratedIpv6CidrBlock() {
 	)
 }
 
+func (v *jsiiProxy_Vpc) ResetCidrBlock() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCidrBlock",
+		nil, // no parameters
+	)
+}
+
 func (v *jsiiProxy_Vpc) ResetEnableClassiclink() {
 	_jsii_.InvokeVoid(
 		v,
@@ -37336,6 +38686,46 @@ func (v *jsiiProxy_Vpc) ResetInstanceTenancy() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetInstanceTenancy",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_Vpc) ResetIpv4IpamPoolId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv4IpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_Vpc) ResetIpv4NetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv4NetmaskLength",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_Vpc) ResetIpv6CidrBlock() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv6CidrBlock",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_Vpc) ResetIpv6IpamPoolId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv6IpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_Vpc) ResetIpv6NetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv6NetmaskLength",
 		nil, // no parameters
 	)
 }
@@ -37422,6 +38812,7 @@ func (v *jsiiProxy_Vpc) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -37431,10 +38822,10 @@ type VpcConfig struct {
 	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#cidr_block Vpc#cidr_block}.
-	CidrBlock *string `json:"cidrBlock"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#assign_generated_ipv6_cidr_block Vpc#assign_generated_ipv6_cidr_block}.
 	AssignGeneratedIpv6CidrBlock interface{} `json:"assignGeneratedIpv6CidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#cidr_block Vpc#cidr_block}.
+	CidrBlock *string `json:"cidrBlock"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#enable_classiclink Vpc#enable_classiclink}.
 	EnableClassiclink interface{} `json:"enableClassiclink"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#enable_classiclink_dns_support Vpc#enable_classiclink_dns_support}.
@@ -37445,6 +38836,16 @@ type VpcConfig struct {
 	EnableDnsSupport interface{} `json:"enableDnsSupport"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#instance_tenancy Vpc#instance_tenancy}.
 	InstanceTenancy *string `json:"instanceTenancy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#ipv4_ipam_pool_id Vpc#ipv4_ipam_pool_id}.
+	Ipv4IpamPoolId *string `json:"ipv4IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#ipv4_netmask_length Vpc#ipv4_netmask_length}.
+	Ipv4NetmaskLength *float64 `json:"ipv4NetmaskLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#ipv6_cidr_block Vpc#ipv6_cidr_block}.
+	Ipv6CidrBlock *string `json:"ipv6CidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#ipv6_ipam_pool_id Vpc#ipv6_ipam_pool_id}.
+	Ipv6IpamPoolId *string `json:"ipv6IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#ipv6_netmask_length Vpc#ipv6_netmask_length}.
+	Ipv6NetmaskLength *float64 `json:"ipv6NetmaskLength"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#tags Vpc#tags}.
 	Tags interface{} `json:"tags"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc.html#tags_all Vpc#tags_all}.
@@ -37828,7 +39229,7 @@ func NewVpcDhcpOptions(scope constructs.Construct, id *string, config *VpcDhcpOp
 	j := jsiiProxy_VpcDhcpOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcDhcpOptions",
+		"hashicorp_aws.vpc.VpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -37841,7 +39242,7 @@ func NewVpcDhcpOptions_Override(v VpcDhcpOptions, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcDhcpOptions",
+		"hashicorp_aws.vpc.VpcDhcpOptions",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -37945,7 +39346,7 @@ func VpcDhcpOptions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcDhcpOptions",
+		"hashicorp_aws.vpc.VpcDhcpOptions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -37958,7 +39359,7 @@ func VpcDhcpOptions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcDhcpOptions",
+		"hashicorp_aws.vpc.VpcDhcpOptions",
 		"tfResourceType",
 		&returns,
 	)
@@ -38409,7 +39810,7 @@ func NewVpcDhcpOptionsAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_VpcDhcpOptionsAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociation",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -38422,7 +39823,7 @@ func NewVpcDhcpOptionsAssociation_Override(v VpcDhcpOptionsAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociation",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociation",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -38486,7 +39887,7 @@ func VpcDhcpOptionsAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociation",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -38499,7 +39900,7 @@ func VpcDhcpOptionsAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociation",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -38661,6 +40062,7 @@ func (v *jsiiProxy_VpcDhcpOptionsAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcDhcpOptionsAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -38676,6 +40078,7 @@ type VpcDhcpOptionsAssociationConfig struct {
 	VpcId *string `json:"vpcId"`
 }
 
+// AWS VPC.
 type VpcDhcpOptionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -39252,7 +40655,7 @@ func NewVpcEndpoint(scope constructs.Construct, id *string, config *VpcEndpointC
 	j := jsiiProxy_VpcEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpoint",
+		"hashicorp_aws.vpc.VpcEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -39265,7 +40668,7 @@ func NewVpcEndpoint_Override(v VpcEndpoint, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpoint",
+		"hashicorp_aws.vpc.VpcEndpoint",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -39401,7 +40804,7 @@ func VpcEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpoint",
+		"hashicorp_aws.vpc.VpcEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -39414,7 +40817,7 @@ func VpcEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpoint",
+		"hashicorp_aws.vpc.VpcEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -39677,6 +41080,7 @@ func (v *jsiiProxy_VpcEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -40017,7 +41421,7 @@ func NewVpcEndpointConnectionNotification(scope constructs.Construct, id *string
 	j := jsiiProxy_VpcEndpointConnectionNotification{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotification",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotification",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -40030,7 +41434,7 @@ func NewVpcEndpointConnectionNotification_Override(v VpcEndpointConnectionNotifi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotification",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotification",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -40110,7 +41514,7 @@ func VpcEndpointConnectionNotification_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotification",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotification",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -40123,7 +41527,7 @@ func VpcEndpointConnectionNotification_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotification",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotification",
 		"tfResourceType",
 		&returns,
 	)
@@ -40301,6 +41705,7 @@ func (v *jsiiProxy_VpcEndpointConnectionNotification) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS VPC.
 type VpcEndpointConnectionNotificationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -40399,7 +41804,7 @@ func NewVpcEndpointDnsEntry(terraformResource cdktf.ITerraformResource, terrafor
 	j := jsiiProxy_VpcEndpointDnsEntry{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.VpcEndpointDnsEntry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -40412,7 +41817,7 @@ func NewVpcEndpointDnsEntry_Override(v VpcEndpointDnsEntry, terraformResource cd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.VpcEndpointDnsEntry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		v,
 	)
@@ -40745,7 +42150,7 @@ func NewVpcEndpointRouteTableAssociation(scope constructs.Construct, id *string,
 	j := jsiiProxy_VpcEndpointRouteTableAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociation",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -40758,7 +42163,7 @@ func NewVpcEndpointRouteTableAssociation_Override(v VpcEndpointRouteTableAssocia
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociation",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociation",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -40822,7 +42227,7 @@ func VpcEndpointRouteTableAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociation",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -40835,7 +42240,7 @@ func VpcEndpointRouteTableAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociation",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -40997,6 +42402,7 @@ func (v *jsiiProxy_VpcEndpointRouteTableAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcEndpointRouteTableAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -41444,7 +42850,7 @@ func NewVpcEndpointService(scope constructs.Construct, id *string, config *VpcEn
 	j := jsiiProxy_VpcEndpointService{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointService",
+		"hashicorp_aws.vpc.VpcEndpointService",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -41457,7 +42863,7 @@ func NewVpcEndpointService_Override(v VpcEndpointService, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointService",
+		"hashicorp_aws.vpc.VpcEndpointService",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -41561,7 +42967,7 @@ func VpcEndpointService_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpointService",
+		"hashicorp_aws.vpc.VpcEndpointService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -41574,7 +42980,7 @@ func VpcEndpointService_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpointService",
+		"hashicorp_aws.vpc.VpcEndpointService",
 		"tfResourceType",
 		&returns,
 	)
@@ -42030,7 +43436,7 @@ func NewVpcEndpointServiceAllowedPrincipal(scope constructs.Construct, id *strin
 	j := jsiiProxy_VpcEndpointServiceAllowedPrincipal{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipal",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipal",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -42043,7 +43449,7 @@ func NewVpcEndpointServiceAllowedPrincipal_Override(v VpcEndpointServiceAllowedP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipal",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipal",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -42107,7 +43513,7 @@ func VpcEndpointServiceAllowedPrincipal_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipal",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipal",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -42120,7 +43526,7 @@ func VpcEndpointServiceAllowedPrincipal_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipal",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipal",
 		"tfResourceType",
 		&returns,
 	)
@@ -42282,6 +43688,7 @@ func (v *jsiiProxy_VpcEndpointServiceAllowedPrincipal) ToTerraform() interface{}
 	return returns
 }
 
+// AWS VPC.
 type VpcEndpointServiceAllowedPrincipalConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -42297,6 +43704,7 @@ type VpcEndpointServiceAllowedPrincipalConfig struct {
 	VpcEndpointServiceId *string `json:"vpcEndpointServiceId"`
 }
 
+// AWS VPC.
 type VpcEndpointServiceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -42423,7 +43831,7 @@ func NewVpcEndpointServicePrivateDnsNameConfiguration(terraformResource cdktf.IT
 	j := jsiiProxy_VpcEndpointServicePrivateDnsNameConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointServicePrivateDnsNameConfiguration",
+		"hashicorp_aws.vpc.VpcEndpointServicePrivateDnsNameConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -42436,7 +43844,7 @@ func NewVpcEndpointServicePrivateDnsNameConfiguration_Override(v VpcEndpointServ
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointServicePrivateDnsNameConfiguration",
+		"hashicorp_aws.vpc.VpcEndpointServicePrivateDnsNameConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		v,
 	)
@@ -42793,7 +44201,7 @@ func NewVpcEndpointSubnetAssociation(scope constructs.Construct, id *string, con
 	j := jsiiProxy_VpcEndpointSubnetAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociation",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -42806,7 +44214,7 @@ func NewVpcEndpointSubnetAssociation_Override(v VpcEndpointSubnetAssociation, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociation",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociation",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -42870,7 +44278,7 @@ func VpcEndpointSubnetAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociation",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -42883,7 +44291,7 @@ func VpcEndpointSubnetAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociation",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -43061,6 +44469,7 @@ func (v *jsiiProxy_VpcEndpointSubnetAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcEndpointSubnetAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -43095,6 +44504,8 @@ type VpcEndpointSubnetAssociationTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *VpcEndpointSubnetAssociationTimeouts
+	SetInternalValue(val *VpcEndpointSubnetAssociationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -43156,6 +44567,16 @@ func (j *jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference) DeleteIn
 	return returns
 }
 
+func (j *jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference) InternalValue() *VpcEndpointSubnetAssociationTimeouts {
+	var returns *VpcEndpointSubnetAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -43192,7 +44613,7 @@ func NewVpcEndpointSubnetAssociationTimeoutsOutputReference(terraformResource cd
 	j := jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43204,7 +44625,7 @@ func NewVpcEndpointSubnetAssociationTimeoutsOutputReference_Override(v VpcEndpoi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -43222,6 +44643,14 @@ func (j *jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference) SetDelet
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcEndpointSubnetAssociationTimeoutsOutputReference) SetInternalValue(val *VpcEndpointSubnetAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -43367,6 +44796,8 @@ type VpcEndpointTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *VpcEndpointTimeouts
+	SetInternalValue(val *VpcEndpointTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -43432,6 +44863,16 @@ func (j *jsiiProxy_VpcEndpointTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_VpcEndpointTimeoutsOutputReference) InternalValue() *VpcEndpointTimeouts {
+	var returns *VpcEndpointTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcEndpointTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -43488,7 +44929,7 @@ func NewVpcEndpointTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_VpcEndpointTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -43500,7 +44941,7 @@ func NewVpcEndpointTimeoutsOutputReference_Override(v VpcEndpointTimeoutsOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcEndpointTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -43518,6 +44959,14 @@ func (j *jsiiProxy_VpcEndpointTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcEndpointTimeoutsOutputReference) SetInternalValue(val *VpcEndpointTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -43662,6 +45111,3831 @@ func (v *jsiiProxy_VpcEndpointTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html aws_vpc_ipam}.
+type VpcIpam interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	OperatingRegions() *[]*VpcIpamOperatingRegions
+	SetOperatingRegions(val *[]*VpcIpamOperatingRegions)
+	OperatingRegionsInput() *[]*VpcIpamOperatingRegions
+	PrivateDefaultScopeId() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	PublicDefaultScopeId() *string
+	RawOverrides() interface{}
+	ScopeCount() *float64
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetDescription()
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpam
+type jsiiProxy_VpcIpam struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpam) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) OperatingRegions() *[]*VpcIpamOperatingRegions {
+	var returns *[]*VpcIpamOperatingRegions
+	_jsii_.Get(
+		j,
+		"operatingRegions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) OperatingRegionsInput() *[]*VpcIpamOperatingRegions {
+	var returns *[]*VpcIpamOperatingRegions
+	_jsii_.Get(
+		j,
+		"operatingRegionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) PrivateDefaultScopeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"privateDefaultScopeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) PublicDefaultScopeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicDefaultScopeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) ScopeCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"scopeCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpam) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html aws_vpc_ipam} Resource.
+func NewVpcIpam(scope constructs.Construct, id *string, config *VpcIpamConfig) VpcIpam {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpam{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpam",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html aws_vpc_ipam} Resource.
+func NewVpcIpam_Override(v VpcIpam, scope constructs.Construct, id *string, config *VpcIpamConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpam",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetOperatingRegions(val *[]*VpcIpamOperatingRegions) {
+	_jsii_.Set(
+		j,
+		"operatingRegions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpam) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpam_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpam",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpam_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpam",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpam) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpam) ResetDescription() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpam) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpam) ResetTags() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpam) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpam) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpam) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpam) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpam) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS VPC.
+type VpcIpamConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// operating_regions block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html#operating_regions VpcIpam#operating_regions}
+	OperatingRegions *[]*VpcIpamOperatingRegions `json:"operatingRegions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html#description VpcIpam#description}.
+	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html#tags VpcIpam#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html#tags_all VpcIpam#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+}
+
+type VpcIpamOperatingRegions struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam.html#region_name VpcIpam#region_name}.
+	RegionName *string `json:"regionName"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html aws_vpc_ipam_pool}.
+type VpcIpamPool interface {
+	cdktf.TerraformResource
+	AddressFamily() *string
+	SetAddressFamily(val *string)
+	AddressFamilyInput() *string
+	AllocationDefaultNetmaskLength() *float64
+	SetAllocationDefaultNetmaskLength(val *float64)
+	AllocationDefaultNetmaskLengthInput() *float64
+	AllocationMaxNetmaskLength() *float64
+	SetAllocationMaxNetmaskLength(val *float64)
+	AllocationMaxNetmaskLengthInput() *float64
+	AllocationMinNetmaskLength() *float64
+	SetAllocationMinNetmaskLength(val *float64)
+	AllocationMinNetmaskLengthInput() *float64
+	AllocationResourceTags() interface{}
+	SetAllocationResourceTags(val interface{})
+	AllocationResourceTagsInput() interface{}
+	Arn() *string
+	AutoImport() interface{}
+	SetAutoImport(val interface{})
+	AutoImportInput() interface{}
+	AwsService() *string
+	SetAwsService(val *string)
+	AwsServiceInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IpamScopeId() *string
+	SetIpamScopeId(val *string)
+	IpamScopeIdInput() *string
+	IpamScopeType() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Locale() *string
+	SetLocale(val *string)
+	LocaleInput() *string
+	Node() constructs.Node
+	PoolDepth() *float64
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	PubliclyAdvertisable() interface{}
+	SetPubliclyAdvertisable(val interface{})
+	PubliclyAdvertisableInput() interface{}
+	RawOverrides() interface{}
+	SourceIpamPoolId() *string
+	SetSourceIpamPoolId(val *string)
+	SourceIpamPoolIdInput() *string
+	State() *string
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetAllocationDefaultNetmaskLength()
+	ResetAllocationMaxNetmaskLength()
+	ResetAllocationMinNetmaskLength()
+	ResetAllocationResourceTags()
+	ResetAutoImport()
+	ResetAwsService()
+	ResetDescription()
+	ResetLocale()
+	ResetOverrideLogicalId()
+	ResetPubliclyAdvertisable()
+	ResetSourceIpamPoolId()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpamPool
+type jsiiProxy_VpcIpamPool struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpamPool) AddressFamily() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"addressFamily",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AddressFamilyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"addressFamilyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationDefaultNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationDefaultNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationDefaultNetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationDefaultNetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationMaxNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMaxNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationMaxNetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMaxNetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationMinNetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMinNetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationMinNetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"allocationMinNetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationResourceTags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allocationResourceTags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AllocationResourceTagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allocationResourceTagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AutoImport() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoImport",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AutoImportInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoImportInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AwsService() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"awsService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) AwsServiceInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"awsServiceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) IpamScopeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) IpamScopeIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) IpamScopeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Locale() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"locale",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) LocaleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"localeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) PoolDepth() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"poolDepth",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) PubliclyAdvertisable() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publiclyAdvertisable",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) PubliclyAdvertisableInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publiclyAdvertisableInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) SourceIpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sourceIpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) SourceIpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sourceIpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) State() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"state",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPool) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html aws_vpc_ipam_pool} Resource.
+func NewVpcIpamPool(scope constructs.Construct, id *string, config *VpcIpamPoolConfig) VpcIpamPool {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpamPool{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPool",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html aws_vpc_ipam_pool} Resource.
+func NewVpcIpamPool_Override(v VpcIpamPool, scope constructs.Construct, id *string, config *VpcIpamPoolConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPool",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAddressFamily(val *string) {
+	_jsii_.Set(
+		j,
+		"addressFamily",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAllocationDefaultNetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"allocationDefaultNetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAllocationMaxNetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"allocationMaxNetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAllocationMinNetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"allocationMinNetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAllocationResourceTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"allocationResourceTags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAutoImport(val interface{}) {
+	_jsii_.Set(
+		j,
+		"autoImport",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetAwsService(val *string) {
+	_jsii_.Set(
+		j,
+		"awsService",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetIpamScopeId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipamScopeId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetLocale(val *string) {
+	_jsii_.Set(
+		j,
+		"locale",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetPubliclyAdvertisable(val interface{}) {
+	_jsii_.Set(
+		j,
+		"publiclyAdvertisable",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetSourceIpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"sourceIpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPool) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpamPool_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpamPool",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpamPool_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpamPool",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAllocationDefaultNetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAllocationDefaultNetmaskLength",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAllocationMaxNetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAllocationMaxNetmaskLength",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAllocationMinNetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAllocationMinNetmaskLength",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAllocationResourceTags() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAllocationResourceTags",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAutoImport() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAutoImport",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetAwsService() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetAwsService",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetDescription() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetLocale() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetLocale",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetPubliclyAdvertisable() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetPubliclyAdvertisable",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetSourceIpamPoolId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetSourceIpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetTags() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPool) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpamPool) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPool) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html aws_vpc_ipam_pool_cidr}.
+type VpcIpamPoolCidr interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	Cidr() *string
+	SetCidr(val *string)
+	CidrAuthorizationContext() VpcIpamPoolCidrCidrAuthorizationContextOutputReference
+	CidrAuthorizationContextInput() *VpcIpamPoolCidrCidrAuthorizationContext
+	CidrInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IpamPoolId() *string
+	SetIpamPoolId(val *string)
+	IpamPoolIdInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutCidrAuthorizationContext(value *VpcIpamPoolCidrCidrAuthorizationContext)
+	ResetCidr()
+	ResetCidrAuthorizationContext()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpamPoolCidr
+type jsiiProxy_VpcIpamPoolCidr struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Cidr() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidr",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) CidrAuthorizationContext() VpcIpamPoolCidrCidrAuthorizationContextOutputReference {
+	var returns VpcIpamPoolCidrCidrAuthorizationContextOutputReference
+	_jsii_.Get(
+		j,
+		"cidrAuthorizationContext",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) CidrAuthorizationContextInput() *VpcIpamPoolCidrCidrAuthorizationContext {
+	var returns *VpcIpamPoolCidrCidrAuthorizationContext
+	_jsii_.Get(
+		j,
+		"cidrAuthorizationContextInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) CidrInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidrInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html aws_vpc_ipam_pool_cidr} Resource.
+func NewVpcIpamPoolCidr(scope constructs.Construct, id *string, config *VpcIpamPoolCidrConfig) VpcIpamPoolCidr {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpamPoolCidr{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidr",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html aws_vpc_ipam_pool_cidr} Resource.
+func NewVpcIpamPoolCidr_Override(v VpcIpamPoolCidr, scope constructs.Construct, id *string, config *VpcIpamPoolCidrConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidr",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetCidr(val *string) {
+	_jsii_.Set(
+		j,
+		"cidr",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetIpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidr) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpamPoolCidr_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpamPoolCidr",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpamPoolCidr_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpamPoolCidr",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidr) PutCidrAuthorizationContext(value *VpcIpamPoolCidrCidrAuthorizationContext) {
+	_jsii_.InvokeVoid(
+		v,
+		"putCidrAuthorizationContext",
+		[]interface{}{value},
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidr) ResetCidr() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCidr",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidr) ResetCidrAuthorizationContext() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCidrAuthorizationContext",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidr) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpamPoolCidr) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidr) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html aws_vpc_ipam_pool_cidr_allocation}.
+type VpcIpamPoolCidrAllocation interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	Cidr() *string
+	SetCidr(val *string)
+	CidrInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IpamPoolAllocationId() *string
+	IpamPoolId() *string
+	SetIpamPoolId(val *string)
+	IpamPoolIdInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	NetmaskLength() *float64
+	SetNetmaskLength(val *float64)
+	NetmaskLengthInput() *float64
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ResourceId() *string
+	ResourceOwner() *string
+	ResourceType() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetCidr()
+	ResetDescription()
+	ResetNetmaskLength()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpamPoolCidrAllocation
+type jsiiProxy_VpcIpamPoolCidrAllocation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Cidr() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidr",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) CidrInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cidrInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) IpamPoolAllocationId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolAllocationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"netmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"netmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) ResourceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) ResourceOwner() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceOwner",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) ResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html aws_vpc_ipam_pool_cidr_allocation} Resource.
+func NewVpcIpamPoolCidrAllocation(scope constructs.Construct, id *string, config *VpcIpamPoolCidrAllocationConfig) VpcIpamPoolCidrAllocation {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpamPoolCidrAllocation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html aws_vpc_ipam_pool_cidr_allocation} Resource.
+func NewVpcIpamPoolCidrAllocation_Override(v VpcIpamPoolCidrAllocation, scope constructs.Construct, id *string, config *VpcIpamPoolCidrAllocationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocation",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetCidr(val *string) {
+	_jsii_.Set(
+		j,
+		"cidr",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetIpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetNetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"netmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrAllocation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpamPoolCidrAllocation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpamPoolCidrAllocation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ResetCidr() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCidr",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ResetDescription() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ResetNetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetNetmaskLength",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrAllocation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS VPC.
+type VpcIpamPoolCidrAllocationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html#ipam_pool_id VpcIpamPoolCidrAllocation#ipam_pool_id}.
+	IpamPoolId *string `json:"ipamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html#cidr VpcIpamPoolCidrAllocation#cidr}.
+	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html#description VpcIpamPoolCidrAllocation#description}.
+	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr_allocation.html#netmask_length VpcIpamPoolCidrAllocation#netmask_length}.
+	NetmaskLength *float64 `json:"netmaskLength"`
+}
+
+type VpcIpamPoolCidrCidrAuthorizationContext struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html#message VpcIpamPoolCidr#message}.
+	Message *string `json:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html#signature VpcIpamPoolCidr#signature}.
+	Signature *string `json:"signature"`
+}
+
+type VpcIpamPoolCidrCidrAuthorizationContextOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *VpcIpamPoolCidrCidrAuthorizationContext
+	SetInternalValue(val *VpcIpamPoolCidrCidrAuthorizationContext)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Message() *string
+	SetMessage(val *string)
+	MessageInput() *string
+	Signature() *string
+	SetSignature(val *string)
+	SignatureInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetMessage()
+	ResetSignature()
+}
+
+// The jsii proxy struct for VpcIpamPoolCidrCidrAuthorizationContextOutputReference
+type jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) InternalValue() *VpcIpamPoolCidrCidrAuthorizationContext {
+	var returns *VpcIpamPoolCidrCidrAuthorizationContext
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) Message() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"message",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) MessageInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"messageInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) Signature() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"signature",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SignatureInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"signatureInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewVpcIpamPoolCidrCidrAuthorizationContextOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) VpcIpamPoolCidrCidrAuthorizationContextOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrCidrAuthorizationContextOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewVpcIpamPoolCidrCidrAuthorizationContextOutputReference_Override(v VpcIpamPoolCidrCidrAuthorizationContextOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrCidrAuthorizationContextOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetInternalValue(val *VpcIpamPoolCidrCidrAuthorizationContext) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetMessage(val *string) {
+	_jsii_.Set(
+		j,
+		"message",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetSignature(val *string) {
+	_jsii_.Set(
+		j,
+		"signature",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) ResetMessage() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetMessage",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference) ResetSignature() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetSignature",
+		nil, // no parameters
+	)
+}
+
+// AWS VPC.
+type VpcIpamPoolCidrConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html#ipam_pool_id VpcIpamPoolCidr#ipam_pool_id}.
+	IpamPoolId *string `json:"ipamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html#cidr VpcIpamPoolCidr#cidr}.
+	Cidr *string `json:"cidr"`
+	// cidr_authorization_context block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool_cidr.html#cidr_authorization_context VpcIpamPoolCidr#cidr_authorization_context}
+	CidrAuthorizationContext *VpcIpamPoolCidrCidrAuthorizationContext `json:"cidrAuthorizationContext"`
+}
+
+// AWS VPC.
+type VpcIpamPoolConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#address_family VpcIpamPool#address_family}.
+	AddressFamily *string `json:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#ipam_scope_id VpcIpamPool#ipam_scope_id}.
+	IpamScopeId *string `json:"ipamScopeId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#allocation_default_netmask_length VpcIpamPool#allocation_default_netmask_length}.
+	AllocationDefaultNetmaskLength *float64 `json:"allocationDefaultNetmaskLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#allocation_max_netmask_length VpcIpamPool#allocation_max_netmask_length}.
+	AllocationMaxNetmaskLength *float64 `json:"allocationMaxNetmaskLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#allocation_min_netmask_length VpcIpamPool#allocation_min_netmask_length}.
+	AllocationMinNetmaskLength *float64 `json:"allocationMinNetmaskLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#allocation_resource_tags VpcIpamPool#allocation_resource_tags}.
+	AllocationResourceTags interface{} `json:"allocationResourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#auto_import VpcIpamPool#auto_import}.
+	AutoImport interface{} `json:"autoImport"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#aws_service VpcIpamPool#aws_service}.
+	AwsService *string `json:"awsService"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#description VpcIpamPool#description}.
+	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#locale VpcIpamPool#locale}.
+	Locale *string `json:"locale"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#publicly_advertisable VpcIpamPool#publicly_advertisable}.
+	PubliclyAdvertisable interface{} `json:"publiclyAdvertisable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#source_ipam_pool_id VpcIpamPool#source_ipam_pool_id}.
+	SourceIpamPoolId *string `json:"sourceIpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#tags VpcIpamPool#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_pool.html#tags_all VpcIpamPool#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html aws_vpc_ipam_scope}.
+type VpcIpamScope interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IpamArn() *string
+	IpamId() *string
+	SetIpamId(val *string)
+	IpamIdInput() *string
+	IpamScopeType() *string
+	IsDefault() interface{}
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	PoolCount() *float64
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetDescription()
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpamScope
+type jsiiProxy_VpcIpamScope struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpamScope) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) IpamArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) IpamId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) IpamIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) IpamScopeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipamScopeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) IsDefault() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isDefault",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) PoolCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"poolCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpamScope) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html aws_vpc_ipam_scope} Resource.
+func NewVpcIpamScope(scope constructs.Construct, id *string, config *VpcIpamScopeConfig) VpcIpamScope {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpamScope{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamScope",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html aws_vpc_ipam_scope} Resource.
+func NewVpcIpamScope_Override(v VpcIpamScope, scope constructs.Construct, id *string, config *VpcIpamScopeConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpamScope",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetIpamId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipamId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpamScope) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpamScope_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpamScope",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpamScope_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpamScope",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpamScope) ResetDescription() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamScope) ResetTags() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamScope) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpamScope) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpamScope) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpamScope) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS VPC.
+type VpcIpamScopeConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html#ipam_id VpcIpamScope#ipam_id}.
+	IpamId *string `json:"ipamId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html#description VpcIpamScope#description}.
+	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html#tags VpcIpamScope#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipam_scope.html#tags_all VpcIpamScope#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+}
+
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html aws_vpc_ipv4_cidr_block_association}.
 type VpcIpv4CidrBlockAssociation interface {
 	cdktf.TerraformResource
@@ -43677,6 +48951,12 @@ type VpcIpv4CidrBlockAssociation interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
+	Ipv4IpamPoolId() *string
+	SetIpv4IpamPoolId(val *string)
+	Ipv4IpamPoolIdInput() *string
+	Ipv4NetmaskLength() *float64
+	SetIpv4NetmaskLength(val *float64)
+	Ipv4NetmaskLengthInput() *float64
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
@@ -43699,6 +48979,9 @@ type VpcIpv4CidrBlockAssociation interface {
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *VpcIpv4CidrBlockAssociationTimeouts)
+	ResetCidrBlock()
+	ResetIpv4IpamPoolId()
+	ResetIpv4NetmaskLength()
 	ResetOverrideLogicalId()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -43797,6 +49080,46 @@ func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) Ipv4IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) Ipv4IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv4IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) Ipv4NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) Ipv4NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv4NetmaskLengthInput",
 		&returns,
 	)
 	return returns
@@ -43919,7 +49242,7 @@ func NewVpcIpv4CidrBlockAssociation(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_VpcIpv4CidrBlockAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociation",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -43932,7 +49255,7 @@ func NewVpcIpv4CidrBlockAssociation_Override(v VpcIpv4CidrBlockAssociation, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociation",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociation",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -43958,6 +49281,22 @@ func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) SetIpv4IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv4IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociation) SetIpv4NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv4NetmaskLength",
 		val,
 	)
 }
@@ -43996,7 +49335,7 @@ func VpcIpv4CidrBlockAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociation",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -44009,7 +49348,7 @@ func VpcIpv4CidrBlockAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociation",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -44113,6 +49452,30 @@ func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) PutTimeouts(value *VpcIpv4CidrBl
 	)
 }
 
+func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) ResetCidrBlock() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCidrBlock",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) ResetIpv4IpamPoolId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv4IpamPoolId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) ResetIpv4NetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv4NetmaskLength",
+		nil, // no parameters
+	)
+}
+
 // Resets a previously passed logical Id to use the auto-generated logical id again.
 // Experimental.
 func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) ResetOverrideLogicalId() {
@@ -44187,6 +49550,7 @@ func (v *jsiiProxy_VpcIpv4CidrBlockAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcIpv4CidrBlockAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -44196,10 +49560,14 @@ type VpcIpv4CidrBlockAssociationConfig struct {
 	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
 	// Experimental.
 	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#cidr_block VpcIpv4CidrBlockAssociation#cidr_block}.
-	CidrBlock *string `json:"cidrBlock"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#vpc_id VpcIpv4CidrBlockAssociation#vpc_id}.
 	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#cidr_block VpcIpv4CidrBlockAssociation#cidr_block}.
+	CidrBlock *string `json:"cidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#ipv4_ipam_pool_id VpcIpv4CidrBlockAssociation#ipv4_ipam_pool_id}.
+	Ipv4IpamPoolId *string `json:"ipv4IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#ipv4_netmask_length VpcIpv4CidrBlockAssociation#ipv4_netmask_length}.
+	Ipv4NetmaskLength *float64 `json:"ipv4NetmaskLength"`
 	// timeouts block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv4_cidr_block_association.html#timeouts VpcIpv4CidrBlockAssociation#timeouts}
@@ -44221,6 +49589,8 @@ type VpcIpv4CidrBlockAssociationTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *VpcIpv4CidrBlockAssociationTimeouts
+	SetInternalValue(val *VpcIpv4CidrBlockAssociationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -44282,6 +49652,16 @@ func (j *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) DeleteInp
 	return returns
 }
 
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) InternalValue() *VpcIpv4CidrBlockAssociationTimeouts {
+	var returns *VpcIpv4CidrBlockAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -44318,7 +49698,7 @@ func NewVpcIpv4CidrBlockAssociationTimeoutsOutputReference(terraformResource cdk
 	j := jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -44330,7 +49710,7 @@ func NewVpcIpv4CidrBlockAssociationTimeoutsOutputReference_Override(v VpcIpv4Cid
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -44348,6 +49728,14 @@ func (j *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) SetDelete
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) SetInternalValue(val *VpcIpv4CidrBlockAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -44469,6 +49857,925 @@ func (v *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) ResetCrea
 }
 
 func (v *jsiiProxy_VpcIpv4CidrBlockAssociationTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html aws_vpc_ipv6_cidr_block_association}.
+type VpcIpv6CidrBlockAssociation interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Ipv6CidrBlock() *string
+	SetIpv6CidrBlock(val *string)
+	Ipv6CidrBlockInput() *string
+	Ipv6IpamPoolId() *string
+	SetIpv6IpamPoolId(val *string)
+	Ipv6IpamPoolIdInput() *string
+	Ipv6NetmaskLength() *float64
+	SetIpv6NetmaskLength(val *float64)
+	Ipv6NetmaskLengthInput() *float64
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() VpcIpv6CidrBlockAssociationTimeoutsOutputReference
+	TimeoutsInput() *VpcIpv6CidrBlockAssociationTimeouts
+	VpcId() *string
+	SetVpcId(val *string)
+	VpcIdInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutTimeouts(value *VpcIpv6CidrBlockAssociationTimeouts)
+	ResetIpv6CidrBlock()
+	ResetIpv6NetmaskLength()
+	ResetOverrideLogicalId()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for VpcIpv6CidrBlockAssociation
+type jsiiProxy_VpcIpv6CidrBlockAssociation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6CidrBlock() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6CidrBlock",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6CidrBlockInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6CidrBlockInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6IpamPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6IpamPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ipv6IpamPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6NetmaskLength() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLength",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Ipv6NetmaskLengthInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"ipv6NetmaskLengthInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) Timeouts() VpcIpv6CidrBlockAssociationTimeoutsOutputReference {
+	var returns VpcIpv6CidrBlockAssociationTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) TimeoutsInput() *VpcIpv6CidrBlockAssociationTimeouts {
+	var returns *VpcIpv6CidrBlockAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) VpcId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) VpcIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html aws_vpc_ipv6_cidr_block_association} Resource.
+func NewVpcIpv6CidrBlockAssociation(scope constructs.Construct, id *string, config *VpcIpv6CidrBlockAssociationConfig) VpcIpv6CidrBlockAssociation {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpv6CidrBlockAssociation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html aws_vpc_ipv6_cidr_block_association} Resource.
+func NewVpcIpv6CidrBlockAssociation_Override(v VpcIpv6CidrBlockAssociation, scope constructs.Construct, id *string, config *VpcIpv6CidrBlockAssociationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociation",
+		[]interface{}{scope, id, config},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetIpv6CidrBlock(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6CidrBlock",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetIpv6IpamPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"ipv6IpamPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetIpv6NetmaskLength(val *float64) {
+	_jsii_.Set(
+		j,
+		"ipv6NetmaskLength",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociation) SetVpcId(val *string) {
+	_jsii_.Set(
+		j,
+		"vpcId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func VpcIpv6CidrBlockAssociation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func VpcIpv6CidrBlockAssociation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		v,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		v,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) PutTimeouts(value *VpcIpv6CidrBlockAssociationTimeouts) {
+	_jsii_.InvokeVoid(
+		v,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ResetIpv6CidrBlock() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv6CidrBlock",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ResetIpv6NetmaskLength() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIpv6NetmaskLength",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		v,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS VPC.
+type VpcIpv6CidrBlockAssociationConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#ipv6_ipam_pool_id VpcIpv6CidrBlockAssociation#ipv6_ipam_pool_id}.
+	Ipv6IpamPoolId *string `json:"ipv6IpamPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#vpc_id VpcIpv6CidrBlockAssociation#vpc_id}.
+	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#ipv6_cidr_block VpcIpv6CidrBlockAssociation#ipv6_cidr_block}.
+	Ipv6CidrBlock *string `json:"ipv6CidrBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#ipv6_netmask_length VpcIpv6CidrBlockAssociation#ipv6_netmask_length}.
+	Ipv6NetmaskLength *float64 `json:"ipv6NetmaskLength"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#timeouts VpcIpv6CidrBlockAssociation#timeouts}
+	Timeouts *VpcIpv6CidrBlockAssociationTimeouts `json:"timeouts"`
+}
+
+type VpcIpv6CidrBlockAssociationTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#create VpcIpv6CidrBlockAssociation#create}.
+	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/vpc_ipv6_cidr_block_association.html#delete VpcIpv6CidrBlockAssociation#delete}.
+	Delete *string `json:"delete"`
+}
+
+type VpcIpv6CidrBlockAssociationTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *VpcIpv6CidrBlockAssociationTimeouts
+	SetInternalValue(val *VpcIpv6CidrBlockAssociationTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+}
+
+// The jsii proxy struct for VpcIpv6CidrBlockAssociationTimeoutsOutputReference
+type jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) InternalValue() *VpcIpv6CidrBlockAssociationTimeouts {
+	var returns *VpcIpv6CidrBlockAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewVpcIpv6CidrBlockAssociationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) VpcIpv6CidrBlockAssociationTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociationTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewVpcIpv6CidrBlockAssociationTimeoutsOutputReference_Override(v VpcIpv6CidrBlockAssociationTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociationTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		v,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetInternalValue(val *VpcIpv6CidrBlockAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		v,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		v,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		v,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference) ResetDelete() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetDelete",
@@ -44912,7 +51219,7 @@ func NewVpcPeeringConnection(scope constructs.Construct, id *string, config *Vpc
 	j := jsiiProxy_VpcPeeringConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnection",
+		"hashicorp_aws.vpc.VpcPeeringConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -44925,7 +51232,7 @@ func NewVpcPeeringConnection_Override(v VpcPeeringConnection, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnection",
+		"hashicorp_aws.vpc.VpcPeeringConnection",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -45029,7 +51336,7 @@ func VpcPeeringConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcPeeringConnection",
+		"hashicorp_aws.vpc.VpcPeeringConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -45042,7 +51349,7 @@ func VpcPeeringConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcPeeringConnection",
+		"hashicorp_aws.vpc.VpcPeeringConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -45686,7 +51993,7 @@ func NewVpcPeeringConnectionAccepterA(scope constructs.Construct, id *string, co
 	j := jsiiProxy_VpcPeeringConnectionAccepterA{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterA",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterA",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -45699,7 +52006,7 @@ func NewVpcPeeringConnectionAccepterA_Override(v VpcPeeringConnectionAccepterA, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterA",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterA",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -45779,7 +52086,7 @@ func VpcPeeringConnectionAccepterA_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterA",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterA",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -45792,7 +52099,7 @@ func VpcPeeringConnectionAccepterA_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterA",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterA",
 		"tfResourceType",
 		&returns,
 	)
@@ -46010,6 +52317,7 @@ func (v *jsiiProxy_VpcPeeringConnectionAccepterA) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpcPeeringConnectionAccepterAConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -46057,6 +52365,8 @@ type VpcPeeringConnectionAccepterAccepterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionAccepterAccepter
+	SetInternalValue(val *VpcPeeringConnectionAccepterAccepter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -46139,6 +52449,16 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference) AllowVpc
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference) InternalValue() *VpcPeeringConnectionAccepterAccepter {
+	var returns *VpcPeeringConnectionAccepterAccepter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -46175,7 +52495,7 @@ func NewVpcPeeringConnectionAccepterAccepterOutputReference(terraformResource cd
 	j := jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -46187,7 +52507,7 @@ func NewVpcPeeringConnectionAccepterAccepterOutputReference_Override(v VpcPeerin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -46213,6 +52533,14 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference) SetAllow
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionAccepterAccepterOutputReference) SetInternalValue(val *VpcPeeringConnectionAccepterAccepter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -46360,6 +52688,8 @@ type VpcPeeringConnectionAccepterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionAccepter
+	SetInternalValue(val *VpcPeeringConnectionAccepter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -46442,6 +52772,16 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterOutputReference) AllowVpcToRemote
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionAccepterOutputReference) InternalValue() *VpcPeeringConnectionAccepter {
+	var returns *VpcPeeringConnectionAccepter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionAccepterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -46478,7 +52818,7 @@ func NewVpcPeeringConnectionAccepterOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_VpcPeeringConnectionAccepterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -46490,7 +52830,7 @@ func NewVpcPeeringConnectionAccepterOutputReference_Override(v VpcPeeringConnect
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -46516,6 +52856,14 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterOutputReference) SetAllowVpcToRem
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionAccepterOutputReference) SetInternalValue(val *VpcPeeringConnectionAccepter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -46672,6 +53020,8 @@ type VpcPeeringConnectionAccepterRequesterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionAccepterRequester
+	SetInternalValue(val *VpcPeeringConnectionAccepterRequester)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -46754,6 +53104,16 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) AllowVp
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) InternalValue() *VpcPeeringConnectionAccepterRequester {
+	var returns *VpcPeeringConnectionAccepterRequester
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -46790,7 +53150,7 @@ func NewVpcPeeringConnectionAccepterRequesterOutputReference(terraformResource c
 	j := jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -46802,7 +53162,7 @@ func NewVpcPeeringConnectionAccepterRequesterOutputReference_Override(v VpcPeeri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -46828,6 +53188,14 @@ func (j *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) SetAllo
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) SetInternalValue(val *VpcPeeringConnectionAccepterRequester) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -46964,6 +53332,7 @@ func (v *jsiiProxy_VpcPeeringConnectionAccepterRequesterOutputReference) ResetAl
 	)
 }
 
+// AWS VPC.
 type VpcPeeringConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -47259,7 +53628,7 @@ func NewVpcPeeringConnectionOptions(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_VpcPeeringConnectionOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptions",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -47272,7 +53641,7 @@ func NewVpcPeeringConnectionOptions_Override(v VpcPeeringConnectionOptions, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptions",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptions",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -47328,7 +53697,7 @@ func VpcPeeringConnectionOptions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptions",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -47341,7 +53710,7 @@ func VpcPeeringConnectionOptions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptions",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptions",
 		"tfResourceType",
 		&returns,
 	)
@@ -47555,6 +53924,8 @@ type VpcPeeringConnectionOptionsAccepterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionOptionsAccepter
+	SetInternalValue(val *VpcPeeringConnectionOptionsAccepter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -47637,6 +54008,16 @@ func (j *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) AllowVpcT
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) InternalValue() *VpcPeeringConnectionOptionsAccepter {
+	var returns *VpcPeeringConnectionOptionsAccepter
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -47673,7 +54054,7 @@ func NewVpcPeeringConnectionOptionsAccepterOutputReference(terraformResource cdk
 	j := jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -47685,7 +54066,7 @@ func NewVpcPeeringConnectionOptionsAccepterOutputReference_Override(v VpcPeering
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsAccepterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -47711,6 +54092,14 @@ func (j *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) SetAllowV
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) SetInternalValue(val *VpcPeeringConnectionOptionsAccepter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -47847,6 +54236,7 @@ func (v *jsiiProxy_VpcPeeringConnectionOptionsAccepterOutputReference) ResetAllo
 	)
 }
 
+// AWS VPC.
 type VpcPeeringConnectionOptionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -47888,6 +54278,8 @@ type VpcPeeringConnectionOptionsRequesterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionOptionsRequester
+	SetInternalValue(val *VpcPeeringConnectionOptionsRequester)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -47970,6 +54362,16 @@ func (j *jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference) AllowVpc
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference) InternalValue() *VpcPeeringConnectionOptionsRequester {
+	var returns *VpcPeeringConnectionOptionsRequester
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -48006,7 +54408,7 @@ func NewVpcPeeringConnectionOptionsRequesterOutputReference(terraformResource cd
 	j := jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -48018,7 +54420,7 @@ func NewVpcPeeringConnectionOptionsRequesterOutputReference_Override(v VpcPeerin
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -48044,6 +54446,14 @@ func (j *jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference) SetAllow
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionOptionsRequesterOutputReference) SetInternalValue(val *VpcPeeringConnectionOptionsRequester) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -48200,6 +54610,8 @@ type VpcPeeringConnectionRequesterOutputReference interface {
 	AllowVpcToRemoteClassicLink() interface{}
 	SetAllowVpcToRemoteClassicLink(val interface{})
 	AllowVpcToRemoteClassicLinkInput() interface{}
+	InternalValue() *VpcPeeringConnectionRequester
+	SetInternalValue(val *VpcPeeringConnectionRequester)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -48282,6 +54694,16 @@ func (j *jsiiProxy_VpcPeeringConnectionRequesterOutputReference) AllowVpcToRemot
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionRequesterOutputReference) InternalValue() *VpcPeeringConnectionRequester {
+	var returns *VpcPeeringConnectionRequester
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionRequesterOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -48318,7 +54740,7 @@ func NewVpcPeeringConnectionRequesterOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_VpcPeeringConnectionRequesterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -48330,7 +54752,7 @@ func NewVpcPeeringConnectionRequesterOutputReference_Override(v VpcPeeringConnec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionRequesterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -48356,6 +54778,14 @@ func (j *jsiiProxy_VpcPeeringConnectionRequesterOutputReference) SetAllowVpcToRe
 	_jsii_.Set(
 		j,
 		"allowVpcToRemoteClassicLink",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionRequesterOutputReference) SetInternalValue(val *VpcPeeringConnectionRequester) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -48509,6 +54939,8 @@ type VpcPeeringConnectionTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *VpcPeeringConnectionTimeouts
+	SetInternalValue(val *VpcPeeringConnectionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -48574,6 +55006,16 @@ func (j *jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference) DeleteInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference) InternalValue() *VpcPeeringConnectionTimeouts {
+	var returns *VpcPeeringConnectionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -48630,7 +55072,7 @@ func NewVpcPeeringConnectionTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -48642,7 +55084,7 @@ func NewVpcPeeringConnectionTimeoutsOutputReference_Override(v VpcPeeringConnect
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpcPeeringConnectionTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -48660,6 +55102,14 @@ func (j *jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference) SetDelete(val *s
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpcPeeringConnectionTimeoutsOutputReference) SetInternalValue(val *VpcPeeringConnectionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -50310,7 +56760,7 @@ func NewVpnConnection(scope constructs.Construct, id *string, config *VpnConnect
 	j := jsiiProxy_VpnConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnection",
+		"hashicorp_aws.vpc.VpnConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -50323,7 +56773,7 @@ func NewVpnConnection_Override(v VpnConnection, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnection",
+		"hashicorp_aws.vpc.VpnConnection",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -50763,7 +57213,7 @@ func VpnConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpnConnection",
+		"hashicorp_aws.vpc.VpnConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -50776,7 +57226,7 @@ func VpnConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpnConnection",
+		"hashicorp_aws.vpc.VpnConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -51340,6 +57790,7 @@ func (v *jsiiProxy_VpnConnection) VgwTelemetry(index *string) VpnConnectionVgwTe
 	return returns
 }
 
+// AWS VPC.
 type VpnConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -51682,7 +58133,7 @@ func NewVpnConnectionRoute(scope constructs.Construct, id *string, config *VpnCo
 	j := jsiiProxy_VpnConnectionRoute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionRoute",
+		"hashicorp_aws.vpc.VpnConnectionRoute",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -51695,7 +58146,7 @@ func NewVpnConnectionRoute_Override(v VpnConnectionRoute, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionRoute",
+		"hashicorp_aws.vpc.VpnConnectionRoute",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -51759,7 +58210,7 @@ func VpnConnectionRoute_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpnConnectionRoute",
+		"hashicorp_aws.vpc.VpnConnectionRoute",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -51772,7 +58223,7 @@ func VpnConnectionRoute_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpnConnectionRoute",
+		"hashicorp_aws.vpc.VpnConnectionRoute",
 		"tfResourceType",
 		&returns,
 	)
@@ -51934,6 +58385,7 @@ func (v *jsiiProxy_VpnConnectionRoute) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpnConnectionRouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -52039,7 +58491,7 @@ func NewVpnConnectionRoutes(terraformResource cdktf.ITerraformResource, terrafor
 	j := jsiiProxy_VpnConnectionRoutes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionRoutes",
+		"hashicorp_aws.vpc.VpnConnectionRoutes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -52052,7 +58504,7 @@ func NewVpnConnectionRoutes_Override(v VpnConnectionRoutes, terraformResource cd
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionRoutes",
+		"hashicorp_aws.vpc.VpnConnectionRoutes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		v,
 	)
@@ -52264,7 +58716,7 @@ func NewVpnConnectionVgwTelemetry(terraformResource cdktf.ITerraformResource, te
 	j := jsiiProxy_VpnConnectionVgwTelemetry{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionVgwTelemetry",
+		"hashicorp_aws.vpc.VpnConnectionVgwTelemetry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -52277,7 +58729,7 @@ func NewVpnConnectionVgwTelemetry_Override(v VpnConnectionVgwTelemetry, terrafor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnConnectionVgwTelemetry",
+		"hashicorp_aws.vpc.VpnConnectionVgwTelemetry",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		v,
 	)
@@ -52695,7 +59147,7 @@ func NewVpnGateway(scope constructs.Construct, id *string, config *VpnGatewayCon
 	j := jsiiProxy_VpnGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGateway",
+		"hashicorp_aws.vpc.VpnGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -52708,7 +59160,7 @@ func NewVpnGateway_Override(v VpnGateway, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGateway",
+		"hashicorp_aws.vpc.VpnGateway",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -52796,7 +59248,7 @@ func VpnGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpnGateway",
+		"hashicorp_aws.vpc.VpnGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -52809,7 +59261,7 @@ func VpnGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpnGateway",
+		"hashicorp_aws.vpc.VpnGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -53244,7 +59696,7 @@ func NewVpnGatewayAttachment(scope constructs.Construct, id *string, config *Vpn
 	j := jsiiProxy_VpnGatewayAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayAttachment",
+		"hashicorp_aws.vpc.VpnGatewayAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -53257,7 +59709,7 @@ func NewVpnGatewayAttachment_Override(v VpnGatewayAttachment, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayAttachment",
+		"hashicorp_aws.vpc.VpnGatewayAttachment",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -53321,7 +59773,7 @@ func VpnGatewayAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpnGatewayAttachment",
+		"hashicorp_aws.vpc.VpnGatewayAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -53334,7 +59786,7 @@ func VpnGatewayAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpnGatewayAttachment",
+		"hashicorp_aws.vpc.VpnGatewayAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -53496,6 +59948,7 @@ func (v *jsiiProxy_VpnGatewayAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpnGatewayAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -53511,6 +59964,7 @@ type VpnGatewayAttachmentConfig struct {
 	VpnGatewayId *string `json:"vpnGatewayId"`
 }
 
+// AWS VPC.
 type VpnGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -53789,7 +60243,7 @@ func NewVpnGatewayRoutePropagation(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_VpnGatewayRoutePropagation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagation",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -53802,7 +60256,7 @@ func NewVpnGatewayRoutePropagation_Override(v VpnGatewayRoutePropagation, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagation",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagation",
 		[]interface{}{scope, id, config},
 		v,
 	)
@@ -53866,7 +60320,7 @@ func VpnGatewayRoutePropagation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagation",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -53879,7 +60333,7 @@ func VpnGatewayRoutePropagation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagation",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagation",
 		"tfResourceType",
 		&returns,
 	)
@@ -54057,6 +60511,7 @@ func (v *jsiiProxy_VpnGatewayRoutePropagation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS VPC.
 type VpnGatewayRoutePropagationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -54091,6 +60546,8 @@ type VpnGatewayRoutePropagationTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *VpnGatewayRoutePropagationTimeouts
+	SetInternalValue(val *VpnGatewayRoutePropagationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -54152,6 +60609,16 @@ func (j *jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference) DeleteInpu
 	return returns
 }
 
+func (j *jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference) InternalValue() *VpnGatewayRoutePropagationTimeouts {
+	var returns *VpnGatewayRoutePropagationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -54188,7 +60655,7 @@ func NewVpnGatewayRoutePropagationTimeoutsOutputReference(terraformResource cdkt
 	j := jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -54200,7 +60667,7 @@ func NewVpnGatewayRoutePropagationTimeoutsOutputReference_Override(v VpnGatewayR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		v,
 	)
@@ -54218,6 +60685,14 @@ func (j *jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference) SetDelete(
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VpnGatewayRoutePropagationTimeoutsOutputReference) SetInternalValue(val *VpnGatewayRoutePropagationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

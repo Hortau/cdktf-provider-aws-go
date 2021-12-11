@@ -1,12 +1,12 @@
 package ram
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/ram/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/ram/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html aws_ram_resource_share}.
@@ -316,7 +316,6 @@ func (j *jsiiProxy_DataAwsRamResourceShare) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html aws_ram_resource_share} Data Source.
 func NewDataAwsRamResourceShare(scope constructs.Construct, id *string, config *DataAwsRamResourceShareConfig) DataAwsRamResourceShare {
 	_init_.Initialize()
@@ -324,7 +323,7 @@ func NewDataAwsRamResourceShare(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsRamResourceShare{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.DataAwsRamResourceShare",
+		"hashicorp_aws.ram.DataAwsRamResourceShare",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -337,7 +336,7 @@ func NewDataAwsRamResourceShare_Override(d DataAwsRamResourceShare, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.DataAwsRamResourceShare",
+		"hashicorp_aws.ram.DataAwsRamResourceShare",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -417,7 +416,7 @@ func DataAwsRamResourceShare_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RAM.DataAwsRamResourceShare",
+		"hashicorp_aws.ram.DataAwsRamResourceShare",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -430,7 +429,7 @@ func DataAwsRamResourceShare_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RAM.DataAwsRamResourceShare",
+		"hashicorp_aws.ram.DataAwsRamResourceShare",
 		"tfResourceType",
 		&returns,
 	)
@@ -608,6 +607,7 @@ func (d *jsiiProxy_DataAwsRamResourceShare) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Resource Access Manager.
 type DataAwsRamResourceShareConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -862,7 +862,6 @@ func (j *jsiiProxy_RamPrincipalAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html aws_ram_principal_association} Resource.
 func NewRamPrincipalAssociation(scope constructs.Construct, id *string, config *RamPrincipalAssociationConfig) RamPrincipalAssociation {
 	_init_.Initialize()
@@ -870,7 +869,7 @@ func NewRamPrincipalAssociation(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_RamPrincipalAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamPrincipalAssociation",
+		"hashicorp_aws.ram.RamPrincipalAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -883,7 +882,7 @@ func NewRamPrincipalAssociation_Override(r RamPrincipalAssociation, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamPrincipalAssociation",
+		"hashicorp_aws.ram.RamPrincipalAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -947,7 +946,7 @@ func RamPrincipalAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RAM.RamPrincipalAssociation",
+		"hashicorp_aws.ram.RamPrincipalAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -960,7 +959,7 @@ func RamPrincipalAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RAM.RamPrincipalAssociation",
+		"hashicorp_aws.ram.RamPrincipalAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1122,6 +1121,7 @@ func (r *jsiiProxy_RamPrincipalAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Resource Access Manager.
 type RamPrincipalAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1363,7 +1363,6 @@ func (j *jsiiProxy_RamResourceAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html aws_ram_resource_association} Resource.
 func NewRamResourceAssociation(scope constructs.Construct, id *string, config *RamResourceAssociationConfig) RamResourceAssociation {
 	_init_.Initialize()
@@ -1371,7 +1370,7 @@ func NewRamResourceAssociation(scope constructs.Construct, id *string, config *R
 	j := jsiiProxy_RamResourceAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceAssociation",
+		"hashicorp_aws.ram.RamResourceAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1384,7 +1383,7 @@ func NewRamResourceAssociation_Override(r RamResourceAssociation, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceAssociation",
+		"hashicorp_aws.ram.RamResourceAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -1448,7 +1447,7 @@ func RamResourceAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RAM.RamResourceAssociation",
+		"hashicorp_aws.ram.RamResourceAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1461,7 +1460,7 @@ func RamResourceAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RAM.RamResourceAssociation",
+		"hashicorp_aws.ram.RamResourceAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1623,6 +1622,7 @@ func (r *jsiiProxy_RamResourceAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Resource Access Manager.
 type RamResourceAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1948,7 +1948,6 @@ func (j *jsiiProxy_RamResourceShare) TimeoutsInput() *RamResourceShareTimeouts {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html aws_ram_resource_share} Resource.
 func NewRamResourceShare(scope constructs.Construct, id *string, config *RamResourceShareConfig) RamResourceShare {
 	_init_.Initialize()
@@ -1956,7 +1955,7 @@ func NewRamResourceShare(scope constructs.Construct, id *string, config *RamReso
 	j := jsiiProxy_RamResourceShare{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShare",
+		"hashicorp_aws.ram.RamResourceShare",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1969,7 +1968,7 @@ func NewRamResourceShare_Override(r RamResourceShare, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShare",
+		"hashicorp_aws.ram.RamResourceShare",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -2049,7 +2048,7 @@ func RamResourceShare_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RAM.RamResourceShare",
+		"hashicorp_aws.ram.RamResourceShare",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2062,7 +2061,7 @@ func RamResourceShare_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RAM.RamResourceShare",
+		"hashicorp_aws.ram.RamResourceShare",
 		"tfResourceType",
 		&returns,
 	)
@@ -2568,7 +2567,6 @@ func (j *jsiiProxy_RamResourceShareAccepter) TimeoutsInput() *RamResourceShareAc
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html aws_ram_resource_share_accepter} Resource.
 func NewRamResourceShareAccepter(scope constructs.Construct, id *string, config *RamResourceShareAccepterConfig) RamResourceShareAccepter {
 	_init_.Initialize()
@@ -2576,7 +2574,7 @@ func NewRamResourceShareAccepter(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_RamResourceShareAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareAccepter",
+		"hashicorp_aws.ram.RamResourceShareAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2589,7 +2587,7 @@ func NewRamResourceShareAccepter_Override(r RamResourceShareAccepter, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareAccepter",
+		"hashicorp_aws.ram.RamResourceShareAccepter",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -2645,7 +2643,7 @@ func RamResourceShareAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RAM.RamResourceShareAccepter",
+		"hashicorp_aws.ram.RamResourceShareAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2658,7 +2656,7 @@ func RamResourceShareAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RAM.RamResourceShareAccepter",
+		"hashicorp_aws.ram.RamResourceShareAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -2836,6 +2834,7 @@ func (r *jsiiProxy_RamResourceShareAccepter) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Resource Access Manager.
 type RamResourceShareAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2868,6 +2867,8 @@ type RamResourceShareAccepterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RamResourceShareAccepterTimeouts
+	SetInternalValue(val *RamResourceShareAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2929,6 +2930,16 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) DeleteInput(
 	return returns
 }
 
+func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) InternalValue() *RamResourceShareAccepterTimeouts {
+	var returns *RamResourceShareAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2959,14 +2970,13 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-
 func NewRamResourceShareAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RamResourceShareAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareAccepterTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2978,7 +2988,7 @@ func NewRamResourceShareAccepterTimeoutsOutputReference_Override(r RamResourceSh
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareAccepterTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -2996,6 +3006,14 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetDelete(va
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetInternalValue(val *RamResourceShareAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3124,6 +3142,7 @@ func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) ResetDelete(
 	)
 }
 
+// AWS Resource Access Manager.
 type RamResourceShareConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3162,6 +3181,8 @@ type RamResourceShareTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RamResourceShareTimeouts
+	SetInternalValue(val *RamResourceShareTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3223,6 +3244,16 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) DeleteInput() *strin
 	return returns
 }
 
+func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) InternalValue() *RamResourceShareTimeouts {
+	var returns *RamResourceShareTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3253,14 +3284,13 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) TerraformResource() 
 	return returns
 }
 
-
 func NewRamResourceShareTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RamResourceShareTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RamResourceShareTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3272,7 +3302,7 @@ func NewRamResourceShareTimeoutsOutputReference_Override(r RamResourceShareTimeo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RAM.RamResourceShareTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -3290,6 +3320,14 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetDelete(val *strin
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetInternalValue(val *RamResourceShareTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3417,4 +3455,3 @@ func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) ResetDelete() {
 		nil, // no parameters
 	)
 }
-

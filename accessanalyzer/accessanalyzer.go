@@ -302,7 +302,7 @@ func NewAccessanalyzerAnalyzer(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_AccessanalyzerAnalyzer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AccessAnalyzer.AccessanalyzerAnalyzer",
+		"hashicorp_aws.accessanalyzer.AccessanalyzerAnalyzer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -315,7 +315,7 @@ func NewAccessanalyzerAnalyzer_Override(a AccessanalyzerAnalyzer, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AccessAnalyzer.AccessanalyzerAnalyzer",
+		"hashicorp_aws.accessanalyzer.AccessanalyzerAnalyzer",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -395,7 +395,7 @@ func AccessanalyzerAnalyzer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AccessAnalyzer.AccessanalyzerAnalyzer",
+		"hashicorp_aws.accessanalyzer.AccessanalyzerAnalyzer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -408,7 +408,7 @@ func AccessanalyzerAnalyzer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AccessAnalyzer.AccessanalyzerAnalyzer",
+		"hashicorp_aws.accessanalyzer.AccessanalyzerAnalyzer",
 		"tfResourceType",
 		&returns,
 	)
@@ -594,6 +594,7 @@ func (a *jsiiProxy_AccessanalyzerAnalyzer) ToTerraform() interface{} {
 	return returns
 }
 
+// Access Analyzer Analyzer.
 type AccessanalyzerAnalyzerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

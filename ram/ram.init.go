@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.DataAwsRamResourceShare",
+		"hashicorp_aws.ram.DataAwsRamResourceShare",
 		reflect.TypeOf((*DataAwsRamResourceShare)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -58,15 +58,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.DataAwsRamResourceShareConfig",
+		"hashicorp_aws.ram.DataAwsRamResourceShareConfig",
 		reflect.TypeOf((*DataAwsRamResourceShareConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.DataAwsRamResourceShareFilter",
+		"hashicorp_aws.ram.DataAwsRamResourceShareFilter",
 		reflect.TypeOf((*DataAwsRamResourceShareFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamPrincipalAssociation",
+		"hashicorp_aws.ram.RamPrincipalAssociation",
 		reflect.TypeOf((*RamPrincipalAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -107,11 +107,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamPrincipalAssociationConfig",
+		"hashicorp_aws.ram.RamPrincipalAssociationConfig",
 		reflect.TypeOf((*RamPrincipalAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamResourceAssociation",
+		"hashicorp_aws.ram.RamResourceAssociation",
 		reflect.TypeOf((*RamResourceAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -152,11 +152,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamResourceAssociationConfig",
+		"hashicorp_aws.ram.RamResourceAssociationConfig",
 		reflect.TypeOf((*RamResourceAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamResourceShare",
+		"hashicorp_aws.ram.RamResourceShare",
 		reflect.TypeOf((*RamResourceShare)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -209,7 +209,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamResourceShareAccepter",
+		"hashicorp_aws.ram.RamResourceShareAccepter",
 		reflect.TypeOf((*RamResourceShareAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -259,15 +259,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamResourceShareAccepterConfig",
+		"hashicorp_aws.ram.RamResourceShareAccepterConfig",
 		reflect.TypeOf((*RamResourceShareAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamResourceShareAccepterTimeouts",
+		"hashicorp_aws.ram.RamResourceShareAccepterTimeouts",
 		reflect.TypeOf((*RamResourceShareAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamResourceShareAccepterTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*RamResourceShareAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -278,6 +278,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -293,15 +294,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamResourceShareConfig",
+		"hashicorp_aws.ram.RamResourceShareConfig",
 		reflect.TypeOf((*RamResourceShareConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.RAM.RamResourceShareTimeouts",
+		"hashicorp_aws.ram.RamResourceShareTimeouts",
 		reflect.TypeOf((*RamResourceShareTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.RAM.RamResourceShareTimeoutsOutputReference",
+		"hashicorp_aws.ram.RamResourceShareTimeoutsOutputReference",
 		reflect.TypeOf((*RamResourceShareTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -312,6 +313,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

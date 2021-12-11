@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetector",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetector",
 		reflect.TypeOf((*DataAwsGuarddutyDetector)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.DataAwsGuarddutyDetectorConfig",
+		"hashicorp_aws.guardduty.DataAwsGuarddutyDetectorConfig",
 		reflect.TypeOf((*DataAwsGuarddutyDetectorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyDetector",
+		"hashicorp_aws.guardduty.GuarddutyDetector",
 		reflect.TypeOf((*GuarddutyDetector)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -107,21 +107,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorConfig",
+		"hashicorp_aws.guardduty.GuarddutyDetectorConfig",
 		reflect.TypeOf((*GuarddutyDetectorConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasources",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasources",
 		reflect.TypeOf((*GuarddutyDetectorDatasources)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesOutputReference",
 		reflect.TypeOf((*GuarddutyDetectorDatasourcesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -139,11 +140,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesS3Logs",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesS3Logs",
 		reflect.TypeOf((*GuarddutyDetectorDatasourcesS3Logs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyDetectorDatasourcesS3LogsOutputReference",
 		reflect.TypeOf((*GuarddutyDetectorDatasourcesS3LogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enable", GoGetter: "Enable"},
@@ -152,6 +153,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -165,7 +167,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyFilter",
+		"hashicorp_aws.guardduty.GuarddutyFilter",
 		reflect.TypeOf((*GuarddutyFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -223,19 +225,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterConfig",
+		"hashicorp_aws.guardduty.GuarddutyFilterConfig",
 		reflect.TypeOf((*GuarddutyFilterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterFindingCriteria",
+		"hashicorp_aws.guardduty.GuarddutyFilterFindingCriteria",
 		reflect.TypeOf((*GuarddutyFilterFindingCriteria)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterFindingCriteriaCriterion",
+		"hashicorp_aws.guardduty.GuarddutyFilterFindingCriteriaCriterion",
 		reflect.TypeOf((*GuarddutyFilterFindingCriteriaCriterion)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyFilterFindingCriteriaOutputReference",
 		reflect.TypeOf((*GuarddutyFilterFindingCriteriaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "criterion", GoGetter: "Criterion"},
@@ -244,6 +246,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -257,7 +260,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepter",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepter",
 		reflect.TypeOf((*GuarddutyInviteAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -302,15 +305,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepterConfig",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepterConfig",
 		reflect.TypeOf((*GuarddutyInviteAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepterTimeouts",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepterTimeouts",
 		reflect.TypeOf((*GuarddutyInviteAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyInviteAccepterTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyInviteAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*GuarddutyInviteAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -319,6 +322,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -333,7 +337,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyIpset",
+		"hashicorp_aws.guardduty.GuarddutyIpset",
 		reflect.TypeOf((*GuarddutyIpset)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activate", GoGetter: "Activate"},
@@ -387,11 +391,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyIpsetConfig",
+		"hashicorp_aws.guardduty.GuarddutyIpsetConfig",
 		reflect.TypeOf((*GuarddutyIpsetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyMember",
+		"hashicorp_aws.guardduty.GuarddutyMember",
 		reflect.TypeOf((*GuarddutyMember)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -448,15 +452,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyMemberConfig",
+		"hashicorp_aws.guardduty.GuarddutyMemberConfig",
 		reflect.TypeOf((*GuarddutyMemberConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyMemberTimeouts",
+		"hashicorp_aws.guardduty.GuarddutyMemberTimeouts",
 		reflect.TypeOf((*GuarddutyMemberTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyMemberTimeoutsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyMemberTimeoutsOutputReference",
 		reflect.TypeOf((*GuarddutyMemberTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -465,6 +469,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -482,7 +487,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccount",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccount",
 		reflect.TypeOf((*GuarddutyOrganizationAdminAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -521,11 +526,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationAdminAccountConfig",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationAdminAccountConfig",
 		reflect.TypeOf((*GuarddutyOrganizationAdminAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfiguration",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfiguration",
 		reflect.TypeOf((*GuarddutyOrganizationConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -570,21 +575,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationConfig",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationConfig",
 		reflect.TypeOf((*GuarddutyOrganizationConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasources",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasources",
 		reflect.TypeOf((*GuarddutyOrganizationConfigurationDatasources)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesOutputReference",
 		reflect.TypeOf((*GuarddutyOrganizationConfigurationDatasourcesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -602,11 +608,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesS3Logs",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesS3Logs",
 		reflect.TypeOf((*GuarddutyOrganizationConfigurationDatasourcesS3Logs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
+		"hashicorp_aws.guardduty.GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference",
 		reflect.TypeOf((*GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoEnable", GoGetter: "AutoEnable"},
@@ -615,6 +621,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -628,7 +635,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestination",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestination",
 		reflect.TypeOf((*GuarddutyPublishingDestination)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -674,11 +681,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyPublishingDestinationConfig",
+		"hashicorp_aws.guardduty.GuarddutyPublishingDestinationConfig",
 		reflect.TypeOf((*GuarddutyPublishingDestinationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelset",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelset",
 		reflect.TypeOf((*GuarddutyThreatintelset)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activate", GoGetter: "Activate"},
@@ -732,7 +739,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.GuardDuty.GuarddutyThreatintelsetConfig",
+		"hashicorp_aws.guardduty.GuarddutyThreatintelsetConfig",
 		reflect.TypeOf((*GuarddutyThreatintelsetConfig)(nil)).Elem(),
 	)
 }

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodes",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodes",
 		reflect.TypeOf((*DataAwsMskBrokerNodes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -48,11 +48,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodesConfig",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodesConfig",
 		reflect.TypeOf((*DataAwsMskBrokerNodesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodesNodeInfoList",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodesNodeInfoList",
 		reflect.TypeOf((*DataAwsMskBrokerNodesNodeInfoList)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attachedEniId", GoGetter: "AttachedEniId"},
@@ -77,7 +77,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.DataAwsMskCluster",
+		"hashicorp_aws.msk.DataAwsMskCluster",
 		reflect.TypeOf((*DataAwsMskCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -127,11 +127,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.DataAwsMskClusterConfig",
+		"hashicorp_aws.msk.DataAwsMskClusterConfig",
 		reflect.TypeOf((*DataAwsMskClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.DataAwsMskConfiguration",
+		"hashicorp_aws.msk.DataAwsMskConfiguration",
 		reflect.TypeOf((*DataAwsMskConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -175,11 +175,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.DataAwsMskConfigurationConfig",
+		"hashicorp_aws.msk.DataAwsMskConfigurationConfig",
 		reflect.TypeOf((*DataAwsMskConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersion",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersion",
 		reflect.TypeOf((*DataAwsMskKafkaVersion)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -223,11 +223,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersionConfig",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersionConfig",
 		reflect.TypeOf((*DataAwsMskKafkaVersionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskCluster",
+		"hashicorp_aws.msk.MskCluster",
 		reflect.TypeOf((*MskCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -314,11 +314,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterBrokerNodeGroupInfo",
+		"hashicorp_aws.msk.MskClusterBrokerNodeGroupInfo",
 		reflect.TypeOf((*MskClusterBrokerNodeGroupInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterBrokerNodeGroupInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterBrokerNodeGroupInfoOutputReference",
 		reflect.TypeOf((*MskClusterBrokerNodeGroupInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "azDistribution", GoGetter: "AzDistribution"},
@@ -333,6 +333,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -349,17 +350,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterClientAuthentication",
+		"hashicorp_aws.msk.MskClusterClientAuthentication",
 		reflect.TypeOf((*MskClusterClientAuthentication)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationOutputReference",
 		reflect.TypeOf((*MskClusterClientAuthenticationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -381,11 +383,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationSasl",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationSasl",
 		reflect.TypeOf((*MskClusterClientAuthenticationSasl)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationSaslOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationSaslOutputReference",
 		reflect.TypeOf((*MskClusterClientAuthenticationSaslOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -394,6 +396,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iam", GoGetter: "Iam"},
 			_jsii_.MemberProperty{JsiiProperty: "iamInput", GoGetter: "IamInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -411,11 +414,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationTls",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationTls",
 		reflect.TypeOf((*MskClusterClientAuthenticationTls)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationTlsOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationTlsOutputReference",
 		reflect.TypeOf((*MskClusterClientAuthenticationTlsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateAuthorityArns", GoGetter: "CertificateAuthorityArns"},
@@ -424,6 +427,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -438,15 +442,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterConfig",
+		"hashicorp_aws.msk.MskClusterConfig",
 		reflect.TypeOf((*MskClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterConfigurationInfo",
+		"hashicorp_aws.msk.MskClusterConfigurationInfo",
 		reflect.TypeOf((*MskClusterConfigurationInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterConfigurationInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterConfigurationInfoOutputReference",
 		reflect.TypeOf((*MskClusterConfigurationInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
@@ -455,6 +459,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -470,15 +475,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfo",
+		"hashicorp_aws.msk.MskClusterEncryptionInfo",
 		reflect.TypeOf((*MskClusterEncryptionInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoEncryptionInTransit",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoEncryptionInTransit",
 		reflect.TypeOf((*MskClusterEncryptionInfoEncryptionInTransit)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
 		reflect.TypeOf((*MskClusterEncryptionInfoEncryptionInTransitOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clientBroker", GoGetter: "ClientBroker"},
@@ -489,6 +494,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "inCluster", GoGetter: "InCluster"},
 			_jsii_.MemberProperty{JsiiProperty: "inClusterInput", GoGetter: "InClusterInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -504,7 +510,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoOutputReference",
 		reflect.TypeOf((*MskClusterEncryptionInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "encryptionAtRestKmsKeyArn", GoGetter: "EncryptionAtRestKmsKeyArn"},
@@ -515,6 +521,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -531,19 +538,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterLoggingInfo",
+		"hashicorp_aws.msk.MskClusterLoggingInfo",
 		reflect.TypeOf((*MskClusterLoggingInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogs",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogs",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsCloudwatchLogs",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsCloudwatchLogs",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsCloudwatchLogs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -552,6 +559,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -568,11 +576,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsFirehose",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsFirehose",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsFirehose)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsFirehoseOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deliveryStream", GoGetter: "DeliveryStream"},
@@ -583,6 +591,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -597,7 +606,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsOutputReference",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cloudwatchLogs", GoGetter: "CloudwatchLogs"},
@@ -608,6 +617,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -629,11 +639,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsS3",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsS3",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsS3OutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsS3OutputReference",
 		reflect.TypeOf((*MskClusterLoggingInfoBrokerLogsS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -644,6 +654,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -661,7 +672,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoOutputReference",
 		reflect.TypeOf((*MskClusterLoggingInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "brokerLogs", GoGetter: "BrokerLogs"},
@@ -670,6 +681,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -684,17 +696,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoring",
+		"hashicorp_aws.msk.MskClusterOpenMonitoring",
 		reflect.TypeOf((*MskClusterOpenMonitoring)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringOutputReference",
 		reflect.TypeOf((*MskClusterOpenMonitoringOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -711,15 +724,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheus",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheus",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheus)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusJmxExporter",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusJmxExporter",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheusJmxExporter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheusJmxExporterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabledInBroker", GoGetter: "EnabledInBroker"},
@@ -728,6 +741,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -741,11 +755,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusNodeExporter",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusNodeExporter",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheusNodeExporter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheusNodeExporterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabledInBroker", GoGetter: "EnabledInBroker"},
@@ -754,6 +768,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -767,13 +782,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusOutputReference",
 		reflect.TypeOf((*MskClusterOpenMonitoringPrometheusOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -795,11 +811,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskClusterTimeouts",
+		"hashicorp_aws.msk.MskClusterTimeouts",
 		reflect.TypeOf((*MskClusterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskClusterTimeoutsOutputReference",
+		"hashicorp_aws.msk.MskClusterTimeoutsOutputReference",
 		reflect.TypeOf((*MskClusterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -810,6 +826,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -828,7 +845,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskConfiguration",
+		"hashicorp_aws.msk.MskConfiguration",
 		reflect.TypeOf((*MskConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -877,11 +894,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskConfigurationConfig",
+		"hashicorp_aws.msk.MskConfigurationConfig",
 		reflect.TypeOf((*MskConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.MSK.MskScramSecretAssociation",
+		"hashicorp_aws.msk.MskScramSecretAssociation",
 		reflect.TypeOf((*MskScramSecretAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -922,7 +939,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.MSK.MskScramSecretAssociationConfig",
+		"hashicorp_aws.msk.MskScramSecretAssociationConfig",
 		reflect.TypeOf((*MskScramSecretAssociationConfig)(nil)).Elem(),
 	)
 }

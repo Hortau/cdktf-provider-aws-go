@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackages",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackages",
 		reflect.TypeOf((*DataAwsInspectorRulesPackages)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -46,11 +46,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackagesConfig",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackagesConfig",
 		reflect.TypeOf((*DataAwsInspectorRulesPackagesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Inspector.InspectorAssessmentTarget",
+		"hashicorp_aws.inspector.InspectorAssessmentTarget",
 		reflect.TypeOf((*InspectorAssessmentTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -93,11 +93,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Inspector.InspectorAssessmentTargetConfig",
+		"hashicorp_aws.inspector.InspectorAssessmentTargetConfig",
 		reflect.TypeOf((*InspectorAssessmentTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplate",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplate",
 		reflect.TypeOf((*InspectorAssessmentTemplate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -149,11 +149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplateConfig",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplateConfig",
 		reflect.TypeOf((*InspectorAssessmentTemplateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Inspector.InspectorResourceGroup",
+		"hashicorp_aws.inspector.InspectorResourceGroup",
 		reflect.TypeOf((*InspectorResourceGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -193,7 +193,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Inspector.InspectorResourceGroupConfig",
+		"hashicorp_aws.inspector.InspectorResourceGroupConfig",
 		reflect.TypeOf((*InspectorResourceGroupConfig)(nil)).Elem(),
 	)
 }

@@ -231,7 +231,7 @@ func NewDataAwsIotEndpoint(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsIotEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.DataAwsIotEndpoint",
+		"hashicorp_aws.iot.DataAwsIotEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -244,7 +244,7 @@ func NewDataAwsIotEndpoint_Override(d DataAwsIotEndpoint, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.DataAwsIotEndpoint",
+		"hashicorp_aws.iot.DataAwsIotEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -300,7 +300,7 @@ func DataAwsIotEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.DataAwsIotEndpoint",
+		"hashicorp_aws.iot.DataAwsIotEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -313,7 +313,7 @@ func DataAwsIotEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.DataAwsIotEndpoint",
+		"hashicorp_aws.iot.DataAwsIotEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -483,6 +483,7 @@ func (d *jsiiProxy_DataAwsIotEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type DataAwsIotEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -836,7 +837,7 @@ func NewIotAuthorizer(scope constructs.Construct, id *string, config *IotAuthori
 	j := jsiiProxy_IotAuthorizer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotAuthorizer",
+		"hashicorp_aws.iot.IotAuthorizer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -849,7 +850,7 @@ func NewIotAuthorizer_Override(i IotAuthorizer, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotAuthorizer",
+		"hashicorp_aws.iot.IotAuthorizer",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -945,7 +946,7 @@ func IotAuthorizer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotAuthorizer",
+		"hashicorp_aws.iot.IotAuthorizer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -958,7 +959,7 @@ func IotAuthorizer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotAuthorizer",
+		"hashicorp_aws.iot.IotAuthorizer",
 		"tfResourceType",
 		&returns,
 	)
@@ -1152,6 +1153,7 @@ func (i *jsiiProxy_IotAuthorizer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotAuthorizerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1453,7 +1455,7 @@ func NewIotCertificate(scope constructs.Construct, id *string, config *IotCertif
 	j := jsiiProxy_IotCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotCertificate",
+		"hashicorp_aws.iot.IotCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1466,7 +1468,7 @@ func NewIotCertificate_Override(i IotCertificate, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotCertificate",
+		"hashicorp_aws.iot.IotCertificate",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -1530,7 +1532,7 @@ func IotCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotCertificate",
+		"hashicorp_aws.iot.IotCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1543,7 +1545,7 @@ func IotCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotCertificate",
+		"hashicorp_aws.iot.IotCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -1713,6 +1715,7 @@ func (i *jsiiProxy_IotCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1983,7 +1986,7 @@ func NewIotPolicy(scope constructs.Construct, id *string, config *IotPolicyConfi
 	j := jsiiProxy_IotPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotPolicy",
+		"hashicorp_aws.iot.IotPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1996,7 +1999,7 @@ func NewIotPolicy_Override(i IotPolicy, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotPolicy",
+		"hashicorp_aws.iot.IotPolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -2060,7 +2063,7 @@ func IotPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotPolicy",
+		"hashicorp_aws.iot.IotPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2073,7 +2076,7 @@ func IotPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotPolicy",
+		"hashicorp_aws.iot.IotPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2468,7 +2471,7 @@ func NewIotPolicyAttachment(scope constructs.Construct, id *string, config *IotP
 	j := jsiiProxy_IotPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotPolicyAttachment",
+		"hashicorp_aws.iot.IotPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2481,7 +2484,7 @@ func NewIotPolicyAttachment_Override(i IotPolicyAttachment, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotPolicyAttachment",
+		"hashicorp_aws.iot.IotPolicyAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -2545,7 +2548,7 @@ func IotPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotPolicyAttachment",
+		"hashicorp_aws.iot.IotPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2558,7 +2561,7 @@ func IotPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotPolicyAttachment",
+		"hashicorp_aws.iot.IotPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -2720,6 +2723,7 @@ func (i *jsiiProxy_IotPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2735,6 +2739,7 @@ type IotPolicyAttachmentConfig struct {
 	Target *string `json:"target"`
 }
 
+// AWS IoT.
 type IotPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3018,7 +3023,7 @@ func NewIotRoleAlias(scope constructs.Construct, id *string, config *IotRoleAlia
 	j := jsiiProxy_IotRoleAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotRoleAlias",
+		"hashicorp_aws.iot.IotRoleAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3031,7 +3036,7 @@ func NewIotRoleAlias_Override(i IotRoleAlias, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotRoleAlias",
+		"hashicorp_aws.iot.IotRoleAlias",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -3103,7 +3108,7 @@ func IotRoleAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotRoleAlias",
+		"hashicorp_aws.iot.IotRoleAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3116,7 +3121,7 @@ func IotRoleAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotRoleAlias",
+		"hashicorp_aws.iot.IotRoleAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -3286,6 +3291,7 @@ func (i *jsiiProxy_IotRoleAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotRoleAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3594,7 +3600,7 @@ func NewIotThing(scope constructs.Construct, id *string, config *IotThingConfig)
 	j := jsiiProxy_IotThing{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThing",
+		"hashicorp_aws.iot.IotThing",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3607,7 +3613,7 @@ func NewIotThing_Override(i IotThing, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThing",
+		"hashicorp_aws.iot.IotThing",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -3679,7 +3685,7 @@ func IotThing_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotThing",
+		"hashicorp_aws.iot.IotThing",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3692,7 +3698,7 @@ func IotThing_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotThing",
+		"hashicorp_aws.iot.IotThing",
 		"tfResourceType",
 		&returns,
 	)
@@ -3870,6 +3876,7 @@ func (i *jsiiProxy_IotThing) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotThingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3885,6 +3892,2158 @@ type IotThingConfig struct {
 	Attributes interface{} `json:"attributes"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing.html#thing_type_name IotThing#thing_type_name}.
 	ThingTypeName *string `json:"thingTypeName"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html aws_iot_thing_group}.
+type IotThingGroup interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	ParentGroupName() *string
+	SetParentGroupName(val *string)
+	ParentGroupNameInput() *string
+	Properties() IotThingGroupPropertiesOutputReference
+	PropertiesInput() *IotThingGroupProperties
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Version() *float64
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	Metadata(index *string) IotThingGroupMetadata
+	OverrideLogicalId(newLogicalId *string)
+	PutProperties(value *IotThingGroupProperties)
+	ResetOverrideLogicalId()
+	ResetParentGroupName()
+	ResetProperties()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for IotThingGroup
+type jsiiProxy_IotThingGroup struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_IotThingGroup) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) ParentGroupName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parentGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) ParentGroupNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parentGroupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Properties() IotThingGroupPropertiesOutputReference {
+	var returns IotThingGroupPropertiesOutputReference
+	_jsii_.Get(
+		j,
+		"properties",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) PropertiesInput() *IotThingGroupProperties {
+	var returns *IotThingGroupProperties
+	_jsii_.Get(
+		j,
+		"propertiesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroup) Version() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"version",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html aws_iot_thing_group} Resource.
+func NewIotThingGroup(scope constructs.Construct, id *string, config *IotThingGroupConfig) IotThingGroup {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroup{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroup",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html aws_iot_thing_group} Resource.
+func NewIotThingGroup_Override(i IotThingGroup, scope constructs.Construct, id *string, config *IotThingGroupConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroup",
+		[]interface{}{scope, id, config},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetParentGroupName(val *string) {
+	_jsii_.Set(
+		j,
+		"parentGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroup) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func IotThingGroup_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.iot.IotThingGroup",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func IotThingGroup_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.iot.IotThingGroup",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		i,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IotThingGroup) Metadata(index *string) IotThingGroupMetadata {
+	var returns IotThingGroupMetadata
+
+	_jsii_.Invoke(
+		i,
+		"metadata",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		i,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) PutProperties(value *IotThingGroupProperties) {
+	_jsii_.InvokeVoid(
+		i,
+		"putProperties",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) ResetParentGroupName() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetParentGroupName",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) ResetProperties() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetProperties",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) ResetTags() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroup) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (i *jsiiProxy_IotThingGroup) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (i *jsiiProxy_IotThingGroup) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS IoT.
+type IotThingGroupConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#name IotThingGroup#name}.
+	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#parent_group_name IotThingGroup#parent_group_name}.
+	ParentGroupName *string `json:"parentGroupName"`
+	// properties block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#properties IotThingGroup#properties}
+	Properties *IotThingGroupProperties `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#tags IotThingGroup#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#tags_all IotThingGroup#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html aws_iot_thing_group_membership}.
+type IotThingGroupMembership interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() interface{}
+	SetCount(val interface{})
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	OverrideDynamicGroup() interface{}
+	SetOverrideDynamicGroup(val interface{})
+	OverrideDynamicGroupInput() interface{}
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	ThingGroupName() *string
+	SetThingGroupName(val *string)
+	ThingGroupNameInput() *string
+	ThingName() *string
+	SetThingName(val *string)
+	ThingNameInput() *string
+	AddOverride(path *string, value interface{})
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideDynamicGroup()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for IotThingGroupMembership
+type jsiiProxy_IotThingGroupMembership struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Count() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) OverrideDynamicGroup() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"overrideDynamicGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) OverrideDynamicGroupInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"overrideDynamicGroupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) ThingGroupName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"thingGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) ThingGroupNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"thingGroupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) ThingName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"thingName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) ThingNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"thingNameInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html aws_iot_thing_group_membership} Resource.
+func NewIotThingGroupMembership(scope constructs.Construct, id *string, config *IotThingGroupMembershipConfig) IotThingGroupMembership {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroupMembership{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMembership",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html aws_iot_thing_group_membership} Resource.
+func NewIotThingGroupMembership_Override(i IotThingGroupMembership, scope constructs.Construct, id *string, config *IotThingGroupMembershipConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMembership",
+		[]interface{}{scope, id, config},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetCount(val interface{}) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetOverrideDynamicGroup(val interface{}) {
+	_jsii_.Set(
+		j,
+		"overrideDynamicGroup",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetThingGroupName(val *string) {
+	_jsii_.Set(
+		j,
+		"thingGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMembership) SetThingName(val *string) {
+	_jsii_.Set(
+		j,
+		"thingName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func IotThingGroupMembership_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.iot.IotThingGroupMembership",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func IotThingGroupMembership_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.iot.IotThingGroupMembership",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		i,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		i,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (i *jsiiProxy_IotThingGroupMembership) ResetOverrideDynamicGroup() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetOverrideDynamicGroup",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroupMembership) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (i *jsiiProxy_IotThingGroupMembership) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMembership) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS IoT.
+type IotThingGroupMembershipConfig struct {
+	// Experimental.
+	Count interface{} `json:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html#thing_group_name IotThingGroupMembership#thing_group_name}.
+	ThingGroupName *string `json:"thingGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html#thing_name IotThingGroupMembership#thing_name}.
+	ThingName *string `json:"thingName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group_membership.html#override_dynamic_group IotThingGroupMembership#override_dynamic_group}.
+	OverrideDynamicGroup interface{} `json:"overrideDynamicGroup"`
+}
+
+type IotThingGroupMetadata interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	CreationDate() *string
+	ParentGroupName() *string
+	RootToParentGroups() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for IotThingGroupMetadata
+type jsiiProxy_IotThingGroupMetadata struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) CreationDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"creationDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) ParentGroupName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parentGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) RootToParentGroups() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rootToParentGroups",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewIotThingGroupMetadata(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) IotThingGroupMetadata {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroupMetadata{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMetadata",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewIotThingGroupMetadata_Override(i IotThingGroupMetadata, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMetadata",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadata) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadata) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadata) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadata) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadata) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadata) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type IotThingGroupMetadataRootToParentGroups interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	GroupArn() *string
+	GroupName() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for IotThingGroupMetadataRootToParentGroups
+type jsiiProxy_IotThingGroupMetadataRootToParentGroups struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"groupArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GroupName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"groupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewIotThingGroupMetadataRootToParentGroups(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) IotThingGroupMetadataRootToParentGroups {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroupMetadataRootToParentGroups{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMetadataRootToParentGroups",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewIotThingGroupMetadataRootToParentGroups_Override(i IotThingGroupMetadataRootToParentGroups, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupMetadataRootToParentGroups",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupMetadataRootToParentGroups) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadataRootToParentGroups) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupMetadataRootToParentGroups) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type IotThingGroupProperties struct {
+	// attribute_payload block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#attribute_payload IotThingGroup#attribute_payload}
+	AttributePayload *IotThingGroupPropertiesAttributePayload `json:"attributePayload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#description IotThingGroup#description}.
+	Description *string `json:"description"`
+}
+
+type IotThingGroupPropertiesAttributePayload struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_group.html#attributes IotThingGroup#attributes}.
+	Attributes interface{} `json:"attributes"`
+}
+
+type IotThingGroupPropertiesAttributePayloadOutputReference interface {
+	cdktf.ComplexObject
+	Attributes() interface{}
+	SetAttributes(val interface{})
+	AttributesInput() interface{}
+	InternalValue() *IotThingGroupPropertiesAttributePayload
+	SetInternalValue(val *IotThingGroupPropertiesAttributePayload)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetAttributes()
+}
+
+// The jsii proxy struct for IotThingGroupPropertiesAttributePayloadOutputReference
+type jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) Attributes() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attributes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) AttributesInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attributesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) InternalValue() *IotThingGroupPropertiesAttributePayload {
+	var returns *IotThingGroupPropertiesAttributePayload
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewIotThingGroupPropertiesAttributePayloadOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) IotThingGroupPropertiesAttributePayloadOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupPropertiesAttributePayloadOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewIotThingGroupPropertiesAttributePayloadOutputReference_Override(i IotThingGroupPropertiesAttributePayloadOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupPropertiesAttributePayloadOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) SetAttributes(val interface{}) {
+	_jsii_.Set(
+		j,
+		"attributes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) SetInternalValue(val *IotThingGroupPropertiesAttributePayload) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IotThingGroupPropertiesAttributePayloadOutputReference) ResetAttributes() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetAttributes",
+		nil, // no parameters
+	)
+}
+
+type IotThingGroupPropertiesOutputReference interface {
+	cdktf.ComplexObject
+	AttributePayload() IotThingGroupPropertiesAttributePayloadOutputReference
+	AttributePayloadInput() *IotThingGroupPropertiesAttributePayload
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	InternalValue() *IotThingGroupProperties
+	SetInternalValue(val *IotThingGroupProperties)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAttributePayload(value *IotThingGroupPropertiesAttributePayload)
+	ResetAttributePayload()
+	ResetDescription()
+}
+
+// The jsii proxy struct for IotThingGroupPropertiesOutputReference
+type jsiiProxy_IotThingGroupPropertiesOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) AttributePayload() IotThingGroupPropertiesAttributePayloadOutputReference {
+	var returns IotThingGroupPropertiesAttributePayloadOutputReference
+	_jsii_.Get(
+		j,
+		"attributePayload",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) AttributePayloadInput() *IotThingGroupPropertiesAttributePayload {
+	var returns *IotThingGroupPropertiesAttributePayload
+	_jsii_.Get(
+		j,
+		"attributePayloadInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) InternalValue() *IotThingGroupProperties {
+	var returns *IotThingGroupProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewIotThingGroupPropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) IotThingGroupPropertiesOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_IotThingGroupPropertiesOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupPropertiesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewIotThingGroupPropertiesOutputReference_Override(i IotThingGroupPropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.iot.IotThingGroupPropertiesOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		i,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) SetInternalValue(val *IotThingGroupProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingGroupPropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) PutAttributePayload(value *IotThingGroupPropertiesAttributePayload) {
+	_jsii_.InvokeVoid(
+		i,
+		"putAttributePayload",
+		[]interface{}{value},
+	)
+}
+
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) ResetAttributePayload() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetAttributePayload",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingGroupPropertiesOutputReference) ResetDescription() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetDescription",
+		nil, // no parameters
+	)
 }
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_principal_attachment.html aws_iot_thing_principal_attachment}.
@@ -4120,7 +6279,7 @@ func NewIotThingPrincipalAttachment(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_IotThingPrincipalAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachment",
+		"hashicorp_aws.iot.IotThingPrincipalAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4133,7 +6292,7 @@ func NewIotThingPrincipalAttachment_Override(i IotThingPrincipalAttachment, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachment",
+		"hashicorp_aws.iot.IotThingPrincipalAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -4197,7 +6356,7 @@ func IotThingPrincipalAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachment",
+		"hashicorp_aws.iot.IotThingPrincipalAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4210,7 +6369,7 @@ func IotThingPrincipalAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotThingPrincipalAttachment",
+		"hashicorp_aws.iot.IotThingPrincipalAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -4372,6 +6531,7 @@ func (i *jsiiProxy_IotThingPrincipalAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotThingPrincipalAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4414,6 +6574,12 @@ type IotThingType interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
+	Tags() interface{}
+	SetTags(val interface{})
+	TagsAll() interface{}
+	SetTagsAll(val interface{})
+	TagsAllInput() interface{}
+	TagsInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -4428,6 +6594,8 @@ type IotThingType interface {
 	ResetDeprecated()
 	ResetOverrideLogicalId()
 	ResetProperties()
+	ResetTags()
+	ResetTagsAll()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -4619,6 +6787,46 @@ func (j *jsiiProxy_IotThingType) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_IotThingType) Tags() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingType) TagsAll() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingType) TagsAllInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingType) TagsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_IotThingType) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -4656,7 +6864,7 @@ func NewIotThingType(scope constructs.Construct, id *string, config *IotThingTyp
 	j := jsiiProxy_IotThingType{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingType",
+		"hashicorp_aws.iot.IotThingType",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4669,7 +6877,7 @@ func NewIotThingType_Override(i IotThingType, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingType",
+		"hashicorp_aws.iot.IotThingType",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -4723,6 +6931,22 @@ func (j *jsiiProxy_IotThingType) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
+func (j *jsiiProxy_IotThingType) SetTags(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingType) SetTagsAll(val interface{}) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
 // Checks if `x` is a construct.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
@@ -4733,7 +6957,7 @@ func IotThingType_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotThingType",
+		"hashicorp_aws.iot.IotThingType",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4746,7 +6970,7 @@ func IotThingType_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotThingType",
+		"hashicorp_aws.iot.IotThingType",
 		"tfResourceType",
 		&returns,
 	)
@@ -4876,6 +7100,22 @@ func (i *jsiiProxy_IotThingType) ResetProperties() {
 	)
 }
 
+func (i *jsiiProxy_IotThingType) ResetTags() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotThingType) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
 func (i *jsiiProxy_IotThingType) SynthesizeAttributes() *map[string]interface{} {
 	var returns *map[string]interface{}
 
@@ -4932,6 +7172,7 @@ func (i *jsiiProxy_IotThingType) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS IoT.
 type IotThingTypeConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4949,6 +7190,10 @@ type IotThingTypeConfig struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_type.html#properties IotThingType#properties}
 	Properties *IotThingTypeProperties `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_type.html#tags IotThingType#tags}.
+	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iot_thing_type.html#tags_all IotThingType#tags_all}.
+	TagsAll interface{} `json:"tagsAll"`
 }
 
 type IotThingTypeProperties struct {
@@ -4963,6 +7208,8 @@ type IotThingTypePropertiesOutputReference interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	InternalValue() *IotThingTypeProperties
+	SetInternalValue(val *IotThingTypeProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SearchableAttributes() *[]*string
@@ -5002,6 +7249,16 @@ func (j *jsiiProxy_IotThingTypePropertiesOutputReference) DescriptionInput() *st
 	_jsii_.Get(
 		j,
 		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotThingTypePropertiesOutputReference) InternalValue() *IotThingTypeProperties {
+	var returns *IotThingTypeProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5063,7 +7320,7 @@ func NewIotThingTypePropertiesOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_IotThingTypePropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingTypePropertiesOutputReference",
+		"hashicorp_aws.iot.IotThingTypePropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5075,7 +7332,7 @@ func NewIotThingTypePropertiesOutputReference_Override(i IotThingTypePropertiesO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotThingTypePropertiesOutputReference",
+		"hashicorp_aws.iot.IotThingTypePropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -5085,6 +7342,14 @@ func (j *jsiiProxy_IotThingTypePropertiesOutputReference) SetDescription(val *st
 	_jsii_.Set(
 		j,
 		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotThingTypePropertiesOutputReference) SetInternalValue(val *IotThingTypeProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5967,7 +8232,7 @@ func NewIotTopicRule(scope constructs.Construct, id *string, config *IotTopicRul
 	j := jsiiProxy_IotTopicRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRule",
+		"hashicorp_aws.iot.IotTopicRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5980,7 +8245,7 @@ func NewIotTopicRule_Override(i IotTopicRule, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRule",
+		"hashicorp_aws.iot.IotTopicRule",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -6204,7 +8469,7 @@ func IotTopicRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IoT.IotTopicRule",
+		"hashicorp_aws.iot.IotTopicRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6217,7 +8482,7 @@ func IotTopicRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IoT.IotTopicRule",
+		"hashicorp_aws.iot.IotTopicRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -6565,6 +8830,7 @@ type IotTopicRuleCloudwatchMetric struct {
 	MetricTimestamp *string `json:"metricTimestamp"`
 }
 
+// AWS IoT.
 type IotTopicRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6693,6 +8959,8 @@ type IotTopicRuleDynamodbv2PutItem struct {
 
 type IotTopicRuleDynamodbv2PutItemOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleDynamodbv2PutItem
+	SetInternalValue(val *IotTopicRuleDynamodbv2PutItem)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TableName() *string
@@ -6713,6 +8981,16 @@ type IotTopicRuleDynamodbv2PutItemOutputReference interface {
 // The jsii proxy struct for IotTopicRuleDynamodbv2PutItemOutputReference
 type jsiiProxy_IotTopicRuleDynamodbv2PutItemOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleDynamodbv2PutItemOutputReference) InternalValue() *IotTopicRuleDynamodbv2PutItem {
+	var returns *IotTopicRuleDynamodbv2PutItem
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleDynamodbv2PutItemOutputReference) IsSingleItem() *bool {
@@ -6771,7 +9049,7 @@ func NewIotTopicRuleDynamodbv2PutItemOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_IotTopicRuleDynamodbv2PutItemOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleDynamodbv2PutItemOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6783,9 +9061,17 @@ func NewIotTopicRuleDynamodbv2PutItemOutputReference_Override(i IotTopicRuleDyna
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleDynamodbv2PutItemOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleDynamodbv2PutItemOutputReference) SetInternalValue(val *IotTopicRuleDynamodbv2PutItem) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6997,6 +9283,8 @@ type IotTopicRuleErrorActionCloudwatchAlarmOutputReference interface {
 	AlarmName() *string
 	SetAlarmName(val *string)
 	AlarmNameInput() *string
+	InternalValue() *IotTopicRuleErrorActionCloudwatchAlarm
+	SetInternalValue(val *IotTopicRuleErrorActionCloudwatchAlarm)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -7040,6 +9328,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchAlarmOutputReference) AlarmN
 	_jsii_.Get(
 		j,
 		"alarmNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchAlarmOutputReference) InternalValue() *IotTopicRuleErrorActionCloudwatchAlarm {
+	var returns *IotTopicRuleErrorActionCloudwatchAlarm
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7141,7 +9439,7 @@ func NewIotTopicRuleErrorActionCloudwatchAlarmOutputReference(terraformResource 
 	j := jsiiProxy_IotTopicRuleErrorActionCloudwatchAlarmOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7153,7 +9451,7 @@ func NewIotTopicRuleErrorActionCloudwatchAlarmOutputReference_Override(i IotTopi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchAlarmOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -7163,6 +9461,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchAlarmOutputReference) SetAla
 	_jsii_.Set(
 		j,
 		"alarmName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchAlarmOutputReference) SetInternalValue(val *IotTopicRuleErrorActionCloudwatchAlarm) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7316,6 +9622,8 @@ type IotTopicRuleErrorActionCloudwatchMetric struct {
 
 type IotTopicRuleErrorActionCloudwatchMetricOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionCloudwatchMetric
+	SetInternalValue(val *IotTopicRuleErrorActionCloudwatchMetric)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetricName() *string
@@ -7352,6 +9660,16 @@ type IotTopicRuleErrorActionCloudwatchMetricOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionCloudwatchMetricOutputReference
 type jsiiProxy_IotTopicRuleErrorActionCloudwatchMetricOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchMetricOutputReference) InternalValue() *IotTopicRuleErrorActionCloudwatchMetric {
+	var returns *IotTopicRuleErrorActionCloudwatchMetric
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchMetricOutputReference) IsSingleItem() *bool {
@@ -7510,7 +9828,7 @@ func NewIotTopicRuleErrorActionCloudwatchMetricOutputReference(terraformResource
 	j := jsiiProxy_IotTopicRuleErrorActionCloudwatchMetricOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7522,9 +9840,17 @@ func NewIotTopicRuleErrorActionCloudwatchMetricOutputReference_Override(i IotTop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionCloudwatchMetricOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionCloudwatchMetricOutputReference) SetInternalValue(val *IotTopicRuleErrorActionCloudwatchMetric) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7726,6 +10052,8 @@ type IotTopicRuleErrorActionDynamodbOutputReference interface {
 	HashKeyValue() *string
 	SetHashKeyValue(val *string)
 	HashKeyValueInput() *string
+	InternalValue() *IotTopicRuleErrorActionDynamodb
+	SetInternalValue(val *IotTopicRuleErrorActionDynamodb)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Operation() *string
@@ -7827,6 +10155,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbOutputReference) HashKeyValueI
 	_jsii_.Get(
 		j,
 		"hashKeyValueInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbOutputReference) InternalValue() *IotTopicRuleErrorActionDynamodb {
+	var returns *IotTopicRuleErrorActionDynamodb
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8008,7 +10346,7 @@ func NewIotTopicRuleErrorActionDynamodbOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_IotTopicRuleErrorActionDynamodbOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8020,7 +10358,7 @@ func NewIotTopicRuleErrorActionDynamodbOutputReference_Override(i IotTopicRuleEr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -8046,6 +10384,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbOutputReference) SetHashKeyVal
 	_jsii_.Set(
 		j,
 		"hashKeyValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbOutputReference) SetInternalValue(val *IotTopicRuleErrorActionDynamodb) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8273,6 +10619,8 @@ type IotTopicRuleErrorActionDynamodbv2 struct {
 
 type IotTopicRuleErrorActionDynamodbv2OutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionDynamodbv2
+	SetInternalValue(val *IotTopicRuleErrorActionDynamodbv2)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PutItem() IotTopicRuleErrorActionDynamodbv2PutItemOutputReference
@@ -8297,6 +10645,16 @@ type IotTopicRuleErrorActionDynamodbv2OutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionDynamodbv2OutputReference
 type jsiiProxy_IotTopicRuleErrorActionDynamodbv2OutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2OutputReference) InternalValue() *IotTopicRuleErrorActionDynamodbv2 {
+	var returns *IotTopicRuleErrorActionDynamodbv2
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2OutputReference) IsSingleItem() *bool {
@@ -8375,7 +10733,7 @@ func NewIotTopicRuleErrorActionDynamodbv2OutputReference(terraformResource cdktf
 	j := jsiiProxy_IotTopicRuleErrorActionDynamodbv2OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8387,9 +10745,17 @@ func NewIotTopicRuleErrorActionDynamodbv2OutputReference_Override(i IotTopicRule
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2OutputReference) SetInternalValue(val *IotTopicRuleErrorActionDynamodbv2) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8532,6 +10898,8 @@ type IotTopicRuleErrorActionDynamodbv2PutItem struct {
 
 type IotTopicRuleErrorActionDynamodbv2PutItemOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionDynamodbv2PutItem
+	SetInternalValue(val *IotTopicRuleErrorActionDynamodbv2PutItem)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TableName() *string
@@ -8552,6 +10920,16 @@ type IotTopicRuleErrorActionDynamodbv2PutItemOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionDynamodbv2PutItemOutputReference
 type jsiiProxy_IotTopicRuleErrorActionDynamodbv2PutItemOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2PutItemOutputReference) InternalValue() *IotTopicRuleErrorActionDynamodbv2PutItem {
+	var returns *IotTopicRuleErrorActionDynamodbv2PutItem
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2PutItemOutputReference) IsSingleItem() *bool {
@@ -8610,7 +10988,7 @@ func NewIotTopicRuleErrorActionDynamodbv2PutItemOutputReference(terraformResourc
 	j := jsiiProxy_IotTopicRuleErrorActionDynamodbv2PutItemOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8622,9 +11000,17 @@ func NewIotTopicRuleErrorActionDynamodbv2PutItemOutputReference_Override(i IotTo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionDynamodbv2PutItemOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionDynamodbv2PutItemOutputReference) SetInternalValue(val *IotTopicRuleErrorActionDynamodbv2PutItem) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8768,6 +11154,8 @@ type IotTopicRuleErrorActionElasticsearchOutputReference interface {
 	Index() *string
 	SetIndex(val *string)
 	IndexInput() *string
+	InternalValue() *IotTopicRuleErrorActionElasticsearch
+	SetInternalValue(val *IotTopicRuleErrorActionElasticsearch)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -8853,6 +11241,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference) IndexInp
 	return returns
 }
 
+func (j *jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference) InternalValue() *IotTopicRuleErrorActionElasticsearch {
+	var returns *IotTopicRuleErrorActionElasticsearch
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8929,7 +11327,7 @@ func NewIotTopicRuleErrorActionElasticsearchOutputReference(terraformResource cd
 	j := jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionElasticsearchOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionElasticsearchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8941,7 +11339,7 @@ func NewIotTopicRuleErrorActionElasticsearchOutputReference_Override(i IotTopicR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionElasticsearchOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionElasticsearchOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -8967,6 +11365,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference) SetIndex
 	_jsii_.Set(
 		j,
 		"index",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionElasticsearchOutputReference) SetInternalValue(val *IotTopicRuleErrorActionElasticsearch) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9109,6 +11515,8 @@ type IotTopicRuleErrorActionFirehoseOutputReference interface {
 	DeliveryStreamName() *string
 	SetDeliveryStreamName(val *string)
 	DeliveryStreamNameInput() *string
+	InternalValue() *IotTopicRuleErrorActionFirehose
+	SetInternalValue(val *IotTopicRuleErrorActionFirehose)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -9150,6 +11558,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionFirehoseOutputReference) DeliveryStrea
 	_jsii_.Get(
 		j,
 		"deliveryStreamNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionFirehoseOutputReference) InternalValue() *IotTopicRuleErrorActionFirehose {
+	var returns *IotTopicRuleErrorActionFirehose
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9231,7 +11649,7 @@ func NewIotTopicRuleErrorActionFirehoseOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_IotTopicRuleErrorActionFirehoseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionFirehoseOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9243,7 +11661,7 @@ func NewIotTopicRuleErrorActionFirehoseOutputReference_Override(i IotTopicRuleEr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionFirehoseOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -9253,6 +11671,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionFirehoseOutputReference) SetDeliverySt
 	_jsii_.Set(
 		j,
 		"deliveryStreamName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionFirehoseOutputReference) SetInternalValue(val *IotTopicRuleErrorActionFirehose) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9401,6 +11827,8 @@ type IotTopicRuleErrorActionIotAnalyticsOutputReference interface {
 	ChannelName() *string
 	SetChannelName(val *string)
 	ChannelNameInput() *string
+	InternalValue() *IotTopicRuleErrorActionIotAnalytics
+	SetInternalValue(val *IotTopicRuleErrorActionIotAnalytics)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -9438,6 +11866,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionIotAnalyticsOutputReference) ChannelNa
 	_jsii_.Get(
 		j,
 		"channelNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionIotAnalyticsOutputReference) InternalValue() *IotTopicRuleErrorActionIotAnalytics {
+	var returns *IotTopicRuleErrorActionIotAnalytics
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9499,7 +11937,7 @@ func NewIotTopicRuleErrorActionIotAnalyticsOutputReference(terraformResource cdk
 	j := jsiiProxy_IotTopicRuleErrorActionIotAnalyticsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotAnalyticsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotAnalyticsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9511,7 +11949,7 @@ func NewIotTopicRuleErrorActionIotAnalyticsOutputReference_Override(i IotTopicRu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotAnalyticsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotAnalyticsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -9521,6 +11959,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionIotAnalyticsOutputReference) SetChanne
 	_jsii_.Set(
 		j,
 		"channelName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionIotAnalyticsOutputReference) SetInternalValue(val *IotTopicRuleErrorActionIotAnalytics) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9655,6 +12101,8 @@ type IotTopicRuleErrorActionIotEventsOutputReference interface {
 	InputName() *string
 	SetInputName(val *string)
 	InputNameInput() *string
+	InternalValue() *IotTopicRuleErrorActionIotEvents
+	SetInternalValue(val *IotTopicRuleErrorActionIotEvents)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageId() *string
@@ -9696,6 +12144,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionIotEventsOutputReference) InputNameInp
 	_jsii_.Get(
 		j,
 		"inputNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionIotEventsOutputReference) InternalValue() *IotTopicRuleErrorActionIotEvents {
+	var returns *IotTopicRuleErrorActionIotEvents
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9777,7 +12235,7 @@ func NewIotTopicRuleErrorActionIotEventsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_IotTopicRuleErrorActionIotEventsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotEventsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotEventsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9789,7 +12247,7 @@ func NewIotTopicRuleErrorActionIotEventsOutputReference_Override(i IotTopicRuleE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionIotEventsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionIotEventsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -9799,6 +12257,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionIotEventsOutputReference) SetInputName
 	_jsii_.Set(
 		j,
 		"inputName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionIotEventsOutputReference) SetInternalValue(val *IotTopicRuleErrorActionIotEvents) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9946,6 +12412,8 @@ type IotTopicRuleErrorActionKinesis struct {
 
 type IotTopicRuleErrorActionKinesisOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionKinesis
+	SetInternalValue(val *IotTopicRuleErrorActionKinesis)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PartitionKey() *string
@@ -9973,6 +12441,16 @@ type IotTopicRuleErrorActionKinesisOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionKinesisOutputReference
 type jsiiProxy_IotTopicRuleErrorActionKinesisOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionKinesisOutputReference) InternalValue() *IotTopicRuleErrorActionKinesis {
+	var returns *IotTopicRuleErrorActionKinesis
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionKinesisOutputReference) IsSingleItem() *bool {
@@ -10071,7 +12549,7 @@ func NewIotTopicRuleErrorActionKinesisOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_IotTopicRuleErrorActionKinesisOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionKinesisOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionKinesisOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10083,9 +12561,17 @@ func NewIotTopicRuleErrorActionKinesisOutputReference_Override(i IotTopicRuleErr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionKinesisOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionKinesisOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionKinesisOutputReference) SetInternalValue(val *IotTopicRuleErrorActionKinesis) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -10239,6 +12725,8 @@ type IotTopicRuleErrorActionLambdaOutputReference interface {
 	FunctionArn() *string
 	SetFunctionArn(val *string)
 	FunctionArnInput() *string
+	InternalValue() *IotTopicRuleErrorActionLambda
+	SetInternalValue(val *IotTopicRuleErrorActionLambda)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10273,6 +12761,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionLambdaOutputReference) FunctionArnInpu
 	_jsii_.Get(
 		j,
 		"functionArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionLambdaOutputReference) InternalValue() *IotTopicRuleErrorActionLambda {
+	var returns *IotTopicRuleErrorActionLambda
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10314,7 +12812,7 @@ func NewIotTopicRuleErrorActionLambdaOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_IotTopicRuleErrorActionLambdaOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionLambdaOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10326,7 +12824,7 @@ func NewIotTopicRuleErrorActionLambdaOutputReference_Override(i IotTopicRuleErro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionLambdaOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionLambdaOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -10336,6 +12834,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionLambdaOutputReference) SetFunctionArn(
 	_jsii_.Set(
 		j,
 		"functionArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionLambdaOutputReference) SetInternalValue(val *IotTopicRuleErrorActionLambda) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10462,6 +12968,8 @@ type IotTopicRuleErrorActionOutputReference interface {
 	ElasticsearchInput() *IotTopicRuleErrorActionElasticsearch
 	Firehose() IotTopicRuleErrorActionFirehoseOutputReference
 	FirehoseInput() *IotTopicRuleErrorActionFirehose
+	InternalValue() *IotTopicRuleErrorAction
+	SetInternalValue(val *IotTopicRuleErrorAction)
 	IotAnalytics() IotTopicRuleErrorActionIotAnalyticsOutputReference
 	IotAnalyticsInput() *IotTopicRuleErrorActionIotAnalytics
 	IotEvents() IotTopicRuleErrorActionIotEventsOutputReference
@@ -10644,6 +13152,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionOutputReference) FirehoseInput() *IotT
 	_jsii_.Get(
 		j,
 		"firehoseInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionOutputReference) InternalValue() *IotTopicRuleErrorAction {
+	var returns *IotTopicRuleErrorAction
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10865,7 +13383,7 @@ func NewIotTopicRuleErrorActionOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_IotTopicRuleErrorActionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10877,9 +13395,17 @@ func NewIotTopicRuleErrorActionOutputReference_Override(i IotTopicRuleErrorActio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionOutputReference) SetInternalValue(val *IotTopicRuleErrorAction) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11242,6 +13768,8 @@ type IotTopicRuleErrorActionRepublish struct {
 
 type IotTopicRuleErrorActionRepublishOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionRepublish
+	SetInternalValue(val *IotTopicRuleErrorActionRepublish)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Qos() *float64
@@ -11269,6 +13797,16 @@ type IotTopicRuleErrorActionRepublishOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionRepublishOutputReference
 type jsiiProxy_IotTopicRuleErrorActionRepublishOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionRepublishOutputReference) InternalValue() *IotTopicRuleErrorActionRepublish {
+	var returns *IotTopicRuleErrorActionRepublish
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionRepublishOutputReference) IsSingleItem() *bool {
@@ -11367,7 +13905,7 @@ func NewIotTopicRuleErrorActionRepublishOutputReference(terraformResource cdktf.
 	j := jsiiProxy_IotTopicRuleErrorActionRepublishOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionRepublishOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionRepublishOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11379,9 +13917,17 @@ func NewIotTopicRuleErrorActionRepublishOutputReference_Override(i IotTopicRuleE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionRepublishOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionRepublishOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionRepublishOutputReference) SetInternalValue(val *IotTopicRuleErrorActionRepublish) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -11539,6 +14085,8 @@ type IotTopicRuleErrorActionS3OutputReference interface {
 	BucketName() *string
 	SetBucketName(val *string)
 	BucketNameInput() *string
+	InternalValue() *IotTopicRuleErrorActionS3
+	SetInternalValue(val *IotTopicRuleErrorActionS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -11579,6 +14127,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionS3OutputReference) BucketNameInput() *
 	_jsii_.Get(
 		j,
 		"bucketNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionS3OutputReference) InternalValue() *IotTopicRuleErrorActionS3 {
+	var returns *IotTopicRuleErrorActionS3
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -11660,7 +14218,7 @@ func NewIotTopicRuleErrorActionS3OutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_IotTopicRuleErrorActionS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionS3OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11672,7 +14230,7 @@ func NewIotTopicRuleErrorActionS3OutputReference_Override(i IotTopicRuleErrorAct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionS3OutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -11682,6 +14240,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionS3OutputReference) SetBucketName(val *
 	_jsii_.Set(
 		j,
 		"bucketName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionS3OutputReference) SetInternalValue(val *IotTopicRuleErrorActionS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11821,6 +14387,8 @@ type IotTopicRuleErrorActionSns struct {
 
 type IotTopicRuleErrorActionSnsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionSns
+	SetInternalValue(val *IotTopicRuleErrorActionSns)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageFormat() *string
@@ -11848,6 +14416,16 @@ type IotTopicRuleErrorActionSnsOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionSnsOutputReference
 type jsiiProxy_IotTopicRuleErrorActionSnsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionSnsOutputReference) InternalValue() *IotTopicRuleErrorActionSns {
+	var returns *IotTopicRuleErrorActionSns
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionSnsOutputReference) IsSingleItem() *bool {
@@ -11946,7 +14524,7 @@ func NewIotTopicRuleErrorActionSnsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_IotTopicRuleErrorActionSnsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSnsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11958,9 +14536,17 @@ func NewIotTopicRuleErrorActionSnsOutputReference_Override(i IotTopicRuleErrorAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSnsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSnsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionSnsOutputReference) SetInternalValue(val *IotTopicRuleErrorActionSns) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12115,6 +14701,8 @@ type IotTopicRuleErrorActionSqs struct {
 
 type IotTopicRuleErrorActionSqsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *IotTopicRuleErrorActionSqs
+	SetInternalValue(val *IotTopicRuleErrorActionSqs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	QueueUrl() *string
@@ -12141,6 +14729,16 @@ type IotTopicRuleErrorActionSqsOutputReference interface {
 // The jsii proxy struct for IotTopicRuleErrorActionSqsOutputReference
 type jsiiProxy_IotTopicRuleErrorActionSqsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionSqsOutputReference) InternalValue() *IotTopicRuleErrorActionSqs {
+	var returns *IotTopicRuleErrorActionSqs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IotTopicRuleErrorActionSqsOutputReference) IsSingleItem() *bool {
@@ -12239,7 +14837,7 @@ func NewIotTopicRuleErrorActionSqsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_IotTopicRuleErrorActionSqsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSqsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSqsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12251,9 +14849,17 @@ func NewIotTopicRuleErrorActionSqsOutputReference_Override(i IotTopicRuleErrorAc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionSqsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionSqsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionSqsOutputReference) SetInternalValue(val *IotTopicRuleErrorActionSqs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12403,6 +15009,8 @@ type IotTopicRuleErrorActionStepFunctionsOutputReference interface {
 	ExecutionNamePrefix() *string
 	SetExecutionNamePrefix(val *string)
 	ExecutionNamePrefixInput() *string
+	InternalValue() *IotTopicRuleErrorActionStepFunctions
+	SetInternalValue(val *IotTopicRuleErrorActionStepFunctions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -12444,6 +15052,16 @@ func (j *jsiiProxy_IotTopicRuleErrorActionStepFunctionsOutputReference) Executio
 	_jsii_.Get(
 		j,
 		"executionNamePrefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionStepFunctionsOutputReference) InternalValue() *IotTopicRuleErrorActionStepFunctions {
+	var returns *IotTopicRuleErrorActionStepFunctions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12525,7 +15143,7 @@ func NewIotTopicRuleErrorActionStepFunctionsOutputReference(terraformResource cd
 	j := jsiiProxy_IotTopicRuleErrorActionStepFunctionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionStepFunctionsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionStepFunctionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12537,7 +15155,7 @@ func NewIotTopicRuleErrorActionStepFunctionsOutputReference_Override(i IotTopicR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IoT.IotTopicRuleErrorActionStepFunctionsOutputReference",
+		"hashicorp_aws.iot.IotTopicRuleErrorActionStepFunctionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		i,
 	)
@@ -12547,6 +15165,14 @@ func (j *jsiiProxy_IotTopicRuleErrorActionStepFunctionsOutputReference) SetExecu
 	_jsii_.Set(
 		j,
 		"executionNamePrefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotTopicRuleErrorActionStepFunctionsOutputReference) SetInternalValue(val *IotTopicRuleErrorActionStepFunctions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

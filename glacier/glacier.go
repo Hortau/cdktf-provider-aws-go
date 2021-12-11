@@ -337,7 +337,7 @@ func NewGlacierVault(scope constructs.Construct, id *string, config *GlacierVaul
 	j := jsiiProxy_GlacierVault{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVault",
+		"hashicorp_aws.glacier.GlacierVault",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -350,7 +350,7 @@ func NewGlacierVault_Override(g GlacierVault, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVault",
+		"hashicorp_aws.glacier.GlacierVault",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -430,7 +430,7 @@ func GlacierVault_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glacier.GlacierVault",
+		"hashicorp_aws.glacier.GlacierVault",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -443,7 +443,7 @@ func GlacierVault_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glacier.GlacierVault",
+		"hashicorp_aws.glacier.GlacierVault",
 		"tfResourceType",
 		&returns,
 	)
@@ -645,6 +645,7 @@ func (g *jsiiProxy_GlacierVault) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glacier.
 type GlacierVaultConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -948,7 +949,7 @@ func NewGlacierVaultLock(scope constructs.Construct, id *string, config *Glacier
 	j := jsiiProxy_GlacierVaultLock{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVaultLock",
+		"hashicorp_aws.glacier.GlacierVaultLock",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -961,7 +962,7 @@ func NewGlacierVaultLock_Override(g GlacierVaultLock, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVaultLock",
+		"hashicorp_aws.glacier.GlacierVaultLock",
 		[]interface{}{scope, id, config},
 		g,
 	)
@@ -1041,7 +1042,7 @@ func GlacierVaultLock_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Glacier.GlacierVaultLock",
+		"hashicorp_aws.glacier.GlacierVaultLock",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1054,7 +1055,7 @@ func GlacierVaultLock_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Glacier.GlacierVaultLock",
+		"hashicorp_aws.glacier.GlacierVaultLock",
 		"tfResourceType",
 		&returns,
 	)
@@ -1224,6 +1225,7 @@ func (g *jsiiProxy_GlacierVaultLock) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Glacier.
 type GlacierVaultLockConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1255,6 +1257,8 @@ type GlacierVaultNotificationOutputReference interface {
 	Events() *[]*string
 	SetEvents(val *[]*string)
 	EventsInput() *[]*string
+	InternalValue() *GlacierVaultNotification
+	SetInternalValue(val *GlacierVaultNotification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SnsTopic() *string
@@ -1292,6 +1296,16 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) EventsInput() *[]*st
 	_jsii_.Get(
 		j,
 		"eventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlacierVaultNotificationOutputReference) InternalValue() *GlacierVaultNotification {
+	var returns *GlacierVaultNotification
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1353,7 +1367,7 @@ func NewGlacierVaultNotificationOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_GlacierVaultNotificationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVaultNotificationOutputReference",
+		"hashicorp_aws.glacier.GlacierVaultNotificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1365,7 +1379,7 @@ func NewGlacierVaultNotificationOutputReference_Override(g GlacierVaultNotificat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Glacier.GlacierVaultNotificationOutputReference",
+		"hashicorp_aws.glacier.GlacierVaultNotificationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		g,
 	)
@@ -1375,6 +1389,14 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetEvents(val *[]*st
 	_jsii_.Set(
 		j,
 		"events",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetInternalValue(val *GlacierVaultNotification) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

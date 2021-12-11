@@ -41,6 +41,7 @@ type DataAwsDynamodbTable interface {
 	StreamEnabled() interface{}
 	StreamLabel() *string
 	StreamViewType() *string
+	TableClass() *string
 	Tags() interface{}
 	SetTags(val interface{})
 	TagsInput() interface{}
@@ -316,6 +317,16 @@ func (j *jsiiProxy_DataAwsDynamodbTable) StreamViewType() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTable) TableClass() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tableClass",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsDynamodbTable) Tags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -383,7 +394,7 @@ func NewDataAwsDynamodbTable(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsDynamodbTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTable",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -396,7 +407,7 @@ func NewDataAwsDynamodbTable_Override(d DataAwsDynamodbTable, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTable",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -460,7 +471,7 @@ func DataAwsDynamodbTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTable",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -473,7 +484,7 @@ func DataAwsDynamodbTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTable",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -816,7 +827,7 @@ func NewDataAwsDynamodbTableAttribute(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsDynamodbTableAttribute{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableAttribute",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableAttribute",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -829,7 +840,7 @@ func NewDataAwsDynamodbTableAttribute_Override(d DataAwsDynamodbTableAttribute, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableAttribute",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableAttribute",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -929,6 +940,7 @@ func (d *jsiiProxy_DataAwsDynamodbTableAttribute) InterpolationForAttribute(prop
 	return returns
 }
 
+// AWS DynamoDB.
 type DataAwsDynamodbTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1082,7 +1094,7 @@ func NewDataAwsDynamodbTableGlobalSecondaryIndex(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableGlobalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableGlobalSecondaryIndex",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1095,7 +1107,7 @@ func NewDataAwsDynamodbTableGlobalSecondaryIndex_Override(d DataAwsDynamodbTable
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableGlobalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableGlobalSecondaryIndex",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1296,7 +1308,7 @@ func NewDataAwsDynamodbTableLocalSecondaryIndex(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableLocalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableLocalSecondaryIndex",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1309,7 +1321,7 @@ func NewDataAwsDynamodbTableLocalSecondaryIndex_Override(d DataAwsDynamodbTableL
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableLocalSecondaryIndex",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableLocalSecondaryIndex",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1477,7 +1489,7 @@ func NewDataAwsDynamodbTablePointInTimeRecovery(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTablePointInTimeRecovery",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTablePointInTimeRecovery",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1490,7 +1502,7 @@ func NewDataAwsDynamodbTablePointInTimeRecovery_Override(d DataAwsDynamodbTableP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTablePointInTimeRecovery",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTablePointInTimeRecovery",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1669,7 +1681,7 @@ func NewDataAwsDynamodbTableReplica(terraformResource cdktf.ITerraformResource, 
 	j := jsiiProxy_DataAwsDynamodbTableReplica{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableReplica",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableReplica",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1682,7 +1694,7 @@ func NewDataAwsDynamodbTableReplica_Override(d DataAwsDynamodbTableReplica, terr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableReplica",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableReplica",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1787,6 +1799,8 @@ type DataAwsDynamodbTableServerSideEncryption struct {
 
 type DataAwsDynamodbTableServerSideEncryptionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DataAwsDynamodbTableServerSideEncryption
+	SetInternalValue(val *DataAwsDynamodbTableServerSideEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1804,6 +1818,16 @@ type DataAwsDynamodbTableServerSideEncryptionOutputReference interface {
 // The jsii proxy struct for DataAwsDynamodbTableServerSideEncryptionOutputReference
 type jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) InternalValue() *DataAwsDynamodbTableServerSideEncryption {
+	var returns *DataAwsDynamodbTableServerSideEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) IsSingleItem() *bool {
@@ -1842,7 +1866,7 @@ func NewDataAwsDynamodbTableServerSideEncryptionOutputReference(terraformResourc
 	j := jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1854,9 +1878,17 @@ func NewDataAwsDynamodbTableServerSideEncryptionOutputReference_Override(d DataA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) SetInternalValue(val *DataAwsDynamodbTableServerSideEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2047,7 +2079,7 @@ func NewDataAwsDynamodbTableTtl(terraformResource cdktf.ITerraformResource, terr
 	j := jsiiProxy_DataAwsDynamodbTableTtl{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableTtl",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableTtl",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2060,7 +2092,7 @@ func NewDataAwsDynamodbTableTtl_Override(d DataAwsDynamodbTableTtl, terraformRes
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DataAwsDynamodbTableTtl",
+		"hashicorp_aws.dynamodb.DataAwsDynamodbTableTtl",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2428,7 +2460,7 @@ func NewDynamodbGlobalTable(scope constructs.Construct, id *string, config *Dyna
 	j := jsiiProxy_DynamodbGlobalTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTable",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2441,7 +2473,7 @@ func NewDynamodbGlobalTable_Override(d DynamodbGlobalTable, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTable",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2505,7 +2537,7 @@ func DynamodbGlobalTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTable",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2518,7 +2550,7 @@ func DynamodbGlobalTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTable",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -2696,6 +2728,7 @@ func (d *jsiiProxy_DynamodbGlobalTable) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB.
 type DynamodbGlobalTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2739,6 +2772,8 @@ type DynamodbGlobalTableTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DynamodbGlobalTableTimeouts
+	SetInternalValue(val *DynamodbGlobalTableTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2804,6 +2839,16 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) InternalValue() *DynamodbGlobalTableTimeouts {
+	var returns *DynamodbGlobalTableTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2860,7 +2905,7 @@ func NewDynamodbGlobalTableTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2872,7 +2917,7 @@ func NewDynamodbGlobalTableTimeoutsOutputReference_Override(d DynamodbGlobalTabl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbGlobalTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbGlobalTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2890,6 +2935,14 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetInternalValue(val *DynamodbGlobalTableTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3267,7 +3320,7 @@ func NewDynamodbKinesisStreamingDestination(scope constructs.Construct, id *stri
 	j := jsiiProxy_DynamodbKinesisStreamingDestination{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestination",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestination",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3280,7 +3333,7 @@ func NewDynamodbKinesisStreamingDestination_Override(d DynamodbKinesisStreamingD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestination",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestination",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3344,7 +3397,7 @@ func DynamodbKinesisStreamingDestination_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestination",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestination",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3357,7 +3410,7 @@ func DynamodbKinesisStreamingDestination_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DynamodbKinesisStreamingDestination",
+		"hashicorp_aws.dynamodb.DynamodbKinesisStreamingDestination",
 		"tfResourceType",
 		&returns,
 	)
@@ -3519,6 +3572,7 @@ func (d *jsiiProxy_DynamodbKinesisStreamingDestination) ToTerraform() interface{
 	return returns
 }
 
+// AWS DynamoDB.
 type DynamodbKinesisStreamingDestinationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3592,6 +3646,9 @@ type DynamodbTable interface {
 	StreamViewType() *string
 	SetStreamViewType(val *string)
 	StreamViewTypeInput() *string
+	TableClass() *string
+	SetTableClass(val *string)
+	TableClassInput() *string
 	Tags() interface{}
 	SetTags(val interface{})
 	TagsAll() interface{}
@@ -3630,6 +3687,7 @@ type DynamodbTable interface {
 	ResetServerSideEncryption()
 	ResetStreamEnabled()
 	ResetStreamViewType()
+	ResetTableClass()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
@@ -4046,6 +4104,26 @@ func (j *jsiiProxy_DynamodbTable) StreamViewTypeInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DynamodbTable) TableClass() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tableClass",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) TableClassInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tableClassInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DynamodbTable) Tags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -4183,7 +4261,7 @@ func NewDynamodbTable(scope constructs.Construct, id *string, config *DynamodbTa
 	j := jsiiProxy_DynamodbTable{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTable",
+		"hashicorp_aws.dynamodb.DynamodbTable",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4196,7 +4274,7 @@ func NewDynamodbTable_Override(d DynamodbTable, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTable",
+		"hashicorp_aws.dynamodb.DynamodbTable",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4322,6 +4400,14 @@ func (j *jsiiProxy_DynamodbTable) SetStreamViewType(val *string) {
 	)
 }
 
+func (j *jsiiProxy_DynamodbTable) SetTableClass(val *string) {
+	_jsii_.Set(
+		j,
+		"tableClass",
+		val,
+	)
+}
+
 func (j *jsiiProxy_DynamodbTable) SetTags(val interface{}) {
 	_jsii_.Set(
 		j,
@@ -4356,7 +4442,7 @@ func DynamodbTable_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DynamodbTable",
+		"hashicorp_aws.dynamodb.DynamodbTable",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4369,7 +4455,7 @@ func DynamodbTable_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DynamodbTable",
+		"hashicorp_aws.dynamodb.DynamodbTable",
 		"tfResourceType",
 		&returns,
 	)
@@ -4587,6 +4673,14 @@ func (d *jsiiProxy_DynamodbTable) ResetStreamViewType() {
 	)
 }
 
+func (d *jsiiProxy_DynamodbTable) ResetTableClass() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTableClass",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DynamodbTable) ResetTags() {
 	_jsii_.InvokeVoid(
 		d,
@@ -4690,6 +4784,7 @@ type DynamodbTableAttribute struct {
 	Type *string `json:"type"`
 }
 
+// AWS DynamoDB.
 type DynamodbTableConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4737,6 +4832,8 @@ type DynamodbTableConfig struct {
 	StreamEnabled interface{} `json:"streamEnabled"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#stream_view_type DynamodbTable#stream_view_type}.
 	StreamViewType *string `json:"streamViewType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#table_class DynamodbTable#table_class}.
+	TableClass *string `json:"tableClass"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#tags DynamodbTable#tags}.
 	Tags interface{} `json:"tags"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#tags_all DynamodbTable#tags_all}.
@@ -5050,7 +5147,7 @@ func NewDynamodbTableItem(scope constructs.Construct, id *string, config *Dynamo
 	j := jsiiProxy_DynamodbTableItem{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableItem",
+		"hashicorp_aws.dynamodb.DynamodbTableItem",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5063,7 +5160,7 @@ func NewDynamodbTableItem_Override(d DynamodbTableItem, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableItem",
+		"hashicorp_aws.dynamodb.DynamodbTableItem",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5143,7 +5240,7 @@ func DynamodbTableItem_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DynamodbTableItem",
+		"hashicorp_aws.dynamodb.DynamodbTableItem",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5156,7 +5253,7 @@ func DynamodbTableItem_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DynamodbTableItem",
+		"hashicorp_aws.dynamodb.DynamodbTableItem",
 		"tfResourceType",
 		&returns,
 	)
@@ -5326,6 +5423,7 @@ func (d *jsiiProxy_DynamodbTableItem) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB.
 type DynamodbTableItemConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5366,6 +5464,8 @@ type DynamodbTablePointInTimeRecoveryOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *DynamodbTablePointInTimeRecovery
+	SetInternalValue(val *DynamodbTablePointInTimeRecovery)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5400,6 +5500,16 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) EnabledInput
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) InternalValue() *DynamodbTablePointInTimeRecovery {
+	var returns *DynamodbTablePointInTimeRecovery
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5441,7 +5551,7 @@ func NewDynamodbTablePointInTimeRecoveryOutputReference(terraformResource cdktf.
 	j := jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTablePointInTimeRecoveryOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTablePointInTimeRecoveryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5453,7 +5563,7 @@ func NewDynamodbTablePointInTimeRecoveryOutputReference_Override(d DynamodbTable
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTablePointInTimeRecoveryOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTablePointInTimeRecoveryOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -5463,6 +5573,14 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetEnabled(v
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetInternalValue(val *DynamodbTablePointInTimeRecovery) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5594,6 +5712,8 @@ type DynamodbTableServerSideEncryptionOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *DynamodbTableServerSideEncryption
+	SetInternalValue(val *DynamodbTableServerSideEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -5632,6 +5752,16 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) EnabledInpu
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) InternalValue() *DynamodbTableServerSideEncryption {
+	var returns *DynamodbTableServerSideEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5693,7 +5823,7 @@ func NewDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf
 	j := jsiiProxy_DynamodbTableServerSideEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5705,7 +5835,7 @@ func NewDynamodbTableServerSideEncryptionOutputReference_Override(d DynamodbTabl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableServerSideEncryptionOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -5715,6 +5845,14 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetEnabled(
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetInternalValue(val *DynamodbTableServerSideEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5860,6 +5998,8 @@ type DynamodbTableTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DynamodbTableTimeouts
+	SetInternalValue(val *DynamodbTableTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5925,6 +6065,16 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) InternalValue() *DynamodbTableTimeouts {
+	var returns *DynamodbTableTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5981,7 +6131,7 @@ func NewDynamodbTableTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DynamodbTableTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5993,7 +6143,7 @@ func NewDynamodbTableTimeoutsOutputReference_Override(d DynamodbTableTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableTimeoutsOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -6011,6 +6161,14 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetInternalValue(val *DynamodbTableTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6172,6 +6330,8 @@ type DynamodbTableTtlOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *DynamodbTableTtl
+	SetInternalValue(val *DynamodbTableTtl)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyArn() *string
@@ -6236,6 +6396,16 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) EnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DynamodbTableTtlOutputReference) InternalValue() *DynamodbTableTtl {
+	var returns *DynamodbTableTtl
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DynamodbTableTtlOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6292,7 +6462,7 @@ func NewDynamodbTableTtlOutputReference(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DynamodbTableTtlOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableTtlOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTtlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6304,7 +6474,7 @@ func NewDynamodbTableTtlOutputReference_Override(d DynamodbTableTtlOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTableTtlOutputReference",
+		"hashicorp_aws.dynamodb.DynamodbTableTtlOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -6322,6 +6492,14 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetEnabled(val interface{}) 
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetInternalValue(val *DynamodbTableTtl) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6714,7 +6892,7 @@ func NewDynamodbTag(scope constructs.Construct, id *string, config *DynamodbTagC
 	j := jsiiProxy_DynamodbTag{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTag",
+		"hashicorp_aws.dynamodb.DynamodbTag",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6727,7 +6905,7 @@ func NewDynamodbTag_Override(d DynamodbTag, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DynamoDB.DynamodbTag",
+		"hashicorp_aws.dynamodb.DynamodbTag",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6799,7 +6977,7 @@ func DynamodbTag_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DynamoDB.DynamodbTag",
+		"hashicorp_aws.dynamodb.DynamodbTag",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6812,7 +6990,7 @@ func DynamodbTag_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DynamoDB.DynamodbTag",
+		"hashicorp_aws.dynamodb.DynamodbTag",
 		"tfResourceType",
 		&returns,
 	)
@@ -6974,6 +7152,7 @@ func (d *jsiiProxy_DynamodbTag) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB.
 type DynamodbTagConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

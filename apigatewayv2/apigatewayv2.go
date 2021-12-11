@@ -587,7 +587,7 @@ func NewApigatewayv2Api(scope constructs.Construct, id *string, config *Apigatew
 	j := jsiiProxy_Apigatewayv2Api{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Api",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -600,7 +600,7 @@ func NewApigatewayv2Api_Override(a Apigatewayv2Api, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Api",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -760,7 +760,7 @@ func Apigatewayv2Api_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Api",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -773,7 +773,7 @@ func Apigatewayv2Api_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Api",
 		"tfResourceType",
 		&returns,
 	)
@@ -1047,6 +1047,7 @@ func (a *jsiiProxy_Apigatewayv2Api) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2ApiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1122,6 +1123,8 @@ type Apigatewayv2ApiCorsConfigurationOutputReference interface {
 	ExposeHeaders() *[]*string
 	SetExposeHeaders(val *[]*string)
 	ExposeHeadersInput() *[]*string
+	InternalValue() *Apigatewayv2ApiCorsConfiguration
+	SetInternalValue(val *Apigatewayv2ApiCorsConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxAge() *float64
@@ -1250,6 +1253,16 @@ func (j *jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference) ExposeHeader
 	return returns
 }
 
+func (j *jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference) InternalValue() *Apigatewayv2ApiCorsConfiguration {
+	var returns *Apigatewayv2ApiCorsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1306,7 +1319,7 @@ func NewApigatewayv2ApiCorsConfigurationOutputReference(terraformResource cdktf.
 	j := jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiCorsConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiCorsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1318,7 +1331,7 @@ func NewApigatewayv2ApiCorsConfigurationOutputReference_Override(a Apigatewayv2A
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiCorsConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiCorsConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1360,6 +1373,14 @@ func (j *jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference) SetExposeHea
 	_jsii_.Set(
 		j,
 		"exposeHeaders",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2ApiCorsConfigurationOutputReference) SetInternalValue(val *Apigatewayv2ApiCorsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1808,7 +1829,7 @@ func NewApigatewayv2ApiMapping(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_Apigatewayv2ApiMapping{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMapping",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMapping",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1821,7 +1842,7 @@ func NewApigatewayv2ApiMapping_Override(a Apigatewayv2ApiMapping, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMapping",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMapping",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1901,7 +1922,7 @@ func Apigatewayv2ApiMapping_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMapping",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMapping",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1914,7 +1935,7 @@ func Apigatewayv2ApiMapping_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMapping",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMapping",
 		"tfResourceType",
 		&returns,
 	)
@@ -2084,6 +2105,7 @@ func (a *jsiiProxy_Apigatewayv2ApiMapping) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2ApiMappingConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2527,7 +2549,7 @@ func NewApigatewayv2Authorizer(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_Apigatewayv2Authorizer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Authorizer",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Authorizer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2540,7 +2562,7 @@ func NewApigatewayv2Authorizer_Override(a Apigatewayv2Authorizer, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Authorizer",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Authorizer",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2660,7 +2682,7 @@ func Apigatewayv2Authorizer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Authorizer",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Authorizer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2673,7 +2695,7 @@ func Apigatewayv2Authorizer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Authorizer",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Authorizer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2899,6 +2921,7 @@ func (a *jsiiProxy_Apigatewayv2Authorizer) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2AuthorizerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2944,6 +2967,8 @@ type Apigatewayv2AuthorizerJwtConfigurationOutputReference interface {
 	Audience() *[]*string
 	SetAudience(val *[]*string)
 	AudienceInput() *[]*string
+	InternalValue() *Apigatewayv2AuthorizerJwtConfiguration
+	SetInternalValue(val *Apigatewayv2AuthorizerJwtConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -2983,6 +3008,16 @@ func (j *jsiiProxy_Apigatewayv2AuthorizerJwtConfigurationOutputReference) Audien
 	_jsii_.Get(
 		j,
 		"audienceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Apigatewayv2AuthorizerJwtConfigurationOutputReference) InternalValue() *Apigatewayv2AuthorizerJwtConfiguration {
+	var returns *Apigatewayv2AuthorizerJwtConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3044,7 +3079,7 @@ func NewApigatewayv2AuthorizerJwtConfigurationOutputReference(terraformResource 
 	j := jsiiProxy_Apigatewayv2AuthorizerJwtConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3056,7 +3091,7 @@ func NewApigatewayv2AuthorizerJwtConfigurationOutputReference_Override(a Apigate
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -3066,6 +3101,14 @@ func (j *jsiiProxy_Apigatewayv2AuthorizerJwtConfigurationOutputReference) SetAud
 	_jsii_.Set(
 		j,
 		"audience",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2AuthorizerJwtConfigurationOutputReference) SetInternalValue(val *Apigatewayv2AuthorizerJwtConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3471,7 +3514,7 @@ func NewApigatewayv2Deployment(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_Apigatewayv2Deployment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Deployment",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Deployment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3484,7 +3527,7 @@ func NewApigatewayv2Deployment_Override(a Apigatewayv2Deployment, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Deployment",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Deployment",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3556,7 +3599,7 @@ func Apigatewayv2Deployment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Deployment",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Deployment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3569,7 +3612,7 @@ func Apigatewayv2Deployment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Deployment",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Deployment",
 		"tfResourceType",
 		&returns,
 	)
@@ -3747,6 +3790,7 @@ func (a *jsiiProxy_Apigatewayv2Deployment) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2DeploymentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4115,7 +4159,7 @@ func NewApigatewayv2DomainName(scope constructs.Construct, id *string, config *A
 	j := jsiiProxy_Apigatewayv2DomainName{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainName",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainName",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4128,7 +4172,7 @@ func NewApigatewayv2DomainName_Override(a Apigatewayv2DomainName, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainName",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainName",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -4200,7 +4244,7 @@ func Apigatewayv2DomainName_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainName",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainName",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4213,7 +4257,7 @@ func Apigatewayv2DomainName_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainName",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainName",
 		"tfResourceType",
 		&returns,
 	)
@@ -4431,6 +4475,7 @@ func (a *jsiiProxy_Apigatewayv2DomainName) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2DomainNameConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4477,6 +4522,8 @@ type Apigatewayv2DomainNameDomainNameConfigurationOutputReference interface {
 	EndpointType() *string
 	SetEndpointType(val *string)
 	EndpointTypeInput() *string
+	InternalValue() *Apigatewayv2DomainNameDomainNameConfiguration
+	SetInternalValue(val *Apigatewayv2DomainNameDomainNameConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityPolicy() *string
@@ -4539,6 +4586,16 @@ func (j *jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference)
 	return returns
 }
 
+func (j *jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference) InternalValue() *Apigatewayv2DomainNameDomainNameConfiguration {
+	var returns *Apigatewayv2DomainNameDomainNameConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4595,7 +4652,7 @@ func NewApigatewayv2DomainNameDomainNameConfigurationOutputReference(terraformRe
 	j := jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4607,7 +4664,7 @@ func NewApigatewayv2DomainNameDomainNameConfigurationOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4625,6 +4682,14 @@ func (j *jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference)
 	_jsii_.Set(
 		j,
 		"endpointType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2DomainNameDomainNameConfigurationOutputReference) SetInternalValue(val *Apigatewayv2DomainNameDomainNameConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4754,6 +4819,8 @@ type Apigatewayv2DomainNameMutualTlsAuthentication struct {
 
 type Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Apigatewayv2DomainNameMutualTlsAuthentication
+	SetInternalValue(val *Apigatewayv2DomainNameMutualTlsAuthentication)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4778,6 +4845,16 @@ type Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference interface {
 // The jsii proxy struct for Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference
 type jsiiProxy_Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference) InternalValue() *Apigatewayv2DomainNameMutualTlsAuthentication {
+	var returns *Apigatewayv2DomainNameMutualTlsAuthentication
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference) IsSingleItem() *bool {
@@ -4856,7 +4933,7 @@ func NewApigatewayv2DomainNameMutualTlsAuthenticationOutputReference(terraformRe
 	j := jsiiProxy_Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4868,9 +4945,17 @@ func NewApigatewayv2DomainNameMutualTlsAuthenticationOutputReference_Override(a 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference) SetInternalValue(val *Apigatewayv2DomainNameMutualTlsAuthentication) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -5018,6 +5103,8 @@ type Apigatewayv2DomainNameTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *Apigatewayv2DomainNameTimeouts
+	SetInternalValue(val *Apigatewayv2DomainNameTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5057,6 +5144,16 @@ func (j *jsiiProxy_Apigatewayv2DomainNameTimeoutsOutputReference) CreateInput() 
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Apigatewayv2DomainNameTimeoutsOutputReference) InternalValue() *Apigatewayv2DomainNameTimeouts {
+	var returns *Apigatewayv2DomainNameTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5118,7 +5215,7 @@ func NewApigatewayv2DomainNameTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_Apigatewayv2DomainNameTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameTimeoutsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5130,7 +5227,7 @@ func NewApigatewayv2DomainNameTimeoutsOutputReference_Override(a Apigatewayv2Dom
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameTimeoutsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5140,6 +5237,14 @@ func (j *jsiiProxy_Apigatewayv2DomainNameTimeoutsOutputReference) SetCreate(val 
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2DomainNameTimeoutsOutputReference) SetInternalValue(val *Apigatewayv2DomainNameTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5904,7 +6009,7 @@ func NewApigatewayv2Integration(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_Apigatewayv2Integration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Integration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Integration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5917,7 +6022,7 @@ func NewApigatewayv2Integration_Override(a Apigatewayv2Integration, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Integration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Integration",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6101,7 +6206,7 @@ func Apigatewayv2Integration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Integration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Integration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6114,7 +6219,7 @@ func Apigatewayv2Integration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Integration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Integration",
 		"tfResourceType",
 		&returns,
 	)
@@ -6412,6 +6517,7 @@ func (a *jsiiProxy_Apigatewayv2Integration) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2IntegrationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6791,7 +6897,7 @@ func NewApigatewayv2IntegrationResponse(scope constructs.Construct, id *string, 
 	j := jsiiProxy_Apigatewayv2IntegrationResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponse",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6804,7 +6910,7 @@ func NewApigatewayv2IntegrationResponse_Override(a Apigatewayv2IntegrationRespon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponse",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6900,7 +7006,7 @@ func Apigatewayv2IntegrationResponse_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponse",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6913,7 +7019,7 @@ func Apigatewayv2IntegrationResponse_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponse",
 		"tfResourceType",
 		&returns,
 	)
@@ -7099,6 +7205,7 @@ func (a *jsiiProxy_Apigatewayv2IntegrationResponse) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2IntegrationResponseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7136,6 +7243,8 @@ type Apigatewayv2IntegrationTlsConfig struct {
 
 type Apigatewayv2IntegrationTlsConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *Apigatewayv2IntegrationTlsConfig
+	SetInternalValue(val *Apigatewayv2IntegrationTlsConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ServerNameToVerify() *string
@@ -7157,6 +7266,16 @@ type Apigatewayv2IntegrationTlsConfigOutputReference interface {
 // The jsii proxy struct for Apigatewayv2IntegrationTlsConfigOutputReference
 type jsiiProxy_Apigatewayv2IntegrationTlsConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_Apigatewayv2IntegrationTlsConfigOutputReference) InternalValue() *Apigatewayv2IntegrationTlsConfig {
+	var returns *Apigatewayv2IntegrationTlsConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Apigatewayv2IntegrationTlsConfigOutputReference) IsSingleItem() *bool {
@@ -7215,7 +7334,7 @@ func NewApigatewayv2IntegrationTlsConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_Apigatewayv2IntegrationTlsConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationTlsConfigOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationTlsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7227,9 +7346,17 @@ func NewApigatewayv2IntegrationTlsConfigOutputReference_Override(a Apigatewayv2I
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationTlsConfigOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationTlsConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2IntegrationTlsConfigOutputReference) SetInternalValue(val *Apigatewayv2IntegrationTlsConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7660,7 +7787,7 @@ func NewApigatewayv2Model(scope constructs.Construct, id *string, config *Apigat
 	j := jsiiProxy_Apigatewayv2Model{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Model",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Model",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7673,7 +7800,7 @@ func NewApigatewayv2Model_Override(a Apigatewayv2Model, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Model",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Model",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -7761,7 +7888,7 @@ func Apigatewayv2Model_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Model",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Model",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7774,7 +7901,7 @@ func Apigatewayv2Model_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Model",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Model",
 		"tfResourceType",
 		&returns,
 	)
@@ -7944,6 +8071,7 @@ func (a *jsiiProxy_Apigatewayv2Model) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2ModelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8438,7 +8566,7 @@ func NewApigatewayv2Route(scope constructs.Construct, id *string, config *Apigat
 	j := jsiiProxy_Apigatewayv2Route{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Route",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Route",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8451,7 +8579,7 @@ func NewApigatewayv2Route_Override(a Apigatewayv2Route, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Route",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Route",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -8595,7 +8723,7 @@ func Apigatewayv2Route_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Route",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Route",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8608,7 +8736,7 @@ func Apigatewayv2Route_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Route",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Route",
 		"tfResourceType",
 		&returns,
 	)
@@ -8850,6 +8978,7 @@ func (a *jsiiProxy_Apigatewayv2Route) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2RouteConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9198,7 +9327,7 @@ func NewApigatewayv2RouteResponse(scope constructs.Construct, id *string, config
 	j := jsiiProxy_Apigatewayv2RouteResponse{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponse",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9211,7 +9340,7 @@ func NewApigatewayv2RouteResponse_Override(a Apigatewayv2RouteResponse, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponse",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -9299,7 +9428,7 @@ func Apigatewayv2RouteResponse_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponse",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9312,7 +9441,7 @@ func Apigatewayv2RouteResponse_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponse",
 		"tfResourceType",
 		&returns,
 	)
@@ -9490,6 +9619,7 @@ func (a *jsiiProxy_Apigatewayv2RouteResponse) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2RouteResponseConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10017,7 +10147,7 @@ func NewApigatewayv2Stage(scope constructs.Construct, id *string, config *Apigat
 	j := jsiiProxy_Apigatewayv2Stage{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Stage",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Stage",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10030,7 +10160,7 @@ func NewApigatewayv2Stage_Override(a Apigatewayv2Stage, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Stage",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Stage",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -10158,7 +10288,7 @@ func Apigatewayv2Stage_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Stage",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Stage",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10171,7 +10301,7 @@ func Apigatewayv2Stage_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Stage",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Stage",
 		"tfResourceType",
 		&returns,
 	)
@@ -10444,6 +10574,8 @@ type Apigatewayv2StageAccessLogSettingsOutputReference interface {
 	Format() *string
 	SetFormat(val *string)
 	FormatInput() *string
+	InternalValue() *Apigatewayv2StageAccessLogSettings
+	SetInternalValue(val *Apigatewayv2StageAccessLogSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10503,6 +10635,16 @@ func (j *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) FormatInpu
 	return returns
 }
 
+func (j *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) InternalValue() *Apigatewayv2StageAccessLogSettings {
+	var returns *Apigatewayv2StageAccessLogSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10539,7 +10681,7 @@ func NewApigatewayv2StageAccessLogSettingsOutputReference(terraformResource cdkt
 	j := jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageAccessLogSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageAccessLogSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10551,7 +10693,7 @@ func NewApigatewayv2StageAccessLogSettingsOutputReference_Override(a Apigatewayv
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageAccessLogSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageAccessLogSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -10569,6 +10711,14 @@ func (j *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) SetFormat(
 	_jsii_.Set(
 		j,
 		"format",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) SetInternalValue(val *Apigatewayv2StageAccessLogSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10681,6 +10831,7 @@ func (a *jsiiProxy_Apigatewayv2StageAccessLogSettingsOutputReference) Interpolat
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2StageConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10743,6 +10894,8 @@ type Apigatewayv2StageDefaultRouteSettingsOutputReference interface {
 	DetailedMetricsEnabled() interface{}
 	SetDetailedMetricsEnabled(val interface{})
 	DetailedMetricsEnabledInput() interface{}
+	InternalValue() *Apigatewayv2StageDefaultRouteSettings
+	SetInternalValue(val *Apigatewayv2StageDefaultRouteSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LoggingLevel() *string
@@ -10811,6 +10964,16 @@ func (j *jsiiProxy_Apigatewayv2StageDefaultRouteSettingsOutputReference) Detaile
 	_jsii_.Get(
 		j,
 		"detailedMetricsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Apigatewayv2StageDefaultRouteSettingsOutputReference) InternalValue() *Apigatewayv2StageDefaultRouteSettings {
+	var returns *Apigatewayv2StageDefaultRouteSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10912,7 +11075,7 @@ func NewApigatewayv2StageDefaultRouteSettingsOutputReference(terraformResource c
 	j := jsiiProxy_Apigatewayv2StageDefaultRouteSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10924,7 +11087,7 @@ func NewApigatewayv2StageDefaultRouteSettingsOutputReference_Override(a Apigatew
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -10942,6 +11105,14 @@ func (j *jsiiProxy_Apigatewayv2StageDefaultRouteSettingsOutputReference) SetDeta
 	_jsii_.Set(
 		j,
 		"detailedMetricsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Apigatewayv2StageDefaultRouteSettingsOutputReference) SetInternalValue(val *Apigatewayv2StageDefaultRouteSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11448,7 +11619,7 @@ func NewApigatewayv2VpcLink(scope constructs.Construct, id *string, config *Apig
 	j := jsiiProxy_Apigatewayv2VpcLink{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLink",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLink",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11461,7 +11632,7 @@ func NewApigatewayv2VpcLink_Override(a Apigatewayv2VpcLink, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLink",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLink",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -11549,7 +11720,7 @@ func Apigatewayv2VpcLink_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLink",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLink",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11562,7 +11733,7 @@ func Apigatewayv2VpcLink_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLink",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLink",
 		"tfResourceType",
 		&returns,
 	)
@@ -11740,6 +11911,7 @@ func (a *jsiiProxy_Apigatewayv2VpcLink) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type Apigatewayv2VpcLinkConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12106,7 +12278,7 @@ func NewDataAwsApigatewayv2Api(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsApigatewayv2Api{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Api",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12119,7 +12291,7 @@ func NewDataAwsApigatewayv2Api_Override(d DataAwsApigatewayv2Api, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Api",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12183,7 +12355,7 @@ func DataAwsApigatewayv2Api_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Api",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12196,7 +12368,7 @@ func DataAwsApigatewayv2Api_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Api",
 		"tfResourceType",
 		&returns,
 	)
@@ -12379,6 +12551,7 @@ func (d *jsiiProxy_DataAwsApigatewayv2Api) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type DataAwsApigatewayv2ApiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12517,7 +12690,7 @@ func NewDataAwsApigatewayv2ApiCorsConfiguration(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsApigatewayv2ApiCorsConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2ApiCorsConfiguration",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2ApiCorsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -12530,7 +12703,7 @@ func NewDataAwsApigatewayv2ApiCorsConfiguration_Override(d DataAwsApigatewayv2Ap
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2ApiCorsConfiguration",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2ApiCorsConfiguration",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -12900,7 +13073,7 @@ func NewDataAwsApigatewayv2Apis(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsApigatewayv2Apis{}
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Apis",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Apis",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12913,7 +13086,7 @@ func NewDataAwsApigatewayv2Apis_Override(d DataAwsApigatewayv2Apis, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Apis",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Apis",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12985,7 +13158,7 @@ func DataAwsApigatewayv2Apis_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Apis",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Apis",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12998,7 +13171,7 @@ func DataAwsApigatewayv2Apis_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Apis",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Apis",
 		"tfResourceType",
 		&returns,
 	)
@@ -13184,6 +13357,7 @@ func (d *jsiiProxy_DataAwsApigatewayv2Apis) ToTerraform() interface{} {
 	return returns
 }
 
+// Amazon API Gateway Websocket and HTTP APIs.
 type DataAwsApigatewayv2ApisConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -321,7 +321,7 @@ func NewDataAwsEksAddon(scope constructs.Construct, id *string, config *DataAwsE
 	j := jsiiProxy_DataAwsEksAddon{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksAddon",
+		"hashicorp_aws.eks.DataAwsEksAddon",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -334,7 +334,7 @@ func NewDataAwsEksAddon_Override(d DataAwsEksAddon, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksAddon",
+		"hashicorp_aws.eks.DataAwsEksAddon",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -406,7 +406,7 @@ func DataAwsEksAddon_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksAddon",
+		"hashicorp_aws.eks.DataAwsEksAddon",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -419,7 +419,7 @@ func DataAwsEksAddon_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksAddon",
+		"hashicorp_aws.eks.DataAwsEksAddon",
 		"tfResourceType",
 		&returns,
 	)
@@ -589,6 +589,7 @@ func (d *jsiiProxy_DataAwsEksAddon) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksAddonConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -932,7 +933,7 @@ func NewDataAwsEksCluster(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsEksCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksCluster",
+		"hashicorp_aws.eks.DataAwsEksCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -945,7 +946,7 @@ func NewDataAwsEksCluster_Override(d DataAwsEksCluster, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksCluster",
+		"hashicorp_aws.eks.DataAwsEksCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1009,7 +1010,7 @@ func DataAwsEksCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksCluster",
+		"hashicorp_aws.eks.DataAwsEksCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1022,7 +1023,7 @@ func DataAwsEksCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksCluster",
+		"hashicorp_aws.eks.DataAwsEksCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -1465,7 +1466,7 @@ func NewDataAwsEksClusterAuth(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsEksClusterAuth{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuth",
+		"hashicorp_aws.eks.DataAwsEksClusterAuth",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1478,7 +1479,7 @@ func NewDataAwsEksClusterAuth_Override(d DataAwsEksClusterAuth, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuth",
+		"hashicorp_aws.eks.DataAwsEksClusterAuth",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1534,7 +1535,7 @@ func DataAwsEksClusterAuth_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuth",
+		"hashicorp_aws.eks.DataAwsEksClusterAuth",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1547,7 +1548,7 @@ func DataAwsEksClusterAuth_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksClusterAuth",
+		"hashicorp_aws.eks.DataAwsEksClusterAuth",
 		"tfResourceType",
 		&returns,
 	)
@@ -1709,6 +1710,7 @@ func (d *jsiiProxy_DataAwsEksClusterAuth) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksClusterAuthConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1790,7 +1792,7 @@ func NewDataAwsEksClusterCertificateAuthority(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsEksClusterCertificateAuthority{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterCertificateAuthority",
+		"hashicorp_aws.eks.DataAwsEksClusterCertificateAuthority",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1803,7 +1805,7 @@ func NewDataAwsEksClusterCertificateAuthority_Override(d DataAwsEksClusterCertif
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterCertificateAuthority",
+		"hashicorp_aws.eks.DataAwsEksClusterCertificateAuthority",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1903,6 +1905,7 @@ func (d *jsiiProxy_DataAwsEksClusterCertificateAuthority) InterpolationForAttrib
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1986,7 +1989,7 @@ func NewDataAwsEksClusterIdentity(terraformResource cdktf.ITerraformResource, te
 	j := jsiiProxy_DataAwsEksClusterIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentity",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1999,7 +2002,7 @@ func NewDataAwsEksClusterIdentity_Override(d DataAwsEksClusterIdentity, terrafor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentity",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2167,7 +2170,7 @@ func NewDataAwsEksClusterIdentityOidc(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsEksClusterIdentityOidc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentityOidc",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentityOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2180,7 +2183,7 @@ func NewDataAwsEksClusterIdentityOidc_Override(d DataAwsEksClusterIdentityOidc, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterIdentityOidc",
+		"hashicorp_aws.eks.DataAwsEksClusterIdentityOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2348,7 +2351,7 @@ func NewDataAwsEksClusterKubernetesNetworkConfig(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsEksClusterKubernetesNetworkConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterKubernetesNetworkConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterKubernetesNetworkConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2361,7 +2364,7 @@ func NewDataAwsEksClusterKubernetesNetworkConfig_Override(d DataAwsEksClusterKub
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterKubernetesNetworkConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterKubernetesNetworkConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2595,7 +2598,7 @@ func NewDataAwsEksClusterVpcConfig(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_DataAwsEksClusterVpcConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterVpcConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterVpcConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2608,7 +2611,7 @@ func NewDataAwsEksClusterVpcConfig_Override(d DataAwsEksClusterVpcConfig, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusterVpcConfig",
+		"hashicorp_aws.eks.DataAwsEksClusterVpcConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2906,7 +2909,7 @@ func NewDataAwsEksClusters(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsEksClusters{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusters",
+		"hashicorp_aws.eks.DataAwsEksClusters",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2919,7 +2922,7 @@ func NewDataAwsEksClusters_Override(d DataAwsEksClusters, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksClusters",
+		"hashicorp_aws.eks.DataAwsEksClusters",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2967,7 +2970,7 @@ func DataAwsEksClusters_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksClusters",
+		"hashicorp_aws.eks.DataAwsEksClusters",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2980,7 +2983,7 @@ func DataAwsEksClusters_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksClusters",
+		"hashicorp_aws.eks.DataAwsEksClusters",
 		"tfResourceType",
 		&returns,
 	)
@@ -3142,6 +3145,7 @@ func (d *jsiiProxy_DataAwsEksClusters) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksClustersConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3513,7 +3517,7 @@ func NewDataAwsEksNodeGroup(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsEksNodeGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroup",
+		"hashicorp_aws.eks.DataAwsEksNodeGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3526,7 +3530,7 @@ func NewDataAwsEksNodeGroup_Override(d DataAwsEksNodeGroup, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroup",
+		"hashicorp_aws.eks.DataAwsEksNodeGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3598,7 +3602,7 @@ func DataAwsEksNodeGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroup",
+		"hashicorp_aws.eks.DataAwsEksNodeGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3611,7 +3615,7 @@ func DataAwsEksNodeGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroup",
+		"hashicorp_aws.eks.DataAwsEksNodeGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -3833,6 +3837,7 @@ func (d *jsiiProxy_DataAwsEksNodeGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksNodeGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3929,7 +3934,7 @@ func NewDataAwsEksNodeGroupRemoteAccess(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsEksNodeGroupRemoteAccess{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupRemoteAccess",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupRemoteAccess",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3942,7 +3947,7 @@ func NewDataAwsEksNodeGroupRemoteAccess_Override(d DataAwsEksNodeGroupRemoteAcce
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupRemoteAccess",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupRemoteAccess",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4121,7 +4126,7 @@ func NewDataAwsEksNodeGroupResources(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_DataAwsEksNodeGroupResources{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResources",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4134,7 +4139,7 @@ func NewDataAwsEksNodeGroupResources_Override(d DataAwsEksNodeGroupResources, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResources",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4302,7 +4307,7 @@ func NewDataAwsEksNodeGroupResourcesAutoscalingGroups(terraformResource cdktf.IT
 	j := jsiiProxy_DataAwsEksNodeGroupResourcesAutoscalingGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResourcesAutoscalingGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4315,7 +4320,7 @@ func NewDataAwsEksNodeGroupResourcesAutoscalingGroups_Override(d DataAwsEksNodeG
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupResourcesAutoscalingGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4505,7 +4510,7 @@ func NewDataAwsEksNodeGroupScalingConfig(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DataAwsEksNodeGroupScalingConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupScalingConfig",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupScalingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4518,7 +4523,7 @@ func NewDataAwsEksNodeGroupScalingConfig_Override(d DataAwsEksNodeGroupScalingCo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroupScalingConfig",
+		"hashicorp_aws.eks.DataAwsEksNodeGroupScalingConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -4839,7 +4844,7 @@ func NewDataAwsEksNodeGroups(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsEksNodeGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroups",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4852,7 +4857,7 @@ func NewDataAwsEksNodeGroups_Override(d DataAwsEksNodeGroups, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroups",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4908,7 +4913,7 @@ func DataAwsEksNodeGroups_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroups",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4921,7 +4926,7 @@ func DataAwsEksNodeGroups_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.DataAwsEksNodeGroups",
+		"hashicorp_aws.eks.DataAwsEksNodeGroups",
 		"tfResourceType",
 		&returns,
 	)
@@ -5083,6 +5088,7 @@ func (d *jsiiProxy_DataAwsEksNodeGroups) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type DataAwsEksNodeGroupsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5482,7 +5488,7 @@ func NewEksAddon(scope constructs.Construct, id *string, config *EksAddonConfig)
 	j := jsiiProxy_EksAddon{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksAddon",
+		"hashicorp_aws.eks.EksAddon",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5495,7 +5501,7 @@ func NewEksAddon_Override(e EksAddon, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksAddon",
+		"hashicorp_aws.eks.EksAddon",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -5599,7 +5605,7 @@ func EksAddon_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.EksAddon",
+		"hashicorp_aws.eks.EksAddon",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5612,7 +5618,7 @@ func EksAddon_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.EksAddon",
+		"hashicorp_aws.eks.EksAddon",
 		"tfResourceType",
 		&returns,
 	)
@@ -5814,6 +5820,7 @@ func (e *jsiiProxy_EksAddon) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type EksAddonConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6320,7 +6327,7 @@ func NewEksCluster(scope constructs.Construct, id *string, config *EksClusterCon
 	j := jsiiProxy_EksCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksCluster",
+		"hashicorp_aws.eks.EksCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6333,7 +6340,7 @@ func NewEksCluster_Override(e EksCluster, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksCluster",
+		"hashicorp_aws.eks.EksCluster",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -6429,7 +6436,7 @@ func EksCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.EksCluster",
+		"hashicorp_aws.eks.EksCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6442,7 +6449,7 @@ func EksCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.EksCluster",
+		"hashicorp_aws.eks.EksCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -6786,7 +6793,7 @@ func NewEksClusterCertificateAuthority(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_EksClusterCertificateAuthority{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterCertificateAuthority",
+		"hashicorp_aws.eks.EksClusterCertificateAuthority",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6799,7 +6806,7 @@ func NewEksClusterCertificateAuthority_Override(e EksClusterCertificateAuthority
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterCertificateAuthority",
+		"hashicorp_aws.eks.EksClusterCertificateAuthority",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -6899,6 +6906,7 @@ func (e *jsiiProxy_EksClusterCertificateAuthority) InterpolationForAttribute(pro
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type EksClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6949,6 +6957,8 @@ type EksClusterEncryptionConfig struct {
 
 type EksClusterEncryptionConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EksClusterEncryptionConfig
+	SetInternalValue(val *EksClusterEncryptionConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Provider() EksClusterEncryptionConfigProviderOutputReference
@@ -6972,6 +6982,16 @@ type EksClusterEncryptionConfigOutputReference interface {
 // The jsii proxy struct for EksClusterEncryptionConfigOutputReference
 type jsiiProxy_EksClusterEncryptionConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EksClusterEncryptionConfigOutputReference) InternalValue() *EksClusterEncryptionConfig {
+	var returns *EksClusterEncryptionConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EksClusterEncryptionConfigOutputReference) IsSingleItem() *bool {
@@ -7050,7 +7070,7 @@ func NewEksClusterEncryptionConfigOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_EksClusterEncryptionConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7062,9 +7082,17 @@ func NewEksClusterEncryptionConfigOutputReference_Override(e EksClusterEncryptio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EksClusterEncryptionConfigOutputReference) SetInternalValue(val *EksClusterEncryptionConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7199,6 +7227,8 @@ type EksClusterEncryptionConfigProvider struct {
 
 type EksClusterEncryptionConfigProviderOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EksClusterEncryptionConfigProvider
+	SetInternalValue(val *EksClusterEncryptionConfigProvider)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KeyArn() *string
@@ -7219,6 +7249,16 @@ type EksClusterEncryptionConfigProviderOutputReference interface {
 // The jsii proxy struct for EksClusterEncryptionConfigProviderOutputReference
 type jsiiProxy_EksClusterEncryptionConfigProviderOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EksClusterEncryptionConfigProviderOutputReference) InternalValue() *EksClusterEncryptionConfigProvider {
+	var returns *EksClusterEncryptionConfigProvider
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EksClusterEncryptionConfigProviderOutputReference) IsSingleItem() *bool {
@@ -7277,7 +7317,7 @@ func NewEksClusterEncryptionConfigProviderOutputReference(terraformResource cdkt
 	j := jsiiProxy_EksClusterEncryptionConfigProviderOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigProviderOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7289,9 +7329,17 @@ func NewEksClusterEncryptionConfigProviderOutputReference_Override(e EksClusterE
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterEncryptionConfigProviderOutputReference",
+		"hashicorp_aws.eks.EksClusterEncryptionConfigProviderOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EksClusterEncryptionConfigProviderOutputReference) SetInternalValue(val *EksClusterEncryptionConfigProvider) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7479,7 +7527,7 @@ func NewEksClusterIdentity(terraformResource cdktf.ITerraformResource, terraform
 	j := jsiiProxy_EksClusterIdentity{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterIdentity",
+		"hashicorp_aws.eks.EksClusterIdentity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7492,7 +7540,7 @@ func NewEksClusterIdentity_Override(e EksClusterIdentity, terraformResource cdkt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterIdentity",
+		"hashicorp_aws.eks.EksClusterIdentity",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -7660,7 +7708,7 @@ func NewEksClusterIdentityOidc(terraformResource cdktf.ITerraformResource, terra
 	j := jsiiProxy_EksClusterIdentityOidc{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterIdentityOidc",
+		"hashicorp_aws.eks.EksClusterIdentityOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -7673,7 +7721,7 @@ func NewEksClusterIdentityOidc_Override(e EksClusterIdentityOidc, terraformResou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterIdentityOidc",
+		"hashicorp_aws.eks.EksClusterIdentityOidc",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -7780,6 +7828,8 @@ type EksClusterKubernetesNetworkConfig struct {
 
 type EksClusterKubernetesNetworkConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EksClusterKubernetesNetworkConfig
+	SetInternalValue(val *EksClusterKubernetesNetworkConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ServiceIpv4Cidr() *string
@@ -7801,6 +7851,16 @@ type EksClusterKubernetesNetworkConfigOutputReference interface {
 // The jsii proxy struct for EksClusterKubernetesNetworkConfigOutputReference
 type jsiiProxy_EksClusterKubernetesNetworkConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EksClusterKubernetesNetworkConfigOutputReference) InternalValue() *EksClusterKubernetesNetworkConfig {
+	var returns *EksClusterKubernetesNetworkConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EksClusterKubernetesNetworkConfigOutputReference) IsSingleItem() *bool {
@@ -7859,7 +7919,7 @@ func NewEksClusterKubernetesNetworkConfigOutputReference(terraformResource cdktf
 	j := jsiiProxy_EksClusterKubernetesNetworkConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterKubernetesNetworkConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterKubernetesNetworkConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7871,9 +7931,17 @@ func NewEksClusterKubernetesNetworkConfigOutputReference_Override(e EksClusterKu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterKubernetesNetworkConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterKubernetesNetworkConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EksClusterKubernetesNetworkConfigOutputReference) SetInternalValue(val *EksClusterKubernetesNetworkConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -8018,6 +8086,8 @@ type EksClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EksClusterTimeouts
+	SetInternalValue(val *EksClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8083,6 +8153,16 @@ func (j *jsiiProxy_EksClusterTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_EksClusterTimeoutsOutputReference) InternalValue() *EksClusterTimeouts {
+	var returns *EksClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EksClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8139,7 +8219,7 @@ func NewEksClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_EksClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8151,7 +8231,7 @@ func NewEksClusterTimeoutsOutputReference_Override(e EksClusterTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -8169,6 +8249,14 @@ func (j *jsiiProxy_EksClusterTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksClusterTimeoutsOutputReference) SetInternalValue(val *EksClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8334,6 +8422,8 @@ type EksClusterVpcConfigOutputReference interface {
 	EndpointPublicAccess() interface{}
 	SetEndpointPublicAccess(val interface{})
 	EndpointPublicAccessInput() interface{}
+	InternalValue() *EksClusterVpcConfig
+	SetInternalValue(val *EksClusterVpcConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PublicAccessCidrs() *[]*string
@@ -8401,6 +8491,16 @@ func (j *jsiiProxy_EksClusterVpcConfigOutputReference) EndpointPublicAccessInput
 	_jsii_.Get(
 		j,
 		"endpointPublicAccessInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EksClusterVpcConfigOutputReference) InternalValue() *EksClusterVpcConfig {
+	var returns *EksClusterVpcConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8502,7 +8602,7 @@ func NewEksClusterVpcConfigOutputReference(terraformResource cdktf.ITerraformRes
 	j := jsiiProxy_EksClusterVpcConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterVpcConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8514,7 +8614,7 @@ func NewEksClusterVpcConfigOutputReference_Override(e EksClusterVpcConfigOutputR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksClusterVpcConfigOutputReference",
+		"hashicorp_aws.eks.EksClusterVpcConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -8532,6 +8632,14 @@ func (j *jsiiProxy_EksClusterVpcConfigOutputReference) SetEndpointPublicAccess(v
 	_jsii_.Set(
 		j,
 		"endpointPublicAccess",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksClusterVpcConfigOutputReference) SetInternalValue(val *EksClusterVpcConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9097,7 +9205,7 @@ func NewEksFargateProfile(scope constructs.Construct, id *string, config *EksFar
 	j := jsiiProxy_EksFargateProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksFargateProfile",
+		"hashicorp_aws.eks.EksFargateProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9110,7 +9218,7 @@ func NewEksFargateProfile_Override(e EksFargateProfile, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksFargateProfile",
+		"hashicorp_aws.eks.EksFargateProfile",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -9214,7 +9322,7 @@ func EksFargateProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.EksFargateProfile",
+		"hashicorp_aws.eks.EksFargateProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9227,7 +9335,7 @@ func EksFargateProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.EksFargateProfile",
+		"hashicorp_aws.eks.EksFargateProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -9429,6 +9537,7 @@ func (e *jsiiProxy_EksFargateProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type EksFargateProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9482,6 +9591,8 @@ type EksFargateProfileTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EksFargateProfileTimeouts
+	SetInternalValue(val *EksFargateProfileTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9543,6 +9654,16 @@ func (j *jsiiProxy_EksFargateProfileTimeoutsOutputReference) DeleteInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_EksFargateProfileTimeoutsOutputReference) InternalValue() *EksFargateProfileTimeouts {
+	var returns *EksFargateProfileTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EksFargateProfileTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9579,7 +9700,7 @@ func NewEksFargateProfileTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_EksFargateProfileTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksFargateProfileTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksFargateProfileTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9591,7 +9712,7 @@ func NewEksFargateProfileTimeoutsOutputReference_Override(e EksFargateProfileTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksFargateProfileTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksFargateProfileTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -9609,6 +9730,14 @@ func (j *jsiiProxy_EksFargateProfileTimeoutsOutputReference) SetDelete(val *stri
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksFargateProfileTimeoutsOutputReference) SetInternalValue(val *EksFargateProfileTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10064,7 +10193,7 @@ func NewEksIdentityProviderConfig(scope constructs.Construct, id *string, config
 	j := jsiiProxy_EksIdentityProviderConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfig",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10077,7 +10206,7 @@ func NewEksIdentityProviderConfig_Override(e EksIdentityProviderConfig, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfig",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -10149,7 +10278,7 @@ func EksIdentityProviderConfig_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.EksIdentityProviderConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfig",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10162,7 +10291,7 @@ func EksIdentityProviderConfig_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.EksIdentityProviderConfig",
+		"hashicorp_aws.eks.EksIdentityProviderConfig",
 		"tfResourceType",
 		&returns,
 	)
@@ -10364,6 +10493,7 @@ func (e *jsiiProxy_EksIdentityProviderConfig) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type EksIdentityProviderConfigConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10422,6 +10552,8 @@ type EksIdentityProviderConfigOidcOutputReference interface {
 	IdentityProviderConfigName() *string
 	SetIdentityProviderConfigName(val *string)
 	IdentityProviderConfigNameInput() *string
+	InternalValue() *EksIdentityProviderConfigOidc
+	SetInternalValue(val *EksIdentityProviderConfigOidc)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	IssuerUrl() *string
@@ -10533,6 +10665,16 @@ func (j *jsiiProxy_EksIdentityProviderConfigOidcOutputReference) IdentityProvide
 	_jsii_.Get(
 		j,
 		"identityProviderConfigNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EksIdentityProviderConfigOidcOutputReference) InternalValue() *EksIdentityProviderConfigOidc {
+	var returns *EksIdentityProviderConfigOidc
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10654,7 +10796,7 @@ func NewEksIdentityProviderConfigOidcOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_EksIdentityProviderConfigOidcOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigOidcOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10666,7 +10808,7 @@ func NewEksIdentityProviderConfigOidcOutputReference_Override(e EksIdentityProvi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigOidcOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigOidcOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -10700,6 +10842,14 @@ func (j *jsiiProxy_EksIdentityProviderConfigOidcOutputReference) SetIdentityProv
 	_jsii_.Set(
 		j,
 		"identityProviderConfigName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksIdentityProviderConfigOidcOutputReference) SetInternalValue(val *EksIdentityProviderConfigOidc) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10899,6 +11049,8 @@ type EksIdentityProviderConfigTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EksIdentityProviderConfigTimeouts
+	SetInternalValue(val *EksIdentityProviderConfigTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -10960,6 +11112,16 @@ func (j *jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference) DeleteInput
 	return returns
 }
 
+func (j *jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference) InternalValue() *EksIdentityProviderConfigTimeouts {
+	var returns *EksIdentityProviderConfigTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -10996,7 +11158,7 @@ func NewEksIdentityProviderConfigTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11008,7 +11170,7 @@ func NewEksIdentityProviderConfigTimeoutsOutputReference_Override(e EksIdentityP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksIdentityProviderConfigTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksIdentityProviderConfigTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -11026,6 +11188,14 @@ func (j *jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference) SetDelete(v
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksIdentityProviderConfigTimeoutsOutputReference) SetInternalValue(val *EksIdentityProviderConfigTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11864,7 +12034,7 @@ func NewEksNodeGroup(scope constructs.Construct, id *string, config *EksNodeGrou
 	j := jsiiProxy_EksNodeGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroup",
+		"hashicorp_aws.eks.EksNodeGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11877,7 +12047,7 @@ func NewEksNodeGroup_Override(e EksNodeGroup, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroup",
+		"hashicorp_aws.eks.EksNodeGroup",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -12053,7 +12223,7 @@ func EksNodeGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.EKS.EksNodeGroup",
+		"hashicorp_aws.eks.EksNodeGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12066,7 +12236,7 @@ func EksNodeGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.EKS.EksNodeGroup",
+		"hashicorp_aws.eks.EksNodeGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -12417,6 +12587,7 @@ func (e *jsiiProxy_EksNodeGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Elastic Kubernetes Service.
 type EksNodeGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12494,6 +12665,8 @@ type EksNodeGroupLaunchTemplate struct {
 type EksNodeGroupLaunchTemplateOutputReference interface {
 	cdktf.ComplexObject
 	Id() *string
+	InternalValue() *EksNodeGroupLaunchTemplate
+	SetInternalValue(val *EksNodeGroupLaunchTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -12525,6 +12698,16 @@ func (j *jsiiProxy_EksNodeGroupLaunchTemplateOutputReference) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EksNodeGroupLaunchTemplateOutputReference) InternalValue() *EksNodeGroupLaunchTemplate {
+	var returns *EksNodeGroupLaunchTemplate
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12606,7 +12789,7 @@ func NewEksNodeGroupLaunchTemplateOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_EksNodeGroupLaunchTemplateOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupLaunchTemplateOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12618,9 +12801,17 @@ func NewEksNodeGroupLaunchTemplateOutputReference_Override(e EksNodeGroupLaunchT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupLaunchTemplateOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupLaunchTemplateOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EksNodeGroupLaunchTemplateOutputReference) SetInternalValue(val *EksNodeGroupLaunchTemplate) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -12768,6 +12959,8 @@ type EksNodeGroupRemoteAccessOutputReference interface {
 	Ec2SshKey() *string
 	SetEc2SshKey(val *string)
 	Ec2SshKeyInput() *string
+	InternalValue() *EksNodeGroupRemoteAccess
+	SetInternalValue(val *EksNodeGroupRemoteAccess)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SourceSecurityGroupIds() *[]*string
@@ -12807,6 +13000,16 @@ func (j *jsiiProxy_EksNodeGroupRemoteAccessOutputReference) Ec2SshKeyInput() *st
 	_jsii_.Get(
 		j,
 		"ec2SshKeyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EksNodeGroupRemoteAccessOutputReference) InternalValue() *EksNodeGroupRemoteAccess {
+	var returns *EksNodeGroupRemoteAccess
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -12868,7 +13071,7 @@ func NewEksNodeGroupRemoteAccessOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_EksNodeGroupRemoteAccessOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupRemoteAccessOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupRemoteAccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -12880,7 +13083,7 @@ func NewEksNodeGroupRemoteAccessOutputReference_Override(e EksNodeGroupRemoteAcc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupRemoteAccessOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupRemoteAccessOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -12890,6 +13093,14 @@ func (j *jsiiProxy_EksNodeGroupRemoteAccessOutputReference) SetEc2SshKey(val *st
 	_jsii_.Set(
 		j,
 		"ec2SshKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksNodeGroupRemoteAccessOutputReference) SetInternalValue(val *EksNodeGroupRemoteAccess) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13105,7 +13316,7 @@ func NewEksNodeGroupResources(terraformResource cdktf.ITerraformResource, terraf
 	j := jsiiProxy_EksNodeGroupResources{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupResources",
+		"hashicorp_aws.eks.EksNodeGroupResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -13118,7 +13329,7 @@ func NewEksNodeGroupResources_Override(e EksNodeGroupResources, terraformResourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupResources",
+		"hashicorp_aws.eks.EksNodeGroupResources",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -13286,7 +13497,7 @@ func NewEksNodeGroupResourcesAutoscalingGroups(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_EksNodeGroupResourcesAutoscalingGroups{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.EksNodeGroupResourcesAutoscalingGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -13299,7 +13510,7 @@ func NewEksNodeGroupResourcesAutoscalingGroups_Override(e EksNodeGroupResourcesA
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupResourcesAutoscalingGroups",
+		"hashicorp_aws.eks.EksNodeGroupResourcesAutoscalingGroups",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		e,
 	)
@@ -13413,6 +13624,8 @@ type EksNodeGroupScalingConfigOutputReference interface {
 	DesiredSize() *float64
 	SetDesiredSize(val *float64)
 	DesiredSizeInput() *float64
+	InternalValue() *EksNodeGroupScalingConfig
+	SetInternalValue(val *EksNodeGroupScalingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxSize() *float64
@@ -13453,6 +13666,16 @@ func (j *jsiiProxy_EksNodeGroupScalingConfigOutputReference) DesiredSizeInput() 
 	_jsii_.Get(
 		j,
 		"desiredSizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EksNodeGroupScalingConfigOutputReference) InternalValue() *EksNodeGroupScalingConfig {
+	var returns *EksNodeGroupScalingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13534,7 +13757,7 @@ func NewEksNodeGroupScalingConfigOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_EksNodeGroupScalingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupScalingConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupScalingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13546,7 +13769,7 @@ func NewEksNodeGroupScalingConfigOutputReference_Override(e EksNodeGroupScalingC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupScalingConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupScalingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -13556,6 +13779,14 @@ func (j *jsiiProxy_EksNodeGroupScalingConfigOutputReference) SetDesiredSize(val 
 	_jsii_.Set(
 		j,
 		"desiredSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksNodeGroupScalingConfigOutputReference) SetInternalValue(val *EksNodeGroupScalingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13710,6 +13941,8 @@ type EksNodeGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *EksNodeGroupTimeouts
+	SetInternalValue(val *EksNodeGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13775,6 +14008,16 @@ func (j *jsiiProxy_EksNodeGroupTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_EksNodeGroupTimeoutsOutputReference) InternalValue() *EksNodeGroupTimeouts {
+	var returns *EksNodeGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EksNodeGroupTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13831,7 +14074,7 @@ func NewEksNodeGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_EksNodeGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13843,7 +14086,7 @@ func NewEksNodeGroupTimeoutsOutputReference_Override(e EksNodeGroupTimeoutsOutpu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupTimeoutsOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -13861,6 +14104,14 @@ func (j *jsiiProxy_EksNodeGroupTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EksNodeGroupTimeoutsOutputReference) SetInternalValue(val *EksNodeGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14014,6 +14265,8 @@ type EksNodeGroupUpdateConfig struct {
 
 type EksNodeGroupUpdateConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *EksNodeGroupUpdateConfig
+	SetInternalValue(val *EksNodeGroupUpdateConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxUnavailable() *float64
@@ -14039,6 +14292,16 @@ type EksNodeGroupUpdateConfigOutputReference interface {
 // The jsii proxy struct for EksNodeGroupUpdateConfigOutputReference
 type jsiiProxy_EksNodeGroupUpdateConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_EksNodeGroupUpdateConfigOutputReference) InternalValue() *EksNodeGroupUpdateConfig {
+	var returns *EksNodeGroupUpdateConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_EksNodeGroupUpdateConfigOutputReference) IsSingleItem() *bool {
@@ -14117,7 +14380,7 @@ func NewEksNodeGroupUpdateConfigOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_EksNodeGroupUpdateConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupUpdateConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupUpdateConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14129,9 +14392,17 @@ func NewEksNodeGroupUpdateConfigOutputReference_Override(e EksNodeGroupUpdateCon
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.EKS.EksNodeGroupUpdateConfigOutputReference",
+		"hashicorp_aws.eks.EksNodeGroupUpdateConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_EksNodeGroupUpdateConfigOutputReference) SetInternalValue(val *EksNodeGroupUpdateConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

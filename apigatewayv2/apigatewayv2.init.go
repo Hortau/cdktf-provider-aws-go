@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Api",
 		reflect.TypeOf((*Apigatewayv2Api)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -92,15 +92,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiConfig",
 		reflect.TypeOf((*Apigatewayv2ApiConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiCorsConfiguration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiCorsConfiguration",
 		reflect.TypeOf((*Apigatewayv2ApiCorsConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiCorsConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiCorsConfigurationOutputReference",
 		reflect.TypeOf((*Apigatewayv2ApiCorsConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowCredentials", GoGetter: "AllowCredentials"},
@@ -117,6 +117,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -138,7 +139,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMapping",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMapping",
 		reflect.TypeOf((*Apigatewayv2ApiMapping)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -184,11 +185,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ApiMappingConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ApiMappingConfig",
 		reflect.TypeOf((*Apigatewayv2ApiMappingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Authorizer",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Authorizer",
 		reflect.TypeOf((*Apigatewayv2Authorizer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -253,15 +254,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2AuthorizerConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2AuthorizerConfig",
 		reflect.TypeOf((*Apigatewayv2AuthorizerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2AuthorizerJwtConfiguration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2AuthorizerJwtConfiguration",
 		reflect.TypeOf((*Apigatewayv2AuthorizerJwtConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2AuthorizerJwtConfigurationOutputReference",
 		reflect.TypeOf((*Apigatewayv2AuthorizerJwtConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "audience", GoGetter: "Audience"},
@@ -270,6 +271,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -287,7 +289,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Deployment",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Deployment",
 		reflect.TypeOf((*Apigatewayv2Deployment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -333,11 +335,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DeploymentConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DeploymentConfig",
 		reflect.TypeOf((*Apigatewayv2DeploymentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainName",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainName",
 		reflect.TypeOf((*Apigatewayv2DomainName)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -395,15 +397,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameConfig",
 		reflect.TypeOf((*Apigatewayv2DomainNameConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameDomainNameConfiguration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameDomainNameConfiguration",
 		reflect.TypeOf((*Apigatewayv2DomainNameDomainNameConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameDomainNameConfigurationOutputReference",
 		reflect.TypeOf((*Apigatewayv2DomainNameDomainNameConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateArn", GoGetter: "CertificateArn"},
@@ -414,6 +416,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -429,17 +432,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameMutualTlsAuthentication",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameMutualTlsAuthentication",
 		reflect.TypeOf((*Apigatewayv2DomainNameMutualTlsAuthentication)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference",
 		reflect.TypeOf((*Apigatewayv2DomainNameMutualTlsAuthenticationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -458,11 +462,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameTimeouts",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameTimeouts",
 		reflect.TypeOf((*Apigatewayv2DomainNameTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2DomainNameTimeoutsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2DomainNameTimeoutsOutputReference",
 		reflect.TypeOf((*Apigatewayv2DomainNameTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -471,6 +475,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -488,7 +493,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Integration",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Integration",
 		reflect.TypeOf((*Apigatewayv2Integration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -579,11 +584,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationConfig",
 		reflect.TypeOf((*Apigatewayv2IntegrationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponse",
 		reflect.TypeOf((*Apigatewayv2IntegrationResponse)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -635,25 +640,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponseConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponseConfig",
 		reflect.TypeOf((*Apigatewayv2IntegrationResponseConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationResponseParameters",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationResponseParameters",
 		reflect.TypeOf((*Apigatewayv2IntegrationResponseParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationTlsConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationTlsConfig",
 		reflect.TypeOf((*Apigatewayv2IntegrationTlsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2IntegrationTlsConfigOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2IntegrationTlsConfigOutputReference",
 		reflect.TypeOf((*Apigatewayv2IntegrationTlsConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -670,7 +676,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Model",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Model",
 		reflect.TypeOf((*Apigatewayv2Model)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -718,11 +724,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2ModelConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2ModelConfig",
 		reflect.TypeOf((*Apigatewayv2ModelConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Route",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Route",
 		reflect.TypeOf((*Apigatewayv2Route)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -793,15 +799,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteConfig",
 		reflect.TypeOf((*Apigatewayv2RouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteRequestParameter",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteRequestParameter",
 		reflect.TypeOf((*Apigatewayv2RouteRequestParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponse",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponse",
 		reflect.TypeOf((*Apigatewayv2RouteResponse)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -850,11 +856,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2RouteResponseConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2RouteResponseConfig",
 		reflect.TypeOf((*Apigatewayv2RouteResponseConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2Stage",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2Stage",
 		reflect.TypeOf((*Apigatewayv2Stage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessLogSettings", GoGetter: "AccessLogSettings"},
@@ -930,11 +936,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageAccessLogSettings",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageAccessLogSettings",
 		reflect.TypeOf((*Apigatewayv2StageAccessLogSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageAccessLogSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageAccessLogSettingsOutputReference",
 		reflect.TypeOf((*Apigatewayv2StageAccessLogSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "destinationArn", GoGetter: "DestinationArn"},
@@ -945,6 +951,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -958,15 +965,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageConfig",
 		reflect.TypeOf((*Apigatewayv2StageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageDefaultRouteSettings",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageDefaultRouteSettings",
 		reflect.TypeOf((*Apigatewayv2StageDefaultRouteSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageDefaultRouteSettingsOutputReference",
 		reflect.TypeOf((*Apigatewayv2StageDefaultRouteSettingsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataTraceEnabled", GoGetter: "DataTraceEnabled"},
@@ -977,6 +984,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1001,11 +1009,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2StageRouteSettings",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2StageRouteSettings",
 		reflect.TypeOf((*Apigatewayv2StageRouteSettings)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLink",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLink",
 		reflect.TypeOf((*Apigatewayv2VpcLink)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1055,11 +1063,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.Apigatewayv2VpcLinkConfig",
+		"hashicorp_aws.apigatewayv2.Apigatewayv2VpcLinkConfig",
 		reflect.TypeOf((*Apigatewayv2VpcLinkConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Api",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Api",
 		reflect.TypeOf((*DataAwsApigatewayv2Api)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1112,11 +1120,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2ApiConfig",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2ApiConfig",
 		reflect.TypeOf((*DataAwsApigatewayv2ApiConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2ApiCorsConfiguration",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2ApiCorsConfiguration",
 		reflect.TypeOf((*DataAwsApigatewayv2ApiCorsConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowCredentials", GoGetter: "AllowCredentials"},
@@ -1141,7 +1149,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2Apis",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2Apis",
 		reflect.TypeOf((*DataAwsApigatewayv2Apis)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1188,7 +1196,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.APIGatewayV2.DataAwsApigatewayv2ApisConfig",
+		"hashicorp_aws.apigatewayv2.DataAwsApigatewayv2ApisConfig",
 		reflect.TypeOf((*DataAwsApigatewayv2ApisConfig)(nil)).Elem(),
 	)
 }

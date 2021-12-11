@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstances",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstances",
 		reflect.TypeOf((*DataAwsSsoadminInstances)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -47,11 +47,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminInstancesConfig",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminInstancesConfig",
 		reflect.TypeOf((*DataAwsSsoadminInstancesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSet",
 		reflect.TypeOf((*DataAwsSsoadminPermissionSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -101,11 +101,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.DataAwsSsoadminPermissionSetConfig",
+		"hashicorp_aws.ssoadmin.DataAwsSsoadminPermissionSetConfig",
 		reflect.TypeOf((*DataAwsSsoadminPermissionSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignment",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignment",
 		reflect.TypeOf((*SsoadminAccountAssignment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -155,11 +155,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.SsoadminAccountAssignmentConfig",
+		"hashicorp_aws.ssoadmin.SsoadminAccountAssignmentConfig",
 		reflect.TypeOf((*SsoadminAccountAssignmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachment",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachment",
 		reflect.TypeOf((*SsoadminManagedPolicyAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -203,11 +203,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.SsoadminManagedPolicyAttachmentConfig",
+		"hashicorp_aws.ssoadmin.SsoadminManagedPolicyAttachmentConfig",
 		reflect.TypeOf((*SsoadminManagedPolicyAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSet",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSet",
 		reflect.TypeOf((*SsoadminPermissionSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -265,11 +265,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetConfig",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetConfig",
 		reflect.TypeOf((*SsoadminPermissionSetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicy",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicy",
 		reflect.TypeOf((*SsoadminPermissionSetInlinePolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -312,7 +312,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SSOAdmin.SsoadminPermissionSetInlinePolicyConfig",
+		"hashicorp_aws.ssoadmin.SsoadminPermissionSetInlinePolicyConfig",
 		reflect.TypeOf((*SsoadminPermissionSetInlinePolicyConfig)(nil)).Elem(),
 	)
 }

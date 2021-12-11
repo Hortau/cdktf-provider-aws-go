@@ -1,12 +1,12 @@
 package servicecatalog
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/servicecatalog/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/servicecatalog/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html aws_servicecatalog_constraint}.
@@ -315,7 +315,6 @@ func (j *jsiiProxy_DataAwsServicecatalogConstraint) Type() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html aws_servicecatalog_constraint} Data Source.
 func NewDataAwsServicecatalogConstraint(scope constructs.Construct, id *string, config *DataAwsServicecatalogConstraintConfig) DataAwsServicecatalogConstraint {
 	_init_.Initialize()
@@ -323,7 +322,7 @@ func NewDataAwsServicecatalogConstraint(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsServicecatalogConstraint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -336,7 +335,7 @@ func NewDataAwsServicecatalogConstraint_Override(d DataAwsServicecatalogConstrai
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -408,7 +407,7 @@ func DataAwsServicecatalogConstraint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -421,7 +420,7 @@ func DataAwsServicecatalogConstraint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogConstraint",
 		"tfResourceType",
 		&returns,
 	)
@@ -599,6 +598,7 @@ func (d *jsiiProxy_DataAwsServicecatalogConstraint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type DataAwsServicecatalogConstraintConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -844,7 +844,6 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) TerraformResourceType() *st
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html aws_servicecatalog_launch_paths} Data Source.
 func NewDataAwsServicecatalogLaunchPaths(scope constructs.Construct, id *string, config *DataAwsServicecatalogLaunchPathsConfig) DataAwsServicecatalogLaunchPaths {
 	_init_.Initialize()
@@ -852,7 +851,7 @@ func NewDataAwsServicecatalogLaunchPaths(scope constructs.Construct, id *string,
 	j := jsiiProxy_DataAwsServicecatalogLaunchPaths{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPaths",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPaths",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -865,7 +864,7 @@ func NewDataAwsServicecatalogLaunchPaths_Override(d DataAwsServicecatalogLaunchP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPaths",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPaths",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -929,7 +928,7 @@ func DataAwsServicecatalogLaunchPaths_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPaths",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPaths",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -942,7 +941,7 @@ func DataAwsServicecatalogLaunchPaths_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPaths",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPaths",
 		"tfResourceType",
 		&returns,
 	)
@@ -1125,6 +1124,7 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type DataAwsServicecatalogLaunchPathsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1234,7 +1234,6 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) TerraformResource(
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsServicecatalogLaunchPathsSummaries(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogLaunchPathsSummaries {
 	_init_.Initialize()
@@ -1242,7 +1241,7 @@ func NewDataAwsServicecatalogLaunchPathsSummaries(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummaries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1255,7 +1254,7 @@ func NewDataAwsServicecatalogLaunchPathsSummaries_Override(d DataAwsServicecatal
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummaries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1427,7 +1426,6 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries {
 	_init_.Initialize()
@@ -1435,7 +1433,7 @@ func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries(terraformRe
 	j := jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1448,7 +1446,7 @@ func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries_Override(d 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1843,7 +1841,6 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) TerraformResourceType() *stri
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Data Source.
 func NewDataAwsServicecatalogPortfolio(scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConfig) DataAwsServicecatalogPortfolio {
 	_init_.Initialize()
@@ -1851,7 +1848,7 @@ func NewDataAwsServicecatalogPortfolio(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DataAwsServicecatalogPortfolio{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolio",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1864,7 +1861,7 @@ func NewDataAwsServicecatalogPortfolio_Override(d DataAwsServicecatalogPortfolio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolio",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1936,7 +1933,7 @@ func DataAwsServicecatalogPortfolio_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolio",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1949,7 +1946,7 @@ func DataAwsServicecatalogPortfolio_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolio",
 		"tfResourceType",
 		&returns,
 	)
@@ -2127,6 +2124,7 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolio) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type DataAwsServicecatalogPortfolioConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2396,7 +2394,6 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) TerraformResourceT
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html aws_servicecatalog_portfolio_constraints} Data Source.
 func NewDataAwsServicecatalogPortfolioConstraints(scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConstraintsConfig) DataAwsServicecatalogPortfolioConstraints {
 	_init_.Initialize()
@@ -2404,7 +2401,7 @@ func NewDataAwsServicecatalogPortfolioConstraints(scope constructs.Construct, id
 	j := jsiiProxy_DataAwsServicecatalogPortfolioConstraints{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraints",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraints",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2417,7 +2414,7 @@ func NewDataAwsServicecatalogPortfolioConstraints_Override(d DataAwsServicecatal
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraints",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraints",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2489,7 +2486,7 @@ func DataAwsServicecatalogPortfolioConstraints_IsConstruct(x interface{}) *bool 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraints",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraints",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2502,7 +2499,7 @@ func DataAwsServicecatalogPortfolioConstraints_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraints",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraints",
 		"tfResourceType",
 		&returns,
 	)
@@ -2693,6 +2690,7 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) ToTerraform() inte
 	return returns
 }
 
+// AWS Service Catalog.
 type DataAwsServicecatalogPortfolioConstraintsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2826,7 +2824,6 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) Type() *str
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsServicecatalogPortfolioConstraintsDetails(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogPortfolioConstraintsDetails {
 	_init_.Initialize()
@@ -2834,7 +2831,7 @@ func NewDataAwsServicecatalogPortfolioConstraintsDetails(terraformResource cdktf
 	j := jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2847,7 +2844,7 @@ func NewDataAwsServicecatalogPortfolioConstraintsDetails_Override(d DataAwsServi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3319,7 +3316,6 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) Type() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html aws_servicecatalog_product} Data Source.
 func NewDataAwsServicecatalogProduct(scope constructs.Construct, id *string, config *DataAwsServicecatalogProductConfig) DataAwsServicecatalogProduct {
 	_init_.Initialize()
@@ -3327,7 +3323,7 @@ func NewDataAwsServicecatalogProduct(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DataAwsServicecatalogProduct{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProduct",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3340,7 +3336,7 @@ func NewDataAwsServicecatalogProduct_Override(d DataAwsServicecatalogProduct, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProduct",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3412,7 +3408,7 @@ func DataAwsServicecatalogProduct_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProduct",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3425,7 +3421,7 @@ func DataAwsServicecatalogProduct_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.DataAwsServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.DataAwsServicecatalogProduct",
 		"tfResourceType",
 		&returns,
 	)
@@ -3603,6 +3599,7 @@ func (d *jsiiProxy_DataAwsServicecatalogProduct) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type DataAwsServicecatalogProductConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3846,7 +3843,6 @@ func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) TerraformResourceTyp
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html aws_servicecatalog_budget_resource_association} Resource.
 func NewServicecatalogBudgetResourceAssociation(scope constructs.Construct, id *string, config *ServicecatalogBudgetResourceAssociationConfig) ServicecatalogBudgetResourceAssociation {
 	_init_.Initialize()
@@ -3854,7 +3850,7 @@ func NewServicecatalogBudgetResourceAssociation(scope constructs.Construct, id *
 	j := jsiiProxy_ServicecatalogBudgetResourceAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3867,7 +3863,7 @@ func NewServicecatalogBudgetResourceAssociation_Override(s ServicecatalogBudgetR
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3931,7 +3927,7 @@ func ServicecatalogBudgetResourceAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3944,7 +3940,7 @@ func ServicecatalogBudgetResourceAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogBudgetResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogBudgetResourceAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4106,6 +4102,7 @@ func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) ToTerraform() interf
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogBudgetResourceAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4463,7 +4460,6 @@ func (j *jsiiProxy_ServicecatalogConstraint) TypeInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html aws_servicecatalog_constraint} Resource.
 func NewServicecatalogConstraint(scope constructs.Construct, id *string, config *ServicecatalogConstraintConfig) ServicecatalogConstraint {
 	_init_.Initialize()
@@ -4471,7 +4467,7 @@ func NewServicecatalogConstraint(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_ServicecatalogConstraint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4484,7 +4480,7 @@ func NewServicecatalogConstraint_Override(s ServicecatalogConstraint, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraint",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -4580,7 +4576,7 @@ func ServicecatalogConstraint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4593,7 +4589,7 @@ func ServicecatalogConstraint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogConstraint",
+		"hashicorp_aws.servicecatalog.ServicecatalogConstraint",
 		"tfResourceType",
 		&returns,
 	)
@@ -4771,6 +4767,7 @@ func (s *jsiiProxy_ServicecatalogConstraint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogConstraintConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4997,7 +4994,6 @@ func (j *jsiiProxy_ServicecatalogOrganizationsAccess) TerraformResourceType() *s
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access.html aws_servicecatalog_organizations_access} Resource.
 func NewServicecatalogOrganizationsAccess(scope constructs.Construct, id *string, config *ServicecatalogOrganizationsAccessConfig) ServicecatalogOrganizationsAccess {
 	_init_.Initialize()
@@ -5005,7 +5001,7 @@ func NewServicecatalogOrganizationsAccess(scope constructs.Construct, id *string
 	j := jsiiProxy_ServicecatalogOrganizationsAccess{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccess",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccess",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5018,7 +5014,7 @@ func NewServicecatalogOrganizationsAccess_Override(s ServicecatalogOrganizations
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccess",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccess",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5074,7 +5070,7 @@ func ServicecatalogOrganizationsAccess_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccess",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccess",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5087,7 +5083,7 @@ func ServicecatalogOrganizationsAccess_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogOrganizationsAccess",
+		"hashicorp_aws.servicecatalog.ServicecatalogOrganizationsAccess",
 		"tfResourceType",
 		&returns,
 	)
@@ -5249,6 +5245,7 @@ func (s *jsiiProxy_ServicecatalogOrganizationsAccess) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogOrganizationsAccessConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5606,7 +5603,6 @@ func (j *jsiiProxy_ServicecatalogPortfolio) TimeoutsInput() *ServicecatalogPortf
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Resource.
 func NewServicecatalogPortfolio(scope constructs.Construct, id *string, config *ServicecatalogPortfolioConfig) ServicecatalogPortfolio {
 	_init_.Initialize()
@@ -5614,7 +5610,7 @@ func NewServicecatalogPortfolio(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ServicecatalogPortfolio{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolio",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5627,7 +5623,7 @@ func NewServicecatalogPortfolio_Override(s ServicecatalogPortfolio, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolio",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5715,7 +5711,7 @@ func ServicecatalogPortfolio_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolio",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5728,7 +5724,7 @@ func ServicecatalogPortfolio_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolio",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolio",
 		"tfResourceType",
 		&returns,
 	)
@@ -5930,6 +5926,7 @@ func (s *jsiiProxy_ServicecatalogPortfolio) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogPortfolioConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6287,7 +6284,6 @@ func (j *jsiiProxy_ServicecatalogPortfolioShare) WaitForAcceptanceInput() interf
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html aws_servicecatalog_portfolio_share} Resource.
 func NewServicecatalogPortfolioShare(scope constructs.Construct, id *string, config *ServicecatalogPortfolioShareConfig) ServicecatalogPortfolioShare {
 	_init_.Initialize()
@@ -6295,7 +6291,7 @@ func NewServicecatalogPortfolioShare(scope constructs.Construct, id *string, con
 	j := jsiiProxy_ServicecatalogPortfolioShare{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShare",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShare",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6308,7 +6304,7 @@ func NewServicecatalogPortfolioShare_Override(s ServicecatalogPortfolioShare, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShare",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShare",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6404,7 +6400,7 @@ func ServicecatalogPortfolioShare_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShare",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShare",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6417,7 +6413,7 @@ func ServicecatalogPortfolioShare_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioShare",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioShare",
 		"tfResourceType",
 		&returns,
 	)
@@ -6603,6 +6599,7 @@ func (s *jsiiProxy_ServicecatalogPortfolioShare) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogPortfolioShareConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6643,6 +6640,8 @@ type ServicecatalogPortfolioTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ServicecatalogPortfolioTimeouts
+	SetInternalValue(val *ServicecatalogPortfolioTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6708,6 +6707,16 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) DeleteInput()
 	return returns
 }
 
+func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) InternalValue() *ServicecatalogPortfolioTimeouts {
+	var returns *ServicecatalogPortfolioTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6758,14 +6767,13 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) UpdateInput()
 	return returns
 }
 
-
 func NewServicecatalogPortfolioTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogPortfolioTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6777,7 +6785,7 @@ func NewServicecatalogPortfolioTimeoutsOutputReference_Override(s Servicecatalog
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPortfolioTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogPortfolioTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -6795,6 +6803,14 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetDelete(val
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetInternalValue(val *ServicecatalogPortfolioTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7213,7 +7229,6 @@ func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) TerraformResourc
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html aws_servicecatalog_principal_portfolio_association} Resource.
 func NewServicecatalogPrincipalPortfolioAssociation(scope constructs.Construct, id *string, config *ServicecatalogPrincipalPortfolioAssociationConfig) ServicecatalogPrincipalPortfolioAssociation {
 	_init_.Initialize()
@@ -7221,7 +7236,7 @@ func NewServicecatalogPrincipalPortfolioAssociation(scope constructs.Construct, 
 	j := jsiiProxy_ServicecatalogPrincipalPortfolioAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7234,7 +7249,7 @@ func NewServicecatalogPrincipalPortfolioAssociation_Override(s ServicecatalogPri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -7314,7 +7329,7 @@ func ServicecatalogPrincipalPortfolioAssociation_IsConstruct(x interface{}) *boo
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7327,7 +7342,7 @@ func ServicecatalogPrincipalPortfolioAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogPrincipalPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogPrincipalPortfolioAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -7505,6 +7520,7 @@ func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) ToTerraform() in
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogPrincipalPortfolioAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8032,7 +8048,6 @@ func (j *jsiiProxy_ServicecatalogProduct) TypeInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html aws_servicecatalog_product} Resource.
 func NewServicecatalogProduct(scope constructs.Construct, id *string, config *ServicecatalogProductConfig) ServicecatalogProduct {
 	_init_.Initialize()
@@ -8040,7 +8055,7 @@ func NewServicecatalogProduct(scope constructs.Construct, id *string, config *Se
 	j := jsiiProxy_ServicecatalogProduct{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProduct",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8053,7 +8068,7 @@ func NewServicecatalogProduct_Override(s ServicecatalogProduct, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProduct",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8189,7 +8204,7 @@ func ServicecatalogProduct_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProduct",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8202,7 +8217,7 @@ func ServicecatalogProduct_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProduct",
 		"tfResourceType",
 		&returns,
 	)
@@ -8436,6 +8451,7 @@ func (s *jsiiProxy_ServicecatalogProduct) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogProductConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8747,7 +8763,6 @@ func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) TerraformResourceT
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html aws_servicecatalog_product_portfolio_association} Resource.
 func NewServicecatalogProductPortfolioAssociation(scope constructs.Construct, id *string, config *ServicecatalogProductPortfolioAssociationConfig) ServicecatalogProductPortfolioAssociation {
 	_init_.Initialize()
@@ -8755,7 +8770,7 @@ func NewServicecatalogProductPortfolioAssociation(scope constructs.Construct, id
 	j := jsiiProxy_ServicecatalogProductPortfolioAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8768,7 +8783,7 @@ func NewServicecatalogProductPortfolioAssociation_Override(s ServicecatalogProdu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -8848,7 +8863,7 @@ func ServicecatalogProductPortfolioAssociation_IsConstruct(x interface{}) *bool 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8861,7 +8876,7 @@ func ServicecatalogProductPortfolioAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductPortfolioAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductPortfolioAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -9039,6 +9054,7 @@ func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) ToTerraform() inte
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogProductPortfolioAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9081,6 +9097,8 @@ type ServicecatalogProductProvisioningArtifactParametersOutputReference interfac
 	DisableTemplateValidation() interface{}
 	SetDisableTemplateValidation(val interface{})
 	DisableTemplateValidationInput() interface{}
+	InternalValue() *ServicecatalogProductProvisioningArtifactParameters
+	SetInternalValue(val *ServicecatalogProductProvisioningArtifactParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -9153,6 +9171,16 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	_jsii_.Get(
 		j,
 		"disableTemplateValidationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) InternalValue() *ServicecatalogProductProvisioningArtifactParameters {
+	var returns *ServicecatalogProductProvisioningArtifactParameters
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -9268,14 +9296,13 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	return returns
 }
 
-
 func NewServicecatalogProductProvisioningArtifactParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProductProvisioningArtifactParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9287,7 +9314,7 @@ func NewServicecatalogProductProvisioningArtifactParametersOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProductProvisioningArtifactParametersOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -9305,6 +9332,14 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	_jsii_.Set(
 		j,
 		"disableTemplateValidation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) SetInternalValue(val *ServicecatalogProductProvisioningArtifactParameters) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10170,7 +10205,6 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) Type() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html aws_servicecatalog_provisioned_product} Resource.
 func NewServicecatalogProvisionedProduct(scope constructs.Construct, id *string, config *ServicecatalogProvisionedProductConfig) ServicecatalogProvisionedProduct {
 	_init_.Initialize()
@@ -10178,7 +10212,7 @@ func NewServicecatalogProvisionedProduct(scope constructs.Construct, id *string,
 	j := jsiiProxy_ServicecatalogProvisionedProduct{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProduct",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10191,7 +10225,7 @@ func NewServicecatalogProvisionedProduct_Override(s ServicecatalogProvisionedPro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProduct",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -10351,7 +10385,7 @@ func ServicecatalogProvisionedProduct_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProduct",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10364,7 +10398,7 @@ func ServicecatalogProvisionedProduct_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProduct",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProduct",
 		"tfResourceType",
 		&returns,
 	)
@@ -10662,6 +10696,7 @@ func (s *jsiiProxy_ServicecatalogProvisionedProduct) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogProvisionedProductConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10746,6 +10781,8 @@ type ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputRefere
 	FailureTolerancePercentage() *float64
 	SetFailureTolerancePercentage(val *float64)
 	FailureTolerancePercentageInput() *float64
+	InternalValue() *ServicecatalogProvisionedProductStackSetProvisioningPreferences
+	SetInternalValue(val *ServicecatalogProvisionedProductStackSetProvisioningPreferences)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConcurrencyCount() *float64
@@ -10835,6 +10872,16 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	_jsii_.Get(
 		j,
 		"failureTolerancePercentageInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) InternalValue() *ServicecatalogProvisionedProductStackSetProvisioningPreferences {
+	var returns *ServicecatalogProvisionedProductStackSetProvisioningPreferences
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -10930,14 +10977,13 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	return returns
 }
 
-
 func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -10949,7 +10995,7 @@ func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -10975,6 +11021,14 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	_jsii_.Set(
 		j,
 		"failureTolerancePercentage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) SetInternalValue(val *ServicecatalogProvisionedProductStackSetProvisioningPreferences) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11176,6 +11230,8 @@ type ServicecatalogProvisionedProductTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ServicecatalogProvisionedProductTimeouts
+	SetInternalValue(val *ServicecatalogProvisionedProductTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11241,6 +11297,16 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) Dele
 	return returns
 }
 
+func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) InternalValue() *ServicecatalogProvisionedProductTimeouts {
+	var returns *ServicecatalogProvisionedProductTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -11291,14 +11357,13 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) Upda
 	return returns
 }
 
-
 func NewServicecatalogProvisionedProductTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11310,7 +11375,7 @@ func NewServicecatalogProvisionedProductTimeoutsOutputReference_Override(s Servi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisionedProductTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -11328,6 +11393,14 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetD
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetInternalValue(val *ServicecatalogProvisionedProductTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11902,7 +11975,6 @@ func (j *jsiiProxy_ServicecatalogProvisioningArtifact) TypeInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html aws_servicecatalog_provisioning_artifact} Resource.
 func NewServicecatalogProvisioningArtifact(scope constructs.Construct, id *string, config *ServicecatalogProvisioningArtifactConfig) ServicecatalogProvisioningArtifact {
 	_init_.Initialize()
@@ -11910,7 +11982,7 @@ func NewServicecatalogProvisioningArtifact(scope constructs.Construct, id *strin
 	j := jsiiProxy_ServicecatalogProvisioningArtifact{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifact",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifact",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11923,7 +11995,7 @@ func NewServicecatalogProvisioningArtifact_Override(s ServicecatalogProvisioning
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifact",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifact",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12051,7 +12123,7 @@ func ServicecatalogProvisioningArtifact_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifact",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifact",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12064,7 +12136,7 @@ func ServicecatalogProvisioningArtifact_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogProvisioningArtifact",
+		"hashicorp_aws.servicecatalog.ServicecatalogProvisioningArtifact",
 		"tfResourceType",
 		&returns,
 	)
@@ -12298,6 +12370,7 @@ func (s *jsiiProxy_ServicecatalogProvisioningArtifact) ToTerraform() interface{}
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogProvisioningArtifactConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12603,7 +12676,6 @@ func (j *jsiiProxy_ServicecatalogServiceAction) TerraformResourceType() *string 
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html aws_servicecatalog_service_action} Resource.
 func NewServicecatalogServiceAction(scope constructs.Construct, id *string, config *ServicecatalogServiceActionConfig) ServicecatalogServiceAction {
 	_init_.Initialize()
@@ -12611,7 +12683,7 @@ func NewServicecatalogServiceAction(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ServicecatalogServiceAction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceAction",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceAction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12624,7 +12696,7 @@ func NewServicecatalogServiceAction_Override(s ServicecatalogServiceAction, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceAction",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceAction",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -12696,7 +12768,7 @@ func ServicecatalogServiceAction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceAction",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceAction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12709,7 +12781,7 @@ func ServicecatalogServiceAction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceAction",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceAction",
 		"tfResourceType",
 		&returns,
 	)
@@ -12895,6 +12967,7 @@ func (s *jsiiProxy_ServicecatalogServiceAction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogServiceActionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12934,6 +13007,8 @@ type ServicecatalogServiceActionDefinitionOutputReference interface {
 	AssumeRole() *string
 	SetAssumeRole(val *string)
 	AssumeRoleInput() *string
+	InternalValue() *ServicecatalogServiceActionDefinition
+	SetInternalValue(val *ServicecatalogServiceActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Name() *string
@@ -12983,6 +13058,16 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) AssumeR
 	_jsii_.Get(
 		j,
 		"assumeRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) InternalValue() *ServicecatalogServiceActionDefinition {
+	var returns *ServicecatalogServiceActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -13098,14 +13183,13 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) Version
 	return returns
 }
 
-
 func NewServicecatalogServiceActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogServiceActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceActionDefinitionOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13117,7 +13201,7 @@ func NewServicecatalogServiceActionDefinitionOutputReference_Override(s Servicec
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogServiceActionDefinitionOutputReference",
+		"hashicorp_aws.servicecatalog.ServicecatalogServiceActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -13127,6 +13211,14 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetAssu
 	_jsii_.Set(
 		j,
 		"assumeRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetInternalValue(val *ServicecatalogServiceActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13556,7 +13648,6 @@ func (j *jsiiProxy_ServicecatalogTagOption) ValueInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html aws_servicecatalog_tag_option} Resource.
 func NewServicecatalogTagOption(scope constructs.Construct, id *string, config *ServicecatalogTagOptionConfig) ServicecatalogTagOption {
 	_init_.Initialize()
@@ -13564,7 +13655,7 @@ func NewServicecatalogTagOption(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_ServicecatalogTagOption{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOption",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOption",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13577,7 +13668,7 @@ func NewServicecatalogTagOption_Override(s ServicecatalogTagOption, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOption",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOption",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -13649,7 +13740,7 @@ func ServicecatalogTagOption_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOption",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOption",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13662,7 +13753,7 @@ func ServicecatalogTagOption_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOption",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOption",
 		"tfResourceType",
 		&returns,
 	)
@@ -13832,6 +13923,7 @@ func (s *jsiiProxy_ServicecatalogTagOption) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogTagOptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14119,7 +14211,6 @@ func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) TerraformResource
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html aws_servicecatalog_tag_option_resource_association} Resource.
 func NewServicecatalogTagOptionResourceAssociation(scope constructs.Construct, id *string, config *ServicecatalogTagOptionResourceAssociationConfig) ServicecatalogTagOptionResourceAssociation {
 	_init_.Initialize()
@@ -14127,7 +14218,7 @@ func NewServicecatalogTagOptionResourceAssociation(scope constructs.Construct, i
 	j := jsiiProxy_ServicecatalogTagOptionResourceAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14140,7 +14231,7 @@ func NewServicecatalogTagOptionResourceAssociation_Override(s ServicecatalogTagO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociation",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -14204,7 +14295,7 @@ func ServicecatalogTagOptionResourceAssociation_IsConstruct(x interface{}) *bool
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14217,7 +14308,7 @@ func ServicecatalogTagOptionResourceAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ServiceCatalog.ServicecatalogTagOptionResourceAssociation",
+		"hashicorp_aws.servicecatalog.ServicecatalogTagOptionResourceAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -14379,6 +14470,7 @@ func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) ToTerraform() int
 	return returns
 }
 
+// AWS Service Catalog.
 type ServicecatalogTagOptionResourceAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14393,4 +14485,3 @@ type ServicecatalogTagOptionResourceAssociationConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html#tag_option_id ServicecatalogTagOptionResourceAssociation#tag_option_id}.
 	TagOptionId *string `json:"tagOptionId"`
 }
-

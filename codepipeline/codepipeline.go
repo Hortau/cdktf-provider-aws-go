@@ -347,7 +347,7 @@ func NewCodepipeline(scope constructs.Construct, id *string, config *Codepipelin
 	j := jsiiProxy_Codepipeline{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.Codepipeline",
+		"hashicorp_aws.codepipeline.Codepipeline",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -360,7 +360,7 @@ func NewCodepipeline_Override(c Codepipeline, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.Codepipeline",
+		"hashicorp_aws.codepipeline.Codepipeline",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -456,7 +456,7 @@ func Codepipeline_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodePipeline.Codepipeline",
+		"hashicorp_aws.codepipeline.Codepipeline",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -469,7 +469,7 @@ func Codepipeline_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodePipeline.Codepipeline",
+		"hashicorp_aws.codepipeline.Codepipeline",
 		"tfResourceType",
 		&returns,
 	)
@@ -672,6 +672,8 @@ type CodepipelineArtifactStoreEncryptionKeyOutputReference interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InternalValue() *CodepipelineArtifactStoreEncryptionKey
+	SetInternalValue(val *CodepipelineArtifactStoreEncryptionKey)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -709,6 +711,16 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) IdInpu
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) InternalValue() *CodepipelineArtifactStoreEncryptionKey {
+	var returns *CodepipelineArtifactStoreEncryptionKey
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -770,7 +782,7 @@ func NewCodepipelineArtifactStoreEncryptionKeyOutputReference(terraformResource 
 	j := jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -782,7 +794,7 @@ func NewCodepipelineArtifactStoreEncryptionKeyOutputReference_Override(c Codepip
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineArtifactStoreEncryptionKeyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -792,6 +804,14 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetId(
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetInternalValue(val *CodepipelineArtifactStoreEncryptionKey) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -912,6 +932,7 @@ func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) Interp
 	return returns
 }
 
+// AWS CodePipeline.
 type CodepipelineConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1360,7 +1381,7 @@ func NewCodepipelineWebhook(scope constructs.Construct, id *string, config *Code
 	j := jsiiProxy_CodepipelineWebhook{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhook",
+		"hashicorp_aws.codepipeline.CodepipelineWebhook",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1373,7 +1394,7 @@ func NewCodepipelineWebhook_Override(c CodepipelineWebhook, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhook",
+		"hashicorp_aws.codepipeline.CodepipelineWebhook",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1477,7 +1498,7 @@ func CodepipelineWebhook_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhook",
+		"hashicorp_aws.codepipeline.CodepipelineWebhook",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1490,7 +1511,7 @@ func CodepipelineWebhook_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhook",
+		"hashicorp_aws.codepipeline.CodepipelineWebhook",
 		"tfResourceType",
 		&returns,
 	)
@@ -1696,6 +1717,8 @@ type CodepipelineWebhookAuthenticationConfigurationOutputReference interface {
 	AllowedIpRange() *string
 	SetAllowedIpRange(val *string)
 	AllowedIpRangeInput() *string
+	InternalValue() *CodepipelineWebhookAuthenticationConfiguration
+	SetInternalValue(val *CodepipelineWebhookAuthenticationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecretToken() *string
@@ -1735,6 +1758,16 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	_jsii_.Get(
 		j,
 		"allowedIpRangeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) InternalValue() *CodepipelineWebhookAuthenticationConfiguration {
+	var returns *CodepipelineWebhookAuthenticationConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1796,7 +1829,7 @@ func NewCodepipelineWebhookAuthenticationConfigurationOutputReference(terraformR
 	j := jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1808,7 +1841,7 @@ func NewCodepipelineWebhookAuthenticationConfigurationOutputReference_Override(c
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodePipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
+		"hashicorp_aws.codepipeline.CodepipelineWebhookAuthenticationConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1818,6 +1851,14 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	_jsii_.Set(
 		j,
 		"allowedIpRange",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) SetInternalValue(val *CodepipelineWebhookAuthenticationConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1954,6 +1995,7 @@ func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	)
 }
 
+// AWS CodePipeline.
 type CodepipelineWebhookConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

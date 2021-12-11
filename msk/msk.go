@@ -220,7 +220,7 @@ func NewDataAwsMskBrokerNodes(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsMskBrokerNodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodes",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodes",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -233,7 +233,7 @@ func NewDataAwsMskBrokerNodes_Override(d DataAwsMskBrokerNodes, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodes",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodes",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -289,7 +289,7 @@ func DataAwsMskBrokerNodes_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodes",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodes",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -302,7 +302,7 @@ func DataAwsMskBrokerNodes_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodes",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodes",
 		"tfResourceType",
 		&returns,
 	)
@@ -477,6 +477,7 @@ func (d *jsiiProxy_DataAwsMskBrokerNodes) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type DataAwsMskBrokerNodesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -613,7 +614,7 @@ func NewDataAwsMskBrokerNodesNodeInfoList(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DataAwsMskBrokerNodesNodeInfoList{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodesNodeInfoList",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodesNodeInfoList",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -626,7 +627,7 @@ func NewDataAwsMskBrokerNodesNodeInfoList_Override(d DataAwsMskBrokerNodesNodeIn
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskBrokerNodesNodeInfoList",
+		"hashicorp_aws.msk.DataAwsMskBrokerNodesNodeInfoList",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1048,7 +1049,7 @@ func NewDataAwsMskCluster(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsMskCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskCluster",
+		"hashicorp_aws.msk.DataAwsMskCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1061,7 +1062,7 @@ func NewDataAwsMskCluster_Override(d DataAwsMskCluster, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskCluster",
+		"hashicorp_aws.msk.DataAwsMskCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1125,7 +1126,7 @@ func DataAwsMskCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.DataAwsMskCluster",
+		"hashicorp_aws.msk.DataAwsMskCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1138,7 +1139,7 @@ func DataAwsMskCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.DataAwsMskCluster",
+		"hashicorp_aws.msk.DataAwsMskCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -1308,6 +1309,7 @@ func (d *jsiiProxy_DataAwsMskCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type DataAwsMskClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1588,7 +1590,7 @@ func NewDataAwsMskConfiguration(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsMskConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskConfiguration",
+		"hashicorp_aws.msk.DataAwsMskConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1601,7 +1603,7 @@ func NewDataAwsMskConfiguration_Override(d DataAwsMskConfiguration, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskConfiguration",
+		"hashicorp_aws.msk.DataAwsMskConfiguration",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1657,7 +1659,7 @@ func DataAwsMskConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.DataAwsMskConfiguration",
+		"hashicorp_aws.msk.DataAwsMskConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1670,7 +1672,7 @@ func DataAwsMskConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.DataAwsMskConfiguration",
+		"hashicorp_aws.msk.DataAwsMskConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -1832,6 +1834,7 @@ func (d *jsiiProxy_DataAwsMskConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type DataAwsMskConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2091,7 +2094,7 @@ func NewDataAwsMskKafkaVersion(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsMskKafkaVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersion",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2104,7 +2107,7 @@ func NewDataAwsMskKafkaVersion_Override(d DataAwsMskKafkaVersion, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersion",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2168,7 +2171,7 @@ func DataAwsMskKafkaVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersion",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2181,7 +2184,7 @@ func DataAwsMskKafkaVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.DataAwsMskKafkaVersion",
+		"hashicorp_aws.msk.DataAwsMskKafkaVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -2359,6 +2362,7 @@ func (d *jsiiProxy_DataAwsMskKafkaVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type DataAwsMskKafkaVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2957,7 +2961,7 @@ func NewMskCluster(scope constructs.Construct, id *string, config *MskClusterCon
 	j := jsiiProxy_MskCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskCluster",
+		"hashicorp_aws.msk.MskCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2970,7 +2974,7 @@ func NewMskCluster_Override(m MskCluster, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskCluster",
+		"hashicorp_aws.msk.MskCluster",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -3066,7 +3070,7 @@ func MskCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.MskCluster",
+		"hashicorp_aws.msk.MskCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3079,7 +3083,7 @@ func MskCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.MskCluster",
+		"hashicorp_aws.msk.MskCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -3396,6 +3400,8 @@ type MskClusterBrokerNodeGroupInfoOutputReference interface {
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *MskClusterBrokerNodeGroupInfo
+	SetInternalValue(val *MskClusterBrokerNodeGroupInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroups() *[]*string
@@ -3499,6 +3505,16 @@ func (j *jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference) InstanceTypeInp
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference) InternalValue() *MskClusterBrokerNodeGroupInfo {
+	var returns *MskClusterBrokerNodeGroupInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3555,7 +3571,7 @@ func NewMskClusterBrokerNodeGroupInfoOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterBrokerNodeGroupInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterBrokerNodeGroupInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3567,7 +3583,7 @@ func NewMskClusterBrokerNodeGroupInfoOutputReference_Override(m MskClusterBroker
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterBrokerNodeGroupInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterBrokerNodeGroupInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -3601,6 +3617,14 @@ func (j *jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference) SetInstanceType
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterBrokerNodeGroupInfoOutputReference) SetInternalValue(val *MskClusterBrokerNodeGroupInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3742,6 +3766,8 @@ type MskClusterClientAuthentication struct {
 
 type MskClusterClientAuthenticationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *MskClusterClientAuthentication
+	SetInternalValue(val *MskClusterClientAuthentication)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Sasl() MskClusterClientAuthenticationSaslOutputReference
@@ -3767,6 +3793,16 @@ type MskClusterClientAuthenticationOutputReference interface {
 // The jsii proxy struct for MskClusterClientAuthenticationOutputReference
 type jsiiProxy_MskClusterClientAuthenticationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationOutputReference) InternalValue() *MskClusterClientAuthentication {
+	var returns *MskClusterClientAuthentication
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MskClusterClientAuthenticationOutputReference) IsSingleItem() *bool {
@@ -3845,7 +3881,7 @@ func NewMskClusterClientAuthenticationOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_MskClusterClientAuthenticationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3857,9 +3893,17 @@ func NewMskClusterClientAuthenticationOutputReference_Override(m MskClusterClien
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationOutputReference) SetInternalValue(val *MskClusterClientAuthentication) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4015,6 +4059,8 @@ type MskClusterClientAuthenticationSaslOutputReference interface {
 	Iam() interface{}
 	SetIam(val interface{})
 	IamInput() interface{}
+	InternalValue() *MskClusterClientAuthenticationSasl
+	SetInternalValue(val *MskClusterClientAuthenticationSasl)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Scram() interface{}
@@ -4054,6 +4100,16 @@ func (j *jsiiProxy_MskClusterClientAuthenticationSaslOutputReference) IamInput()
 	_jsii_.Get(
 		j,
 		"iamInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationSaslOutputReference) InternalValue() *MskClusterClientAuthenticationSasl {
+	var returns *MskClusterClientAuthenticationSasl
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4115,7 +4171,7 @@ func NewMskClusterClientAuthenticationSaslOutputReference(terraformResource cdkt
 	j := jsiiProxy_MskClusterClientAuthenticationSaslOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationSaslOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationSaslOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4127,7 +4183,7 @@ func NewMskClusterClientAuthenticationSaslOutputReference_Override(m MskClusterC
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationSaslOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationSaslOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4137,6 +4193,14 @@ func (j *jsiiProxy_MskClusterClientAuthenticationSaslOutputReference) SetIam(val
 	_jsii_.Set(
 		j,
 		"iam",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationSaslOutputReference) SetInternalValue(val *MskClusterClientAuthenticationSasl) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4283,6 +4347,8 @@ type MskClusterClientAuthenticationTlsOutputReference interface {
 	CertificateAuthorityArns() *[]*string
 	SetCertificateAuthorityArns(val *[]*string)
 	CertificateAuthorityArnsInput() *[]*string
+	InternalValue() *MskClusterClientAuthenticationTls
+	SetInternalValue(val *MskClusterClientAuthenticationTls)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4318,6 +4384,16 @@ func (j *jsiiProxy_MskClusterClientAuthenticationTlsOutputReference) Certificate
 	_jsii_.Get(
 		j,
 		"certificateAuthorityArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationTlsOutputReference) InternalValue() *MskClusterClientAuthenticationTls {
+	var returns *MskClusterClientAuthenticationTls
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4359,7 +4435,7 @@ func NewMskClusterClientAuthenticationTlsOutputReference(terraformResource cdktf
 	j := jsiiProxy_MskClusterClientAuthenticationTlsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationTlsOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4371,7 +4447,7 @@ func NewMskClusterClientAuthenticationTlsOutputReference_Override(m MskClusterCl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterClientAuthenticationTlsOutputReference",
+		"hashicorp_aws.msk.MskClusterClientAuthenticationTlsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4381,6 +4457,14 @@ func (j *jsiiProxy_MskClusterClientAuthenticationTlsOutputReference) SetCertific
 	_jsii_.Set(
 		j,
 		"certificateAuthorityArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterClientAuthenticationTlsOutputReference) SetInternalValue(val *MskClusterClientAuthenticationTls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4501,6 +4585,7 @@ func (m *jsiiProxy_MskClusterClientAuthenticationTlsOutputReference) ResetCertif
 	)
 }
 
+// AWS Managed Streaming for Kafka.
 type MskClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4564,6 +4649,8 @@ type MskClusterConfigurationInfoOutputReference interface {
 	Arn() *string
 	SetArn(val *string)
 	ArnInput() *string
+	InternalValue() *MskClusterConfigurationInfo
+	SetInternalValue(val *MskClusterConfigurationInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Revision() *float64
@@ -4601,6 +4688,16 @@ func (j *jsiiProxy_MskClusterConfigurationInfoOutputReference) ArnInput() *strin
 	_jsii_.Get(
 		j,
 		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterConfigurationInfoOutputReference) InternalValue() *MskClusterConfigurationInfo {
+	var returns *MskClusterConfigurationInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4662,7 +4759,7 @@ func NewMskClusterConfigurationInfoOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_MskClusterConfigurationInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterConfigurationInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterConfigurationInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4674,7 +4771,7 @@ func NewMskClusterConfigurationInfoOutputReference_Override(m MskClusterConfigur
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterConfigurationInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterConfigurationInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4684,6 +4781,14 @@ func (j *jsiiProxy_MskClusterConfigurationInfoOutputReference) SetArn(val *strin
 	_jsii_.Set(
 		j,
 		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterConfigurationInfoOutputReference) SetInternalValue(val *MskClusterConfigurationInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4828,6 +4933,8 @@ type MskClusterEncryptionInfoEncryptionInTransitOutputReference interface {
 	InCluster() interface{}
 	SetInCluster(val interface{})
 	InClusterInput() interface{}
+	InternalValue() *MskClusterEncryptionInfoEncryptionInTransit
+	SetInternalValue(val *MskClusterEncryptionInfoEncryptionInTransit)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4889,6 +4996,16 @@ func (j *jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference) I
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference) InternalValue() *MskClusterEncryptionInfoEncryptionInTransit {
+	var returns *MskClusterEncryptionInfoEncryptionInTransit
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4925,7 +5042,7 @@ func NewMskClusterEncryptionInfoEncryptionInTransitOutputReference(terraformReso
 	j := jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4937,7 +5054,7 @@ func NewMskClusterEncryptionInfoEncryptionInTransitOutputReference_Override(m Ms
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoEncryptionInTransitOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -4955,6 +5072,14 @@ func (j *jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference) S
 	_jsii_.Set(
 		j,
 		"inCluster",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterEncryptionInfoEncryptionInTransitOutputReference) SetInternalValue(val *MskClusterEncryptionInfoEncryptionInTransit) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5090,6 +5215,8 @@ type MskClusterEncryptionInfoOutputReference interface {
 	EncryptionAtRestKmsKeyArnInput() *string
 	EncryptionInTransit() MskClusterEncryptionInfoEncryptionInTransitOutputReference
 	EncryptionInTransitInput() *MskClusterEncryptionInfoEncryptionInTransit
+	InternalValue() *MskClusterEncryptionInfo
+	SetInternalValue(val *MskClusterEncryptionInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5152,6 +5279,16 @@ func (j *jsiiProxy_MskClusterEncryptionInfoOutputReference) EncryptionInTransitI
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterEncryptionInfoOutputReference) InternalValue() *MskClusterEncryptionInfo {
+	var returns *MskClusterEncryptionInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterEncryptionInfoOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5188,7 +5325,7 @@ func NewMskClusterEncryptionInfoOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_MskClusterEncryptionInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5200,7 +5337,7 @@ func NewMskClusterEncryptionInfoOutputReference_Override(m MskClusterEncryptionI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterEncryptionInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterEncryptionInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -5210,6 +5347,14 @@ func (j *jsiiProxy_MskClusterEncryptionInfoOutputReference) SetEncryptionAtRestK
 	_jsii_.Set(
 		j,
 		"encryptionAtRestKmsKeyArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterEncryptionInfoOutputReference) SetInternalValue(val *MskClusterEncryptionInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5380,6 +5525,8 @@ type MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MskClusterLoggingInfoBrokerLogsCloudwatchLogs
+	SetInternalValue(val *MskClusterLoggingInfoBrokerLogsCloudwatchLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogGroup() *string
@@ -5418,6 +5565,16 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference)
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference) InternalValue() *MskClusterLoggingInfoBrokerLogsCloudwatchLogs {
+	var returns *MskClusterLoggingInfoBrokerLogsCloudwatchLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5479,7 +5636,7 @@ func NewMskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference(terraformRe
 	j := jsiiProxy_MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5491,7 +5648,7 @@ func NewMskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference_Override(m 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -5501,6 +5658,14 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference)
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsCloudwatchLogsOutputReference) SetInternalValue(val *MskClusterLoggingInfoBrokerLogsCloudwatchLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5644,6 +5809,8 @@ type MskClusterLoggingInfoBrokerLogsFirehoseOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MskClusterLoggingInfoBrokerLogsFirehose
+	SetInternalValue(val *MskClusterLoggingInfoBrokerLogsFirehose)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5704,6 +5871,16 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference) Enabl
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference) InternalValue() *MskClusterLoggingInfoBrokerLogsFirehose {
+	var returns *MskClusterLoggingInfoBrokerLogsFirehose
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5740,7 +5917,7 @@ func NewMskClusterLoggingInfoBrokerLogsFirehoseOutputReference(terraformResource
 	j := jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5752,7 +5929,7 @@ func NewMskClusterLoggingInfoBrokerLogsFirehoseOutputReference_Override(m MskClu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsFirehoseOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -5770,6 +5947,14 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference) SetEn
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsFirehoseOutputReference) SetInternalValue(val *MskClusterLoggingInfoBrokerLogsFirehose) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5896,6 +6081,8 @@ type MskClusterLoggingInfoBrokerLogsOutputReference interface {
 	CloudwatchLogsInput() *MskClusterLoggingInfoBrokerLogsCloudwatchLogs
 	Firehose() MskClusterLoggingInfoBrokerLogsFirehoseOutputReference
 	FirehoseInput() *MskClusterLoggingInfoBrokerLogsFirehose
+	InternalValue() *MskClusterLoggingInfoBrokerLogs
+	SetInternalValue(val *MskClusterLoggingInfoBrokerLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3() MskClusterLoggingInfoBrokerLogsS3OutputReference
@@ -5963,6 +6150,16 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsOutputReference) FirehoseInput
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsOutputReference) InternalValue() *MskClusterLoggingInfoBrokerLogs {
+	var returns *MskClusterLoggingInfoBrokerLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6019,7 +6216,7 @@ func NewMskClusterLoggingInfoBrokerLogsOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_MskClusterLoggingInfoBrokerLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6031,9 +6228,17 @@ func NewMskClusterLoggingInfoBrokerLogsOutputReference_Override(m MskClusterLogg
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsOutputReference) SetInternalValue(val *MskClusterLoggingInfoBrokerLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6210,6 +6415,8 @@ type MskClusterLoggingInfoBrokerLogsS3OutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MskClusterLoggingInfoBrokerLogsS3
+	SetInternalValue(val *MskClusterLoggingInfoBrokerLogsS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -6274,6 +6481,16 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference) EnabledInpu
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference) InternalValue() *MskClusterLoggingInfoBrokerLogsS3 {
+	var returns *MskClusterLoggingInfoBrokerLogsS3
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6330,7 +6547,7 @@ func NewMskClusterLoggingInfoBrokerLogsS3OutputReference(terraformResource cdktf
 	j := jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsS3OutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6342,7 +6559,7 @@ func NewMskClusterLoggingInfoBrokerLogsS3OutputReference_Override(m MskClusterLo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoBrokerLogsS3OutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoBrokerLogsS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -6360,6 +6577,14 @@ func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference) SetEnabled(
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoBrokerLogsS3OutputReference) SetInternalValue(val *MskClusterLoggingInfoBrokerLogsS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6500,6 +6725,8 @@ type MskClusterLoggingInfoOutputReference interface {
 	cdktf.ComplexObject
 	BrokerLogs() MskClusterLoggingInfoBrokerLogsOutputReference
 	BrokerLogsInput() *MskClusterLoggingInfoBrokerLogs
+	InternalValue() *MskClusterLoggingInfo
+	SetInternalValue(val *MskClusterLoggingInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6535,6 +6762,16 @@ func (j *jsiiProxy_MskClusterLoggingInfoOutputReference) BrokerLogsInput() *MskC
 	_jsii_.Get(
 		j,
 		"brokerLogsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoOutputReference) InternalValue() *MskClusterLoggingInfo {
+	var returns *MskClusterLoggingInfo
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6576,7 +6813,7 @@ func NewMskClusterLoggingInfoOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_MskClusterLoggingInfoOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6588,9 +6825,17 @@ func NewMskClusterLoggingInfoOutputReference_Override(m MskClusterLoggingInfoOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterLoggingInfoOutputReference",
+		"hashicorp_aws.msk.MskClusterLoggingInfoOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MskClusterLoggingInfoOutputReference) SetInternalValue(val *MskClusterLoggingInfo) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6719,6 +6964,8 @@ type MskClusterOpenMonitoring struct {
 
 type MskClusterOpenMonitoringOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *MskClusterOpenMonitoring
+	SetInternalValue(val *MskClusterOpenMonitoring)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prometheus() MskClusterOpenMonitoringPrometheusOutputReference
@@ -6739,6 +6986,16 @@ type MskClusterOpenMonitoringOutputReference interface {
 // The jsii proxy struct for MskClusterOpenMonitoringOutputReference
 type jsiiProxy_MskClusterOpenMonitoringOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringOutputReference) InternalValue() *MskClusterOpenMonitoring {
+	var returns *MskClusterOpenMonitoring
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MskClusterOpenMonitoringOutputReference) IsSingleItem() *bool {
@@ -6797,7 +7054,7 @@ func NewMskClusterOpenMonitoringOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_MskClusterOpenMonitoringOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6809,9 +7066,17 @@ func NewMskClusterOpenMonitoringOutputReference_Override(m MskClusterOpenMonitor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringOutputReference) SetInternalValue(val *MskClusterOpenMonitoring) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6952,6 +7217,8 @@ type MskClusterOpenMonitoringPrometheusJmxExporterOutputReference interface {
 	EnabledInBroker() interface{}
 	SetEnabledInBroker(val interface{})
 	EnabledInBrokerInput() interface{}
+	InternalValue() *MskClusterOpenMonitoringPrometheusJmxExporter
+	SetInternalValue(val *MskClusterOpenMonitoringPrometheusJmxExporter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6986,6 +7253,16 @@ func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusJmxExporterOutputReference)
 	_jsii_.Get(
 		j,
 		"enabledInBrokerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusJmxExporterOutputReference) InternalValue() *MskClusterOpenMonitoringPrometheusJmxExporter {
+	var returns *MskClusterOpenMonitoringPrometheusJmxExporter
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7027,7 +7304,7 @@ func NewMskClusterOpenMonitoringPrometheusJmxExporterOutputReference(terraformRe
 	j := jsiiProxy_MskClusterOpenMonitoringPrometheusJmxExporterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7039,7 +7316,7 @@ func NewMskClusterOpenMonitoringPrometheusJmxExporterOutputReference_Override(m 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusJmxExporterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -7049,6 +7326,14 @@ func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusJmxExporterOutputReference)
 	_jsii_.Set(
 		j,
 		"enabledInBroker",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusJmxExporterOutputReference) SetInternalValue(val *MskClusterOpenMonitoringPrometheusJmxExporter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7171,6 +7456,8 @@ type MskClusterOpenMonitoringPrometheusNodeExporterOutputReference interface {
 	EnabledInBroker() interface{}
 	SetEnabledInBroker(val interface{})
 	EnabledInBrokerInput() interface{}
+	InternalValue() *MskClusterOpenMonitoringPrometheusNodeExporter
+	SetInternalValue(val *MskClusterOpenMonitoringPrometheusNodeExporter)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7205,6 +7492,16 @@ func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference
 	_jsii_.Get(
 		j,
 		"enabledInBrokerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference) InternalValue() *MskClusterOpenMonitoringPrometheusNodeExporter {
+	var returns *MskClusterOpenMonitoringPrometheusNodeExporter
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -7246,7 +7543,7 @@ func NewMskClusterOpenMonitoringPrometheusNodeExporterOutputReference(terraformR
 	j := jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7258,7 +7555,7 @@ func NewMskClusterOpenMonitoringPrometheusNodeExporterOutputReference_Override(m
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusNodeExporterOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -7268,6 +7565,14 @@ func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference
 	_jsii_.Set(
 		j,
 		"enabledInBroker",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference) SetInternalValue(val *MskClusterOpenMonitoringPrometheusNodeExporter) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7382,6 +7687,8 @@ func (m *jsiiProxy_MskClusterOpenMonitoringPrometheusNodeExporterOutputReference
 
 type MskClusterOpenMonitoringPrometheusOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *MskClusterOpenMonitoringPrometheus
+	SetInternalValue(val *MskClusterOpenMonitoringPrometheus)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	JmxExporter() MskClusterOpenMonitoringPrometheusJmxExporterOutputReference
@@ -7407,6 +7714,16 @@ type MskClusterOpenMonitoringPrometheusOutputReference interface {
 // The jsii proxy struct for MskClusterOpenMonitoringPrometheusOutputReference
 type jsiiProxy_MskClusterOpenMonitoringPrometheusOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusOutputReference) InternalValue() *MskClusterOpenMonitoringPrometheus {
+	var returns *MskClusterOpenMonitoringPrometheus
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusOutputReference) IsSingleItem() *bool {
@@ -7485,7 +7802,7 @@ func NewMskClusterOpenMonitoringPrometheusOutputReference(terraformResource cdkt
 	j := jsiiProxy_MskClusterOpenMonitoringPrometheusOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7497,9 +7814,17 @@ func NewMskClusterOpenMonitoringPrometheusOutputReference_Override(m MskClusterO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterOpenMonitoringPrometheusOutputReference",
+		"hashicorp_aws.msk.MskClusterOpenMonitoringPrometheusOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MskClusterOpenMonitoringPrometheusOutputReference) SetInternalValue(val *MskClusterOpenMonitoringPrometheus) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -7660,6 +7985,8 @@ type MskClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *MskClusterTimeouts
+	SetInternalValue(val *MskClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7725,6 +8052,16 @@ func (j *jsiiProxy_MskClusterTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_MskClusterTimeoutsOutputReference) InternalValue() *MskClusterTimeouts {
+	var returns *MskClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MskClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7781,7 +8118,7 @@ func NewMskClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_MskClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterTimeoutsOutputReference",
+		"hashicorp_aws.msk.MskClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7793,7 +8130,7 @@ func NewMskClusterTimeoutsOutputReference_Override(m MskClusterTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskClusterTimeoutsOutputReference",
+		"hashicorp_aws.msk.MskClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -7811,6 +8148,14 @@ func (j *jsiiProxy_MskClusterTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MskClusterTimeoutsOutputReference) SetInternalValue(val *MskClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8258,7 +8603,7 @@ func NewMskConfiguration(scope constructs.Construct, id *string, config *MskConf
 	j := jsiiProxy_MskConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskConfiguration",
+		"hashicorp_aws.msk.MskConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8271,7 +8616,7 @@ func NewMskConfiguration_Override(m MskConfiguration, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskConfiguration",
+		"hashicorp_aws.msk.MskConfiguration",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -8351,7 +8696,7 @@ func MskConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.MskConfiguration",
+		"hashicorp_aws.msk.MskConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8364,7 +8709,7 @@ func MskConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.MskConfiguration",
+		"hashicorp_aws.msk.MskConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -8542,6 +8887,7 @@ func (m *jsiiProxy_MskConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type MskConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8794,7 +9140,7 @@ func NewMskScramSecretAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_MskScramSecretAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskScramSecretAssociation",
+		"hashicorp_aws.msk.MskScramSecretAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8807,7 +9153,7 @@ func NewMskScramSecretAssociation_Override(m MskScramSecretAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MSK.MskScramSecretAssociation",
+		"hashicorp_aws.msk.MskScramSecretAssociation",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -8871,7 +9217,7 @@ func MskScramSecretAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MSK.MskScramSecretAssociation",
+		"hashicorp_aws.msk.MskScramSecretAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8884,7 +9230,7 @@ func MskScramSecretAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MSK.MskScramSecretAssociation",
+		"hashicorp_aws.msk.MskScramSecretAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -9046,6 +9392,7 @@ func (m *jsiiProxy_MskScramSecretAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Streaming for Kafka.
 type MskScramSecretAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

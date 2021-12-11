@@ -346,7 +346,7 @@ func NewCodeartifactDomain(scope constructs.Construct, id *string, config *Codea
 	j := jsiiProxy_CodeartifactDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomain",
+		"hashicorp_aws.codeartifact.CodeartifactDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -359,7 +359,7 @@ func NewCodeartifactDomain_Override(c CodeartifactDomain, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomain",
+		"hashicorp_aws.codeartifact.CodeartifactDomain",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -439,7 +439,7 @@ func CodeartifactDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomain",
+		"hashicorp_aws.codeartifact.CodeartifactDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -452,7 +452,7 @@ func CodeartifactDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomain",
+		"hashicorp_aws.codeartifact.CodeartifactDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -638,6 +638,7 @@ func (c *jsiiProxy_CodeartifactDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeArtifact.
 type CodeartifactDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -949,7 +950,7 @@ func NewCodeartifactDomainPermissionsPolicy(scope constructs.Construct, id *stri
 	j := jsiiProxy_CodeartifactDomainPermissionsPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -962,7 +963,7 @@ func NewCodeartifactDomainPermissionsPolicy_Override(c CodeartifactDomainPermiss
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1042,7 +1043,7 @@ func CodeartifactDomainPermissionsPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1055,7 +1056,7 @@ func CodeartifactDomainPermissionsPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.CodeartifactDomainPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactDomainPermissionsPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -1233,6 +1234,7 @@ func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) ToTerraform() interface{
 	return returns
 }
 
+// AWS CodeArtifact.
 type CodeartifactDomainPermissionsPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1651,7 +1653,7 @@ func NewCodeartifactRepository(scope constructs.Construct, id *string, config *C
 	j := jsiiProxy_CodeartifactRepository{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepository",
+		"hashicorp_aws.codeartifact.CodeartifactRepository",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1664,7 +1666,7 @@ func NewCodeartifactRepository_Override(c CodeartifactRepository, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepository",
+		"hashicorp_aws.codeartifact.CodeartifactRepository",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1768,7 +1770,7 @@ func CodeartifactRepository_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepository",
+		"hashicorp_aws.codeartifact.CodeartifactRepository",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1781,7 +1783,7 @@ func CodeartifactRepository_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepository",
+		"hashicorp_aws.codeartifact.CodeartifactRepository",
 		"tfResourceType",
 		&returns,
 	)
@@ -1999,6 +2001,7 @@ func (c *jsiiProxy_CodeartifactRepository) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CodeArtifact.
 type CodeartifactRepositoryConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2040,6 +2043,8 @@ type CodeartifactRepositoryExternalConnectionsOutputReference interface {
 	ExternalConnectionName() *string
 	SetExternalConnectionName(val *string)
 	ExternalConnectionNameInput() *string
+	InternalValue() *CodeartifactRepositoryExternalConnections
+	SetInternalValue(val *CodeartifactRepositoryExternalConnections)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2074,6 +2079,16 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Ext
 	_jsii_.Get(
 		j,
 		"externalConnectionNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) InternalValue() *CodeartifactRepositoryExternalConnections {
+	var returns *CodeartifactRepositoryExternalConnections
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2115,7 +2130,7 @@ func NewCodeartifactRepositoryExternalConnectionsOutputReference(terraformResour
 	j := jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryExternalConnectionsOutputReference",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryExternalConnectionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2127,7 +2142,7 @@ func NewCodeartifactRepositoryExternalConnectionsOutputReference_Override(c Code
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryExternalConnectionsOutputReference",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryExternalConnectionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2137,6 +2152,14 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Set
 	_jsii_.Set(
 		j,
 		"externalConnectionName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) SetInternalValue(val *CodeartifactRepositoryExternalConnections) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2564,7 +2587,7 @@ func NewCodeartifactRepositoryPermissionsPolicy(scope constructs.Construct, id *
 	j := jsiiProxy_CodeartifactRepositoryPermissionsPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2577,7 +2600,7 @@ func NewCodeartifactRepositoryPermissionsPolicy_Override(c CodeartifactRepositor
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicy",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2665,7 +2688,7 @@ func CodeartifactRepositoryPermissionsPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2678,7 +2701,7 @@ func CodeartifactRepositoryPermissionsPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.CodeartifactRepositoryPermissionsPolicy",
+		"hashicorp_aws.codeartifact.CodeartifactRepositoryPermissionsPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2856,6 +2879,7 @@ func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) ToTerraform() interf
 	return returns
 }
 
+// AWS CodeArtifact.
 type CodeartifactRepositoryPermissionsPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3162,7 +3186,7 @@ func NewDataAwsCodeartifactAuthorizationToken(scope constructs.Construct, id *st
 	j := jsiiProxy_DataAwsCodeartifactAuthorizationToken{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationToken",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationToken",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3175,7 +3199,7 @@ func NewDataAwsCodeartifactAuthorizationToken_Override(d DataAwsCodeartifactAuth
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationToken",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationToken",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3247,7 +3271,7 @@ func DataAwsCodeartifactAuthorizationToken_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationToken",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationToken",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3260,7 +3284,7 @@ func DataAwsCodeartifactAuthorizationToken_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactAuthorizationToken",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactAuthorizationToken",
 		"tfResourceType",
 		&returns,
 	)
@@ -3438,6 +3462,7 @@ func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) ToTerraform() interfac
 	return returns
 }
 
+// AWS CodeArtifact.
 type DataAwsCodeartifactAuthorizationTokenConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3746,7 +3771,7 @@ func NewDataAwsCodeartifactRepositoryEndpoint(scope constructs.Construct, id *st
 	j := jsiiProxy_DataAwsCodeartifactRepositoryEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpoint",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3759,7 +3784,7 @@ func NewDataAwsCodeartifactRepositoryEndpoint_Override(d DataAwsCodeartifactRepo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpoint",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3839,7 +3864,7 @@ func DataAwsCodeartifactRepositoryEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpoint",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3852,7 +3877,7 @@ func DataAwsCodeartifactRepositoryEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CodeArtifact.DataAwsCodeartifactRepositoryEndpoint",
+		"hashicorp_aws.codeartifact.DataAwsCodeartifactRepositoryEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -4022,6 +4047,7 @@ func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) ToTerraform() interfac
 	return returns
 }
 
+// AWS CodeArtifact.
 type DataAwsCodeartifactRepositoryEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.CustomerGateway",
+		"hashicorp_aws.vpc.CustomerGateway",
 		reflect.TypeOf((*CustomerGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -61,11 +61,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.CustomerGatewayConfig",
+		"hashicorp_aws.vpc.CustomerGatewayConfig",
 		reflect.TypeOf((*CustomerGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsCustomerGateway",
+		"hashicorp_aws.vpc.DataAwsCustomerGateway",
 		reflect.TypeOf((*DataAwsCustomerGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -113,15 +113,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsCustomerGatewayConfig",
+		"hashicorp_aws.vpc.DataAwsCustomerGatewayConfig",
 		reflect.TypeOf((*DataAwsCustomerGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsCustomerGatewayFilter",
+		"hashicorp_aws.vpc.DataAwsCustomerGatewayFilter",
 		reflect.TypeOf((*DataAwsCustomerGatewayFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsInternetGateway",
+		"hashicorp_aws.vpc.DataAwsInternetGateway",
 		reflect.TypeOf((*DataAwsInternetGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -170,7 +170,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsInternetGatewayAttachments",
+		"hashicorp_aws.vpc.DataAwsInternetGatewayAttachments",
 		reflect.TypeOf((*DataAwsInternetGatewayAttachments)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -191,15 +191,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsInternetGatewayConfig",
+		"hashicorp_aws.vpc.DataAwsInternetGatewayConfig",
 		reflect.TypeOf((*DataAwsInternetGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsInternetGatewayFilter",
+		"hashicorp_aws.vpc.DataAwsInternetGatewayFilter",
 		reflect.TypeOf((*DataAwsInternetGatewayFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNatGateway",
+		"hashicorp_aws.vpc.DataAwsNatGateway",
 		reflect.TypeOf((*DataAwsNatGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -256,15 +256,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNatGatewayConfig",
+		"hashicorp_aws.vpc.DataAwsNatGatewayConfig",
 		reflect.TypeOf((*DataAwsNatGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNatGatewayFilter",
+		"hashicorp_aws.vpc.DataAwsNatGatewayFilter",
 		reflect.TypeOf((*DataAwsNatGatewayFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNetworkAcls",
+		"hashicorp_aws.vpc.DataAwsNetworkAcls",
 		reflect.TypeOf((*DataAwsNetworkAcls)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -311,15 +311,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkAclsConfig",
+		"hashicorp_aws.vpc.DataAwsNetworkAclsConfig",
 		reflect.TypeOf((*DataAwsNetworkAclsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkAclsFilter",
+		"hashicorp_aws.vpc.DataAwsNetworkAclsFilter",
 		reflect.TypeOf((*DataAwsNetworkAclsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNetworkInterface",
+		"hashicorp_aws.vpc.DataAwsNetworkInterface",
 		reflect.TypeOf((*DataAwsNetworkInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -379,7 +379,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAssociation",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAssociation",
 		reflect.TypeOf((*DataAwsNetworkInterfaceAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allocationId", GoGetter: "AllocationId"},
@@ -405,7 +405,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceAttachment",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceAttachment",
 		reflect.TypeOf((*DataAwsNetworkInterfaceAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "attachmentId", GoGetter: "AttachmentId"},
@@ -428,15 +428,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceConfig",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceConfig",
 		reflect.TypeOf((*DataAwsNetworkInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaceFilter",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaceFilter",
 		reflect.TypeOf((*DataAwsNetworkInterfaceFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfaces",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfaces",
 		reflect.TypeOf((*DataAwsNetworkInterfaces)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -480,15 +480,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfacesConfig",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfacesConfig",
 		reflect.TypeOf((*DataAwsNetworkInterfacesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsNetworkInterfacesFilter",
+		"hashicorp_aws.vpc.DataAwsNetworkInterfacesFilter",
 		reflect.TypeOf((*DataAwsNetworkInterfacesFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsRoute",
+		"hashicorp_aws.vpc.DataAwsRoute",
 		reflect.TypeOf((*DataAwsRoute)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -563,11 +563,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsRouteConfig",
+		"hashicorp_aws.vpc.DataAwsRouteConfig",
 		reflect.TypeOf((*DataAwsRouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsRouteTable",
+		"hashicorp_aws.vpc.DataAwsRouteTable",
 		reflect.TypeOf((*DataAwsRouteTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -626,7 +626,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsRouteTableAssociations",
+		"hashicorp_aws.vpc.DataAwsRouteTableAssociations",
 		reflect.TypeOf((*DataAwsRouteTableAssociations)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -650,15 +650,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsRouteTableConfig",
+		"hashicorp_aws.vpc.DataAwsRouteTableConfig",
 		reflect.TypeOf((*DataAwsRouteTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsRouteTableFilter",
+		"hashicorp_aws.vpc.DataAwsRouteTableFilter",
 		reflect.TypeOf((*DataAwsRouteTableFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsRouteTableRoutes",
+		"hashicorp_aws.vpc.DataAwsRouteTableRoutes",
 		reflect.TypeOf((*DataAwsRouteTableRoutes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "carrierGatewayId", GoGetter: "CarrierGatewayId"},
@@ -690,7 +690,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsRouteTables",
+		"hashicorp_aws.vpc.DataAwsRouteTables",
 		reflect.TypeOf((*DataAwsRouteTables)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -737,15 +737,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsRouteTablesConfig",
+		"hashicorp_aws.vpc.DataAwsRouteTablesConfig",
 		reflect.TypeOf((*DataAwsRouteTablesConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsRouteTablesFilter",
+		"hashicorp_aws.vpc.DataAwsRouteTablesFilter",
 		reflect.TypeOf((*DataAwsRouteTablesFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsSecurityGroup",
+		"hashicorp_aws.vpc.DataAwsSecurityGroup",
 		reflect.TypeOf((*DataAwsSecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -796,15 +796,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSecurityGroupConfig",
+		"hashicorp_aws.vpc.DataAwsSecurityGroupConfig",
 		reflect.TypeOf((*DataAwsSecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSecurityGroupFilter",
+		"hashicorp_aws.vpc.DataAwsSecurityGroupFilter",
 		reflect.TypeOf((*DataAwsSecurityGroupFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsSecurityGroups",
+		"hashicorp_aws.vpc.DataAwsSecurityGroups",
 		reflect.TypeOf((*DataAwsSecurityGroups)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -850,15 +850,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSecurityGroupsConfig",
+		"hashicorp_aws.vpc.DataAwsSecurityGroupsConfig",
 		reflect.TypeOf((*DataAwsSecurityGroupsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSecurityGroupsFilter",
+		"hashicorp_aws.vpc.DataAwsSecurityGroupsFilter",
 		reflect.TypeOf((*DataAwsSecurityGroupsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsSubnet",
+		"hashicorp_aws.vpc.DataAwsSubnet",
 		reflect.TypeOf((*DataAwsSubnet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -931,15 +931,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetConfig",
+		"hashicorp_aws.vpc.DataAwsSubnetConfig",
 		reflect.TypeOf((*DataAwsSubnetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetFilter",
+		"hashicorp_aws.vpc.DataAwsSubnetFilter",
 		reflect.TypeOf((*DataAwsSubnetFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsSubnetIds",
+		"hashicorp_aws.vpc.DataAwsSubnetIds",
 		reflect.TypeOf((*DataAwsSubnetIds)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -985,15 +985,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetIdsConfig",
+		"hashicorp_aws.vpc.DataAwsSubnetIdsConfig",
 		reflect.TypeOf((*DataAwsSubnetIdsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetIdsFilter",
+		"hashicorp_aws.vpc.DataAwsSubnetIdsFilter",
 		reflect.TypeOf((*DataAwsSubnetIdsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsSubnets",
+		"hashicorp_aws.vpc.DataAwsSubnets",
 		reflect.TypeOf((*DataAwsSubnets)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1037,15 +1037,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetsConfig",
+		"hashicorp_aws.vpc.DataAwsSubnetsConfig",
 		reflect.TypeOf((*DataAwsSubnetsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsSubnetsFilter",
+		"hashicorp_aws.vpc.DataAwsSubnetsFilter",
 		reflect.TypeOf((*DataAwsSubnetsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpc",
+		"hashicorp_aws.vpc.DataAwsVpc",
 		reflect.TypeOf((*DataAwsVpc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1109,7 +1109,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcCidrBlockAssociations",
+		"hashicorp_aws.vpc.DataAwsVpcCidrBlockAssociations",
 		reflect.TypeOf((*DataAwsVpcCidrBlockAssociations)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "associationId", GoGetter: "AssociationId"},
@@ -1131,11 +1131,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcConfig",
+		"hashicorp_aws.vpc.DataAwsVpcConfig",
 		reflect.TypeOf((*DataAwsVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptions",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptions",
 		reflect.TypeOf((*DataAwsVpcDhcpOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1188,15 +1188,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptionsConfig",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptionsConfig",
 		reflect.TypeOf((*DataAwsVpcDhcpOptionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcDhcpOptionsFilter",
+		"hashicorp_aws.vpc.DataAwsVpcDhcpOptionsFilter",
 		reflect.TypeOf((*DataAwsVpcDhcpOptionsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcEndpoint",
+		"hashicorp_aws.vpc.DataAwsVpcEndpoint",
 		reflect.TypeOf((*DataAwsVpcEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1261,11 +1261,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointConfig",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointConfig",
 		reflect.TypeOf((*DataAwsVpcEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointDnsEntry",
 		reflect.TypeOf((*DataAwsVpcEndpointDnsEntry)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -1286,11 +1286,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointFilter",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointFilter",
 		reflect.TypeOf((*DataAwsVpcEndpointFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointService",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointService",
 		reflect.TypeOf((*DataAwsVpcEndpointService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptanceRequired", GoGetter: "AcceptanceRequired"},
@@ -1351,19 +1351,93 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointServiceConfig",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointServiceConfig",
 		reflect.TypeOf((*DataAwsVpcEndpointServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcEndpointServiceFilter",
+		"hashicorp_aws.vpc.DataAwsVpcEndpointServiceFilter",
 		reflect.TypeOf((*DataAwsVpcEndpointServiceFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcFilter",
+		"hashicorp_aws.vpc.DataAwsVpcFilter",
 		reflect.TypeOf((*DataAwsVpcFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnection",
+		"hashicorp_aws.vpc.DataAwsVpcIpamPool",
+		reflect.TypeOf((*DataAwsVpcIpamPool)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "addressFamily", GoGetter: "AddressFamily"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationDefaultNetmaskLength", GoGetter: "AllocationDefaultNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMaxNetmaskLength", GoGetter: "AllocationMaxNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMinNetmaskLength", GoGetter: "AllocationMinNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationResourceTags", GoGetter: "AllocationResourceTags"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationResourceTagsInput", GoGetter: "AllocationResourceTagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "autoImport", GoGetter: "AutoImport"},
+			_jsii_.MemberProperty{JsiiProperty: "awsService", GoGetter: "AwsService"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "filter", GoGetter: "Filter"},
+			_jsii_.MemberProperty{JsiiProperty: "filterInput", GoGetter: "FilterInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolId", GoGetter: "IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolIdInput", GoGetter: "IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeId", GoGetter: "IpamScopeId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeType", GoGetter: "IpamScopeType"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "locale", GoGetter: "Locale"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "poolDepth", GoGetter: "PoolDepth"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "publiclyAdvertisable", GoGetter: "PubliclyAdvertisable"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllocationResourceTags", GoMethod: "ResetAllocationResourceTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFilter", GoMethod: "ResetFilter"},
+			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpamPoolId", GoMethod: "ResetIpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberProperty{JsiiProperty: "sourceIpamPoolId", GoGetter: "SourceIpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "state", GoGetter: "State"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsVpcIpamPool{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformDataSource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPoolConfig",
+		reflect.TypeOf((*DataAwsVpcIpamPoolConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.DataAwsVpcIpamPoolFilter",
+		reflect.TypeOf((*DataAwsVpcIpamPoolFilter)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnection",
 		reflect.TypeOf((*DataAwsVpcPeeringConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accepter", GoMethod: "Accepter"},
@@ -1437,7 +1511,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionCidrBlockSet",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionCidrBlockSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cidrBlock", GoGetter: "CidrBlock"},
@@ -1457,15 +1531,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionConfig",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionConfig",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionFilter",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionFilter",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionPeerCidrBlockSet",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionPeerCidrBlockSet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "cidrBlock", GoGetter: "CidrBlock"},
@@ -1485,7 +1559,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnections",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnections",
 		reflect.TypeOf((*DataAwsVpcPeeringConnections)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1529,15 +1603,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionsConfig",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionsConfig",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcPeeringConnectionsFilter",
+		"hashicorp_aws.vpc.DataAwsVpcPeeringConnectionsFilter",
 		reflect.TypeOf((*DataAwsVpcPeeringConnectionsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpcs",
+		"hashicorp_aws.vpc.DataAwsVpcs",
 		reflect.TypeOf((*DataAwsVpcs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1581,15 +1655,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcsConfig",
+		"hashicorp_aws.vpc.DataAwsVpcsConfig",
 		reflect.TypeOf((*DataAwsVpcsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpcsFilter",
+		"hashicorp_aws.vpc.DataAwsVpcsFilter",
 		reflect.TypeOf((*DataAwsVpcsFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DataAwsVpnGateway",
+		"hashicorp_aws.vpc.DataAwsVpnGateway",
 		reflect.TypeOf((*DataAwsVpnGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1645,15 +1719,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpnGatewayConfig",
+		"hashicorp_aws.vpc.DataAwsVpnGatewayConfig",
 		reflect.TypeOf((*DataAwsVpnGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DataAwsVpnGatewayFilter",
+		"hashicorp_aws.vpc.DataAwsVpnGatewayFilter",
 		reflect.TypeOf((*DataAwsVpnGatewayFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultNetworkAcl",
+		"hashicorp_aws.vpc.DefaultNetworkAcl",
 		reflect.TypeOf((*DefaultNetworkAcl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1710,19 +1784,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultNetworkAclConfig",
+		"hashicorp_aws.vpc.DefaultNetworkAclConfig",
 		reflect.TypeOf((*DefaultNetworkAclConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultNetworkAclEgress",
+		"hashicorp_aws.vpc.DefaultNetworkAclEgress",
 		reflect.TypeOf((*DefaultNetworkAclEgress)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultNetworkAclIngress",
+		"hashicorp_aws.vpc.DefaultNetworkAclIngress",
 		reflect.TypeOf((*DefaultNetworkAclIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultRouteTable",
+		"hashicorp_aws.vpc.DefaultRouteTable",
 		reflect.TypeOf((*DefaultRouteTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1780,19 +1854,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultRouteTableConfig",
+		"hashicorp_aws.vpc.DefaultRouteTableConfig",
 		reflect.TypeOf((*DefaultRouteTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultRouteTableRoute",
+		"hashicorp_aws.vpc.DefaultRouteTableRoute",
 		reflect.TypeOf((*DefaultRouteTableRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultRouteTableTimeouts",
+		"hashicorp_aws.vpc.DefaultRouteTableTimeouts",
 		reflect.TypeOf((*DefaultRouteTableTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultRouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultRouteTableTimeoutsOutputReference",
 		reflect.TypeOf((*DefaultRouteTableTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1801,6 +1875,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1818,7 +1893,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultSecurityGroup",
+		"hashicorp_aws.vpc.DefaultSecurityGroup",
 		reflect.TypeOf((*DefaultSecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1877,19 +1952,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultSecurityGroupConfig",
+		"hashicorp_aws.vpc.DefaultSecurityGroupConfig",
 		reflect.TypeOf((*DefaultSecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultSecurityGroupEgress",
+		"hashicorp_aws.vpc.DefaultSecurityGroupEgress",
 		reflect.TypeOf((*DefaultSecurityGroupEgress)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultSecurityGroupIngress",
+		"hashicorp_aws.vpc.DefaultSecurityGroupIngress",
 		reflect.TypeOf((*DefaultSecurityGroupIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultSubnet",
+		"hashicorp_aws.vpc.DefaultSubnet",
 		reflect.TypeOf((*DefaultSubnet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1958,15 +2033,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultSubnetConfig",
+		"hashicorp_aws.vpc.DefaultSubnetConfig",
 		reflect.TypeOf((*DefaultSubnetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultSubnetTimeouts",
+		"hashicorp_aws.vpc.DefaultSubnetTimeouts",
 		reflect.TypeOf((*DefaultSubnetTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultSubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.DefaultSubnetTimeoutsOutputReference",
 		reflect.TypeOf((*DefaultSubnetTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1977,6 +2052,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1992,7 +2068,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultVpc",
+		"hashicorp_aws.vpc.DefaultVpc",
 		reflect.TypeOf((*DefaultVpc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2024,8 +2100,17 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTenancy", GoGetter: "InstanceTenancy"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolId", GoGetter: "Ipv4IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolIdInput", GoGetter: "Ipv4IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLength", GoGetter: "Ipv4NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLengthInput", GoGetter: "Ipv4NetmaskLengthInput"},
 			_jsii_.MemberProperty{JsiiProperty: "ipv6AssociationId", GoGetter: "Ipv6AssociationId"},
 			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlock", GoGetter: "Ipv6CidrBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlockInput", GoGetter: "Ipv6CidrBlockInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolId", GoGetter: "Ipv6IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolIdInput", GoGetter: "Ipv6IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLength", GoGetter: "Ipv6NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLengthInput", GoGetter: "Ipv6NetmaskLengthInput"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
 			_jsii_.MemberProperty{JsiiProperty: "mainRouteTableId", GoGetter: "MainRouteTableId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -2037,6 +2122,11 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableClassiclinkDnsSupport", GoMethod: "ResetEnableClassiclinkDnsSupport"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDnsHostnames", GoMethod: "ResetEnableDnsHostnames"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDnsSupport", GoMethod: "ResetEnableDnsSupport"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4IpamPoolId", GoMethod: "ResetIpv4IpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4NetmaskLength", GoMethod: "ResetIpv4NetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6CidrBlock", GoMethod: "ResetIpv6CidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6IpamPoolId", GoMethod: "ResetIpv6IpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6NetmaskLength", GoMethod: "ResetIpv6NetmaskLength"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
@@ -2059,11 +2149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultVpcConfig",
+		"hashicorp_aws.vpc.DefaultVpcConfig",
 		reflect.TypeOf((*DefaultVpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptions",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptions",
 		reflect.TypeOf((*DefaultVpcDhcpOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2119,11 +2209,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.DefaultVpcDhcpOptionsConfig",
+		"hashicorp_aws.vpc.DefaultVpcDhcpOptionsConfig",
 		reflect.TypeOf((*DefaultVpcDhcpOptionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.EgressOnlyInternetGateway",
+		"hashicorp_aws.vpc.EgressOnlyInternetGateway",
 		reflect.TypeOf((*EgressOnlyInternetGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2168,11 +2258,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.EgressOnlyInternetGatewayConfig",
+		"hashicorp_aws.vpc.EgressOnlyInternetGatewayConfig",
 		reflect.TypeOf((*EgressOnlyInternetGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.FlowLog",
+		"hashicorp_aws.vpc.FlowLog",
 		reflect.TypeOf((*FlowLog)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2249,15 +2339,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.FlowLogConfig",
+		"hashicorp_aws.vpc.FlowLogConfig",
 		reflect.TypeOf((*FlowLogConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.FlowLogDestinationOptions",
+		"hashicorp_aws.vpc.FlowLogDestinationOptions",
 		reflect.TypeOf((*FlowLogDestinationOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.FlowLogDestinationOptionsOutputReference",
+		"hashicorp_aws.vpc.FlowLogDestinationOptionsOutputReference",
 		reflect.TypeOf((*FlowLogDestinationOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "fileFormat", GoGetter: "FileFormat"},
@@ -2268,6 +2358,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "hiveCompatiblePartitions", GoGetter: "HiveCompatiblePartitions"},
 			_jsii_.MemberProperty{JsiiProperty: "hiveCompatiblePartitionsInput", GoGetter: "HiveCompatiblePartitionsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -2286,7 +2377,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.InternetGateway",
+		"hashicorp_aws.vpc.InternetGateway",
 		reflect.TypeOf((*InternetGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2334,11 +2425,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.InternetGatewayConfig",
+		"hashicorp_aws.vpc.InternetGatewayConfig",
 		reflect.TypeOf((*InternetGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.MainRouteTableAssociation",
+		"hashicorp_aws.vpc.MainRouteTableAssociation",
 		reflect.TypeOf((*MainRouteTableAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2380,11 +2471,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.MainRouteTableAssociationConfig",
+		"hashicorp_aws.vpc.MainRouteTableAssociationConfig",
 		reflect.TypeOf((*MainRouteTableAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NatGateway",
+		"hashicorp_aws.vpc.NatGateway",
 		reflect.TypeOf((*NatGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2438,11 +2529,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NatGatewayConfig",
+		"hashicorp_aws.vpc.NatGatewayConfig",
 		reflect.TypeOf((*NatGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NetworkAcl",
+		"hashicorp_aws.vpc.NetworkAcl",
 		reflect.TypeOf((*NetworkAcl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2498,19 +2589,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkAclConfig",
+		"hashicorp_aws.vpc.NetworkAclConfig",
 		reflect.TypeOf((*NetworkAclConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkAclEgress",
+		"hashicorp_aws.vpc.NetworkAclEgress",
 		reflect.TypeOf((*NetworkAclEgress)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkAclIngress",
+		"hashicorp_aws.vpc.NetworkAclIngress",
 		reflect.TypeOf((*NetworkAclIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NetworkAclRule",
+		"hashicorp_aws.vpc.NetworkAclRule",
 		reflect.TypeOf((*NetworkAclRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2576,11 +2667,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkAclRuleConfig",
+		"hashicorp_aws.vpc.NetworkAclRuleConfig",
 		reflect.TypeOf((*NetworkAclRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NetworkInterface",
+		"hashicorp_aws.vpc.NetworkInterface",
 		reflect.TypeOf((*NetworkInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2672,11 +2763,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachment",
 		reflect.TypeOf((*NetworkInterfaceAttachment)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentA",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentA",
 		reflect.TypeOf((*NetworkInterfaceAttachmentA)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2721,15 +2812,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkInterfaceAttachmentAConfig",
+		"hashicorp_aws.vpc.NetworkInterfaceAttachmentAConfig",
 		reflect.TypeOf((*NetworkInterfaceAttachmentAConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkInterfaceConfig",
+		"hashicorp_aws.vpc.NetworkInterfaceConfig",
 		reflect.TypeOf((*NetworkInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachment",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachment",
 		reflect.TypeOf((*NetworkInterfaceSgAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2770,11 +2861,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.NetworkInterfaceSgAttachmentConfig",
+		"hashicorp_aws.vpc.NetworkInterfaceSgAttachmentConfig",
 		reflect.TypeOf((*NetworkInterfaceSgAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.Route",
+		"hashicorp_aws.vpc.Route",
 		reflect.TypeOf((*Route)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2859,11 +2950,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteConfig",
+		"hashicorp_aws.vpc.RouteConfig",
 		reflect.TypeOf((*RouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.RouteTable",
+		"hashicorp_aws.vpc.RouteTable",
 		reflect.TypeOf((*RouteTable)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2920,7 +3011,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.RouteTableAssociation",
+		"hashicorp_aws.vpc.RouteTableAssociation",
 		reflect.TypeOf((*RouteTableAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -2965,23 +3056,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteTableAssociationConfig",
+		"hashicorp_aws.vpc.RouteTableAssociationConfig",
 		reflect.TypeOf((*RouteTableAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteTableConfig",
+		"hashicorp_aws.vpc.RouteTableConfig",
 		reflect.TypeOf((*RouteTableConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteTableRoute",
+		"hashicorp_aws.vpc.RouteTableRoute",
 		reflect.TypeOf((*RouteTableRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteTableTimeouts",
+		"hashicorp_aws.vpc.RouteTableTimeouts",
 		reflect.TypeOf((*RouteTableTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.RouteTableTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTableTimeoutsOutputReference",
 		reflect.TypeOf((*RouteTableTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -2992,6 +3083,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3010,11 +3102,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.RouteTimeouts",
+		"hashicorp_aws.vpc.RouteTimeouts",
 		reflect.TypeOf((*RouteTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.RouteTimeoutsOutputReference",
+		"hashicorp_aws.vpc.RouteTimeoutsOutputReference",
 		reflect.TypeOf((*RouteTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3025,6 +3117,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3043,7 +3136,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.SecurityGroup",
+		"hashicorp_aws.vpc.SecurityGroup",
 		reflect.TypeOf((*SecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3113,19 +3206,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SecurityGroupConfig",
+		"hashicorp_aws.vpc.SecurityGroupConfig",
 		reflect.TypeOf((*SecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SecurityGroupEgress",
+		"hashicorp_aws.vpc.SecurityGroupEgress",
 		reflect.TypeOf((*SecurityGroupEgress)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SecurityGroupIngress",
+		"hashicorp_aws.vpc.SecurityGroupIngress",
 		reflect.TypeOf((*SecurityGroupIngress)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.SecurityGroupRule",
+		"hashicorp_aws.vpc.SecurityGroupRule",
 		reflect.TypeOf((*SecurityGroupRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3190,15 +3283,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SecurityGroupRuleConfig",
+		"hashicorp_aws.vpc.SecurityGroupRuleConfig",
 		reflect.TypeOf((*SecurityGroupRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SecurityGroupTimeouts",
+		"hashicorp_aws.vpc.SecurityGroupTimeouts",
 		reflect.TypeOf((*SecurityGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.SecurityGroupTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SecurityGroupTimeoutsOutputReference",
 		reflect.TypeOf((*SecurityGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3209,6 +3302,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3224,7 +3318,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.Subnet",
+		"hashicorp_aws.vpc.Subnet",
 		reflect.TypeOf((*Subnet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3302,15 +3396,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SubnetConfig",
+		"hashicorp_aws.vpc.SubnetConfig",
 		reflect.TypeOf((*SubnetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.SubnetTimeouts",
+		"hashicorp_aws.vpc.SubnetTimeouts",
 		reflect.TypeOf((*SubnetTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.SubnetTimeoutsOutputReference",
+		"hashicorp_aws.vpc.SubnetTimeoutsOutputReference",
 		reflect.TypeOf((*SubnetTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3321,6 +3415,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3336,7 +3431,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.Vpc",
+		"hashicorp_aws.vpc.Vpc",
 		reflect.TypeOf((*Vpc)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3371,8 +3466,17 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "instanceTenancy", GoGetter: "InstanceTenancy"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTenancyInput", GoGetter: "InstanceTenancyInput"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolId", GoGetter: "Ipv4IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolIdInput", GoGetter: "Ipv4IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLength", GoGetter: "Ipv4NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLengthInput", GoGetter: "Ipv4NetmaskLengthInput"},
 			_jsii_.MemberProperty{JsiiProperty: "ipv6AssociationId", GoGetter: "Ipv6AssociationId"},
 			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlock", GoGetter: "Ipv6CidrBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlockInput", GoGetter: "Ipv6CidrBlockInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolId", GoGetter: "Ipv6IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolIdInput", GoGetter: "Ipv6IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLength", GoGetter: "Ipv6NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLengthInput", GoGetter: "Ipv6NetmaskLengthInput"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
 			_jsii_.MemberProperty{JsiiProperty: "mainRouteTableId", GoGetter: "MainRouteTableId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -3381,11 +3485,17 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAssignGeneratedIpv6CidrBlock", GoMethod: "ResetAssignGeneratedIpv6CidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCidrBlock", GoMethod: "ResetCidrBlock"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableClassiclink", GoMethod: "ResetEnableClassiclink"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableClassiclinkDnsSupport", GoMethod: "ResetEnableClassiclinkDnsSupport"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDnsHostnames", GoMethod: "ResetEnableDnsHostnames"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableDnsSupport", GoMethod: "ResetEnableDnsSupport"},
 			_jsii_.MemberMethod{JsiiMethod: "resetInstanceTenancy", GoMethod: "ResetInstanceTenancy"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4IpamPoolId", GoMethod: "ResetIpv4IpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4NetmaskLength", GoMethod: "ResetIpv4NetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6CidrBlock", GoMethod: "ResetIpv6CidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6IpamPoolId", GoMethod: "ResetIpv6IpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6NetmaskLength", GoMethod: "ResetIpv6NetmaskLength"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
@@ -3408,11 +3518,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcConfig",
+		"hashicorp_aws.vpc.VpcConfig",
 		reflect.TypeOf((*VpcConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcDhcpOptions",
+		"hashicorp_aws.vpc.VpcDhcpOptions",
 		reflect.TypeOf((*VpcDhcpOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3472,7 +3582,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociation",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociation",
 		reflect.TypeOf((*VpcDhcpOptionsAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3513,15 +3623,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcDhcpOptionsAssociationConfig",
+		"hashicorp_aws.vpc.VpcDhcpOptionsAssociationConfig",
 		reflect.TypeOf((*VpcDhcpOptionsAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcDhcpOptionsConfig",
+		"hashicorp_aws.vpc.VpcDhcpOptionsConfig",
 		reflect.TypeOf((*VpcDhcpOptionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpoint",
+		"hashicorp_aws.vpc.VpcEndpoint",
 		reflect.TypeOf((*VpcEndpoint)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3601,11 +3711,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointConfig",
+		"hashicorp_aws.vpc.VpcEndpointConfig",
 		reflect.TypeOf((*VpcEndpointConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotification",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotification",
 		reflect.TypeOf((*VpcEndpointConnectionNotification)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3654,11 +3764,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointConnectionNotificationConfig",
+		"hashicorp_aws.vpc.VpcEndpointConnectionNotificationConfig",
 		reflect.TypeOf((*VpcEndpointConnectionNotificationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointDnsEntry",
+		"hashicorp_aws.vpc.VpcEndpointDnsEntry",
 		reflect.TypeOf((*VpcEndpointDnsEntry)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -3679,7 +3789,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociation",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociation",
 		reflect.TypeOf((*VpcEndpointRouteTableAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3720,11 +3830,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointRouteTableAssociationConfig",
+		"hashicorp_aws.vpc.VpcEndpointRouteTableAssociationConfig",
 		reflect.TypeOf((*VpcEndpointRouteTableAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointService",
+		"hashicorp_aws.vpc.VpcEndpointService",
 		reflect.TypeOf((*VpcEndpointService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptanceRequired", GoGetter: "AcceptanceRequired"},
@@ -3789,7 +3899,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipal",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipal",
 		reflect.TypeOf((*VpcEndpointServiceAllowedPrincipal)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3830,15 +3940,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointServiceAllowedPrincipalConfig",
+		"hashicorp_aws.vpc.VpcEndpointServiceAllowedPrincipalConfig",
 		reflect.TypeOf((*VpcEndpointServiceAllowedPrincipalConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointServiceConfig",
+		"hashicorp_aws.vpc.VpcEndpointServiceConfig",
 		reflect.TypeOf((*VpcEndpointServiceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointServicePrivateDnsNameConfiguration",
+		"hashicorp_aws.vpc.VpcEndpointServicePrivateDnsNameConfiguration",
 		reflect.TypeOf((*VpcEndpointServicePrivateDnsNameConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -3861,7 +3971,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociation",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociation",
 		reflect.TypeOf((*VpcEndpointSubnetAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3906,15 +4016,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociationConfig",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociationConfig",
 		reflect.TypeOf((*VpcEndpointSubnetAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociationTimeouts",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociationTimeouts",
 		reflect.TypeOf((*VpcEndpointSubnetAssociationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointSubnetAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointSubnetAssociationTimeoutsOutputReference",
 		reflect.TypeOf((*VpcEndpointSubnetAssociationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3925,6 +4035,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3940,11 +4051,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcEndpointTimeouts",
+		"hashicorp_aws.vpc.VpcEndpointTimeouts",
 		reflect.TypeOf((*VpcEndpointTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcEndpointTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcEndpointTimeoutsOutputReference",
 		reflect.TypeOf((*VpcEndpointTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -3955,6 +4066,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -3973,7 +4085,346 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociation",
+		"hashicorp_aws.vpc.VpcIpam",
+		reflect.TypeOf((*VpcIpam)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "operatingRegions", GoGetter: "OperatingRegions"},
+			_jsii_.MemberProperty{JsiiProperty: "operatingRegionsInput", GoGetter: "OperatingRegionsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "privateDefaultScopeId", GoGetter: "PrivateDefaultScopeId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "publicDefaultScopeId", GoGetter: "PublicDefaultScopeId"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "scopeCount", GoGetter: "ScopeCount"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpam{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamConfig",
+		reflect.TypeOf((*VpcIpamConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamOperatingRegions",
+		reflect.TypeOf((*VpcIpamOperatingRegions)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpamPool",
+		reflect.TypeOf((*VpcIpamPool)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "addressFamily", GoGetter: "AddressFamily"},
+			_jsii_.MemberProperty{JsiiProperty: "addressFamilyInput", GoGetter: "AddressFamilyInput"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationDefaultNetmaskLength", GoGetter: "AllocationDefaultNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationDefaultNetmaskLengthInput", GoGetter: "AllocationDefaultNetmaskLengthInput"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMaxNetmaskLength", GoGetter: "AllocationMaxNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMaxNetmaskLengthInput", GoGetter: "AllocationMaxNetmaskLengthInput"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMinNetmaskLength", GoGetter: "AllocationMinNetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationMinNetmaskLengthInput", GoGetter: "AllocationMinNetmaskLengthInput"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationResourceTags", GoGetter: "AllocationResourceTags"},
+			_jsii_.MemberProperty{JsiiProperty: "allocationResourceTagsInput", GoGetter: "AllocationResourceTagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "autoImport", GoGetter: "AutoImport"},
+			_jsii_.MemberProperty{JsiiProperty: "autoImportInput", GoGetter: "AutoImportInput"},
+			_jsii_.MemberProperty{JsiiProperty: "awsService", GoGetter: "AwsService"},
+			_jsii_.MemberProperty{JsiiProperty: "awsServiceInput", GoGetter: "AwsServiceInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeId", GoGetter: "IpamScopeId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeIdInput", GoGetter: "IpamScopeIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeType", GoGetter: "IpamScopeType"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "locale", GoGetter: "Locale"},
+			_jsii_.MemberProperty{JsiiProperty: "localeInput", GoGetter: "LocaleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "poolDepth", GoGetter: "PoolDepth"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "publiclyAdvertisable", GoGetter: "PubliclyAdvertisable"},
+			_jsii_.MemberProperty{JsiiProperty: "publiclyAdvertisableInput", GoGetter: "PubliclyAdvertisableInput"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllocationDefaultNetmaskLength", GoMethod: "ResetAllocationDefaultNetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllocationMaxNetmaskLength", GoMethod: "ResetAllocationMaxNetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllocationMinNetmaskLength", GoMethod: "ResetAllocationMinNetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAllocationResourceTags", GoMethod: "ResetAllocationResourceTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAutoImport", GoMethod: "ResetAutoImport"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAwsService", GoMethod: "ResetAwsService"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberMethod{JsiiMethod: "resetLocale", GoMethod: "ResetLocale"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPubliclyAdvertisable", GoMethod: "ResetPubliclyAdvertisable"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSourceIpamPoolId", GoMethod: "ResetSourceIpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "sourceIpamPoolId", GoGetter: "SourceIpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "sourceIpamPoolIdInput", GoGetter: "SourceIpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "state", GoGetter: "State"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpamPool{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpamPoolCidr",
+		reflect.TypeOf((*VpcIpamPoolCidr)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "cidr", GoGetter: "Cidr"},
+			_jsii_.MemberProperty{JsiiProperty: "cidrAuthorizationContext", GoGetter: "CidrAuthorizationContext"},
+			_jsii_.MemberProperty{JsiiProperty: "cidrAuthorizationContextInput", GoGetter: "CidrAuthorizationContextInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cidrInput", GoGetter: "CidrInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolId", GoGetter: "IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolIdInput", GoGetter: "IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putCidrAuthorizationContext", GoMethod: "PutCidrAuthorizationContext"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCidr", GoMethod: "ResetCidr"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCidrAuthorizationContext", GoMethod: "ResetCidrAuthorizationContext"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpamPoolCidr{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocation",
+		reflect.TypeOf((*VpcIpamPoolCidrAllocation)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "cidr", GoGetter: "Cidr"},
+			_jsii_.MemberProperty{JsiiProperty: "cidrInput", GoGetter: "CidrInput"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolAllocationId", GoGetter: "IpamPoolAllocationId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolId", GoGetter: "IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamPoolIdInput", GoGetter: "IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "netmaskLength", GoGetter: "NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "netmaskLengthInput", GoGetter: "NetmaskLengthInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCidr", GoMethod: "ResetCidr"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberMethod{JsiiMethod: "resetNetmaskLength", GoMethod: "ResetNetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceId", GoGetter: "ResourceId"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceOwner", GoGetter: "ResourceOwner"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceType", GoGetter: "ResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpamPoolCidrAllocation{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrAllocationConfig",
+		reflect.TypeOf((*VpcIpamPoolCidrAllocationConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrCidrAuthorizationContext",
+		reflect.TypeOf((*VpcIpamPoolCidrCidrAuthorizationContext)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrCidrAuthorizationContextOutputReference",
+		reflect.TypeOf((*VpcIpamPoolCidrCidrAuthorizationContextOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "message", GoGetter: "Message"},
+			_jsii_.MemberProperty{JsiiProperty: "messageInput", GoGetter: "MessageInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetMessage", GoMethod: "ResetMessage"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSignature", GoMethod: "ResetSignature"},
+			_jsii_.MemberProperty{JsiiProperty: "signature", GoGetter: "Signature"},
+			_jsii_.MemberProperty{JsiiProperty: "signatureInput", GoGetter: "SignatureInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpamPoolCidrCidrAuthorizationContextOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamPoolCidrConfig",
+		reflect.TypeOf((*VpcIpamPoolCidrConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamPoolConfig",
+		reflect.TypeOf((*VpcIpamPoolConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpamScope",
+		reflect.TypeOf((*VpcIpamScope)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamArn", GoGetter: "IpamArn"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamId", GoGetter: "IpamId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamIdInput", GoGetter: "IpamIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipamScopeType", GoGetter: "IpamScopeType"},
+			_jsii_.MemberProperty{JsiiProperty: "isDefault", GoGetter: "IsDefault"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "poolCount", GoGetter: "PoolCount"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpamScope{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpamScopeConfig",
+		reflect.TypeOf((*VpcIpamScopeConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociation",
 		reflect.TypeOf((*VpcIpv4CidrBlockAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -3991,12 +4442,19 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolId", GoGetter: "Ipv4IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4IpamPoolIdInput", GoGetter: "Ipv4IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLength", GoGetter: "Ipv4NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv4NetmaskLengthInput", GoGetter: "Ipv4NetmaskLengthInput"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCidrBlock", GoMethod: "ResetCidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4IpamPoolId", GoMethod: "ResetIpv4IpamPoolId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv4NetmaskLength", GoMethod: "ResetIpv4NetmaskLength"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
@@ -4018,15 +4476,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociationConfig",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociationConfig",
 		reflect.TypeOf((*VpcIpv4CidrBlockAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociationTimeouts",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociationTimeouts",
 		reflect.TypeOf((*VpcIpv4CidrBlockAssociationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcIpv4CidrBlockAssociationTimeoutsOutputReference",
 		reflect.TypeOf((*VpcIpv4CidrBlockAssociationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -4037,6 +4495,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4052,7 +4511,93 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnection",
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociation",
+		reflect.TypeOf((*VpcIpv6CidrBlockAssociation)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlock", GoGetter: "Ipv6CidrBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6CidrBlockInput", GoGetter: "Ipv6CidrBlockInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolId", GoGetter: "Ipv6IpamPoolId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6IpamPoolIdInput", GoGetter: "Ipv6IpamPoolIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLength", GoGetter: "Ipv6NetmaskLength"},
+			_jsii_.MemberProperty{JsiiProperty: "ipv6NetmaskLengthInput", GoGetter: "Ipv6NetmaskLengthInput"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6CidrBlock", GoMethod: "ResetIpv6CidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIpv6NetmaskLength", GoMethod: "ResetIpv6NetmaskLength"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "timeouts", GoGetter: "Timeouts"},
+			_jsii_.MemberProperty{JsiiProperty: "timeoutsInput", GoGetter: "TimeoutsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcIdInput", GoGetter: "VpcIdInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpv6CidrBlockAssociation{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociationConfig",
+		reflect.TypeOf((*VpcIpv6CidrBlockAssociationConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociationTimeouts",
+		reflect.TypeOf((*VpcIpv6CidrBlockAssociationTimeouts)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcIpv6CidrBlockAssociationTimeoutsOutputReference",
+		reflect.TypeOf((*VpcIpv6CidrBlockAssociationTimeoutsOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
+			_jsii_.MemberProperty{JsiiProperty: "createInput", GoGetter: "CreateInput"},
+			_jsii_.MemberProperty{JsiiProperty: "delete", GoGetter: "Delete"},
+			_jsii_.MemberProperty{JsiiProperty: "deleteInput", GoGetter: "DeleteInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCreate", GoMethod: "ResetCreate"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDelete", GoMethod: "ResetDelete"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcIpv6CidrBlockAssociationTimeoutsOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.vpc.VpcPeeringConnection",
 		reflect.TypeOf((*VpcPeeringConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accepter", GoGetter: "Accepter"},
@@ -4121,11 +4666,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepter",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepter",
 		reflect.TypeOf((*VpcPeeringConnectionAccepter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterA",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterA",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterA)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accepter", GoGetter: "Accepter"},
@@ -4186,15 +4731,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterAConfig",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterAConfig",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterAConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterAccepter",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterAccepter",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterAccepter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterAccepterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterAccepterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4207,6 +4752,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4223,7 +4769,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4236,6 +4782,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4252,11 +4799,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterRequester",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterRequester",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterRequester)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionAccepterRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionAccepterRequesterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionAccepterRequesterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4269,6 +4816,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4285,11 +4833,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionConfig",
+		"hashicorp_aws.vpc.VpcPeeringConnectionConfig",
 		reflect.TypeOf((*VpcPeeringConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptions",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptions",
 		reflect.TypeOf((*VpcPeeringConnectionOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accepter", GoGetter: "Accepter"},
@@ -4336,11 +4884,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsAccepter",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsAccepter",
 		reflect.TypeOf((*VpcPeeringConnectionOptionsAccepter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsAccepterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsAccepterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionOptionsAccepterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4353,6 +4901,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4369,15 +4918,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsConfig",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsConfig",
 		reflect.TypeOf((*VpcPeeringConnectionOptionsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsRequester",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsRequester",
 		reflect.TypeOf((*VpcPeeringConnectionOptionsRequester)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionOptionsRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionOptionsRequesterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionOptionsRequesterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4390,6 +4939,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4406,11 +4956,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionRequester",
+		"hashicorp_aws.vpc.VpcPeeringConnectionRequester",
 		reflect.TypeOf((*VpcPeeringConnectionRequester)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionRequesterOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionRequesterOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionRequesterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "allowClassicLinkToRemoteVpc", GoGetter: "AllowClassicLinkToRemoteVpc"},
@@ -4423,6 +4973,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4439,11 +4990,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpcPeeringConnectionTimeouts",
+		"hashicorp_aws.vpc.VpcPeeringConnectionTimeouts",
 		reflect.TypeOf((*VpcPeeringConnectionTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpcPeeringConnectionTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpcPeeringConnectionTimeoutsOutputReference",
 		reflect.TypeOf((*VpcPeeringConnectionTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -4454,6 +5005,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -4472,7 +5024,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnConnection",
+		"hashicorp_aws.vpc.VpnConnection",
 		reflect.TypeOf((*VpnConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -4669,11 +5221,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnConnectionConfig",
+		"hashicorp_aws.vpc.VpnConnectionConfig",
 		reflect.TypeOf((*VpnConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnConnectionRoute",
+		"hashicorp_aws.vpc.VpnConnectionRoute",
 		reflect.TypeOf((*VpnConnectionRoute)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -4714,11 +5266,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnConnectionRouteConfig",
+		"hashicorp_aws.vpc.VpnConnectionRouteConfig",
 		reflect.TypeOf((*VpnConnectionRouteConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnConnectionRoutes",
+		"hashicorp_aws.vpc.VpnConnectionRoutes",
 		reflect.TypeOf((*VpnConnectionRoutes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -4740,7 +5292,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnConnectionVgwTelemetry",
+		"hashicorp_aws.vpc.VpnConnectionVgwTelemetry",
 		reflect.TypeOf((*VpnConnectionVgwTelemetry)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "acceptedRouteCount", GoGetter: "AcceptedRouteCount"},
@@ -4764,7 +5316,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnGateway",
+		"hashicorp_aws.vpc.VpnGateway",
 		reflect.TypeOf((*VpnGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -4817,7 +5369,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnGatewayAttachment",
+		"hashicorp_aws.vpc.VpnGatewayAttachment",
 		reflect.TypeOf((*VpnGatewayAttachment)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -4858,15 +5410,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnGatewayAttachmentConfig",
+		"hashicorp_aws.vpc.VpnGatewayAttachmentConfig",
 		reflect.TypeOf((*VpnGatewayAttachmentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnGatewayConfig",
+		"hashicorp_aws.vpc.VpnGatewayConfig",
 		reflect.TypeOf((*VpnGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagation",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagation",
 		reflect.TypeOf((*VpnGatewayRoutePropagation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -4911,15 +5463,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagationConfig",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagationConfig",
 		reflect.TypeOf((*VpnGatewayRoutePropagationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagationTimeouts",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagationTimeouts",
 		reflect.TypeOf((*VpnGatewayRoutePropagationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.VPC.VpnGatewayRoutePropagationTimeoutsOutputReference",
+		"hashicorp_aws.vpc.VpnGatewayRoutePropagationTimeoutsOutputReference",
 		reflect.TypeOf((*VpnGatewayRoutePropagationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -4930,6 +5482,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

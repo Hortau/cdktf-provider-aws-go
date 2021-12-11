@@ -1,12 +1,12 @@
 package prometheus
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/prometheus/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/prometheus/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html aws_prometheus_alert_manager_definition}.
@@ -235,7 +235,6 @@ func (j *jsiiProxy_PrometheusAlertManagerDefinition) WorkspaceIdInput() *string 
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html aws_prometheus_alert_manager_definition} Resource.
 func NewPrometheusAlertManagerDefinition(scope constructs.Construct, id *string, config *PrometheusAlertManagerDefinitionConfig) PrometheusAlertManagerDefinition {
 	_init_.Initialize()
@@ -243,7 +242,7 @@ func NewPrometheusAlertManagerDefinition(scope constructs.Construct, id *string,
 	j := jsiiProxy_PrometheusAlertManagerDefinition{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinition",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinition",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -256,7 +255,7 @@ func NewPrometheusAlertManagerDefinition_Override(p PrometheusAlertManagerDefini
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinition",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinition",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -320,7 +319,7 @@ func PrometheusAlertManagerDefinition_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinition",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinition",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -333,7 +332,7 @@ func PrometheusAlertManagerDefinition_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Prometheus.PrometheusAlertManagerDefinition",
+		"hashicorp_aws.prometheus.PrometheusAlertManagerDefinition",
 		"tfResourceType",
 		&returns,
 	)
@@ -495,6 +494,7 @@ func (p *jsiiProxy_PrometheusAlertManagerDefinition) ToTerraform() interface{} {
 	return returns
 }
 
+// Prometheus.
 type PrometheusAlertManagerDefinitionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -759,7 +759,6 @@ func (j *jsiiProxy_PrometheusRuleGroupNamespace) WorkspaceIdInput() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html aws_prometheus_rule_group_namespace} Resource.
 func NewPrometheusRuleGroupNamespace(scope constructs.Construct, id *string, config *PrometheusRuleGroupNamespaceConfig) PrometheusRuleGroupNamespace {
 	_init_.Initialize()
@@ -767,7 +766,7 @@ func NewPrometheusRuleGroupNamespace(scope constructs.Construct, id *string, con
 	j := jsiiProxy_PrometheusRuleGroupNamespace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespace",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -780,7 +779,7 @@ func NewPrometheusRuleGroupNamespace_Override(p PrometheusRuleGroupNamespace, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespace",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespace",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -852,7 +851,7 @@ func PrometheusRuleGroupNamespace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespace",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -865,7 +864,7 @@ func PrometheusRuleGroupNamespace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Prometheus.PrometheusRuleGroupNamespace",
+		"hashicorp_aws.prometheus.PrometheusRuleGroupNamespace",
 		"tfResourceType",
 		&returns,
 	)
@@ -1027,6 +1026,7 @@ func (p *jsiiProxy_PrometheusRuleGroupNamespace) ToTerraform() interface{} {
 	return returns
 }
 
+// Prometheus.
 type PrometheusRuleGroupNamespaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1270,7 +1270,6 @@ func (j *jsiiProxy_PrometheusWorkspace) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html aws_prometheus_workspace} Resource.
 func NewPrometheusWorkspace(scope constructs.Construct, id *string, config *PrometheusWorkspaceConfig) PrometheusWorkspace {
 	_init_.Initialize()
@@ -1278,7 +1277,7 @@ func NewPrometheusWorkspace(scope constructs.Construct, id *string, config *Prom
 	j := jsiiProxy_PrometheusWorkspace{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusWorkspace",
+		"hashicorp_aws.prometheus.PrometheusWorkspace",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1291,7 +1290,7 @@ func NewPrometheusWorkspace_Override(p PrometheusWorkspace, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Prometheus.PrometheusWorkspace",
+		"hashicorp_aws.prometheus.PrometheusWorkspace",
 		[]interface{}{scope, id, config},
 		p,
 	)
@@ -1347,7 +1346,7 @@ func PrometheusWorkspace_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Prometheus.PrometheusWorkspace",
+		"hashicorp_aws.prometheus.PrometheusWorkspace",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1360,7 +1359,7 @@ func PrometheusWorkspace_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Prometheus.PrometheusWorkspace",
+		"hashicorp_aws.prometheus.PrometheusWorkspace",
 		"tfResourceType",
 		&returns,
 	)
@@ -1530,6 +1529,7 @@ func (p *jsiiProxy_PrometheusWorkspace) ToTerraform() interface{} {
 	return returns
 }
 
+// Prometheus.
 type PrometheusWorkspaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1542,4 +1542,3 @@ type PrometheusWorkspaceConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html#alias PrometheusWorkspace#alias}.
 	Alias *string `json:"alias"`
 }
-

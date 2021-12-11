@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponent",
 		reflect.TypeOf((*DataAwsImagebuilderComponent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -62,11 +62,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderComponentConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponentConfig",
 		reflect.TypeOf((*DataAwsImagebuilderComponentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfiguration",
 		reflect.TypeOf((*DataAwsImagebuilderDistributionConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -113,11 +113,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationConfig",
 		reflect.TypeOf((*DataAwsImagebuilderDistributionConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
 		reflect.TypeOf((*DataAwsImagebuilderDistributionConfigurationDistribution)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amiDistributionConfiguration", GoGetter: "AmiDistributionConfiguration"},
@@ -139,7 +139,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
 		reflect.TypeOf((*DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amiTags", GoGetter: "AmiTags"},
@@ -164,7 +164,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
 		reflect.TypeOf((*DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -185,7 +185,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImage",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImage",
 		reflect.TypeOf((*DataAwsImagebuilderImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -239,11 +239,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageConfig",
 		reflect.TypeOf((*DataAwsImagebuilderImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageImageTestsConfiguration",
 		reflect.TypeOf((*DataAwsImagebuilderImageImageTestsConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -264,7 +264,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResources",
 		reflect.TypeOf((*DataAwsImagebuilderImageOutputResources)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amis", GoGetter: "Amis"},
@@ -284,7 +284,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResourcesAmis",
 		reflect.TypeOf((*DataAwsImagebuilderImageOutputResourcesAmis)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -308,7 +308,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipeline",
 		reflect.TypeOf((*DataAwsImagebuilderImagePipeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -364,11 +364,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineConfig",
 		reflect.TypeOf((*DataAwsImagebuilderImagePipelineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
 		reflect.TypeOf((*DataAwsImagebuilderImagePipelineImageTestsConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -389,7 +389,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImagePipelineSchedule",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineSchedule",
 		reflect.TypeOf((*DataAwsImagebuilderImagePipelineSchedule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -410,7 +410,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipe",
 		reflect.TypeOf((*DataAwsImagebuilderImageRecipe)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -462,7 +462,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
 		reflect.TypeOf((*DataAwsImagebuilderImageRecipeBlockDeviceMapping)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -485,7 +485,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
 		reflect.TypeOf((*DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -511,7 +511,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeComponent",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeComponent",
 		reflect.TypeOf((*DataAwsImagebuilderImageRecipeComponent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -531,11 +531,64 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderImageRecipeConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeConfig",
 		reflect.TypeOf((*DataAwsImagebuilderImageRecipeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipes",
+		reflect.TypeOf((*DataAwsImagebuilderImageRecipes)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arns", GoGetter: "Arns"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "filter", GoGetter: "Filter"},
+			_jsii_.MemberProperty{JsiiProperty: "filterInput", GoGetter: "FilterInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "names", GoGetter: "Names"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "owner", GoGetter: "Owner"},
+			_jsii_.MemberProperty{JsiiProperty: "ownerInput", GoGetter: "OwnerInput"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFilter", GoMethod: "ResetFilter"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOwner", GoMethod: "ResetOwner"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsImagebuilderImageRecipes{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformDataSource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipesConfig",
+		reflect.TypeOf((*DataAwsImagebuilderImageRecipesConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipesFilter",
+		reflect.TypeOf((*DataAwsImagebuilderImageRecipesFilter)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfiguration",
 		reflect.TypeOf((*DataAwsImagebuilderInfrastructureConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -592,11 +645,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationConfig",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationConfig",
 		reflect.TypeOf((*DataAwsImagebuilderInfrastructureConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
 		reflect.TypeOf((*DataAwsImagebuilderInfrastructureConfigurationLogging)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -616,7 +669,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
 		reflect.TypeOf((*DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -637,7 +690,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponent",
 		reflect.TypeOf((*ImagebuilderComponent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -709,11 +762,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderComponentConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderComponentConfig",
 		reflect.TypeOf((*ImagebuilderComponentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfiguration",
 		reflect.TypeOf((*ImagebuilderDistributionConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -766,29 +819,30 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationConfig",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistribution",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistribution",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationDistribution)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -808,7 +862,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference",
 		reflect.TypeOf((*ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amiTags", GoGetter: "AmiTags"},
@@ -819,6 +873,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -847,7 +902,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImage",
+		"hashicorp_aws.imagebuilder.ImagebuilderImage",
 		reflect.TypeOf((*ImagebuilderImage)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -915,15 +970,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageConfig",
 		reflect.TypeOf((*ImagebuilderImageConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageImageTestsConfiguration",
 		reflect.TypeOf((*ImagebuilderImageImageTestsConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageImageTestsConfigurationOutputReference",
 		reflect.TypeOf((*ImagebuilderImageImageTestsConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -932,6 +987,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "imageTestsEnabled", GoGetter: "ImageTestsEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "imageTestsEnabledInput", GoGetter: "ImageTestsEnabledInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -949,7 +1005,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResources",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResources",
 		reflect.TypeOf((*ImagebuilderImageOutputResources)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amis", GoGetter: "Amis"},
@@ -969,7 +1025,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageOutputResourcesAmis",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResourcesAmis",
 		reflect.TypeOf((*ImagebuilderImageOutputResourcesAmis)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -993,7 +1049,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipeline",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipeline",
 		reflect.TypeOf((*ImagebuilderImagePipeline)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1068,15 +1124,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineConfig",
 		reflect.TypeOf((*ImagebuilderImagePipelineConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineImageTestsConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineImageTestsConfiguration",
 		reflect.TypeOf((*ImagebuilderImagePipelineImageTestsConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineImageTestsConfigurationOutputReference",
 		reflect.TypeOf((*ImagebuilderImagePipelineImageTestsConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -1085,6 +1141,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "imageTestsEnabled", GoGetter: "ImageTestsEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "imageTestsEnabledInput", GoGetter: "ImageTestsEnabledInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1102,17 +1159,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineSchedule",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineSchedule",
 		reflect.TypeOf((*ImagebuilderImagePipelineSchedule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImagePipelineScheduleOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImagePipelineScheduleOutputReference",
 		reflect.TypeOf((*ImagebuilderImagePipelineScheduleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1131,7 +1189,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipe",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipe",
 		reflect.TypeOf((*ImagebuilderImageRecipe)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1195,15 +1253,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeBlockDeviceMapping",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeBlockDeviceMapping",
 		reflect.TypeOf((*ImagebuilderImageRecipeBlockDeviceMapping)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeBlockDeviceMappingEbs",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeBlockDeviceMappingEbs",
 		reflect.TypeOf((*ImagebuilderImageRecipeBlockDeviceMappingEbs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference",
 		reflect.TypeOf((*ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deleteOnTermination", GoGetter: "DeleteOnTermination"},
@@ -1214,6 +1272,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "iops", GoGetter: "Iops"},
@@ -1244,19 +1303,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeComponent",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeComponent",
 		reflect.TypeOf((*ImagebuilderImageRecipeComponent)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageRecipeConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageRecipeConfig",
 		reflect.TypeOf((*ImagebuilderImageRecipeConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageTimeouts",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageTimeouts",
 		reflect.TypeOf((*ImagebuilderImageTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderImageTimeoutsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderImageTimeoutsOutputReference",
 		reflect.TypeOf((*ImagebuilderImageTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1265,6 +1324,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1279,7 +1339,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfiguration",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfiguration",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1357,21 +1417,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationConfig",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationConfig",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLogging",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLogging",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfigurationLogging)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingOutputReference",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfigurationLoggingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1388,17 +1449,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingS3Logs",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingS3Logs",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfigurationLoggingS3Logs)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ImageBuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
+		"hashicorp_aws.imagebuilder.ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference",
 		reflect.TypeOf((*ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

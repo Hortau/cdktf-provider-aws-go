@@ -727,7 +727,7 @@ func NewMwaaEnvironment(scope constructs.Construct, id *string, config *MwaaEnvi
 	j := jsiiProxy_MwaaEnvironment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironment",
+		"hashicorp_aws.mwaa.MwaaEnvironment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -740,7 +740,7 @@ func NewMwaaEnvironment_Override(m MwaaEnvironment, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironment",
+		"hashicorp_aws.mwaa.MwaaEnvironment",
 		[]interface{}{scope, id, config},
 		m,
 	)
@@ -932,7 +932,7 @@ func MwaaEnvironment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.MWAA.MwaaEnvironment",
+		"hashicorp_aws.mwaa.MwaaEnvironment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -945,7 +945,7 @@ func MwaaEnvironment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.MWAA.MwaaEnvironment",
+		"hashicorp_aws.mwaa.MwaaEnvironment",
 		"tfResourceType",
 		&returns,
 	)
@@ -1256,6 +1256,7 @@ func (m *jsiiProxy_MwaaEnvironment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Managed Workloads for Apache Airflow.
 type MwaaEnvironmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1401,7 +1402,7 @@ func NewMwaaEnvironmentLastUpdated(terraformResource cdktf.ITerraformResource, t
 	j := jsiiProxy_MwaaEnvironmentLastUpdated{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdated",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdated",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1414,7 +1415,7 @@ func NewMwaaEnvironmentLastUpdated_Override(m MwaaEnvironmentLastUpdated, terraf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdated",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdated",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)
@@ -1593,7 +1594,7 @@ func NewMwaaEnvironmentLastUpdatedError(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_MwaaEnvironmentLastUpdatedError{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdatedError",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdatedError",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1606,7 +1607,7 @@ func NewMwaaEnvironmentLastUpdatedError_Override(m MwaaEnvironmentLastUpdatedErr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLastUpdatedError",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdatedError",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		m,
 	)
@@ -1741,6 +1742,8 @@ type MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference interfa
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MwaaEnvironmentLoggingConfigurationDagProcessingLogs
+	SetInternalValue(val *MwaaEnvironmentLoggingConfigurationDagProcessingLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -1780,6 +1783,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) InternalValue() *MwaaEnvironmentLoggingConfigurationDagProcessingLogs {
+	var returns *MwaaEnvironmentLoggingConfigurationDagProcessingLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1841,7 +1854,7 @@ func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference(terr
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1853,7 +1866,7 @@ func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference_Over
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -1863,6 +1876,14 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfigurationDagProcessingLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2003,6 +2024,8 @@ type MwaaEnvironmentLoggingConfigurationOutputReference interface {
 	cdktf.ComplexObject
 	DagProcessingLogs() MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference
 	DagProcessingLogsInput() *MwaaEnvironmentLoggingConfigurationDagProcessingLogs
+	InternalValue() *MwaaEnvironmentLoggingConfiguration
+	SetInternalValue(val *MwaaEnvironmentLoggingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SchedulerLogs() MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference
@@ -2055,6 +2078,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) DagProces
 	_jsii_.Get(
 		j,
 		"dagProcessingLogsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) InternalValue() *MwaaEnvironmentLoggingConfiguration {
+	var returns *MwaaEnvironmentLoggingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2176,7 +2209,7 @@ func NewMwaaEnvironmentLoggingConfigurationOutputReference(terraformResource cdk
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2188,9 +2221,17 @@ func NewMwaaEnvironmentLoggingConfigurationOutputReference_Override(m MwaaEnviro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2394,6 +2435,8 @@ type MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MwaaEnvironmentLoggingConfigurationSchedulerLogs
+	SetInternalValue(val *MwaaEnvironmentLoggingConfigurationSchedulerLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -2433,6 +2476,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) InternalValue() *MwaaEnvironmentLoggingConfigurationSchedulerLogs {
+	var returns *MwaaEnvironmentLoggingConfigurationSchedulerLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2494,7 +2547,7 @@ func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference(terrafor
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2506,7 +2559,7 @@ func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2516,6 +2569,14 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfigurationSchedulerLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2664,6 +2725,8 @@ type MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MwaaEnvironmentLoggingConfigurationTaskLogs
+	SetInternalValue(val *MwaaEnvironmentLoggingConfigurationTaskLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -2703,6 +2766,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) E
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) InternalValue() *MwaaEnvironmentLoggingConfigurationTaskLogs {
+	var returns *MwaaEnvironmentLoggingConfigurationTaskLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2764,7 +2837,7 @@ func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference(terraformReso
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2776,7 +2849,7 @@ func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference_Override(m Mw
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -2786,6 +2859,14 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) S
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfigurationTaskLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2934,6 +3015,8 @@ type MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MwaaEnvironmentLoggingConfigurationWebserverLogs
+	SetInternalValue(val *MwaaEnvironmentLoggingConfigurationWebserverLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -2973,6 +3056,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) InternalValue() *MwaaEnvironmentLoggingConfigurationWebserverLogs {
+	var returns *MwaaEnvironmentLoggingConfigurationWebserverLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3034,7 +3127,7 @@ func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference(terrafor
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3046,7 +3139,7 @@ func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -3056,6 +3149,14 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfigurationWebserverLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3204,6 +3305,8 @@ type MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *MwaaEnvironmentLoggingConfigurationWorkerLogs
+	SetInternalValue(val *MwaaEnvironmentLoggingConfigurationWorkerLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	LogLevel() *string
@@ -3243,6 +3346,16 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) InternalValue() *MwaaEnvironmentLoggingConfigurationWorkerLogs {
+	var returns *MwaaEnvironmentLoggingConfigurationWorkerLogs
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3304,7 +3417,7 @@ func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference(terraformRe
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3316,7 +3429,7 @@ func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference_Override(m 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
 	)
@@ -3326,6 +3439,14 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) SetInternalValue(val *MwaaEnvironmentLoggingConfigurationWorkerLogs) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3471,6 +3592,8 @@ type MwaaEnvironmentNetworkConfiguration struct {
 
 type MwaaEnvironmentNetworkConfigurationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *MwaaEnvironmentNetworkConfiguration
+	SetInternalValue(val *MwaaEnvironmentNetworkConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -3494,6 +3617,16 @@ type MwaaEnvironmentNetworkConfigurationOutputReference interface {
 // The jsii proxy struct for MwaaEnvironmentNetworkConfigurationOutputReference
 type jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) InternalValue() *MwaaEnvironmentNetworkConfiguration {
+	var returns *MwaaEnvironmentNetworkConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) IsSingleItem() *bool {
@@ -3572,7 +3705,7 @@ func NewMwaaEnvironmentNetworkConfigurationOutputReference(terraformResource cdk
 	j := jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentNetworkConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentNetworkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3584,9 +3717,17 @@ func NewMwaaEnvironmentNetworkConfigurationOutputReference_Override(m MwaaEnviro
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.MWAA.MwaaEnvironmentNetworkConfigurationOutputReference",
+		"hashicorp_aws.mwaa.MwaaEnvironmentNetworkConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) SetInternalValue(val *MwaaEnvironmentNetworkConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

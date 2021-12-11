@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmCertificate",
+		"hashicorp_aws.acm.AcmCertificate",
 		reflect.TypeOf((*AcmCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -80,11 +80,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmCertificateConfig",
+		"hashicorp_aws.acm.AcmCertificateConfig",
 		reflect.TypeOf((*AcmCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmCertificateDomainValidationOptions",
+		"hashicorp_aws.acm.AcmCertificateDomainValidationOptions",
 		reflect.TypeOf((*AcmCertificateDomainValidationOptions)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -107,11 +107,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmCertificateOptions",
+		"hashicorp_aws.acm.AcmCertificateOptions",
 		reflect.TypeOf((*AcmCertificateOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmCertificateOptionsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateOptionsOutputReference",
 		reflect.TypeOf((*AcmCertificateOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "certificateTransparencyLoggingPreference", GoGetter: "CertificateTransparencyLoggingPreference"},
@@ -120,6 +120,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -134,7 +135,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmCertificateValidation",
+		"hashicorp_aws.acm.AcmCertificateValidation",
 		reflect.TypeOf((*AcmCertificateValidation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -180,15 +181,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmCertificateValidationConfig",
+		"hashicorp_aws.acm.AcmCertificateValidationConfig",
 		reflect.TypeOf((*AcmCertificateValidationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmCertificateValidationTimeouts",
+		"hashicorp_aws.acm.AcmCertificateValidationTimeouts",
 		reflect.TypeOf((*AcmCertificateValidationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmCertificateValidationTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmCertificateValidationTimeoutsOutputReference",
 		reflect.TypeOf((*AcmCertificateValidationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -197,6 +198,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -211,7 +213,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificate",
 		reflect.TypeOf((*AcmpcaCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -263,7 +265,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthority",
 		reflect.TypeOf((*AcmpcaCertificateAuthority)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -334,7 +336,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificate",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificate",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -378,17 +380,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfiguration",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfiguration",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificateAuthorityConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -409,11 +412,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "commonName", GoGetter: "CommonName"},
@@ -432,6 +435,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "givenNameInput", GoGetter: "GivenNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "initials", GoGetter: "Initials"},
 			_jsii_.MemberProperty{JsiiProperty: "initialsInput", GoGetter: "InitialsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -472,23 +476,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityCertificateConfig",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityCertificateConfig",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityConfig",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityConfig",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfiguration",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfiguration",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityRevocationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "customCname", GoGetter: "CustomCname"},
@@ -501,6 +505,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -522,7 +527,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityRevocationConfigurationOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityRevocationConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "crlConfiguration", GoGetter: "CrlConfiguration"},
@@ -531,6 +536,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -546,11 +552,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityTimeouts",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityTimeouts",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateAuthorityTimeoutsOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateAuthorityTimeoutsOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateAuthorityTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -559,6 +565,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -573,21 +580,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateConfig",
+		"hashicorp_aws.acm.AcmpcaCertificateConfig",
 		reflect.TypeOf((*AcmpcaCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.AcmpcaCertificateValidity",
+		"hashicorp_aws.acm.AcmpcaCertificateValidity",
 		reflect.TypeOf((*AcmpcaCertificateValidity)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.AcmpcaCertificateValidityOutputReference",
+		"hashicorp_aws.acm.AcmpcaCertificateValidityOutputReference",
 		reflect.TypeOf((*AcmpcaCertificateValidityOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -605,7 +613,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.DataAwsAcmCertificate",
+		"hashicorp_aws.acm.DataAwsAcmCertificate",
 		reflect.TypeOf((*DataAwsAcmCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -661,11 +669,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.DataAwsAcmCertificateConfig",
+		"hashicorp_aws.acm.DataAwsAcmCertificateConfig",
 		reflect.TypeOf((*DataAwsAcmCertificateConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificate",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificate",
 		reflect.TypeOf((*DataAwsAcmpcaCertificate)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -708,7 +716,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthority",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthority",
 		reflect.TypeOf((*DataAwsAcmpcaCertificateAuthority)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -761,19 +769,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthorityConfig",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthorityConfig",
 		reflect.TypeOf((*DataAwsAcmpcaCertificateAuthorityConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthorityRevocationConfiguration",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthorityRevocationConfiguration",
 		reflect.TypeOf((*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration",
 		reflect.TypeOf((*DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ACM.DataAwsAcmpcaCertificateConfig",
+		"hashicorp_aws.acm.DataAwsAcmpcaCertificateConfig",
 		reflect.TypeOf((*DataAwsAcmpcaCertificateConfig)(nil)).Elem(),
 	)
 }

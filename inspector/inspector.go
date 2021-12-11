@@ -207,7 +207,7 @@ func NewDataAwsInspectorRulesPackages(scope constructs.Construct, id *string, co
 	j := jsiiProxy_DataAwsInspectorRulesPackages{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackages",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackages",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -220,7 +220,7 @@ func NewDataAwsInspectorRulesPackages_Override(d DataAwsInspectorRulesPackages, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackages",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackages",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -268,7 +268,7 @@ func DataAwsInspectorRulesPackages_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackages",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackages",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -281,7 +281,7 @@ func DataAwsInspectorRulesPackages_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Inspector.DataAwsInspectorRulesPackages",
+		"hashicorp_aws.inspector.DataAwsInspectorRulesPackages",
 		"tfResourceType",
 		&returns,
 	)
@@ -443,6 +443,7 @@ func (d *jsiiProxy_DataAwsInspectorRulesPackages) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Inspector.
 type DataAwsInspectorRulesPackagesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -699,7 +700,7 @@ func NewInspectorAssessmentTarget(scope constructs.Construct, id *string, config
 	j := jsiiProxy_InspectorAssessmentTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorAssessmentTarget",
+		"hashicorp_aws.inspector.InspectorAssessmentTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -712,7 +713,7 @@ func NewInspectorAssessmentTarget_Override(i InspectorAssessmentTarget, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorAssessmentTarget",
+		"hashicorp_aws.inspector.InspectorAssessmentTarget",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -776,7 +777,7 @@ func InspectorAssessmentTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Inspector.InspectorAssessmentTarget",
+		"hashicorp_aws.inspector.InspectorAssessmentTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -789,7 +790,7 @@ func InspectorAssessmentTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Inspector.InspectorAssessmentTarget",
+		"hashicorp_aws.inspector.InspectorAssessmentTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -959,6 +960,7 @@ func (i *jsiiProxy_InspectorAssessmentTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Inspector.
 type InspectorAssessmentTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1312,7 +1314,7 @@ func NewInspectorAssessmentTemplate(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_InspectorAssessmentTemplate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplate",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1325,7 +1327,7 @@ func NewInspectorAssessmentTemplate_Override(i InspectorAssessmentTemplate, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplate",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplate",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -1421,7 +1423,7 @@ func InspectorAssessmentTemplate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplate",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1434,7 +1436,7 @@ func InspectorAssessmentTemplate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Inspector.InspectorAssessmentTemplate",
+		"hashicorp_aws.inspector.InspectorAssessmentTemplate",
 		"tfResourceType",
 		&returns,
 	)
@@ -1612,6 +1614,7 @@ func (i *jsiiProxy_InspectorAssessmentTemplate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Inspector.
 type InspectorAssessmentTemplateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1856,7 +1859,7 @@ func NewInspectorResourceGroup(scope constructs.Construct, id *string, config *I
 	j := jsiiProxy_InspectorResourceGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorResourceGroup",
+		"hashicorp_aws.inspector.InspectorResourceGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1869,7 +1872,7 @@ func NewInspectorResourceGroup_Override(i InspectorResourceGroup, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Inspector.InspectorResourceGroup",
+		"hashicorp_aws.inspector.InspectorResourceGroup",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -1925,7 +1928,7 @@ func InspectorResourceGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Inspector.InspectorResourceGroup",
+		"hashicorp_aws.inspector.InspectorResourceGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1938,7 +1941,7 @@ func InspectorResourceGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Inspector.InspectorResourceGroup",
+		"hashicorp_aws.inspector.InspectorResourceGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -2100,6 +2103,7 @@ func (i *jsiiProxy_InspectorResourceGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Inspector.
 type InspectorResourceGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

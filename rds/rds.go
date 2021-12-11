@@ -507,7 +507,7 @@ func NewDataAwsDbClusterSnapshot(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsDbClusterSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshot",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -520,7 +520,7 @@ func NewDataAwsDbClusterSnapshot_Override(d DataAwsDbClusterSnapshot, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshot",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -624,7 +624,7 @@ func DataAwsDbClusterSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshot",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -637,7 +637,7 @@ func DataAwsDbClusterSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbClusterSnapshot",
+		"hashicorp_aws.rds.DataAwsDbClusterSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -855,6 +855,7 @@ func (d *jsiiProxy_DataAwsDbClusterSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbClusterSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1102,7 +1103,7 @@ func NewDataAwsDbEventCategories(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsDbEventCategories{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbEventCategories",
+		"hashicorp_aws.rds.DataAwsDbEventCategories",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1115,7 +1116,7 @@ func NewDataAwsDbEventCategories_Override(d DataAwsDbEventCategories, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbEventCategories",
+		"hashicorp_aws.rds.DataAwsDbEventCategories",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1171,7 +1172,7 @@ func DataAwsDbEventCategories_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbEventCategories",
+		"hashicorp_aws.rds.DataAwsDbEventCategories",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1184,7 +1185,7 @@ func DataAwsDbEventCategories_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbEventCategories",
+		"hashicorp_aws.rds.DataAwsDbEventCategories",
 		"tfResourceType",
 		&returns,
 	)
@@ -1354,6 +1355,7 @@ func (d *jsiiProxy_DataAwsDbEventCategories) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbEventCategoriesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2008,7 +2010,7 @@ func NewDataAwsDbInstance(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsDbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbInstance",
+		"hashicorp_aws.rds.DataAwsDbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2021,7 +2023,7 @@ func NewDataAwsDbInstance_Override(d DataAwsDbInstance, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbInstance",
+		"hashicorp_aws.rds.DataAwsDbInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2085,7 +2087,7 @@ func DataAwsDbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbInstance",
+		"hashicorp_aws.rds.DataAwsDbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2098,7 +2100,7 @@ func DataAwsDbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbInstance",
+		"hashicorp_aws.rds.DataAwsDbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -2268,6 +2270,7 @@ func (d *jsiiProxy_DataAwsDbInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2604,7 +2607,7 @@ func NewDataAwsDbProxy(scope constructs.Construct, id *string, config *DataAwsDb
 	j := jsiiProxy_DataAwsDbProxy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbProxy",
+		"hashicorp_aws.rds.DataAwsDbProxy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2617,7 +2620,7 @@ func NewDataAwsDbProxy_Override(d DataAwsDbProxy, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbProxy",
+		"hashicorp_aws.rds.DataAwsDbProxy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2673,7 +2676,7 @@ func DataAwsDbProxy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbProxy",
+		"hashicorp_aws.rds.DataAwsDbProxy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2686,7 +2689,7 @@ func DataAwsDbProxy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbProxy",
+		"hashicorp_aws.rds.DataAwsDbProxy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2962,7 +2965,7 @@ func NewDataAwsDbProxyAuth(terraformResource cdktf.ITerraformResource, terraform
 	j := jsiiProxy_DataAwsDbProxyAuth{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbProxyAuth",
+		"hashicorp_aws.rds.DataAwsDbProxyAuth",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2975,7 +2978,7 @@ func NewDataAwsDbProxyAuth_Override(d DataAwsDbProxyAuth, terraformResource cdkt
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbProxyAuth",
+		"hashicorp_aws.rds.DataAwsDbProxyAuth",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3075,6 +3078,7 @@ func (d *jsiiProxy_DataAwsDbProxyAuth) InterpolationForAttribute(property *strin
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbProxyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3606,7 +3610,7 @@ func NewDataAwsDbSnapshot(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsDbSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbSnapshot",
+		"hashicorp_aws.rds.DataAwsDbSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3619,7 +3623,7 @@ func NewDataAwsDbSnapshot_Override(d DataAwsDbSnapshot, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbSnapshot",
+		"hashicorp_aws.rds.DataAwsDbSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3715,7 +3719,7 @@ func DataAwsDbSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbSnapshot",
+		"hashicorp_aws.rds.DataAwsDbSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3728,7 +3732,7 @@ func DataAwsDbSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbSnapshot",
+		"hashicorp_aws.rds.DataAwsDbSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -3938,6 +3942,7 @@ func (d *jsiiProxy_DataAwsDbSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4226,7 +4231,7 @@ func NewDataAwsDbSubnetGroup(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsDbSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroup",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4239,7 +4244,7 @@ func NewDataAwsDbSubnetGroup_Override(d DataAwsDbSubnetGroup, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroup",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4295,7 +4300,7 @@ func DataAwsDbSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroup",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4308,7 +4313,7 @@ func DataAwsDbSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsDbSubnetGroup",
+		"hashicorp_aws.rds.DataAwsDbSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -4470,6 +4475,7 @@ func (d *jsiiProxy_DataAwsDbSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsDbSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4771,7 +4777,7 @@ func NewDataAwsRdsCertificate(scope constructs.Construct, id *string, config *Da
 	j := jsiiProxy_DataAwsRdsCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsCertificate",
+		"hashicorp_aws.rds.DataAwsRdsCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4784,7 +4790,7 @@ func NewDataAwsRdsCertificate_Override(d DataAwsRdsCertificate, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsCertificate",
+		"hashicorp_aws.rds.DataAwsRdsCertificate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4840,7 +4846,7 @@ func DataAwsRdsCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsRdsCertificate",
+		"hashicorp_aws.rds.DataAwsRdsCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4853,7 +4859,7 @@ func DataAwsRdsCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsRdsCertificate",
+		"hashicorp_aws.rds.DataAwsRdsCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -5023,6 +5029,7 @@ func (d *jsiiProxy_DataAwsRdsCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsRdsCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5556,7 +5563,7 @@ func NewDataAwsRdsCluster(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsRdsCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsCluster",
+		"hashicorp_aws.rds.DataAwsRdsCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5569,7 +5576,7 @@ func NewDataAwsRdsCluster_Override(d DataAwsRdsCluster, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsCluster",
+		"hashicorp_aws.rds.DataAwsRdsCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5633,7 +5640,7 @@ func DataAwsRdsCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsRdsCluster",
+		"hashicorp_aws.rds.DataAwsRdsCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5646,7 +5653,7 @@ func DataAwsRdsCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsRdsCluster",
+		"hashicorp_aws.rds.DataAwsRdsCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -5816,6 +5823,7 @@ func (d *jsiiProxy_DataAwsRdsCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsRdsClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6267,7 +6275,7 @@ func NewDataAwsRdsEngineVersion(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsRdsEngineVersion{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersion",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersion",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6280,7 +6288,7 @@ func NewDataAwsRdsEngineVersion_Override(d DataAwsRdsEngineVersion, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersion",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersion",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6360,7 +6368,7 @@ func DataAwsRdsEngineVersion_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersion",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersion",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6373,7 +6381,7 @@ func DataAwsRdsEngineVersion_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsRdsEngineVersion",
+		"hashicorp_aws.rds.DataAwsRdsEngineVersion",
 		"tfResourceType",
 		&returns,
 	)
@@ -6559,6 +6567,7 @@ func (d *jsiiProxy_DataAwsRdsEngineVersion) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsRdsEngineVersionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7293,7 +7302,7 @@ func NewDataAwsRdsOrderableDbInstance(scope constructs.Construct, id *string, co
 	j := jsiiProxy_DataAwsRdsOrderableDbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstance",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7306,7 +7315,7 @@ func NewDataAwsRdsOrderableDbInstance_Override(d DataAwsRdsOrderableDbInstance, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstance",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7490,7 +7499,7 @@ func DataAwsRdsOrderableDbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstance",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7503,7 +7512,7 @@ func DataAwsRdsOrderableDbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DataAwsRdsOrderableDbInstance",
+		"hashicorp_aws.rds.DataAwsRdsOrderableDbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -7793,6 +7802,7 @@ func (d *jsiiProxy_DataAwsRdsOrderableDbInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DataAwsRdsOrderableDbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8286,7 +8296,7 @@ func NewDbClusterSnapshot(scope constructs.Construct, id *string, config *DbClus
 	j := jsiiProxy_DbClusterSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbClusterSnapshot",
+		"hashicorp_aws.rds.DbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8299,7 +8309,7 @@ func NewDbClusterSnapshot_Override(d DbClusterSnapshot, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbClusterSnapshot",
+		"hashicorp_aws.rds.DbClusterSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8379,7 +8389,7 @@ func DbClusterSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbClusterSnapshot",
+		"hashicorp_aws.rds.DbClusterSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8392,7 +8402,7 @@ func DbClusterSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbClusterSnapshot",
+		"hashicorp_aws.rds.DbClusterSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -8586,6 +8596,7 @@ func (d *jsiiProxy_DbClusterSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbClusterSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8619,6 +8630,8 @@ type DbClusterSnapshotTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DbClusterSnapshotTimeouts
+	SetInternalValue(val *DbClusterSnapshotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8654,6 +8667,16 @@ func (j *jsiiProxy_DbClusterSnapshotTimeoutsOutputReference) CreateInput() *stri
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbClusterSnapshotTimeoutsOutputReference) InternalValue() *DbClusterSnapshotTimeouts {
+	var returns *DbClusterSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8695,7 +8718,7 @@ func NewDbClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DbClusterSnapshotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8707,7 +8730,7 @@ func NewDbClusterSnapshotTimeoutsOutputReference_Override(d DbClusterSnapshotTim
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbClusterSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbClusterSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -8717,6 +8740,14 @@ func (j *jsiiProxy_DbClusterSnapshotTimeoutsOutputReference) SetCreate(val *stri
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbClusterSnapshotTimeoutsOutputReference) SetInternalValue(val *DbClusterSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9285,7 +9316,7 @@ func NewDbEventSubscription(scope constructs.Construct, id *string, config *DbEv
 	j := jsiiProxy_DbEventSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbEventSubscription",
+		"hashicorp_aws.rds.DbEventSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9298,7 +9329,7 @@ func NewDbEventSubscription_Override(d DbEventSubscription, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbEventSubscription",
+		"hashicorp_aws.rds.DbEventSubscription",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9418,7 +9449,7 @@ func DbEventSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbEventSubscription",
+		"hashicorp_aws.rds.DbEventSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9431,7 +9462,7 @@ func DbEventSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbEventSubscription",
+		"hashicorp_aws.rds.DbEventSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -9673,6 +9704,7 @@ func (d *jsiiProxy_DbEventSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbEventSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9723,6 +9755,8 @@ type DbEventSubscriptionTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DbEventSubscriptionTimeouts
+	SetInternalValue(val *DbEventSubscriptionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9788,6 +9822,16 @@ func (j *jsiiProxy_DbEventSubscriptionTimeoutsOutputReference) DeleteInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_DbEventSubscriptionTimeoutsOutputReference) InternalValue() *DbEventSubscriptionTimeouts {
+	var returns *DbEventSubscriptionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DbEventSubscriptionTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9844,7 +9888,7 @@ func NewDbEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_DbEventSubscriptionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9856,7 +9900,7 @@ func NewDbEventSubscriptionTimeoutsOutputReference_Override(d DbEventSubscriptio
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -9874,6 +9918,14 @@ func (j *jsiiProxy_DbEventSubscriptionTimeoutsOutputReference) SetDelete(val *st
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbEventSubscriptionTimeoutsOutputReference) SetInternalValue(val *DbEventSubscriptionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11671,7 +11723,7 @@ func NewDbInstance(scope constructs.Construct, id *string, config *DbInstanceCon
 	j := jsiiProxy_DbInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstance",
+		"hashicorp_aws.rds.DbInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11684,7 +11736,7 @@ func NewDbInstance_Override(d DbInstance, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstance",
+		"hashicorp_aws.rds.DbInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12164,7 +12216,7 @@ func DbInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbInstance",
+		"hashicorp_aws.rds.DbInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12177,7 +12229,7 @@ func DbInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbInstance",
+		"hashicorp_aws.rds.DbInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -12811,6 +12863,7 @@ func (d *jsiiProxy_DbInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12955,6 +13008,8 @@ type DbInstanceRestoreToPointInTime struct {
 
 type DbInstanceRestoreToPointInTimeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DbInstanceRestoreToPointInTime
+	SetInternalValue(val *DbInstanceRestoreToPointInTime)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RestoreTime() *string
@@ -12988,6 +13043,16 @@ type DbInstanceRestoreToPointInTimeOutputReference interface {
 // The jsii proxy struct for DbInstanceRestoreToPointInTimeOutputReference
 type jsiiProxy_DbInstanceRestoreToPointInTimeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DbInstanceRestoreToPointInTimeOutputReference) InternalValue() *DbInstanceRestoreToPointInTime {
+	var returns *DbInstanceRestoreToPointInTime
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DbInstanceRestoreToPointInTimeOutputReference) IsSingleItem() *bool {
@@ -13106,7 +13171,7 @@ func NewDbInstanceRestoreToPointInTimeOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_DbInstanceRestoreToPointInTimeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.DbInstanceRestoreToPointInTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13118,9 +13183,17 @@ func NewDbInstanceRestoreToPointInTimeOutputReference_Override(d DbInstanceResto
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.DbInstanceRestoreToPointInTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DbInstanceRestoreToPointInTimeOutputReference) SetInternalValue(val *DbInstanceRestoreToPointInTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -13552,7 +13625,7 @@ func NewDbInstanceRoleAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DbInstanceRoleAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociation",
+		"hashicorp_aws.rds.DbInstanceRoleAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13565,7 +13638,7 @@ func NewDbInstanceRoleAssociation_Override(d DbInstanceRoleAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociation",
+		"hashicorp_aws.rds.DbInstanceRoleAssociation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13637,7 +13710,7 @@ func DbInstanceRoleAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociation",
+		"hashicorp_aws.rds.DbInstanceRoleAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13650,7 +13723,7 @@ func DbInstanceRoleAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbInstanceRoleAssociation",
+		"hashicorp_aws.rds.DbInstanceRoleAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -13812,6 +13885,7 @@ func (d *jsiiProxy_DbInstanceRoleAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbInstanceRoleAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13853,6 +13927,8 @@ type DbInstanceS3ImportOutputReference interface {
 	IngestionRole() *string
 	SetIngestionRole(val *string)
 	IngestionRoleInput() *string
+	InternalValue() *DbInstanceS3Import
+	SetInternalValue(val *DbInstanceS3Import)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SourceEngine() *string
@@ -13939,6 +14015,16 @@ func (j *jsiiProxy_DbInstanceS3ImportOutputReference) IngestionRoleInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_DbInstanceS3ImportOutputReference) InternalValue() *DbInstanceS3Import {
+	var returns *DbInstanceS3Import
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DbInstanceS3ImportOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -14015,7 +14101,7 @@ func NewDbInstanceS3ImportOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DbInstanceS3ImportOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceS3ImportOutputReference",
+		"hashicorp_aws.rds.DbInstanceS3ImportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14027,7 +14113,7 @@ func NewDbInstanceS3ImportOutputReference_Override(d DbInstanceS3ImportOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceS3ImportOutputReference",
+		"hashicorp_aws.rds.DbInstanceS3ImportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -14053,6 +14139,14 @@ func (j *jsiiProxy_DbInstanceS3ImportOutputReference) SetIngestionRole(val *stri
 	_jsii_.Set(
 		j,
 		"ingestionRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbInstanceS3ImportOutputReference) SetInternalValue(val *DbInstanceS3Import) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14206,6 +14300,8 @@ type DbInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DbInstanceTimeouts
+	SetInternalValue(val *DbInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -14271,6 +14367,16 @@ func (j *jsiiProxy_DbInstanceTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DbInstanceTimeoutsOutputReference) InternalValue() *DbInstanceTimeouts {
+	var returns *DbInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DbInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -14327,7 +14433,7 @@ func NewDbInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DbInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -14339,7 +14445,7 @@ func NewDbInstanceTimeoutsOutputReference_Override(d DbInstanceTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -14357,6 +14463,14 @@ func (j *jsiiProxy_DbInstanceTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbInstanceTimeoutsOutputReference) SetInternalValue(val *DbInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14913,7 +15027,7 @@ func NewDbOptionGroup(scope constructs.Construct, id *string, config *DbOptionGr
 	j := jsiiProxy_DbOptionGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbOptionGroup",
+		"hashicorp_aws.rds.DbOptionGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14926,7 +15040,7 @@ func NewDbOptionGroup_Override(d DbOptionGroup, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbOptionGroup",
+		"hashicorp_aws.rds.DbOptionGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -15038,7 +15152,7 @@ func DbOptionGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbOptionGroup",
+		"hashicorp_aws.rds.DbOptionGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15051,7 +15165,7 @@ func DbOptionGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbOptionGroup",
+		"hashicorp_aws.rds.DbOptionGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -15277,6 +15391,7 @@ func (d *jsiiProxy_DbOptionGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbOptionGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15344,6 +15459,8 @@ type DbOptionGroupTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DbOptionGroupTimeouts
+	SetInternalValue(val *DbOptionGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15379,6 +15496,16 @@ func (j *jsiiProxy_DbOptionGroupTimeoutsOutputReference) DeleteInput() *string {
 	_jsii_.Get(
 		j,
 		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbOptionGroupTimeoutsOutputReference) InternalValue() *DbOptionGroupTimeouts {
+	var returns *DbOptionGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -15420,7 +15547,7 @@ func NewDbOptionGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DbOptionGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbOptionGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbOptionGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -15432,7 +15559,7 @@ func NewDbOptionGroupTimeoutsOutputReference_Override(d DbOptionGroupTimeoutsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbOptionGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbOptionGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -15442,6 +15569,14 @@ func (j *jsiiProxy_DbOptionGroupTimeoutsOutputReference) SetDelete(val *string) 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbOptionGroupTimeoutsOutputReference) SetInternalValue(val *DbOptionGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -15927,7 +16062,7 @@ func NewDbParameterGroup(scope constructs.Construct, id *string, config *DbParam
 	j := jsiiProxy_DbParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbParameterGroup",
+		"hashicorp_aws.rds.DbParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15940,7 +16075,7 @@ func NewDbParameterGroup_Override(d DbParameterGroup, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbParameterGroup",
+		"hashicorp_aws.rds.DbParameterGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16044,7 +16179,7 @@ func DbParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbParameterGroup",
+		"hashicorp_aws.rds.DbParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16057,7 +16192,7 @@ func DbParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbParameterGroup",
+		"hashicorp_aws.rds.DbParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -16267,6 +16402,7 @@ func (d *jsiiProxy_DbParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16795,7 +16931,7 @@ func NewDbProxy(scope constructs.Construct, id *string, config *DbProxyConfig) D
 	j := jsiiProxy_DbProxy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxy",
+		"hashicorp_aws.rds.DbProxy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16808,7 +16944,7 @@ func NewDbProxy_Override(d DbProxy, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxy",
+		"hashicorp_aws.rds.DbProxy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16944,7 +17080,7 @@ func DbProxy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbProxy",
+		"hashicorp_aws.rds.DbProxy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16957,7 +17093,7 @@ func DbProxy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbProxy",
+		"hashicorp_aws.rds.DbProxy",
 		"tfResourceType",
 		&returns,
 	)
@@ -17194,6 +17330,7 @@ type DbProxyAuth struct {
 	SecretArn *string `json:"secretArn"`
 }
 
+// AWS Relational Database Service.
 type DbProxyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17513,7 +17650,7 @@ func NewDbProxyDefaultTargetGroup(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DbProxyDefaultTargetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroup",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17526,7 +17663,7 @@ func NewDbProxyDefaultTargetGroup_Override(d DbProxyDefaultTargetGroup, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroup",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -17582,7 +17719,7 @@ func DbProxyDefaultTargetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroup",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17595,7 +17732,7 @@ func DbProxyDefaultTargetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroup",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -17789,6 +17926,7 @@ func (d *jsiiProxy_DbProxyDefaultTargetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbProxyDefaultTargetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17831,6 +17969,8 @@ type DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference interface {
 	InitQuery() *string
 	SetInitQuery(val *string)
 	InitQueryInput() *string
+	InternalValue() *DbProxyDefaultTargetGroupConnectionPoolConfig
+	SetInternalValue(val *DbProxyDefaultTargetGroupConnectionPoolConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxConnectionsPercent() *float64
@@ -17899,6 +18039,16 @@ func (j *jsiiProxy_DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference)
 	_jsii_.Get(
 		j,
 		"initQueryInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference) InternalValue() *DbProxyDefaultTargetGroupConnectionPoolConfig {
+	var returns *DbProxyDefaultTargetGroupConnectionPoolConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18000,7 +18150,7 @@ func NewDbProxyDefaultTargetGroupConnectionPoolConfigOutputReference(terraformRe
 	j := jsiiProxy_DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18012,7 +18162,7 @@ func NewDbProxyDefaultTargetGroupConnectionPoolConfigOutputReference_Override(d 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -18030,6 +18180,14 @@ func (j *jsiiProxy_DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference)
 	_jsii_.Set(
 		j,
 		"initQuery",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbProxyDefaultTargetGroupConnectionPoolConfigOutputReference) SetInternalValue(val *DbProxyDefaultTargetGroupConnectionPoolConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18218,6 +18376,8 @@ type DbProxyDefaultTargetGroupTimeoutsOutputReference interface {
 	Create() *string
 	SetCreate(val *string)
 	CreateInput() *string
+	InternalValue() *DbProxyDefaultTargetGroupTimeouts
+	SetInternalValue(val *DbProxyDefaultTargetGroupTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18257,6 +18417,16 @@ func (j *jsiiProxy_DbProxyDefaultTargetGroupTimeoutsOutputReference) CreateInput
 	_jsii_.Get(
 		j,
 		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbProxyDefaultTargetGroupTimeoutsOutputReference) InternalValue() *DbProxyDefaultTargetGroupTimeouts {
+	var returns *DbProxyDefaultTargetGroupTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -18318,7 +18488,7 @@ func NewDbProxyDefaultTargetGroupTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_DbProxyDefaultTargetGroupTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18330,7 +18500,7 @@ func NewDbProxyDefaultTargetGroupTimeoutsOutputReference_Override(d DbProxyDefau
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyDefaultTargetGroupTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyDefaultTargetGroupTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -18340,6 +18510,14 @@ func (j *jsiiProxy_DbProxyDefaultTargetGroupTimeoutsOutputReference) SetCreate(v
 	_jsii_.Set(
 		j,
 		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbProxyDefaultTargetGroupTimeoutsOutputReference) SetInternalValue(val *DbProxyDefaultTargetGroupTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -18896,7 +19074,7 @@ func NewDbProxyEndpoint(scope constructs.Construct, id *string, config *DbProxyE
 	j := jsiiProxy_DbProxyEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyEndpoint",
+		"hashicorp_aws.rds.DbProxyEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18909,7 +19087,7 @@ func NewDbProxyEndpoint_Override(d DbProxyEndpoint, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyEndpoint",
+		"hashicorp_aws.rds.DbProxyEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -19013,7 +19191,7 @@ func DbProxyEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbProxyEndpoint",
+		"hashicorp_aws.rds.DbProxyEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19026,7 +19204,7 @@ func DbProxyEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbProxyEndpoint",
+		"hashicorp_aws.rds.DbProxyEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -19236,6 +19414,7 @@ func (d *jsiiProxy_DbProxyEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbProxyEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19282,6 +19461,8 @@ type DbProxyEndpointTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DbProxyEndpointTimeouts
+	SetInternalValue(val *DbProxyEndpointTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -19347,6 +19528,16 @@ func (j *jsiiProxy_DbProxyEndpointTimeoutsOutputReference) DeleteInput() *string
 	return returns
 }
 
+func (j *jsiiProxy_DbProxyEndpointTimeoutsOutputReference) InternalValue() *DbProxyEndpointTimeouts {
+	var returns *DbProxyEndpointTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DbProxyEndpointTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -19403,7 +19594,7 @@ func NewDbProxyEndpointTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	j := jsiiProxy_DbProxyEndpointTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyEndpointTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -19415,7 +19606,7 @@ func NewDbProxyEndpointTimeoutsOutputReference_Override(d DbProxyEndpointTimeout
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyEndpointTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyEndpointTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -19433,6 +19624,14 @@ func (j *jsiiProxy_DbProxyEndpointTimeoutsOutputReference) SetDelete(val *string
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbProxyEndpointTimeoutsOutputReference) SetInternalValue(val *DbProxyEndpointTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -19924,7 +20123,7 @@ func NewDbProxyTarget(scope constructs.Construct, id *string, config *DbProxyTar
 	j := jsiiProxy_DbProxyTarget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyTarget",
+		"hashicorp_aws.rds.DbProxyTarget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19937,7 +20136,7 @@ func NewDbProxyTarget_Override(d DbProxyTarget, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyTarget",
+		"hashicorp_aws.rds.DbProxyTarget",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20017,7 +20216,7 @@ func DbProxyTarget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbProxyTarget",
+		"hashicorp_aws.rds.DbProxyTarget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20030,7 +20229,7 @@ func DbProxyTarget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbProxyTarget",
+		"hashicorp_aws.rds.DbProxyTarget",
 		"tfResourceType",
 		&returns,
 	)
@@ -20208,6 +20407,7 @@ func (d *jsiiProxy_DbProxyTarget) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbProxyTargetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20244,6 +20444,8 @@ type DbProxyTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DbProxyTimeouts
+	SetInternalValue(val *DbProxyTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -20309,6 +20511,16 @@ func (j *jsiiProxy_DbProxyTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DbProxyTimeoutsOutputReference) InternalValue() *DbProxyTimeouts {
+	var returns *DbProxyTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DbProxyTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -20365,7 +20577,7 @@ func NewDbProxyTimeoutsOutputReference(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_DbProxyTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -20377,7 +20589,7 @@ func NewDbProxyTimeoutsOutputReference_Override(d DbProxyTimeoutsOutputReference
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbProxyTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbProxyTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -20395,6 +20607,14 @@ func (j *jsiiProxy_DbProxyTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DbProxyTimeoutsOutputReference) SetInternalValue(val *DbProxyTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -20855,7 +21075,7 @@ func NewDbSecurityGroup(scope constructs.Construct, id *string, config *DbSecuri
 	j := jsiiProxy_DbSecurityGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSecurityGroup",
+		"hashicorp_aws.rds.DbSecurityGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20868,7 +21088,7 @@ func NewDbSecurityGroup_Override(d DbSecurityGroup, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSecurityGroup",
+		"hashicorp_aws.rds.DbSecurityGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -20956,7 +21176,7 @@ func DbSecurityGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbSecurityGroup",
+		"hashicorp_aws.rds.DbSecurityGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20969,7 +21189,7 @@ func DbSecurityGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbSecurityGroup",
+		"hashicorp_aws.rds.DbSecurityGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -21155,6 +21375,7 @@ func (d *jsiiProxy_DbSecurityGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbSecurityGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21681,7 +21902,7 @@ func NewDbSnapshot(scope constructs.Construct, id *string, config *DbSnapshotCon
 	j := jsiiProxy_DbSnapshot{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSnapshot",
+		"hashicorp_aws.rds.DbSnapshot",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21694,7 +21915,7 @@ func NewDbSnapshot_Override(d DbSnapshot, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSnapshot",
+		"hashicorp_aws.rds.DbSnapshot",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -21774,7 +21995,7 @@ func DbSnapshot_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbSnapshot",
+		"hashicorp_aws.rds.DbSnapshot",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21787,7 +22008,7 @@ func DbSnapshot_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbSnapshot",
+		"hashicorp_aws.rds.DbSnapshot",
 		"tfResourceType",
 		&returns,
 	)
@@ -21981,6 +22202,7 @@ func (d *jsiiProxy_DbSnapshot) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbSnapshotConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -22011,6 +22233,8 @@ type DbSnapshotTimeouts struct {
 
 type DbSnapshotTimeoutsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *DbSnapshotTimeouts
+	SetInternalValue(val *DbSnapshotTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Read() *string
@@ -22032,6 +22256,16 @@ type DbSnapshotTimeoutsOutputReference interface {
 // The jsii proxy struct for DbSnapshotTimeoutsOutputReference
 type jsiiProxy_DbSnapshotTimeoutsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DbSnapshotTimeoutsOutputReference) InternalValue() *DbSnapshotTimeouts {
+	var returns *DbSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DbSnapshotTimeoutsOutputReference) IsSingleItem() *bool {
@@ -22090,7 +22324,7 @@ func NewDbSnapshotTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DbSnapshotTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -22102,9 +22336,17 @@ func NewDbSnapshotTimeoutsOutputReference_Override(d DbSnapshotTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSnapshotTimeoutsOutputReference",
+		"hashicorp_aws.rds.DbSnapshotTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
+	)
+}
+
+func (j *jsiiProxy_DbSnapshotTimeoutsOutputReference) SetInternalValue(val *DbSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -22573,7 +22815,7 @@ func NewDbSubnetGroup(scope constructs.Construct, id *string, config *DbSubnetGr
 	j := jsiiProxy_DbSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSubnetGroup",
+		"hashicorp_aws.rds.DbSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -22586,7 +22828,7 @@ func NewDbSubnetGroup_Override(d DbSubnetGroup, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.DbSubnetGroup",
+		"hashicorp_aws.rds.DbSubnetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -22682,7 +22924,7 @@ func DbSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.DbSubnetGroup",
+		"hashicorp_aws.rds.DbSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -22695,7 +22937,7 @@ func DbSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.DbSubnetGroup",
+		"hashicorp_aws.rds.DbSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -22897,6 +23139,7 @@ func (d *jsiiProxy_DbSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type DbSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -24181,7 +24424,7 @@ func NewRdsCluster(scope constructs.Construct, id *string, config *RdsClusterCon
 	j := jsiiProxy_RdsCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsCluster",
+		"hashicorp_aws.rds.RdsCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -24194,7 +24437,7 @@ func NewRdsCluster_Override(r RdsCluster, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsCluster",
+		"hashicorp_aws.rds.RdsCluster",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -24546,7 +24789,7 @@ func RdsCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsCluster",
+		"hashicorp_aws.rds.RdsCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -24559,7 +24802,7 @@ func RdsCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsCluster",
+		"hashicorp_aws.rds.RdsCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -25089,6 +25332,7 @@ func (r *jsiiProxy_RdsCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -25566,7 +25810,7 @@ func NewRdsClusterEndpoint(scope constructs.Construct, id *string, config *RdsCl
 	j := jsiiProxy_RdsClusterEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterEndpoint",
+		"hashicorp_aws.rds.RdsClusterEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -25579,7 +25823,7 @@ func NewRdsClusterEndpoint_Override(r RdsClusterEndpoint, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterEndpoint",
+		"hashicorp_aws.rds.RdsClusterEndpoint",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -25683,7 +25927,7 @@ func RdsClusterEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsClusterEndpoint",
+		"hashicorp_aws.rds.RdsClusterEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -25696,7 +25940,7 @@ func RdsClusterEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsClusterEndpoint",
+		"hashicorp_aws.rds.RdsClusterEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -25890,6 +26134,7 @@ func (r *jsiiProxy_RdsClusterEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsClusterEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -26788,7 +27033,7 @@ func NewRdsClusterInstance(scope constructs.Construct, id *string, config *RdsCl
 	j := jsiiProxy_RdsClusterInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterInstance",
+		"hashicorp_aws.rds.RdsClusterInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -26801,7 +27046,7 @@ func NewRdsClusterInstance_Override(r RdsClusterInstance, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterInstance",
+		"hashicorp_aws.rds.RdsClusterInstance",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -27041,7 +27286,7 @@ func RdsClusterInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsClusterInstance",
+		"hashicorp_aws.rds.RdsClusterInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -27054,7 +27299,7 @@ func RdsClusterInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsClusterInstance",
+		"hashicorp_aws.rds.RdsClusterInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -27408,6 +27653,7 @@ func (r *jsiiProxy_RdsClusterInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsClusterInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -27488,6 +27734,8 @@ type RdsClusterInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RdsClusterInstanceTimeouts
+	SetInternalValue(val *RdsClusterInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -27553,6 +27801,16 @@ func (j *jsiiProxy_RdsClusterInstanceTimeoutsOutputReference) DeleteInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_RdsClusterInstanceTimeoutsOutputReference) InternalValue() *RdsClusterInstanceTimeouts {
+	var returns *RdsClusterInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RdsClusterInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -27609,7 +27867,7 @@ func NewRdsClusterInstanceTimeoutsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_RdsClusterInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -27621,7 +27879,7 @@ func NewRdsClusterInstanceTimeoutsOutputReference_Override(r RdsClusterInstanceT
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterInstanceTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -27639,6 +27897,14 @@ func (j *jsiiProxy_RdsClusterInstanceTimeoutsOutputReference) SetDelete(val *str
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RdsClusterInstanceTimeoutsOutputReference) SetInternalValue(val *RdsClusterInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -28148,7 +28414,7 @@ func NewRdsClusterParameterGroup(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_RdsClusterParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterParameterGroup",
+		"hashicorp_aws.rds.RdsClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -28161,7 +28427,7 @@ func NewRdsClusterParameterGroup_Override(r RdsClusterParameterGroup, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterParameterGroup",
+		"hashicorp_aws.rds.RdsClusterParameterGroup",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -28265,7 +28531,7 @@ func RdsClusterParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsClusterParameterGroup",
+		"hashicorp_aws.rds.RdsClusterParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -28278,7 +28544,7 @@ func RdsClusterParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsClusterParameterGroup",
+		"hashicorp_aws.rds.RdsClusterParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -28488,6 +28754,7 @@ func (r *jsiiProxy_RdsClusterParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsClusterParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -28537,6 +28804,8 @@ type RdsClusterRestoreToPointInTime struct {
 
 type RdsClusterRestoreToPointInTimeOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *RdsClusterRestoreToPointInTime
+	SetInternalValue(val *RdsClusterRestoreToPointInTime)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RestoreToTime() *string
@@ -28569,6 +28838,16 @@ type RdsClusterRestoreToPointInTimeOutputReference interface {
 // The jsii proxy struct for RdsClusterRestoreToPointInTimeOutputReference
 type jsiiProxy_RdsClusterRestoreToPointInTimeOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_RdsClusterRestoreToPointInTimeOutputReference) InternalValue() *RdsClusterRestoreToPointInTime {
+	var returns *RdsClusterRestoreToPointInTime
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RdsClusterRestoreToPointInTimeOutputReference) IsSingleItem() *bool {
@@ -28687,7 +28966,7 @@ func NewRdsClusterRestoreToPointInTimeOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_RdsClusterRestoreToPointInTimeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.RdsClusterRestoreToPointInTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -28699,9 +28978,17 @@ func NewRdsClusterRestoreToPointInTimeOutputReference_Override(r RdsClusterResto
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterRestoreToPointInTimeOutputReference",
+		"hashicorp_aws.rds.RdsClusterRestoreToPointInTimeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RdsClusterRestoreToPointInTimeOutputReference) SetInternalValue(val *RdsClusterRestoreToPointInTime) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -29125,7 +29412,7 @@ func NewRdsClusterRoleAssociation(scope constructs.Construct, id *string, config
 	j := jsiiProxy_RdsClusterRoleAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociation",
+		"hashicorp_aws.rds.RdsClusterRoleAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -29138,7 +29425,7 @@ func NewRdsClusterRoleAssociation_Override(r RdsClusterRoleAssociation, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociation",
+		"hashicorp_aws.rds.RdsClusterRoleAssociation",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -29210,7 +29497,7 @@ func RdsClusterRoleAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociation",
+		"hashicorp_aws.rds.RdsClusterRoleAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -29223,7 +29510,7 @@ func RdsClusterRoleAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsClusterRoleAssociation",
+		"hashicorp_aws.rds.RdsClusterRoleAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -29385,6 +29672,7 @@ func (r *jsiiProxy_RdsClusterRoleAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsClusterRoleAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -29426,6 +29714,8 @@ type RdsClusterS3ImportOutputReference interface {
 	IngestionRole() *string
 	SetIngestionRole(val *string)
 	IngestionRoleInput() *string
+	InternalValue() *RdsClusterS3Import
+	SetInternalValue(val *RdsClusterS3Import)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SourceEngine() *string
@@ -29512,6 +29802,16 @@ func (j *jsiiProxy_RdsClusterS3ImportOutputReference) IngestionRoleInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_RdsClusterS3ImportOutputReference) InternalValue() *RdsClusterS3Import {
+	var returns *RdsClusterS3Import
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RdsClusterS3ImportOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -29588,7 +29888,7 @@ func NewRdsClusterS3ImportOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_RdsClusterS3ImportOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterS3ImportOutputReference",
+		"hashicorp_aws.rds.RdsClusterS3ImportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29600,7 +29900,7 @@ func NewRdsClusterS3ImportOutputReference_Override(r RdsClusterS3ImportOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterS3ImportOutputReference",
+		"hashicorp_aws.rds.RdsClusterS3ImportOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -29626,6 +29926,14 @@ func (j *jsiiProxy_RdsClusterS3ImportOutputReference) SetIngestionRole(val *stri
 	_jsii_.Set(
 		j,
 		"ingestionRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RdsClusterS3ImportOutputReference) SetInternalValue(val *RdsClusterS3Import) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -29780,6 +30088,8 @@ type RdsClusterScalingConfigurationOutputReference interface {
 	AutoPause() interface{}
 	SetAutoPause(val interface{})
 	AutoPauseInput() interface{}
+	InternalValue() *RdsClusterScalingConfiguration
+	SetInternalValue(val *RdsClusterScalingConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MaxCapacity() *float64
@@ -29831,6 +30141,16 @@ func (j *jsiiProxy_RdsClusterScalingConfigurationOutputReference) AutoPauseInput
 	_jsii_.Get(
 		j,
 		"autoPauseInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RdsClusterScalingConfigurationOutputReference) InternalValue() *RdsClusterScalingConfiguration {
+	var returns *RdsClusterScalingConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -29952,7 +30272,7 @@ func NewRdsClusterScalingConfigurationOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_RdsClusterScalingConfigurationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterScalingConfigurationOutputReference",
+		"hashicorp_aws.rds.RdsClusterScalingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -29964,7 +30284,7 @@ func NewRdsClusterScalingConfigurationOutputReference_Override(r RdsClusterScali
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterScalingConfigurationOutputReference",
+		"hashicorp_aws.rds.RdsClusterScalingConfigurationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -29974,6 +30294,14 @@ func (j *jsiiProxy_RdsClusterScalingConfigurationOutputReference) SetAutoPause(v
 	_jsii_.Set(
 		j,
 		"autoPause",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RdsClusterScalingConfigurationOutputReference) SetInternalValue(val *RdsClusterScalingConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30175,6 +30503,8 @@ type RdsClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *RdsClusterTimeouts
+	SetInternalValue(val *RdsClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -30240,6 +30570,16 @@ func (j *jsiiProxy_RdsClusterTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RdsClusterTimeoutsOutputReference) InternalValue() *RdsClusterTimeouts {
+	var returns *RdsClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RdsClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -30296,7 +30636,7 @@ func NewRdsClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_RdsClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -30308,7 +30648,7 @@ func NewRdsClusterTimeoutsOutputReference_Override(r RdsClusterTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsClusterTimeoutsOutputReference",
+		"hashicorp_aws.rds.RdsClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		r,
 	)
@@ -30326,6 +30666,14 @@ func (j *jsiiProxy_RdsClusterTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RdsClusterTimeoutsOutputReference) SetInternalValue(val *RdsClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -30871,7 +31219,7 @@ func NewRdsGlobalCluster(scope constructs.Construct, id *string, config *RdsGlob
 	j := jsiiProxy_RdsGlobalCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsGlobalCluster",
+		"hashicorp_aws.rds.RdsGlobalCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -30884,7 +31232,7 @@ func NewRdsGlobalCluster_Override(r RdsGlobalCluster, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsGlobalCluster",
+		"hashicorp_aws.rds.RdsGlobalCluster",
 		[]interface{}{scope, id, config},
 		r,
 	)
@@ -30996,7 +31344,7 @@ func RdsGlobalCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.RDS.RdsGlobalCluster",
+		"hashicorp_aws.rds.RdsGlobalCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -31009,7 +31357,7 @@ func RdsGlobalCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.RDS.RdsGlobalCluster",
+		"hashicorp_aws.rds.RdsGlobalCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -31240,6 +31588,7 @@ func (r *jsiiProxy_RdsGlobalCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Relational Database Service.
 type RdsGlobalClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -31346,7 +31695,7 @@ func NewRdsGlobalClusterGlobalClusterMembers(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_RdsGlobalClusterGlobalClusterMembers{}
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsGlobalClusterGlobalClusterMembers",
+		"hashicorp_aws.rds.RdsGlobalClusterGlobalClusterMembers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -31359,7 +31708,7 @@ func NewRdsGlobalClusterGlobalClusterMembers_Override(r RdsGlobalClusterGlobalCl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.RDS.RdsGlobalClusterGlobalClusterMembers",
+		"hashicorp_aws.rds.RdsGlobalClusterGlobalClusterMembers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		r,
 	)

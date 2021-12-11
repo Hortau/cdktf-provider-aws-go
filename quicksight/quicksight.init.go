@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSource",
+		"hashicorp_aws.quicksight.QuicksightDataSource",
 		reflect.TypeOf((*QuicksightDataSource)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -79,25 +79,26 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceConfig",
+		"hashicorp_aws.quicksight.QuicksightDataSourceConfig",
 		reflect.TypeOf((*QuicksightDataSourceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentials",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentials",
 		reflect.TypeOf((*QuicksightDataSourceCredentials)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsCredentialPair",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsCredentialPair",
 		reflect.TypeOf((*QuicksightDataSourceCredentialsCredentialPair)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsCredentialPairOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceCredentialsCredentialPairOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -115,7 +116,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceCredentialsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceCredentialsOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceCredentialsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "copySourceArn", GoGetter: "CopySourceArn"},
@@ -126,6 +127,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -142,15 +144,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParameters",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParameters",
 		reflect.TypeOf((*QuicksightDataSourceParameters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAmazonElasticsearch",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAmazonElasticsearch",
 		reflect.TypeOf((*QuicksightDataSourceParametersAmazonElasticsearch)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAmazonElasticsearchOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersAmazonElasticsearchOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "domain", GoGetter: "Domain"},
@@ -159,6 +161,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -172,17 +175,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAthena",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAthena",
 		reflect.TypeOf((*QuicksightDataSourceParametersAthena)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAthenaOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAthenaOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersAthenaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -199,11 +203,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAurora",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAurora",
 		reflect.TypeOf((*QuicksightDataSourceParametersAurora)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersAuroraOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -214,6 +218,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -229,11 +234,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraPostgresql",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraPostgresql",
 		reflect.TypeOf((*QuicksightDataSourceParametersAuroraPostgresql)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAuroraPostgresqlOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersAuroraPostgresqlOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -244,6 +249,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -259,11 +265,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAwsIotAnalytics",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAwsIotAnalytics",
 		reflect.TypeOf((*QuicksightDataSourceParametersAwsIotAnalytics)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersAwsIotAnalyticsOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataSetName", GoGetter: "DataSetName"},
@@ -272,6 +278,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -285,17 +292,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersJira",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersJira",
 		reflect.TypeOf((*QuicksightDataSourceParametersJira)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersJiraOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersJiraOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersJiraOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -311,11 +319,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMariaDb",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMariaDb",
 		reflect.TypeOf((*QuicksightDataSourceParametersMariaDb)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMariaDbOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMariaDbOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersMariaDbOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -326,6 +334,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -341,11 +350,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMysql",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMysql",
 		reflect.TypeOf((*QuicksightDataSourceParametersMysql)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersMysqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersMysqlOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersMysqlOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -356,6 +365,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -371,11 +381,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOracle",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOracle",
 		reflect.TypeOf((*QuicksightDataSourceParametersOracle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOracleOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOracleOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersOracleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -386,6 +396,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -401,7 +412,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "amazonElasticsearch", GoGetter: "AmazonElasticsearch"},
@@ -418,6 +429,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -501,11 +513,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPostgresql",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPostgresql",
 		reflect.TypeOf((*QuicksightDataSourceParametersPostgresql)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPostgresqlOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPostgresqlOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersPostgresqlOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -516,6 +528,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -531,11 +544,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPresto",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPresto",
 		reflect.TypeOf((*QuicksightDataSourceParametersPresto)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersPrestoOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersPrestoOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersPrestoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "catalog", GoGetter: "Catalog"},
@@ -546,6 +559,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -561,11 +575,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRds",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRds",
 		reflect.TypeOf((*QuicksightDataSourceParametersRds)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRdsOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRdsOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersRdsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -576,6 +590,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceId", GoGetter: "InstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceIdInput", GoGetter: "InstanceIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -589,11 +604,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRedshift",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRedshift",
 		reflect.TypeOf((*QuicksightDataSourceParametersRedshift)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersRedshiftOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersRedshiftOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersRedshiftOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clusterId", GoGetter: "ClusterId"},
@@ -606,6 +621,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -624,15 +640,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3",
 		reflect.TypeOf((*QuicksightDataSourceParametersS3)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3ManifestFileLocation",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3ManifestFileLocation",
 		reflect.TypeOf((*QuicksightDataSourceParametersS3ManifestFileLocation)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3ManifestFileLocationOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersS3ManifestFileLocationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucket", GoGetter: "Bucket"},
@@ -641,6 +657,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -656,13 +673,14 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersS3OutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersS3OutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersS3OutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -679,17 +697,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersServiceNow",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersServiceNow",
 		reflect.TypeOf((*QuicksightDataSourceParametersServiceNow)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersServiceNowOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersServiceNowOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersServiceNowOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -705,11 +724,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSnowflake",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSnowflake",
 		reflect.TypeOf((*QuicksightDataSourceParametersSnowflake)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSnowflakeOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSnowflakeOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersSnowflakeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -720,6 +739,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -735,11 +755,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSpark",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSpark",
 		reflect.TypeOf((*QuicksightDataSourceParametersSpark)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSparkOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSparkOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersSparkOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -748,6 +768,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -763,11 +784,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSqlServer",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSqlServer",
 		reflect.TypeOf((*QuicksightDataSourceParametersSqlServer)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersSqlServerOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersSqlServerOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersSqlServerOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -778,6 +799,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -793,11 +815,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTeradata",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTeradata",
 		reflect.TypeOf((*QuicksightDataSourceParametersTeradata)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTeradataOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTeradataOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersTeradataOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "database", GoGetter: "Database"},
@@ -808,6 +830,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "host", GoGetter: "Host"},
 			_jsii_.MemberProperty{JsiiProperty: "hostInput", GoGetter: "HostInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -823,17 +846,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTwitter",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTwitter",
 		reflect.TypeOf((*QuicksightDataSourceParametersTwitter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceParametersTwitterOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceParametersTwitterOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceParametersTwitterOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -851,15 +875,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourcePermission",
+		"hashicorp_aws.quicksight.QuicksightDataSourcePermission",
 		reflect.TypeOf((*QuicksightDataSourcePermission)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceSslProperties",
+		"hashicorp_aws.quicksight.QuicksightDataSourceSslProperties",
 		reflect.TypeOf((*QuicksightDataSourceSslProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceSslPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceSslPropertiesOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceSslPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "disableSsl", GoGetter: "DisableSsl"},
@@ -868,6 +892,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -881,17 +906,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceVpcConnectionProperties",
+		"hashicorp_aws.quicksight.QuicksightDataSourceVpcConnectionProperties",
 		reflect.TypeOf((*QuicksightDataSourceVpcConnectionProperties)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
+		"hashicorp_aws.quicksight.QuicksightDataSourceVpcConnectionPropertiesOutputReference",
 		reflect.TypeOf((*QuicksightDataSourceVpcConnectionPropertiesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -907,7 +933,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightGroup",
+		"hashicorp_aws.quicksight.QuicksightGroup",
 		reflect.TypeOf((*QuicksightGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -956,11 +982,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightGroupConfig",
+		"hashicorp_aws.quicksight.QuicksightGroupConfig",
 		reflect.TypeOf((*QuicksightGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembership",
+		"hashicorp_aws.quicksight.QuicksightGroupMembership",
 		reflect.TypeOf((*QuicksightGroupMembership)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1008,11 +1034,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightGroupMembershipConfig",
+		"hashicorp_aws.quicksight.QuicksightGroupMembershipConfig",
 		reflect.TypeOf((*QuicksightGroupMembershipConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.QuickSight.QuicksightUser",
+		"hashicorp_aws.quicksight.QuicksightUser",
 		reflect.TypeOf((*QuicksightUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1071,7 +1097,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.QuickSight.QuicksightUserConfig",
+		"hashicorp_aws.quicksight.QuicksightUserConfig",
 		reflect.TypeOf((*QuicksightUserConfig)(nil)).Elem(),
 	)
 }

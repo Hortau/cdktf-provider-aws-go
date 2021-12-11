@@ -515,7 +515,7 @@ func NewBudgetsBudget(scope constructs.Construct, id *string, config *BudgetsBud
 	j := jsiiProxy_BudgetsBudget{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudget",
+		"hashicorp_aws.budgets.BudgetsBudget",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -528,7 +528,7 @@ func NewBudgetsBudget_Override(b BudgetsBudget, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudget",
+		"hashicorp_aws.budgets.BudgetsBudget",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -672,7 +672,7 @@ func BudgetsBudget_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Budgets.BudgetsBudget",
+		"hashicorp_aws.budgets.BudgetsBudget",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -685,7 +685,7 @@ func BudgetsBudget_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Budgets.BudgetsBudget",
+		"hashicorp_aws.budgets.BudgetsBudget",
 		"tfResourceType",
 		&returns,
 	)
@@ -1355,7 +1355,7 @@ func NewBudgetsBudgetAction(scope constructs.Construct, id *string, config *Budg
 	j := jsiiProxy_BudgetsBudgetAction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetAction",
+		"hashicorp_aws.budgets.BudgetsBudgetAction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1368,7 +1368,7 @@ func NewBudgetsBudgetAction_Override(b BudgetsBudgetAction, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetAction",
+		"hashicorp_aws.budgets.BudgetsBudgetAction",
 		[]interface{}{scope, id, config},
 		b,
 	)
@@ -1472,7 +1472,7 @@ func BudgetsBudgetAction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Budgets.BudgetsBudgetAction",
+		"hashicorp_aws.budgets.BudgetsBudgetAction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1485,7 +1485,7 @@ func BudgetsBudgetAction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Budgets.BudgetsBudgetAction",
+		"hashicorp_aws.budgets.BudgetsBudgetAction",
 		"tfResourceType",
 		&returns,
 	)
@@ -1686,6 +1686,8 @@ type BudgetsBudgetActionActionThresholdOutputReference interface {
 	ActionThresholdValue() *float64
 	SetActionThresholdValue(val *float64)
 	ActionThresholdValueInput() *float64
+	InternalValue() *BudgetsBudgetActionActionThreshold
+	SetInternalValue(val *BudgetsBudgetActionActionThreshold)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1745,6 +1747,16 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) ActionThre
 	return returns
 }
 
+func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) InternalValue() *BudgetsBudgetActionActionThreshold {
+	var returns *BudgetsBudgetActionActionThreshold
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1781,7 +1793,7 @@ func NewBudgetsBudgetActionActionThresholdOutputReference(terraformResource cdkt
 	j := jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionActionThresholdOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionActionThresholdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1793,7 +1805,7 @@ func NewBudgetsBudgetActionActionThresholdOutputReference_Override(b BudgetsBudg
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionActionThresholdOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionActionThresholdOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -1811,6 +1823,14 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetActionT
 	_jsii_.Set(
 		j,
 		"actionThresholdValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetInternalValue(val *BudgetsBudgetActionActionThreshold) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1923,6 +1943,7 @@ func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) Interpolat
 	return returns
 }
 
+// AWS Budgets.
 type BudgetsBudgetActionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1989,6 +2010,8 @@ type BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference interface {
 	Groups() *[]*string
 	SetGroups(val *[]*string)
 	GroupsInput() *[]*string
+	InternalValue() *BudgetsBudgetActionDefinitionIamActionDefinition
+	SetInternalValue(val *BudgetsBudgetActionDefinitionIamActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PolicyArn() *string
@@ -2035,6 +2058,16 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 	_jsii_.Get(
 		j,
 		"groupsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) InternalValue() *BudgetsBudgetActionDefinitionIamActionDefinition {
+	var returns *BudgetsBudgetActionDefinitionIamActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2136,7 +2169,7 @@ func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference(terrafor
 	j := jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2148,7 +2181,7 @@ func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -2158,6 +2191,14 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 	_jsii_.Set(
 		j,
 		"groups",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) SetInternalValue(val *BudgetsBudgetActionDefinitionIamActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2322,6 +2363,8 @@ type BudgetsBudgetActionDefinitionOutputReference interface {
 	cdktf.ComplexObject
 	IamActionDefinition() BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference
 	IamActionDefinitionInput() *BudgetsBudgetActionDefinitionIamActionDefinition
+	InternalValue() *BudgetsBudgetActionDefinition
+	SetInternalValue(val *BudgetsBudgetActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ScpActionDefinition() BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference
@@ -2366,6 +2409,16 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) IamActionDefini
 	_jsii_.Get(
 		j,
 		"iamActionDefinitionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) InternalValue() *BudgetsBudgetActionDefinition {
+	var returns *BudgetsBudgetActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2447,7 +2500,7 @@ func NewBudgetsBudgetActionDefinitionOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_BudgetsBudgetActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2459,9 +2512,17 @@ func NewBudgetsBudgetActionDefinitionOutputReference_Override(b BudgetsBudgetAct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) SetInternalValue(val *BudgetsBudgetActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2630,6 +2691,8 @@ type BudgetsBudgetActionDefinitionScpActionDefinition struct {
 
 type BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *BudgetsBudgetActionDefinitionScpActionDefinition
+	SetInternalValue(val *BudgetsBudgetActionDefinitionScpActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	PolicyId() *string
@@ -2653,6 +2716,16 @@ type BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference interface {
 // The jsii proxy struct for BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference
 type jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) InternalValue() *BudgetsBudgetActionDefinitionScpActionDefinition {
+	var returns *BudgetsBudgetActionDefinitionScpActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) IsSingleItem() *bool {
@@ -2731,7 +2804,7 @@ func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference(terrafor
 	j := jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2743,9 +2816,17 @@ func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) SetInternalValue(val *BudgetsBudgetActionDefinitionScpActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2890,6 +2971,8 @@ type BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference interface {
 	InstanceIds() *[]*string
 	SetInstanceIds(val *[]*string)
 	InstanceIdsInput() *[]*string
+	InternalValue() *BudgetsBudgetActionDefinitionSsmActionDefinition
+	SetInternalValue(val *BudgetsBudgetActionDefinitionSsmActionDefinition)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Region() *string
@@ -2952,6 +3035,16 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 	return returns
 }
 
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) InternalValue() *BudgetsBudgetActionDefinitionSsmActionDefinition {
+	var returns *BudgetsBudgetActionDefinitionSsmActionDefinition
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3008,7 +3101,7 @@ func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference(terrafor
 	j := jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3020,7 +3113,7 @@ func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference_Override
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -3038,6 +3131,14 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 	_jsii_.Set(
 		j,
 		"instanceIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) SetInternalValue(val *BudgetsBudgetActionDefinitionSsmActionDefinition) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3165,6 +3266,7 @@ type BudgetsBudgetActionSubscriber struct {
 	SubscriptionType *string `json:"subscriptionType"`
 }
 
+// AWS Budgets.
 type BudgetsBudgetConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3269,6 +3371,8 @@ type BudgetsBudgetCostTypesOutputReference interface {
 	IncludeUpfront() interface{}
 	SetIncludeUpfront(val interface{})
 	IncludeUpfrontInput() interface{}
+	InternalValue() *BudgetsBudgetCostTypes
+	SetInternalValue(val *BudgetsBudgetCostTypes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -3485,6 +3589,16 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) IncludeUpfrontInput() 
 	return returns
 }
 
+func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) InternalValue() *BudgetsBudgetCostTypes {
+	var returns *BudgetsBudgetCostTypes
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3561,7 +3675,7 @@ func NewBudgetsBudgetCostTypesOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_BudgetsBudgetCostTypesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetCostTypesOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetCostTypesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3573,7 +3687,7 @@ func NewBudgetsBudgetCostTypesOutputReference_Override(b BudgetsBudgetCostTypesO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Budgets.BudgetsBudgetCostTypesOutputReference",
+		"hashicorp_aws.budgets.BudgetsBudgetCostTypesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		b,
 	)
@@ -3647,6 +3761,14 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetIncludeUpfront(val 
 	_jsii_.Set(
 		j,
 		"includeUpfront",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetInternalValue(val *BudgetsBudgetCostTypes) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

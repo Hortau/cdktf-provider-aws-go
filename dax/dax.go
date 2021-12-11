@@ -597,7 +597,7 @@ func NewDaxCluster(scope constructs.Construct, id *string, config *DaxClusterCon
 	j := jsiiProxy_DaxCluster{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxCluster",
+		"hashicorp_aws.dax.DaxCluster",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -610,7 +610,7 @@ func NewDaxCluster_Override(d DaxCluster, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxCluster",
+		"hashicorp_aws.dax.DaxCluster",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -762,7 +762,7 @@ func DaxCluster_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DAX.DaxCluster",
+		"hashicorp_aws.dax.DaxCluster",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -775,7 +775,7 @@ func DaxCluster_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DAX.DaxCluster",
+		"hashicorp_aws.dax.DaxCluster",
 		"tfResourceType",
 		&returns,
 	)
@@ -1054,6 +1054,7 @@ func (d *jsiiProxy_DaxCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB Accelerator.
 type DaxClusterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1200,7 +1201,7 @@ func NewDaxClusterNodes(terraformResource cdktf.ITerraformResource, terraformAtt
 	j := jsiiProxy_DaxClusterNodes{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterNodes",
+		"hashicorp_aws.dax.DaxClusterNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1213,7 +1214,7 @@ func NewDaxClusterNodes_Override(d DaxClusterNodes, terraformResource cdktf.ITer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterNodes",
+		"hashicorp_aws.dax.DaxClusterNodes",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1323,6 +1324,8 @@ type DaxClusterServerSideEncryptionOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *DaxClusterServerSideEncryption
+	SetInternalValue(val *DaxClusterServerSideEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1358,6 +1361,16 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) EnabledInput()
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) InternalValue() *DaxClusterServerSideEncryption {
+	var returns *DaxClusterServerSideEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1399,7 +1412,7 @@ func NewDaxClusterServerSideEncryptionOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_DaxClusterServerSideEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterServerSideEncryptionOutputReference",
+		"hashicorp_aws.dax.DaxClusterServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1411,7 +1424,7 @@ func NewDaxClusterServerSideEncryptionOutputReference_Override(d DaxClusterServe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterServerSideEncryptionOutputReference",
+		"hashicorp_aws.dax.DaxClusterServerSideEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -1421,6 +1434,14 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetEnabled(val
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetInternalValue(val *DaxClusterServerSideEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1558,6 +1579,8 @@ type DaxClusterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DaxClusterTimeouts
+	SetInternalValue(val *DaxClusterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1623,6 +1646,16 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) InternalValue() *DaxClusterTimeouts {
+	var returns *DaxClusterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -1679,7 +1712,7 @@ func NewDaxClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	j := jsiiProxy_DaxClusterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterTimeoutsOutputReference",
+		"hashicorp_aws.dax.DaxClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1691,7 +1724,7 @@ func NewDaxClusterTimeoutsOutputReference_Override(d DaxClusterTimeoutsOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxClusterTimeoutsOutputReference",
+		"hashicorp_aws.dax.DaxClusterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -1709,6 +1742,14 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetInternalValue(val *DaxClusterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2111,7 +2152,7 @@ func NewDaxParameterGroup(scope constructs.Construct, id *string, config *DaxPar
 	j := jsiiProxy_DaxParameterGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxParameterGroup",
+		"hashicorp_aws.dax.DaxParameterGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2124,7 +2165,7 @@ func NewDaxParameterGroup_Override(d DaxParameterGroup, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxParameterGroup",
+		"hashicorp_aws.dax.DaxParameterGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2196,7 +2237,7 @@ func DaxParameterGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DAX.DaxParameterGroup",
+		"hashicorp_aws.dax.DaxParameterGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2209,7 +2250,7 @@ func DaxParameterGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DAX.DaxParameterGroup",
+		"hashicorp_aws.dax.DaxParameterGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -2387,6 +2428,7 @@ func (d *jsiiProxy_DaxParameterGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB Accelerator.
 type DaxParameterGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2681,7 +2723,7 @@ func NewDaxSubnetGroup(scope constructs.Construct, id *string, config *DaxSubnet
 	j := jsiiProxy_DaxSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxSubnetGroup",
+		"hashicorp_aws.dax.DaxSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2694,7 +2736,7 @@ func NewDaxSubnetGroup_Override(d DaxSubnetGroup, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DAX.DaxSubnetGroup",
+		"hashicorp_aws.dax.DaxSubnetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2766,7 +2808,7 @@ func DaxSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DAX.DaxSubnetGroup",
+		"hashicorp_aws.dax.DaxSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2779,7 +2821,7 @@ func DaxSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DAX.DaxSubnetGroup",
+		"hashicorp_aws.dax.DaxSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -2949,6 +2991,7 @@ func (d *jsiiProxy_DaxSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS DynamoDB Accelerator.
 type DaxSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

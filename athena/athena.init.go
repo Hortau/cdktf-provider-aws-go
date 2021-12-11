@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaDatabase",
+		"hashicorp_aws.athena.AthenaDatabase",
 		reflect.TypeOf((*AthenaDatabase)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,15 +56,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaDatabaseConfig",
+		"hashicorp_aws.athena.AthenaDatabaseConfig",
 		reflect.TypeOf((*AthenaDatabaseConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaDatabaseEncryptionConfiguration",
+		"hashicorp_aws.athena.AthenaDatabaseEncryptionConfiguration",
 		reflect.TypeOf((*AthenaDatabaseEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaDatabaseEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaDatabaseEncryptionConfigurationOutputReference",
 		reflect.TypeOf((*AthenaDatabaseEncryptionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "encryptionOption", GoGetter: "EncryptionOption"},
@@ -73,6 +73,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -89,7 +90,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaNamedQuery",
+		"hashicorp_aws.athena.AthenaNamedQuery",
 		reflect.TypeOf((*AthenaNamedQuery)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -138,11 +139,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaNamedQueryConfig",
+		"hashicorp_aws.athena.AthenaNamedQueryConfig",
 		reflect.TypeOf((*AthenaNamedQueryConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaWorkgroup",
+		"hashicorp_aws.athena.AthenaWorkgroup",
 		reflect.TypeOf((*AthenaWorkgroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -201,35 +202,68 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfig",
+		"hashicorp_aws.athena.AthenaWorkgroupConfig",
 		reflect.TypeOf((*AthenaWorkgroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfiguration",
+		"hashicorp_aws.athena.AthenaWorkgroupConfiguration",
 		reflect.TypeOf((*AthenaWorkgroupConfiguration)(nil)).Elem(),
 	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationEngineVersion",
+		reflect.TypeOf((*AthenaWorkgroupConfigurationEngineVersion)(nil)).Elem(),
+	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationEngineVersionOutputReference",
+		reflect.TypeOf((*AthenaWorkgroupConfigurationEngineVersionOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSelectedEngineVersion", GoMethod: "ResetSelectedEngineVersion"},
+			_jsii_.MemberProperty{JsiiProperty: "selectedEngineVersion", GoGetter: "SelectedEngineVersion"},
+			_jsii_.MemberProperty{JsiiProperty: "selectedEngineVersionInput", GoGetter: "SelectedEngineVersionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationOutputReference",
 		reflect.TypeOf((*AthenaWorkgroupConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bytesScannedCutoffPerQuery", GoGetter: "BytesScannedCutoffPerQuery"},
 			_jsii_.MemberProperty{JsiiProperty: "bytesScannedCutoffPerQueryInput", GoGetter: "BytesScannedCutoffPerQueryInput"},
 			_jsii_.MemberProperty{JsiiProperty: "enforceWorkgroupConfiguration", GoGetter: "EnforceWorkgroupConfiguration"},
 			_jsii_.MemberProperty{JsiiProperty: "enforceWorkgroupConfigurationInput", GoGetter: "EnforceWorkgroupConfigurationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "engineVersion", GoGetter: "EngineVersion"},
+			_jsii_.MemberProperty{JsiiProperty: "engineVersionInput", GoGetter: "EngineVersionInput"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
 			_jsii_.MemberProperty{JsiiProperty: "publishCloudwatchMetricsEnabled", GoGetter: "PublishCloudwatchMetricsEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "publishCloudwatchMetricsEnabledInput", GoGetter: "PublishCloudwatchMetricsEnabledInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putEngineVersion", GoMethod: "PutEngineVersion"},
 			_jsii_.MemberMethod{JsiiMethod: "putResultConfiguration", GoMethod: "PutResultConfiguration"},
 			_jsii_.MemberProperty{JsiiProperty: "requesterPaysEnabled", GoGetter: "RequesterPaysEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "requesterPaysEnabledInput", GoGetter: "RequesterPaysEnabledInput"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBytesScannedCutoffPerQuery", GoMethod: "ResetBytesScannedCutoffPerQuery"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnforceWorkgroupConfiguration", GoMethod: "ResetEnforceWorkgroupConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEngineVersion", GoMethod: "ResetEngineVersion"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPublishCloudwatchMetricsEnabled", GoMethod: "ResetPublishCloudwatchMetricsEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetRequesterPaysEnabled", GoMethod: "ResetRequesterPaysEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetResultConfiguration", GoMethod: "ResetResultConfiguration"},
@@ -245,15 +279,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfiguration",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfiguration",
 		reflect.TypeOf((*AthenaWorkgroupConfigurationResultConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration",
 		reflect.TypeOf((*AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference",
 		reflect.TypeOf((*AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "encryptionOption", GoGetter: "EncryptionOption"},
@@ -262,6 +296,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -279,7 +314,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
+		"hashicorp_aws.athena.AthenaWorkgroupConfigurationResultConfigurationOutputReference",
 		reflect.TypeOf((*AthenaWorkgroupConfigurationResultConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "encryptionConfiguration", GoGetter: "EncryptionConfiguration"},
@@ -288,6 +323,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

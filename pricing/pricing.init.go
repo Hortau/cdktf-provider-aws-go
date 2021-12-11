@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Pricing.DataAwsPricingProduct",
+		"hashicorp_aws.pricing.DataAwsPricingProduct",
 		reflect.TypeOf((*DataAwsPricingProduct)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,11 +50,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pricing.DataAwsPricingProductConfig",
+		"hashicorp_aws.pricing.DataAwsPricingProductConfig",
 		reflect.TypeOf((*DataAwsPricingProductConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Pricing.DataAwsPricingProductFilters",
+		"hashicorp_aws.pricing.DataAwsPricingProductFilters",
 		reflect.TypeOf((*DataAwsPricingProductFilters)(nil)).Elem(),
 	)
 }

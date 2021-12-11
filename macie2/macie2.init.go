@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2Account",
+		"hashicorp_aws.macie2.Macie2Account",
 		reflect.TypeOf((*Macie2Account)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -54,11 +54,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2AccountConfig",
+		"hashicorp_aws.macie2.Macie2AccountConfig",
 		reflect.TypeOf((*Macie2AccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJob",
+		"hashicorp_aws.macie2.Macie2ClassificationJob",
 		reflect.TypeOf((*Macie2ClassificationJob)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -135,19 +135,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobConfig",
+		"hashicorp_aws.macie2.Macie2ClassificationJobConfig",
 		reflect.TypeOf((*Macie2ClassificationJobConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinition",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinition",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionBucketDefinitions",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionBucketDefinitions",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionBucketDefinitions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketDefinitions", GoGetter: "BucketDefinitions"},
@@ -156,6 +156,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -174,23 +175,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScoping",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScoping",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScoping)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludes",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludes",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludes)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "comparator", GoGetter: "Comparator"},
@@ -199,6 +200,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -219,11 +221,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "comparator", GoGetter: "Comparator"},
@@ -232,6 +234,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -255,11 +258,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "and", GoGetter: "And"},
@@ -268,6 +271,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -282,19 +286,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludes",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludes",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludes)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "comparator", GoGetter: "Comparator"},
@@ -303,6 +307,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -323,11 +328,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "comparator", GoGetter: "Comparator"},
@@ -336,6 +341,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -359,11 +365,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "and", GoGetter: "And"},
@@ -372,6 +378,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -386,7 +393,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobS3JobDefinitionScopingOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobS3JobDefinitionScopingOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "excludes", GoGetter: "Excludes"},
@@ -397,6 +404,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "includes", GoGetter: "Includes"},
 			_jsii_.MemberProperty{JsiiProperty: "includesInput", GoGetter: "IncludesInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -414,11 +422,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobScheduleFrequency",
+		"hashicorp_aws.macie2.Macie2ClassificationJobScheduleFrequency",
 		reflect.TypeOf((*Macie2ClassificationJobScheduleFrequency)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
+		"hashicorp_aws.macie2.Macie2ClassificationJobScheduleFrequencyOutputReference",
 		reflect.TypeOf((*Macie2ClassificationJobScheduleFrequencyOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dailySchedule", GoGetter: "DailySchedule"},
@@ -427,6 +435,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -447,7 +456,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2ClassificationJobUserPausedDetails",
+		"hashicorp_aws.macie2.Macie2ClassificationJobUserPausedDetails",
 		reflect.TypeOf((*Macie2ClassificationJobUserPausedDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexComputedListIndex", GoGetter: "ComplexComputedListIndex"},
@@ -469,7 +478,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifier",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifier",
 		reflect.TypeOf((*Macie2CustomDataIdentifier)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -535,11 +544,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2CustomDataIdentifierConfig",
+		"hashicorp_aws.macie2.Macie2CustomDataIdentifierConfig",
 		reflect.TypeOf((*Macie2CustomDataIdentifierConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2FindingsFilter",
+		"hashicorp_aws.macie2.Macie2FindingsFilter",
 		reflect.TypeOf((*Macie2FindingsFilter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -600,19 +609,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterConfig",
+		"hashicorp_aws.macie2.Macie2FindingsFilterConfig",
 		reflect.TypeOf((*Macie2FindingsFilterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterFindingCriteria",
+		"hashicorp_aws.macie2.Macie2FindingsFilterFindingCriteria",
 		reflect.TypeOf((*Macie2FindingsFilterFindingCriteria)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterFindingCriteriaCriterion",
+		"hashicorp_aws.macie2.Macie2FindingsFilterFindingCriteriaCriterion",
 		reflect.TypeOf((*Macie2FindingsFilterFindingCriteriaCriterion)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
+		"hashicorp_aws.macie2.Macie2FindingsFilterFindingCriteriaOutputReference",
 		reflect.TypeOf((*Macie2FindingsFilterFindingCriteriaOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "criterion", GoGetter: "Criterion"},
@@ -621,6 +630,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -635,7 +645,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepter",
+		"hashicorp_aws.macie2.Macie2InvitationAccepter",
 		reflect.TypeOf((*Macie2InvitationAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -679,15 +689,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepterConfig",
+		"hashicorp_aws.macie2.Macie2InvitationAccepterConfig",
 		reflect.TypeOf((*Macie2InvitationAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepterTimeouts",
+		"hashicorp_aws.macie2.Macie2InvitationAccepterTimeouts",
 		reflect.TypeOf((*Macie2InvitationAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2InvitationAccepterTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2InvitationAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*Macie2InvitationAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -696,6 +706,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -710,7 +721,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2Member",
+		"hashicorp_aws.macie2.Macie2Member",
 		reflect.TypeOf((*Macie2Member)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -779,15 +790,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2MemberConfig",
+		"hashicorp_aws.macie2.Macie2MemberConfig",
 		reflect.TypeOf((*Macie2MemberConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2MemberTimeouts",
+		"hashicorp_aws.macie2.Macie2MemberTimeouts",
 		reflect.TypeOf((*Macie2MemberTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2MemberTimeoutsOutputReference",
+		"hashicorp_aws.macie2.Macie2MemberTimeoutsOutputReference",
 		reflect.TypeOf((*Macie2MemberTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -796,6 +807,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -813,7 +825,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccount",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccount",
 		reflect.TypeOf((*Macie2OrganizationAdminAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -852,7 +864,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Macie2.Macie2OrganizationAdminAccountConfig",
+		"hashicorp_aws.macie2.Macie2OrganizationAdminAccountConfig",
 		reflect.TypeOf((*Macie2OrganizationAdminAccountConfig)(nil)).Elem(),
 	)
 }

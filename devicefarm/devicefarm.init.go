@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DeviceFarm.DevicefarmProject",
+		"hashicorp_aws.devicefarm.DevicefarmProject",
 		reflect.TypeOf((*DevicefarmProject)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -57,7 +57,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DeviceFarm.DevicefarmProjectConfig",
+		"hashicorp_aws.devicefarm.DevicefarmProjectConfig",
 		reflect.TypeOf((*DevicefarmProjectConfig)(nil)).Elem(),
 	)
 }

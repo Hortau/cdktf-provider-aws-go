@@ -8,7 +8,84 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrCluster",
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabels",
+		reflect.TypeOf((*DataAwsEmrReleaseLabels)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "filters", GoGetter: "Filters"},
+			_jsii_.MemberProperty{JsiiProperty: "filtersInput", GoGetter: "FiltersInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putFilters", GoMethod: "PutFilters"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberProperty{JsiiProperty: "releaseLabels", GoGetter: "ReleaseLabels"},
+			_jsii_.MemberMethod{JsiiMethod: "resetFilters", GoMethod: "ResetFilters"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsEmrReleaseLabels{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformDataSource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabelsConfig",
+		reflect.TypeOf((*DataAwsEmrReleaseLabelsConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabelsFilters",
+		reflect.TypeOf((*DataAwsEmrReleaseLabelsFilters)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.emr.DataAwsEmrReleaseLabelsFiltersOutputReference",
+		reflect.TypeOf((*DataAwsEmrReleaseLabelsFiltersOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "application", GoGetter: "Application"},
+			_jsii_.MemberProperty{JsiiProperty: "applicationInput", GoGetter: "ApplicationInput"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberProperty{JsiiProperty: "prefix", GoGetter: "Prefix"},
+			_jsii_.MemberProperty{JsiiProperty: "prefixInput", GoGetter: "PrefixInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetApplication", GoMethod: "ResetApplication"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPrefix", GoMethod: "ResetPrefix"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.emr.EmrCluster",
 		reflect.TypeOf((*EmrCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalInfo", GoGetter: "AdditionalInfo"},
@@ -19,6 +96,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
 			_jsii_.MemberProperty{JsiiProperty: "autoscalingRole", GoGetter: "AutoscalingRole"},
 			_jsii_.MemberProperty{JsiiProperty: "autoscalingRoleInput", GoGetter: "AutoscalingRoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "autoTerminationPolicy", GoGetter: "AutoTerminationPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "autoTerminationPolicyInput", GoGetter: "AutoTerminationPolicyInput"},
 			_jsii_.MemberProperty{JsiiProperty: "bootstrapAction", GoGetter: "BootstrapAction"},
 			_jsii_.MemberProperty{JsiiProperty: "bootstrapActionInput", GoGetter: "BootstrapActionInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
@@ -67,6 +146,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberMethod{JsiiMethod: "putAutoTerminationPolicy", GoMethod: "PutAutoTerminationPolicy"},
 			_jsii_.MemberMethod{JsiiMethod: "putCoreInstanceFleet", GoMethod: "PutCoreInstanceFleet"},
 			_jsii_.MemberMethod{JsiiMethod: "putCoreInstanceGroup", GoMethod: "PutCoreInstanceGroup"},
 			_jsii_.MemberMethod{JsiiMethod: "putEc2Attributes", GoMethod: "PutEc2Attributes"},
@@ -79,6 +159,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetAdditionalInfo", GoMethod: "ResetAdditionalInfo"},
 			_jsii_.MemberMethod{JsiiMethod: "resetApplications", GoMethod: "ResetApplications"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAutoscalingRole", GoMethod: "ResetAutoscalingRole"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAutoTerminationPolicy", GoMethod: "ResetAutoTerminationPolicy"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBootstrapAction", GoMethod: "ResetBootstrapAction"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConfigurations", GoMethod: "ResetConfigurations"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConfigurationsJson", GoMethod: "ResetConfigurationsJson"},
@@ -135,45 +216,74 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterBootstrapAction",
+		"hashicorp_aws.emr.EmrClusterAutoTerminationPolicy",
+		reflect.TypeOf((*EmrClusterAutoTerminationPolicy)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.emr.EmrClusterAutoTerminationPolicyOutputReference",
+		reflect.TypeOf((*EmrClusterAutoTerminationPolicyOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "idleTimeout", GoGetter: "IdleTimeout"},
+			_jsii_.MemberProperty{JsiiProperty: "idleTimeoutInput", GoGetter: "IdleTimeoutInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdleTimeout", GoMethod: "ResetIdleTimeout"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.emr.EmrClusterBootstrapAction",
 		reflect.TypeOf((*EmrClusterBootstrapAction)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterConfig",
+		"hashicorp_aws.emr.EmrClusterConfig",
 		reflect.TypeOf((*EmrClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleet",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleet",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleet)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetInstanceTypeConfigs",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetInstanceTypeConfigs",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetInstanceTypeConfigs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetInstanceTypeConfigsConfigurations",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetInstanceTypeConfigsConfigurations",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetInstanceTypeConfigsConfigurations)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetInstanceTypeConfigsEbsConfig",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetInstanceTypeConfigsEbsConfig",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetInstanceTypeConfigsEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecifications",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecifications",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetLaunchSpecifications)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -193,11 +303,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceFleetOutputReference",
 		reflect.TypeOf((*EmrClusterCoreInstanceFleetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -206,6 +316,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeConfigs", GoGetter: "InstanceTypeConfigs"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeConfigsInput", GoGetter: "InstanceTypeConfigsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -233,15 +344,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceGroup",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceGroup",
 		reflect.TypeOf((*EmrClusterCoreInstanceGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceGroupEbsConfig",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceGroupEbsConfig",
 		reflect.TypeOf((*EmrClusterCoreInstanceGroupEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterCoreInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterCoreInstanceGroupOutputReference",
 		reflect.TypeOf((*EmrClusterCoreInstanceGroupOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "autoscalingPolicy", GoGetter: "AutoscalingPolicy"},
@@ -258,6 +369,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "instanceCountInput", GoGetter: "InstanceCountInput"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -278,11 +390,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterEc2Attributes",
+		"hashicorp_aws.emr.EmrClusterEc2Attributes",
 		reflect.TypeOf((*EmrClusterEc2Attributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterEc2AttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterEc2AttributesOutputReference",
 		reflect.TypeOf((*EmrClusterEc2AttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalMasterSecurityGroups", GoGetter: "AdditionalMasterSecurityGroups"},
@@ -299,6 +411,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceProfile", GoGetter: "InstanceProfile"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceProfileInput", GoGetter: "InstanceProfileInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -328,11 +441,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterKerberosAttributes",
+		"hashicorp_aws.emr.EmrClusterKerberosAttributes",
 		reflect.TypeOf((*EmrClusterKerberosAttributes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterKerberosAttributesOutputReference",
+		"hashicorp_aws.emr.EmrClusterKerberosAttributesOutputReference",
 		reflect.TypeOf((*EmrClusterKerberosAttributesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "adDomainJoinPassword", GoGetter: "AdDomainJoinPassword"},
@@ -345,6 +458,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -365,37 +479,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleet",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleet",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleet)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetInstanceTypeConfigs",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetInstanceTypeConfigs",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetInstanceTypeConfigs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetInstanceTypeConfigsConfigurations",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetInstanceTypeConfigsConfigurations",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetInstanceTypeConfigsConfigurations)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetInstanceTypeConfigsEbsConfig",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetInstanceTypeConfigsEbsConfig",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetInstanceTypeConfigsEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecifications",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecifications",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetLaunchSpecifications)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -415,11 +530,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceFleetOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceFleetOutputReference",
 		reflect.TypeOf((*EmrClusterMasterInstanceFleetOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -428,6 +543,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeConfigs", GoGetter: "InstanceTypeConfigs"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeConfigsInput", GoGetter: "InstanceTypeConfigsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -455,15 +571,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceGroup",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceGroup",
 		reflect.TypeOf((*EmrClusterMasterInstanceGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceGroupEbsConfig",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceGroupEbsConfig",
 		reflect.TypeOf((*EmrClusterMasterInstanceGroupEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrClusterMasterInstanceGroupOutputReference",
+		"hashicorp_aws.emr.EmrClusterMasterInstanceGroupOutputReference",
 		reflect.TypeOf((*EmrClusterMasterInstanceGroupOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bidPrice", GoGetter: "BidPrice"},
@@ -478,6 +594,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "instanceCountInput", GoGetter: "InstanceCountInput"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceType", GoGetter: "InstanceType"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceTypeInput", GoGetter: "InstanceTypeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -497,15 +614,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterStep",
+		"hashicorp_aws.emr.EmrClusterStep",
 		reflect.TypeOf((*EmrClusterStep)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrClusterStepHadoopJarStep",
+		"hashicorp_aws.emr.EmrClusterStepHadoopJarStep",
 		reflect.TypeOf((*EmrClusterStepHadoopJarStep)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrInstanceFleet",
+		"hashicorp_aws.emr.EmrInstanceFleet",
 		reflect.TypeOf((*EmrInstanceFleet)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -562,37 +679,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetConfig",
+		"hashicorp_aws.emr.EmrInstanceFleetConfig",
 		reflect.TypeOf((*EmrInstanceFleetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetInstanceTypeConfigs",
+		"hashicorp_aws.emr.EmrInstanceFleetInstanceTypeConfigs",
 		reflect.TypeOf((*EmrInstanceFleetInstanceTypeConfigs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetInstanceTypeConfigsConfigurations",
+		"hashicorp_aws.emr.EmrInstanceFleetInstanceTypeConfigsConfigurations",
 		reflect.TypeOf((*EmrInstanceFleetInstanceTypeConfigsConfigurations)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetInstanceTypeConfigsEbsConfig",
+		"hashicorp_aws.emr.EmrInstanceFleetInstanceTypeConfigsEbsConfig",
 		reflect.TypeOf((*EmrInstanceFleetInstanceTypeConfigsEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecifications",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecifications",
 		reflect.TypeOf((*EmrInstanceFleetLaunchSpecifications)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecificationsOnDemandSpecification",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecificationsOnDemandSpecification",
 		reflect.TypeOf((*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecificationsOutputReference",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecificationsOutputReference",
 		reflect.TypeOf((*EmrInstanceFleetLaunchSpecificationsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -612,11 +730,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceFleetLaunchSpecificationsSpotSpecification",
+		"hashicorp_aws.emr.EmrInstanceFleetLaunchSpecificationsSpotSpecification",
 		reflect.TypeOf((*EmrInstanceFleetLaunchSpecificationsSpotSpecification)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrInstanceGroup",
+		"hashicorp_aws.emr.EmrInstanceGroup",
 		reflect.TypeOf((*EmrInstanceGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -680,15 +798,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceGroupConfig",
+		"hashicorp_aws.emr.EmrInstanceGroupConfig",
 		reflect.TypeOf((*EmrInstanceGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrInstanceGroupEbsConfig",
+		"hashicorp_aws.emr.EmrInstanceGroupEbsConfig",
 		reflect.TypeOf((*EmrInstanceGroupEbsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicy",
+		"hashicorp_aws.emr.EmrManagedScalingPolicy",
 		reflect.TypeOf((*EmrManagedScalingPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -729,15 +847,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicyComputeLimits",
+		"hashicorp_aws.emr.EmrManagedScalingPolicyComputeLimits",
 		reflect.TypeOf((*EmrManagedScalingPolicyComputeLimits)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrManagedScalingPolicyConfig",
+		"hashicorp_aws.emr.EmrManagedScalingPolicyConfig",
 		reflect.TypeOf((*EmrManagedScalingPolicyConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.EMR.EmrSecurityConfiguration",
+		"hashicorp_aws.emr.EmrSecurityConfiguration",
 		reflect.TypeOf((*EmrSecurityConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -783,7 +901,137 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.EMR.EmrSecurityConfigurationConfig",
+		"hashicorp_aws.emr.EmrSecurityConfigurationConfig",
 		reflect.TypeOf((*EmrSecurityConfigurationConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.emr.EmrStudio",
+		reflect.TypeOf((*EmrStudio)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "arn", GoGetter: "Arn"},
+			_jsii_.MemberProperty{JsiiProperty: "authMode", GoGetter: "AuthMode"},
+			_jsii_.MemberProperty{JsiiProperty: "authModeInput", GoGetter: "AuthModeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "defaultS3Location", GoGetter: "DefaultS3Location"},
+			_jsii_.MemberProperty{JsiiProperty: "defaultS3LocationInput", GoGetter: "DefaultS3LocationInput"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "descriptionInput", GoGetter: "DescriptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "engineSecurityGroupId", GoGetter: "EngineSecurityGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "engineSecurityGroupIdInput", GoGetter: "EngineSecurityGroupIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "idpAuthUrl", GoGetter: "IdpAuthUrl"},
+			_jsii_.MemberProperty{JsiiProperty: "idpAuthUrlInput", GoGetter: "IdpAuthUrlInput"},
+			_jsii_.MemberProperty{JsiiProperty: "idpRelayStateParameterName", GoGetter: "IdpRelayStateParameterName"},
+			_jsii_.MemberProperty{JsiiProperty: "idpRelayStateParameterNameInput", GoGetter: "IdpRelayStateParameterNameInput"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
+			_jsii_.MemberProperty{JsiiProperty: "nameInput", GoGetter: "NameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdpAuthUrl", GoMethod: "ResetIdpAuthUrl"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdpRelayStateParameterName", GoMethod: "ResetIdpRelayStateParameterName"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTagsAll", GoMethod: "ResetTagsAll"},
+			_jsii_.MemberMethod{JsiiMethod: "resetUserRole", GoMethod: "ResetUserRole"},
+			_jsii_.MemberProperty{JsiiProperty: "serviceRole", GoGetter: "ServiceRole"},
+			_jsii_.MemberProperty{JsiiProperty: "serviceRoleInput", GoGetter: "ServiceRoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "subnetIds", GoGetter: "SubnetIds"},
+			_jsii_.MemberProperty{JsiiProperty: "subnetIdsInput", GoGetter: "SubnetIdsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAll", GoGetter: "TagsAll"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsAllInput", GoGetter: "TagsAllInput"},
+			_jsii_.MemberProperty{JsiiProperty: "tagsInput", GoGetter: "TagsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+			_jsii_.MemberProperty{JsiiProperty: "url", GoGetter: "Url"},
+			_jsii_.MemberProperty{JsiiProperty: "userRole", GoGetter: "UserRole"},
+			_jsii_.MemberProperty{JsiiProperty: "userRoleInput", GoGetter: "UserRoleInput"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcIdInput", GoGetter: "VpcIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "workspaceSecurityGroupId", GoGetter: "WorkspaceSecurityGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "workspaceSecurityGroupIdInput", GoGetter: "WorkspaceSecurityGroupIdInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EmrStudio{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.emr.EmrStudioConfig",
+		reflect.TypeOf((*EmrStudioConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.emr.EmrStudioSessionMapping",
+		reflect.TypeOf((*EmrStudioSessionMapping)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "identityId", GoGetter: "IdentityId"},
+			_jsii_.MemberProperty{JsiiProperty: "identityIdInput", GoGetter: "IdentityIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "identityName", GoGetter: "IdentityName"},
+			_jsii_.MemberProperty{JsiiProperty: "identityNameInput", GoGetter: "IdentityNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "identityType", GoGetter: "IdentityType"},
+			_jsii_.MemberProperty{JsiiProperty: "identityTypeInput", GoGetter: "IdentityTypeInput"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdentityId", GoMethod: "ResetIdentityId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdentityName", GoMethod: "ResetIdentityName"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "sessionPolicyArn", GoGetter: "SessionPolicyArn"},
+			_jsii_.MemberProperty{JsiiProperty: "sessionPolicyArnInput", GoGetter: "SessionPolicyArnInput"},
+			_jsii_.MemberProperty{JsiiProperty: "studioId", GoGetter: "StudioId"},
+			_jsii_.MemberProperty{JsiiProperty: "studioIdInput", GoGetter: "StudioIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_EmrStudioSessionMapping{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.emr.EmrStudioSessionMappingConfig",
+		reflect.TypeOf((*EmrStudioSessionMappingConfig)(nil)).Elem(),
 	)
 }

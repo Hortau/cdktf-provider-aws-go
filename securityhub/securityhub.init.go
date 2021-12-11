@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubAccount",
+		"hashicorp_aws.securityhub.SecurityhubAccount",
 		reflect.TypeOf((*SecurityhubAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -45,11 +45,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubAccountConfig",
+		"hashicorp_aws.securityhub.SecurityhubAccountConfig",
 		reflect.TypeOf((*SecurityhubAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTarget",
+		"hashicorp_aws.securityhub.SecurityhubActionTarget",
 		reflect.TypeOf((*SecurityhubActionTarget)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -93,11 +93,57 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubActionTargetConfig",
+		"hashicorp_aws.securityhub.SecurityhubActionTargetConfig",
 		reflect.TypeOf((*SecurityhubActionTargetConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsight",
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregator",
+		reflect.TypeOf((*SecurityhubFindingAggregator)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
+			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "linkingMode", GoGetter: "LinkingMode"},
+			_jsii_.MemberProperty{JsiiProperty: "linkingModeInput", GoGetter: "LinkingModeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
+			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetSpecifiedRegions", GoMethod: "ResetSpecifiedRegions"},
+			_jsii_.MemberProperty{JsiiProperty: "specifiedRegions", GoGetter: "SpecifiedRegions"},
+			_jsii_.MemberProperty{JsiiProperty: "specifiedRegionsInput", GoGetter: "SpecifiedRegionsInput"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesizeAttributes", GoMethod: "SynthesizeAttributes"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformGeneratorMetadata", GoGetter: "TerraformGeneratorMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformMetaArguments", GoGetter: "TerraformMetaArguments"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResourceType", GoGetter: "TerraformResourceType"},
+			_jsii_.MemberMethod{JsiiMethod: "toMetadata", GoMethod: "ToMetadata"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
+		},
+		func() interface{} {
+			j := jsiiProxy_SecurityhubFindingAggregator{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"hashicorp_aws.securityhub.SecurityhubFindingAggregatorConfig",
+		reflect.TypeOf((*SecurityhubFindingAggregatorConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"hashicorp_aws.securityhub.SecurityhubInsight",
 		reflect.TypeOf((*SecurityhubInsight)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -142,45 +188,46 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightConfig",
+		"hashicorp_aws.securityhub.SecurityhubInsightConfig",
 		reflect.TypeOf((*SecurityhubInsightConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFilters",
+		"hashicorp_aws.securityhub.SecurityhubInsightFilters",
 		reflect.TypeOf((*SecurityhubInsightFilters)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersAwsAccountId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersAwsAccountId",
 		reflect.TypeOf((*SecurityhubInsightFiltersAwsAccountId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCompanyName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCompanyName",
 		reflect.TypeOf((*SecurityhubInsightFiltersCompanyName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersComplianceStatus",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersComplianceStatus",
 		reflect.TypeOf((*SecurityhubInsightFiltersComplianceStatus)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersConfidence",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersConfidence",
 		reflect.TypeOf((*SecurityhubInsightFiltersConfidence)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCreatedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCreatedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersCreatedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCreatedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCreatedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersCreatedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCreatedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersCreatedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -198,57 +245,58 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersCriticality",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersCriticality",
 		reflect.TypeOf((*SecurityhubInsightFiltersCriticality)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersDescription",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersDescription",
 		reflect.TypeOf((*SecurityhubInsightFiltersDescription)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsConfidence",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsConfidence",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsConfidence)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsCriticality",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsCriticality",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsCriticality)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFindingProviderFieldsTypes",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFindingProviderFieldsTypes",
 		reflect.TypeOf((*SecurityhubInsightFiltersFindingProviderFieldsTypes)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFirstObservedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFirstObservedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersFirstObservedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFirstObservedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFirstObservedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersFirstObservedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -266,33 +314,34 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersGeneratorId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersGeneratorId",
 		reflect.TypeOf((*SecurityhubInsightFiltersGeneratorId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersId",
 		reflect.TypeOf((*SecurityhubInsightFiltersId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersKeyword",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersKeyword",
 		reflect.TypeOf((*SecurityhubInsightFiltersKeyword)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersLastObservedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersLastObservedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersLastObservedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersLastObservedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersLastObservedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersLastObservedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -310,85 +359,86 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersMalwareName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersMalwareName",
 		reflect.TypeOf((*SecurityhubInsightFiltersMalwareName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersMalwarePath",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersMalwarePath",
 		reflect.TypeOf((*SecurityhubInsightFiltersMalwarePath)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersMalwareState",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersMalwareState",
 		reflect.TypeOf((*SecurityhubInsightFiltersMalwareState)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersMalwareType",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersMalwareType",
 		reflect.TypeOf((*SecurityhubInsightFiltersMalwareType)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkDestinationDomain",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkDestinationDomain",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkDestinationDomain)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkDestinationIpv4",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkDestinationIpv4",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkDestinationIpv4)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkDestinationIpv6",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkDestinationIpv6",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkDestinationIpv6)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkDestinationPort",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkDestinationPort",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkDestinationPort)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkDirection",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkDirection",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkDirection)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkProtocol",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkProtocol",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkProtocol)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkSourceDomain",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkSourceDomain",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkSourceDomain)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkSourceIpv4",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkSourceIpv4",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkSourceIpv4)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkSourceIpv6",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkSourceIpv6",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkSourceIpv6)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkSourceMac",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkSourceMac",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkSourceMac)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNetworkSourcePort",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNetworkSourcePort",
 		reflect.TypeOf((*SecurityhubInsightFiltersNetworkSourcePort)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteText",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteText",
 		reflect.TypeOf((*SecurityhubInsightFiltersNoteText)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersNoteUpdatedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersNoteUpdatedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -406,11 +456,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersNoteUpdatedBy",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersNoteUpdatedBy",
 		reflect.TypeOf((*SecurityhubInsightFiltersNoteUpdatedBy)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "awsAccountId", GoGetter: "AwsAccountId"},
@@ -451,6 +501,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -694,21 +745,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessLaunchedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessLaunchedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessLaunchedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessLaunchedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessLaunchedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessLaunchedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -726,37 +778,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessName",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessParentPid",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessParentPid",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessParentPid)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessPath",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessPath",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessPath)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessPid",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessPid",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessPid)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessTerminatedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessTerminatedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessTerminatedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessTerminatedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessTerminatedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessTerminatedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -774,69 +827,70 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProductArn",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProductArn",
 		reflect.TypeOf((*SecurityhubInsightFiltersProductArn)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProductFields",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProductFields",
 		reflect.TypeOf((*SecurityhubInsightFiltersProductFields)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersProductName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersProductName",
 		reflect.TypeOf((*SecurityhubInsightFiltersProductName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersRecommendationText",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersRecommendationText",
 		reflect.TypeOf((*SecurityhubInsightFiltersRecommendationText)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersRecordState",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersRecordState",
 		reflect.TypeOf((*SecurityhubInsightFiltersRecordState)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersRelatedFindingsId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersRelatedFindingsId",
 		reflect.TypeOf((*SecurityhubInsightFiltersRelatedFindingsId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersRelatedFindingsProductArn",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersRelatedFindingsProductArn",
 		reflect.TypeOf((*SecurityhubInsightFiltersRelatedFindingsProductArn)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceImageId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceImageId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -854,33 +908,34 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceType",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceType",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceType)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -898,45 +953,46 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsS3BucketOwnerId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsS3BucketOwnerId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceAwsS3BucketOwnerName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceAwsS3BucketOwnerName",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerImageId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerImageId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerImageId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerImageName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerImageName",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerImageName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerLaunchedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerLaunchedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerLaunchedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -954,61 +1010,62 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceContainerName",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceContainerName",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceContainerName)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceDetailsOther",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceDetailsOther",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceDetailsOther)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceId",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceId",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceId)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourcePartition",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourcePartition",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourcePartition)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceRegion",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceRegion",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceRegion)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceTags",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceTags",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceTags)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersResourceType",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersResourceType",
 		reflect.TypeOf((*SecurityhubInsightFiltersResourceType)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersSeverityLabel",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersSeverityLabel",
 		reflect.TypeOf((*SecurityhubInsightFiltersSeverityLabel)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersSourceUrl",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersSourceUrl",
 		reflect.TypeOf((*SecurityhubInsightFiltersSourceUrl)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorCategory",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorCategory",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorCategory)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1026,45 +1083,46 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorSource",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorSource",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorSource)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorType",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorType",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorType)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersThreatIntelIndicatorValue",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersThreatIntelIndicatorValue",
 		reflect.TypeOf((*SecurityhubInsightFiltersThreatIntelIndicatorValue)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersTitle",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersTitle",
 		reflect.TypeOf((*SecurityhubInsightFiltersTitle)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersType",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersType",
 		reflect.TypeOf((*SecurityhubInsightFiltersType)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUpdatedAt",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUpdatedAt",
 		reflect.TypeOf((*SecurityhubInsightFiltersUpdatedAt)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUpdatedAtDateRange",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUpdatedAtDateRange",
 		reflect.TypeOf((*SecurityhubInsightFiltersUpdatedAtDateRange)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference",
 		reflect.TypeOf((*SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1082,19 +1140,19 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersUserDefinedValues",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersUserDefinedValues",
 		reflect.TypeOf((*SecurityhubInsightFiltersUserDefinedValues)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersVerificationState",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersVerificationState",
 		reflect.TypeOf((*SecurityhubInsightFiltersVerificationState)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInsightFiltersWorkflowStatus",
+		"hashicorp_aws.securityhub.SecurityhubInsightFiltersWorkflowStatus",
 		reflect.TypeOf((*SecurityhubInsightFiltersWorkflowStatus)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepter",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepter",
 		reflect.TypeOf((*SecurityhubInviteAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1134,11 +1192,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubInviteAccepterConfig",
+		"hashicorp_aws.securityhub.SecurityhubInviteAccepterConfig",
 		reflect.TypeOf((*SecurityhubInviteAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubMember",
+		"hashicorp_aws.securityhub.SecurityhubMember",
 		reflect.TypeOf((*SecurityhubMember)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accountId", GoGetter: "AccountId"},
@@ -1184,11 +1242,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubMemberConfig",
+		"hashicorp_aws.securityhub.SecurityhubMemberConfig",
 		reflect.TypeOf((*SecurityhubMemberConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccount",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccount",
 		reflect.TypeOf((*SecurityhubOrganizationAdminAccount)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1227,11 +1285,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationAdminAccountConfig",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationAdminAccountConfig",
 		reflect.TypeOf((*SecurityhubOrganizationAdminAccountConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfiguration",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfiguration",
 		reflect.TypeOf((*SecurityhubOrganizationConfiguration)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1270,11 +1328,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubOrganizationConfigurationConfig",
+		"hashicorp_aws.securityhub.SecurityhubOrganizationConfigurationConfig",
 		reflect.TypeOf((*SecurityhubOrganizationConfigurationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscription",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscription",
 		reflect.TypeOf((*SecurityhubProductSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1314,11 +1372,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubProductSubscriptionConfig",
+		"hashicorp_aws.securityhub.SecurityhubProductSubscriptionConfig",
 		reflect.TypeOf((*SecurityhubProductSubscriptionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControl",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControl",
 		reflect.TypeOf((*SecurityhubStandardsControl)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1369,11 +1427,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsControlConfig",
+		"hashicorp_aws.securityhub.SecurityhubStandardsControlConfig",
 		reflect.TypeOf((*SecurityhubStandardsControlConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscription",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscription",
 		reflect.TypeOf((*SecurityhubStandardsSubscription)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1412,7 +1470,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.SecurityHub.SecurityhubStandardsSubscriptionConfig",
+		"hashicorp_aws.securityhub.SecurityhubStandardsSubscriptionConfig",
 		reflect.TypeOf((*SecurityhubStandardsSubscriptionConfig)(nil)).Elem(),
 	)
 }

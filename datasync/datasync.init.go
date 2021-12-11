@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncAgent",
+		"hashicorp_aws.datasync.DatasyncAgent",
 		reflect.TypeOf((*DatasyncAgent)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "activationKey", GoGetter: "ActivationKey"},
@@ -77,15 +77,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncAgentConfig",
+		"hashicorp_aws.datasync.DatasyncAgentConfig",
 		reflect.TypeOf((*DatasyncAgentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncAgentTimeouts",
+		"hashicorp_aws.datasync.DatasyncAgentTimeouts",
 		reflect.TypeOf((*DatasyncAgentTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncAgentTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncAgentTimeoutsOutputReference",
 		reflect.TypeOf((*DatasyncAgentTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -94,6 +94,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -108,7 +109,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationEfs",
+		"hashicorp_aws.datasync.DatasyncLocationEfs",
 		reflect.TypeOf((*DatasyncLocationEfs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -161,21 +162,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationEfsConfig",
+		"hashicorp_aws.datasync.DatasyncLocationEfsConfig",
 		reflect.TypeOf((*DatasyncLocationEfsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationEfsEc2Config",
+		"hashicorp_aws.datasync.DatasyncLocationEfsEc2Config",
 		reflect.TypeOf((*DatasyncLocationEfsEc2Config)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationEfsEc2ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationEfsEc2ConfigOutputReference",
 		reflect.TypeOf((*DatasyncLocationEfsEc2ConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -193,7 +195,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystem",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystem",
 		reflect.TypeOf((*DatasyncLocationFsxWindowsFileSystem)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -253,11 +255,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationFsxWindowsFileSystemConfig",
+		"hashicorp_aws.datasync.DatasyncLocationFsxWindowsFileSystemConfig",
 		reflect.TypeOf((*DatasyncLocationFsxWindowsFileSystemConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationNfs",
+		"hashicorp_aws.datasync.DatasyncLocationNfs",
 		reflect.TypeOf((*DatasyncLocationNfs)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -313,21 +315,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsConfig",
+		"hashicorp_aws.datasync.DatasyncLocationNfsConfig",
 		reflect.TypeOf((*DatasyncLocationNfsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsMountOptions",
+		"hashicorp_aws.datasync.DatasyncLocationNfsMountOptions",
 		reflect.TypeOf((*DatasyncLocationNfsMountOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsMountOptionsOutputReference",
 		reflect.TypeOf((*DatasyncLocationNfsMountOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -344,11 +347,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsOnPremConfig",
+		"hashicorp_aws.datasync.DatasyncLocationNfsOnPremConfig",
 		reflect.TypeOf((*DatasyncLocationNfsOnPremConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationNfsOnPremConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationNfsOnPremConfigOutputReference",
 		reflect.TypeOf((*DatasyncLocationNfsOnPremConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "agentArns", GoGetter: "AgentArns"},
@@ -357,6 +360,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -370,7 +374,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationS3",
+		"hashicorp_aws.datasync.DatasyncLocationS3",
 		reflect.TypeOf((*DatasyncLocationS3)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -428,15 +432,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationS3Config",
+		"hashicorp_aws.datasync.DatasyncLocationS3Config",
 		reflect.TypeOf((*DatasyncLocationS3Config)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationS3S3Config",
+		"hashicorp_aws.datasync.DatasyncLocationS3S3Config",
 		reflect.TypeOf((*DatasyncLocationS3S3Config)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationS3S3ConfigOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationS3S3ConfigOutputReference",
 		reflect.TypeOf((*DatasyncLocationS3S3ConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "bucketAccessRoleArn", GoGetter: "BucketAccessRoleArn"},
@@ -445,6 +449,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -458,7 +463,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationSmb",
+		"hashicorp_aws.datasync.DatasyncLocationSmb",
 		reflect.TypeOf((*DatasyncLocationSmb)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -520,21 +525,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationSmbConfig",
+		"hashicorp_aws.datasync.DatasyncLocationSmbConfig",
 		reflect.TypeOf((*DatasyncLocationSmbConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncLocationSmbMountOptions",
+		"hashicorp_aws.datasync.DatasyncLocationSmbMountOptions",
 		reflect.TypeOf((*DatasyncLocationSmbMountOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncLocationSmbMountOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncLocationSmbMountOptionsOutputReference",
 		reflect.TypeOf((*DatasyncLocationSmbMountOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -551,7 +557,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncTask",
+		"hashicorp_aws.datasync.DatasyncTask",
 		reflect.TypeOf((*DatasyncTask)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -621,15 +627,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncTaskConfig",
+		"hashicorp_aws.datasync.DatasyncTaskConfig",
 		reflect.TypeOf((*DatasyncTaskConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncTaskExcludes",
+		"hashicorp_aws.datasync.DatasyncTaskExcludes",
 		reflect.TypeOf((*DatasyncTaskExcludes)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncTaskExcludesOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskExcludesOutputReference",
 		reflect.TypeOf((*DatasyncTaskExcludesOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "filterType", GoGetter: "FilterType"},
@@ -638,6 +644,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -655,11 +662,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncTaskOptions",
+		"hashicorp_aws.datasync.DatasyncTaskOptions",
 		reflect.TypeOf((*DatasyncTaskOptions)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncTaskOptionsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskOptionsOutputReference",
 		reflect.TypeOf((*DatasyncTaskOptionsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "atime", GoGetter: "Atime"},
@@ -672,6 +679,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "gid", GoGetter: "Gid"},
 			_jsii_.MemberProperty{JsiiProperty: "gidInput", GoGetter: "GidInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -718,17 +726,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncTaskSchedule",
+		"hashicorp_aws.datasync.DatasyncTaskSchedule",
 		reflect.TypeOf((*DatasyncTaskSchedule)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncTaskScheduleOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskScheduleOutputReference",
 		reflect.TypeOf((*DatasyncTaskScheduleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -744,11 +753,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DataSync.DatasyncTaskTimeouts",
+		"hashicorp_aws.datasync.DatasyncTaskTimeouts",
 		reflect.TypeOf((*DatasyncTaskTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DataSync.DatasyncTaskTimeoutsOutputReference",
+		"hashicorp_aws.datasync.DatasyncTaskTimeoutsOutputReference",
 		reflect.TypeOf((*DatasyncTaskTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -757,6 +766,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

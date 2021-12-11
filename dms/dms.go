@@ -326,7 +326,7 @@ func NewDmsCertificate(scope constructs.Construct, id *string, config *DmsCertif
 	j := jsiiProxy_DmsCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsCertificate",
+		"hashicorp_aws.dms.DmsCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -339,7 +339,7 @@ func NewDmsCertificate_Override(d DmsCertificate, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsCertificate",
+		"hashicorp_aws.dms.DmsCertificate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -427,7 +427,7 @@ func DmsCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsCertificate",
+		"hashicorp_aws.dms.DmsCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -440,7 +440,7 @@ func DmsCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsCertificate",
+		"hashicorp_aws.dms.DmsCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -634,6 +634,7 @@ func (d *jsiiProxy_DmsCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1330,7 +1331,7 @@ func NewDmsEndpoint(scope constructs.Construct, id *string, config *DmsEndpointC
 	j := jsiiProxy_DmsEndpoint{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpoint",
+		"hashicorp_aws.dms.DmsEndpoint",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1343,7 +1344,7 @@ func NewDmsEndpoint_Override(d DmsEndpoint, scope constructs.Construct, id *stri
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpoint",
+		"hashicorp_aws.dms.DmsEndpoint",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1511,7 +1512,7 @@ func DmsEndpoint_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsEndpoint",
+		"hashicorp_aws.dms.DmsEndpoint",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1524,7 +1525,7 @@ func DmsEndpoint_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsEndpoint",
+		"hashicorp_aws.dms.DmsEndpoint",
 		"tfResourceType",
 		&returns,
 	)
@@ -1862,6 +1863,7 @@ func (d *jsiiProxy_DmsEndpoint) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsEndpointConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1945,6 +1947,8 @@ type DmsEndpointElasticsearchSettingsOutputReference interface {
 	FullLoadErrorPercentage() *float64
 	SetFullLoadErrorPercentage(val *float64)
 	FullLoadErrorPercentageInput() *float64
+	InternalValue() *DmsEndpointElasticsearchSettings
+	SetInternalValue(val *DmsEndpointElasticsearchSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ServiceAccessRoleArn() *string
@@ -2029,6 +2033,16 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) FullLoadErro
 	return returns
 }
 
+func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) InternalValue() *DmsEndpointElasticsearchSettings {
+	var returns *DmsEndpointElasticsearchSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2085,7 +2099,7 @@ func NewDmsEndpointElasticsearchSettingsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointElasticsearchSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointElasticsearchSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2097,7 +2111,7 @@ func NewDmsEndpointElasticsearchSettingsOutputReference_Override(d DmsEndpointEl
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointElasticsearchSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointElasticsearchSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2123,6 +2137,14 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetFullLoadE
 	_jsii_.Set(
 		j,
 		"fullLoadErrorPercentage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetInternalValue(val *DmsEndpointElasticsearchSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2318,6 +2340,8 @@ type DmsEndpointKafkaSettingsOutputReference interface {
 	IncludeTransactionDetails() interface{}
 	SetIncludeTransactionDetails(val interface{})
 	IncludeTransactionDetailsInput() interface{}
+	InternalValue() *DmsEndpointKafkaSettings
+	SetInternalValue(val *DmsEndpointKafkaSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageFormat() *string
@@ -2505,6 +2529,16 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) IncludeTransactionDe
 	_jsii_.Get(
 		j,
 		"includeTransactionDetailsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) InternalValue() *DmsEndpointKafkaSettings {
+	var returns *DmsEndpointKafkaSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2786,7 +2820,7 @@ func NewDmsEndpointKafkaSettingsOutputReference(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DmsEndpointKafkaSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointKafkaSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointKafkaSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2798,7 +2832,7 @@ func NewDmsEndpointKafkaSettingsOutputReference_Override(d DmsEndpointKafkaSetti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointKafkaSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointKafkaSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2848,6 +2882,14 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetIncludeTransactio
 	_jsii_.Set(
 		j,
 		"includeTransactionDetails",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetInternalValue(val *DmsEndpointKafkaSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3230,6 +3272,8 @@ type DmsEndpointKinesisSettingsOutputReference interface {
 	IncludeTransactionDetails() interface{}
 	SetIncludeTransactionDetails(val interface{})
 	IncludeTransactionDetailsInput() interface{}
+	InternalValue() *DmsEndpointKinesisSettings
+	SetInternalValue(val *DmsEndpointKinesisSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MessageFormat() *string
@@ -3370,6 +3414,16 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) IncludeTransaction
 	return returns
 }
 
+func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) InternalValue() *DmsEndpointKinesisSettings {
+	var returns *DmsEndpointKinesisSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3486,7 +3540,7 @@ func NewDmsEndpointKinesisSettingsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_DmsEndpointKinesisSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointKinesisSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointKinesisSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3498,7 +3552,7 @@ func NewDmsEndpointKinesisSettingsOutputReference_Override(d DmsEndpointKinesisS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointKinesisSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointKinesisSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -3540,6 +3594,14 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetIncludeTransact
 	_jsii_.Set(
 		j,
 		"includeTransactionDetails",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetInternalValue(val *DmsEndpointKinesisSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3788,6 +3850,8 @@ type DmsEndpointMongodbSettingsOutputReference interface {
 	ExtractDocId() *string
 	SetExtractDocId(val *string)
 	ExtractDocIdInput() *string
+	InternalValue() *DmsEndpointMongodbSettings
+	SetInternalValue(val *DmsEndpointMongodbSettings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	NestingLevel() *string
@@ -3916,6 +3980,16 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) ExtractDocIdInput(
 	return returns
 }
 
+func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) InternalValue() *DmsEndpointMongodbSettings {
+	var returns *DmsEndpointMongodbSettings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3972,7 +4046,7 @@ func NewDmsEndpointMongodbSettingsOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_DmsEndpointMongodbSettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointMongodbSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointMongodbSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3984,7 +4058,7 @@ func NewDmsEndpointMongodbSettingsOutputReference_Override(d DmsEndpointMongodbS
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointMongodbSettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointMongodbSettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -4026,6 +4100,14 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetExtractDocId(va
 	_jsii_.Set(
 		j,
 		"extractDocId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetInternalValue(val *DmsEndpointMongodbSettings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4252,6 +4334,8 @@ type DmsEndpointS3SettingsOutputReference interface {
 	ExternalTableDefinition() *string
 	SetExternalTableDefinition(val *string)
 	ExternalTableDefinitionInput() *string
+	InternalValue() *DmsEndpointS3Settings
+	SetInternalValue(val *DmsEndpointS3Settings)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ParquetTimestampInMillisecond() interface{}
@@ -4476,6 +4560,16 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) ExternalTableDefinition
 	return returns
 }
 
+func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) InternalValue() *DmsEndpointS3Settings {
+	var returns *DmsEndpointS3Settings
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4592,7 +4686,7 @@ func NewDmsEndpointS3SettingsOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DmsEndpointS3SettingsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointS3SettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointS3SettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4604,7 +4698,7 @@ func NewDmsEndpointS3SettingsOutputReference_Override(d DmsEndpointS3SettingsOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEndpointS3SettingsOutputReference",
+		"hashicorp_aws.dms.DmsEndpointS3SettingsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -4678,6 +4772,14 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetExternalTableDefinit
 	_jsii_.Set(
 		j,
 		"externalTableDefinition",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetInternalValue(val *DmsEndpointS3Settings) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5337,7 +5439,7 @@ func NewDmsEventSubscription(scope constructs.Construct, id *string, config *Dms
 	j := jsiiProxy_DmsEventSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEventSubscription",
+		"hashicorp_aws.dms.DmsEventSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5350,7 +5452,7 @@ func NewDmsEventSubscription_Override(d DmsEventSubscription, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEventSubscription",
+		"hashicorp_aws.dms.DmsEventSubscription",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5462,7 +5564,7 @@ func DmsEventSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsEventSubscription",
+		"hashicorp_aws.dms.DmsEventSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5475,7 +5577,7 @@ func DmsEventSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsEventSubscription",
+		"hashicorp_aws.dms.DmsEventSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -5693,6 +5795,7 @@ func (d *jsiiProxy_DmsEventSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsEventSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5741,6 +5844,8 @@ type DmsEventSubscriptionTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DmsEventSubscriptionTimeouts
+	SetInternalValue(val *DmsEventSubscriptionTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5806,6 +5911,16 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) DeleteInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) InternalValue() *DmsEventSubscriptionTimeouts {
+	var returns *DmsEventSubscriptionTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5862,7 +5977,7 @@ func NewDmsEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.dms.DmsEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5874,7 +5989,7 @@ func NewDmsEventSubscriptionTimeoutsOutputReference_Override(d DmsEventSubscript
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsEventSubscriptionTimeoutsOutputReference",
+		"hashicorp_aws.dms.DmsEventSubscriptionTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -5892,6 +6007,14 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetDelete(val *s
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetInternalValue(val *DmsEventSubscriptionTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6662,7 +6785,7 @@ func NewDmsReplicationInstance(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DmsReplicationInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationInstance",
+		"hashicorp_aws.dms.DmsReplicationInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6675,7 +6798,7 @@ func NewDmsReplicationInstance_Override(d DmsReplicationInstance, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationInstance",
+		"hashicorp_aws.dms.DmsReplicationInstance",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6851,7 +6974,7 @@ func DmsReplicationInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsReplicationInstance",
+		"hashicorp_aws.dms.DmsReplicationInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6864,7 +6987,7 @@ func DmsReplicationInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsReplicationInstance",
+		"hashicorp_aws.dms.DmsReplicationInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -7154,6 +7277,7 @@ func (d *jsiiProxy_DmsReplicationInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsReplicationInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7218,6 +7342,8 @@ type DmsReplicationInstanceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DmsReplicationInstanceTimeouts
+	SetInternalValue(val *DmsReplicationInstanceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7283,6 +7409,16 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) DeleteInput() 
 	return returns
 }
 
+func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) InternalValue() *DmsReplicationInstanceTimeouts {
+	var returns *DmsReplicationInstanceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7339,7 +7475,7 @@ func NewDmsReplicationInstanceTimeoutsOutputReference(terraformResource cdktf.IT
 	j := jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationInstanceTimeoutsOutputReference",
+		"hashicorp_aws.dms.DmsReplicationInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7351,7 +7487,7 @@ func NewDmsReplicationInstanceTimeoutsOutputReference_Override(d DmsReplicationI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationInstanceTimeoutsOutputReference",
+		"hashicorp_aws.dms.DmsReplicationInstanceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -7369,6 +7505,14 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetDelete(val 
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetInternalValue(val *DmsReplicationInstanceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7839,7 +7983,7 @@ func NewDmsReplicationSubnetGroup(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DmsReplicationSubnetGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationSubnetGroup",
+		"hashicorp_aws.dms.DmsReplicationSubnetGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7852,7 +7996,7 @@ func NewDmsReplicationSubnetGroup_Override(d DmsReplicationSubnetGroup, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationSubnetGroup",
+		"hashicorp_aws.dms.DmsReplicationSubnetGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7940,7 +8084,7 @@ func DmsReplicationSubnetGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsReplicationSubnetGroup",
+		"hashicorp_aws.dms.DmsReplicationSubnetGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7953,7 +8097,7 @@ func DmsReplicationSubnetGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsReplicationSubnetGroup",
+		"hashicorp_aws.dms.DmsReplicationSubnetGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -8131,6 +8275,7 @@ func (d *jsiiProxy_DmsReplicationSubnetGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsReplicationSubnetGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8608,7 +8753,7 @@ func NewDmsReplicationTask(scope constructs.Construct, id *string, config *DmsRe
 	j := jsiiProxy_DmsReplicationTask{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationTask",
+		"hashicorp_aws.dms.DmsReplicationTask",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8621,7 +8766,7 @@ func NewDmsReplicationTask_Override(d DmsReplicationTask, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DMS.DmsReplicationTask",
+		"hashicorp_aws.dms.DmsReplicationTask",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8757,7 +8902,7 @@ func DmsReplicationTask_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DMS.DmsReplicationTask",
+		"hashicorp_aws.dms.DmsReplicationTask",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8770,7 +8915,7 @@ func DmsReplicationTask_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DMS.DmsReplicationTask",
+		"hashicorp_aws.dms.DmsReplicationTask",
 		"tfResourceType",
 		&returns,
 	)
@@ -8972,6 +9117,7 @@ func (d *jsiiProxy_DmsReplicationTask) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Database Migration Service.
 type DmsReplicationTaskConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

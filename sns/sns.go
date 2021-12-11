@@ -230,7 +230,7 @@ func NewDataAwsSnsTopic(scope constructs.Construct, id *string, config *DataAwsS
 	j := jsiiProxy_DataAwsSnsTopic{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.DataAwsSnsTopic",
+		"hashicorp_aws.sns.DataAwsSnsTopic",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -243,7 +243,7 @@ func NewDataAwsSnsTopic_Override(d DataAwsSnsTopic, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.DataAwsSnsTopic",
+		"hashicorp_aws.sns.DataAwsSnsTopic",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -299,7 +299,7 @@ func DataAwsSnsTopic_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.DataAwsSnsTopic",
+		"hashicorp_aws.sns.DataAwsSnsTopic",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -312,7 +312,7 @@ func DataAwsSnsTopic_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.DataAwsSnsTopic",
+		"hashicorp_aws.sns.DataAwsSnsTopic",
 		"tfResourceType",
 		&returns,
 	)
@@ -474,6 +474,7 @@ func (d *jsiiProxy_DataAwsSnsTopic) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type DataAwsSnsTopicConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -946,7 +947,7 @@ func NewSnsPlatformApplication(scope constructs.Construct, id *string, config *S
 	j := jsiiProxy_SnsPlatformApplication{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsPlatformApplication",
+		"hashicorp_aws.sns.SnsPlatformApplication",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -959,7 +960,7 @@ func NewSnsPlatformApplication_Override(s SnsPlatformApplication, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsPlatformApplication",
+		"hashicorp_aws.sns.SnsPlatformApplication",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1095,7 +1096,7 @@ func SnsPlatformApplication_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.SnsPlatformApplication",
+		"hashicorp_aws.sns.SnsPlatformApplication",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1108,7 +1109,7 @@ func SnsPlatformApplication_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.SnsPlatformApplication",
+		"hashicorp_aws.sns.SnsPlatformApplication",
 		"tfResourceType",
 		&returns,
 	)
@@ -1334,6 +1335,7 @@ func (s *jsiiProxy_SnsPlatformApplication) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type SnsPlatformApplicationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1393,9 +1395,9 @@ type SnsSmsPreferences interface {
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	MonthlySpendLimit() *string
-	SetMonthlySpendLimit(val *string)
-	MonthlySpendLimitInput() *string
+	MonthlySpendLimit() *float64
+	SetMonthlySpendLimit(val *float64)
+	MonthlySpendLimitInput() *float64
 	Node() constructs.Node
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
@@ -1591,8 +1593,8 @@ func (j *jsiiProxy_SnsSmsPreferences) Lifecycle() *cdktf.TerraformResourceLifecy
 	return returns
 }
 
-func (j *jsiiProxy_SnsSmsPreferences) MonthlySpendLimit() *string {
-	var returns *string
+func (j *jsiiProxy_SnsSmsPreferences) MonthlySpendLimit() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"monthlySpendLimit",
@@ -1601,8 +1603,8 @@ func (j *jsiiProxy_SnsSmsPreferences) MonthlySpendLimit() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SnsSmsPreferences) MonthlySpendLimitInput() *string {
-	var returns *string
+func (j *jsiiProxy_SnsSmsPreferences) MonthlySpendLimitInput() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"monthlySpendLimitInput",
@@ -1698,7 +1700,7 @@ func NewSnsSmsPreferences(scope constructs.Construct, id *string, config *SnsSms
 	j := jsiiProxy_SnsSmsPreferences{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsSmsPreferences",
+		"hashicorp_aws.sns.SnsSmsPreferences",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1711,7 +1713,7 @@ func NewSnsSmsPreferences_Override(s SnsSmsPreferences, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsSmsPreferences",
+		"hashicorp_aws.sns.SnsSmsPreferences",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -1773,7 +1775,7 @@ func (j *jsiiProxy_SnsSmsPreferences) SetLifecycle(val *cdktf.TerraformResourceL
 	)
 }
 
-func (j *jsiiProxy_SnsSmsPreferences) SetMonthlySpendLimit(val *string) {
+func (j *jsiiProxy_SnsSmsPreferences) SetMonthlySpendLimit(val *float64) {
 	_jsii_.Set(
 		j,
 		"monthlySpendLimit",
@@ -1807,7 +1809,7 @@ func SnsSmsPreferences_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.SnsSmsPreferences",
+		"hashicorp_aws.sns.SnsSmsPreferences",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1820,7 +1822,7 @@ func SnsSmsPreferences_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.SnsSmsPreferences",
+		"hashicorp_aws.sns.SnsSmsPreferences",
 		"tfResourceType",
 		&returns,
 	)
@@ -2030,6 +2032,7 @@ func (s *jsiiProxy_SnsSmsPreferences) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type SnsSmsPreferencesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2048,7 +2051,7 @@ type SnsSmsPreferencesConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#delivery_status_success_sampling_rate SnsSmsPreferences#delivery_status_success_sampling_rate}.
 	DeliveryStatusSuccessSamplingRate *string `json:"deliveryStatusSuccessSamplingRate"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#monthly_spend_limit SnsSmsPreferences#monthly_spend_limit}.
-	MonthlySpendLimit *string `json:"monthlySpendLimit"`
+	MonthlySpendLimit *float64 `json:"monthlySpendLimit"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#usage_report_s3_bucket SnsSmsPreferences#usage_report_s3_bucket}.
 	UsageReportS3Bucket *string `json:"usageReportS3Bucket"`
 }
@@ -2862,7 +2865,7 @@ func NewSnsTopic(scope constructs.Construct, id *string, config *SnsTopicConfig)
 	j := jsiiProxy_SnsTopic{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopic",
+		"hashicorp_aws.sns.SnsTopic",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2875,7 +2878,7 @@ func NewSnsTopic_Override(s SnsTopic, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopic",
+		"hashicorp_aws.sns.SnsTopic",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3123,7 +3126,7 @@ func SnsTopic_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.SnsTopic",
+		"hashicorp_aws.sns.SnsTopic",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3136,7 +3139,7 @@ func SnsTopic_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.SnsTopic",
+		"hashicorp_aws.sns.SnsTopic",
 		"tfResourceType",
 		&returns,
 	)
@@ -3498,6 +3501,7 @@ func (s *jsiiProxy_SnsTopic) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type SnsTopicConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3803,7 +3807,7 @@ func NewSnsTopicPolicy(scope constructs.Construct, id *string, config *SnsTopicP
 	j := jsiiProxy_SnsTopicPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopicPolicy",
+		"hashicorp_aws.sns.SnsTopicPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3816,7 +3820,7 @@ func NewSnsTopicPolicy_Override(s SnsTopicPolicy, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopicPolicy",
+		"hashicorp_aws.sns.SnsTopicPolicy",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3880,7 +3884,7 @@ func SnsTopicPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.SnsTopicPolicy",
+		"hashicorp_aws.sns.SnsTopicPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3893,7 +3897,7 @@ func SnsTopicPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.SnsTopicPolicy",
+		"hashicorp_aws.sns.SnsTopicPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -4055,6 +4059,7 @@ func (s *jsiiProxy_SnsTopicPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type SnsTopicPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4538,7 +4543,7 @@ func NewSnsTopicSubscription(scope constructs.Construct, id *string, config *Sns
 	j := jsiiProxy_SnsTopicSubscription{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopicSubscription",
+		"hashicorp_aws.sns.SnsTopicSubscription",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4551,7 +4556,7 @@ func NewSnsTopicSubscription_Override(s SnsTopicSubscription, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SNS.SnsTopicSubscription",
+		"hashicorp_aws.sns.SnsTopicSubscription",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -4679,7 +4684,7 @@ func SnsTopicSubscription_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SNS.SnsTopicSubscription",
+		"hashicorp_aws.sns.SnsTopicSubscription",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4692,7 +4697,7 @@ func SnsTopicSubscription_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SNS.SnsTopicSubscription",
+		"hashicorp_aws.sns.SnsTopicSubscription",
 		"tfResourceType",
 		&returns,
 	)
@@ -4910,6 +4915,7 @@ func (s *jsiiProxy_SnsTopicSubscription) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Notification Service.
 type SnsTopicSubscriptionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

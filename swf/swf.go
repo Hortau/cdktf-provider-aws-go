@@ -350,7 +350,7 @@ func NewSwfDomain(scope constructs.Construct, id *string, config *SwfDomainConfi
 	j := jsiiProxy_SwfDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SWF.SwfDomain",
+		"hashicorp_aws.swf.SwfDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -363,7 +363,7 @@ func NewSwfDomain_Override(s SwfDomain, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SWF.SwfDomain",
+		"hashicorp_aws.swf.SwfDomain",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -459,7 +459,7 @@ func SwfDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SWF.SwfDomain",
+		"hashicorp_aws.swf.SwfDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -472,7 +472,7 @@ func SwfDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SWF.SwfDomain",
+		"hashicorp_aws.swf.SwfDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -674,6 +674,7 @@ func (s *jsiiProxy_SwfDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Simple Workflow Service.
 type SwfDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

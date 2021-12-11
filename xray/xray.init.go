@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.XRay.XrayEncryptionConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfig",
 		reflect.TypeOf((*XrayEncryptionConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,11 +50,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.XRay.XrayEncryptionConfigConfig",
+		"hashicorp_aws.xray.XrayEncryptionConfigConfig",
 		reflect.TypeOf((*XrayEncryptionConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.XRay.XrayGroup",
+		"hashicorp_aws.xray.XrayGroup",
 		reflect.TypeOf((*XrayGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -102,11 +102,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.XRay.XrayGroupConfig",
+		"hashicorp_aws.xray.XrayGroupConfig",
 		reflect.TypeOf((*XrayGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.XRay.XraySamplingRule",
+		"hashicorp_aws.xray.XraySamplingRule",
 		reflect.TypeOf((*XraySamplingRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -176,7 +176,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.XRay.XraySamplingRuleConfig",
+		"hashicorp_aws.xray.XraySamplingRuleConfig",
 		reflect.TypeOf((*XraySamplingRuleConfig)(nil)).Elem(),
 	)
 }

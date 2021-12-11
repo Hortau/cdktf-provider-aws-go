@@ -624,7 +624,7 @@ func NewCloudtrail(scope constructs.Construct, id *string, config *CloudtrailCon
 	j := jsiiProxy_Cloudtrail{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudTrail.Cloudtrail",
+		"hashicorp_aws.cloudtrail.Cloudtrail",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -637,7 +637,7 @@ func NewCloudtrail_Override(c Cloudtrail, scope constructs.Construct, id *string
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudTrail.Cloudtrail",
+		"hashicorp_aws.cloudtrail.Cloudtrail",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -821,7 +821,7 @@ func Cloudtrail_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudTrail.Cloudtrail",
+		"hashicorp_aws.cloudtrail.Cloudtrail",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -834,7 +834,7 @@ func Cloudtrail_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudTrail.Cloudtrail",
+		"hashicorp_aws.cloudtrail.Cloudtrail",
 		"tfResourceType",
 		&returns,
 	)
@@ -1142,6 +1142,7 @@ type CloudtrailAdvancedEventSelectorFieldSelector struct {
 	StartsWith *[]*string `json:"startsWith"`
 }
 
+// AWS CloudTrail.
 type CloudtrailConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1198,6 +1199,8 @@ type CloudtrailEventSelector struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#data_resource Cloudtrail#data_resource}
 	DataResource *[]*CloudtrailEventSelectorDataResource `json:"dataResource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#exclude_management_event_sources Cloudtrail#exclude_management_event_sources}.
+	ExcludeManagementEventSources *[]*string `json:"excludeManagementEventSources"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#include_management_events Cloudtrail#include_management_events}.
 	IncludeManagementEvents interface{} `json:"includeManagementEvents"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#read_write_type Cloudtrail#read_write_type}.
@@ -1438,7 +1441,7 @@ func NewDataAwsCloudtrailServiceAccount(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DataAwsCloudtrailServiceAccount{}
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccount",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccount",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1451,7 +1454,7 @@ func NewDataAwsCloudtrailServiceAccount_Override(d DataAwsCloudtrailServiceAccou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccount",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccount",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1507,7 +1510,7 @@ func DataAwsCloudtrailServiceAccount_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccount",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccount",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1520,7 +1523,7 @@ func DataAwsCloudtrailServiceAccount_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.CloudTrail.DataAwsCloudtrailServiceAccount",
+		"hashicorp_aws.cloudtrail.DataAwsCloudtrailServiceAccount",
 		"tfResourceType",
 		&returns,
 	)
@@ -1690,6 +1693,7 @@ func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS CloudTrail.
 type DataAwsCloudtrailServiceAccountConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

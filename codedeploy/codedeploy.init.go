@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployApp",
+		"hashicorp_aws.codedeploy.CodedeployApp",
 		reflect.TypeOf((*CodedeployApp)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -60,11 +60,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployAppConfig",
+		"hashicorp_aws.codedeploy.CodedeployAppConfig",
 		reflect.TypeOf((*CodedeployAppConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfig",
 		reflect.TypeOf((*CodedeployDeploymentConfig)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -115,21 +115,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigConfig",
 		reflect.TypeOf((*CodedeployDeploymentConfigConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigMinimumHealthyHosts",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigMinimumHealthyHosts",
 		reflect.TypeOf((*CodedeployDeploymentConfigMinimumHealthyHosts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigMinimumHealthyHostsOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -149,17 +150,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfig",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -184,17 +186,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -214,17 +217,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "interval", GoGetter: "Interval"},
@@ -244,7 +248,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroup",
 		reflect.TypeOf((*CodedeployDeploymentGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -338,11 +342,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAlarmConfiguration",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAlarmConfiguration",
 		reflect.TypeOf((*CodedeployDeploymentGroupAlarmConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAlarmConfigurationOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupAlarmConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarms", GoGetter: "Alarms"},
@@ -355,6 +359,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "ignorePollAlarmFailure", GoGetter: "IgnorePollAlarmFailure"},
 			_jsii_.MemberProperty{JsiiProperty: "ignorePollAlarmFailureInput", GoGetter: "IgnorePollAlarmFailureInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -371,11 +376,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAutoRollbackConfiguration",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAutoRollbackConfiguration",
 		reflect.TypeOf((*CodedeployDeploymentGroupAutoRollbackConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "enabled", GoGetter: "Enabled"},
@@ -386,6 +391,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -401,15 +407,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfig",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actionOnTimeout", GoGetter: "ActionOnTimeout"},
@@ -418,6 +424,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -435,11 +442,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -448,6 +455,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -462,7 +470,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deploymentReadyOption", GoGetter: "DeploymentReadyOption"},
@@ -473,6 +481,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "greenFleetProvisioningOption", GoGetter: "GreenFleetProvisioningOption"},
 			_jsii_.MemberProperty{JsiiProperty: "greenFleetProvisioningOptionInput", GoGetter: "GreenFleetProvisioningOptionInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -494,11 +503,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "action", GoGetter: "Action"},
@@ -507,6 +516,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -524,15 +534,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupConfig",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupConfig",
 		reflect.TypeOf((*CodedeployDeploymentGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupDeploymentStyle",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupDeploymentStyle",
 		reflect.TypeOf((*CodedeployDeploymentGroupDeploymentStyle)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupDeploymentStyleOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupDeploymentStyleOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "deploymentOption", GoGetter: "DeploymentOption"},
@@ -543,6 +553,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -558,23 +569,23 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEc2TagFilter",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEc2TagFilter",
 		reflect.TypeOf((*CodedeployDeploymentGroupEc2TagFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEc2TagSet",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEc2TagSet",
 		reflect.TypeOf((*CodedeployDeploymentGroupEc2TagSet)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEc2TagSetEc2TagFilter",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEc2TagSetEc2TagFilter",
 		reflect.TypeOf((*CodedeployDeploymentGroupEc2TagSetEc2TagFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEcsService",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEcsService",
 		reflect.TypeOf((*CodedeployDeploymentGroupEcsService)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupEcsServiceOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupEcsServiceOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "clusterName", GoGetter: "ClusterName"},
@@ -583,6 +594,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -598,15 +610,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfo",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfo",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoElbInfo",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoElbInfo",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoElbInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "elbInfo", GoGetter: "ElbInfo"},
@@ -615,6 +627,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -636,21 +649,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -673,17 +687,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -699,21 +714,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference",
 		reflect.TypeOf((*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -729,11 +745,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupOnPremisesInstanceTagFilter",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupOnPremisesInstanceTagFilter",
 		reflect.TypeOf((*CodedeployDeploymentGroupOnPremisesInstanceTagFilter)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeDeploy.CodedeployDeploymentGroupTriggerConfiguration",
+		"hashicorp_aws.codedeploy.CodedeployDeploymentGroupTriggerConfiguration",
 		reflect.TypeOf((*CodedeployDeploymentGroupTriggerConfiguration)(nil)).Elem(),
 	)
 }

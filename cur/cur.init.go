@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cur.CurReportDefinition",
+		"hashicorp_aws.cur.CurReportDefinition",
 		reflect.TypeOf((*CurReportDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalArtifacts", GoGetter: "AdditionalArtifacts"},
@@ -72,11 +72,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cur.CurReportDefinitionConfig",
+		"hashicorp_aws.cur.CurReportDefinitionConfig",
 		reflect.TypeOf((*CurReportDefinitionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinition",
+		"hashicorp_aws.cur.DataAwsCurReportDefinition",
 		reflect.TypeOf((*DataAwsCurReportDefinition)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "additionalArtifacts", GoGetter: "AdditionalArtifacts"},
@@ -125,7 +125,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.Cur.DataAwsCurReportDefinitionConfig",
+		"hashicorp_aws.cur.DataAwsCurReportDefinitionConfig",
 		reflect.TypeOf((*DataAwsCurReportDefinitionConfig)(nil)).Elem(),
 	)
 }

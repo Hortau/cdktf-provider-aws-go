@@ -1,12 +1,12 @@
 package signer
 
 import (
-	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
+	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
 
-	"github.com/hortau/cdktf-provider-aws-go/signer/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+	"github.com/hortau/cdktf-provider-aws-go/signer/internal"
 )
 
 // Represents a {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html aws_signer_signing_job}.
@@ -347,7 +347,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJob) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html aws_signer_signing_job} Data Source.
 func NewDataAwsSignerSigningJob(scope constructs.Construct, id *string, config *DataAwsSignerSigningJobConfig) DataAwsSignerSigningJob {
 	_init_.Initialize()
@@ -355,7 +354,7 @@ func NewDataAwsSignerSigningJob(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DataAwsSignerSigningJob{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJob",
+		"hashicorp_aws.signer.DataAwsSignerSigningJob",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -368,7 +367,7 @@ func NewDataAwsSignerSigningJob_Override(d DataAwsSignerSigningJob, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJob",
+		"hashicorp_aws.signer.DataAwsSignerSigningJob",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -424,7 +423,7 @@ func DataAwsSignerSigningJob_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJob",
+		"hashicorp_aws.signer.DataAwsSignerSigningJob",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -437,7 +436,7 @@ func DataAwsSignerSigningJob_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJob",
+		"hashicorp_aws.signer.DataAwsSignerSigningJob",
 		"tfResourceType",
 		&returns,
 	)
@@ -638,6 +637,7 @@ func (d *jsiiProxy_DataAwsSignerSigningJob) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Signer.
 type DataAwsSignerSigningJobConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -734,7 +734,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) TerraformResource() 
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobRevocationRecord {
 	_init_.Initialize()
@@ -742,7 +741,7 @@ func NewDataAwsSignerSigningJobRevocationRecord(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsSignerSigningJobRevocationRecord{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -755,7 +754,7 @@ func NewDataAwsSignerSigningJobRevocationRecord_Override(d DataAwsSignerSigningJ
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -916,7 +915,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) TerraformResource() cdkt
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSignedObject {
 	_init_.Initialize()
@@ -924,7 +922,7 @@ func NewDataAwsSignerSigningJobSignedObject(terraformResource cdktf.ITerraformRe
 	j := jsiiProxy_DataAwsSignerSigningJobSignedObject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObject",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObject",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -937,7 +935,7 @@ func NewDataAwsSignerSigningJobSignedObject_Override(d DataAwsSignerSigningJobSi
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObject",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObject",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1109,7 +1107,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) TerraformResource() cd
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSignedObjectS3 {
 	_init_.Initialize()
@@ -1117,7 +1114,7 @@ func NewDataAwsSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraform
 	j := jsiiProxy_DataAwsSignerSigningJobSignedObjectS3{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObjectS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1130,7 +1127,7 @@ func NewDataAwsSignerSigningJobSignedObjectS3_Override(d DataAwsSignerSigningJob
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObjectS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1291,7 +1288,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) TerraformResource() cdktf.ITer
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningJobSource(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSource {
 	_init_.Initialize()
@@ -1299,7 +1295,7 @@ func NewDataAwsSignerSigningJobSource(terraformResource cdktf.ITerraformResource
 	j := jsiiProxy_DataAwsSignerSigningJobSource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSource",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSource",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1312,7 +1308,7 @@ func NewDataAwsSignerSigningJobSource_Override(d DataAwsSignerSigningJobSource, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSource",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSource",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1495,7 +1491,6 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) Version() *string {
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningJobSourceS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSourceS3 {
 	_init_.Initialize()
@@ -1503,7 +1498,7 @@ func NewDataAwsSignerSigningJobSourceS3(terraformResource cdktf.ITerraformResour
 	j := jsiiProxy_DataAwsSignerSigningJobSourceS3{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSourceS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSourceS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1516,7 +1511,7 @@ func NewDataAwsSignerSigningJobSourceS3_Override(d DataAwsSignerSigningJobSource
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningJobSourceS3",
+		"hashicorp_aws.signer.DataAwsSignerSigningJobSourceS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1911,7 +1906,6 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) VersionArn() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html aws_signer_signing_profile} Data Source.
 func NewDataAwsSignerSigningProfile(scope constructs.Construct, id *string, config *DataAwsSignerSigningProfileConfig) DataAwsSignerSigningProfile {
 	_init_.Initialize()
@@ -1919,7 +1913,7 @@ func NewDataAwsSignerSigningProfile(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsSignerSigningProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfile",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1932,7 +1926,7 @@ func NewDataAwsSignerSigningProfile_Override(d DataAwsSignerSigningProfile, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfile",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfile",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1996,7 +1990,7 @@ func DataAwsSignerSigningProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfile",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2009,7 +2003,7 @@ func DataAwsSignerSigningProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfile",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -2205,6 +2199,7 @@ func (d *jsiiProxy_DataAwsSignerSigningProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Signer.
 type DataAwsSignerSigningProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2303,7 +2298,6 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) TerraformResourc
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningProfileRevocationRecord {
 	_init_.Initialize()
@@ -2311,7 +2305,7 @@ func NewDataAwsSignerSigningProfileRevocationRecord(terraformResource cdktf.ITer
 	j := jsiiProxy_DataAwsSignerSigningProfileRevocationRecord{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2324,7 +2318,7 @@ func NewDataAwsSignerSigningProfileRevocationRecord_Override(d DataAwsSignerSign
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2496,7 +2490,6 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) Value() *
 	return returns
 }
 
-
 // Experimental.
 func NewDataAwsSignerSigningProfileSignatureValidityPeriod(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningProfileSignatureValidityPeriod {
 	_init_.Initialize()
@@ -2504,7 +2497,7 @@ func NewDataAwsSignerSigningProfileSignatureValidityPeriod(terraformResource cdk
 	j := jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2517,7 +2510,7 @@ func NewDataAwsSignerSigningProfileSignatureValidityPeriod_Override(d DataAwsSig
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
+		"hashicorp_aws.signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -3024,7 +3017,6 @@ func (j *jsiiProxy_SignerSigningJob) TerraformResourceType() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html aws_signer_signing_job} Resource.
 func NewSignerSigningJob(scope constructs.Construct, id *string, config *SignerSigningJobConfig) SignerSigningJob {
 	_init_.Initialize()
@@ -3032,7 +3024,7 @@ func NewSignerSigningJob(scope constructs.Construct, id *string, config *SignerS
 	j := jsiiProxy_SignerSigningJob{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJob",
+		"hashicorp_aws.signer.SignerSigningJob",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3045,7 +3037,7 @@ func NewSignerSigningJob_Override(s SignerSigningJob, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJob",
+		"hashicorp_aws.signer.SignerSigningJob",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -3109,7 +3101,7 @@ func SignerSigningJob_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Signer.SignerSigningJob",
+		"hashicorp_aws.signer.SignerSigningJob",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3122,7 +3114,7 @@ func SignerSigningJob_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Signer.SignerSigningJob",
+		"hashicorp_aws.signer.SignerSigningJob",
 		"tfResourceType",
 		&returns,
 	)
@@ -3334,6 +3326,7 @@ func (s *jsiiProxy_SignerSigningJob) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Signer.
 type SignerSigningJobConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3366,6 +3359,8 @@ type SignerSigningJobDestination struct {
 
 type SignerSigningJobDestinationOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SignerSigningJobDestination
+	SetInternalValue(val *SignerSigningJobDestination)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3() SignerSigningJobDestinationS3OutputReference
@@ -3386,6 +3381,16 @@ type SignerSigningJobDestinationOutputReference interface {
 // The jsii proxy struct for SignerSigningJobDestinationOutputReference
 type jsiiProxy_SignerSigningJobDestinationOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) InternalValue() *SignerSigningJobDestination {
+	var returns *SignerSigningJobDestination
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) IsSingleItem() *bool {
@@ -3438,14 +3443,13 @@ func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) TerraformResource
 	return returns
 }
 
-
 func NewSignerSigningJobDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobDestinationOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3457,9 +3461,17 @@ func NewSignerSigningJobDestinationOutputReference_Override(s SignerSigningJobDe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) SetInternalValue(val *SignerSigningJobDestination) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -3591,6 +3603,8 @@ type SignerSigningJobDestinationS3OutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *SignerSigningJobDestinationS3
+	SetInternalValue(val *SignerSigningJobDestinationS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Prefix() *string
@@ -3629,6 +3643,16 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) BucketInput() *
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) InternalValue() *SignerSigningJobDestinationS3 {
+	var returns *SignerSigningJobDestinationS3
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3684,14 +3708,13 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) TerraformResour
 	return returns
 }
 
-
 func NewSignerSigningJobDestinationS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobDestinationS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3703,7 +3726,7 @@ func NewSignerSigningJobDestinationS3OutputReference_Override(s SignerSigningJob
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobDestinationS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobDestinationS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -3713,6 +3736,14 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetBucket(val *
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetInternalValue(val *SignerSigningJobDestinationS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3924,7 +3955,6 @@ func (j *jsiiProxy_SignerSigningJobRevocationRecord) TerraformResource() cdktf.I
 	return returns
 }
 
-
 // Experimental.
 func NewSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobRevocationRecord {
 	_init_.Initialize()
@@ -3932,7 +3962,7 @@ func NewSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_SignerSigningJobRevocationRecord{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningJobRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -3945,7 +3975,7 @@ func NewSignerSigningJobRevocationRecord_Override(s SignerSigningJobRevocationRe
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningJobRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -4106,7 +4136,6 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) TerraformResource() cdktf.ITerr
 	return returns
 }
 
-
 // Experimental.
 func NewSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobSignedObject {
 	_init_.Initialize()
@@ -4114,7 +4143,7 @@ func NewSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource,
 	j := jsiiProxy_SignerSigningJobSignedObject{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObject",
+		"hashicorp_aws.signer.SignerSigningJobSignedObject",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4127,7 +4156,7 @@ func NewSignerSigningJobSignedObject_Override(s SignerSigningJobSignedObject, te
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObject",
+		"hashicorp_aws.signer.SignerSigningJobSignedObject",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -4299,7 +4328,6 @@ func (j *jsiiProxy_SignerSigningJobSignedObjectS3) TerraformResource() cdktf.ITe
 	return returns
 }
 
-
 // Experimental.
 func NewSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobSignedObjectS3 {
 	_init_.Initialize()
@@ -4307,7 +4335,7 @@ func NewSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResourc
 	j := jsiiProxy_SignerSigningJobSignedObjectS3{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.SignerSigningJobSignedObjectS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -4320,7 +4348,7 @@ func NewSignerSigningJobSignedObjectS3_Override(s SignerSigningJobSignedObjectS3
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSignedObjectS3",
+		"hashicorp_aws.signer.SignerSigningJobSignedObjectS3",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -4429,6 +4457,8 @@ type SignerSigningJobSource struct {
 
 type SignerSigningJobSourceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SignerSigningJobSource
+	SetInternalValue(val *SignerSigningJobSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	S3() SignerSigningJobSourceS3OutputReference
@@ -4449,6 +4479,16 @@ type SignerSigningJobSourceOutputReference interface {
 // The jsii proxy struct for SignerSigningJobSourceOutputReference
 type jsiiProxy_SignerSigningJobSourceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SignerSigningJobSourceOutputReference) InternalValue() *SignerSigningJobSource {
+	var returns *SignerSigningJobSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SignerSigningJobSourceOutputReference) IsSingleItem() *bool {
@@ -4501,14 +4541,13 @@ func (j *jsiiProxy_SignerSigningJobSourceOutputReference) TerraformResource() cd
 	return returns
 }
 
-
 func NewSignerSigningJobSourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSourceOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4520,9 +4559,17 @@ func NewSignerSigningJobSourceOutputReference_Override(s SignerSigningJobSourceO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSourceOutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SignerSigningJobSourceOutputReference) SetInternalValue(val *SignerSigningJobSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4656,6 +4703,8 @@ type SignerSigningJobSourceS3OutputReference interface {
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
+	InternalValue() *SignerSigningJobSourceS3
+	SetInternalValue(val *SignerSigningJobSourceS3)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Key() *string
@@ -4696,6 +4745,16 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) BucketInput() *strin
 	_jsii_.Get(
 		j,
 		"bucketInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) InternalValue() *SignerSigningJobSourceS3 {
+	var returns *SignerSigningJobSourceS3
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -4771,14 +4830,13 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) VersionInput() *stri
 	return returns
 }
 
-
 func NewSignerSigningJobSourceS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSourceS3OutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSourceS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4790,7 +4848,7 @@ func NewSignerSigningJobSourceS3OutputReference_Override(s SignerSigningJobSourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningJobSourceS3OutputReference",
+		"hashicorp_aws.signer.SignerSigningJobSourceS3OutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
 	)
@@ -4800,6 +4858,14 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetBucket(val *strin
 	_jsii_.Set(
 		j,
 		"bucket",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetInternalValue(val *SignerSigningJobSourceS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5307,7 +5373,6 @@ func (j *jsiiProxy_SignerSigningProfile) VersionArn() *string {
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html aws_signer_signing_profile} Resource.
 func NewSignerSigningProfile(scope constructs.Construct, id *string, config *SignerSigningProfileConfig) SignerSigningProfile {
 	_init_.Initialize()
@@ -5315,7 +5380,7 @@ func NewSignerSigningProfile(scope constructs.Construct, id *string, config *Sig
 	j := jsiiProxy_SignerSigningProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfile",
+		"hashicorp_aws.signer.SignerSigningProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5328,7 +5393,7 @@ func NewSignerSigningProfile_Override(s SignerSigningProfile, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfile",
+		"hashicorp_aws.signer.SignerSigningProfile",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -5416,7 +5481,7 @@ func SignerSigningProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Signer.SignerSigningProfile",
+		"hashicorp_aws.signer.SignerSigningProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5429,7 +5494,7 @@ func SignerSigningProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Signer.SignerSigningProfile",
+		"hashicorp_aws.signer.SignerSigningProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -5652,6 +5717,7 @@ func (s *jsiiProxy_SignerSigningProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Signer.
 type SignerSigningProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5998,7 +6064,6 @@ func (j *jsiiProxy_SignerSigningProfilePermission) TerraformResourceType() *stri
 	return returns
 }
 
-
 // Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html aws_signer_signing_profile_permission} Resource.
 func NewSignerSigningProfilePermission(scope constructs.Construct, id *string, config *SignerSigningProfilePermissionConfig) SignerSigningProfilePermission {
 	_init_.Initialize()
@@ -6006,7 +6071,7 @@ func NewSignerSigningProfilePermission(scope constructs.Construct, id *string, c
 	j := jsiiProxy_SignerSigningProfilePermission{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfilePermission",
+		"hashicorp_aws.signer.SignerSigningProfilePermission",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6019,7 +6084,7 @@ func NewSignerSigningProfilePermission_Override(s SignerSigningProfilePermission
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfilePermission",
+		"hashicorp_aws.signer.SignerSigningProfilePermission",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -6115,7 +6180,7 @@ func SignerSigningProfilePermission_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Signer.SignerSigningProfilePermission",
+		"hashicorp_aws.signer.SignerSigningProfilePermission",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6128,7 +6193,7 @@ func SignerSigningProfilePermission_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Signer.SignerSigningProfilePermission",
+		"hashicorp_aws.signer.SignerSigningProfilePermission",
 		"tfResourceType",
 		&returns,
 	)
@@ -6314,6 +6379,7 @@ func (s *jsiiProxy_SignerSigningProfilePermission) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Signer.
 type SignerSigningProfilePermissionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6420,7 +6486,6 @@ func (j *jsiiProxy_SignerSigningProfileRevocationRecord) TerraformResource() cdk
 	return returns
 }
 
-
 // Experimental.
 func NewSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningProfileRevocationRecord {
 	_init_.Initialize()
@@ -6428,7 +6493,7 @@ func NewSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_SignerSigningProfileRevocationRecord{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningProfileRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -6441,7 +6506,7 @@ func NewSignerSigningProfileRevocationRecord_Override(s SignerSigningProfileRevo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfileRevocationRecord",
+		"hashicorp_aws.signer.SignerSigningProfileRevocationRecord",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		s,
 	)
@@ -6550,6 +6615,8 @@ type SignerSigningProfileSignatureValidityPeriod struct {
 
 type SignerSigningProfileSignatureValidityPeriodOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *SignerSigningProfileSignatureValidityPeriod
+	SetInternalValue(val *SignerSigningProfileSignatureValidityPeriod)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6573,6 +6640,16 @@ type SignerSigningProfileSignatureValidityPeriodOutputReference interface {
 // The jsii proxy struct for SignerSigningProfileSignatureValidityPeriodOutputReference
 type jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) InternalValue() *SignerSigningProfileSignatureValidityPeriod {
+	var returns *SignerSigningProfileSignatureValidityPeriod
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) IsSingleItem() *bool {
@@ -6645,14 +6722,13 @@ func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) V
 	return returns
 }
 
-
 func NewSignerSigningProfileSignatureValidityPeriodOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningProfileSignatureValidityPeriodOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
+		"hashicorp_aws.signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6664,9 +6740,17 @@ func NewSignerSigningProfileSignatureValidityPeriodOutputReference_Override(s Si
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
+		"hashicorp_aws.signer.SignerSigningProfileSignatureValidityPeriodOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) SetInternalValue(val *SignerSigningProfileSignatureValidityPeriod) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -6793,4 +6877,3 @@ func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) I
 
 	return returns
 }
-

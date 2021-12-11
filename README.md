@@ -1,22 +1,35 @@
 # cdktf-provider-aws-go
-Terraform CDK aws Provider v3.64.2
+- Terraform [aws Provider](https://registry.terraform.io/providers/hashicorp/aws/latest) v3.69.0
+- Generated with [CDK for Terraform](https://github.com/hashicorp/terraform-cdk) v0.8.1
+
+## To Add in you project:
 
     go get github.com/hortau/cdktf-provider-aws-go
 
-Example:
+## Example:
 ```go
 package main
 
 import (
+	"os"
+
+	"github.com/hortau/cdktf-provider-aws-go/vpc"
+	aws "github.com/hortau/cdktf-provider-aws-go"
+	
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
-
-	"github.com/hortau/cdktf-provider-aws-go/vpc"
 )
 
 func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
+
+	aws.NewAwsProvider(stack, jsii.String("aws"), &aws.AwsProviderConfig{
+		Region: jsii.String(os.Getenv("AWS_REGION")),
+		AccessKey: jsii.String(os.Getenv("AWS_ACCESS_KEY")),
+		SecretKey: jsii.String(os.Getenv("AWS_SECRET_KEY")),
+	})
+
 
 	vpc.NewVpc(stack, jsii.String("main"), &vpc.VpcConfig{
 		CidrBlock: jsii.String("10.0.0.0/16"),

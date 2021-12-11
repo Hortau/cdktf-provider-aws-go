@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnection",
+		"hashicorp_aws.codestar.CodestarconnectionsConnection",
 		reflect.TypeOf((*CodestarconnectionsConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -61,11 +61,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.CodestarconnectionsConnectionConfig",
+		"hashicorp_aws.codestar.CodestarconnectionsConnectionConfig",
 		reflect.TypeOf((*CodestarconnectionsConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHost",
+		"hashicorp_aws.codestar.CodestarconnectionsHost",
 		reflect.TypeOf((*CodestarconnectionsHost)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -114,21 +114,22 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHostConfig",
+		"hashicorp_aws.codestar.CodestarconnectionsHostConfig",
 		reflect.TypeOf((*CodestarconnectionsHostConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHostVpcConfiguration",
+		"hashicorp_aws.codestar.CodestarconnectionsHostVpcConfiguration",
 		reflect.TypeOf((*CodestarconnectionsHostVpcConfiguration)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeStar.CodestarconnectionsHostVpcConfigurationOutputReference",
+		"hashicorp_aws.codestar.CodestarconnectionsHostVpcConfigurationOutputReference",
 		reflect.TypeOf((*CodestarconnectionsHostVpcConfigurationOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -151,7 +152,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRule",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRule",
 		reflect.TypeOf((*CodestarnotificationsNotificationRule)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -209,15 +210,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRuleConfig",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRuleConfig",
 		reflect.TypeOf((*CodestarnotificationsNotificationRuleConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.CodestarnotificationsNotificationRuleTarget",
+		"hashicorp_aws.codestar.CodestarnotificationsNotificationRuleTarget",
 		reflect.TypeOf((*CodestarnotificationsNotificationRuleTarget)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnection",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnection",
 		reflect.TypeOf((*DataAwsCodestarconnectionsConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -263,7 +264,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.CodeStar.DataAwsCodestarconnectionsConnectionConfig",
+		"hashicorp_aws.codestar.DataAwsCodestarconnectionsConnectionConfig",
 		reflect.TypeOf((*DataAwsCodestarconnectionsConnectionConfig)(nil)).Elem(),
 	)
 }

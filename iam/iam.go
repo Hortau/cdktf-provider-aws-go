@@ -207,7 +207,7 @@ func NewDataAwsIamAccountAlias(scope constructs.Construct, id *string, config *D
 	j := jsiiProxy_DataAwsIamAccountAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamAccountAlias",
+		"hashicorp_aws.iam.DataAwsIamAccountAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -220,7 +220,7 @@ func NewDataAwsIamAccountAlias_Override(d DataAwsIamAccountAlias, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamAccountAlias",
+		"hashicorp_aws.iam.DataAwsIamAccountAlias",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -268,7 +268,7 @@ func DataAwsIamAccountAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamAccountAlias",
+		"hashicorp_aws.iam.DataAwsIamAccountAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -281,7 +281,7 @@ func DataAwsIamAccountAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamAccountAlias",
+		"hashicorp_aws.iam.DataAwsIamAccountAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -443,6 +443,7 @@ func (d *jsiiProxy_DataAwsIamAccountAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamAccountAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -698,7 +699,7 @@ func NewDataAwsIamGroup(scope constructs.Construct, id *string, config *DataAwsI
 	j := jsiiProxy_DataAwsIamGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamGroup",
+		"hashicorp_aws.iam.DataAwsIamGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -711,7 +712,7 @@ func NewDataAwsIamGroup_Override(d DataAwsIamGroup, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamGroup",
+		"hashicorp_aws.iam.DataAwsIamGroup",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -767,7 +768,7 @@ func DataAwsIamGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamGroup",
+		"hashicorp_aws.iam.DataAwsIamGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -780,7 +781,7 @@ func DataAwsIamGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamGroup",
+		"hashicorp_aws.iam.DataAwsIamGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -955,6 +956,7 @@ func (d *jsiiProxy_DataAwsIamGroup) Users(index *string) DataAwsIamGroupUsers {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1069,7 +1071,7 @@ func NewDataAwsIamGroupUsers(terraformResource cdktf.ITerraformResource, terrafo
 	j := jsiiProxy_DataAwsIamGroupUsers{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamGroupUsers",
+		"hashicorp_aws.iam.DataAwsIamGroupUsers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1082,7 +1084,7 @@ func NewDataAwsIamGroupUsers_Override(d DataAwsIamGroupUsers, terraformResource 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamGroupUsers",
+		"hashicorp_aws.iam.DataAwsIamGroupUsers",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1458,7 +1460,7 @@ func NewDataAwsIamInstanceProfile(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DataAwsIamInstanceProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfile",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1471,7 +1473,7 @@ func NewDataAwsIamInstanceProfile_Override(d DataAwsIamInstanceProfile, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfile",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfile",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1527,7 +1529,7 @@ func DataAwsIamInstanceProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfile",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1540,7 +1542,7 @@ func DataAwsIamInstanceProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamInstanceProfile",
+		"hashicorp_aws.iam.DataAwsIamInstanceProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -1702,6 +1704,7 @@ func (d *jsiiProxy_DataAwsIamInstanceProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamInstanceProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2029,7 +2032,7 @@ func NewDataAwsIamPolicy(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsIamPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamPolicy",
+		"hashicorp_aws.iam.DataAwsIamPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2042,7 +2045,7 @@ func NewDataAwsIamPolicy_Override(d DataAwsIamPolicy, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamPolicy",
+		"hashicorp_aws.iam.DataAwsIamPolicy",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2114,7 +2117,7 @@ func DataAwsIamPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamPolicy",
+		"hashicorp_aws.iam.DataAwsIamPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2127,7 +2130,7 @@ func DataAwsIamPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamPolicy",
+		"hashicorp_aws.iam.DataAwsIamPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -2313,6 +2316,7 @@ func (d *jsiiProxy_DataAwsIamPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2696,7 +2700,7 @@ func NewDataAwsIamPolicyDocument(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsIamPolicyDocument{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocument",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocument",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2709,7 +2713,7 @@ func NewDataAwsIamPolicyDocument_Override(d DataAwsIamPolicyDocument, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocument",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocument",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2813,7 +2817,7 @@ func DataAwsIamPolicyDocument_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocument",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocument",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2826,7 +2830,7 @@ func DataAwsIamPolicyDocument_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamPolicyDocument",
+		"hashicorp_aws.iam.DataAwsIamPolicyDocument",
 		"tfResourceType",
 		&returns,
 	)
@@ -3044,6 +3048,7 @@ func (d *jsiiProxy_DataAwsIamPolicyDocument) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamPolicyDocumentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3443,7 +3448,7 @@ func NewDataAwsIamRole(scope constructs.Construct, id *string, config *DataAwsIa
 	j := jsiiProxy_DataAwsIamRole{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamRole",
+		"hashicorp_aws.iam.DataAwsIamRole",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3456,7 +3461,7 @@ func NewDataAwsIamRole_Override(d DataAwsIamRole, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamRole",
+		"hashicorp_aws.iam.DataAwsIamRole",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3520,7 +3525,7 @@ func DataAwsIamRole_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamRole",
+		"hashicorp_aws.iam.DataAwsIamRole",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3533,7 +3538,7 @@ func DataAwsIamRole_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamRole",
+		"hashicorp_aws.iam.DataAwsIamRole",
 		"tfResourceType",
 		&returns,
 	)
@@ -3703,6 +3708,7 @@ func (d *jsiiProxy_DataAwsIamRole) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamRoleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3975,7 +3981,7 @@ func NewDataAwsIamRoles(scope constructs.Construct, id *string, config *DataAwsI
 	j := jsiiProxy_DataAwsIamRoles{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamRoles",
+		"hashicorp_aws.iam.DataAwsIamRoles",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3988,7 +3994,7 @@ func NewDataAwsIamRoles_Override(d DataAwsIamRoles, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamRoles",
+		"hashicorp_aws.iam.DataAwsIamRoles",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4052,7 +4058,7 @@ func DataAwsIamRoles_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamRoles",
+		"hashicorp_aws.iam.DataAwsIamRoles",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4065,7 +4071,7 @@ func DataAwsIamRoles_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamRoles",
+		"hashicorp_aws.iam.DataAwsIamRoles",
 		"tfResourceType",
 		&returns,
 	)
@@ -4243,6 +4249,7 @@ func (d *jsiiProxy_DataAwsIamRoles) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamRolesConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4607,7 +4614,7 @@ func NewDataAwsIamServerCertificate(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_DataAwsIamServerCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificate",
+		"hashicorp_aws.iam.DataAwsIamServerCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4620,7 +4627,7 @@ func NewDataAwsIamServerCertificate_Override(d DataAwsIamServerCertificate, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificate",
+		"hashicorp_aws.iam.DataAwsIamServerCertificate",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4700,7 +4707,7 @@ func DataAwsIamServerCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificate",
+		"hashicorp_aws.iam.DataAwsIamServerCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4713,7 +4720,7 @@ func DataAwsIamServerCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamServerCertificate",
+		"hashicorp_aws.iam.DataAwsIamServerCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -4907,6 +4914,7 @@ func (d *jsiiProxy_DataAwsIamServerCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamServerCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5180,7 +5188,7 @@ func NewDataAwsIamSessionContext(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DataAwsIamSessionContext{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamSessionContext",
+		"hashicorp_aws.iam.DataAwsIamSessionContext",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5193,7 +5201,7 @@ func NewDataAwsIamSessionContext_Override(d DataAwsIamSessionContext, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamSessionContext",
+		"hashicorp_aws.iam.DataAwsIamSessionContext",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5249,7 +5257,7 @@ func DataAwsIamSessionContext_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamSessionContext",
+		"hashicorp_aws.iam.DataAwsIamSessionContext",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5262,7 +5270,7 @@ func DataAwsIamSessionContext_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamSessionContext",
+		"hashicorp_aws.iam.DataAwsIamSessionContext",
 		"tfResourceType",
 		&returns,
 	)
@@ -5424,6 +5432,7 @@ func (d *jsiiProxy_DataAwsIamSessionContext) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamSessionContextConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5715,7 +5724,7 @@ func NewDataAwsIamUser(scope constructs.Construct, id *string, config *DataAwsIa
 	j := jsiiProxy_DataAwsIamUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUser",
+		"hashicorp_aws.iam.DataAwsIamUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5728,7 +5737,7 @@ func NewDataAwsIamUser_Override(d DataAwsIamUser, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUser",
+		"hashicorp_aws.iam.DataAwsIamUser",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5792,7 +5801,7 @@ func DataAwsIamUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamUser",
+		"hashicorp_aws.iam.DataAwsIamUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5805,7 +5814,7 @@ func DataAwsIamUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamUser",
+		"hashicorp_aws.iam.DataAwsIamUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -5975,6 +5984,7 @@ func (d *jsiiProxy_DataAwsIamUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6279,7 +6289,7 @@ func NewDataAwsIamUserSshKey(scope constructs.Construct, id *string, config *Dat
 	j := jsiiProxy_DataAwsIamUserSshKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKey",
+		"hashicorp_aws.iam.DataAwsIamUserSshKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6292,7 +6302,7 @@ func NewDataAwsIamUserSshKey_Override(d DataAwsIamUserSshKey, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKey",
+		"hashicorp_aws.iam.DataAwsIamUserSshKey",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6364,7 +6374,7 @@ func DataAwsIamUserSshKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKey",
+		"hashicorp_aws.iam.DataAwsIamUserSshKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6377,7 +6387,7 @@ func DataAwsIamUserSshKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamUserSshKey",
+		"hashicorp_aws.iam.DataAwsIamUserSshKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -6539,6 +6549,7 @@ func (d *jsiiProxy_DataAwsIamUserSshKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamUserSshKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6813,7 +6824,7 @@ func NewDataAwsIamUsers(scope constructs.Construct, id *string, config *DataAwsI
 	j := jsiiProxy_DataAwsIamUsers{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUsers",
+		"hashicorp_aws.iam.DataAwsIamUsers",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6826,7 +6837,7 @@ func NewDataAwsIamUsers_Override(d DataAwsIamUsers, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.DataAwsIamUsers",
+		"hashicorp_aws.iam.DataAwsIamUsers",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6890,7 +6901,7 @@ func DataAwsIamUsers_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.DataAwsIamUsers",
+		"hashicorp_aws.iam.DataAwsIamUsers",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6903,7 +6914,7 @@ func DataAwsIamUsers_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.DataAwsIamUsers",
+		"hashicorp_aws.iam.DataAwsIamUsers",
 		"tfResourceType",
 		&returns,
 	)
@@ -7081,6 +7092,7 @@ func (d *jsiiProxy_DataAwsIamUsers) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type DataAwsIamUsersConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7420,7 +7432,7 @@ func NewIamAccessKey(scope constructs.Construct, id *string, config *IamAccessKe
 	j := jsiiProxy_IamAccessKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccessKey",
+		"hashicorp_aws.iam.IamAccessKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7433,7 +7445,7 @@ func NewIamAccessKey_Override(i IamAccessKey, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccessKey",
+		"hashicorp_aws.iam.IamAccessKey",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -7505,7 +7517,7 @@ func IamAccessKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamAccessKey",
+		"hashicorp_aws.iam.IamAccessKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7518,7 +7530,7 @@ func IamAccessKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamAccessKey",
+		"hashicorp_aws.iam.IamAccessKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -7696,6 +7708,7 @@ func (i *jsiiProxy_IamAccessKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamAccessKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7923,7 +7936,7 @@ func NewIamAccountAlias(scope constructs.Construct, id *string, config *IamAccou
 	j := jsiiProxy_IamAccountAlias{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccountAlias",
+		"hashicorp_aws.iam.IamAccountAlias",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7936,7 +7949,7 @@ func NewIamAccountAlias_Override(i IamAccountAlias, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccountAlias",
+		"hashicorp_aws.iam.IamAccountAlias",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -7992,7 +8005,7 @@ func IamAccountAlias_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamAccountAlias",
+		"hashicorp_aws.iam.IamAccountAlias",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8005,7 +8018,7 @@ func IamAccountAlias_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamAccountAlias",
+		"hashicorp_aws.iam.IamAccountAlias",
 		"tfResourceType",
 		&returns,
 	)
@@ -8167,6 +8180,7 @@ func (i *jsiiProxy_IamAccountAlias) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamAccountAliasConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8594,7 +8608,7 @@ func NewIamAccountPasswordPolicy(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_IamAccountPasswordPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicy",
+		"hashicorp_aws.iam.IamAccountPasswordPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8607,7 +8621,7 @@ func NewIamAccountPasswordPolicy_Override(i IamAccountPasswordPolicy, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicy",
+		"hashicorp_aws.iam.IamAccountPasswordPolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -8727,7 +8741,7 @@ func IamAccountPasswordPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicy",
+		"hashicorp_aws.iam.IamAccountPasswordPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8740,7 +8754,7 @@ func IamAccountPasswordPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamAccountPasswordPolicy",
+		"hashicorp_aws.iam.IamAccountPasswordPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -8974,6 +8988,7 @@ func (i *jsiiProxy_IamAccountPasswordPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamAccountPasswordPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9259,7 +9274,7 @@ func NewIamGroup(scope constructs.Construct, id *string, config *IamGroupConfig)
 	j := jsiiProxy_IamGroup{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroup",
+		"hashicorp_aws.iam.IamGroup",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9272,7 +9287,7 @@ func NewIamGroup_Override(i IamGroup, scope constructs.Construct, id *string, co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroup",
+		"hashicorp_aws.iam.IamGroup",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -9336,7 +9351,7 @@ func IamGroup_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamGroup",
+		"hashicorp_aws.iam.IamGroup",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9349,7 +9364,7 @@ func IamGroup_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamGroup",
+		"hashicorp_aws.iam.IamGroup",
 		"tfResourceType",
 		&returns,
 	)
@@ -9519,6 +9534,7 @@ func (i *jsiiProxy_IamGroup) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamGroupConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9790,7 +9806,7 @@ func NewIamGroupMembership(scope constructs.Construct, id *string, config *IamGr
 	j := jsiiProxy_IamGroupMembership{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupMembership",
+		"hashicorp_aws.iam.IamGroupMembership",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9803,7 +9819,7 @@ func NewIamGroupMembership_Override(i IamGroupMembership, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupMembership",
+		"hashicorp_aws.iam.IamGroupMembership",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -9875,7 +9891,7 @@ func IamGroupMembership_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamGroupMembership",
+		"hashicorp_aws.iam.IamGroupMembership",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9888,7 +9904,7 @@ func IamGroupMembership_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamGroupMembership",
+		"hashicorp_aws.iam.IamGroupMembership",
 		"tfResourceType",
 		&returns,
 	)
@@ -10050,6 +10066,7 @@ func (i *jsiiProxy_IamGroupMembership) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamGroupMembershipConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10348,7 +10365,7 @@ func NewIamGroupPolicy(scope constructs.Construct, id *string, config *IamGroupP
 	j := jsiiProxy_IamGroupPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupPolicy",
+		"hashicorp_aws.iam.IamGroupPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10361,7 +10378,7 @@ func NewIamGroupPolicy_Override(i IamGroupPolicy, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupPolicy",
+		"hashicorp_aws.iam.IamGroupPolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -10441,7 +10458,7 @@ func IamGroupPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamGroupPolicy",
+		"hashicorp_aws.iam.IamGroupPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10454,7 +10471,7 @@ func IamGroupPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamGroupPolicy",
+		"hashicorp_aws.iam.IamGroupPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -10865,7 +10882,7 @@ func NewIamGroupPolicyAttachment(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_IamGroupPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachment",
+		"hashicorp_aws.iam.IamGroupPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10878,7 +10895,7 @@ func NewIamGroupPolicyAttachment_Override(i IamGroupPolicyAttachment, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachment",
+		"hashicorp_aws.iam.IamGroupPolicyAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -10942,7 +10959,7 @@ func IamGroupPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachment",
+		"hashicorp_aws.iam.IamGroupPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10955,7 +10972,7 @@ func IamGroupPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamGroupPolicyAttachment",
+		"hashicorp_aws.iam.IamGroupPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -11117,6 +11134,7 @@ func (i *jsiiProxy_IamGroupPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamGroupPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11132,6 +11150,7 @@ type IamGroupPolicyAttachmentConfig struct {
 	PolicyArn *string `json:"policyArn"`
 }
 
+// AWS Identity and Access Management.
 type IamGroupPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11515,7 +11534,7 @@ func NewIamInstanceProfile(scope constructs.Construct, id *string, config *IamIn
 	j := jsiiProxy_IamInstanceProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamInstanceProfile",
+		"hashicorp_aws.iam.IamInstanceProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11528,7 +11547,7 @@ func NewIamInstanceProfile_Override(i IamInstanceProfile, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamInstanceProfile",
+		"hashicorp_aws.iam.IamInstanceProfile",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -11624,7 +11643,7 @@ func IamInstanceProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamInstanceProfile",
+		"hashicorp_aws.iam.IamInstanceProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11637,7 +11656,7 @@ func IamInstanceProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamInstanceProfile",
+		"hashicorp_aws.iam.IamInstanceProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -11847,6 +11866,7 @@ func (i *jsiiProxy_IamInstanceProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamInstanceProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12185,7 +12205,7 @@ func NewIamOpenidConnectProvider(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_IamOpenidConnectProvider{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamOpenidConnectProvider",
+		"hashicorp_aws.iam.IamOpenidConnectProvider",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12198,7 +12218,7 @@ func NewIamOpenidConnectProvider_Override(i IamOpenidConnectProvider, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamOpenidConnectProvider",
+		"hashicorp_aws.iam.IamOpenidConnectProvider",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -12286,7 +12306,7 @@ func IamOpenidConnectProvider_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamOpenidConnectProvider",
+		"hashicorp_aws.iam.IamOpenidConnectProvider",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12299,7 +12319,7 @@ func IamOpenidConnectProvider_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamOpenidConnectProvider",
+		"hashicorp_aws.iam.IamOpenidConnectProvider",
 		"tfResourceType",
 		&returns,
 	)
@@ -12477,6 +12497,7 @@ func (i *jsiiProxy_IamOpenidConnectProvider) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamOpenidConnectProviderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -12874,7 +12895,7 @@ func NewIamPolicy(scope constructs.Construct, id *string, config *IamPolicyConfi
 	j := jsiiProxy_IamPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamPolicy",
+		"hashicorp_aws.iam.IamPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12887,7 +12908,7 @@ func NewIamPolicy_Override(i IamPolicy, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamPolicy",
+		"hashicorp_aws.iam.IamPolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -12991,7 +13012,7 @@ func IamPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamPolicy",
+		"hashicorp_aws.iam.IamPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13004,7 +13025,7 @@ func IamPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamPolicy",
+		"hashicorp_aws.iam.IamPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -13519,7 +13540,7 @@ func NewIamPolicyAttachment(scope constructs.Construct, id *string, config *IamP
 	j := jsiiProxy_IamPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamPolicyAttachment",
+		"hashicorp_aws.iam.IamPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13532,7 +13553,7 @@ func NewIamPolicyAttachment_Override(i IamPolicyAttachment, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamPolicyAttachment",
+		"hashicorp_aws.iam.IamPolicyAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -13620,7 +13641,7 @@ func IamPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamPolicyAttachment",
+		"hashicorp_aws.iam.IamPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13633,7 +13654,7 @@ func IamPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamPolicyAttachment",
+		"hashicorp_aws.iam.IamPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -13819,6 +13840,7 @@ func (i *jsiiProxy_IamPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13840,6 +13862,7 @@ type IamPolicyAttachmentConfig struct {
 	Users *[]*string `json:"users"`
 }
 
+// AWS Identity and Access Management.
 type IamPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -14372,7 +14395,7 @@ func NewIamRole(scope constructs.Construct, id *string, config *IamRoleConfig) I
 	j := jsiiProxy_IamRole{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRole",
+		"hashicorp_aws.iam.IamRole",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14385,7 +14408,7 @@ func NewIamRole_Override(i IamRole, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRole",
+		"hashicorp_aws.iam.IamRole",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -14529,7 +14552,7 @@ func IamRole_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamRole",
+		"hashicorp_aws.iam.IamRole",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14542,7 +14565,7 @@ func IamRole_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamRole",
+		"hashicorp_aws.iam.IamRole",
 		"tfResourceType",
 		&returns,
 	)
@@ -14792,6 +14815,7 @@ func (i *jsiiProxy_IamRole) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamRoleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15117,7 +15141,7 @@ func NewIamRolePolicy(scope constructs.Construct, id *string, config *IamRolePol
 	j := jsiiProxy_IamRolePolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRolePolicy",
+		"hashicorp_aws.iam.IamRolePolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15130,7 +15154,7 @@ func NewIamRolePolicy_Override(i IamRolePolicy, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRolePolicy",
+		"hashicorp_aws.iam.IamRolePolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -15210,7 +15234,7 @@ func IamRolePolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamRolePolicy",
+		"hashicorp_aws.iam.IamRolePolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15223,7 +15247,7 @@ func IamRolePolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamRolePolicy",
+		"hashicorp_aws.iam.IamRolePolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -15634,7 +15658,7 @@ func NewIamRolePolicyAttachment(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_IamRolePolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRolePolicyAttachment",
+		"hashicorp_aws.iam.IamRolePolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15647,7 +15671,7 @@ func NewIamRolePolicyAttachment_Override(i IamRolePolicyAttachment, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamRolePolicyAttachment",
+		"hashicorp_aws.iam.IamRolePolicyAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -15711,7 +15735,7 @@ func IamRolePolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamRolePolicyAttachment",
+		"hashicorp_aws.iam.IamRolePolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15724,7 +15748,7 @@ func IamRolePolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamRolePolicyAttachment",
+		"hashicorp_aws.iam.IamRolePolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -15886,6 +15910,7 @@ func (i *jsiiProxy_IamRolePolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamRolePolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15901,6 +15926,7 @@ type IamRolePolicyAttachmentConfig struct {
 	Role *string `json:"role"`
 }
 
+// AWS Identity and Access Management.
 type IamRolePolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16223,7 +16249,7 @@ func NewIamSamlProvider(scope constructs.Construct, id *string, config *IamSamlP
 	j := jsiiProxy_IamSamlProvider{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamSamlProvider",
+		"hashicorp_aws.iam.IamSamlProvider",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16236,7 +16262,7 @@ func NewIamSamlProvider_Override(i IamSamlProvider, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamSamlProvider",
+		"hashicorp_aws.iam.IamSamlProvider",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -16316,7 +16342,7 @@ func IamSamlProvider_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamSamlProvider",
+		"hashicorp_aws.iam.IamSamlProvider",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16329,7 +16355,7 @@ func IamSamlProvider_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamSamlProvider",
+		"hashicorp_aws.iam.IamSamlProvider",
 		"tfResourceType",
 		&returns,
 	)
@@ -16507,6 +16533,7 @@ func (i *jsiiProxy_IamSamlProvider) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamSamlProviderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -16936,7 +16963,7 @@ func NewIamServerCertificate(scope constructs.Construct, id *string, config *Iam
 	j := jsiiProxy_IamServerCertificate{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamServerCertificate",
+		"hashicorp_aws.iam.IamServerCertificate",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16949,7 +16976,7 @@ func NewIamServerCertificate_Override(i IamServerCertificate, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamServerCertificate",
+		"hashicorp_aws.iam.IamServerCertificate",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -17061,7 +17088,7 @@ func IamServerCertificate_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamServerCertificate",
+		"hashicorp_aws.iam.IamServerCertificate",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17074,7 +17101,7 @@ func IamServerCertificate_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamServerCertificate",
+		"hashicorp_aws.iam.IamServerCertificate",
 		"tfResourceType",
 		&returns,
 	)
@@ -17284,6 +17311,7 @@ func (i *jsiiProxy_IamServerCertificate) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamServerCertificateConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17624,7 +17652,7 @@ func NewIamServiceLinkedRole(scope constructs.Construct, id *string, config *Iam
 	j := jsiiProxy_IamServiceLinkedRole{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamServiceLinkedRole",
+		"hashicorp_aws.iam.IamServiceLinkedRole",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17637,7 +17665,7 @@ func NewIamServiceLinkedRole_Override(i IamServiceLinkedRole, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamServiceLinkedRole",
+		"hashicorp_aws.iam.IamServiceLinkedRole",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -17709,7 +17737,7 @@ func IamServiceLinkedRole_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamServiceLinkedRole",
+		"hashicorp_aws.iam.IamServiceLinkedRole",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -17722,7 +17750,7 @@ func IamServiceLinkedRole_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamServiceLinkedRole",
+		"hashicorp_aws.iam.IamServiceLinkedRole",
 		"tfResourceType",
 		&returns,
 	)
@@ -17900,6 +17928,7 @@ func (i *jsiiProxy_IamServiceLinkedRole) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamServiceLinkedRoleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18269,7 +18298,7 @@ func NewIamUser(scope constructs.Construct, id *string, config *IamUserConfig) I
 	j := jsiiProxy_IamUser{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUser",
+		"hashicorp_aws.iam.IamUser",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18282,7 +18311,7 @@ func NewIamUser_Override(i IamUser, scope constructs.Construct, id *string, conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUser",
+		"hashicorp_aws.iam.IamUser",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -18378,7 +18407,7 @@ func IamUser_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUser",
+		"hashicorp_aws.iam.IamUser",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18391,7 +18420,7 @@ func IamUser_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUser",
+		"hashicorp_aws.iam.IamUser",
 		"tfResourceType",
 		&returns,
 	)
@@ -18593,6 +18622,7 @@ func (i *jsiiProxy_IamUser) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamUserConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18851,7 +18881,7 @@ func NewIamUserGroupMembership(scope constructs.Construct, id *string, config *I
 	j := jsiiProxy_IamUserGroupMembership{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserGroupMembership",
+		"hashicorp_aws.iam.IamUserGroupMembership",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -18864,7 +18894,7 @@ func NewIamUserGroupMembership_Override(i IamUserGroupMembership, scope construc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserGroupMembership",
+		"hashicorp_aws.iam.IamUserGroupMembership",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -18928,7 +18958,7 @@ func IamUserGroupMembership_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUserGroupMembership",
+		"hashicorp_aws.iam.IamUserGroupMembership",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18941,7 +18971,7 @@ func IamUserGroupMembership_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUserGroupMembership",
+		"hashicorp_aws.iam.IamUserGroupMembership",
 		"tfResourceType",
 		&returns,
 	)
@@ -19103,6 +19133,7 @@ func (i *jsiiProxy_IamUserGroupMembership) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamUserGroupMembershipConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -19421,7 +19452,7 @@ func NewIamUserLoginProfile(scope constructs.Construct, id *string, config *IamU
 	j := jsiiProxy_IamUserLoginProfile{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserLoginProfile",
+		"hashicorp_aws.iam.IamUserLoginProfile",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -19434,7 +19465,7 @@ func NewIamUserLoginProfile_Override(i IamUserLoginProfile, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserLoginProfile",
+		"hashicorp_aws.iam.IamUserLoginProfile",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -19514,7 +19545,7 @@ func IamUserLoginProfile_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUserLoginProfile",
+		"hashicorp_aws.iam.IamUserLoginProfile",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -19527,7 +19558,7 @@ func IamUserLoginProfile_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUserLoginProfile",
+		"hashicorp_aws.iam.IamUserLoginProfile",
 		"tfResourceType",
 		&returns,
 	)
@@ -19705,6 +19736,7 @@ func (i *jsiiProxy_IamUserLoginProfile) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamUserLoginProfileConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20005,7 +20037,7 @@ func NewIamUserPolicy(scope constructs.Construct, id *string, config *IamUserPol
 	j := jsiiProxy_IamUserPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserPolicy",
+		"hashicorp_aws.iam.IamUserPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20018,7 +20050,7 @@ func NewIamUserPolicy_Override(i IamUserPolicy, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserPolicy",
+		"hashicorp_aws.iam.IamUserPolicy",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -20098,7 +20130,7 @@ func IamUserPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUserPolicy",
+		"hashicorp_aws.iam.IamUserPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20111,7 +20143,7 @@ func IamUserPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUserPolicy",
+		"hashicorp_aws.iam.IamUserPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -20522,7 +20554,7 @@ func NewIamUserPolicyAttachment(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_IamUserPolicyAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserPolicyAttachment",
+		"hashicorp_aws.iam.IamUserPolicyAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -20535,7 +20567,7 @@ func NewIamUserPolicyAttachment_Override(i IamUserPolicyAttachment, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserPolicyAttachment",
+		"hashicorp_aws.iam.IamUserPolicyAttachment",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -20599,7 +20631,7 @@ func IamUserPolicyAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUserPolicyAttachment",
+		"hashicorp_aws.iam.IamUserPolicyAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -20612,7 +20644,7 @@ func IamUserPolicyAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUserPolicyAttachment",
+		"hashicorp_aws.iam.IamUserPolicyAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -20774,6 +20806,7 @@ func (i *jsiiProxy_IamUserPolicyAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamUserPolicyAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -20789,6 +20822,7 @@ type IamUserPolicyAttachmentConfig struct {
 	User *string `json:"user"`
 }
 
+// AWS Identity and Access Management.
 type IamUserPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -21110,7 +21144,7 @@ func NewIamUserSshKey(scope constructs.Construct, id *string, config *IamUserSsh
 	j := jsiiProxy_IamUserSshKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserSshKey",
+		"hashicorp_aws.iam.IamUserSshKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -21123,7 +21157,7 @@ func NewIamUserSshKey_Override(i IamUserSshKey, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.IAM.IamUserSshKey",
+		"hashicorp_aws.iam.IamUserSshKey",
 		[]interface{}{scope, id, config},
 		i,
 	)
@@ -21203,7 +21237,7 @@ func IamUserSshKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.IAM.IamUserSshKey",
+		"hashicorp_aws.iam.IamUserSshKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -21216,7 +21250,7 @@ func IamUserSshKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.IAM.IamUserSshKey",
+		"hashicorp_aws.iam.IamUserSshKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -21386,6 +21420,7 @@ func (i *jsiiProxy_IamUserSshKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Identity and Access Management.
 type IamUserSshKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

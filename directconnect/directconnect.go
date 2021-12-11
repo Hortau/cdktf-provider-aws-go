@@ -309,7 +309,7 @@ func NewDataAwsDxConnection(scope constructs.Construct, id *string, config *Data
 	j := jsiiProxy_DataAwsDxConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnection",
+		"hashicorp_aws.directconnect.DataAwsDxConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -322,7 +322,7 @@ func NewDataAwsDxConnection_Override(d DataAwsDxConnection, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnection",
+		"hashicorp_aws.directconnect.DataAwsDxConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -386,7 +386,7 @@ func DataAwsDxConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnection",
+		"hashicorp_aws.directconnect.DataAwsDxConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -399,7 +399,7 @@ func DataAwsDxConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnection",
+		"hashicorp_aws.directconnect.DataAwsDxConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -569,6 +569,7 @@ func (d *jsiiProxy_DataAwsDxConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DataAwsDxConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -816,7 +817,7 @@ func NewDataAwsDxGateway(scope constructs.Construct, id *string, config *DataAws
 	j := jsiiProxy_DataAwsDxGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxGateway",
+		"hashicorp_aws.directconnect.DataAwsDxGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -829,7 +830,7 @@ func NewDataAwsDxGateway_Override(d DataAwsDxGateway, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxGateway",
+		"hashicorp_aws.directconnect.DataAwsDxGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -885,7 +886,7 @@ func DataAwsDxGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DataAwsDxGateway",
+		"hashicorp_aws.directconnect.DataAwsDxGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -898,7 +899,7 @@ func DataAwsDxGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DataAwsDxGateway",
+		"hashicorp_aws.directconnect.DataAwsDxGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -1060,6 +1061,7 @@ func (d *jsiiProxy_DataAwsDxGateway) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DataAwsDxGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1316,7 +1318,7 @@ func NewDataAwsDxLocation(scope constructs.Construct, id *string, config *DataAw
 	j := jsiiProxy_DataAwsDxLocation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocation",
+		"hashicorp_aws.directconnect.DataAwsDxLocation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1329,7 +1331,7 @@ func NewDataAwsDxLocation_Override(d DataAwsDxLocation, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocation",
+		"hashicorp_aws.directconnect.DataAwsDxLocation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1385,7 +1387,7 @@ func DataAwsDxLocation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocation",
+		"hashicorp_aws.directconnect.DataAwsDxLocation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1398,7 +1400,7 @@ func DataAwsDxLocation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocation",
+		"hashicorp_aws.directconnect.DataAwsDxLocation",
 		"tfResourceType",
 		&returns,
 	)
@@ -1560,6 +1562,7 @@ func (d *jsiiProxy_DataAwsDxLocation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DataAwsDxLocationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1771,7 +1774,7 @@ func NewDataAwsDxLocations(scope constructs.Construct, id *string, config *DataA
 	j := jsiiProxy_DataAwsDxLocations{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocations",
+		"hashicorp_aws.directconnect.DataAwsDxLocations",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1784,7 +1787,7 @@ func NewDataAwsDxLocations_Override(d DataAwsDxLocations, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocations",
+		"hashicorp_aws.directconnect.DataAwsDxLocations",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -1832,7 +1835,7 @@ func DataAwsDxLocations_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocations",
+		"hashicorp_aws.directconnect.DataAwsDxLocations",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1845,7 +1848,7 @@ func DataAwsDxLocations_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocations",
+		"hashicorp_aws.directconnect.DataAwsDxLocations",
 		"tfResourceType",
 		&returns,
 	)
@@ -2007,6 +2010,7 @@ func (d *jsiiProxy_DataAwsDxLocations) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DataAwsDxLocationsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2403,7 +2407,7 @@ func NewDxBgpPeer(scope constructs.Construct, id *string, config *DxBgpPeerConfi
 	j := jsiiProxy_DxBgpPeer{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxBgpPeer",
+		"hashicorp_aws.directconnect.DxBgpPeer",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2416,7 +2420,7 @@ func NewDxBgpPeer_Override(d DxBgpPeer, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxBgpPeer",
+		"hashicorp_aws.directconnect.DxBgpPeer",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -2512,7 +2516,7 @@ func DxBgpPeer_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxBgpPeer",
+		"hashicorp_aws.directconnect.DxBgpPeer",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2525,7 +2529,7 @@ func DxBgpPeer_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxBgpPeer",
+		"hashicorp_aws.directconnect.DxBgpPeer",
 		"tfResourceType",
 		&returns,
 	)
@@ -2727,6 +2731,7 @@ func (d *jsiiProxy_DxBgpPeer) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxBgpPeerConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2769,6 +2774,8 @@ type DxBgpPeerTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxBgpPeerTimeouts
+	SetInternalValue(val *DxBgpPeerTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2830,6 +2837,16 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) InternalValue() *DxBgpPeerTimeouts {
+	var returns *DxBgpPeerTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2866,7 +2883,7 @@ func NewDxBgpPeerTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DxBgpPeerTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxBgpPeerTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxBgpPeerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2878,7 +2895,7 @@ func NewDxBgpPeerTimeoutsOutputReference_Override(d DxBgpPeerTimeoutsOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxBgpPeerTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxBgpPeerTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -2896,6 +2913,14 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetInternalValue(val *DxBgpPeerTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3407,7 +3432,7 @@ func NewDxConnection(scope constructs.Construct, id *string, config *DxConnectio
 	j := jsiiProxy_DxConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnection",
+		"hashicorp_aws.directconnect.DxConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3420,7 +3445,7 @@ func NewDxConnection_Override(d DxConnection, scope constructs.Construct, id *st
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnection",
+		"hashicorp_aws.directconnect.DxConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -3516,7 +3541,7 @@ func DxConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxConnection",
+		"hashicorp_aws.directconnect.DxConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3529,7 +3554,7 @@ func DxConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxConnection",
+		"hashicorp_aws.directconnect.DxConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -3948,7 +3973,7 @@ func NewDxConnectionAssociation(scope constructs.Construct, id *string, config *
 	j := jsiiProxy_DxConnectionAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociation",
+		"hashicorp_aws.directconnect.DxConnectionAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3961,7 +3986,7 @@ func NewDxConnectionAssociation_Override(d DxConnectionAssociation, scope constr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociation",
+		"hashicorp_aws.directconnect.DxConnectionAssociation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4025,7 +4050,7 @@ func DxConnectionAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociation",
+		"hashicorp_aws.directconnect.DxConnectionAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4038,7 +4063,7 @@ func DxConnectionAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociation",
+		"hashicorp_aws.directconnect.DxConnectionAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4200,6 +4225,7 @@ func (d *jsiiProxy_DxConnectionAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxConnectionAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4215,6 +4241,7 @@ type DxConnectionAssociationConfig struct {
 	LagId *string `json:"lagId"`
 }
 
+// AWS Direct Connect.
 type DxConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4448,7 +4475,7 @@ func NewDxConnectionConfirmation(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DxConnectionConfirmation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmation",
+		"hashicorp_aws.directconnect.DxConnectionConfirmation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4461,7 +4488,7 @@ func NewDxConnectionConfirmation_Override(d DxConnectionConfirmation, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmation",
+		"hashicorp_aws.directconnect.DxConnectionConfirmation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -4517,7 +4544,7 @@ func DxConnectionConfirmation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmation",
+		"hashicorp_aws.directconnect.DxConnectionConfirmation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4530,7 +4557,7 @@ func DxConnectionConfirmation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmation",
+		"hashicorp_aws.directconnect.DxConnectionConfirmation",
 		"tfResourceType",
 		&returns,
 	)
@@ -4692,6 +4719,7 @@ func (d *jsiiProxy_DxConnectionConfirmation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxConnectionConfirmationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4973,7 +5001,7 @@ func NewDxGateway(scope constructs.Construct, id *string, config *DxGatewayConfi
 	j := jsiiProxy_DxGateway{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGateway",
+		"hashicorp_aws.directconnect.DxGateway",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4986,7 +5014,7 @@ func NewDxGateway_Override(d DxGateway, scope constructs.Construct, id *string, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGateway",
+		"hashicorp_aws.directconnect.DxGateway",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5050,7 +5078,7 @@ func DxGateway_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxGateway",
+		"hashicorp_aws.directconnect.DxGateway",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5063,7 +5091,7 @@ func DxGateway_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxGateway",
+		"hashicorp_aws.directconnect.DxGateway",
 		"tfResourceType",
 		&returns,
 	)
@@ -5628,7 +5656,7 @@ func NewDxGatewayAssociation(scope constructs.Construct, id *string, config *DxG
 	j := jsiiProxy_DxGatewayAssociation{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociation",
+		"hashicorp_aws.directconnect.DxGatewayAssociation",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5641,7 +5669,7 @@ func NewDxGatewayAssociation_Override(d DxGatewayAssociation, scope constructs.C
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociation",
+		"hashicorp_aws.directconnect.DxGatewayAssociation",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -5737,7 +5765,7 @@ func DxGatewayAssociation_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociation",
+		"hashicorp_aws.directconnect.DxGatewayAssociation",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5750,7 +5778,7 @@ func DxGatewayAssociation_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociation",
+		"hashicorp_aws.directconnect.DxGatewayAssociation",
 		"tfResourceType",
 		&returns,
 	)
@@ -5968,6 +5996,7 @@ func (d *jsiiProxy_DxGatewayAssociation) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxGatewayAssociationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6297,7 +6326,7 @@ func NewDxGatewayAssociationProposal(scope constructs.Construct, id *string, con
 	j := jsiiProxy_DxGatewayAssociationProposal{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposal",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposal",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6310,7 +6339,7 @@ func NewDxGatewayAssociationProposal_Override(d DxGatewayAssociationProposal, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposal",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposal",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -6390,7 +6419,7 @@ func DxGatewayAssociationProposal_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposal",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposal",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6403,7 +6432,7 @@ func DxGatewayAssociationProposal_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposal",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposal",
 		"tfResourceType",
 		&returns,
 	)
@@ -6573,6 +6602,7 @@ func (d *jsiiProxy_DxGatewayAssociationProposal) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxGatewayAssociationProposalConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6609,6 +6639,8 @@ type DxGatewayAssociationTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxGatewayAssociationTimeouts
+	SetInternalValue(val *DxGatewayAssociationTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6674,6 +6706,16 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) DeleteInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) InternalValue() *DxGatewayAssociationTimeouts {
+	var returns *DxGatewayAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -6730,7 +6772,7 @@ func NewDxGatewayAssociationTimeoutsOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_DxGatewayAssociationTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6742,7 +6784,7 @@ func NewDxGatewayAssociationTimeoutsOutputReference_Override(d DxGatewayAssociat
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayAssociationTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -6760,6 +6802,14 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetDelete(val *s
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetInternalValue(val *DxGatewayAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6904,6 +6954,7 @@ func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
+// AWS Direct Connect.
 type DxGatewayConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6938,6 +6989,8 @@ type DxGatewayTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxGatewayTimeouts
+	SetInternalValue(val *DxGatewayTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6999,6 +7052,16 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) DeleteInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) InternalValue() *DxGatewayTimeouts {
+	var returns *DxGatewayTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7035,7 +7098,7 @@ func NewDxGatewayTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	j := jsiiProxy_DxGatewayTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7047,7 +7110,7 @@ func NewDxGatewayTimeoutsOutputReference_Override(d DxGatewayTimeoutsOutputRefer
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxGatewayTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -7065,6 +7128,14 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetDelete(val *string) {
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetInternalValue(val *DxGatewayTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7605,7 +7676,7 @@ func NewDxHostedConnection(scope constructs.Construct, id *string, config *DxHos
 	j := jsiiProxy_DxHostedConnection{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedConnection",
+		"hashicorp_aws.directconnect.DxHostedConnection",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7618,7 +7689,7 @@ func NewDxHostedConnection_Override(d DxHostedConnection, scope constructs.Const
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedConnection",
+		"hashicorp_aws.directconnect.DxHostedConnection",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -7706,7 +7777,7 @@ func DxHostedConnection_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedConnection",
+		"hashicorp_aws.directconnect.DxHostedConnection",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7719,7 +7790,7 @@ func DxHostedConnection_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedConnection",
+		"hashicorp_aws.directconnect.DxHostedConnection",
 		"tfResourceType",
 		&returns,
 	)
@@ -7881,6 +7952,7 @@ func (d *jsiiProxy_DxHostedConnection) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxHostedConnectionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8391,7 +8463,7 @@ func NewDxHostedPrivateVirtualInterface(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DxHostedPrivateVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -8404,7 +8476,7 @@ func NewDxHostedPrivateVirtualInterface_Override(d DxHostedPrivateVirtualInterfa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -8532,7 +8604,7 @@ func DxHostedPrivateVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8545,7 +8617,7 @@ func DxHostedPrivateVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -9096,7 +9168,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepter(scope constructs.Construct, id *
 	j := jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9109,7 +9181,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepter_Override(d DxHostedPrivateVirtua
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -9197,7 +9269,7 @@ func DxHostedPrivateVirtualInterfaceAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9210,7 +9282,7 @@ func DxHostedPrivateVirtualInterfaceAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -9420,6 +9492,7 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) ToTerraform() interf
 	return returns
 }
 
+// AWS Direct Connect.
 type DxHostedPrivateVirtualInterfaceAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9460,6 +9533,8 @@ type DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedPrivateVirtualInterfaceAccepterTimeouts
+	SetInternalValue(val *DxHostedPrivateVirtualInterfaceAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9521,6 +9596,16 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) InternalValue() *DxHostedPrivateVirtualInterfaceAccepterTimeouts {
+	var returns *DxHostedPrivateVirtualInterfaceAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9557,7 +9642,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference(terraform
 	j := jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9569,7 +9654,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -9587,6 +9672,14 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) SetInternalValue(val *DxHostedPrivateVirtualInterfaceAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9715,6 +9808,7 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	)
 }
 
+// AWS Direct Connect.
 type DxHostedPrivateVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9765,6 +9859,8 @@ type DxHostedPrivateVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedPrivateVirtualInterfaceTimeouts
+	SetInternalValue(val *DxHostedPrivateVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9826,6 +9922,16 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) Delet
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxHostedPrivateVirtualInterfaceTimeouts {
+	var returns *DxHostedPrivateVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9862,7 +9968,7 @@ func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource
 	j := jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9874,7 +9980,7 @@ func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxHost
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -9892,6 +9998,14 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetDe
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxHostedPrivateVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -10497,7 +10611,7 @@ func NewDxHostedPublicVirtualInterface(scope constructs.Construct, id *string, c
 	j := jsiiProxy_DxHostedPublicVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10510,7 +10624,7 @@ func NewDxHostedPublicVirtualInterface_Override(d DxHostedPublicVirtualInterface
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -10638,7 +10752,7 @@ func DxHostedPublicVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10651,7 +10765,7 @@ func DxHostedPublicVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -11146,7 +11260,7 @@ func NewDxHostedPublicVirtualInterfaceAccepter(scope constructs.Construct, id *s
 	j := jsiiProxy_DxHostedPublicVirtualInterfaceAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -11159,7 +11273,7 @@ func NewDxHostedPublicVirtualInterfaceAccepter_Override(d DxHostedPublicVirtualI
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -11231,7 +11345,7 @@ func DxHostedPublicVirtualInterfaceAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -11244,7 +11358,7 @@ func DxHostedPublicVirtualInterfaceAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -11438,6 +11552,7 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) ToTerraform() interfa
 	return returns
 }
 
+// AWS Direct Connect.
 type DxHostedPublicVirtualInterfaceAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11474,6 +11589,8 @@ type DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedPublicVirtualInterfaceAccepterTimeouts
+	SetInternalValue(val *DxHostedPublicVirtualInterfaceAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11535,6 +11652,16 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) InternalValue() *DxHostedPublicVirtualInterfaceAccepterTimeouts {
+	var returns *DxHostedPublicVirtualInterfaceAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -11571,7 +11698,7 @@ func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference(terraformR
 	j := jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11583,7 +11710,7 @@ func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference_Override(d
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -11601,6 +11728,14 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) SetInternalValue(val *DxHostedPublicVirtualInterfaceAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -11729,6 +11864,7 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	)
 }
 
+// AWS Direct Connect.
 type DxHostedPublicVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -11779,6 +11915,8 @@ type DxHostedPublicVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedPublicVirtualInterfaceTimeouts
+	SetInternalValue(val *DxHostedPublicVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -11840,6 +11978,16 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) Delete
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxHostedPublicVirtualInterfaceTimeouts {
+	var returns *DxHostedPublicVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -11876,7 +12024,7 @@ func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference(terraformResource 
 	j := jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -11888,7 +12036,7 @@ func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxHoste
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -11906,6 +12054,14 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetDel
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxHostedPublicVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -12523,7 +12679,7 @@ func NewDxHostedTransitVirtualInterface(scope constructs.Construct, id *string, 
 	j := jsiiProxy_DxHostedTransitVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -12536,7 +12692,7 @@ func NewDxHostedTransitVirtualInterface_Override(d DxHostedTransitVirtualInterfa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -12664,7 +12820,7 @@ func DxHostedTransitVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -12677,7 +12833,7 @@ func DxHostedTransitVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -13203,7 +13359,7 @@ func NewDxHostedTransitVirtualInterfaceAccepter(scope constructs.Construct, id *
 	j := jsiiProxy_DxHostedTransitVirtualInterfaceAccepter{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -13216,7 +13372,7 @@ func NewDxHostedTransitVirtualInterfaceAccepter_Override(d DxHostedTransitVirtua
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepter",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -13296,7 +13452,7 @@ func DxHostedTransitVirtualInterfaceAccepter_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepter",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -13309,7 +13465,7 @@ func DxHostedTransitVirtualInterfaceAccepter_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepter",
 		"tfResourceType",
 		&returns,
 	)
@@ -13503,6 +13659,7 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) ToTerraform() interf
 	return returns
 }
 
+// AWS Direct Connect.
 type DxHostedTransitVirtualInterfaceAccepterConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13541,6 +13698,8 @@ type DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedTransitVirtualInterfaceAccepterTimeouts
+	SetInternalValue(val *DxHostedTransitVirtualInterfaceAccepterTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13602,6 +13761,16 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) InternalValue() *DxHostedTransitVirtualInterfaceAccepterTimeouts {
+	var returns *DxHostedTransitVirtualInterfaceAccepterTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13638,7 +13807,7 @@ func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference(terraform
 	j := jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13650,7 +13819,7 @@ func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -13668,6 +13837,14 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) SetInternalValue(val *DxHostedTransitVirtualInterfaceAccepterTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -13796,6 +13973,7 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	)
 }
 
+// AWS Direct Connect.
 type DxHostedTransitVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -13846,6 +14024,8 @@ type DxHostedTransitVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxHostedTransitVirtualInterfaceTimeouts
+	SetInternalValue(val *DxHostedTransitVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -13907,6 +14087,16 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) Delet
 	return returns
 }
 
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxHostedTransitVirtualInterfaceTimeouts {
+	var returns *DxHostedTransitVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -13943,7 +14133,7 @@ func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference(terraformResource
 	j := jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -13955,7 +14145,7 @@ func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxHost
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -13973,6 +14163,14 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetDe
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxHostedTransitVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -14521,7 +14719,7 @@ func NewDxLag(scope constructs.Construct, id *string, config *DxLagConfig) DxLag
 	j := jsiiProxy_DxLag{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxLag",
+		"hashicorp_aws.directconnect.DxLag",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -14534,7 +14732,7 @@ func NewDxLag_Override(d DxLag, scope constructs.Construct, id *string, config *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxLag",
+		"hashicorp_aws.directconnect.DxLag",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -14646,7 +14844,7 @@ func DxLag_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxLag",
+		"hashicorp_aws.directconnect.DxLag",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -14659,7 +14857,7 @@ func DxLag_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxLag",
+		"hashicorp_aws.directconnect.DxLag",
 		"tfResourceType",
 		&returns,
 	)
@@ -14861,6 +15059,7 @@ func (d *jsiiProxy_DxLag) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxLagConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15450,7 +15649,7 @@ func NewDxPrivateVirtualInterface(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DxPrivateVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -15463,7 +15662,7 @@ func NewDxPrivateVirtualInterface_Override(d DxPrivateVirtualInterface, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -15615,7 +15814,7 @@ func DxPrivateVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -15628,7 +15827,7 @@ func DxPrivateVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -15870,6 +16069,7 @@ func (d *jsiiProxy_DxPrivateVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxPrivateVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -15928,6 +16128,8 @@ type DxPrivateVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxPrivateVirtualInterfaceTimeouts
+	SetInternalValue(val *DxPrivateVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -15993,6 +16195,16 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) DeleteInput
 	return returns
 }
 
+func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxPrivateVirtualInterfaceTimeouts {
+	var returns *DxPrivateVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -16049,7 +16261,7 @@ func NewDxPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -16061,7 +16273,7 @@ func NewDxPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxPrivateVir
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -16079,6 +16291,14 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetDelete(v
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxPrivateVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -16725,7 +16945,7 @@ func NewDxPublicVirtualInterface(scope constructs.Construct, id *string, config 
 	j := jsiiProxy_DxPublicVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -16738,7 +16958,7 @@ func NewDxPublicVirtualInterface_Override(d DxPublicVirtualInterface, scope cons
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -16874,7 +17094,7 @@ func DxPublicVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -16887,7 +17107,7 @@ func DxPublicVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -17105,6 +17325,7 @@ func (d *jsiiProxy_DxPublicVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxPublicVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -17157,6 +17378,8 @@ type DxPublicVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxPublicVirtualInterfaceTimeouts
+	SetInternalValue(val *DxPublicVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -17218,6 +17441,16 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) DeleteInput(
 	return returns
 }
 
+func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxPublicVirtualInterfaceTimeouts {
+	var returns *DxPublicVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -17254,7 +17487,7 @@ func NewDxPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.
 	j := jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -17266,7 +17499,7 @@ func NewDxPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxPublicVirtu
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -17284,6 +17517,14 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetDelete(va
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxPublicVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -17949,7 +18190,7 @@ func NewDxTransitVirtualInterface(scope constructs.Construct, id *string, config
 	j := jsiiProxy_DxTransitVirtualInterface{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterface",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -17962,7 +18203,7 @@ func NewDxTransitVirtualInterface_Override(d DxTransitVirtualInterface, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterface",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -18106,7 +18347,7 @@ func DxTransitVirtualInterface_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterface",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -18119,7 +18360,7 @@ func DxTransitVirtualInterface_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterface",
 		"tfResourceType",
 		&returns,
 	)
@@ -18345,6 +18586,7 @@ func (d *jsiiProxy_DxTransitVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Direct Connect.
 type DxTransitVirtualInterfaceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -18401,6 +18643,8 @@ type DxTransitVirtualInterfaceTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *DxTransitVirtualInterfaceTimeouts
+	SetInternalValue(val *DxTransitVirtualInterfaceTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -18466,6 +18710,16 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) DeleteInput
 	return returns
 }
 
+func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) InternalValue() *DxTransitVirtualInterfaceTimeouts {
+	var returns *DxTransitVirtualInterfaceTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -18522,7 +18776,7 @@ func NewDxTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf
 	j := jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -18534,7 +18788,7 @@ func NewDxTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxTransitVir
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		d,
 	)
@@ -18552,6 +18806,14 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetDelete(v
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetInternalValue(val *DxTransitVirtualInterfaceTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

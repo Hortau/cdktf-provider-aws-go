@@ -219,7 +219,7 @@ func NewSimpledbDomain(scope constructs.Construct, id *string, config *SimpledbD
 	j := jsiiProxy_SimpledbDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.SimpleDB.SimpledbDomain",
+		"hashicorp_aws.simpledb.SimpledbDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -232,7 +232,7 @@ func NewSimpledbDomain_Override(s SimpledbDomain, scope constructs.Construct, id
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.SimpleDB.SimpledbDomain",
+		"hashicorp_aws.simpledb.SimpledbDomain",
 		[]interface{}{scope, id, config},
 		s,
 	)
@@ -288,7 +288,7 @@ func SimpledbDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.SimpleDB.SimpledbDomain",
+		"hashicorp_aws.simpledb.SimpledbDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -301,7 +301,7 @@ func SimpledbDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.SimpleDB.SimpledbDomain",
+		"hashicorp_aws.simpledb.SimpledbDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -463,6 +463,7 @@ func (s *jsiiProxy_SimpledbDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS SimpleDB.
 type SimpledbDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

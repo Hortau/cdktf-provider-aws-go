@@ -230,7 +230,7 @@ func NewLightsailDomain(scope constructs.Construct, id *string, config *Lightsai
 	j := jsiiProxy_LightsailDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailDomain",
+		"hashicorp_aws.lightsail.LightsailDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -243,7 +243,7 @@ func NewLightsailDomain_Override(l LightsailDomain, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailDomain",
+		"hashicorp_aws.lightsail.LightsailDomain",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -299,7 +299,7 @@ func LightsailDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailDomain",
+		"hashicorp_aws.lightsail.LightsailDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -312,7 +312,7 @@ func LightsailDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailDomain",
+		"hashicorp_aws.lightsail.LightsailDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -474,6 +474,7 @@ func (l *jsiiProxy_LightsailDomain) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lightsail.
 type LightsailDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -972,7 +973,7 @@ func NewLightsailInstance(scope constructs.Construct, id *string, config *Lights
 	j := jsiiProxy_LightsailInstance{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailInstance",
+		"hashicorp_aws.lightsail.LightsailInstance",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -985,7 +986,7 @@ func NewLightsailInstance_Override(l LightsailInstance, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailInstance",
+		"hashicorp_aws.lightsail.LightsailInstance",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -1097,7 +1098,7 @@ func LightsailInstance_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailInstance",
+		"hashicorp_aws.lightsail.LightsailInstance",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1110,7 +1111,7 @@ func LightsailInstance_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailInstance",
+		"hashicorp_aws.lightsail.LightsailInstance",
 		"tfResourceType",
 		&returns,
 	)
@@ -1304,6 +1305,7 @@ func (l *jsiiProxy_LightsailInstance) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lightsail.
 type LightsailInstanceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1564,7 +1566,7 @@ func NewLightsailInstancePublicPorts(scope constructs.Construct, id *string, con
 	j := jsiiProxy_LightsailInstancePublicPorts{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPorts",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPorts",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1577,7 +1579,7 @@ func NewLightsailInstancePublicPorts_Override(l LightsailInstancePublicPorts, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPorts",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPorts",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -1641,7 +1643,7 @@ func LightsailInstancePublicPorts_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPorts",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPorts",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1654,7 +1656,7 @@ func LightsailInstancePublicPorts_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailInstancePublicPorts",
+		"hashicorp_aws.lightsail.LightsailInstancePublicPorts",
 		"tfResourceType",
 		&returns,
 	)
@@ -1816,6 +1818,7 @@ func (l *jsiiProxy_LightsailInstancePublicPorts) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lightsail.
 type LightsailInstancePublicPortsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2182,7 +2185,7 @@ func NewLightsailKeyPair(scope constructs.Construct, id *string, config *Lightsa
 	j := jsiiProxy_LightsailKeyPair{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailKeyPair",
+		"hashicorp_aws.lightsail.LightsailKeyPair",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2195,7 +2198,7 @@ func NewLightsailKeyPair_Override(l LightsailKeyPair, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailKeyPair",
+		"hashicorp_aws.lightsail.LightsailKeyPair",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -2275,7 +2278,7 @@ func LightsailKeyPair_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailKeyPair",
+		"hashicorp_aws.lightsail.LightsailKeyPair",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2288,7 +2291,7 @@ func LightsailKeyPair_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailKeyPair",
+		"hashicorp_aws.lightsail.LightsailKeyPair",
 		"tfResourceType",
 		&returns,
 	)
@@ -2482,6 +2485,7 @@ func (l *jsiiProxy_LightsailKeyPair) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lightsail.
 type LightsailKeyPairConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -2744,7 +2748,7 @@ func NewLightsailStaticIp(scope constructs.Construct, id *string, config *Lights
 	j := jsiiProxy_LightsailStaticIp{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailStaticIp",
+		"hashicorp_aws.lightsail.LightsailStaticIp",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2757,7 +2761,7 @@ func NewLightsailStaticIp_Override(l LightsailStaticIp, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailStaticIp",
+		"hashicorp_aws.lightsail.LightsailStaticIp",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -2813,7 +2817,7 @@ func LightsailStaticIp_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailStaticIp",
+		"hashicorp_aws.lightsail.LightsailStaticIp",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2826,7 +2830,7 @@ func LightsailStaticIp_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailStaticIp",
+		"hashicorp_aws.lightsail.LightsailStaticIp",
 		"tfResourceType",
 		&returns,
 	)
@@ -3232,7 +3236,7 @@ func NewLightsailStaticIpAttachment(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_LightsailStaticIpAttachment{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachment",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachment",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3245,7 +3249,7 @@ func NewLightsailStaticIpAttachment_Override(l LightsailStaticIpAttachment, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachment",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachment",
 		[]interface{}{scope, id, config},
 		l,
 	)
@@ -3309,7 +3313,7 @@ func LightsailStaticIpAttachment_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachment",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachment",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3322,7 +3326,7 @@ func LightsailStaticIpAttachment_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Lightsail.LightsailStaticIpAttachment",
+		"hashicorp_aws.lightsail.LightsailStaticIpAttachment",
 		"tfResourceType",
 		&returns,
 	)
@@ -3484,6 +3488,7 @@ func (l *jsiiProxy_LightsailStaticIpAttachment) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Lightsail.
 type LightsailStaticIpAttachmentConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3499,6 +3504,7 @@ type LightsailStaticIpAttachmentConfig struct {
 	StaticIpName *string `json:"staticIpName"`
 }
 
+// AWS Lightsail.
 type LightsailStaticIpConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`

@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnection",
+		"hashicorp_aws.directconnect.DataAwsDxConnection",
 		reflect.TypeOf((*DataAwsDxConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -56,11 +56,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DataAwsDxConnectionConfig",
+		"hashicorp_aws.directconnect.DataAwsDxConnectionConfig",
 		reflect.TypeOf((*DataAwsDxConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DataAwsDxGateway",
+		"hashicorp_aws.directconnect.DataAwsDxGateway",
 		reflect.TypeOf((*DataAwsDxGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -101,11 +101,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DataAwsDxGatewayConfig",
+		"hashicorp_aws.directconnect.DataAwsDxGatewayConfig",
 		reflect.TypeOf((*DataAwsDxGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocation",
+		"hashicorp_aws.directconnect.DataAwsDxLocation",
 		reflect.TypeOf((*DataAwsDxLocation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -147,11 +147,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocationConfig",
+		"hashicorp_aws.directconnect.DataAwsDxLocationConfig",
 		reflect.TypeOf((*DataAwsDxLocationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocations",
+		"hashicorp_aws.directconnect.DataAwsDxLocations",
 		reflect.TypeOf((*DataAwsDxLocations)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -189,11 +189,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DataAwsDxLocationsConfig",
+		"hashicorp_aws.directconnect.DataAwsDxLocationsConfig",
 		reflect.TypeOf((*DataAwsDxLocationsConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxBgpPeer",
+		"hashicorp_aws.directconnect.DxBgpPeer",
 		reflect.TypeOf((*DxBgpPeer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -252,15 +252,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxBgpPeerConfig",
+		"hashicorp_aws.directconnect.DxBgpPeerConfig",
 		reflect.TypeOf((*DxBgpPeerConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxBgpPeerTimeouts",
+		"hashicorp_aws.directconnect.DxBgpPeerTimeouts",
 		reflect.TypeOf((*DxBgpPeerTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxBgpPeerTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxBgpPeerTimeoutsOutputReference",
 		reflect.TypeOf((*DxBgpPeerTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -271,6 +271,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -286,7 +287,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxConnection",
+		"hashicorp_aws.directconnect.DxConnection",
 		reflect.TypeOf((*DxConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -343,7 +344,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociation",
+		"hashicorp_aws.directconnect.DxConnectionAssociation",
 		reflect.TypeOf((*DxConnectionAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -384,15 +385,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxConnectionAssociationConfig",
+		"hashicorp_aws.directconnect.DxConnectionAssociationConfig",
 		reflect.TypeOf((*DxConnectionAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxConnectionConfig",
+		"hashicorp_aws.directconnect.DxConnectionConfig",
 		reflect.TypeOf((*DxConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmation",
+		"hashicorp_aws.directconnect.DxConnectionConfirmation",
 		reflect.TypeOf((*DxConnectionConfirmation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -431,11 +432,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxConnectionConfirmationConfig",
+		"hashicorp_aws.directconnect.DxConnectionConfirmationConfig",
 		reflect.TypeOf((*DxConnectionConfirmationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxGateway",
+		"hashicorp_aws.directconnect.DxGateway",
 		reflect.TypeOf((*DxGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -481,7 +482,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociation",
+		"hashicorp_aws.directconnect.DxGatewayAssociation",
 		reflect.TypeOf((*DxGatewayAssociation)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -542,11 +543,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationConfig",
+		"hashicorp_aws.directconnect.DxGatewayAssociationConfig",
 		reflect.TypeOf((*DxGatewayAssociationConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposal",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposal",
 		reflect.TypeOf((*DxGatewayAssociationProposal)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -594,15 +595,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationProposalConfig",
+		"hashicorp_aws.directconnect.DxGatewayAssociationProposalConfig",
 		reflect.TypeOf((*DxGatewayAssociationProposalConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationTimeouts",
+		"hashicorp_aws.directconnect.DxGatewayAssociationTimeouts",
 		reflect.TypeOf((*DxGatewayAssociationTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxGatewayAssociationTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayAssociationTimeoutsOutputReference",
 		reflect.TypeOf((*DxGatewayAssociationTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -613,6 +614,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -631,15 +633,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxGatewayConfig",
+		"hashicorp_aws.directconnect.DxGatewayConfig",
 		reflect.TypeOf((*DxGatewayConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxGatewayTimeouts",
+		"hashicorp_aws.directconnect.DxGatewayTimeouts",
 		reflect.TypeOf((*DxGatewayTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxGatewayTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxGatewayTimeoutsOutputReference",
 		reflect.TypeOf((*DxGatewayTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -650,6 +652,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -665,7 +668,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedConnection",
+		"hashicorp_aws.directconnect.DxHostedConnection",
 		reflect.TypeOf((*DxHostedConnection)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -722,11 +725,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedConnectionConfig",
+		"hashicorp_aws.directconnect.DxHostedConnectionConfig",
 		reflect.TypeOf((*DxHostedConnectionConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterface",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -795,7 +798,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepter",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -851,15 +854,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepterConfig",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepterConfig",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepterTimeouts",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepterTimeouts",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -870,6 +873,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -885,15 +889,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceConfig",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPrivateVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedPrivateVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -904,6 +908,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -919,7 +924,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterface",
 		reflect.TypeOf((*DxHostedPublicVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -986,7 +991,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepter",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1036,15 +1041,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepterConfig",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepterConfig",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepterTimeouts",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepterTimeouts",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1055,6 +1060,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1070,15 +1076,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceConfig",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedPublicVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedPublicVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1089,6 +1095,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1104,7 +1111,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterface",
 		reflect.TypeOf((*DxHostedTransitVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1173,7 +1180,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepter",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepter",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceAccepter)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1225,15 +1232,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepterConfig",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepterConfig",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceAccepterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepterTimeouts",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepterTimeouts",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceAccepterTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1244,6 +1251,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1259,15 +1267,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceConfig",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxHostedTransitVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxHostedTransitVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1278,6 +1286,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1293,7 +1302,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxLag",
+		"hashicorp_aws.directconnect.DxLag",
 		reflect.TypeOf((*DxLag)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1355,11 +1364,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxLagConfig",
+		"hashicorp_aws.directconnect.DxLagConfig",
 		reflect.TypeOf((*DxLagConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterface",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterface",
 		reflect.TypeOf((*DxPrivateVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1438,15 +1447,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterfaceConfig",
 		reflect.TypeOf((*DxPrivateVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxPrivateVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPrivateVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxPrivateVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1457,6 +1466,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1475,7 +1485,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterface",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterface",
 		reflect.TypeOf((*DxPublicVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1546,15 +1556,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterfaceConfig",
 		reflect.TypeOf((*DxPublicVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxPublicVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxPublicVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxPublicVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1565,6 +1575,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -1580,7 +1591,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterface",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterface",
 		reflect.TypeOf((*DxTransitVirtualInterface)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -1655,15 +1666,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterfaceConfig",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterfaceConfig",
 		reflect.TypeOf((*DxTransitVirtualInterfaceConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterfaceTimeouts",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterfaceTimeouts",
 		reflect.TypeOf((*DxTransitVirtualInterfaceTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.DirectConnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
+		"hashicorp_aws.directconnect.DxTransitVirtualInterfaceTimeoutsOutputReference",
 		reflect.TypeOf((*DxTransitVirtualInterfaceTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -1674,6 +1685,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},

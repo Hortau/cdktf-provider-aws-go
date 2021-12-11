@@ -48,6 +48,7 @@ type DataAwsElasticsearchDomain interface {
 	AddOverride(path *string, value interface{})
 	AdvancedOptions(key *string) *string
 	AdvancedSecurityOptions(index *string) DataAwsElasticsearchDomainAdvancedSecurityOptions
+	AutoTuneOptions(index *string) DataAwsElasticsearchDomainAutoTuneOptions
 	ClusterConfig(index *string) DataAwsElasticsearchDomainClusterConfig
 	CognitoOptions(index *string) DataAwsElasticsearchDomainCognitoOptions
 	EbsOptions(index *string) DataAwsElasticsearchDomainEbsOptions
@@ -352,7 +353,7 @@ func NewDataAwsElasticsearchDomain(scope constructs.Construct, id *string, confi
 	j := jsiiProxy_DataAwsElasticsearchDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -365,7 +366,7 @@ func NewDataAwsElasticsearchDomain_Override(d DataAwsElasticsearchDomain, scope 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomain",
 		[]interface{}{scope, id, config},
 		d,
 	)
@@ -429,7 +430,7 @@ func DataAwsElasticsearchDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -442,7 +443,7 @@ func DataAwsElasticsearchDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -477,6 +478,19 @@ func (d *jsiiProxy_DataAwsElasticsearchDomain) AdvancedSecurityOptions(index *st
 	_jsii_.Invoke(
 		d,
 		"advancedSecurityOptions",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DataAwsElasticsearchDomain) AutoTuneOptions(index *string) DataAwsElasticsearchDomainAutoTuneOptions {
+	var returns DataAwsElasticsearchDomainAutoTuneOptions
+
+	_jsii_.Invoke(
+		d,
+		"autoTuneOptions",
 		[]interface{}{index},
 		&returns,
 	)
@@ -821,7 +835,7 @@ func NewDataAwsElasticsearchDomainAdvancedSecurityOptions(terraformResource cdkt
 	j := jsiiProxy_DataAwsElasticsearchDomainAdvancedSecurityOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -834,7 +848,7 @@ func NewDataAwsElasticsearchDomainAdvancedSecurityOptions_Override(d DataAwsElas
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAdvancedSecurityOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -922,6 +936,604 @@ func (d *jsiiProxy_DataAwsElasticsearchDomainAdvancedSecurityOptions) GetStringA
 
 // Experimental.
 func (d *jsiiProxy_DataAwsElasticsearchDomainAdvancedSecurityOptions) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsElasticsearchDomainAutoTuneOptions interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	DesiredState() *string
+	MaintenanceSchedule() interface{}
+	RollbackOnDisable() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsElasticsearchDomainAutoTuneOptions
+type jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) DesiredState() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desiredState",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) MaintenanceSchedule() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"maintenanceSchedule",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) RollbackOnDisable() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rollbackOnDisable",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElasticsearchDomainAutoTuneOptions {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions{}
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptions",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptions_Override(d DataAwsElasticsearchDomainAutoTuneOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptions",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptions) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	CronExpressionForRecurrence() *string
+	Duration() interface{}
+	StartAt() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule
+type jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) CronExpressionForRecurrence() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cronExpressionForRecurrence",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) Duration() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"duration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) StartAt() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"startAt",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule{}
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule_Override(d DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Unit() *string
+	Value() *float64
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration
+type jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) Unit() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"unit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) Value() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration{}
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration_Override(d DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) InterpolationForAttribute(property *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
@@ -1101,7 +1713,7 @@ func NewDataAwsElasticsearchDomainClusterConfig(terraformResource cdktf.ITerrafo
 	j := jsiiProxy_DataAwsElasticsearchDomainClusterConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1114,7 +1726,7 @@ func NewDataAwsElasticsearchDomainClusterConfig_Override(d DataAwsElasticsearchD
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1282,7 +1894,7 @@ func NewDataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig(terraformReso
 	j := jsiiProxy_DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1295,7 +1907,7 @@ func NewDataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig_Override(d Da
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainClusterConfigZoneAwarenessConfig",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1496,7 +2108,7 @@ func NewDataAwsElasticsearchDomainCognitoOptions(terraformResource cdktf.ITerraf
 	j := jsiiProxy_DataAwsElasticsearchDomainCognitoOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainCognitoOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainCognitoOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1509,7 +2121,7 @@ func NewDataAwsElasticsearchDomainCognitoOptions_Override(d DataAwsElasticsearch
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainCognitoOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainCognitoOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1609,6 +2221,7 @@ func (d *jsiiProxy_DataAwsElasticsearchDomainCognitoOptions) InterpolationForAtt
 	return returns
 }
 
+// AWS ElasticSearch Service.
 type DataAwsElasticsearchDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1725,7 +2338,7 @@ func NewDataAwsElasticsearchDomainEbsOptions(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DataAwsElasticsearchDomainEbsOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEbsOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEbsOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1738,7 +2351,7 @@ func NewDataAwsElasticsearchDomainEbsOptions_Override(d DataAwsElasticsearchDoma
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEbsOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEbsOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -1917,7 +2530,7 @@ func NewDataAwsElasticsearchDomainEncryptionAtRest(terraformResource cdktf.ITerr
 	j := jsiiProxy_DataAwsElasticsearchDomainEncryptionAtRest{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEncryptionAtRest",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEncryptionAtRest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -1930,7 +2543,7 @@ func NewDataAwsElasticsearchDomainEncryptionAtRest_Override(d DataAwsElasticsear
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainEncryptionAtRest",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainEncryptionAtRest",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2120,7 +2733,7 @@ func NewDataAwsElasticsearchDomainLogPublishingOptions(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsElasticsearchDomainLogPublishingOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainLogPublishingOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainLogPublishingOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2133,7 +2746,7 @@ func NewDataAwsElasticsearchDomainLogPublishingOptions_Override(d DataAwsElastic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainLogPublishingOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainLogPublishingOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2301,7 +2914,7 @@ func NewDataAwsElasticsearchDomainNodeToNodeEncryption(terraformResource cdktf.I
 	j := jsiiProxy_DataAwsElasticsearchDomainNodeToNodeEncryption{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2314,7 +2927,7 @@ func NewDataAwsElasticsearchDomainNodeToNodeEncryption_Override(d DataAwsElastic
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainNodeToNodeEncryption",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2482,7 +3095,7 @@ func NewDataAwsElasticsearchDomainSnapshotOptions(terraformResource cdktf.ITerra
 	j := jsiiProxy_DataAwsElasticsearchDomainSnapshotOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainSnapshotOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainSnapshotOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2495,7 +3108,7 @@ func NewDataAwsElasticsearchDomainSnapshotOptions_Override(d DataAwsElasticsearc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainSnapshotOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainSnapshotOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2696,7 +3309,7 @@ func NewDataAwsElasticsearchDomainVpcOptions(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_DataAwsElasticsearchDomainVpcOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainVpcOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainVpcOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		&j,
 	)
@@ -2709,7 +3322,7 @@ func NewDataAwsElasticsearchDomainVpcOptions_Override(d DataAwsElasticsearchDoma
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.DataAwsElasticsearchDomainVpcOptions",
+		"hashicorp_aws.elasticsearch.DataAwsElasticsearchDomainVpcOptions",
 		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
 		d,
 	)
@@ -2821,6 +3434,8 @@ type ElasticsearchDomain interface {
 	AdvancedSecurityOptions() ElasticsearchDomainAdvancedSecurityOptionsOutputReference
 	AdvancedSecurityOptionsInput() *ElasticsearchDomainAdvancedSecurityOptions
 	Arn() *string
+	AutoTuneOptions() ElasticsearchDomainAutoTuneOptionsOutputReference
+	AutoTuneOptionsInput() *ElasticsearchDomainAutoTuneOptions
 	CdktfStack() cdktf.TerraformStack
 	ClusterConfig() ElasticsearchDomainClusterConfigOutputReference
 	ClusterConfigInput() *ElasticsearchDomainClusterConfig
@@ -2883,6 +3498,7 @@ type ElasticsearchDomain interface {
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAdvancedSecurityOptions(value *ElasticsearchDomainAdvancedSecurityOptions)
+	PutAutoTuneOptions(value *ElasticsearchDomainAutoTuneOptions)
 	PutClusterConfig(value *ElasticsearchDomainClusterConfig)
 	PutCognitoOptions(value *ElasticsearchDomainCognitoOptions)
 	PutDomainEndpointOptions(value *ElasticsearchDomainDomainEndpointOptions)
@@ -2895,6 +3511,7 @@ type ElasticsearchDomain interface {
 	ResetAccessPolicies()
 	ResetAdvancedOptions()
 	ResetAdvancedSecurityOptions()
+	ResetAutoTuneOptions()
 	ResetClusterConfig()
 	ResetCognitoOptions()
 	ResetDomainEndpointOptions()
@@ -2985,6 +3602,26 @@ func (j *jsiiProxy_ElasticsearchDomain) Arn() *string {
 	_jsii_.Get(
 		j,
 		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomain) AutoTuneOptions() ElasticsearchDomainAutoTuneOptionsOutputReference {
+	var returns ElasticsearchDomainAutoTuneOptionsOutputReference
+	_jsii_.Get(
+		j,
+		"autoTuneOptions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomain) AutoTuneOptionsInput() *ElasticsearchDomainAutoTuneOptions {
+	var returns *ElasticsearchDomainAutoTuneOptions
+	_jsii_.Get(
+		j,
+		"autoTuneOptionsInput",
 		&returns,
 	)
 	return returns
@@ -3447,7 +4084,7 @@ func NewElasticsearchDomain(scope constructs.Construct, id *string, config *Elas
 	j := jsiiProxy_ElasticsearchDomain{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomain",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3460,7 +4097,7 @@ func NewElasticsearchDomain_Override(e ElasticsearchDomain, scope constructs.Con
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomain",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -3564,7 +4201,7 @@ func ElasticsearchDomain_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomain",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3577,7 +4214,7 @@ func ElasticsearchDomain_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomain",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomain",
 		"tfResourceType",
 		&returns,
 	)
@@ -3681,6 +4318,14 @@ func (e *jsiiProxy_ElasticsearchDomain) PutAdvancedSecurityOptions(value *Elasti
 	)
 }
 
+func (e *jsiiProxy_ElasticsearchDomain) PutAutoTuneOptions(value *ElasticsearchDomainAutoTuneOptions) {
+	_jsii_.InvokeVoid(
+		e,
+		"putAutoTuneOptions",
+		[]interface{}{value},
+	)
+}
+
 func (e *jsiiProxy_ElasticsearchDomain) PutClusterConfig(value *ElasticsearchDomainClusterConfig) {
 	_jsii_.InvokeVoid(
 		e,
@@ -3773,6 +4418,14 @@ func (e *jsiiProxy_ElasticsearchDomain) ResetAdvancedSecurityOptions() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetAdvancedSecurityOptions",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ElasticsearchDomain) ResetAutoTuneOptions() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetAutoTuneOptions",
 		nil, // no parameters
 	)
 }
@@ -3969,6 +4622,8 @@ type ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions struct {
 
 type ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions
+	SetInternalValue(val *ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MasterUserArn() *string
@@ -3998,6 +4653,16 @@ type ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference 
 // The jsii proxy struct for ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference
 type jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference) InternalValue() *ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions {
+	var returns *ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference) IsSingleItem() *bool {
@@ -4096,7 +4761,7 @@ func NewElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReferen
 	j := jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4108,9 +4773,17 @@ func NewElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReferen
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -4278,6 +4951,8 @@ type ElasticsearchDomainAdvancedSecurityOptionsOutputReference interface {
 	InternalUserDatabaseEnabled() interface{}
 	SetInternalUserDatabaseEnabled(val interface{})
 	InternalUserDatabaseEnabledInput() interface{}
+	InternalValue() *ElasticsearchDomainAdvancedSecurityOptions
+	SetInternalValue(val *ElasticsearchDomainAdvancedSecurityOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MasterUserOptions() ElasticsearchDomainAdvancedSecurityOptionsMasterUserOptionsOutputReference
@@ -4342,6 +5017,16 @@ func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) In
 	return returns
 }
 
+func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) InternalValue() *ElasticsearchDomainAdvancedSecurityOptions {
+	var returns *ElasticsearchDomainAdvancedSecurityOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4398,7 +5083,7 @@ func NewElasticsearchDomainAdvancedSecurityOptionsOutputReference(terraformResou
 	j := jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4410,7 +5095,7 @@ func NewElasticsearchDomainAdvancedSecurityOptionsOutputReference_Override(e Ela
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAdvancedSecurityOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4428,6 +5113,14 @@ func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) Se
 	_jsii_.Set(
 		j,
 		"internalUserDatabaseEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainAdvancedSecurityOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4564,6 +5257,614 @@ func (e *jsiiProxy_ElasticsearchDomainAdvancedSecurityOptionsOutputReference) Re
 	)
 }
 
+type ElasticsearchDomainAutoTuneOptions struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#desired_state ElasticsearchDomain#desired_state}.
+	DesiredState *string `json:"desiredState"`
+	// maintenance_schedule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#maintenance_schedule ElasticsearchDomain#maintenance_schedule}
+	MaintenanceSchedule *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule `json:"maintenanceSchedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#rollback_on_disable ElasticsearchDomain#rollback_on_disable}.
+	RollbackOnDisable *string `json:"rollbackOnDisable"`
+}
+
+type ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#cron_expression_for_recurrence ElasticsearchDomain#cron_expression_for_recurrence}.
+	CronExpressionForRecurrence *string `json:"cronExpressionForRecurrence"`
+	// duration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#duration ElasticsearchDomain#duration}
+	Duration *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration `json:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#start_at ElasticsearchDomain#start_at}.
+	StartAt *string `json:"startAt"`
+}
+
+type ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#unit ElasticsearchDomain#unit}.
+	Unit *string `json:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#value ElasticsearchDomain#value}.
+	Value *float64 `json:"value"`
+}
+
+type ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration
+	SetInternalValue(val *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	Unit() *string
+	SetUnit(val *string)
+	UnitInput() *string
+	Value() *float64
+	SetValue(val *float64)
+	ValueInput() *float64
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference
+type jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) InternalValue() *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration {
+	var returns *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) Unit() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"unit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) UnitInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"unitInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) Value() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"value",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) ValueInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"valueInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference_Override(e ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetInternalValue(val *ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDuration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetUnit(val *string) {
+	_jsii_.Set(
+		j,
+		"unit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) SetValue(val *float64) {
+	_jsii_.Set(
+		j,
+		"value",
+		val,
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsMaintenanceScheduleDurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type ElasticsearchDomainAutoTuneOptionsOutputReference interface {
+	cdktf.ComplexObject
+	DesiredState() *string
+	SetDesiredState(val *string)
+	DesiredStateInput() *string
+	InternalValue() *ElasticsearchDomainAutoTuneOptions
+	SetInternalValue(val *ElasticsearchDomainAutoTuneOptions)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	MaintenanceSchedule() *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule
+	SetMaintenanceSchedule(val *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule)
+	MaintenanceScheduleInput() *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule
+	RollbackOnDisable() *string
+	SetRollbackOnDisable(val *string)
+	RollbackOnDisableInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetMaintenanceSchedule()
+	ResetRollbackOnDisable()
+}
+
+// The jsii proxy struct for ElasticsearchDomainAutoTuneOptionsOutputReference
+type jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) DesiredState() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desiredState",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) DesiredStateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"desiredStateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) InternalValue() *ElasticsearchDomainAutoTuneOptions {
+	var returns *ElasticsearchDomainAutoTuneOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) MaintenanceSchedule() *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule {
+	var returns *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule
+	_jsii_.Get(
+		j,
+		"maintenanceSchedule",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) MaintenanceScheduleInput() *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule {
+	var returns *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule
+	_jsii_.Get(
+		j,
+		"maintenanceScheduleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) RollbackOnDisable() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rollbackOnDisable",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) RollbackOnDisableInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rollbackOnDisableInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewElasticsearchDomainAutoTuneOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElasticsearchDomainAutoTuneOptionsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewElasticsearchDomainAutoTuneOptionsOutputReference_Override(e ElasticsearchDomainAutoTuneOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainAutoTuneOptionsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetDesiredState(val *string) {
+	_jsii_.Set(
+		j,
+		"desiredState",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainAutoTuneOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetMaintenanceSchedule(val *[]*ElasticsearchDomainAutoTuneOptionsMaintenanceSchedule) {
+	_jsii_.Set(
+		j,
+		"maintenanceSchedule",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetRollbackOnDisable(val *string) {
+	_jsii_.Set(
+		j,
+		"rollbackOnDisable",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) ResetMaintenanceSchedule() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetMaintenanceSchedule",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ElasticsearchDomainAutoTuneOptionsOutputReference) ResetRollbackOnDisable() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetRollbackOnDisable",
+		nil, // no parameters
+	)
+}
+
 type ElasticsearchDomainClusterConfig struct {
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#dedicated_master_count ElasticsearchDomain#dedicated_master_count}.
 	DedicatedMasterCount *float64 `json:"dedicatedMasterCount"`
@@ -4606,6 +5907,8 @@ type ElasticsearchDomainClusterConfigOutputReference interface {
 	InstanceType() *string
 	SetInstanceType(val *string)
 	InstanceTypeInput() *string
+	InternalValue() *ElasticsearchDomainClusterConfig
+	SetInternalValue(val *ElasticsearchDomainClusterConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4750,6 +6053,16 @@ func (j *jsiiProxy_ElasticsearchDomainClusterConfigOutputReference) InstanceType
 	return returns
 }
 
+func (j *jsiiProxy_ElasticsearchDomainClusterConfigOutputReference) InternalValue() *ElasticsearchDomainClusterConfig {
+	var returns *ElasticsearchDomainClusterConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElasticsearchDomainClusterConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4886,7 +6199,7 @@ func NewElasticsearchDomainClusterConfigOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ElasticsearchDomainClusterConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4898,7 +6211,7 @@ func NewElasticsearchDomainClusterConfigOutputReference_Override(e Elasticsearch
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -4940,6 +6253,14 @@ func (j *jsiiProxy_ElasticsearchDomainClusterConfigOutputReference) SetInstanceT
 	_jsii_.Set(
 		j,
 		"instanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainClusterConfigOutputReference) SetInternalValue(val *ElasticsearchDomainClusterConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5182,6 +6503,8 @@ type ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference interfac
 	AvailabilityZoneCount() *float64
 	SetAvailabilityZoneCount(val *float64)
 	AvailabilityZoneCountInput() *float64
+	InternalValue() *ElasticsearchDomainClusterConfigZoneAwarenessConfig
+	SetInternalValue(val *ElasticsearchDomainClusterConfigZoneAwarenessConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5217,6 +6540,16 @@ func (j *jsiiProxy_ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputRefe
 	_jsii_.Get(
 		j,
 		"availabilityZoneCountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference) InternalValue() *ElasticsearchDomainClusterConfigZoneAwarenessConfig {
+	var returns *ElasticsearchDomainClusterConfigZoneAwarenessConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5258,7 +6591,7 @@ func NewElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference(terra
 	j := jsiiProxy_ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5270,7 +6603,7 @@ func NewElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference_Overr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -5280,6 +6613,14 @@ func (j *jsiiProxy_ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputRefe
 	_jsii_.Set(
 		j,
 		"availabilityZoneCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainClusterConfigZoneAwarenessConfigOutputReference) SetInternalValue(val *ElasticsearchDomainClusterConfigZoneAwarenessConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5419,6 +6760,8 @@ type ElasticsearchDomainCognitoOptionsOutputReference interface {
 	IdentityPoolId() *string
 	SetIdentityPoolId(val *string)
 	IdentityPoolIdInput() *string
+	InternalValue() *ElasticsearchDomainCognitoOptions
+	SetInternalValue(val *ElasticsearchDomainCognitoOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	RoleArn() *string
@@ -5480,6 +6823,16 @@ func (j *jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference) IdentityPoo
 	_jsii_.Get(
 		j,
 		"identityPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference) InternalValue() *ElasticsearchDomainCognitoOptions {
+	var returns *ElasticsearchDomainCognitoOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -5561,7 +6914,7 @@ func NewElasticsearchDomainCognitoOptionsOutputReference(terraformResource cdktf
 	j := jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainCognitoOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainCognitoOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5573,7 +6926,7 @@ func NewElasticsearchDomainCognitoOptionsOutputReference_Override(e Elasticsearc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainCognitoOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainCognitoOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -5591,6 +6944,14 @@ func (j *jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference) SetIdentity
 	_jsii_.Set(
 		j,
 		"identityPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainCognitoOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5727,6 +7088,7 @@ func (e *jsiiProxy_ElasticsearchDomainCognitoOptionsOutputReference) ResetEnable
 	)
 }
 
+// AWS ElasticSearch Service.
 type ElasticsearchDomainConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5746,6 +7108,10 @@ type ElasticsearchDomainConfig struct {
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#advanced_security_options ElasticsearchDomain#advanced_security_options}
 	AdvancedSecurityOptions *ElasticsearchDomainAdvancedSecurityOptions `json:"advancedSecurityOptions"`
+	// auto_tune_options block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#auto_tune_options ElasticsearchDomain#auto_tune_options}
+	AutoTuneOptions *ElasticsearchDomainAutoTuneOptions `json:"autoTuneOptions"`
 	// cluster_config block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html#cluster_config ElasticsearchDomain#cluster_config}
@@ -5821,6 +7187,8 @@ type ElasticsearchDomainDomainEndpointOptionsOutputReference interface {
 	EnforceHttps() interface{}
 	SetEnforceHttps(val interface{})
 	EnforceHttpsInput() interface{}
+	InternalValue() *ElasticsearchDomainDomainEndpointOptions
+	SetInternalValue(val *ElasticsearchDomainDomainEndpointOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5928,6 +7296,16 @@ func (j *jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference) Enfo
 	return returns
 }
 
+func (j *jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference) InternalValue() *ElasticsearchDomainDomainEndpointOptions {
+	var returns *ElasticsearchDomainDomainEndpointOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5984,7 +7362,7 @@ func NewElasticsearchDomainDomainEndpointOptionsOutputReference(terraformResourc
 	j := jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5996,7 +7374,7 @@ func NewElasticsearchDomainDomainEndpointOptionsOutputReference_Override(e Elast
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainDomainEndpointOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6030,6 +7408,14 @@ func (j *jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference) SetE
 	_jsii_.Set(
 		j,
 		"enforceHttps",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainDomainEndpointOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainDomainEndpointOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6206,6 +7592,8 @@ type ElasticsearchDomainEbsOptionsOutputReference interface {
 	EbsEnabled() interface{}
 	SetEbsEnabled(val interface{})
 	EbsEnabledInput() interface{}
+	InternalValue() *ElasticsearchDomainEbsOptions
+	SetInternalValue(val *ElasticsearchDomainEbsOptions)
 	Iops() *float64
 	SetIops(val *float64)
 	IopsInput() *float64
@@ -6252,6 +7640,16 @@ func (j *jsiiProxy_ElasticsearchDomainEbsOptionsOutputReference) EbsEnabledInput
 	_jsii_.Get(
 		j,
 		"ebsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainEbsOptionsOutputReference) InternalValue() *ElasticsearchDomainEbsOptions {
+	var returns *ElasticsearchDomainEbsOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6353,7 +7751,7 @@ func NewElasticsearchDomainEbsOptionsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_ElasticsearchDomainEbsOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEbsOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEbsOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6365,7 +7763,7 @@ func NewElasticsearchDomainEbsOptionsOutputReference_Override(e ElasticsearchDom
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEbsOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEbsOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6375,6 +7773,14 @@ func (j *jsiiProxy_ElasticsearchDomainEbsOptionsOutputReference) SetEbsEnabled(v
 	_jsii_.Set(
 		j,
 		"ebsEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainEbsOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainEbsOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6547,6 +7953,8 @@ type ElasticsearchDomainEncryptAtRestOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *ElasticsearchDomainEncryptAtRest
+	SetInternalValue(val *ElasticsearchDomainEncryptAtRest)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	KmsKeyId() *string
@@ -6585,6 +7993,16 @@ func (j *jsiiProxy_ElasticsearchDomainEncryptAtRestOutputReference) EnabledInput
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainEncryptAtRestOutputReference) InternalValue() *ElasticsearchDomainEncryptAtRest {
+	var returns *ElasticsearchDomainEncryptAtRest
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6646,7 +8064,7 @@ func NewElasticsearchDomainEncryptAtRestOutputReference(terraformResource cdktf.
 	j := jsiiProxy_ElasticsearchDomainEncryptAtRestOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEncryptAtRestOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEncryptAtRestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6658,7 +8076,7 @@ func NewElasticsearchDomainEncryptAtRestOutputReference_Override(e Elasticsearch
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainEncryptAtRestOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainEncryptAtRestOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6668,6 +8086,14 @@ func (j *jsiiProxy_ElasticsearchDomainEncryptAtRestOutputReference) SetEnabled(v
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainEncryptAtRestOutputReference) SetInternalValue(val *ElasticsearchDomainEncryptAtRest) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6815,6 +8241,8 @@ type ElasticsearchDomainNodeToNodeEncryptionOutputReference interface {
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
+	InternalValue() *ElasticsearchDomainNodeToNodeEncryption
+	SetInternalValue(val *ElasticsearchDomainNodeToNodeEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6849,6 +8277,16 @@ func (j *jsiiProxy_ElasticsearchDomainNodeToNodeEncryptionOutputReference) Enabl
 	_jsii_.Get(
 		j,
 		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainNodeToNodeEncryptionOutputReference) InternalValue() *ElasticsearchDomainNodeToNodeEncryption {
+	var returns *ElasticsearchDomainNodeToNodeEncryption
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6890,7 +8328,7 @@ func NewElasticsearchDomainNodeToNodeEncryptionOutputReference(terraformResource
 	j := jsiiProxy_ElasticsearchDomainNodeToNodeEncryptionOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6902,7 +8340,7 @@ func NewElasticsearchDomainNodeToNodeEncryptionOutputReference_Override(e Elasti
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainNodeToNodeEncryptionOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -6912,6 +8350,14 @@ func (j *jsiiProxy_ElasticsearchDomainNodeToNodeEncryptionOutputReference) SetEn
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainNodeToNodeEncryptionOutputReference) SetInternalValue(val *ElasticsearchDomainNodeToNodeEncryption) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7257,7 +8703,7 @@ func NewElasticsearchDomainPolicy(scope constructs.Construct, id *string, config
 	j := jsiiProxy_ElasticsearchDomainPolicy{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicy",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicy",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7270,7 +8716,7 @@ func NewElasticsearchDomainPolicy_Override(e ElasticsearchDomainPolicy, scope co
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicy",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicy",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -7334,7 +8780,7 @@ func ElasticsearchDomainPolicy_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicy",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicy",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7347,7 +8793,7 @@ func ElasticsearchDomainPolicy_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainPolicy",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainPolicy",
 		"tfResourceType",
 		&returns,
 	)
@@ -7509,6 +8955,7 @@ func (e *jsiiProxy_ElasticsearchDomainPolicy) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElasticSearch Service.
 type ElasticsearchDomainPolicyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7758,7 +9205,7 @@ func NewElasticsearchDomainSamlOptions(scope constructs.Construct, id *string, c
 	j := jsiiProxy_ElasticsearchDomainSamlOptions{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptions",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7771,7 +9218,7 @@ func NewElasticsearchDomainSamlOptions_Override(e ElasticsearchDomainSamlOptions
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptions",
 		[]interface{}{scope, id, config},
 		e,
 	)
@@ -7827,7 +9274,7 @@ func ElasticsearchDomainSamlOptions_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptions",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -7840,7 +9287,7 @@ func ElasticsearchDomainSamlOptions_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptions",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptions",
 		"tfResourceType",
 		&returns,
 	)
@@ -8018,6 +9465,7 @@ func (e *jsiiProxy_ElasticsearchDomainSamlOptions) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS ElasticSearch Service.
 type ElasticsearchDomainSamlOptionsConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8066,6 +9514,8 @@ type ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference interface {
 	EntityId() *string
 	SetEntityId(val *string)
 	EntityIdInput() *string
+	InternalValue() *ElasticsearchDomainSamlOptionsSamlOptionsIdp
+	SetInternalValue(val *ElasticsearchDomainSamlOptionsSamlOptionsIdp)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MetadataContent() *string
@@ -8103,6 +9553,16 @@ func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference) 
 	_jsii_.Get(
 		j,
 		"entityIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference) InternalValue() *ElasticsearchDomainSamlOptionsSamlOptionsIdp {
+	var returns *ElasticsearchDomainSamlOptionsSamlOptionsIdp
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8164,7 +9624,7 @@ func NewElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference(terraformRes
 	j := jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8176,7 +9636,7 @@ func NewElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference_Override(e E
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -8186,6 +9646,14 @@ func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference) 
 	_jsii_.Set(
 		j,
 		"entityId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference) SetInternalValue(val *ElasticsearchDomainSamlOptionsSamlOptionsIdp) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8313,6 +9781,8 @@ type ElasticsearchDomainSamlOptionsSamlOptionsOutputReference interface {
 	EnabledInput() interface{}
 	Idp() ElasticsearchDomainSamlOptionsSamlOptionsIdpOutputReference
 	IdpInput() *ElasticsearchDomainSamlOptionsSamlOptionsIdp
+	InternalValue() *ElasticsearchDomainSamlOptionsSamlOptions
+	SetInternalValue(val *ElasticsearchDomainSamlOptionsSamlOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	MasterBackendRole() *string
@@ -8390,6 +9860,16 @@ func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsOutputReference) Idp
 	_jsii_.Get(
 		j,
 		"idpInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsOutputReference) InternalValue() *ElasticsearchDomainSamlOptionsSamlOptions {
+	var returns *ElasticsearchDomainSamlOptionsSamlOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8531,7 +10011,7 @@ func NewElasticsearchDomainSamlOptionsSamlOptionsOutputReference(terraformResour
 	j := jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8543,7 +10023,7 @@ func NewElasticsearchDomainSamlOptionsSamlOptionsOutputReference_Override(e Elas
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSamlOptionsSamlOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -8553,6 +10033,14 @@ func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsOutputReference) Set
 	_jsii_.Set(
 		j,
 		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSamlOptionsSamlOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainSamlOptionsSamlOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8779,6 +10267,8 @@ type ElasticsearchDomainSnapshotOptionsOutputReference interface {
 	AutomatedSnapshotStartHour() *float64
 	SetAutomatedSnapshotStartHour(val *float64)
 	AutomatedSnapshotStartHourInput() *float64
+	InternalValue() *ElasticsearchDomainSnapshotOptions
+	SetInternalValue(val *ElasticsearchDomainSnapshotOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8813,6 +10303,16 @@ func (j *jsiiProxy_ElasticsearchDomainSnapshotOptionsOutputReference) AutomatedS
 	_jsii_.Get(
 		j,
 		"automatedSnapshotStartHourInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSnapshotOptionsOutputReference) InternalValue() *ElasticsearchDomainSnapshotOptions {
+	var returns *ElasticsearchDomainSnapshotOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -8854,7 +10354,7 @@ func NewElasticsearchDomainSnapshotOptionsOutputReference(terraformResource cdkt
 	j := jsiiProxy_ElasticsearchDomainSnapshotOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSnapshotOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSnapshotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8866,7 +10366,7 @@ func NewElasticsearchDomainSnapshotOptionsOutputReference_Override(e Elasticsear
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainSnapshotOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainSnapshotOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
 	)
@@ -8876,6 +10376,14 @@ func (j *jsiiProxy_ElasticsearchDomainSnapshotOptionsOutputReference) SetAutomat
 	_jsii_.Set(
 		j,
 		"automatedSnapshotStartHour",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainSnapshotOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainSnapshotOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -8995,6 +10503,8 @@ type ElasticsearchDomainTimeouts struct {
 
 type ElasticsearchDomainTimeoutsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ElasticsearchDomainTimeouts
+	SetInternalValue(val *ElasticsearchDomainTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9016,6 +10526,16 @@ type ElasticsearchDomainTimeoutsOutputReference interface {
 // The jsii proxy struct for ElasticsearchDomainTimeoutsOutputReference
 type jsiiProxy_ElasticsearchDomainTimeoutsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticsearchDomainTimeoutsOutputReference) InternalValue() *ElasticsearchDomainTimeouts {
+	var returns *ElasticsearchDomainTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ElasticsearchDomainTimeoutsOutputReference) IsSingleItem() *bool {
@@ -9074,7 +10594,7 @@ func NewElasticsearchDomainTimeoutsOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_ElasticsearchDomainTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainTimeoutsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9086,9 +10606,17 @@ func NewElasticsearchDomainTimeoutsOutputReference_Override(e ElasticsearchDomai
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainTimeoutsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainTimeoutsOutputReference) SetInternalValue(val *ElasticsearchDomainTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -9225,6 +10753,8 @@ type ElasticsearchDomainVpcOptions struct {
 
 type ElasticsearchDomainVpcOptionsOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ElasticsearchDomainVpcOptions
+	SetInternalValue(val *ElasticsearchDomainVpcOptions)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	SecurityGroupIds() *[]*string
@@ -9250,6 +10780,16 @@ type ElasticsearchDomainVpcOptionsOutputReference interface {
 // The jsii proxy struct for ElasticsearchDomainVpcOptionsOutputReference
 type jsiiProxy_ElasticsearchDomainVpcOptionsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ElasticsearchDomainVpcOptionsOutputReference) InternalValue() *ElasticsearchDomainVpcOptions {
+	var returns *ElasticsearchDomainVpcOptions
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ElasticsearchDomainVpcOptionsOutputReference) IsSingleItem() *bool {
@@ -9328,7 +10868,7 @@ func NewElasticsearchDomainVpcOptionsOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_ElasticsearchDomainVpcOptionsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainVpcOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainVpcOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9340,9 +10880,17 @@ func NewElasticsearchDomainVpcOptionsOutputReference_Override(e ElasticsearchDom
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.ElasticSearch.ElasticsearchDomainVpcOptionsOutputReference",
+		"hashicorp_aws.elasticsearch.ElasticsearchDomainVpcOptionsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		e,
+	)
+}
+
+func (j *jsiiProxy_ElasticsearchDomainVpcOptionsOutputReference) SetInternalValue(val *ElasticsearchDomainVpcOptions) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 

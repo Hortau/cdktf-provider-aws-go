@@ -8,7 +8,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheCluster",
+		"hashicorp_aws.elasticache.DataAwsElasticacheCluster",
 		reflect.TypeOf((*DataAwsElasticacheCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -69,7 +69,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.DataAwsElasticacheClusterCacheNodes",
 		reflect.TypeOf((*DataAwsElasticacheClusterCacheNodes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "address", GoGetter: "Address"},
@@ -92,11 +92,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheClusterConfig",
+		"hashicorp_aws.elasticache.DataAwsElasticacheClusterConfig",
 		reflect.TypeOf((*DataAwsElasticacheClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroup",
 		reflect.TypeOf((*DataAwsElasticacheReplicationGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -149,11 +149,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheReplicationGroupConfig",
+		"hashicorp_aws.elasticache.DataAwsElasticacheReplicationGroupConfig",
 		reflect.TypeOf((*DataAwsElasticacheReplicationGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUser",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUser",
 		reflect.TypeOf((*DataAwsElasticacheUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessString", GoGetter: "AccessString"},
@@ -207,11 +207,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.DataAwsElasticacheUserConfig",
+		"hashicorp_aws.elasticache.DataAwsElasticacheUserConfig",
 		reflect.TypeOf((*DataAwsElasticacheUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheCluster",
+		"hashicorp_aws.elasticache.ElasticacheCluster",
 		reflect.TypeOf((*ElasticacheCluster)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -324,7 +324,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheClusterCacheNodes",
+		"hashicorp_aws.elasticache.ElasticacheClusterCacheNodes",
 		reflect.TypeOf((*ElasticacheClusterCacheNodes)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "address", GoGetter: "Address"},
@@ -347,11 +347,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheClusterConfig",
+		"hashicorp_aws.elasticache.ElasticacheClusterConfig",
 		reflect.TypeOf((*ElasticacheClusterConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroup",
 		reflect.TypeOf((*ElasticacheGlobalReplicationGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "actualEngineVersion", GoGetter: "ActualEngineVersion"},
@@ -405,11 +405,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheGlobalReplicationGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheGlobalReplicationGroupConfig",
 		reflect.TypeOf((*ElasticacheGlobalReplicationGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroup",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroup",
 		reflect.TypeOf((*ElasticacheParameterGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -463,15 +463,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroupConfig",
 		reflect.TypeOf((*ElasticacheParameterGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheParameterGroupParameter",
+		"hashicorp_aws.elasticache.ElasticacheParameterGroupParameter",
 		reflect.TypeOf((*ElasticacheParameterGroupParameter)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroup",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroup",
 		reflect.TypeOf((*ElasticacheReplicationGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -495,6 +495,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "configurationEndpointAddress", GoGetter: "ConfigurationEndpointAddress"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "dataTieringEnabled", GoGetter: "DataTieringEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "dataTieringEnabledInput", GoGetter: "DataTieringEnabledInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
 			_jsii_.MemberProperty{JsiiProperty: "engine", GoGetter: "Engine"},
 			_jsii_.MemberProperty{JsiiProperty: "engineInput", GoGetter: "EngineInput"},
@@ -550,6 +552,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetAutoMinorVersionUpgrade", GoMethod: "ResetAutoMinorVersionUpgrade"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAvailabilityZones", GoMethod: "ResetAvailabilityZones"},
 			_jsii_.MemberMethod{JsiiMethod: "resetClusterMode", GoMethod: "ResetClusterMode"},
+			_jsii_.MemberMethod{JsiiMethod: "resetDataTieringEnabled", GoMethod: "ResetDataTieringEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEngine", GoMethod: "ResetEngine"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEngineVersion", GoMethod: "ResetEngineVersion"},
 			_jsii_.MemberMethod{JsiiMethod: "resetFinalSnapshotIdentifier", GoMethod: "ResetFinalSnapshotIdentifier"},
@@ -611,17 +614,18 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupClusterMode",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupClusterMode",
 		reflect.TypeOf((*ElasticacheReplicationGroupClusterMode)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupClusterModeOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupClusterModeOutputReference",
 		reflect.TypeOf((*ElasticacheReplicationGroupClusterModeOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -640,15 +644,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupConfig",
 		reflect.TypeOf((*ElasticacheReplicationGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupTimeouts",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupTimeouts",
 		reflect.TypeOf((*ElasticacheReplicationGroupTimeouts)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheReplicationGroupTimeoutsOutputReference",
+		"hashicorp_aws.elasticache.ElasticacheReplicationGroupTimeoutsOutputReference",
 		reflect.TypeOf((*ElasticacheReplicationGroupTimeoutsOutputReference)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "create", GoGetter: "Create"},
@@ -659,6 +663,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "isSingleItem", GoGetter: "IsSingleItem"},
@@ -677,7 +682,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroup",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroup",
 		reflect.TypeOf((*ElasticacheSecurityGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -721,11 +726,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheSecurityGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheSecurityGroupConfig",
 		reflect.TypeOf((*ElasticacheSecurityGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroup",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroup",
 		reflect.TypeOf((*ElasticacheSubnetGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -776,11 +781,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheSubnetGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheSubnetGroupConfig",
 		reflect.TypeOf((*ElasticacheSubnetGroupConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheUser",
+		"hashicorp_aws.elasticache.ElasticacheUser",
 		reflect.TypeOf((*ElasticacheUser)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "accessString", GoGetter: "AccessString"},
@@ -838,11 +843,11 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheUserConfig",
+		"hashicorp_aws.elasticache.ElasticacheUserConfig",
 		reflect.TypeOf((*ElasticacheUserConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroup",
+		"hashicorp_aws.elasticache.ElasticacheUserGroup",
 		reflect.TypeOf((*ElasticacheUserGroup)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -893,7 +898,7 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"hashicorp_aws.ElastiCache.ElasticacheUserGroupConfig",
+		"hashicorp_aws.elasticache.ElasticacheUserGroupConfig",
 		reflect.TypeOf((*ElasticacheUserGroupConfig)(nil)).Elem(),
 	)
 }

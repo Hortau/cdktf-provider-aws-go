@@ -278,7 +278,7 @@ func NewAppsyncApiKey(scope constructs.Construct, id *string, config *AppsyncApi
 	j := jsiiProxy_AppsyncApiKey{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncApiKey",
+		"hashicorp_aws.appsync.AppsyncApiKey",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -291,7 +291,7 @@ func NewAppsyncApiKey_Override(a AppsyncApiKey, scope constructs.Construct, id *
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncApiKey",
+		"hashicorp_aws.appsync.AppsyncApiKey",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -363,7 +363,7 @@ func AppsyncApiKey_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppSync.AppsyncApiKey",
+		"hashicorp_aws.appsync.AppsyncApiKey",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -376,7 +376,7 @@ func AppsyncApiKey_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppSync.AppsyncApiKey",
+		"hashicorp_aws.appsync.AppsyncApiKey",
 		"tfResourceType",
 		&returns,
 	)
@@ -554,6 +554,7 @@ func (a *jsiiProxy_AppsyncApiKey) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS AppSync.
 type AppsyncApiKeyConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -982,7 +983,7 @@ func NewAppsyncDatasource(scope constructs.Construct, id *string, config *Appsyn
 	j := jsiiProxy_AppsyncDatasource{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasource",
+		"hashicorp_aws.appsync.AppsyncDatasource",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -995,7 +996,7 @@ func NewAppsyncDatasource_Override(a AppsyncDatasource, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasource",
+		"hashicorp_aws.appsync.AppsyncDatasource",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -1083,7 +1084,7 @@ func AppsyncDatasource_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppSync.AppsyncDatasource",
+		"hashicorp_aws.appsync.AppsyncDatasource",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1096,7 +1097,7 @@ func AppsyncDatasource_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppSync.AppsyncDatasource",
+		"hashicorp_aws.appsync.AppsyncDatasource",
 		"tfResourceType",
 		&returns,
 	)
@@ -1338,6 +1339,7 @@ func (a *jsiiProxy_AppsyncDatasource) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS AppSync.
 type AppsyncDatasourceConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1386,6 +1388,8 @@ type AppsyncDatasourceDynamodbConfig struct {
 
 type AppsyncDatasourceDynamodbConfigOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *AppsyncDatasourceDynamodbConfig
+	SetInternalValue(val *AppsyncDatasourceDynamodbConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Region() *string
@@ -1414,6 +1418,16 @@ type AppsyncDatasourceDynamodbConfigOutputReference interface {
 // The jsii proxy struct for AppsyncDatasourceDynamodbConfigOutputReference
 type jsiiProxy_AppsyncDatasourceDynamodbConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppsyncDatasourceDynamodbConfigOutputReference) InternalValue() *AppsyncDatasourceDynamodbConfig {
+	var returns *AppsyncDatasourceDynamodbConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppsyncDatasourceDynamodbConfigOutputReference) IsSingleItem() *bool {
@@ -1512,7 +1526,7 @@ func NewAppsyncDatasourceDynamodbConfigOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppsyncDatasourceDynamodbConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceDynamodbConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceDynamodbConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1524,9 +1538,17 @@ func NewAppsyncDatasourceDynamodbConfigOutputReference_Override(a AppsyncDatasou
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceDynamodbConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceDynamodbConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
+	)
+}
+
+func (j *jsiiProxy_AppsyncDatasourceDynamodbConfigOutputReference) SetInternalValue(val *AppsyncDatasourceDynamodbConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -1690,6 +1712,8 @@ type AppsyncDatasourceElasticsearchConfigOutputReference interface {
 	Endpoint() *string
 	SetEndpoint(val *string)
 	EndpointInput() *string
+	InternalValue() *AppsyncDatasourceElasticsearchConfig
+	SetInternalValue(val *AppsyncDatasourceElasticsearchConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Region() *string
@@ -1728,6 +1752,16 @@ func (j *jsiiProxy_AppsyncDatasourceElasticsearchConfigOutputReference) Endpoint
 	_jsii_.Get(
 		j,
 		"endpointInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppsyncDatasourceElasticsearchConfigOutputReference) InternalValue() *AppsyncDatasourceElasticsearchConfig {
+	var returns *AppsyncDatasourceElasticsearchConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1789,7 +1823,7 @@ func NewAppsyncDatasourceElasticsearchConfigOutputReference(terraformResource cd
 	j := jsiiProxy_AppsyncDatasourceElasticsearchConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceElasticsearchConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceElasticsearchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1801,7 +1835,7 @@ func NewAppsyncDatasourceElasticsearchConfigOutputReference_Override(a AppsyncDa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceElasticsearchConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceElasticsearchConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -1811,6 +1845,14 @@ func (j *jsiiProxy_AppsyncDatasourceElasticsearchConfigOutputReference) SetEndpo
 	_jsii_.Set(
 		j,
 		"endpoint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncDatasourceElasticsearchConfigOutputReference) SetInternalValue(val *AppsyncDatasourceElasticsearchConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1949,6 +1991,8 @@ type AppsyncDatasourceHttpConfigOutputReference interface {
 	Endpoint() *string
 	SetEndpoint(val *string)
 	EndpointInput() *string
+	InternalValue() *AppsyncDatasourceHttpConfig
+	SetInternalValue(val *AppsyncDatasourceHttpConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -1983,6 +2027,16 @@ func (j *jsiiProxy_AppsyncDatasourceHttpConfigOutputReference) EndpointInput() *
 	_jsii_.Get(
 		j,
 		"endpointInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppsyncDatasourceHttpConfigOutputReference) InternalValue() *AppsyncDatasourceHttpConfig {
+	var returns *AppsyncDatasourceHttpConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2024,7 +2078,7 @@ func NewAppsyncDatasourceHttpConfigOutputReference(terraformResource cdktf.ITerr
 	j := jsiiProxy_AppsyncDatasourceHttpConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceHttpConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceHttpConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2036,7 +2090,7 @@ func NewAppsyncDatasourceHttpConfigOutputReference_Override(a AppsyncDatasourceH
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceHttpConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceHttpConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2046,6 +2100,14 @@ func (j *jsiiProxy_AppsyncDatasourceHttpConfigOutputReference) SetEndpoint(val *
 	_jsii_.Set(
 		j,
 		"endpoint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncDatasourceHttpConfigOutputReference) SetInternalValue(val *AppsyncDatasourceHttpConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2168,6 +2230,8 @@ type AppsyncDatasourceLambdaConfigOutputReference interface {
 	FunctionArn() *string
 	SetFunctionArn(val *string)
 	FunctionArnInput() *string
+	InternalValue() *AppsyncDatasourceLambdaConfig
+	SetInternalValue(val *AppsyncDatasourceLambdaConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -2202,6 +2266,16 @@ func (j *jsiiProxy_AppsyncDatasourceLambdaConfigOutputReference) FunctionArnInpu
 	_jsii_.Get(
 		j,
 		"functionArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppsyncDatasourceLambdaConfigOutputReference) InternalValue() *AppsyncDatasourceLambdaConfig {
+	var returns *AppsyncDatasourceLambdaConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -2243,7 +2317,7 @@ func NewAppsyncDatasourceLambdaConfigOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_AppsyncDatasourceLambdaConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceLambdaConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceLambdaConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2255,7 +2329,7 @@ func NewAppsyncDatasourceLambdaConfigOutputReference_Override(a AppsyncDatasourc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncDatasourceLambdaConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncDatasourceLambdaConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -2265,6 +2339,14 @@ func (j *jsiiProxy_AppsyncDatasourceLambdaConfigOutputReference) SetFunctionArn(
 	_jsii_.Set(
 		j,
 		"functionArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncDatasourceLambdaConfigOutputReference) SetInternalValue(val *AppsyncDatasourceLambdaConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2749,7 +2831,7 @@ func NewAppsyncFunction(scope constructs.Construct, id *string, config *AppsyncF
 	j := jsiiProxy_AppsyncFunction{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncFunction",
+		"hashicorp_aws.appsync.AppsyncFunction",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2762,7 +2844,7 @@ func NewAppsyncFunction_Override(a AppsyncFunction, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncFunction",
+		"hashicorp_aws.appsync.AppsyncFunction",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -2866,7 +2948,7 @@ func AppsyncFunction_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppSync.AppsyncFunction",
+		"hashicorp_aws.appsync.AppsyncFunction",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2879,7 +2961,7 @@ func AppsyncFunction_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppSync.AppsyncFunction",
+		"hashicorp_aws.appsync.AppsyncFunction",
 		"tfResourceType",
 		&returns,
 	)
@@ -3057,6 +3139,7 @@ func (a *jsiiProxy_AppsyncFunction) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS AppSync.
 type AppsyncFunctionConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3519,7 +3602,7 @@ func NewAppsyncGraphqlApi(scope constructs.Construct, id *string, config *Appsyn
 	j := jsiiProxy_AppsyncGraphqlApi{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApi",
+		"hashicorp_aws.appsync.AppsyncGraphqlApi",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3532,7 +3615,7 @@ func NewAppsyncGraphqlApi_Override(a AppsyncGraphqlApi, scope constructs.Constru
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApi",
+		"hashicorp_aws.appsync.AppsyncGraphqlApi",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -3636,7 +3719,7 @@ func AppsyncGraphqlApi_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApi",
+		"hashicorp_aws.appsync.AppsyncGraphqlApi",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3649,7 +3732,7 @@ func AppsyncGraphqlApi_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApi",
+		"hashicorp_aws.appsync.AppsyncGraphqlApi",
 		"tfResourceType",
 		&returns,
 	)
@@ -3947,6 +4030,8 @@ type AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputR
 	IatTtl() *float64
 	SetIatTtl(val *float64)
 	IatTtlInput() *float64
+	InternalValue() *AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig
+	SetInternalValue(val *AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -4032,6 +4117,16 @@ func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnec
 	return returns
 }
 
+func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference) InternalValue() *AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig {
+	var returns *AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4088,7 +4183,7 @@ func NewAppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutp
 	j := jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4100,7 +4195,7 @@ func NewAppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutp
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4126,6 +4221,14 @@ func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnec
 	_jsii_.Set(
 		j,
 		"iatTtl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfigOutputReference) SetInternalValue(val *AppsyncGraphqlApiAdditionalAuthenticationProviderOpenidConnectConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4287,6 +4390,8 @@ type AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputRefere
 	AwsRegion() *string
 	SetAwsRegion(val *string)
 	AwsRegionInput() *string
+	InternalValue() *AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig
+	SetInternalValue(val *AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4351,6 +4456,16 @@ func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConf
 	return returns
 }
 
+func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference) InternalValue() *AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig {
+	var returns *AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4407,7 +4522,7 @@ func NewAppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputRef
 	j := jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4419,7 +4534,7 @@ func NewAppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputRef
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4437,6 +4552,14 @@ func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConf
 	_jsii_.Set(
 		j,
 		"awsRegion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfigOutputReference) SetInternalValue(val *AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4573,6 +4696,7 @@ func (a *jsiiProxy_AppsyncGraphqlApiAdditionalAuthenticationProviderUserPoolConf
 	)
 }
 
+// AWS AppSync.
 type AppsyncGraphqlApiConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -4632,6 +4756,8 @@ type AppsyncGraphqlApiLogConfigOutputReference interface {
 	FieldLogLevel() *string
 	SetFieldLogLevel(val *string)
 	FieldLogLevelInput() *string
+	InternalValue() *AppsyncGraphqlApiLogConfig
+	SetInternalValue(val *AppsyncGraphqlApiLogConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -4712,6 +4838,16 @@ func (j *jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference) FieldLogLevelInput
 	return returns
 }
 
+func (j *jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference) InternalValue() *AppsyncGraphqlApiLogConfig {
+	var returns *AppsyncGraphqlApiLogConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -4748,7 +4884,7 @@ func NewAppsyncGraphqlApiLogConfigOutputReference(terraformResource cdktf.ITerra
 	j := jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiLogConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiLogConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4760,7 +4896,7 @@ func NewAppsyncGraphqlApiLogConfigOutputReference_Override(a AppsyncGraphqlApiLo
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiLogConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiLogConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -4786,6 +4922,14 @@ func (j *jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference) SetFieldLogLevel(v
 	_jsii_.Set(
 		j,
 		"fieldLogLevel",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncGraphqlApiLogConfigOutputReference) SetInternalValue(val *AppsyncGraphqlApiLogConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4928,6 +5072,8 @@ type AppsyncGraphqlApiOpenidConnectConfigOutputReference interface {
 	IatTtl() *float64
 	SetIatTtl(val *float64)
 	IatTtlInput() *float64
+	InternalValue() *AppsyncGraphqlApiOpenidConnectConfig
+	SetInternalValue(val *AppsyncGraphqlApiOpenidConnectConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Issuer() *string
@@ -5013,6 +5159,16 @@ func (j *jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference) IatTtlIn
 	return returns
 }
 
+func (j *jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference) InternalValue() *AppsyncGraphqlApiOpenidConnectConfig {
+	var returns *AppsyncGraphqlApiOpenidConnectConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5069,7 +5225,7 @@ func NewAppsyncGraphqlApiOpenidConnectConfigOutputReference(terraformResource cd
 	j := jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5081,7 +5237,7 @@ func NewAppsyncGraphqlApiOpenidConnectConfigOutputReference_Override(a AppsyncGr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiOpenidConnectConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5107,6 +5263,14 @@ func (j *jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference) SetIatTt
 	_jsii_.Set(
 		j,
 		"iatTtl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncGraphqlApiOpenidConnectConfigOutputReference) SetInternalValue(val *AppsyncGraphqlApiOpenidConnectConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5273,6 +5437,8 @@ type AppsyncGraphqlApiUserPoolConfigOutputReference interface {
 	DefaultAction() *string
 	SetDefaultAction(val *string)
 	DefaultActionInput() *string
+	InternalValue() *AppsyncGraphqlApiUserPoolConfig
+	SetInternalValue(val *AppsyncGraphqlApiUserPoolConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -5357,6 +5523,16 @@ func (j *jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference) DefaultAction
 	return returns
 }
 
+func (j *jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference) InternalValue() *AppsyncGraphqlApiUserPoolConfig {
+	var returns *AppsyncGraphqlApiUserPoolConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -5413,7 +5589,7 @@ func NewAppsyncGraphqlApiUserPoolConfigOutputReference(terraformResource cdktf.I
 	j := jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiUserPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -5425,7 +5601,7 @@ func NewAppsyncGraphqlApiUserPoolConfigOutputReference_Override(a AppsyncGraphql
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncGraphqlApiUserPoolConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncGraphqlApiUserPoolConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -5451,6 +5627,14 @@ func (j *jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference) SetDefaultAct
 	_jsii_.Set(
 		j,
 		"defaultAction",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncGraphqlApiUserPoolConfigOutputReference) SetInternalValue(val *AppsyncGraphqlApiUserPoolConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -5998,7 +6182,7 @@ func NewAppsyncResolver(scope constructs.Construct, id *string, config *AppsyncR
 	j := jsiiProxy_AppsyncResolver{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolver",
+		"hashicorp_aws.appsync.AppsyncResolver",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6011,7 +6195,7 @@ func NewAppsyncResolver_Override(a AppsyncResolver, scope constructs.Construct, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolver",
+		"hashicorp_aws.appsync.AppsyncResolver",
 		[]interface{}{scope, id, config},
 		a,
 	)
@@ -6115,7 +6299,7 @@ func AppsyncResolver_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.AppSync.AppsyncResolver",
+		"hashicorp_aws.appsync.AppsyncResolver",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6128,7 +6312,7 @@ func AppsyncResolver_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.AppSync.AppsyncResolver",
+		"hashicorp_aws.appsync.AppsyncResolver",
 		"tfResourceType",
 		&returns,
 	)
@@ -6366,6 +6550,8 @@ type AppsyncResolverCachingConfigOutputReference interface {
 	CachingKeys() *[]*string
 	SetCachingKeys(val *[]*string)
 	CachingKeysInput() *[]*string
+	InternalValue() *AppsyncResolverCachingConfig
+	SetInternalValue(val *AppsyncResolverCachingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6405,6 +6591,16 @@ func (j *jsiiProxy_AppsyncResolverCachingConfigOutputReference) CachingKeysInput
 	_jsii_.Get(
 		j,
 		"cachingKeysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppsyncResolverCachingConfigOutputReference) InternalValue() *AppsyncResolverCachingConfig {
+	var returns *AppsyncResolverCachingConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6466,7 +6662,7 @@ func NewAppsyncResolverCachingConfigOutputReference(terraformResource cdktf.ITer
 	j := jsiiProxy_AppsyncResolverCachingConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolverCachingConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverCachingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6478,7 +6674,7 @@ func NewAppsyncResolverCachingConfigOutputReference_Override(a AppsyncResolverCa
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolverCachingConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverCachingConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6488,6 +6684,14 @@ func (j *jsiiProxy_AppsyncResolverCachingConfigOutputReference) SetCachingKeys(v
 	_jsii_.Set(
 		j,
 		"cachingKeys",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncResolverCachingConfigOutputReference) SetInternalValue(val *AppsyncResolverCachingConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6624,6 +6828,7 @@ func (a *jsiiProxy_AppsyncResolverCachingConfigOutputReference) ResetTtl() {
 	)
 }
 
+// AWS AppSync.
 type AppsyncResolverConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6667,6 +6872,8 @@ type AppsyncResolverPipelineConfigOutputReference interface {
 	Functions() *[]*string
 	SetFunctions(val *[]*string)
 	FunctionsInput() *[]*string
+	InternalValue() *AppsyncResolverPipelineConfig
+	SetInternalValue(val *AppsyncResolverPipelineConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6702,6 +6909,16 @@ func (j *jsiiProxy_AppsyncResolverPipelineConfigOutputReference) FunctionsInput(
 	_jsii_.Get(
 		j,
 		"functionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppsyncResolverPipelineConfigOutputReference) InternalValue() *AppsyncResolverPipelineConfig {
+	var returns *AppsyncResolverPipelineConfig
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6743,7 +6960,7 @@ func NewAppsyncResolverPipelineConfigOutputReference(terraformResource cdktf.ITe
 	j := jsiiProxy_AppsyncResolverPipelineConfigOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolverPipelineConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverPipelineConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6755,7 +6972,7 @@ func NewAppsyncResolverPipelineConfigOutputReference_Override(a AppsyncResolverP
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.AppSync.AppsyncResolverPipelineConfigOutputReference",
+		"hashicorp_aws.appsync.AppsyncResolverPipelineConfigOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		a,
 	)
@@ -6765,6 +6982,14 @@ func (j *jsiiProxy_AppsyncResolverPipelineConfigOutputReference) SetFunctions(va
 	_jsii_.Set(
 		j,
 		"functions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppsyncResolverPipelineConfigOutputReference) SetInternalValue(val *AppsyncResolverPipelineConfig) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }

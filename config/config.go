@@ -301,7 +301,7 @@ func NewConfigAggregateAuthorization(scope constructs.Construct, id *string, con
 	j := jsiiProxy_ConfigAggregateAuthorization{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigAggregateAuthorization",
+		"hashicorp_aws.config.ConfigAggregateAuthorization",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -314,7 +314,7 @@ func NewConfigAggregateAuthorization_Override(c ConfigAggregateAuthorization, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigAggregateAuthorization",
+		"hashicorp_aws.config.ConfigAggregateAuthorization",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -394,7 +394,7 @@ func ConfigAggregateAuthorization_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigAggregateAuthorization",
+		"hashicorp_aws.config.ConfigAggregateAuthorization",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -407,7 +407,7 @@ func ConfigAggregateAuthorization_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigAggregateAuthorization",
+		"hashicorp_aws.config.ConfigAggregateAuthorization",
 		"tfResourceType",
 		&returns,
 	)
@@ -585,6 +585,7 @@ func (c *jsiiProxy_ConfigAggregateAuthorization) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigAggregateAuthorizationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1003,7 +1004,7 @@ func NewConfigConfigRule(scope constructs.Construct, id *string, config *ConfigC
 	j := jsiiProxy_ConfigConfigRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRule",
+		"hashicorp_aws.config.ConfigConfigRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -1016,7 +1017,7 @@ func NewConfigConfigRule_Override(c ConfigConfigRule, scope constructs.Construct
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRule",
+		"hashicorp_aws.config.ConfigConfigRule",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -1112,7 +1113,7 @@ func ConfigConfigRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigConfigRule",
+		"hashicorp_aws.config.ConfigConfigRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -1125,7 +1126,7 @@ func ConfigConfigRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigConfigRule",
+		"hashicorp_aws.config.ConfigConfigRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -1351,6 +1352,7 @@ func (c *jsiiProxy_ConfigConfigRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigConfigRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -1401,6 +1403,8 @@ type ConfigConfigRuleScopeOutputReference interface {
 	ComplianceResourceTypes() *[]*string
 	SetComplianceResourceTypes(val *[]*string)
 	ComplianceResourceTypesInput() *[]*string
+	InternalValue() *ConfigConfigRuleScope
+	SetInternalValue(val *ConfigConfigRuleScope)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TagKey() *string
@@ -1465,6 +1469,16 @@ func (j *jsiiProxy_ConfigConfigRuleScopeOutputReference) ComplianceResourceTypes
 	_jsii_.Get(
 		j,
 		"complianceResourceTypesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigConfigRuleScopeOutputReference) InternalValue() *ConfigConfigRuleScope {
+	var returns *ConfigConfigRuleScope
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -1546,7 +1560,7 @@ func NewConfigConfigRuleScopeOutputReference(terraformResource cdktf.ITerraformR
 	j := jsiiProxy_ConfigConfigRuleScopeOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRuleScopeOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleScopeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1558,7 +1572,7 @@ func NewConfigConfigRuleScopeOutputReference_Override(c ConfigConfigRuleScopeOut
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRuleScopeOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleScopeOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -1576,6 +1590,14 @@ func (j *jsiiProxy_ConfigConfigRuleScopeOutputReference) SetComplianceResourceTy
 	_jsii_.Set(
 		j,
 		"complianceResourceTypes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigConfigRuleScopeOutputReference) SetInternalValue(val *ConfigConfigRuleScope) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -1749,6 +1771,8 @@ type ConfigConfigRuleSource struct {
 
 type ConfigConfigRuleSourceOutputReference interface {
 	cdktf.ComplexObject
+	InternalValue() *ConfigConfigRuleSource
+	SetInternalValue(val *ConfigConfigRuleSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Owner() *string
@@ -1776,6 +1800,16 @@ type ConfigConfigRuleSourceOutputReference interface {
 // The jsii proxy struct for ConfigConfigRuleSourceOutputReference
 type jsiiProxy_ConfigConfigRuleSourceOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ConfigConfigRuleSourceOutputReference) InternalValue() *ConfigConfigRuleSource {
+	var returns *ConfigConfigRuleSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ConfigConfigRuleSourceOutputReference) IsSingleItem() *bool {
@@ -1874,7 +1908,7 @@ func NewConfigConfigRuleSourceOutputReference(terraformResource cdktf.ITerraform
 	j := jsiiProxy_ConfigConfigRuleSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRuleSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -1886,9 +1920,17 @@ func NewConfigConfigRuleSourceOutputReference_Override(c ConfigConfigRuleSourceO
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigRuleSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigRuleSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_ConfigConfigRuleSourceOutputReference) SetInternalValue(val *ConfigConfigRuleSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
 	)
 }
 
@@ -2358,7 +2400,7 @@ func NewConfigConfigurationAggregator(scope constructs.Construct, id *string, co
 	j := jsiiProxy_ConfigConfigurationAggregator{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregator",
+		"hashicorp_aws.config.ConfigConfigurationAggregator",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -2371,7 +2413,7 @@ func NewConfigConfigurationAggregator_Override(c ConfigConfigurationAggregator, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregator",
+		"hashicorp_aws.config.ConfigConfigurationAggregator",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -2443,7 +2485,7 @@ func ConfigConfigurationAggregator_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigConfigurationAggregator",
+		"hashicorp_aws.config.ConfigConfigurationAggregator",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -2456,7 +2498,7 @@ func ConfigConfigurationAggregator_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigConfigurationAggregator",
+		"hashicorp_aws.config.ConfigConfigurationAggregator",
 		"tfResourceType",
 		&returns,
 	)
@@ -2683,6 +2725,8 @@ type ConfigConfigurationAggregatorAccountAggregationSourceOutputReference interf
 	AllRegions() interface{}
 	SetAllRegions(val interface{})
 	AllRegionsInput() interface{}
+	InternalValue() *ConfigConfigurationAggregatorAccountAggregationSource
+	SetInternalValue(val *ConfigConfigurationAggregatorAccountAggregationSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Regions() *[]*string
@@ -2747,6 +2791,16 @@ func (j *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputRe
 	return returns
 }
 
+func (j *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputReference) InternalValue() *ConfigConfigurationAggregatorAccountAggregationSource {
+	var returns *ConfigConfigurationAggregatorAccountAggregationSource
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -2803,7 +2857,7 @@ func NewConfigConfigurationAggregatorAccountAggregationSourceOutputReference(ter
 	j := jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -2815,7 +2869,7 @@ func NewConfigConfigurationAggregatorAccountAggregationSourceOutputReference_Ove
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorAccountAggregationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -2833,6 +2887,14 @@ func (j *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputRe
 	_jsii_.Set(
 		j,
 		"allRegions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputReference) SetInternalValue(val *ConfigConfigurationAggregatorAccountAggregationSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -2969,6 +3031,7 @@ func (c *jsiiProxy_ConfigConfigurationAggregatorAccountAggregationSourceOutputRe
 	)
 }
 
+// AWS Config.
 type ConfigConfigurationAggregatorConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3008,6 +3071,8 @@ type ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference i
 	AllRegions() interface{}
 	SetAllRegions(val interface{})
 	AllRegionsInput() interface{}
+	InternalValue() *ConfigConfigurationAggregatorOrganizationAggregationSource
+	SetInternalValue(val *ConfigConfigurationAggregatorOrganizationAggregationSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	Regions() *[]*string
@@ -3050,6 +3115,16 @@ func (j *jsiiProxy_ConfigConfigurationAggregatorOrganizationAggregationSourceOut
 	_jsii_.Get(
 		j,
 		"allRegionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference) InternalValue() *ConfigConfigurationAggregatorOrganizationAggregationSource {
+	var returns *ConfigConfigurationAggregatorOrganizationAggregationSource
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -3131,7 +3206,7 @@ func NewConfigConfigurationAggregatorOrganizationAggregationSourceOutputReferenc
 	j := jsiiProxy_ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -3143,7 +3218,7 @@ func NewConfigConfigurationAggregatorOrganizationAggregationSourceOutputReferenc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -3153,6 +3228,14 @@ func (j *jsiiProxy_ConfigConfigurationAggregatorOrganizationAggregationSourceOut
 	_jsii_.Set(
 		j,
 		"allRegions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigConfigurationAggregatorOrganizationAggregationSourceOutputReference) SetInternalValue(val *ConfigConfigurationAggregatorOrganizationAggregationSource) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -3555,7 +3638,7 @@ func NewConfigConfigurationRecorder(scope constructs.Construct, id *string, conf
 	j := jsiiProxy_ConfigConfigurationRecorder{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorder",
+		"hashicorp_aws.config.ConfigConfigurationRecorder",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -3568,7 +3651,7 @@ func NewConfigConfigurationRecorder_Override(c ConfigConfigurationRecorder, scop
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorder",
+		"hashicorp_aws.config.ConfigConfigurationRecorder",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -3632,7 +3715,7 @@ func ConfigConfigurationRecorder_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigConfigurationRecorder",
+		"hashicorp_aws.config.ConfigConfigurationRecorder",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -3645,7 +3728,7 @@ func ConfigConfigurationRecorder_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigConfigurationRecorder",
+		"hashicorp_aws.config.ConfigConfigurationRecorder",
 		"tfResourceType",
 		&returns,
 	)
@@ -3831,6 +3914,7 @@ func (c *jsiiProxy_ConfigConfigurationRecorder) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigConfigurationRecorderConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -3867,6 +3951,8 @@ type ConfigConfigurationRecorderRecordingGroupOutputReference interface {
 	IncludeGlobalResourceTypes() interface{}
 	SetIncludeGlobalResourceTypes(val interface{})
 	IncludeGlobalResourceTypesInput() interface{}
+	InternalValue() *ConfigConfigurationRecorderRecordingGroup
+	SetInternalValue(val *ConfigConfigurationRecorderRecordingGroup)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	ResourceTypes() *[]*string
@@ -3932,6 +4018,16 @@ func (j *jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference) Inc
 	return returns
 }
 
+func (j *jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference) InternalValue() *ConfigConfigurationRecorderRecordingGroup {
+	var returns *ConfigConfigurationRecorderRecordingGroup
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -3988,7 +4084,7 @@ func NewConfigConfigurationRecorderRecordingGroupOutputReference(terraformResour
 	j := jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderRecordingGroupOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationRecorderRecordingGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -4000,7 +4096,7 @@ func NewConfigConfigurationRecorderRecordingGroupOutputReference_Override(c Conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderRecordingGroupOutputReference",
+		"hashicorp_aws.config.ConfigConfigurationRecorderRecordingGroupOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -4018,6 +4114,14 @@ func (j *jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference) Set
 	_jsii_.Set(
 		j,
 		"includeGlobalResourceTypes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigConfigurationRecorderRecordingGroupOutputReference) SetInternalValue(val *ConfigConfigurationRecorderRecordingGroup) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -4395,7 +4499,7 @@ func NewConfigConfigurationRecorderStatus(scope constructs.Construct, id *string
 	j := jsiiProxy_ConfigConfigurationRecorderStatus{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatus",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatus",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -4408,7 +4512,7 @@ func NewConfigConfigurationRecorderStatus_Override(c ConfigConfigurationRecorder
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatus",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatus",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -4472,7 +4576,7 @@ func ConfigConfigurationRecorderStatus_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatus",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatus",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -4485,7 +4589,7 @@ func ConfigConfigurationRecorderStatus_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigConfigurationRecorderStatus",
+		"hashicorp_aws.config.ConfigConfigurationRecorderStatus",
 		"tfResourceType",
 		&returns,
 	)
@@ -4647,6 +4751,7 @@ func (c *jsiiProxy_ConfigConfigurationRecorderStatus) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Config.
 type ConfigConfigurationRecorderStatusConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5003,7 +5108,7 @@ func NewConfigConformancePack(scope constructs.Construct, id *string, config *Co
 	j := jsiiProxy_ConfigConformancePack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConformancePack",
+		"hashicorp_aws.config.ConfigConformancePack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5016,7 +5121,7 @@ func NewConfigConformancePack_Override(c ConfigConformancePack, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigConformancePack",
+		"hashicorp_aws.config.ConfigConformancePack",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -5112,7 +5217,7 @@ func ConfigConformancePack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigConformancePack",
+		"hashicorp_aws.config.ConfigConformancePack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5125,7 +5230,7 @@ func ConfigConformancePack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigConformancePack",
+		"hashicorp_aws.config.ConfigConformancePack",
 		"tfResourceType",
 		&returns,
 	)
@@ -5327,6 +5432,7 @@ func (c *jsiiProxy_ConfigConformancePack) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigConformancePackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -5689,7 +5795,7 @@ func NewConfigDeliveryChannel(scope constructs.Construct, id *string, config *Co
 	j := jsiiProxy_ConfigDeliveryChannel{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigDeliveryChannel",
+		"hashicorp_aws.config.ConfigDeliveryChannel",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -5702,7 +5808,7 @@ func NewConfigDeliveryChannel_Override(c ConfigDeliveryChannel, scope constructs
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigDeliveryChannel",
+		"hashicorp_aws.config.ConfigDeliveryChannel",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -5790,7 +5896,7 @@ func ConfigDeliveryChannel_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigDeliveryChannel",
+		"hashicorp_aws.config.ConfigDeliveryChannel",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -5803,7 +5909,7 @@ func ConfigDeliveryChannel_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigDeliveryChannel",
+		"hashicorp_aws.config.ConfigDeliveryChannel",
 		"tfResourceType",
 		&returns,
 	)
@@ -6013,6 +6119,7 @@ func (c *jsiiProxy_ConfigDeliveryChannel) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigDeliveryChannelConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -6048,6 +6155,8 @@ type ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference interface {
 	DeliveryFrequency() *string
 	SetDeliveryFrequency(val *string)
 	DeliveryFrequencyInput() *string
+	InternalValue() *ConfigDeliveryChannelSnapshotDeliveryProperties
+	SetInternalValue(val *ConfigDeliveryChannelSnapshotDeliveryProperties)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -6083,6 +6192,16 @@ func (j *jsiiProxy_ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReferenc
 	_jsii_.Get(
 		j,
 		"deliveryFrequencyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference) InternalValue() *ConfigDeliveryChannelSnapshotDeliveryProperties {
+	var returns *ConfigDeliveryChannelSnapshotDeliveryProperties
+	_jsii_.Get(
+		j,
+		"internalValue",
 		&returns,
 	)
 	return returns
@@ -6124,7 +6243,7 @@ func NewConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference(terraform
 	j := jsiiProxy_ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
+		"hashicorp_aws.config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -6136,7 +6255,7 @@ func NewConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference_Override(
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
+		"hashicorp_aws.config.ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -6146,6 +6265,14 @@ func (j *jsiiProxy_ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReferenc
 	_jsii_.Set(
 		j,
 		"deliveryFrequency",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigDeliveryChannelSnapshotDeliveryPropertiesOutputReference) SetInternalValue(val *ConfigDeliveryChannelSnapshotDeliveryProperties) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -6655,7 +6782,7 @@ func NewConfigOrganizationConformancePack(scope constructs.Construct, id *string
 	j := jsiiProxy_ConfigOrganizationConformancePack{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePack",
+		"hashicorp_aws.config.ConfigOrganizationConformancePack",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -6668,7 +6795,7 @@ func NewConfigOrganizationConformancePack_Override(c ConfigOrganizationConforman
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePack",
+		"hashicorp_aws.config.ConfigOrganizationConformancePack",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -6772,7 +6899,7 @@ func ConfigOrganizationConformancePack_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePack",
+		"hashicorp_aws.config.ConfigOrganizationConformancePack",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -6785,7 +6912,7 @@ func ConfigOrganizationConformancePack_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePack",
+		"hashicorp_aws.config.ConfigOrganizationConformancePack",
 		"tfResourceType",
 		&returns,
 	)
@@ -7011,6 +7138,7 @@ func (c *jsiiProxy_ConfigOrganizationConformancePack) ToTerraform() interface{} 
 	return returns
 }
 
+// AWS Config.
 type ConfigOrganizationConformancePackConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -7066,6 +7194,8 @@ type ConfigOrganizationConformancePackTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ConfigOrganizationConformancePackTimeouts
+	SetInternalValue(val *ConfigOrganizationConformancePackTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -7131,6 +7261,16 @@ func (j *jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference) Del
 	return returns
 }
 
+func (j *jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference) InternalValue() *ConfigOrganizationConformancePackTimeouts {
+	var returns *ConfigOrganizationConformancePackTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -7187,7 +7327,7 @@ func NewConfigOrganizationConformancePackTimeoutsOutputReference(terraformResour
 	j := jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -7199,7 +7339,7 @@ func NewConfigOrganizationConformancePackTimeoutsOutputReference_Override(c Conf
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationConformancePackTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationConformancePackTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -7217,6 +7357,14 @@ func (j *jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference) Set
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigOrganizationConformancePackTimeoutsOutputReference) SetInternalValue(val *ConfigOrganizationConformancePackTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -7844,7 +7992,7 @@ func NewConfigOrganizationCustomRule(scope constructs.Construct, id *string, con
 	j := jsiiProxy_ConfigOrganizationCustomRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRule",
+		"hashicorp_aws.config.ConfigOrganizationCustomRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -7857,7 +8005,7 @@ func NewConfigOrganizationCustomRule_Override(c ConfigOrganizationCustomRule, sc
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRule",
+		"hashicorp_aws.config.ConfigOrganizationCustomRule",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -7993,7 +8141,7 @@ func ConfigOrganizationCustomRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRule",
+		"hashicorp_aws.config.ConfigOrganizationCustomRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -8006,7 +8154,7 @@ func ConfigOrganizationCustomRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRule",
+		"hashicorp_aws.config.ConfigOrganizationCustomRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -8248,6 +8396,7 @@ func (c *jsiiProxy_ConfigOrganizationCustomRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigOrganizationCustomRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -8302,6 +8451,8 @@ type ConfigOrganizationCustomRuleTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ConfigOrganizationCustomRuleTimeouts
+	SetInternalValue(val *ConfigOrganizationCustomRuleTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -8367,6 +8518,16 @@ func (j *jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference) DeleteIn
 	return returns
 }
 
+func (j *jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference) InternalValue() *ConfigOrganizationCustomRuleTimeouts {
+	var returns *ConfigOrganizationCustomRuleTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -8423,7 +8584,7 @@ func NewConfigOrganizationCustomRuleTimeoutsOutputReference(terraformResource cd
 	j := jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -8435,7 +8596,7 @@ func NewConfigOrganizationCustomRuleTimeoutsOutputReference_Override(c ConfigOrg
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationCustomRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -8453,6 +8614,14 @@ func (j *jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference) SetDelet
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigOrganizationCustomRuleTimeoutsOutputReference) SetInternalValue(val *ConfigOrganizationCustomRuleTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9057,7 +9226,7 @@ func NewConfigOrganizationManagedRule(scope constructs.Construct, id *string, co
 	j := jsiiProxy_ConfigOrganizationManagedRule{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRule",
+		"hashicorp_aws.config.ConfigOrganizationManagedRule",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -9070,7 +9239,7 @@ func NewConfigOrganizationManagedRule_Override(c ConfigOrganizationManagedRule, 
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRule",
+		"hashicorp_aws.config.ConfigOrganizationManagedRule",
 		[]interface{}{scope, id, config},
 		c,
 	)
@@ -9198,7 +9367,7 @@ func ConfigOrganizationManagedRule_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRule",
+		"hashicorp_aws.config.ConfigOrganizationManagedRule",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -9211,7 +9380,7 @@ func ConfigOrganizationManagedRule_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRule",
+		"hashicorp_aws.config.ConfigOrganizationManagedRule",
 		"tfResourceType",
 		&returns,
 	)
@@ -9453,6 +9622,7 @@ func (c *jsiiProxy_ConfigOrganizationManagedRule) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigOrganizationManagedRuleConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -9505,6 +9675,8 @@ type ConfigOrganizationManagedRuleTimeoutsOutputReference interface {
 	Delete() *string
 	SetDelete(val *string)
 	DeleteInput() *string
+	InternalValue() *ConfigOrganizationManagedRuleTimeouts
+	SetInternalValue(val *ConfigOrganizationManagedRuleTimeouts)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
@@ -9570,6 +9742,16 @@ func (j *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) DeleteI
 	return returns
 }
 
+func (j *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) InternalValue() *ConfigOrganizationManagedRuleTimeouts {
+	var returns *ConfigOrganizationManagedRuleTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -9626,7 +9808,7 @@ func NewConfigOrganizationManagedRuleTimeoutsOutputReference(terraformResource c
 	j := jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		&j,
 	)
@@ -9638,7 +9820,7 @@ func NewConfigOrganizationManagedRuleTimeoutsOutputReference_Override(c ConfigOr
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
+		"hashicorp_aws.config.ConfigOrganizationManagedRuleTimeoutsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
 	)
@@ -9656,6 +9838,14 @@ func (j *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) SetDele
 	_jsii_.Set(
 		j,
 		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) SetInternalValue(val *ConfigOrganizationManagedRuleTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
 		val,
 	)
 }
@@ -9804,6 +9994,9 @@ func (c *jsiiProxy_ConfigOrganizationManagedRuleTimeoutsOutputReference) ResetUp
 type ConfigRemediationConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
+	Automatic() interface{}
+	SetAutomatic(val interface{})
+	AutomaticInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConfigRuleName() *string
 	SetConfigRuleName(val *string)
@@ -9813,11 +10006,16 @@ type ConfigRemediationConfiguration interface {
 	SetCount(val interface{})
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	ExecutionControls() ConfigRemediationConfigurationExecutionControlsOutputReference
+	ExecutionControlsInput() *ConfigRemediationConfigurationExecutionControls
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	MaximumAutomaticAttempts() *float64
+	SetMaximumAutomaticAttempts(val *float64)
+	MaximumAutomaticAttemptsInput() *float64
 	Node() constructs.Node
 	Parameter() *[]*ConfigRemediationConfigurationParameter
 	SetParameter(val *[]*ConfigRemediationConfigurationParameter)
@@ -9828,6 +10026,9 @@ type ConfigRemediationConfiguration interface {
 	ResourceType() *string
 	SetResourceType(val *string)
 	ResourceTypeInput() *string
+	RetryAttemptSeconds() *float64
+	SetRetryAttemptSeconds(val *float64)
+	RetryAttemptSecondsInput() *float64
 	TargetId() *string
 	SetTargetId(val *string)
 	TargetIdInput() *string
@@ -9847,9 +10048,14 @@ type ConfigRemediationConfiguration interface {
 	GetStringAttribute(terraformAttribute *string) *string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutExecutionControls(value *ConfigRemediationConfigurationExecutionControls)
+	ResetAutomatic()
+	ResetExecutionControls()
+	ResetMaximumAutomaticAttempts()
 	ResetOverrideLogicalId()
 	ResetParameter()
 	ResetResourceType()
+	ResetRetryAttemptSeconds()
 	ResetTargetVersion()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -9867,6 +10073,26 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) Arn() *string {
 	_jsii_.Get(
 		j,
 		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) Automatic() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"automatic",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) AutomaticInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"automaticInput",
 		&returns,
 	)
 	return returns
@@ -9932,6 +10158,26 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_ConfigRemediationConfiguration) ExecutionControls() ConfigRemediationConfigurationExecutionControlsOutputReference {
+	var returns ConfigRemediationConfigurationExecutionControlsOutputReference
+	_jsii_.Get(
+		j,
+		"executionControls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) ExecutionControlsInput() *ConfigRemediationConfigurationExecutionControls {
+	var returns *ConfigRemediationConfigurationExecutionControls
+	_jsii_.Get(
+		j,
+		"executionControlsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ConfigRemediationConfiguration) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -9967,6 +10213,26 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) Lifecycle() *cdktf.TerraformR
 	_jsii_.Get(
 		j,
 		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) MaximumAutomaticAttempts() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maximumAutomaticAttempts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) MaximumAutomaticAttemptsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maximumAutomaticAttemptsInput",
 		&returns,
 	)
 	return returns
@@ -10037,6 +10303,26 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) ResourceTypeInput() *string {
 	_jsii_.Get(
 		j,
 		"resourceTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) RetryAttemptSeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"retryAttemptSeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) RetryAttemptSecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"retryAttemptSecondsInput",
 		&returns,
 	)
 	return returns
@@ -10139,7 +10425,7 @@ func NewConfigRemediationConfiguration(scope constructs.Construct, id *string, c
 	j := jsiiProxy_ConfigRemediationConfiguration{}
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigRemediationConfiguration",
+		"hashicorp_aws.config.ConfigRemediationConfiguration",
 		[]interface{}{scope, id, config},
 		&j,
 	)
@@ -10152,9 +10438,17 @@ func NewConfigRemediationConfiguration_Override(c ConfigRemediationConfiguration
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"hashicorp_aws.Config.ConfigRemediationConfiguration",
+		"hashicorp_aws.config.ConfigRemediationConfiguration",
 		[]interface{}{scope, id, config},
 		c,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) SetAutomatic(val interface{}) {
+	_jsii_.Set(
+		j,
+		"automatic",
+		val,
 	)
 }
 
@@ -10190,6 +10484,14 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) SetLifecycle(val *cdktf.Terra
 	)
 }
 
+func (j *jsiiProxy_ConfigRemediationConfiguration) SetMaximumAutomaticAttempts(val *float64) {
+	_jsii_.Set(
+		j,
+		"maximumAutomaticAttempts",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ConfigRemediationConfiguration) SetParameter(val *[]*ConfigRemediationConfigurationParameter) {
 	_jsii_.Set(
 		j,
@@ -10210,6 +10512,14 @@ func (j *jsiiProxy_ConfigRemediationConfiguration) SetResourceType(val *string) 
 	_jsii_.Set(
 		j,
 		"resourceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfiguration) SetRetryAttemptSeconds(val *float64) {
+	_jsii_.Set(
+		j,
+		"retryAttemptSeconds",
 		val,
 	)
 }
@@ -10248,7 +10558,7 @@ func ConfigRemediationConfiguration_IsConstruct(x interface{}) *bool {
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"hashicorp_aws.Config.ConfigRemediationConfiguration",
+		"hashicorp_aws.config.ConfigRemediationConfiguration",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -10261,7 +10571,7 @@ func ConfigRemediationConfiguration_TfResourceType() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"hashicorp_aws.Config.ConfigRemediationConfiguration",
+		"hashicorp_aws.config.ConfigRemediationConfiguration",
 		"tfResourceType",
 		&returns,
 	)
@@ -10357,6 +10667,38 @@ func (c *jsiiProxy_ConfigRemediationConfiguration) OverrideLogicalId(newLogicalI
 	)
 }
 
+func (c *jsiiProxy_ConfigRemediationConfiguration) PutExecutionControls(value *ConfigRemediationConfigurationExecutionControls) {
+	_jsii_.InvokeVoid(
+		c,
+		"putExecutionControls",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfiguration) ResetAutomatic() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetAutomatic",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfiguration) ResetExecutionControls() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetExecutionControls",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfiguration) ResetMaximumAutomaticAttempts() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetMaximumAutomaticAttempts",
+		nil, // no parameters
+	)
+}
+
 // Resets a previously passed logical Id to use the auto-generated logical id again.
 // Experimental.
 func (c *jsiiProxy_ConfigRemediationConfiguration) ResetOverrideLogicalId() {
@@ -10379,6 +10721,14 @@ func (c *jsiiProxy_ConfigRemediationConfiguration) ResetResourceType() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetResourceType",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfiguration) ResetRetryAttemptSeconds() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetRetryAttemptSeconds",
 		nil, // no parameters
 	)
 }
@@ -10447,6 +10797,7 @@ func (c *jsiiProxy_ConfigRemediationConfiguration) ToTerraform() interface{} {
 	return returns
 }
 
+// AWS Config.
 type ConfigRemediationConfigurationConfig struct {
 	// Experimental.
 	Count interface{} `json:"count"`
@@ -10462,14 +10813,564 @@ type ConfigRemediationConfigurationConfig struct {
 	TargetId *string `json:"targetId"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#target_type ConfigRemediationConfiguration#target_type}.
 	TargetType *string `json:"targetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#automatic ConfigRemediationConfiguration#automatic}.
+	Automatic interface{} `json:"automatic"`
+	// execution_controls block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#execution_controls ConfigRemediationConfiguration#execution_controls}
+	ExecutionControls *ConfigRemediationConfigurationExecutionControls `json:"executionControls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#maximum_automatic_attempts ConfigRemediationConfiguration#maximum_automatic_attempts}.
+	MaximumAutomaticAttempts *float64 `json:"maximumAutomaticAttempts"`
 	// parameter block.
 	//
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#parameter ConfigRemediationConfiguration#parameter}
 	Parameter *[]*ConfigRemediationConfigurationParameter `json:"parameter"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#resource_type ConfigRemediationConfiguration#resource_type}.
 	ResourceType *string `json:"resourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#retry_attempt_seconds ConfigRemediationConfiguration#retry_attempt_seconds}.
+	RetryAttemptSeconds *float64 `json:"retryAttemptSeconds"`
 	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#target_version ConfigRemediationConfiguration#target_version}.
 	TargetVersion *string `json:"targetVersion"`
+}
+
+type ConfigRemediationConfigurationExecutionControls struct {
+	// ssm_controls block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#ssm_controls ConfigRemediationConfiguration#ssm_controls}
+	SsmControls *ConfigRemediationConfigurationExecutionControlsSsmControls `json:"ssmControls"`
+}
+
+type ConfigRemediationConfigurationExecutionControlsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *ConfigRemediationConfigurationExecutionControls
+	SetInternalValue(val *ConfigRemediationConfigurationExecutionControls)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	SsmControls() ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference
+	SsmControlsInput() *ConfigRemediationConfigurationExecutionControlsSsmControls
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutSsmControls(value *ConfigRemediationConfigurationExecutionControlsSsmControls)
+	ResetSsmControls()
+}
+
+// The jsii proxy struct for ConfigRemediationConfigurationExecutionControlsOutputReference
+type jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) InternalValue() *ConfigRemediationConfigurationExecutionControls {
+	var returns *ConfigRemediationConfigurationExecutionControls
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SsmControls() ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference {
+	var returns ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference
+	_jsii_.Get(
+		j,
+		"ssmControls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SsmControlsInput() *ConfigRemediationConfigurationExecutionControlsSsmControls {
+	var returns *ConfigRemediationConfigurationExecutionControlsSsmControls
+	_jsii_.Get(
+		j,
+		"ssmControlsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewConfigRemediationConfigurationExecutionControlsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ConfigRemediationConfigurationExecutionControlsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewConfigRemediationConfigurationExecutionControlsOutputReference_Override(c ConfigRemediationConfigurationExecutionControlsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SetInternalValue(val *ConfigRemediationConfigurationExecutionControls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) PutSsmControls(value *ConfigRemediationConfigurationExecutionControlsSsmControls) {
+	_jsii_.InvokeVoid(
+		c,
+		"putSsmControls",
+		[]interface{}{value},
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsOutputReference) ResetSsmControls() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetSsmControls",
+		nil, // no parameters
+	)
+}
+
+type ConfigRemediationConfigurationExecutionControlsSsmControls struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#concurrent_execution_rate_percentage ConfigRemediationConfiguration#concurrent_execution_rate_percentage}.
+	ConcurrentExecutionRatePercentage *float64 `json:"concurrentExecutionRatePercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/config_remediation_configuration.html#error_percentage ConfigRemediationConfiguration#error_percentage}.
+	ErrorPercentage *float64 `json:"errorPercentage"`
+}
+
+type ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference interface {
+	cdktf.ComplexObject
+	ConcurrentExecutionRatePercentage() *float64
+	SetConcurrentExecutionRatePercentage(val *float64)
+	ConcurrentExecutionRatePercentageInput() *float64
+	ErrorPercentage() *float64
+	SetErrorPercentage(val *float64)
+	ErrorPercentageInput() *float64
+	InternalValue() *ConfigRemediationConfigurationExecutionControlsSsmControls
+	SetInternalValue(val *ConfigRemediationConfigurationExecutionControlsSsmControls)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.ITerraformResource
+	SetTerraformResource(val cdktf.ITerraformResource)
+	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetStringAttribute(terraformAttribute *string) *string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetConcurrentExecutionRatePercentage()
+	ResetErrorPercentage()
+}
+
+// The jsii proxy struct for ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference
+type jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ConcurrentExecutionRatePercentage() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"concurrentExecutionRatePercentage",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ConcurrentExecutionRatePercentageInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"concurrentExecutionRatePercentageInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ErrorPercentage() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"errorPercentage",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ErrorPercentageInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"errorPercentageInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) InternalValue() *ConfigRemediationConfigurationExecutionControlsSsmControls {
+	var returns *ConfigRemediationConfigurationExecutionControlsSsmControls
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) TerraformResource() cdktf.ITerraformResource {
+	var returns cdktf.ITerraformResource
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference_Override(c ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.config.ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		c,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetConcurrentExecutionRatePercentage(val *float64) {
+	_jsii_.Set(
+		j,
+		"concurrentExecutionRatePercentage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetErrorPercentage(val *float64) {
+	_jsii_.Set(
+		j,
+		"errorPercentage",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetInternalValue(val *ConfigRemediationConfigurationExecutionControlsSsmControls) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ResetConcurrentExecutionRatePercentage() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetConcurrentExecutionRatePercentage",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ConfigRemediationConfigurationExecutionControlsSsmControlsOutputReference) ResetErrorPercentage() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetErrorPercentage",
+		nil, // no parameters
+	)
 }
 
 type ConfigRemediationConfigurationParameter struct {
